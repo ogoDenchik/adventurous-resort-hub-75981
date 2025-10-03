@@ -14,31 +14,31 @@ type SlideData = {
 const slides: SlideData[] = [
   {
     id: 1,
-    imageSrc: '/lovable-uploads/44997248-2a7d-4c4b-8656-13d704d35b37.png',
+    imageSrc: '/lovable-uploads/hero-kite-action.jpg',
     title: 'Learn to Kitesurf',
     subtitle: 'Professional kitesurfing instruction in paradise locations'
   },
   {
     id: 2,
-    imageSrc: '/lovable-uploads/cc6dd7ad-c5fb-4fef-9dd0-f8dca5d5a10d.png',
+    imageSrc: '/lovable-uploads/hero-kite-learning.jpg',
     title: 'Kite Safari Adventures',
     subtitle: 'Experience the ultimate kitesurfing journey across stunning destinations'
   },
   {
     id: 3,
-    imageSrc: '/lovable-uploads/968e9c7f-6872-4c43-ad59-1dd92c92d29a.png',
-    title: 'Brazil Kitesurfing',
-    subtitle: 'Discover world-class kitesurfing spots in beautiful Brazil'
+    imageSrc: '/lovable-uploads/hero-group-splash.jpg',
+    title: 'Unforgettable Experiences',
+    subtitle: 'Join our community of passionate kitesurfers'
   },
   {
     id: 4,
-    imageSrc: '/lovable-uploads/ac22646b-1aa2-41fc-8799-5ece999eabac.png', 
-    title: 'Cyprus Kite Paradise',
-    subtitle: 'Perfect wind conditions and crystal clear Mediterranean waters'
+    imageSrc: '/lovable-uploads/hero-island-view.jpg', 
+    title: 'Paradise Destinations',
+    subtitle: 'Explore breathtaking kitesurfing locations around the world'
   },
   {
     id: 5,
-    imageSrc: '/lovable-uploads/b4c6f3a5-3500-43ad-97e1-e69041317e64.png', 
+    imageSrc: '/lovable-uploads/hero-instructors.jpg', 
     title: 'Expert Instruction',
     subtitle: 'Learn from certified IKO instructors with years of experience'
   }
