@@ -4,9 +4,41 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
-import { Ship, Wind, Users, GraduationCap, Calendar, CheckCircle, XCircle, Euro } from 'lucide-react';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye } from 'lucide-react';
+import { useToast } from '@/hooks/use-toast';
 
 const KiteSafari: React.FC = () => {
+  const { toast } = useToast();
+  const [formData, setFormData] = React.useState({
+    firstName: '',
+    lastName: '',
+    email: '',
+    phone: '',
+    selectedDate: '',
+    notes: ''
+  });
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast({
+      title: "Request Submitted!",
+      description: "We'll contact you soon to confirm your booking.",
+    });
+    setFormData({
+      firstName: '',
+      lastName: '',
+      email: '',
+      phone: '',
+      selectedDate: '',
+      notes: ''
+    });
+  };
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -189,54 +221,37 @@ const KiteSafari: React.FC = () => {
               <GraduationCap className="w-8 h-8 text-primary" />
               <h2 className="text-3xl md:text-4xl font-display font-bold">Training Options</h2>
             </div>
-            <p className="text-lg text-muted-foreground mb-8 max-w-3xl">
-              We offer flexible packages depending on your goals:
-            </p>
-            <div className="grid md:grid-cols-3 gap-6">
+            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
               <Card className="border-2 hover:border-primary transition-colors">
                 <CardHeader>
-                  <CardTitle className="text-2xl">Equipment Rental Only</CardTitle>
-                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
-                    <Euro className="w-6 h-6" />400/week
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Unlimited access to premium Duotone equipment.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-primary shadow-lg transform scale-105">
-                <CardHeader>
-                  <div className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full w-fit mb-2">
-                    RECOMMENDED
-                  </div>
-                  <CardTitle className="text-2xl">Rental + Lessons (10h)</CardTitle>
-                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
-                    <Euro className="w-6 h-6" />800/week
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Full package with equipment + 10 hours of private lessons with certified instructors.
-                  </p>
-                  <p className="text-sm font-medium">
-                    Perfect if you want guaranteed progress – we teach using BbTalkin radio helmets.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Budget Option</CardTitle>
+                  <CardTitle className="text-2xl">IKO Level 1 Instructor</CardTitle>
                   <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
                     <Euro className="w-6 h-6" />500/week
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Equipment + lessons with local Egyptian instructors (good quality, but less personalized).
+                  <p className="text-muted-foreground">
+                    Equipment + Lessons with Certified Instructor IKO Level 1, 10h course
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary shadow-lg">
+                <CardHeader>
+                  <div className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full w-fit mb-2">
+                    RECOMMENDED
+                  </div>
+                  <CardTitle className="text-2xl">IKO Level 3 Instructor</CardTitle>
+                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
+                    <Euro className="w-6 h-6" />800/week
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Equipment + Lessons with Certified Instructor IKO Level 3, 10h course
+                  </p>
+                  <p className="text-sm font-medium mt-2">
+                    Perfect if you want guaranteed progress – we teach using BbTalkin radio helmets.
                   </p>
                 </CardContent>
               </Card>
@@ -250,7 +265,7 @@ const KiteSafari: React.FC = () => {
           <section className="mb-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12" id="booking">
             <div className="flex items-center gap-3 mb-8">
               <Euro className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Prices & Booking</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">Prices & Bookings</h2>
             </div>
             
             <div className="grid lg:grid-cols-2 gap-8 mb-8">
@@ -259,30 +274,36 @@ const KiteSafari: React.FC = () => {
                 <div className="space-y-3">
                   <Card>
                     <CardContent className="p-6">
-                      <div className="flex justify-between items-center">
-                        <span className="font-semibold">Standard Cabin</span>
-                        <span className="text-2xl font-bold text-primary">€1,150</span>
+                      <div className="flex items-start gap-3 mb-2">
+                        <Bed className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        <div className="flex-1">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <span className="font-semibold">Standard Cabin</span>
+                              <p className="text-sm text-muted-foreground">Twin beds in the room, lower deck -1</p>
+                            </div>
+                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,150</span>
+                          </div>
+                        </div>
                       </div>
-                      <p className="text-sm text-muted-foreground mt-1">per person</p>
+                      <p className="text-sm text-muted-foreground">per person</p>
                     </CardContent>
                   </Card>
                   <Card className="border-primary">
                     <CardContent className="p-6">
-                      <div className="flex justify-between items-center">
-                        <div>
-                          <span className="font-semibold">Group Discount</span>
-                          <p className="text-sm text-muted-foreground">6+ people</p>
+                      <div className="flex items-start gap-3 mb-2">
+                        <Eye className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        <div className="flex-1">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <span className="font-semibold">Master Suite</span>
+                              <p className="text-sm text-muted-foreground">King-size bed, sea view, upper deck +2</p>
+                            </div>
+                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,350</span>
+                          </div>
                         </div>
-                        <span className="text-2xl font-bold text-primary">€1,100</span>
                       </div>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardContent className="p-6">
-                      <div className="flex justify-between items-center">
-                        <span className="font-semibold">Master / Suite Cabins</span>
-                        <span className="text-2xl font-bold text-primary">€1,350–1,600</span>
-                      </div>
+                      <p className="text-sm text-muted-foreground">per person</p>
                     </CardContent>
                   </Card>
                 </div>
@@ -338,96 +359,155 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
-          {/* Available Dates */}
-          <section className="mb-20">
-            <div className="flex items-center gap-3 mb-8">
-              <Calendar className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Available Dates 2025</h2>
-            </div>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl">April</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">2–9 April</p>
-                  <p className="text-muted-foreground">9–16 April</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl">October</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">18–25 October</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl">November</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">3–17 November</p>
-                  <p className="text-muted-foreground">21 Nov – 5 Dec</p>
-                </CardContent>
-              </Card>
-              <Card className="hover:shadow-lg transition-shadow border-primary">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-xl">New Year Special</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">28 Dec – 4 Jan</p>
-                </CardContent>
-              </Card>
-            </div>
+          {/* Contact Form */}
+          <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
+              Book Your KiteSafari
+            </h2>
+            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="firstName">First Name</Label>
+                  <Input 
+                    id="firstName"
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
+                    required
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="lastName">Last Name</Label>
+                  <Input 
+                    id="lastName"
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({...formData, lastName: e.target.value})}
+                    required
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input 
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="phone">Phone Number</Label>
+                <Input 
+                  id="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                  required
+                />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="dates">Select Your Dates</Label>
+                <Select value={formData.selectedDate} onValueChange={(value) => setFormData({...formData, selectedDate: value})}>
+                  <SelectTrigger id="dates">
+                    <SelectValue placeholder="Choose available dates" />
+                  </SelectTrigger>
+                  <SelectContent>
+                    <SelectItem value="april-2-9">April 2–9, 2025</SelectItem>
+                    <SelectItem value="april-9-16">April 9–16, 2025</SelectItem>
+                    <SelectItem value="october-18-25">October 18–25, 2025</SelectItem>
+                    <SelectItem value="november-3-17">November 3–17, 2025</SelectItem>
+                    <SelectItem value="november-21-dec-5">November 21 – December 5, 2025</SelectItem>
+                    <SelectItem value="december-28-jan-4">December 28 – January 4 (New Year Special)</SelectItem>
+                  </SelectContent>
+                </Select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="notes">Notes (Optional)</Label>
+                <Textarea 
+                  id="notes"
+                  value={formData.notes}
+                  onChange={(e) => setFormData({...formData, notes: e.target.value})}
+                  placeholder="Any special requests or questions?"
+                  rows={4}
+                />
+              </div>
+
+              <Button type="submit" size="lg" className="w-full">
+                Submit Booking Request
+              </Button>
+            </form>
           </section>
 
           {/* FAQ */}
           <section className="mb-20">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
-              ❓ Frequently Asked Questions
+              Frequently Asked Questions (FAQ)
             </h2>
-            <div className="max-w-3xl mx-auto space-y-4">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Do I need my own gear?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">You can bring your own or rent from us (Duotone).</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Can beginners join?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Absolutely! Many guests are complete beginners – we provide full lessons.</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>What about safety?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">We use rescue boats, radio helmets, certified instructors, and shallow lagoons – the safest learning conditions.</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>How many people are on board?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Usually 20–25 people, mixed group (different nationalities & levels).</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>What's the vibe?</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Community of adventurers, evening BBQs, video analysis, sunsets, parties, and new friends.</p>
-                </CardContent>
-              </Card>
+            <div className="max-w-3xl mx-auto">
+              <Accordion type="single" collapsible className="w-full">
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>What is included in the price?</AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="space-y-2">
+                      <li>✔ Accommodation on the yacht</li>
+                      <li>✔ 3 meals/day + soft drinks (Coke, juices, guava, orange juice, etc.)</li>
+                      <li>✔ Rescue support & transfers to spots</li>
+                      <li>✔ Parties & community life</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2">
+                  <AccordionTrigger>Do I need to bring my own gear?</AccordionTrigger>
+                  <AccordionContent>
+                    You can bring your own equipment or rent premium Duotone gear from us. We offer flexible rental packages starting from €400/week.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3">
+                  <AccordionTrigger>Can beginners join the safari?</AccordionTrigger>
+                  <AccordionContent>
+                    Absolutely! Many of our guests are complete beginners. We provide full lessons with certified IKO instructors, using BbTalkin radio helmets for effective learning. The Red Sea's shallow lagoons and consistent winds make it perfect for learning.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4">
+                  <AccordionTrigger>What about safety?</AccordionTrigger>
+                  <AccordionContent>
+                    Safety is our top priority. We use rescue boats, BbTalkin radio helmets, certified instructors, and operate in shallow lagoons – providing the safest possible learning conditions. All equipment is regularly maintained and inspected.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5">
+                  <AccordionTrigger>How many people are on board?</AccordionTrigger>
+                  <AccordionContent>
+                    Usually 20–25 people on each trip. It's a mixed international group with riders of different skill levels, creating a diverse and friendly community atmosphere.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-6">
+                  <AccordionTrigger>What's the vibe like?</AccordionTrigger>
+                  <AccordionContent>
+                    It's a community of adventurers! Expect evening BBQs, video analysis sessions, stunning sunsets, parties, and making lifelong friendships. The atmosphere is relaxed, supportive, and fun.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-7">
+                  <AccordionTrigger>What's not included in the price?</AccordionTrigger>
+                  <AccordionContent>
+                    <ul className="space-y-2">
+                      <li>❌ Flights to Egypt</li>
+                      <li>❌ Visa (25€ at airport)</li>
+                      <li>❌ Alcoholic drinks (available onboard – beer €3/bottle, or bring your own)</li>
+                      <li>❌ Equipment rental and lessons (optional packages available)</li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </section>
 
