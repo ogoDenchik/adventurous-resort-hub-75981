@@ -300,7 +300,7 @@ const Brazil: React.FC = () => {
               {/* Days 1-6 - Ilha de Guajiru */}
               <div className="mb-16">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
+                  <div className="hidden md:block">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
                         1-6
@@ -314,12 +314,25 @@ const Brazil: React.FC = () => {
                       Ilha de Guajiru — lagoon + downwind in the river
                     </p>
                   </div>
-                  <div className="relative h-[400px] rounded-lg overflow-hidden">
+                  <div className="relative h-[400px] rounded-lg overflow-hidden group">
                     <img 
                       src="/lovable-uploads/brazil-location-guajiru.jpg" 
                       alt="Ilha de Guajiru aerial view" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
                     />
+                    {/* Mobile overlay caption */}
+                    <div className="md:hidden absolute inset-x-0 bottom-0 p-4 z-10">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent -z-10" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                          1-6
+                        </div>
+                        <h3 className="text-xl font-display font-bold text-white">Ilha de Guajiru</h3>
+                      </div>
+                      <p className="text-sm text-white/90 font-medium">
+                        Ilha de Guajiru — lagoon + downwind in the river
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -332,14 +345,27 @@ const Brazil: React.FC = () => {
               {/* Days 7-10 - Jericoacoara */}
               <div className="mb-16">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden">
+                  <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden group">
                     <img 
                       src="/lovable-uploads/brazil-location-jeri.jpg" 
                       alt="Jericoacoara beach with hammocks" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
                     />
+                    {/* Mobile overlay caption */}
+                    <div className="md:hidden absolute inset-x-0 bottom-0 p-4 z-10">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent -z-10" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                          7-10
+                        </div>
+                        <h3 className="text-xl font-display font-bold text-white">Jericoacoara</h3>
+                      </div>
+                      <p className="text-sm text-white/90 font-medium">
+                        Jericoacoara — two lagoons + nightlife
+                      </p>
+                    </div>
                   </div>
-                  <div className="order-1 md:order-2">
+                  <div className="order-1 md:order-2 hidden md:block">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
                         7-10
@@ -364,7 +390,7 @@ const Brazil: React.FC = () => {
               {/* Days 11-13 - Barra Grande */}
               <div className="mb-16">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div>
+                  <div className="hidden md:block">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
                         11-13
@@ -378,12 +404,25 @@ const Brazil: React.FC = () => {
                       Barra Grande — lagoon in mangrove jungle + downwind
                     </p>
                   </div>
-                  <div className="relative h-[400px] rounded-lg overflow-hidden">
+                  <div className="relative h-[400px] rounded-lg overflow-hidden group">
                     <img 
                       src="/lovable-uploads/brazil-location-barra.jpg" 
                       alt="Barra Grande mangrove lagoon" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
                     />
+                    {/* Mobile overlay caption */}
+                    <div className="md:hidden absolute inset-x-0 bottom-0 p-4 z-10">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent -z-10" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                          11-13
+                        </div>
+                        <h3 className="text-xl font-display font-bold text-white">Barra Grande</h3>
+                      </div>
+                      <p className="text-sm text-white/90 font-medium">
+                        Barra Grande — lagoon in mangrove jungle + downwind
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -396,14 +435,27 @@ const Brazil: React.FC = () => {
               {/* Day 13 evening - Cumbuco */}
               <div className="mb-16">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
-                  <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden">
+                  <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden group">
                     <img 
                       src="/lovable-uploads/brazil-location-cumbuco.jpg" 
                       alt="Cumbuco sunset beach" 
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
                     />
+                    {/* Mobile overlay caption */}
+                    <div className="md:hidden absolute inset-x-0 bottom-0 p-4 z-10">
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent -z-10" />
+                      <div className="flex items-center gap-3 mb-2">
+                        <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold">
+                          13
+                        </div>
+                        <h3 className="text-xl font-display font-bold text-white">Cumbuco</h3>
+                      </div>
+                      <p className="text-sm text-white/90 font-medium">
+                        Cumbuco — 30 km from airport, final location
+                      </p>
+                    </div>
                   </div>
-                  <div className="order-1 md:order-2">
+                  <div className="order-1 md:order-2 hidden md:block">
                     <div className="flex items-center gap-4 mb-6">
                       <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
                         13
