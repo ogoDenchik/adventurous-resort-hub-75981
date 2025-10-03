@@ -21,7 +21,7 @@ const Brazil: React.FC = () => {
             className="w-full h-full object-cover"
           />
         </div>
-        <div className="relative z-20 text-center text-white px-4">
+        <div className="relative z-20 text-center text-white px-4" style={{ transform: 'translateY(150px)' }}>
           <h1 className="text-6xl md:text-8xl font-display font-bold mb-6 animate-fade-in">
             Brazil
           </h1>
