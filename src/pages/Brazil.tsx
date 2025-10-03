@@ -16,7 +16,7 @@ const Brazil: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-10" />
         <div className="absolute inset-0">
           <img 
-            src="/lovable-uploads/brazil-hero-main.png" 
+            src="/lovable-uploads/brazil-hero-team.png" 
             alt="Brazil Kitesurf Adventure" 
             className="w-full h-full object-cover"
             style={{ filter: 'brightness(0.7)' }}
