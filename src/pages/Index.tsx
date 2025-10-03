@@ -8,7 +8,7 @@ import FeaturedActivities from '@/components/FeaturedActivities';
 import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
 import NearbyAttractions from '@/components/NearbyAttractions';
-import DiscountOffers from '@/components/DiscountOffers';
+
 import { ArrowRight, Globe, Users, GraduationCap, Phone } from 'lucide-react';
 import { AdPopup } from '@/components/AdPopup';
 
@@ -104,9 +104,6 @@ const Index: React.FC = () => {
             </div>
           </div>
         </section>
-        
-        {/* Discount Offers */}
-        <DiscountOffers />
         
         {/* Special Offers Section */}
         <SpecialOffers />
