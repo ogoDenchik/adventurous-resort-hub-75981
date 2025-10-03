@@ -19,7 +19,7 @@ const Brazil: React.FC = () => {
             src="/lovable-uploads/brazil-hero-team.png" 
             alt="Brazil Kitesurf Adventure" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.7)' }}
+            style={{ filter: 'brightness(0.8)' }}
           />
         </div>
         <div className="relative z-20 text-center text-white px-4">
