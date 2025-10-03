@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { Button } from '@/components/ui/button';
+import { PlaneLanding, PlaneTakeoff } from 'lucide-react';
 
 const Brazil: React.FC = () => {
   return (
@@ -285,7 +286,10 @@ const Brazil: React.FC = () => {
                   <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">
                     1
                   </div>
-                  <h3 className="text-2xl font-display font-bold">Arrival at Fortaleza</h3>
+                  <h3 className="text-2xl font-display font-bold flex items-center gap-3">
+                    Arrival at Fortaleza
+                    <PlaneLanding className="text-primary" size={28} />
+                  </h3>
                 </div>
                 <p className="text-lg text-muted-foreground ml-16">
                   Arrival at Fortaleza (Pinto Martins) airport. Group meeting. From here, we immediately jump into the cars and drive far away from the big city, heading deep into the Ceará region.
@@ -483,7 +487,10 @@ const Brazil: React.FC = () => {
                   <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">
                     14
                   </div>
-                  <h3 className="text-2xl font-display font-bold">Departure</h3>
+                  <h3 className="text-2xl font-display font-bold flex items-center gap-3">
+                    Departure
+                    <PlaneTakeoff className="text-primary" size={28} />
+                  </h3>
                 </div>
                 <p className="text-lg text-muted-foreground ml-16">
                   Breakfast in Cumbuco and transfer to the airport for departure.
