@@ -168,6 +168,28 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
+        {/* Trip Dates Marquee */}
+        <section className="relative overflow-hidden bg-green-500 py-3">
+          <div className="flex animate-marquee whitespace-nowrap">
+            <div className="flex">
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            </div>
+            <div className="flex" aria-hidden="true">
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            </div>
+          </div>
+        </section>
+
         {/* Included / Not Included */}
         <section className="py-32 bg-background">
           <div className="container mx-auto px-4">
@@ -227,28 +249,6 @@ const Brazil: React.FC = () => {
                   </ul>
                 </div>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Trip Dates Marquee */}
-        <section className="relative overflow-hidden bg-green-500 py-3">
-          <div className="flex animate-marquee whitespace-nowrap">
-            <div className="flex">
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            </div>
-            <div className="flex" aria-hidden="true">
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
             </div>
           </div>
         </section>
