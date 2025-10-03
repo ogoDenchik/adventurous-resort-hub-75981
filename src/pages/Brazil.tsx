@@ -19,7 +19,6 @@ const Brazil: React.FC = () => {
             src="/lovable-uploads/brazil-hero-team.png" 
             alt="Brazil Kitesurf Adventure" 
             className="w-full h-full object-cover"
-            style={{ filter: 'brightness(0.8)' }}
           />
         </div>
         <div className="relative z-20 text-center text-white px-4">
@@ -32,6 +31,28 @@ const Brazil: React.FC = () => {
           <Button size="lg" className="text-lg px-8 py-6">
             Book Your Adventure
           </Button>
+        </div>
+      </section>
+
+      {/* Trip Dates Marquee */}
+      <section className="relative overflow-hidden bg-green-500 py-3">
+        <div className="flex animate-marquee whitespace-nowrap">
+          <div className="flex">
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+          </div>
+          <div className="flex" aria-hidden="true">
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+          </div>
         </div>
       </section>
 
