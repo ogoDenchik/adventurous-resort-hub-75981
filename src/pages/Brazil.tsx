@@ -107,8 +107,44 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
+        {/* Photo Gallery Grid */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="grid md:grid-cols-2 gap-4">
+              <div className="relative h-[60vh]">
+                <img 
+                  src="/lovable-uploads/brazil-lagoon-girl.jpg" 
+                  alt="Kitesurfing in crystal clear lagoon" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <div className="relative h-[60vh]">
+                <img 
+                  src="/lovable-uploads/brazil-kite-trick.jpg" 
+                  alt="Advanced kitesurfing trick" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <div className="relative h-[60vh]">
+                <img 
+                  src="/lovable-uploads/brazil-dunes-team.jpg" 
+                  alt="Team on Brazilian dunes" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+              <div className="relative h-[60vh]">
+                <img 
+                  src="/lovable-uploads/brazil-mare-cheia.jpg" 
+                  alt="Maré Cheia Beach" 
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* What's Included - Minimal Cards */}
-        <section className="py-32 bg-background">
+        <section className="py-32 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
               <h2 className="text-4xl md:text-6xl font-display font-bold mb-20 text-center">
@@ -139,8 +175,33 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
+        {/* BbTalkin Feature */}
+        <section className="relative h-[70vh] flex items-center overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
+          <div className="absolute inset-0">
+            <img 
+              src="/lovable-uploads/brazil-bbtalkin-instructor.jpg" 
+              alt="BbTalkin Communication System" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative z-20 container mx-auto px-4">
+            <div className="max-w-xl text-white">
+              <h2 className="text-4xl md:text-5xl font-display font-bold mb-6">
+                BbTalkin Radio Helmets
+              </h2>
+              <p className="text-xl mb-4">
+                Real-time instruction while you ride
+              </p>
+              <p className="text-lg text-white/80">
+                Instant feedback, faster progress, maximum safety
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* Key Spots */}
-        <section className="py-32 bg-muted/30">
+        <section className="py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto text-center">
               <h2 className="text-4xl md:text-6xl font-display font-bold mb-12">
