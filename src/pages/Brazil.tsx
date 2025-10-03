@@ -172,9 +172,9 @@ const Brazil: React.FC = () => {
         <section className="py-32 bg-background">
           <div className="container mx-auto px-4">
             <div className="max-w-5xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-16">
+              <div className="grid md:grid-cols-2 gap-8">
                 {/* Included */}
-                <div>
+                <div className="bg-muted/20 border border-border rounded-2xl p-8">
                   <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
                     Included
                   </h2>
@@ -211,7 +211,7 @@ const Brazil: React.FC = () => {
                 </div>
 
                 {/* Not Included */}
-                <div>
+                <div className="bg-muted/20 border border-border rounded-2xl p-8">
                   <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
                     Not Included
                   </h2>
@@ -231,15 +231,37 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
-        {/* Meet Your Instructor */}
+        {/* Trip Dates Marquee */}
+        <section className="relative overflow-hidden bg-green-500 py-3">
+          <div className="flex animate-marquee whitespace-nowrap">
+            <div className="flex">
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            </div>
+            <div className="flex" aria-hidden="true">
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
+            </div>
+          </div>
+        </section>
+
+        {/* Meet Your Guide */}
         <section className="relative">
           <div className="grid md:grid-cols-2">
             {/* Image */}
             <div className="relative h-[60vh] md:h-screen">
               <img 
                 src="/lovable-uploads/brazil-instructor-denis.jpg" 
-                alt="Denis Udovenko - Professional Kitesurfing Instructor" 
-                className="w-full h-full object-cover"
+                alt="Denis Udovenko - Professional Kitesurfing Guide" 
+                className="w-full h-full object-cover object-center"
               />
             </div>
             
@@ -247,7 +269,7 @@ const Brazil: React.FC = () => {
             <div className="flex items-center bg-muted/30">
               <div className="p-8 md:p-16 lg:p-24">
                 <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">
-                  Meet Your Instructor
+                  Meet Your Guide
                 </h2>
                 <div className="space-y-6 text-lg text-muted-foreground">
                   <p className="text-2xl font-semibold text-foreground">
