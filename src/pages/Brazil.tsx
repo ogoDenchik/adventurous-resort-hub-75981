@@ -108,25 +108,33 @@ const Brazil: React.FC = () => {
         </section>
 
         {/* What's Included - Minimal Cards */}
-        <section className="py-32 bg-muted/30">
-          <div className="container mx-auto px-4">
+        <section className="relative py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/70 z-10" />
+          <div className="absolute inset-0">
+            <img 
+              src="/lovable-uploads/brazil-kites-beach.jpg" 
+              alt="Kitesurfing beach with colorful kites" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative z-20 container mx-auto px-4">
             <div className="max-w-6xl mx-auto">
-              <h2 className="text-4xl md:text-6xl font-display font-bold mb-20 text-center">
+              <h2 className="text-4xl md:text-6xl font-display font-bold mb-20 text-center text-white">
                 The Experience
               </h2>
               
               <div className="grid md:grid-cols-3 gap-12 text-center">
                 <div>
-                  <div className="text-5xl font-bold text-primary mb-4">14</div>
-                  <p className="text-xl">Days of Adventure</p>
+                  <div className="text-5xl font-bold text-white mb-4">14</div>
+                  <p className="text-xl text-white/90">Days of Adventure</p>
                 </div>
                 <div>
-                  <div className="text-5xl font-bold text-primary mb-4">∞</div>
-                  <p className="text-xl">Wind Guaranteed</p>
+                  <div className="text-5xl font-bold text-white mb-4">∞</div>
+                  <p className="text-xl text-white/90">Wind Guaranteed</p>
                 </div>
                 <div>
-                  <div className="text-5xl font-bold text-primary mb-4">5+</div>
-                  <p className="text-xl">Epic Locations</p>
+                  <div className="text-5xl font-bold text-white mb-4">5+</div>
+                  <p className="text-xl text-white/90">Epic Locations</p>
                 </div>
               </div>
             </div>
@@ -435,12 +443,20 @@ const Brazil: React.FC = () => {
 
 
         {/* CTA Section */}
-        <section className="py-32 bg-gradient-to-b from-muted/30 to-background">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-4xl md:text-6xl font-display font-bold mb-8">
+        <section className="relative py-32 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/60 z-10" />
+          <div className="absolute inset-0">
+            <img 
+              src="/lovable-uploads/brazil-kite-aerial.jpg" 
+              alt="Aerial view of kitesurfing" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="relative z-20 container mx-auto px-4 text-center">
+            <h2 className="text-4xl md:text-6xl font-display font-bold mb-8 text-white">
               Ready for Brazil?
             </h2>
-            <p className="text-xl text-muted-foreground mb-12 max-w-2xl mx-auto">
+            <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
               Join us for 2 weeks of non-stop wind, progression, and adventure on the Brazilian coast.
             </p>
             <Button size="lg" className="text-lg px-12 py-6">
