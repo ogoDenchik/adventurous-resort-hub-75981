@@ -9,8 +9,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye } from 'lucide-react';
+import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 const KiteSafari: React.FC = () => {
   const { toast } = useToast();
@@ -215,18 +216,96 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* Gallery Section */}
+          <section className="mb-20" id="gallery">
+            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
+              📸 Our Yachts Gallery
+            </h2>
+            <Tabs defaultValue="nord" className="w-full">
+              <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
+                <TabsTrigger value="nord">Premium Boat – Nord</TabsTrigger>
+                <TabsTrigger value="lyra">VIP Boat – Lyra</TabsTrigger>
+              </TabsList>
+              
+              <TabsContent value="nord" className="space-y-4">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <img 
+                    src="/lovable-uploads/nord-standard-cabin.jpg" 
+                    alt="Nord Standard Cabin" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/nord-master-suite.jpg" 
+                    alt="Nord Master Suite" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/nord-master-suite-2.jpg" 
+                    alt="Nord Master Suite Interior" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/nord-bathroom.jpg" 
+                    alt="Nord Bathroom" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/kite-safari-sunset-1.jpg" 
+                    alt="Nord at Sunset" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover md:col-span-2 lg:col-span-1"
+                  />
+                </div>
+              </TabsContent>
+              
+              <TabsContent value="lyra" className="space-y-4">
+                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                  <img 
+                    src="/lovable-uploads/lyra-yacht-front.jpg" 
+                    alt="Lyra Yacht Exterior" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/lyra-standard-cabin.jpg" 
+                    alt="Lyra Standard Cabin" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/lyra-master-suite.jpg" 
+                    alt="Lyra Master Suite" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/lyra-bathroom.jpg" 
+                    alt="Lyra Bathroom" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/lyra-sunset.jpg" 
+                    alt="Lyra at Sunset" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
+                  />
+                  <img 
+                    src="/lovable-uploads/lyra-aerial.jpg" 
+                    alt="Lyra Aerial View" 
+                    className="rounded-lg shadow-lg w-full h-[250px] object-cover md:col-span-2 lg:col-span-1"
+                  />
+                </div>
+              </TabsContent>
+            </Tabs>
+          </section>
+
           {/* Training Options */}
           <section className="mb-20" id="training">
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Training Options</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">🪁 Training Options</h2>
             </div>
-            <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <Card className="border-2 hover:border-primary transition-colors">
                 <CardHeader>
                   <CardTitle className="text-2xl">IKO Level 1 Instructor</CardTitle>
                   <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
-                    <Euro className="w-6 h-6" />500/week
+                    <Euro className="w-6 h-6" />600/week
                   </CardDescription>
                 </CardHeader>
                 <CardContent>
@@ -255,6 +334,23 @@ const KiteSafari: React.FC = () => {
                   </p>
                 </CardContent>
               </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Progress Lesson</CardTitle>
+                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
+                    <Clock className="w-6 h-6" />€120/hour
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Single lesson with Certified Instructor IKO Level 3
+                  </p>
+                  <p className="text-sm font-medium mt-2">
+                    Focus on specific skills, then practice independently.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
             <p className="text-center mt-6 text-muted-foreground">
               ⚡️ Note: 10h is enough for first steps, but to become fully independent usually requires 20–25h.
@@ -265,12 +361,22 @@ const KiteSafari: React.FC = () => {
           <section className="mb-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12" id="booking">
             <div className="flex items-center gap-3 mb-8">
               <Euro className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Prices & Bookings</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">💶 Prices & Bookings</h2>
             </div>
             
+            <div className="text-center mb-8">
+              <p className="text-xl font-semibold text-foreground">
+                Choose your option depending on your budget
+              </p>
+            </div>
+
             <div className="grid lg:grid-cols-2 gap-8 mb-8">
-              <div>
-                <h3 className="text-2xl font-bold mb-4">Accommodation Prices</h3>
+              {/* Premium Boat - Nord */}
+              <div className="border-2 border-primary/20 rounded-xl p-6 bg-background">
+                <div className="text-center mb-6">
+                  <h3 className="text-2xl font-bold mb-2">Premium Boat – Nord</h3>
+                  <p className="text-muted-foreground">Comfortable & Spacious</p>
+                </div>
                 <div className="space-y-3">
                   <Card>
                     <CardContent className="p-6">
@@ -280,9 +386,56 @@ const KiteSafari: React.FC = () => {
                           <div className="flex justify-between items-start">
                             <div>
                               <span className="font-semibold">Standard Cabin</span>
-                              <p className="text-sm text-muted-foreground">Twin beds in the room, lower deck -1</p>
+                              <p className="text-sm text-muted-foreground">Twin beds, Lower Deck</p>
                             </div>
                             <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,150</span>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">per person</p>
+                    </CardContent>
+                  </Card>
+                  <Card>
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-3 mb-2">
+                        <Eye className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        <div className="flex-1">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <span className="font-semibold">Master Suite</span>
+                              <p className="text-sm text-muted-foreground">King-size bed, sea view, Upper Deck</p>
+                            </div>
+                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,350</span>
+                          </div>
+                        </div>
+                      </div>
+                      <p className="text-sm text-muted-foreground">per person</p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* VIP Boat - Lyra */}
+              <div className="border-2 border-primary rounded-xl p-6 bg-background shadow-lg">
+                <div className="text-center mb-6">
+                  <div className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
+                    VIP EXPERIENCE
+                  </div>
+                  <h3 className="text-2xl font-bold mb-2">VIP Boat – Lyra</h3>
+                  <p className="text-muted-foreground">Luxury & Elegance</p>
+                </div>
+                <div className="space-y-3">
+                  <Card className="border-primary/50">
+                    <CardContent className="p-6">
+                      <div className="flex items-start gap-3 mb-2">
+                        <Bed className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                        <div className="flex-1">
+                          <div className="flex justify-between items-start">
+                            <div>
+                              <span className="font-semibold">Standard Cabin</span>
+                              <p className="text-sm text-muted-foreground">Premium twin beds, Lower Deck</p>
+                            </div>
+                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,600</span>
                           </div>
                         </div>
                       </div>
@@ -297,9 +450,9 @@ const KiteSafari: React.FC = () => {
                           <div className="flex justify-between items-start">
                             <div>
                               <span className="font-semibold">Master Suite</span>
-                              <p className="text-sm text-muted-foreground">King-size bed, sea view, upper deck +2</p>
+                              <p className="text-sm text-muted-foreground">Luxury king bed, panoramic view, Upper Deck</p>
                             </div>
-                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,350</span>
+                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,800</span>
                           </div>
                         </div>
                       </div>
@@ -308,7 +461,9 @@ const KiteSafari: React.FC = () => {
                   </Card>
                 </div>
               </div>
+            </div>
 
+            <div className="grid lg:grid-cols-2 gap-8">
               <div>
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
                   <CheckCircle className="w-6 h-6 text-primary" />
