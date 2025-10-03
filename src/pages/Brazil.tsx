@@ -200,25 +200,149 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
-        {/* Key Spots */}
+        {/* Included / Not Included */}
         <section className="py-32 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl md:text-6xl font-display font-bold mb-12">
-                Key Destinations
-              </h2>
-              <div className="space-y-8 text-left md:text-center">
-                <div className="py-6 border-b border-border">
-                  <h3 className="text-2xl font-bold mb-2">Icaraizinho</h3>
-                  <p className="text-muted-foreground">Flat water lagoons for freestyle progression</p>
+            <div className="max-w-5xl mx-auto">
+              <div className="grid md:grid-cols-2 gap-16">
+                {/* Included */}
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+                    Included
+                  </h2>
+                  <ul className="space-y-4 text-lg">
+                    <li className="flex items-start">
+                      <span className="text-primary mr-3">✓</span>
+                      <span>4 locations (hotels/villas)</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-3">✓</span>
+                      <span>Cars</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-3">✓</span>
+                      <span>Fuel</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-3">✓</span>
+                      <span>Breakfasts</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-3">✓</span>
+                      <span>Parking</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-3">✓</span>
+                      <span>Services of 2 guides</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="text-primary mr-3">✓</span>
+                      <span>3 hours with Certified Instructor</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="py-6 border-b border-border">
-                  <h3 className="text-2xl font-bold mb-2">Jericoacoara</h3>
-                  <p className="text-muted-foreground">Iconic dunes, lagoons, and endless wind (Guriu + Tatajuba)</p>
+
+                {/* Not Included */}
+                <div>
+                  <h2 className="text-3xl md:text-4xl font-display font-bold mb-8">
+                    Not Included
+                  </h2>
+                  <ul className="space-y-4 text-lg text-muted-foreground">
+                    <li className="flex items-start">
+                      <span className="mr-3">×</span>
+                      <span>Flights</span>
+                    </li>
+                    <li className="flex items-start">
+                      <span className="mr-3">×</span>
+                      <span>Dinners</span>
+                    </li>
+                  </ul>
                 </div>
-                <div className="py-6 border-b border-border">
-                  <h3 className="text-2xl font-bold mb-2">Barra Grande</h3>
-                  <p className="text-muted-foreground">Exotic mangrove jungle riding</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Our Locations */}
+        <section className="py-32 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-6xl font-display font-bold mb-4">
+                  Our Locations
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  Explore the best kite spots in Brazil
+                </p>
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-8">
+                {/* Location 1 - Ilha de Guajiru */}
+                <div className="group relative overflow-hidden rounded-lg">
+                  <div className="relative h-[400px]">
+                    <img 
+                      src="/lovable-uploads/brazil-location-guajiru.jpg" 
+                      alt="Ilha de Guajiru aerial view" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <p className="text-lg font-medium">
+                        Ilha de Guajiru — lagoon + downwind in the river
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Location 2 - Jericoacoara */}
+                <div className="group relative overflow-hidden rounded-lg">
+                  <div className="relative h-[400px]">
+                    <img 
+                      src="/lovable-uploads/brazil-location-jeri.jpg" 
+                      alt="Jericoacoara beach with hammocks" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <p className="text-lg font-medium">
+                        Jericoacoara — two lagoons + nightlife
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Location 3 - Barra Grande */}
+                <div className="group relative overflow-hidden rounded-lg">
+                  <div className="relative h-[400px]">
+                    <img 
+                      src="/lovable-uploads/brazil-location-barra.jpg" 
+                      alt="Barra Grande mangrove lagoon" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <p className="text-lg font-medium">
+                        Barra Grande — lagoon in mangrove jungle + downwind
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Location 4 - Cumbuco */}
+                <div className="group relative overflow-hidden rounded-lg">
+                  <div className="relative h-[400px]">
+                    <img 
+                      src="/lovable-uploads/brazil-location-cumbuco.jpg" 
+                      alt="Cumbuco sunset beach" 
+                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
+                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                      <p className="text-lg font-medium">
+                        Cumbuco — 30 km from airport, final location
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
