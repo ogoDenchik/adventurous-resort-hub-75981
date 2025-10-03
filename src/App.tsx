@@ -10,9 +10,12 @@ import Accommodation from "./pages/Accommodation";
 import About from "./pages/About";
 import Activities from "./pages/Activities";
 import Booking from "./pages/Booking";
-import BookingSuccess from "./pages/BookingSuccess";  // Add this import
+import BookingSuccess from "./pages/BookingSuccess";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import KiteSafari from "./pages/KiteSafari";
+import Brazil from "./pages/Brazil";
+import Cyprus from "./pages/Cyprus";
 import ChatBot from "./components/ChatBot";
 import WhatsAppButton from "./components/WhatsAppButton";
 
@@ -31,6 +34,9 @@ const App = () => {
             <Route path="/accommodation" element={<Accommodation />} />
             <Route path="/about" element={<About />} />
             <Route path="/activities" element={<Activities />} />
+            <Route path="/kite-safari" element={<KiteSafari />} />
+            <Route path="/brazil" element={<Brazil />} />
+            <Route path="/cyprus" element={<Cyprus />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/booking-success" element={<BookingSuccess />} />
             <Route path="/gallery" element={<Gallery />} />

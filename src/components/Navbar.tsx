@@ -27,7 +27,6 @@ const Navbar: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Removed "Booking" from this array
   const navLinks = [{
     name: 'Home',
     path: '/'
@@ -35,13 +34,19 @@ const Navbar: React.FC = () => {
     name: 'About',
     path: '/about'
   }, {
-    name: 'Accommodation',
-    path: '/accommodation'
+    name: 'Kite Safari',
+    path: '/kite-safari'
   }, {
-    name: 'Activities',
-    path: '/activities'
+    name: 'Brazil',
+    path: '/brazil'
   }, {
-    name: 'Contact',
+    name: 'Cyprus',
+    path: '/cyprus'
+  }, {
+    name: 'Gallery',
+    path: '/gallery'
+  }, {
+    name: 'Contact Us',
     path: '/contact'
   }];
   return <header className={cn('fixed w-full top-0 z-50 transition-all duration-300', isScrolled ? 'glass py-3' : 'bg-transparent py-6')}>

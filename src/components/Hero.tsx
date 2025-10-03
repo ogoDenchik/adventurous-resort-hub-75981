@@ -15,44 +15,32 @@ const slides: SlideData[] = [
   {
     id: 1,
     imageSrc: '/lovable-uploads/44997248-2a7d-4c4b-8656-13d704d35b37.png',
-    title: 'Riverside Cottages',
-    subtitle: 'Cozy accommodations with stunning views of the Kali River'
+    title: 'Learn to Kitesurf',
+    subtitle: 'Professional kitesurfing instruction in paradise locations'
   },
   {
     id: 2,
     imageSrc: '/lovable-uploads/cc6dd7ad-c5fb-4fef-9dd0-f8dca5d5a10d.png',
-    title: 'Western Ghats Panorama',
-    subtitle: 'Experience breathtaking views of the pristine Western Ghats and Kali River'
+    title: 'Kite Safari Adventures',
+    subtitle: 'Experience the ultimate kitesurfing journey across stunning destinations'
   },
   {
     id: 3,
     imageSrc: '/lovable-uploads/968e9c7f-6872-4c43-ad59-1dd92c92d29a.png',
-    title: 'Jungle Trekking Adventures',
-    subtitle: 'Explore the dense forests and hills of Dandeli on guided trek experiences'
+    title: 'Brazil Kitesurfing',
+    subtitle: 'Discover world-class kitesurfing spots in beautiful Brazil'
   },
   {
     id: 4,
     imageSrc: '/lovable-uploads/ac22646b-1aa2-41fc-8799-5ece999eabac.png', 
-    title: 'Marsh Crocodiles',
-    subtitle: 'Encounter these magnificent reptiles in their natural habitat'
+    title: 'Cyprus Kite Paradise',
+    subtitle: 'Perfect wind conditions and crystal clear Mediterranean waters'
   },
   {
     id: 5,
     imageSrc: '/lovable-uploads/b4c6f3a5-3500-43ad-97e1-e69041317e64.png', 
-    title: 'Thrilling River Rafting',
-    subtitle: 'Navigate through exciting rapids on the Kali River with our expert guides'
-  },
-  {
-    id: 6,
-    imageSrc: '/lovable-uploads/d6a0abf8-3fb5-4717-9fff-6a3a99f2becf.png',
-    title: 'Mountain Trekking',
-    subtitle: 'Breathtaking trails through pristine mountains and valleys'
-  },
-  {
-    id: 7,
-    imageSrc: '/lovable-uploads/45ac4715-903c-4b9d-aaf3-c8fbe391b9a7.png',
-    title: 'Exciting Kali River Rafting',
-    subtitle: 'Experience the thrill of white water rafting with expert guides on the Kali River'
+    title: 'Expert Instruction',
+    subtitle: 'Learn from certified IKO instructors with years of experience'
   }
 ];
 
