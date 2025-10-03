@@ -9,7 +9,7 @@ import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
 import NearbyAttractions from '@/components/NearbyAttractions';
 import DiscountOffers from '@/components/DiscountOffers';
-import { ArrowRight, Leaf, Shield, Award, Phone } from 'lucide-react';
+import { ArrowRight, Globe, Users, GraduationCap, Phone } from 'lucide-react';
 import { AdPopup } from '@/components/AdPopup';
 
 const Index: React.FC = () => {
@@ -43,54 +43,51 @@ const Index: React.FC = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
               <div className="relative">
-                <img src="/lovable-uploads/f97f4d91-56e4-4e2f-bb73-93760030da48.png" alt="Dandeli Wildlife" className="w-full h-[500px] object-cover rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" />
-                <div className="absolute -bottom-6 -right-6 bg-white p-4 rounded-xl shadow-xl hidden md:block hover:shadow-2xl transform hover:scale-110 transition-all duration-300">
-                  <img src="/lovable-uploads/8fe5892b-b9ce-440c-8423-786ee90235e7.png" alt="Rafting in Dandeli" className="w-40 h-32 object-cover rounded-md" />
-                </div>
+                <img src="/lovable-uploads/community-hug.jpg" alt="OGO Kite Academy Community" className="w-full h-[500px] object-cover rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" />
               </div>
             </div>
             
             <div className="animate-slide-up animation-delay-200">
               <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                Experience Nature's Paradise in Dandeli
+                More than kitesurfing. We build community
               </h2>
               <p className="text-foreground/70 mb-6">
-                Nestled in the heart of Western Ghats, Dandeli Adventures offers an immersive experience in one of India's most biodiverse regions. Our eco-friendly resort combines luxury with wilderness, providing the perfect backdrop for your nature retreat.
+                At OGO Kite Academy, every trip is more than just riding the wind — it's about merging into a global family of kitesurfers, exploring together, and building lifelong connections.
               </p>
               
               <div className="space-y-4 mb-8">
                 <div className="flex items-start group hover-lift p-2 rounded-lg transition-all duration-300 hover:bg-green-50">
                   <div className="mr-4 p-2 bg-secondary rounded-full text-green-700 group-hover:bg-green-100 transition-colors duration-300">
-                    <Leaf size={20} className="group-hover:scale-125 transition-transform duration-300" />
+                    <Globe size={20} className="group-hover:scale-125 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Eco-Friendly Resort</h3>
+                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Global Adventures</h3>
                     <p className="text-sm text-foreground/70">
-                      Committed to sustainable tourism practices with minimal environmental impact.
+                      Explore the best kite spots worldwide — from Brazil to Cyprus — with a team that knows every detail.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start group hover-lift p-2 rounded-lg transition-all duration-300 hover:bg-green-50">
                   <div className="mr-4 p-2 bg-secondary rounded-full text-green-700 group-hover:bg-green-100 transition-colors duration-300">
-                    <Shield size={20} className="group-hover:scale-125 transition-transform duration-300" />
+                    <Users size={20} className="group-hover:scale-125 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Safety First Adventures</h3>
+                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Community Spirit</h3>
                     <p className="text-sm text-foreground/70">
-                      All activities conducted by certified professionals with top-tier safety equipment.
+                      More than a school — a family. Share emotions, progress together, and create friendships for life.
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start group hover-lift p-2 rounded-lg transition-all duration-300 hover:bg-green-50">
                   <div className="mr-4 p-2 bg-secondary rounded-full text-green-700 group-hover:bg-green-100 transition-colors duration-300">
-                    <Award size={20} className="group-hover:scale-125 transition-transform duration-300" />
+                    <GraduationCap size={20} className="group-hover:scale-125 transition-transform duration-300" />
                   </div>
                   <div>
-                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Award-Winning Hospitality</h3>
+                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Certified Progress</h3>
                     <p className="text-sm text-foreground/70">
-                      Recognized for exceptional service and authentic local experiences.
+                      Learn with certified instructors and premium equipment. Safety and growth are always first.
                     </p>
                   </div>
                 </div>
