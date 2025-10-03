@@ -107,42 +107,6 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
-        {/* Photo Gallery Grid */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 gap-4">
-              <div className="relative h-[60vh]">
-                <img 
-                  src="/lovable-uploads/brazil-lagoon-girl.jpg" 
-                  alt="Kitesurfing in crystal clear lagoon" 
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="relative h-[60vh]">
-                <img 
-                  src="/lovable-uploads/brazil-kite-trick.jpg" 
-                  alt="Advanced kitesurfing trick" 
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="relative h-[60vh]">
-                <img 
-                  src="/lovable-uploads/brazil-dunes-team.jpg" 
-                  alt="Team on Brazilian dunes" 
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-              <div className="relative h-[60vh]">
-                <img 
-                  src="/lovable-uploads/brazil-mare-cheia.jpg" 
-                  alt="Maré Cheia Beach" 
-                  className="w-full h-full object-cover rounded-lg"
-                />
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* What's Included - Minimal Cards */}
         <section className="py-32 bg-muted/30">
           <div className="container mx-auto px-4">
@@ -164,12 +128,6 @@ const Brazil: React.FC = () => {
                   <div className="text-5xl font-bold text-primary mb-4">5+</div>
                   <p className="text-xl">Epic Locations</p>
                 </div>
-              </div>
-
-              <div className="mt-20 space-y-4 text-center text-lg text-muted-foreground max-w-3xl mx-auto">
-                <p>Hotels • Breakfasts • Transportation • Safety Support</p>
-                <p>Downwinders • Lagoons • Waves • Mangrove Channels</p>
-                <p>Sunsets • Fresh Seafood • Cultural Immersion</p>
               </div>
             </div>
           </div>
@@ -257,6 +215,43 @@ const Brazil: React.FC = () => {
                       <span>Dinners</span>
                     </li>
                   </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Meet Your Instructor */}
+        <section className="relative">
+          <div className="grid md:grid-cols-2">
+            {/* Image */}
+            <div className="relative h-[60vh] md:h-screen">
+              <img 
+                src="/lovable-uploads/brazil-instructor-denis.jpg" 
+                alt="Denis Udovenko - Professional Kitesurfing Instructor" 
+                className="w-full h-full object-cover"
+              />
+            </div>
+            
+            {/* Content */}
+            <div className="flex items-center bg-muted/30">
+              <div className="p-8 md:p-16 lg:p-24">
+                <h2 className="text-4xl md:text-5xl font-display font-bold mb-8">
+                  Meet Your Instructor
+                </h2>
+                <div className="space-y-6 text-lg text-muted-foreground">
+                  <p className="text-2xl font-semibold text-foreground">
+                    Denis Udovenko
+                  </p>
+                  <p>
+                    Certified kitesurfing and snowboarding instructor with international experience.
+                  </p>
+                  <p>
+                    Professional extreme sports athlete and trainer, known for creating safe, dynamic, and motivating environments.
+                  </p>
+                  <p>
+                    Founder of OGO Academy, organizing kitesurf trips worldwide and sharing the passion for progress, adventure, and the kitesurf lifestyle.
+                  </p>
                 </div>
               </div>
             </div>
@@ -438,17 +433,6 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
-        {/* Safety Note */}
-        <section className="py-20 bg-background">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h3 className="text-2xl font-bold mb-6">About Safety</h3>
-              <p className="text-lg text-muted-foreground">
-                We skip the big cities entirely. After landing in Fortaleza, we head straight to remote northern villages — peaceful, friendly, and safe. Just ocean, lagoons, and the kite community.
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* CTA Section */}
         <section className="py-32 bg-gradient-to-b from-muted/30 to-background">
