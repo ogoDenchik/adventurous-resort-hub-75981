@@ -263,87 +263,176 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
-        {/* Our Locations */}
+        {/* Our Trip Plan */}
         <section className="py-32 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              <div className="text-center mb-16">
+            <div className="max-w-5xl mx-auto">
+              <div className="text-center mb-20">
                 <h2 className="text-4xl md:text-6xl font-display font-bold mb-4">
-                  Our Locations
+                  Our Trip Plan
                 </h2>
                 <p className="text-xl text-muted-foreground">
-                  Explore the best kite spots in Brazil
+                  Follow our journey through the best kite spots of Ceará
                 </p>
               </div>
               
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* Location 1 - Ilha de Guajiru */}
-                <div className="group relative overflow-hidden rounded-lg">
-                  <div className="relative h-[400px]">
+              {/* Day 1 - Arrival */}
+              <div className="mb-16">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">
+                    1
+                  </div>
+                  <h3 className="text-2xl font-display font-bold">Arrival at Fortaleza</h3>
+                </div>
+                <p className="text-lg text-muted-foreground ml-16">
+                  Arrival at Fortaleza (Pinto Martins) airport. Group meeting. From here, we immediately jump into the cars and drive far away from the big city, heading deep into the Ceará region.
+                </p>
+              </div>
+
+              {/* Arrow down */}
+              <div className="flex justify-center my-8">
+                <div className="text-primary text-4xl">↓</div>
+              </div>
+
+              {/* Days 1-6 - Ilha de Guajiru */}
+              <div className="mb-16">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
+                        1-6
+                      </div>
+                      <h3 className="text-2xl font-display font-bold">Ilha de Guajiru</h3>
+                    </div>
+                    <p className="text-lg text-muted-foreground mb-4">
+                      A peaceful lagoon spot, perfect for kitesurfing, downwinds, and progress.
+                    </p>
+                    <p className="text-base text-muted-foreground/80">
+                      Ilha de Guajiru — lagoon + downwind in the river
+                    </p>
+                  </div>
+                  <div className="relative h-[400px] rounded-lg overflow-hidden">
                     <img 
                       src="/lovable-uploads/brazil-location-guajiru.jpg" 
                       alt="Ilha de Guajiru aerial view" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <p className="text-lg font-medium">
-                        Ilha de Guajiru — lagoon + downwind in the river
-                      </p>
-                    </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Location 2 - Jericoacoara */}
-                <div className="group relative overflow-hidden rounded-lg">
-                  <div className="relative h-[400px]">
+              {/* Arrow down */}
+              <div className="flex justify-center my-8">
+                <div className="text-primary text-4xl">↓</div>
+              </div>
+
+              {/* Days 7-10 - Jericoacoara */}
+              <div className="mb-16">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden">
                     <img 
                       src="/lovable-uploads/brazil-location-jeri.jpg" 
                       alt="Jericoacoara beach with hammocks" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <p className="text-lg font-medium">
-                        Jericoacoara — two lagoons + nightlife
-                      </p>
+                  </div>
+                  <div className="order-1 md:order-2">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
+                        7-10
+                      </div>
+                      <h3 className="text-2xl font-display font-bold">Jericoacoara</h3>
                     </div>
+                    <p className="text-lg text-muted-foreground mb-4">
+                      The famous reserve and party town, where we enjoy two lagoons and experience Brazilian nightlife.
+                    </p>
+                    <p className="text-base text-muted-foreground/80">
+                      Jericoacoara — two lagoons + nightlife
+                    </p>
                   </div>
                 </div>
+              </div>
 
-                {/* Location 3 - Barra Grande */}
-                <div className="group relative overflow-hidden rounded-lg">
-                  <div className="relative h-[400px]">
+              {/* Arrow down */}
+              <div className="flex justify-center my-8">
+                <div className="text-primary text-4xl">↓</div>
+              </div>
+
+              {/* Days 11-13 - Barra Grande */}
+              <div className="mb-16">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div>
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
+                        11-13
+                      </div>
+                      <h3 className="text-2xl font-display font-bold">Barra Grande</h3>
+                    </div>
+                    <p className="text-lg text-muted-foreground mb-4">
+                      A unique lagoon in the mangrove jungle. Here you can kite through a labyrinth of trees, a truly one-of-a-kind experience.
+                    </p>
+                    <p className="text-base text-muted-foreground/80">
+                      Barra Grande — lagoon in mangrove jungle + downwind
+                    </p>
+                  </div>
+                  <div className="relative h-[400px] rounded-lg overflow-hidden">
                     <img 
                       src="/lovable-uploads/brazil-location-barra.jpg" 
                       alt="Barra Grande mangrove lagoon" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <p className="text-lg font-medium">
-                        Barra Grande — lagoon in mangrove jungle + downwind
-                      </p>
-                    </div>
                   </div>
                 </div>
+              </div>
 
-                {/* Location 4 - Cumbuco */}
-                <div className="group relative overflow-hidden rounded-lg">
-                  <div className="relative h-[400px]">
+              {/* Arrow down */}
+              <div className="flex justify-center my-8">
+                <div className="text-primary text-4xl">↓</div>
+              </div>
+
+              {/* Day 13 evening - Cumbuco */}
+              <div className="mb-16">
+                <div className="grid md:grid-cols-2 gap-8 items-center">
+                  <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden">
                     <img 
                       src="/lovable-uploads/brazil-location-cumbuco.jpg" 
                       alt="Cumbuco sunset beach" 
-                      className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                      className="w-full h-full object-cover"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-                    <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
-                      <p className="text-lg font-medium">
-                        Cumbuco — 30 km from airport, final location
-                      </p>
+                  </div>
+                  <div className="order-1 md:order-2">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="bg-primary text-primary-foreground rounded-full w-16 h-16 flex items-center justify-center font-bold text-lg">
+                        13
+                      </div>
+                      <h3 className="text-2xl font-display font-bold">Cumbuco</h3>
                     </div>
+                    <p className="text-lg text-muted-foreground mb-4">
+                      Long transfer back towards Cumbuco. Overnight stay.
+                    </p>
+                    <p className="text-base text-muted-foreground/80">
+                      Cumbuco — 30 km from airport, final location
+                    </p>
                   </div>
                 </div>
+              </div>
+
+              {/* Arrow down */}
+              <div className="flex justify-center my-8">
+                <div className="text-primary text-4xl">↓</div>
+              </div>
+
+              {/* Day 14 - Departure */}
+              <div className="mb-16">
+                <div className="flex items-center gap-4 mb-6">
+                  <div className="bg-primary text-primary-foreground rounded-full w-12 h-12 flex items-center justify-center font-bold text-lg">
+                    14
+                  </div>
+                  <h3 className="text-2xl font-display font-bold">Departure</h3>
+                </div>
+                <p className="text-lg text-muted-foreground ml-16">
+                  Breakfast in Cumbuco and transfer to the airport for departure.
+                </p>
               </div>
             </div>
           </div>
