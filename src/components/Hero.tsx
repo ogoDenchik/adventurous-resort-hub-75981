@@ -27,14 +27,14 @@ const slides: SlideData[] = [
   {
     id: 3,
     imageSrc: '/lovable-uploads/hero-group-splash.jpg',
-    title: 'Unforgettable Experiences',
-    subtitle: 'Join our community of passionate kitesurfers'
+    title: 'Brazil Kitesurfing',
+    subtitle: 'Discover world-class kitesurfing spots in beautiful Brazil'
   },
   {
     id: 4,
     imageSrc: '/lovable-uploads/hero-island-view.jpg', 
-    title: 'Paradise Destinations',
-    subtitle: 'Explore breathtaking kitesurfing locations around the world'
+    title: 'Cyprus Kite Paradise',
+    subtitle: 'Perfect wind conditions and crystal clear Mediterranean waters'
   },
   {
     id: 5,
