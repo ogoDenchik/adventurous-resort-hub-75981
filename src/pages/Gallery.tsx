@@ -8,78 +8,77 @@ const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
   const galleryImages = [
-    {
-      id: 1,
-      src: "https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=800&q=80",
-      alt: "Deer in forest",
-      category: "wildlife"
-    },
-    {
-      id: 2,
-      src: "https://images.unsplash.com/photo-1433086966358-54859d0ed716?auto=format&fit=crop&w=800&q=80",
-      alt: "Waterfall",
-      category: "landscape"
-    },
-    {
-      id: 3,
-      src: "https://images.unsplash.com/photo-1482938289607-e9573fc25ebb?auto=format&fit=crop&w=800&q=80",
-      alt: "River",
-      category: "landscape"
-    },
-    {
-      id: 4,
-      src: "https://images.unsplash.com/photo-1513836279014-a89f7a76ae86?auto=format&fit=crop&w=800&q=80",
-      alt: "Forest",
-      category: "landscape"
-    },
-    {
-      id: 5,
-      src: "https://images.unsplash.com/photo-1518495973542-4542c06a5843?auto=format&fit=crop&w=800&q=80",
-      alt: "Sunlight through trees",
-      category: "landscape"
-    },
-    {
-      id: 6,
-      src: "https://images.unsplash.com/photo-1469474968028-56623f02e42e?auto=format&fit=crop&w=800&q=80",
-      alt: "Mountain sunrise",
-      category: "landscape"
-    },
-    {
-      id: 7,
-      src: "https://images.unsplash.com/photo-1470813740244-df37b8c1edcb?auto=format&fit=crop&w=800&q=80",
-      alt: "Starry night",
-      category: "night"
-    },
-    {
-      id: 8,
-      src: "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=80",
-      alt: "Foggy mountains",
-      category: "landscape"
-    },
-    {
-      id: 9,
-      src: "https://images.unsplash.com/photo-1500375592092-40eb2168fd21?auto=format&fit=crop&w=800&q=80",
-      alt: "Ocean waves",
-      category: "water"
-    },
-    {
-      id: 10,
-      src: "https://images.unsplash.com/photo-1458668383970-8ddd3927deed?auto=format&fit=crop&w=800&q=80",
-      alt: "Mountain alps",
-      category: "landscape"
-    },
-    {
-      id: 11,
-      src: "https://images.unsplash.com/photo-1504893524553-b855bce32c67?auto=format&fit=crop&w=800&q=80",
-      alt: "River surrounded by rocks",
-      category: "landscape"
-    },
-    {
-      id: 12,
-      src: "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?auto=format&fit=crop&w=800&q=80",
-      alt: "Sunbeam in forest",
-      category: "landscape"
-    }
+    // Sunset & Golden Hour Action
+    { id: 1, src: "/lovable-uploads/gallery-sunset-jump.jpg", alt: "Epic sunset jump", category: "action" },
+    { id: 2, src: "/lovable-uploads/gallery-sunset-riding.jpg", alt: "Sunset kitesurfing session", category: "action" },
+    { id: 3, src: "/lovable-uploads/brazil-kite-trick.jpg", alt: "Advanced trick at sunset", category: "action" },
+    
+    // Community & Group Vibes
+    { id: 4, src: "/lovable-uploads/gallery-group-sunset-kites.jpg", alt: "OGO community at sunset", category: "community" },
+    { id: 5, src: "/lovable-uploads/gallery-group-splash.jpg", alt: "Team celebration in the water", category: "community" },
+    { id: 6, src: "/lovable-uploads/community-hug.jpg", alt: "OGO family moments", category: "community" },
+    { id: 7, src: "/lovable-uploads/about-team-community.jpg", alt: "Community gathering", category: "community" },
+    { id: 8, src: "/lovable-uploads/brazil-sunset-team.jpg", alt: "Team sunset session", category: "community" },
+    
+    // Training & Teaching
+    { id: 9, src: "/lovable-uploads/gallery-instructor-teaching.jpg", alt: "Professional kite instruction", category: "training" },
+    { id: 10, src: "/lovable-uploads/gallery-beach-boards.jpg", alt: "Students with equipment", category: "training" },
+    { id: 11, src: "/lovable-uploads/about-instructor-student.jpg", alt: "One-on-one coaching", category: "training" },
+    { id: 12, src: "/lovable-uploads/about-instructors-teaching.jpg", alt: "Expert instructors at work", category: "training" },
+    { id: 13, src: "/lovable-uploads/brazil-beach-lesson.jpg", alt: "Beach training session", category: "training" },
+    
+    // Action & Riding
+    { id: 14, src: "/lovable-uploads/gallery-action-yacht.jpg", alt: "Kiting with yacht safari", category: "action" },
+    { id: 15, src: "/lovable-uploads/gallery-tandem-riding.jpg", alt: "Tandem kiting fun", category: "action" },
+    { id: 16, src: "/lovable-uploads/kite-safari-action-1.jpg", alt: "Safari kiting action", category: "action" },
+    { id: 17, src: "/lovable-uploads/kite-safari-action-2.jpg", alt: "Advanced riding techniques", category: "action" },
+    { id: 18, src: "/lovable-uploads/hero-kite-action.jpg", alt: "High-performance kitesurfing", category: "action" },
+    { id: 19, src: "/lovable-uploads/hero-kite-learning.jpg", alt: "Learning progression", category: "action" },
+    
+    // Brazil Locations
+    { id: 20, src: "/lovable-uploads/brazil-hero-main.png", alt: "Brazil kiting paradise", category: "location" },
+    { id: 21, src: "/lovable-uploads/brazil-kite-aerial.jpg", alt: "Aerial view Brazil spot", category: "location" },
+    { id: 22, src: "/lovable-uploads/brazil-lagoon-girl.jpg", alt: "Perfect lagoon conditions", category: "location" },
+    { id: 23, src: "/lovable-uploads/brazil-kites-beach.jpg", alt: "Brazil beach setup", category: "location" },
+    { id: 24, src: "/lovable-uploads/brazil-location-jeri.jpg", alt: "Jericoacoara spot", category: "location" },
+    { id: 25, src: "/lovable-uploads/brazil-location-cumbuco.jpg", alt: "Cumbuco location", category: "location" },
+    { id: 26, src: "/lovable-uploads/brazil-location-barra.jpg", alt: "Barra Grande", category: "location" },
+    { id: 27, src: "/lovable-uploads/brazil-location-guajiru.jpg", alt: "Guajiru spot", category: "location" },
+    { id: 28, src: "/lovable-uploads/brazil-dunes-team.jpg", alt: "Dunes adventure", category: "location" },
+    
+    // Lifestyle & Relaxation
+    { id: 29, src: "/lovable-uploads/about-beach-relax.jpg", alt: "Beach lifestyle", category: "lifestyle" },
+    { id: 30, src: "/lovable-uploads/brazil-beach-relax.jpg", alt: "Relaxing between sessions", category: "lifestyle" },
+    { id: 31, src: "/lovable-uploads/about-campfire-community.jpg", alt: "Evening campfire vibes", category: "lifestyle" },
+    { id: 32, src: "/lovable-uploads/about-sunset-reflection.jpg", alt: "Sunset reflections", category: "lifestyle" },
+    { id: 33, src: "/lovable-uploads/about-motorbike-adventure.jpg", alt: "Adventure beyond kiting", category: "lifestyle" },
+    
+    // Yacht Safaris
+    { id: 34, src: "/lovable-uploads/kite-safari-yacht.jpg", alt: "Luxury yacht safari", category: "safari" },
+    { id: 35, src: "/lovable-uploads/kite-safari-yacht-kiting.jpg", alt: "Yacht-based kiting", category: "safari" },
+    { id: 36, src: "/lovable-uploads/about-team-yacht.jpg", alt: "Team on yacht", category: "safari" },
+    { id: 37, src: "/lovable-uploads/lyra-yacht-front.jpg", alt: "Lyra yacht exterior", category: "safari" },
+    { id: 38, src: "/lovable-uploads/lyra-aerial.jpg", alt: "Yacht from above", category: "safari" },
+    
+    // Sunsets & Landscapes
+    { id: 39, src: "/lovable-uploads/kite-safari-sunset-1.jpg", alt: "Golden hour kiting", category: "landscape" },
+    { id: 40, src: "/lovable-uploads/kite-safari-sunset-jump.jpg", alt: "Sunset jump spectacular", category: "landscape" },
+    { id: 41, src: "/lovable-uploads/lyra-sunset.jpg", alt: "Yacht sunset views", category: "landscape" },
+    { id: 42, src: "/lovable-uploads/brazil-mare-cheia.jpg", alt: "Mare Cheia beauty", category: "landscape" },
+    
+    // Community & Beach Scenes
+    { id: 43, src: "/lovable-uploads/kite-safari-beach.jpg", alt: "Perfect beach conditions", category: "beach" },
+    { id: 44, src: "/lovable-uploads/kite-safari-community.jpg", alt: "Safari community", category: "community" },
+    { id: 45, src: "/lovable-uploads/hero-group-splash.jpg", alt: "Group water fun", category: "community" },
+    { id: 46, src: "/lovable-uploads/hero-instructors.jpg", alt: "Expert instructor team", category: "team" },
+    
+    // Instructors & Team
+    { id: 47, src: "/lovable-uploads/brazil-instructor-denis.jpg", alt: "Instructor Denis", category: "team" },
+    { id: 48, src: "/lovable-uploads/brazil-instructor-1.jpg", alt: "Professional instructor", category: "team" },
+    { id: 49, src: "/lovable-uploads/brazil-bbtalkin-instructor.jpg", alt: "Communication during lessons", category: "team" },
+    
+    // Destination Highlights
+    { id: 50, src: "/lovable-uploads/hero-island-view.jpg", alt: "Island paradise views", category: "location" },
   ];
 
   const openModal = (src: string) => {
@@ -115,9 +114,9 @@ const Gallery: React.FC = () => {
       <main className="flex-grow pt-28 md:pt-32 pb-24">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-slide-up">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">Our Gallery</h1>
+            <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">OGO Gallery</h1>
             <p className="text-foreground/70 max-w-2xl mx-auto">
-              Explore the breathtaking natural beauty of Dandeli through our collection of stunning photographs
+              Experience the energy, adventure, and community of OGO Kite Academy through 50 curated moments
             </p>
           </div>
           
