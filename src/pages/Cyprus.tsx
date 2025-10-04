@@ -37,28 +37,6 @@ const Cyprus: React.FC = () => {
         >
           <div className="absolute inset-0 bg-black/40" />
         </div>
-        
-        {/* Cyprus Map Flag Overlay - Top Right */}
-        <div className="absolute top-8 right-8 z-10 w-32 md:w-48 opacity-90 animate-fadeIn">
-          <img 
-            src="/lovable-uploads/cyprus-map-flag.png" 
-            alt="Cyprus Flag" 
-            className="w-full h-auto drop-shadow-2xl"
-          />
-        </div>
-
-        {/* Aerial View Inset - Bottom Left */}
-        <div className="absolute bottom-8 left-8 z-10 hidden md:block w-48 lg:w-64 rounded-lg overflow-hidden shadow-2xl border-2 border-white/20 animate-fadeIn">
-          <img 
-            src="/lovable-uploads/cyprus-aerial-view.jpg" 
-            alt="Cyprus Aerial View" 
-            className="w-full h-auto"
-          />
-          <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-2">
-            <p className="text-white text-xs font-semibold text-center">Cyprus • 7+ Kite Spots</p>
-          </div>
-        </div>
-
         <div className="relative z-10 container mx-auto px-4 text-center text-white">
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 animate-fadeIn">
             Kitesurfing in Cyprus — Your European Gateway to Kite Adventures
