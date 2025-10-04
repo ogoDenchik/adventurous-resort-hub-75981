@@ -26,59 +26,66 @@ const Gallery: React.FC = () => {
     { id: 11, src: "/lovable-uploads/about-instructor-student.jpg", alt: "One-on-one coaching", category: "training" },
     { id: 12, src: "/lovable-uploads/about-instructors-teaching.jpg", alt: "Expert instructors at work", category: "training" },
     { id: 13, src: "/lovable-uploads/brazil-beach-lesson.jpg", alt: "Beach training session", category: "training" },
+    { id: 14, src: "/lovable-uploads/safari-beach-instruction.jpg", alt: "Yacht safari beach training", category: "training" },
     
     // Action & Riding
-    { id: 14, src: "/lovable-uploads/gallery-action-yacht.jpg", alt: "Kiting with yacht safari", category: "action" },
-    { id: 15, src: "/lovable-uploads/gallery-tandem-riding.jpg", alt: "Tandem kiting fun", category: "action" },
-    { id: 16, src: "/lovable-uploads/kite-safari-action-1.jpg", alt: "Safari kiting action", category: "action" },
-    { id: 17, src: "/lovable-uploads/kite-safari-action-2.jpg", alt: "Advanced riding techniques", category: "action" },
-    { id: 18, src: "/lovable-uploads/hero-kite-action.jpg", alt: "High-performance kitesurfing", category: "action" },
-    { id: 19, src: "/lovable-uploads/hero-kite-learning.jpg", alt: "Learning progression", category: "action" },
+    { id: 15, src: "/lovable-uploads/safari-woman-purple-action.jpg", alt: "Woman kitesurfing in turquoise waters", category: "action" },
+    { id: 16, src: "/lovable-uploads/safari-woman-yacht-riding.jpg", alt: "Kiting with yacht safari", category: "action" },
+    { id: 17, src: "/lovable-uploads/safari-yacht-closeup.jpg", alt: "Safari yacht action closeup", category: "action" },
+    { id: 18, src: "/lovable-uploads/safari-tandem-action.jpg", alt: "Tandem kiting fun", category: "action" },
+    { id: 19, src: "/lovable-uploads/safari-trick-splash.jpg", alt: "Epic trick with splash", category: "action" },
+    { id: 20, src: "/lovable-uploads/safari-lyra-kiting.jpg", alt: "Kiting with Lyra yacht", category: "action" },
+    { id: 21, src: "/lovable-uploads/safari-male-yacht-action.jpg", alt: "Safari kiting action", category: "action" },
+    { id: 22, src: "/lovable-uploads/safari-yellow-kite-trick.jpg", alt: "Advanced trick with yellow kite", category: "action" },
+    { id: 23, src: "/lovable-uploads/safari-group-riding.jpg", alt: "Group riding session", category: "action" },
+    { id: 24, src: "/lovable-uploads/gallery-action-yacht.jpg", alt: "Classic yacht safari kiting", category: "action" },
+    { id: 25, src: "/lovable-uploads/gallery-tandem-riding.jpg", alt: "Tandem kiting experience", category: "action" },
+    { id: 26, src: "/lovable-uploads/kite-safari-action-1.jpg", alt: "Safari action highlights", category: "action" },
+    { id: 27, src: "/lovable-uploads/kite-safari-action-2.jpg", alt: "Advanced riding techniques", category: "action" },
+    { id: 28, src: "/lovable-uploads/hero-kite-action.jpg", alt: "High-performance kitesurfing", category: "action" },
+    { id: 29, src: "/lovable-uploads/hero-kite-learning.jpg", alt: "Learning progression", category: "action" },
     
     // Brazil Locations
-    { id: 20, src: "/lovable-uploads/brazil-hero-main.png", alt: "Brazil kiting paradise", category: "location" },
-    { id: 21, src: "/lovable-uploads/brazil-kite-aerial.jpg", alt: "Aerial view Brazil spot", category: "location" },
-    { id: 22, src: "/lovable-uploads/brazil-lagoon-girl.jpg", alt: "Perfect lagoon conditions", category: "location" },
-    { id: 23, src: "/lovable-uploads/brazil-kites-beach.jpg", alt: "Brazil beach setup", category: "location" },
-    { id: 24, src: "/lovable-uploads/brazil-location-jeri.jpg", alt: "Jericoacoara spot", category: "location" },
-    { id: 25, src: "/lovable-uploads/brazil-location-cumbuco.jpg", alt: "Cumbuco location", category: "location" },
-    { id: 26, src: "/lovable-uploads/brazil-location-barra.jpg", alt: "Barra Grande", category: "location" },
-    { id: 27, src: "/lovable-uploads/brazil-location-guajiru.jpg", alt: "Guajiru spot", category: "location" },
-    { id: 28, src: "/lovable-uploads/brazil-dunes-team.jpg", alt: "Dunes adventure", category: "location" },
+    { id: 30, src: "/lovable-uploads/brazil-hero-main.png", alt: "Brazil kiting paradise", category: "location" },
+    { id: 31, src: "/lovable-uploads/brazil-kite-aerial.jpg", alt: "Aerial view Brazil spot", category: "location" },
+    { id: 32, src: "/lovable-uploads/brazil-lagoon-girl.jpg", alt: "Perfect lagoon conditions", category: "location" },
+    { id: 33, src: "/lovable-uploads/brazil-location-jeri.jpg", alt: "Jericoacoara spot", category: "location" },
+    { id: 34, src: "/lovable-uploads/brazil-location-cumbuco.jpg", alt: "Cumbuco location", category: "location" },
+    { id: 35, src: "/lovable-uploads/brazil-location-barra.jpg", alt: "Barra Grande", category: "location" },
+    { id: 36, src: "/lovable-uploads/brazil-location-guajiru.jpg", alt: "Guajiru spot", category: "location" },
+    { id: 37, src: "/lovable-uploads/brazil-dunes-team.jpg", alt: "Dunes adventure", category: "location" },
     
     // Lifestyle & Relaxation
-    { id: 29, src: "/lovable-uploads/about-beach-relax.jpg", alt: "Beach lifestyle", category: "lifestyle" },
-    { id: 30, src: "/lovable-uploads/brazil-beach-relax.jpg", alt: "Relaxing between sessions", category: "lifestyle" },
-    { id: 31, src: "/lovable-uploads/about-campfire-community.jpg", alt: "Evening campfire vibes", category: "lifestyle" },
-    { id: 32, src: "/lovable-uploads/about-sunset-reflection.jpg", alt: "Sunset reflections", category: "lifestyle" },
-    { id: 33, src: "/lovable-uploads/about-motorbike-adventure.jpg", alt: "Adventure beyond kiting", category: "lifestyle" },
+    { id: 38, src: "/lovable-uploads/about-beach-relax.jpg", alt: "Beach lifestyle", category: "lifestyle" },
+    { id: 39, src: "/lovable-uploads/brazil-beach-relax.jpg", alt: "Relaxing between sessions", category: "lifestyle" },
+    { id: 40, src: "/lovable-uploads/about-sunset-reflection.jpg", alt: "Sunset reflections", category: "lifestyle" },
     
     // Yacht Safaris
-    { id: 34, src: "/lovable-uploads/kite-safari-yacht.jpg", alt: "Luxury yacht safari", category: "safari" },
-    { id: 35, src: "/lovable-uploads/kite-safari-yacht-kiting.jpg", alt: "Yacht-based kiting", category: "safari" },
-    { id: 36, src: "/lovable-uploads/about-team-yacht.jpg", alt: "Team on yacht", category: "safari" },
-    { id: 37, src: "/lovable-uploads/lyra-yacht-front.jpg", alt: "Lyra yacht exterior", category: "safari" },
-    { id: 38, src: "/lovable-uploads/lyra-aerial.jpg", alt: "Yacht from above", category: "safari" },
+    { id: 41, src: "/lovable-uploads/kite-safari-yacht.jpg", alt: "Luxury yacht safari", category: "safari" },
+    { id: 42, src: "/lovable-uploads/kite-safari-yacht-kiting.jpg", alt: "Yacht-based kiting", category: "safari" },
+    { id: 43, src: "/lovable-uploads/about-team-yacht.jpg", alt: "Team on yacht", category: "safari" },
+    { id: 44, src: "/lovable-uploads/lyra-yacht-front.jpg", alt: "Lyra yacht exterior", category: "safari" },
+    { id: 45, src: "/lovable-uploads/lyra-aerial.jpg", alt: "Yacht from above", category: "safari" },
     
     // Sunsets & Landscapes
-    { id: 39, src: "/lovable-uploads/kite-safari-sunset-1.jpg", alt: "Golden hour kiting", category: "landscape" },
-    { id: 40, src: "/lovable-uploads/kite-safari-sunset-jump.jpg", alt: "Sunset jump spectacular", category: "landscape" },
-    { id: 41, src: "/lovable-uploads/lyra-sunset.jpg", alt: "Yacht sunset views", category: "landscape" },
-    { id: 42, src: "/lovable-uploads/brazil-mare-cheia.jpg", alt: "Mare Cheia beauty", category: "landscape" },
+    { id: 46, src: "/lovable-uploads/kite-safari-sunset-1.jpg", alt: "Golden hour kiting", category: "landscape" },
+    { id: 47, src: "/lovable-uploads/kite-safari-sunset-jump.jpg", alt: "Sunset jump spectacular", category: "landscape" },
+    { id: 48, src: "/lovable-uploads/lyra-sunset.jpg", alt: "Yacht sunset views", category: "landscape" },
+    { id: 49, src: "/lovable-uploads/brazil-mare-cheia.jpg", alt: "Mare Cheia beauty", category: "landscape" },
     
     // Community & Beach Scenes
-    { id: 43, src: "/lovable-uploads/kite-safari-beach.jpg", alt: "Perfect beach conditions", category: "beach" },
-    { id: 44, src: "/lovable-uploads/kite-safari-community.jpg", alt: "Safari community", category: "community" },
-    { id: 45, src: "/lovable-uploads/hero-group-splash.jpg", alt: "Group water fun", category: "community" },
-    { id: 46, src: "/lovable-uploads/hero-instructors.jpg", alt: "Expert instructor team", category: "team" },
+    { id: 50, src: "/lovable-uploads/kite-safari-beach.jpg", alt: "Perfect beach conditions", category: "beach" },
+    { id: 51, src: "/lovable-uploads/kite-safari-community.jpg", alt: "Safari community", category: "community" },
+    { id: 52, src: "/lovable-uploads/hero-group-splash.jpg", alt: "Group water fun", category: "community" },
+    { id: 53, src: "/lovable-uploads/hero-instructors.jpg", alt: "Expert instructor team", category: "team" },
     
     // Instructors & Team
-    { id: 47, src: "/lovable-uploads/brazil-instructor-denis.jpg", alt: "Instructor Denis", category: "team" },
-    { id: 48, src: "/lovable-uploads/brazil-instructor-1.jpg", alt: "Professional instructor", category: "team" },
-    { id: 49, src: "/lovable-uploads/brazil-bbtalkin-instructor.jpg", alt: "Communication during lessons", category: "team" },
+    { id: 54, src: "/lovable-uploads/brazil-instructor-denis.jpg", alt: "Instructor Denis", category: "team" },
+    { id: 55, src: "/lovable-uploads/brazil-instructor-1.jpg", alt: "Professional instructor", category: "team" },
+    { id: 56, src: "/lovable-uploads/brazil-bbtalkin-instructor.jpg", alt: "Communication during lessons", category: "team" },
     
     // Destination Highlights
-    { id: 50, src: "/lovable-uploads/hero-island-view.jpg", alt: "Island paradise views", category: "location" },
+    { id: 57, src: "/lovable-uploads/hero-island-view.jpg", alt: "Island paradise views", category: "location" },
   ];
 
   const openModal = (src: string) => {
