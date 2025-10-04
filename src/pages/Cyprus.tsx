@@ -33,7 +33,7 @@ const Cyprus: React.FC = () => {
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/lovable-uploads/cyprus-sunset-riding.jpg)' }}
+          style={{ backgroundImage: 'url(/lovable-uploads/cyprus-hero-sunset-action.jpg)' }}
         >
           <div className="absolute inset-0 bg-black/40" />
         </div>
@@ -51,7 +51,7 @@ const Cyprus: React.FC = () => {
       <section className="relative py-20 overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center opacity-10"
-          style={{ backgroundImage: 'url(/lovable-uploads/cyprus-sunset-lesson.jpg)' }}
+          style={{ backgroundImage: 'url(/lovable-uploads/cyprus-hero-sunset-silhouette.jpg)' }}
         />
         <div className="relative z-10 container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
