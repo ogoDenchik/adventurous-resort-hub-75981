@@ -33,7 +33,7 @@ const Cyprus: React.FC = () => {
       <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
         <div 
           className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: 'url(/lovable-uploads/cyprus-hero-sunset-action.jpg)' }}
+          style={{ backgroundImage: 'url(/lovable-uploads/cyprus-hero-aerial.jpg)' }}
         >
           <div className="absolute inset-0 bg-black/40" />
         </div>
