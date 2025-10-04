@@ -192,7 +192,7 @@ const About: React.FC = () => {
 
             {/* Gallery */}
             <div className="grid grid-cols-2 gap-4 animate-fade-in animation-delay-500">
-              <img src="/lovable-uploads/about-team-cars.jpg" alt="Team adventures" className="w-full h-[250px] object-cover object-center rounded-xl shadow-lg" />
+              <img src="/lovable-uploads/about-team-cars.jpg" alt="Team adventures" className="w-full h-[250px] object-cover rounded-xl shadow-lg" style={{objectPosition: 'center calc(50% + 250px)'}} />
               <img src="/lovable-uploads/about-team-community.jpg" alt="OGO community" className="w-full h-[250px] object-cover object-[center_30%] rounded-xl shadow-lg" />
             </div>
           </div>
