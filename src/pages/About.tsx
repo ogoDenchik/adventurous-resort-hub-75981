@@ -137,14 +137,14 @@ const About: React.FC = () => {
                 </p>
               </div>
               <div className="order-1 md:order-2">
-                <img src="/lovable-uploads/about-motorbike-adventure.jpg" alt="Adventure spirit" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
+                <img src="/lovable-uploads/about-campfire-community.jpg" alt="Adventure spirit" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
               </div>
             </div>
 
             {/* Discovery */}
             <div className="grid md:grid-cols-2 gap-8 items-center animate-fade-in animation-delay-200">
               <div>
-                <img src="/lovable-uploads/about-campfire-community.jpg" alt="Community gathering" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
+                <img src="/lovable-uploads/about-motorbike-adventure.jpg" alt="Community gathering" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
               </div>
               <div>
                 <h3 className="text-2xl font-display font-bold mb-4">The Missing Piece</h3>
@@ -191,9 +191,9 @@ const About: React.FC = () => {
             </div>
 
             {/* Gallery */}
-            <div className="grid grid-cols-2 gap-4 animate-fade-in animation-delay-500">
-              <img src="/lovable-uploads/about-team-cars.jpg" alt="Team adventures" className="w-full h-[250px] object-cover rounded-xl shadow-lg" />
-              <img src="/lovable-uploads/about-sunset-reflection.jpg" alt="Sunset moments" className="w-full h-[250px] object-cover rounded-xl shadow-lg" />
+            <div className="grid grid-cols-2 gap-4 animate-fade-in animation-delay-500" style={{ transform: 'translateY(-250px)' }}>
+              <img src="/lovable-uploads/about-team-cars-new.jpg" alt="Team adventures" className="w-full h-[250px] object-cover rounded-xl shadow-lg" />
+              <img src="/lovable-uploads/about-kitesurfing-action.jpg" alt="Kitesurfing action" className="w-full h-[250px] object-cover rounded-xl shadow-lg" />
             </div>
           </div>
         </section>
