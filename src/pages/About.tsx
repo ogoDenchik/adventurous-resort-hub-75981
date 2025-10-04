@@ -144,7 +144,7 @@ const About: React.FC = () => {
             {/* Discovery */}
             <div className="grid md:grid-cols-2 gap-8 items-center animate-fade-in animation-delay-200">
               <div>
-                <img src="/lovable-uploads/about-motorbike-adventure.jpg" alt="Community gathering" className="w-full h-[300px] object-contain rounded-xl shadow-lg" />
+                <img src="/lovable-uploads/about-kitesurfing-discovery.jpg" alt="Discovering kitesurfing" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
               </div>
               <div>
                 <h3 className="text-2xl font-display font-bold mb-4">The Missing Piece</h3>
