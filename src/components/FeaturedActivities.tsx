@@ -49,46 +49,39 @@ const FeaturedActivities: React.FC = () => {
   const activities = [
     {
       id: 1,
-      title: "River Rafting",
-      description: "Navigate the thrilling rapids of the Kali River with our expert guides.",
-      image: "/lovable-uploads/039f35db-5cf1-4a0b-be13-c4f3947bec67.png",
-      link: "/activities#river-rafting"
+      title: "Brazil",
+      description: "Experience the ultimate kitesurfing paradise with perfect winds, endless lagoons, and vibrant Brazilian culture.",
+      image: "/lovable-uploads/safari-woman-yacht-riding.jpg",
+      link: "/brazil"
     },
     {
       id: 2,
-      title: "Wildlife Safari",
-      description: "Explore the rich biodiversity of Dandeli Wildlife Sanctuary.",
-      image: "/lovable-uploads/003350e1-bba1-4aed-9001-4acf317067fb.png",
-      link: "/activities#wildlife-safari"
+      title: "Kite Safari",
+      description: "Sail the Red Sea aboard a luxury yacht, exploring Egypt's hidden kite spots and pristine waters.",
+      image: "/lovable-uploads/kite-safari-yacht-action.jpg",
+      link: "/kite-safari"
     },
     {
       id: 3,
-      title: "Jungle Trekking",
-      description: "Embark on guided treks through pristine forest trails.",
-      image: "/lovable-uploads/968e9c7f-6872-4c43-ad59-1dd92c92d29a.png",
-      link: "/activities#jungle-trekking"
-    },
-    {
-      id: 4,
-      title: "Kayaking",
-      description: "Paddle through serene waters and enjoy the peaceful surroundings.",
-      image: "/lovable-uploads/006b887f-fc3b-427b-9885-91e44bb4dbee.png",
-      link: "/activities#kayaking"
+      title: "Cyprus",
+      description: "Learn kitesurfing in the crystal-clear Mediterranean with professional instructors and year-round sunshine.",
+      image: "/lovable-uploads/cyprus-hero-sunset-action.jpg",
+      link: "/cyprus"
     }
   ];
   
   return (
-    <section className="section-padding container">
+    <section className="section-padding container" id="our-programs">
       <ScrollAnimationWrapper animation="animate-slide-up opacity-100" className="mb-16">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Featured Experiences</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Programs</h2>
           <p className="text-foreground/70 max-w-2xl mx-auto">
-            Discover the thrill and tranquility of our curated adventures in the heart of Dandeli's wilderness.
+            Choose your next kitesurfing adventure from our carefully curated destinations around the world.
           </p>
         </div>
       </ScrollAnimationWrapper>
       
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {activities.map((activity, index) => (
           <ScrollAnimationWrapper 
             key={activity.id}
@@ -106,17 +99,6 @@ const FeaturedActivities: React.FC = () => {
           </ScrollAnimationWrapper>
         ))}
       </div>
-      
-      <ScrollAnimationWrapper animation="animate-fade-in opacity-100" delay={600}>
-        <div className="text-center mt-12">
-          <Link 
-            to="/activities" 
-            className="btn-primary inline-flex items-center"
-          >
-            View All Activities <ArrowRight size={16} className="ml-2" />
-          </Link>
-        </div>
-      </ScrollAnimationWrapper>
     </section>
   );
 };

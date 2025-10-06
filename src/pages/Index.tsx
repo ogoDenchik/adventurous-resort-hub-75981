@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
@@ -7,15 +7,18 @@ import Hero from '@/components/Hero';
 import FeaturedActivities from '@/components/FeaturedActivities';
 import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
-import NearbyAttractions from '@/components/NearbyAttractions';
+import { BookingPopup } from '@/components/BookingPopup';
 
 import { ArrowRight, Globe, Users, GraduationCap, Phone } from 'lucide-react';
 import { AdPopup } from '@/components/AdPopup';
 
 const Index: React.FC = () => {
+  const [isBookingOpen, setIsBookingOpen] = useState(false);
+
   return <div className="min-h-screen flex flex-col">
       <Navbar />
       <AdPopup />
+      <BookingPopup open={isBookingOpen} onOpenChange={setIsBookingOpen} />
       
       <main className="flex-grow">
         <Hero />
@@ -175,11 +178,8 @@ const Index: React.FC = () => {
         {/* Gallery Section */}
         <HomeGallery />
         
-        {/* Featured Activities */}
+        {/* Our Programs */}
         <FeaturedActivities />
-        
-        {/* Nearby Attractions Section */}
-        <NearbyAttractions />
         
         {/* Testimonials */}
         <section className="section-padding container">
@@ -188,30 +188,30 @@ const Index: React.FC = () => {
               Guest Experiences
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our guests have to say about their stay.
+              Hear from riders who've joined the OGO family on their kitesurfing adventures around the world.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: "Stanley Nuthalpati",
-                location: "New York, USA",
-                quote: "The river rafting experience was exhilarating! The staff was incredibly knowledgeable and made us feel safe while still having a blast.",
+                name: "M.K.",
+                location: "Kite Safari — Egypt",
+                quote: "An unforgettable week on the Red Sea! Perfect wind every day and the yacht made it feel like a luxury adventure.",
                 image: "/lovable-uploads/b2944dcd-84a0-4ab8-af63-861cd91c2d08.png",
                 delay: 0
               },
               {
-                name: "Atharva Kulkarni",
-                location: "Mumbai, India",
-                quote: "The treehouse villa exceeded our expectations. Waking up to birds chirping and the view of the forest canopy was magical. A perfect anniversary getaway.",
+                name: "Anna L.",
+                location: "Brazil Trip",
+                quote: "Brazil with OGO was magical — incredible kite spots, amazing instructors, and a group that became like family. Can't wait to go back!",
                 image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
                 delay: 200
               },
               {
-                name: "Rajat Hegde",
-                location: "Singapore",
-                quote: "The wildlife safari was the highlight of our trip. We spotted elephants, deer, and even a black panther! Our guide was exceptional in tracking the animals.",
+                name: "Tom R.",
+                location: "Cyprus Lessons",
+                quote: "Learned to kitesurf in just one week thanks to the amazing team in Cyprus. The community vibe and support made all the difference.",
                 image: "/lovable-uploads/54f9733a-3115-43f8-8702-ac90313ce5aa.png",
                 delay: 400
               }
@@ -245,7 +245,7 @@ const Index: React.FC = () => {
                 Get Exclusive Updates
               </h2>
               <p className="text-foreground/70 mb-8">
-                Subscribe to our newsletter and be the first to know about new adventures and seasonal experiences.
+                Subscribe to our newsletter and be the first to know about upcoming trips, special offers, and kite destinations.
               </p>
               <form className="flex flex-col sm:flex-row items-center max-w-md mx-auto gap-3" onSubmit={(e) => {
                 e.preventDefault();
@@ -275,18 +275,26 @@ const Index: React.FC = () => {
         
         {/* CTA */}
         <section className="py-20 bg-green-700 text-white relative">
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/039f35db-5cf1-4a0b-be13-c4f3947bec67.png')] bg-cover bg-center opacity-20"></div>
+          <div className="absolute inset-0 bg-[url('/lovable-uploads/kite-safari-sunset-1.jpg')] bg-cover bg-center">
+            <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-black/35"></div>
+          </div>
           <div className="container relative z-10 px-4 text-center">
             <div className="max-w-3xl mx-auto animate-fade-in">
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-glow">
+              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 Your Adventure Awaits!
               </h2>
-              <p className="text-xl mb-8 text-white/90">
-                Book your stay now and create memories that will last a lifetime.
+              <p className="text-xl mb-6 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                Book your kitesurfing adventure now and create memories that will last a lifetime.
               </p>
-              <Link to="/booking" className="inline-block px-8 py-4 bg-white text-green-700 font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:translate-y-[-2px] hover:scale-105">
+              <p className="text-lg mb-8 text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+                Not sure where to go? <Link to="/#our-programs" className="underline hover:text-white">Explore our destinations</Link>
+              </p>
+              <Button 
+                onClick={() => setIsBookingOpen(true)}
+                className="inline-block px-8 py-4 bg-white text-green-700 font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:translate-y-[-2px] hover:scale-105"
+              >
                 Book Your Adventure Now
-              </Link>
+              </Button>
             </div>
           </div>
         </section>

@@ -16,33 +16,43 @@ import TiltCard from './TiltCard';
 const galleryImages = [
   {
     id: 1,
-    src: "/lovable-uploads/44997248-2a7d-4c4b-8656-13d704d35b37.png",
-    alt: "Riverside Cottages",
+    src: "/lovable-uploads/brazil-kite-aerial.jpg",
+    alt: "Kitesurfing action in Brazil",
   },
   {
     id: 2,
-    src: "/lovable-uploads/a9ae304d-ac8b-4671-94c1-c3a3013a0711.png",
-    alt: "Scenic Mountain View",
+    src: "/lovable-uploads/cyprus-sunset-riding.jpg",
+    alt: "Sunset kitesurfing in Cyprus",
   },
   {
     id: 3,
-    src: "/lovable-uploads/b4c6f3a5-3500-43ad-97e1-e69041317e64.png",
-    alt: "River Rafting Adventure",
+    src: "/lovable-uploads/kite-safari-yacht.jpg",
+    alt: "Kite Safari yacht adventure",
   },
   {
     id: 4,
-    src: "/lovable-uploads/39f35db-5cf1-4a0b-be13-c4f3947bec67.png", 
-    alt: "Forest Meditation",
+    src: "/lovable-uploads/about-team-community.jpg", 
+    alt: "OGO Kite Academy community",
   },
   {
     id: 5,
-    src: "/lovable-uploads/fa6d6df3-ea4b-4f3f-9db1-81fbb2370f9f.png", 
-    alt: "Luxury Accommodation",
+    src: "/lovable-uploads/brazil-beach-lesson.jpg", 
+    alt: "Kite lesson on the beach",
   },
   {
     id: 6, 
-    src: "/lovable-uploads/f97f4d91-56e4-4e2f-bb73-93760030da48.png",
-    alt: "Wildlife Safari"
+    src: "/lovable-uploads/gallery-sunset-jump.jpg",
+    alt: "Kitesurfing jump at sunset"
+  },
+  {
+    id: 7,
+    src: "/lovable-uploads/safari-group-riding.jpg",
+    alt: "Group kitesurfing session"
+  },
+  {
+    id: 8,
+    src: "/lovable-uploads/cyprus-instructor-teaching.jpg",
+    alt: "Professional kite instruction"
   }
 ];
 
@@ -98,7 +108,7 @@ const HomeGallery: React.FC = () => {
               Explore Our Gallery
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">
-              Take a visual journey through the beautiful landscapes and experiences that await you at Dandeli Adventure Resorts
+              Discover the stunning moments, epic adventures, and incredible community that make OGO Kite Academy special
             </p>
           </div>
         </animated.div>
