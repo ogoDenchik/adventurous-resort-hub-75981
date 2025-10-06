@@ -180,13 +180,10 @@ const KiteSafari: React.FC = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      All you need is to book your flight to Hurghada Airport, Egypt, and arrive during the first day of KiteSafari.
-                    </p>
-                    <p className="text-foreground mb-4">
-                      Send your flight number and full name to our manager (whom you'll be in contact with during booking), and we'll arrange your transfer – it's included in the KiteSafari price!
+                      Book your flight to Hurghada Airport, Egypt. Send us your flight details – transfer to the yacht is included!
                     </p>
                     <p className="font-semibold text-primary">
-                      The transfer will take you straight to the yacht, and from this moment you can fully relax and not worry about anything.
+                      We'll pick you up and take you straight to the yacht. From this moment, just relax and enjoy!
                     </p>
                   </CardContent>
                 </Card>
@@ -208,28 +205,10 @@ const KiteSafari: React.FC = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      We're actively engaged in:
+                      Pure kiting, parties, new friends, snorkeling, diving, wakeboarding.
                     </p>
-                    <ul className="space-y-2 mb-4">
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Kitesurfing in perfect conditions</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Parties and socializing with new people</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Snorkeling & Diving</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
-                        <span>Wakeboarding</span>
-                      </li>
-                    </ul>
                     <p className="font-semibold text-primary">
-                      During all this time we completely disconnect from the outside world and immerse ourselves in the unique KiteSafari experience – enjoying and having fun!
+                      Disconnect from the world. Live the unique KiteSafari experience!
                     </p>
                   </CardContent>
                 </Card>
@@ -251,13 +230,10 @@ const KiteSafari: React.FC = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      <strong>First half of the day:</strong> We continue kitesurfing and make the most of our last sessions.
-                    </p>
-                    <p className="text-muted-foreground mb-4">
-                      <strong>Lunchtime:</strong> We set sail back to the port. We must return before sunset.
+                      <strong>Morning:</strong> Last kite sessions. <strong>Afternoon:</strong> Sailing back to port.
                     </p>
                     <p className="font-semibold text-foreground">
-                      In the evening, upon returning to port, we pack our things and prepare for departure.
+                      Evening: Pack up and prepare for departure.
                     </p>
                   </CardContent>
                 </Card>
@@ -279,10 +255,7 @@ const KiteSafari: React.FC = () => {
                   </CardHeader>
                   <CardContent>
                     <p className="text-muted-foreground mb-4">
-                      This is the day we say goodbye to the yacht.
-                    </p>
-                    <p className="text-foreground mb-4">
-                      Remember, we'll also take care of your transfer from the yacht to the airport – we'll get you to your flight on time!
+                      Saying goodbye to the yacht. We'll arrange your airport transfer!
                     </p>
                     <p className="text-xl font-semibold text-primary text-center mt-6">
                       🤗 Farewells, hugs, and see you on the next adventure!
