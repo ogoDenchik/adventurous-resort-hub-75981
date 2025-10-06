@@ -63,13 +63,16 @@ const KiteSafari: React.FC = () => {
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-              🌊 KiteSafari
+              KiteSafari
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
               7-Day Adventure on the Red Sea
             </p>
-            <Button size="lg" asChild>
-              <a href="#booking">Book Your Adventure</a>
+            <Button 
+              size="lg"
+              onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+            >
+              Book Your Adventure
             </Button>
           </div>
         </div>
@@ -85,24 +88,23 @@ const KiteSafari: React.FC = () => {
                 What is KiteSafari?
               </h2>
               <p className="text-lg text-muted-foreground leading-relaxed">
-                KiteSafari is a unique kitesurfing experience aboard a luxury yacht in Egypt's Red Sea. 
-                Imagine: crystal-clear lagoons, consistent winds, sandy islands, and a floating 5-star hotel 
-                that follows the best wind spots.
+                Picture this: a luxury yacht sailing Egypt's Red Sea, chasing the best kite spots. 
+                Crystal lagoons, perfect winds, sandy islands – and your floating 5-star hotel moving with you.
               </p>
               <p className="text-lg text-foreground font-semibold mt-4">
-                This is not just a trip – it's a lifestyle adventure combining kitesurfing, travel, and community.
+                It's kitesurfing, adventure, and community rolled into one unforgettable week.
               </p>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <img 
-                src="/lovable-uploads/kite-safari-beach.jpg" 
-                alt="Kitesurfing on crystal-clear waters" 
+                src="/lovable-uploads/safari-beach-instruction.jpg" 
+                alt="Beach kitesurfing instruction" 
                 className="rounded-lg shadow-xl w-full h-[400px] object-cover"
               />
               <img 
-                src="/lovable-uploads/kite-safari-sunset-jump.jpg" 
-                alt="Sunset kitesurfing jump" 
+                src="/lovable-uploads/safari-woman-yacht-riding.jpg" 
+                alt="Woman kitesurfing with yacht in background" 
                 className="rounded-lg shadow-xl w-full h-[400px] object-cover"
               />
             </div>
@@ -763,7 +765,7 @@ const KiteSafari: React.FC = () => {
               </Card>
             </div>
             <p className="text-center mt-6 text-muted-foreground">
-              ⚡️ Note: 10h is enough for first steps, but to become fully independent usually requires 20–25h.
+              Note: 10h is enough for start riding.
             </p>
           </section>
 
