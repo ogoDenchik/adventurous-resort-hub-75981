@@ -27,7 +27,10 @@ const ActivityCard: React.FC<ActivityProps> = ({ title, description, image, link
           src={image} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-          style={{ objectPosition: title === 'Brazil' ? '50% 35%' : title === 'Kite Safari' ? '50% 45%' : 'center' }}
+          style={{ 
+            objectPosition: title === 'Brazil' ? '60% 40%' : title === 'Kite Safari' ? '50% 50%' : 'center',
+            transform: title === 'Brazil' ? 'scale(1.4)' : title === 'Kite Safari' ? 'scale(1.3)' : 'scale(1)'
+          }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
       </div>
