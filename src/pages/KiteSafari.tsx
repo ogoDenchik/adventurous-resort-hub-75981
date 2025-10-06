@@ -9,9 +9,10 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock } from 'lucide-react';
+import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const KiteSafari: React.FC = () => {
   const { toast } = useToast();
@@ -286,83 +287,6 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
-          {/* Gallery Section */}
-          <section className="mb-20" id="gallery">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
-              📸 Our Yachts Gallery
-            </h2>
-            <Tabs defaultValue="nord" className="w-full">
-              <TabsList className="grid w-full max-w-md mx-auto grid-cols-2 mb-8">
-                <TabsTrigger value="nord">Premium Boat – Nord</TabsTrigger>
-                <TabsTrigger value="lyra">VIP Boat – Lyra</TabsTrigger>
-              </TabsList>
-              
-              <TabsContent value="nord" className="space-y-4">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <img 
-                    src="/lovable-uploads/nord-standard-cabin.jpg" 
-                    alt="Nord Standard Cabin" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/nord-master-suite.jpg" 
-                    alt="Nord Master Suite" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/nord-master-suite-2.jpg" 
-                    alt="Nord Master Suite Interior" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/nord-bathroom.jpg" 
-                    alt="Nord Bathroom" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/kite-safari-sunset-1.jpg" 
-                    alt="Nord at Sunset" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover md:col-span-2 lg:col-span-1"
-                  />
-                </div>
-              </TabsContent>
-              
-              <TabsContent value="lyra" className="space-y-4">
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  <img 
-                    src="/lovable-uploads/lyra-yacht-front.jpg" 
-                    alt="Lyra Yacht Exterior" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/lyra-standard-cabin.jpg" 
-                    alt="Lyra Standard Cabin" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/lyra-master-suite.jpg" 
-                    alt="Lyra Master Suite" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/lyra-bathroom.jpg" 
-                    alt="Lyra Bathroom" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/lyra-sunset.jpg" 
-                    alt="Lyra at Sunset" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover"
-                  />
-                  <img 
-                    src="/lovable-uploads/lyra-aerial.jpg" 
-                    alt="Lyra Aerial View" 
-                    className="rounded-lg shadow-lg w-full h-[250px] object-cover md:col-span-2 lg:col-span-1"
-                  />
-                </div>
-              </TabsContent>
-            </Tabs>
-          </section>
 
           {/* Training Options */}
           <section className="mb-20" id="training">
@@ -429,107 +353,260 @@ const KiteSafari: React.FC = () => {
 
           {/* Prices & Booking */}
           <section className="mb-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12" id="booking">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-8 justify-center">
               <Euro className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">💶 Prices & Bookings</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-center">💶 Prices & Bookings</h2>
             </div>
             
-            <div className="text-center mb-8">
+            <div className="text-center mb-12">
               <p className="text-xl font-semibold text-foreground">
-                Choose your option depending on your budget
+                Choose your yacht depending on your budget and preferences
               </p>
             </div>
 
-            <div className="grid lg:grid-cols-2 gap-8 mb-8">
-              {/* Premium Boat - Nord */}
-              <div className="border-2 border-primary/20 rounded-xl p-6 bg-background">
-                <div className="text-center mb-6">
-                  <h3 className="text-2xl font-bold mb-2">Premium Boat – Nord</h3>
-                  <p className="text-muted-foreground">Comfortable & Spacious</p>
-                </div>
-                <div className="space-y-3">
-                  <Card>
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-3 mb-2">
-                        <Bed className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <span className="font-semibold">Standard Cabin</span>
-                              <p className="text-sm text-muted-foreground">Twin beds, Lower Deck</p>
-                            </div>
-                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,150</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-sm text-muted-foreground">per person</p>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-3 mb-2">
-                        <Eye className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <span className="font-semibold">Master Suite</span>
-                              <p className="text-sm text-muted-foreground">King-size bed, sea view, Upper Deck</p>
-                            </div>
-                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,350</span>
-                          </div>
-                        </div>
-                      </div>
-                      <p className="text-sm text-muted-foreground">per person</p>
-                    </CardContent>
-                  </Card>
-                </div>
+            {/* Premium Boat - Nord */}
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <h3 className="text-3xl font-bold mb-2">Premium Boat – Nord</h3>
+                <p className="text-lg text-muted-foreground">Comfortable & Spacious</p>
               </div>
 
-              {/* VIP Boat - Lyra */}
-              <div className="border-2 border-primary rounded-xl p-6 bg-background shadow-lg">
-                <div className="text-center mb-6">
-                  <div className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full w-fit mx-auto mb-2">
-                    VIP EXPERIENCE
-                  </div>
-                  <h3 className="text-2xl font-bold mb-2">VIP Boat – Lyra</h3>
-                  <p className="text-muted-foreground">Luxury & Elegance</p>
-                </div>
-                <div className="space-y-3">
-                  <Card className="border-primary/50">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-3 mb-2">
-                        <Bed className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <span className="font-semibold">Standard Cabin</span>
-                              <p className="text-sm text-muted-foreground">Premium twin beds, Lower Deck</p>
-                            </div>
-                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,600</span>
+              {/* Nord Gallery Carousel */}
+              <div className="mb-8 max-w-4xl mx-auto">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-standard-cabin.jpg" 
+                        alt="Nord Standard Cabin" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-master-suite.jpg" 
+                        alt="Nord Master Suite" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-master-suite-2.jpg" 
+                        alt="Nord Master Suite Interior" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-bathroom.jpg" 
+                        alt="Nord Bathroom" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/kite-safari-sunset-1.jpg" 
+                        alt="Nord at Sunset" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+
+              {/* Nord Prices */}
+              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                <Card className="border-2 border-primary/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3 mb-2">
+                      <Bed className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <span className="font-semibold text-lg">Standard Cabin</span>
+                            <p className="text-sm text-muted-foreground">Twin beds, Lower Deck</p>
                           </div>
+                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,150</span>
                         </div>
                       </div>
-                      <p className="text-sm text-muted-foreground">per person</p>
-                    </CardContent>
-                  </Card>
-                  <Card className="border-primary">
-                    <CardContent className="p-6">
-                      <div className="flex items-start gap-3 mb-2">
-                        <Eye className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                        <div className="flex-1">
-                          <div className="flex justify-between items-start">
-                            <div>
-                              <span className="font-semibold">Master Suite</span>
-                              <p className="text-sm text-muted-foreground">Luxury king bed, panoramic view, Upper Deck</p>
-                            </div>
-                            <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,800</span>
+                    </div>
+                    <p className="text-sm text-muted-foreground">per person</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-2 border-primary/20">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3 mb-2">
+                      <Eye className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <span className="font-semibold text-lg">Master Suite</span>
+                            <p className="text-sm text-muted-foreground">King-size bed, sea view, Upper Deck</p>
                           </div>
+                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,350</span>
                         </div>
                       </div>
-                      <p className="text-sm text-muted-foreground">per person</p>
-                    </CardContent>
-                  </Card>
+                    </div>
+                    <p className="text-sm text-muted-foreground">per person</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* VIP Boat - Lyra */}
+            <div className="mb-16">
+              <div className="text-center mb-8">
+                <div className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full w-fit mx-auto mb-3">
+                  VIP EXPERIENCE
                 </div>
+                <h3 className="text-3xl font-bold mb-2">VIP Boat – Lyra</h3>
+                <p className="text-lg text-muted-foreground">Luxury & Elegance</p>
+              </div>
+
+              {/* Lyra Gallery Carousel */}
+              <div className="mb-8 max-w-4xl mx-auto">
+                <Carousel className="w-full">
+                  <CarouselContent>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-yacht-front.jpg" 
+                        alt="Lyra Yacht Exterior" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-standard-cabin.jpg" 
+                        alt="Lyra Standard Cabin" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-master-suite.jpg" 
+                        alt="Lyra Master Suite" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-bathroom.jpg" 
+                        alt="Lyra Bathroom" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-sunset.jpg" 
+                        alt="Lyra at Sunset" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-aerial.jpg" 
+                        alt="Lyra Aerial View" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                  </CarouselContent>
+                  <CarouselPrevious />
+                  <CarouselNext />
+                </Carousel>
+              </div>
+
+              {/* Lyra Prices */}
+              <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                <Card className="border-2 border-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3 mb-2">
+                      <Bed className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <span className="font-semibold text-lg">Standard Cabin</span>
+                            <p className="text-sm text-muted-foreground">Premium twin beds, Lower Deck</p>
+                          </div>
+                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,600</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">per person</p>
+                  </CardContent>
+                </Card>
+                <Card className="border-2 border-primary">
+                  <CardContent className="p-6">
+                    <div className="flex items-start gap-3 mb-2">
+                      <Eye className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
+                      <div className="flex-1">
+                        <div className="flex justify-between items-start">
+                          <div>
+                            <span className="font-semibold text-lg">Master Suite</span>
+                            <p className="text-sm text-muted-foreground">Luxury king bed, panoramic view, Upper Deck</p>
+                          </div>
+                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,800</span>
+                        </div>
+                      </div>
+                    </div>
+                    <p className="text-sm text-muted-foreground">per person</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+
+            {/* Yacht Comparison */}
+            <div className="mb-12 max-w-4xl mx-auto">
+              <h3 className="text-2xl font-bold mb-6 text-center">Yacht Comparison</h3>
+              <div className="grid md:grid-cols-2 gap-6">
+                <Card className="border-2 border-primary/20">
+                  <CardHeader>
+                    <CardTitle className="text-center">Premium Boat – Nord</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <Ruler className="w-6 h-6 text-primary" />
+                      <span className="text-lg">35 meters long</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Layers className="w-6 h-6 text-primary" />
+                      <span className="text-lg">3 decks</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Sun className="w-6 h-6 text-primary" />
+                      <span className="text-lg">Normal sundeck</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <XCircle className="w-6 h-6 text-muted-foreground" />
+                      <span className="text-lg text-muted-foreground">No Jacuzzi</span>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <Card className="border-2 border-primary">
+                  <CardHeader>
+                    <CardTitle className="text-center">VIP Boat – Lyra</CardTitle>
+                  </CardHeader>
+                  <CardContent className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <Ruler className="w-6 h-6 text-primary" />
+                      <span className="text-lg font-semibold">44 meters long</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Layers className="w-6 h-6 text-primary" />
+                      <span className="text-lg font-semibold">4 decks</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Sun className="w-6 h-6 text-primary" />
+                      <span className="text-lg font-semibold">Large sundeck for sunbathing</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Sparkles className="w-6 h-6 text-primary" />
+                      <span className="text-lg font-semibold">Jacuzzi included</span>
+                    </div>
+                  </CardContent>
+                </Card>
               </div>
             </div>
 
