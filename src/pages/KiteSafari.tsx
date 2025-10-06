@@ -21,6 +21,8 @@ const KiteSafari: React.FC = () => {
     lastName: '',
     email: '',
     phone: '',
+    telegram: '',
+    instagram: '',
     selectedDate: '',
     notes: ''
   });
@@ -36,6 +38,8 @@ const KiteSafari: React.FC = () => {
       lastName: '',
       email: '',
       phone: '',
+      telegram: '',
+      instagram: '',
       selectedDate: '',
       notes: ''
     });
@@ -290,7 +294,9 @@ const KiteSafari: React.FC = () => {
 
           {/* Prices & Booking */}
           <section className="mb-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12" id="booking">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8">💶 Prices & Bookings</h2>
+            <h2 className="text-2xl md:text-3xl font-display font-bold text-center mb-8">
+              <span className="inline">💶 Prices & Bookings</span>
+            </h2>
             
             <div className="text-center mb-12">
               <p className="text-xl font-semibold text-foreground">
@@ -389,29 +395,45 @@ const KiteSafari: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
                 <Card className="border-2 border-primary/20">
                   <CardContent className="p-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <Bed className="w-6 h-6 text-primary flex-shrink-0" />
-                        <div>
-                          <span className="font-semibold text-lg block mb-1">Standard Cabin</span>
-                          <p className="text-sm text-muted-foreground">Twin beds, Lower Deck</p>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3">
+                          <Bed className="w-6 h-6 text-primary flex-shrink-0" />
+                          <div>
+                            <span className="font-semibold text-lg block mb-1">Standard Cabin</span>
+                            <p className="text-sm text-muted-foreground">Twin beds, Lower Deck</p>
+                          </div>
                         </div>
+                        <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,150</span>
                       </div>
-                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,150</span>
+                      <Button 
+                        className="w-full" 
+                        onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Book now
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
                 <Card className="border-2 border-primary/20">
                   <CardContent className="p-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <Eye className="w-6 h-6 text-primary flex-shrink-0" />
-                        <div>
-                          <span className="font-semibold text-lg block mb-1">Master Suite</span>
-                          <p className="text-sm text-muted-foreground">King-size bed, sea view, Upper Deck</p>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3">
+                          <Eye className="w-6 h-6 text-primary flex-shrink-0" />
+                          <div>
+                            <span className="font-semibold text-lg block mb-1">Master Suite</span>
+                            <p className="text-sm text-muted-foreground">King-size bed, sea view, Upper Deck</p>
+                          </div>
                         </div>
+                        <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,350</span>
                       </div>
-                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,350</span>
+                      <Button 
+                        className="w-full"
+                        onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Book now
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -512,29 +534,45 @@ const KiteSafari: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
                 <Card className="border-2 border-primary">
                   <CardContent className="p-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <Bed className="w-6 h-6 text-primary flex-shrink-0" />
-                        <div>
-                          <span className="font-semibold text-lg block mb-1">Standard Cabin</span>
-                          <p className="text-sm text-muted-foreground">Premium twin beds, Lower Deck</p>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3">
+                          <Bed className="w-6 h-6 text-primary flex-shrink-0" />
+                          <div>
+                            <span className="font-semibold text-lg block mb-1">Standard Cabin</span>
+                            <p className="text-sm text-muted-foreground">Premium twin beds, Lower Deck</p>
+                          </div>
                         </div>
+                        <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,600</span>
                       </div>
-                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,600</span>
+                      <Button 
+                        className="w-full"
+                        onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Book now
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
                 <Card className="border-2 border-primary">
                   <CardContent className="p-6">
-                    <div className="flex items-center justify-between gap-4">
-                      <div className="flex items-center gap-3">
-                        <Eye className="w-6 h-6 text-primary flex-shrink-0" />
-                        <div>
-                          <span className="font-semibold text-lg block mb-1">Master Suite</span>
-                          <p className="text-sm text-muted-foreground">Luxury king bed, panoramic view, Upper Deck</p>
+                    <div className="flex flex-col gap-4">
+                      <div className="flex items-center justify-between gap-4">
+                        <div className="flex items-center gap-3">
+                          <Eye className="w-6 h-6 text-primary flex-shrink-0" />
+                          <div>
+                            <span className="font-semibold text-lg block mb-1">Master Suite</span>
+                            <p className="text-sm text-muted-foreground">Luxury king bed, panoramic view, Upper Deck</p>
+                          </div>
                         </div>
+                        <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,800</span>
                       </div>
-                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,800</span>
+                      <Button 
+                        className="w-full"
+                        onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                      >
+                        Book now
+                      </Button>
                     </div>
                   </CardContent>
                 </Card>
@@ -730,7 +768,7 @@ const KiteSafari: React.FC = () => {
           </section>
 
           {/* Contact Form */}
-          <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12">
+          <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12" id="booking-form">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
               Book Your KiteSafari
             </h2>
@@ -757,18 +795,7 @@ const KiteSafari: React.FC = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input 
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number</Label>
+                <Label htmlFor="phone">Phone Number *</Label>
                 <Input 
                   id="phone"
                   type="tel"
@@ -776,6 +803,37 @@ const KiteSafari: React.FC = () => {
                   onChange={(e) => setFormData({...formData, phone: e.target.value})}
                   required
                 />
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="email">Email</Label>
+                <Input 
+                  id="email"
+                  type="email"
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                />
+              </div>
+
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <Label htmlFor="telegram">Telegram (optional)</Label>
+                  <Input 
+                    id="telegram"
+                    value={formData.telegram}
+                    onChange={(e) => setFormData({...formData, telegram: e.target.value})}
+                    placeholder="@username"
+                  />
+                </div>
+                <div className="space-y-2">
+                  <Label htmlFor="instagram">Instagram (optional)</Label>
+                  <Input 
+                    id="instagram"
+                    value={formData.instagram}
+                    onChange={(e) => setFormData({...formData, instagram: e.target.value})}
+                    placeholder="@username"
+                  />
+                </div>
               </div>
 
               <div className="space-y-2">
@@ -939,8 +997,11 @@ const KiteSafari: React.FC = () => {
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-12">
-                <Button size="lg" asChild>
-                  <a href="/booking">Book Your KiteSafari Now</a>
+                <Button 
+                  size="lg"
+                  onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                >
+                  Book Your KiteSafari Now
                 </Button>
               </div>
             </div>
