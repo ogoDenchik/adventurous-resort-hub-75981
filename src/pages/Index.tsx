@@ -7,6 +7,7 @@ import Hero from '@/components/Hero';
 import FeaturedActivities from '@/components/FeaturedActivities';
 import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
+import DiscountOffers from '@/components/DiscountOffers';
 import { BookingPopup } from '@/components/BookingPopup';
 
 import { ArrowRight, Globe, Users, GraduationCap, Phone } from 'lucide-react';
@@ -114,8 +115,8 @@ const Index: React.FC = () => {
         {/* Gallery Section */}
         <HomeGallery />
         
-        {/* Our Programs */}
-        <FeaturedActivities />
+        {/* Hot Offers */}
+        <DiscountOffers />
         
         {/* Testimonials */}
         <section className="section-padding container">

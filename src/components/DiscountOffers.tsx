@@ -164,10 +164,10 @@ const DiscountOffers: React.FC = () => {
             Limited Time
           </span>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            Exclusive Discount Offers
+            Hot Offers
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Take advantage of our exclusive deals and save on your next adventure in Dandeli.
+            Don't miss out on our exclusive deals — book your next kitesurfing adventure at the best price.
           </p>
         </motion.div>
         
