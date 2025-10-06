@@ -147,14 +147,14 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
-          {/* Kitesurfing Schedule */}
+          {/* KiteSafari Schedule */}
           <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12">
             <div className="flex items-center gap-3 mb-8 justify-center">
               <Wind className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-center">Kitesurfing Schedule</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-center">KiteSafari Schedule</h2>
             </div>
             <p className="text-center text-xl text-muted-foreground mb-12">
-              Is Our Schedule?
+              What is Our Plan?
             </p>
             
             <div className="space-y-8">
@@ -434,22 +434,64 @@ const KiteSafari: React.FC = () => {
                   <CarouselContent>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/lyra-yacht-front.jpg" 
-                        alt="Lyra Yacht Exterior" 
+                        src="/lovable-uploads/lyra-yacht-sunset.jpg" 
+                        alt="Lyra Yacht at Sunset" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/lyra-standard-cabin.jpg" 
-                        alt="Lyra Standard Cabin" 
+                        src="/lovable-uploads/lyra-master-cabin-1.jpg" 
+                        alt="Lyra Master Cabin" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/lyra-master-suite.jpg" 
-                        alt="Lyra Master Suite" 
+                        src="/lovable-uploads/lyra-master-cabin-2.jpg" 
+                        alt="Lyra Master Cabin with Sea View" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-double-cabin.jpg" 
+                        alt="Lyra Double Cabin" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-twin-cabin.jpg" 
+                        alt="Lyra Twin Cabin" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-lounge.jpg" 
+                        alt="Lyra Lounge Area" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-master-suite-windows.jpg" 
+                        alt="Lyra Master Suite with Windows" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-food.jpg" 
+                        alt="Lyra Dining Experience" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/lyra-jacuzzi.jpg" 
+                        alt="Lyra Jacuzzi on Deck" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
@@ -457,20 +499,6 @@ const KiteSafari: React.FC = () => {
                       <img 
                         src="/lovable-uploads/lyra-bathroom.jpg" 
                         alt="Lyra Bathroom" 
-                        className="rounded-lg w-full h-[400px] object-cover"
-                      />
-                    </CarouselItem>
-                    <CarouselItem>
-                      <img 
-                        src="/lovable-uploads/lyra-sunset.jpg" 
-                        alt="Lyra at Sunset" 
-                        className="rounded-lg w-full h-[400px] object-cover"
-                      />
-                    </CarouselItem>
-                    <CarouselItem>
-                      <img 
-                        src="/lovable-uploads/lyra-aerial.jpg" 
-                        alt="Lyra Aerial View" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
@@ -642,7 +670,7 @@ const KiteSafari: React.FC = () => {
           <section className="mb-20" id="training">
             <div className="flex items-center gap-3 mb-8">
               <GraduationCap className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">🪁 Training Options</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold">Training Options</h2>
             </div>
             <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <Card className="border-2 hover:border-primary transition-colors">
