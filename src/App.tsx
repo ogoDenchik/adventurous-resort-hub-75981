@@ -16,7 +16,7 @@ import Contact from "./pages/Contact";
 import KiteSafari from "./pages/KiteSafari";
 import Brazil from "./pages/Brazil";
 import Cyprus from "./pages/Cyprus";
-import ChatBot from "./components/ChatBot";
+import TelegramButton from "./components/TelegramButton";
 import WhatsAppButton from "./components/WhatsAppButton";
 
 // Create a new query client instance
@@ -43,7 +43,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <ChatBot />
+          <TelegramButton />
           <WhatsAppButton />
         </BrowserRouter>
       </TooltipProvider>

@@ -9,35 +9,30 @@ import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
 import { BookingPopup } from '@/components/BookingPopup';
 
-import { ArrowRight, Globe, Users, GraduationCap, Phone } from 'lucide-react';
+import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
 import { AdPopup } from '@/components/AdPopup';
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const [showInstructions, setShowInstructions] = useState(false);
 
   return <div className="min-h-screen flex flex-col">
       <Navbar />
-      <AdPopup onBookNow={() => setIsBookingOpen(true)} />
+      <AdPopup 
+        onBookNow={() => setIsBookingOpen(true)} 
+        onShowInstructions={() => setShowInstructions(true)}
+        showInstructions={showInstructions}
+        onCloseInstructions={() => setShowInstructions(false)}
+      />
       <BookingPopup open={isBookingOpen} onOpenChange={setIsBookingOpen} />
       
       <main className="flex-grow">
         <Hero />
         
-        {/* Call Now Button - repositioned above chatbot with more space */}
-        <div className="fixed bottom-32 right-4 z-40 md:bottom-24">
-          <a 
-            href="tel:+918277385225" 
-            className="flex items-center gap-2 bg-green-600 text-white px-4 py-3 rounded-full shadow-lg hover:bg-green-700 transition-all duration-300 hover:scale-110 animate-bounce"
-          >
-            <Phone size={20} />
-            <span className="font-medium">Call Now</span>
-          </a>
-        </div>
-        
         {/* Special Promotion Banner */}
-        <div className="bg-green-700 text-white py-3 px-4 text-center shadow-md">
+        <div className="bg-green-700 text-white py-3 px-4 text-center shadow-md cursor-pointer hover:bg-green-800 transition-colors" onClick={() => setShowInstructions(true)}>
           <div className="container mx-auto">
-            <p className="text-xl font-bold">Book now just at ₹1499! <Link to="/booking" className="underline ml-2 hover:text-yellow-200 transition-colors">Limited time offer</Link></p>
+            <p className="text-xl font-bold">30% discount for Brazil travel! <span className="underline ml-2 hover:text-yellow-200 transition-colors">Limited time offer</span></p>
           </div>
         </div>
         

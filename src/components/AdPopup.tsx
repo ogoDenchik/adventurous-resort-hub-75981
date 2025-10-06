@@ -13,11 +13,13 @@ import { useIsMobile } from '@/hooks/use-mobile';
 
 interface AdPopupProps {
   onBookNow: () => void;
+  onShowInstructions: () => void;
+  showInstructions: boolean;
+  onCloseInstructions: () => void;
 }
 
-export function AdPopup({ onBookNow }: AdPopupProps) {
+export function AdPopup({ onBookNow, onShowInstructions, showInstructions, onCloseInstructions }: AdPopupProps) {
   const [isOpen, setIsOpen] = useState(false);
-  const [showInstructions, setShowInstructions] = useState(false);
   const isMobile = useIsMobile();
 
   useEffect(() => {
@@ -29,7 +31,8 @@ export function AdPopup({ onBookNow }: AdPopupProps) {
   }, []);
 
   const handleBookNow = () => {
-    setShowInstructions(true);
+    setIsOpen(false);
+    onShowInstructions();
   };
 
   const handleWhatsAppClick = () => {
@@ -44,7 +47,7 @@ export function AdPopup({ onBookNow }: AdPopupProps) {
   return (
     <>
       {/* First Popup - Discount Offer */}
-      <Dialog open={isOpen && !showInstructions} onOpenChange={setIsOpen}>
+      <Dialog open={isOpen} onOpenChange={setIsOpen}>
         <DialogContent className={`sm:max-w-md p-0 overflow-hidden ${isMobile ? 'w-[90%] max-h-[80vh]' : ''}`}>
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -114,7 +117,11 @@ export function AdPopup({ onBookNow }: AdPopupProps) {
       </Dialog>
 
       {/* Second Popup - Booking Instructions */}
-      <Dialog open={showInstructions} onOpenChange={setShowInstructions}>
+      <Dialog open={showInstructions} onOpenChange={(open) => {
+        if (!open) {
+          onCloseInstructions();
+        }
+      }}>
         <DialogContent className={`sm:max-w-md p-0 overflow-hidden ${isMobile ? 'w-[90%] max-h-[80vh]' : ''}`}>
           <motion.div
             initial={{ scale: 0.9, opacity: 0 }}
@@ -128,7 +135,7 @@ export function AdPopup({ onBookNow }: AdPopupProps) {
                 className={`w-full object-cover ${isMobile ? 'h-36' : 'h-48'}`}
               />
               <button 
-                onClick={() => setShowInstructions(false)}
+                onClick={onCloseInstructions}
                 className="absolute top-2 right-2 rounded-full bg-black/50 p-1 text-white hover:bg-black/70 transition-colors"
               >
                 <X className="h-4 w-4" />
