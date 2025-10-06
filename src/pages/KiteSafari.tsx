@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler, Anchor, PartyPopper } from 'lucide-react';
+import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler, Anchor, PartyPopper, Wine } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -288,75 +288,9 @@ const KiteSafari: React.FC = () => {
           </section>
 
 
-          {/* Training Options */}
-          <section className="mb-20" id="training">
-            <div className="flex items-center gap-3 mb-8">
-              <GraduationCap className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">🪁 Training Options</h2>
-            </div>
-            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <CardTitle className="text-2xl">IKO Level 1 Instructor</CardTitle>
-                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
-                    <Euro className="w-6 h-6" />600/week
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Equipment + Lessons with Certified Instructor IKO Level 1, 10h course
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 border-primary shadow-lg">
-                <CardHeader>
-                  <div className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full w-fit mb-2">
-                    RECOMMENDED
-                  </div>
-                  <CardTitle className="text-2xl">IKO Level 3 Instructor</CardTitle>
-                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
-                    <Euro className="w-6 h-6" />800/week
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Equipment + Lessons with Certified Instructor IKO Level 3, 10h course
-                  </p>
-                  <p className="text-sm font-medium mt-2">
-                    Perfect if you want guaranteed progress – we teach using BbTalkin radio helmets.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-2 hover:border-primary transition-colors">
-                <CardHeader>
-                  <CardTitle className="text-2xl">Progress Lesson</CardTitle>
-                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
-                    <Clock className="w-6 h-6" />€120/hour
-                  </CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">
-                    Single lesson with Certified Instructor IKO Level 3
-                  </p>
-                  <p className="text-sm font-medium mt-2">
-                    Focus on specific skills, then practice independently.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-            <p className="text-center mt-6 text-muted-foreground">
-              ⚡️ Note: 10h is enough for first steps, but to become fully independent usually requires 20–25h.
-            </p>
-          </section>
-
           {/* Prices & Booking */}
           <section className="mb-20 bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8 md:p-12" id="booking">
-            <div className="flex items-center gap-3 mb-8 justify-center">
-              <Euro className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-center">💶 Prices & Bookings</h2>
-            </div>
+            <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8">💶 Prices & Bookings</h2>
             
             <div className="text-center mb-12">
               <p className="text-xl font-semibold text-foreground">
@@ -420,36 +354,30 @@ const KiteSafari: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
                 <Card className="border-2 border-primary/20">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-3 mb-2">
-                      <Bed className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <div className="flex-1">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <span className="font-semibold text-lg">Standard Cabin</span>
-                            <p className="text-sm text-muted-foreground">Twin beds, Lower Deck</p>
-                          </div>
-                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,150</span>
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <Bed className="w-6 h-6 text-primary flex-shrink-0" />
+                        <div>
+                          <span className="font-semibold text-lg block mb-1">Standard Cabin</span>
+                          <p className="text-sm text-muted-foreground">Twin beds, Lower Deck</p>
                         </div>
                       </div>
+                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,150</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">per person</p>
                   </CardContent>
                 </Card>
                 <Card className="border-2 border-primary/20">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-3 mb-2">
-                      <Eye className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <div className="flex-1">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <span className="font-semibold text-lg">Master Suite</span>
-                            <p className="text-sm text-muted-foreground">King-size bed, sea view, Upper Deck</p>
-                          </div>
-                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,350</span>
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <Eye className="w-6 h-6 text-primary flex-shrink-0" />
+                        <div>
+                          <span className="font-semibold text-lg block mb-1">Master Suite</span>
+                          <p className="text-sm text-muted-foreground">King-size bed, sea view, Upper Deck</p>
                         </div>
                       </div>
+                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,350</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">per person</p>
                   </CardContent>
                 </Card>
               </div>
@@ -521,36 +449,30 @@ const KiteSafari: React.FC = () => {
               <div className="grid md:grid-cols-2 gap-4 max-w-4xl mx-auto">
                 <Card className="border-2 border-primary">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-3 mb-2">
-                      <Bed className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <div className="flex-1">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <span className="font-semibold text-lg">Standard Cabin</span>
-                            <p className="text-sm text-muted-foreground">Premium twin beds, Lower Deck</p>
-                          </div>
-                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,600</span>
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <Bed className="w-6 h-6 text-primary flex-shrink-0" />
+                        <div>
+                          <span className="font-semibold text-lg block mb-1">Standard Cabin</span>
+                          <p className="text-sm text-muted-foreground">Premium twin beds, Lower Deck</p>
                         </div>
                       </div>
+                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,600</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">per person</p>
                   </CardContent>
                 </Card>
                 <Card className="border-2 border-primary">
                   <CardContent className="p-6">
-                    <div className="flex items-start gap-3 mb-2">
-                      <Eye className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                      <div className="flex-1">
-                        <div className="flex justify-between items-start">
-                          <div>
-                            <span className="font-semibold text-lg">Master Suite</span>
-                            <p className="text-sm text-muted-foreground">Luxury king bed, panoramic view, Upper Deck</p>
-                          </div>
-                          <span className="text-2xl font-bold text-primary whitespace-nowrap ml-4">€1,800</span>
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex items-center gap-3">
+                        <Eye className="w-6 h-6 text-primary flex-shrink-0" />
+                        <div>
+                          <span className="font-semibold text-lg block mb-1">Master Suite</span>
+                          <p className="text-sm text-muted-foreground">Luxury king bed, panoramic view, Upper Deck</p>
                         </div>
                       </div>
+                      <span className="text-2xl font-bold text-primary whitespace-nowrap">€1,800</span>
                     </div>
-                    <p className="text-sm text-muted-foreground">per person</p>
                   </CardContent>
                 </Card>
               </div>
@@ -586,8 +508,8 @@ const KiteSafari: React.FC = () => {
                       <span className="text-lg">Normal party place</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-primary" />
-                      <span className="text-lg">Fast bar</span>
+                      <Wine className="w-6 h-6 text-primary" />
+                      <span className="text-lg">Bar</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Anchor className="w-6 h-6 text-primary" />
@@ -622,7 +544,7 @@ const KiteSafari: React.FC = () => {
                       <span className="text-lg font-semibold">Huge party place</span>
                     </div>
                     <div className="flex items-center gap-3">
-                      <CheckCircle className="w-6 h-6 text-primary" />
+                      <Wine className="w-6 h-6 text-primary" />
                       <span className="text-lg font-semibold">Two bars</span>
                     </div>
                     <div className="flex items-center gap-3">
@@ -674,11 +596,74 @@ const KiteSafari: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                    <span>Equipment rental / lessons (optional packages above)</span>
+                    <span>Equipment rental / lessons (optional packages below)</span>
                   </li>
                 </ul>
               </div>
             </div>
+          </section>
+
+          {/* Training Options */}
+          <section className="mb-20" id="training">
+            <div className="flex items-center gap-3 mb-8">
+              <GraduationCap className="w-8 h-8 text-primary" />
+              <h2 className="text-3xl md:text-4xl font-display font-bold">🪁 Training Options</h2>
+            </div>
+            <div className="grid md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <CardTitle className="text-2xl">IKO Level 1 Instructor</CardTitle>
+                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
+                    <Euro className="w-6 h-6" />600/week
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Equipment + Lessons with Certified Instructor IKO Level 1, 10h course
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 border-primary shadow-lg">
+                <CardHeader>
+                  <div className="bg-primary text-primary-foreground text-sm font-bold px-3 py-1 rounded-full w-fit mb-2">
+                    RECOMMENDED
+                  </div>
+                  <CardTitle className="text-2xl">IKO Level 3 Instructor</CardTitle>
+                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
+                    <Euro className="w-6 h-6" />800/week
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Equipment + Lessons with Certified Instructor IKO Level 3, 10h course
+                  </p>
+                  <p className="text-sm font-medium mt-2">
+                    Perfect if you want guaranteed progress – we teach using BbTalkin radio helmets.
+                  </p>
+                </CardContent>
+              </Card>
+
+              <Card className="border-2 hover:border-primary transition-colors">
+                <CardHeader>
+                  <CardTitle className="text-2xl">Progress Lesson</CardTitle>
+                  <CardDescription className="text-3xl font-bold text-primary flex items-center gap-2">
+                    <Clock className="w-6 h-6" />€120/hour
+                  </CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground">
+                    Single lesson with Certified Instructor IKO Level 3
+                  </p>
+                  <p className="text-sm font-medium mt-2">
+                    Focus on specific skills, then practice independently.
+                  </p>
+                </CardContent>
+              </Card>
+            </div>
+            <p className="text-center mt-6 text-muted-foreground">
+              ⚡️ Note: 10h is enough for first steps, but to become fully independent usually requires 20–25h.
+            </p>
           </section>
 
           {/* Contact Form */}
