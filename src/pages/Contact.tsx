@@ -20,8 +20,7 @@ const ContactPage = () => {
     
     const formData = new FormData(e.currentTarget);
     const data = {
-      firstName: formData.get('firstName') as string,
-      lastName: formData.get('lastName') as string,
+      name: formData.get('name') as string,
       phone: formData.get('phone') as string,
       email: formData.get('email') as string,
       telegram: formData.get('telegram') as string,
@@ -37,7 +36,7 @@ const ContactPage = () => {
 
       toast({
         title: "Message Sent Successfully!",
-        description: "We'll get back to you soon. Check your email for confirmation.",
+        description: "Thanks! We'll reply within 24h on WhatsApp or Telegram.",
       });
       
       (e.target as HTMLFormElement).reset();
@@ -59,12 +58,13 @@ const ContactPage = () => {
       
       <main className="flex-grow pt-24">
         {/* Header Section */}
-        <section className="bg-gradient-to-br from-primary via-accent to-primary/90 text-primary-foreground py-20">
-          <div className="container mx-auto px-4 text-center">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 animate-fade-in">
+        <section className="relative bg-gradient-to-br from-primary via-accent to-primary/90 text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-black/35"></div>
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 animate-fade-in text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               Get in Touch with OGO Kite Academy
             </h1>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto animate-slide-up opacity-90">
+            <p className="text-lg md:text-xl max-w-3xl mx-auto animate-slide-up text-white/95" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               We are here to answer your questions and help you join our next kitesurfing adventure.
             </p>
           </div>
@@ -75,9 +75,10 @@ const ContactPage = () => {
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               <a
-                href="https://t.me/ogdenchik"
+                href="https://t.me/ogodenchik"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Message us on Telegram"
                 className="group bg-card hover:bg-accent/10 border-2 border-border hover:border-primary rounded-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex justify-center mb-4">
@@ -93,6 +94,7 @@ const ContactPage = () => {
                 href="https://wa.me/48884035225"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Chat on WhatsApp"
                 className="group bg-card hover:bg-accent/10 border-2 border-border hover:border-primary rounded-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex justify-center mb-4">
@@ -108,6 +110,7 @@ const ContactPage = () => {
                 href="https://www.instagram.com/ogo_kite_academy/"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="DM us on Instagram"
                 className="group bg-card hover:bg-accent/10 border-2 border-border hover:border-primary rounded-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
               >
                 <div className="flex justify-center mb-4">
@@ -130,28 +133,15 @@ const ContactPage = () => {
                 <h2 className="text-3xl font-display font-bold mb-8 text-center">Send Us a Message</h2>
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="space-y-2">
-                      <Label htmlFor="firstName">First Name *</Label>
-                      <Input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        required
-                        placeholder="John"
-                      />
-                    </div>
-                    
-                    <div className="space-y-2">
-                      <Label htmlFor="lastName">Last Name *</Label>
-                      <Input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        required
-                        placeholder="Doe"
-                      />
-                    </div>
+                  <div className="space-y-2">
+                    <Label htmlFor="name">Name *</Label>
+                    <Input
+                      type="text"
+                      id="name"
+                      name="name"
+                      required
+                      placeholder="Your full name"
+                    />
                   </div>
                   
                   <div className="space-y-2">
@@ -199,8 +189,9 @@ const ContactPage = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground sticky bottom-4 md:static"
                     size="lg"
+                    aria-label="Send message"
                   >
                     {isSubmitting ? (
                       <>Sending...</>
@@ -218,21 +209,23 @@ const ContactPage = () => {
         </section>
 
         {/* Closing CTA */}
-        <section className="py-20 bg-gradient-to-br from-primary via-accent to-primary/90 text-primary-foreground">
-          <div className="container mx-auto px-4 text-center">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-8">
+        <section className="relative py-20 bg-gradient-to-br from-primary via-accent to-primary/90 text-white overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-black/35"></div>
+          <div className="container mx-auto px-4 text-center relative z-10">
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-8 text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
               Join the OGO Family — Your Next Adventure Starts Here.
             </h2>
             
-            <div className="bg-card/10 backdrop-blur-sm border border-primary-foreground/20 rounded-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-semibold mb-4">Not sure where to go?</h3>
-              <p className="text-lg mb-6 opacity-90">
+            <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-8 max-w-2xl mx-auto">
+              <h3 className="text-2xl font-semibold mb-4 text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>Not sure where to go?</h3>
+              <p className="text-lg mb-6 text-white/95" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
                 Explore our destinations and find the trip that inspires you most.
               </p>
               <Link to="/#programs">
                 <Button 
                   size="lg"
-                  className="bg-background text-foreground hover:bg-background/90 font-semibold px-8 py-6 text-lg"
+                  className="bg-white text-foreground hover:bg-white/90 font-semibold px-8 py-6 text-lg"
+                  aria-label="Explore destinations"
                 >
                   Explore Destinations
                 </Button>

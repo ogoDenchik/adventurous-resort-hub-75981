@@ -9,8 +9,7 @@ const corsHeaders = {
 };
 
 interface ContactFormData {
-  firstName: string;
-  lastName: string;
+  name: string;
   phone: string;
   email: string;
   telegram?: string;
@@ -37,11 +36,11 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         from: "OGO Kite Academy <onboarding@resend.dev>",
         to: ["ogdenchik@gmail.com"],
-        subject: `New Contact Form Submission from ${formData.firstName} ${formData.lastName}`,
+        subject: `New Contact Form Submission from ${formData.name}`,
         html: `
           <h1>New Contact Form Submission</h1>
           <h2>Contact Details:</h2>
-          <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+          <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>Phone:</strong> ${formData.phone}</p>
           ${formData.telegram ? `<p><strong>Telegram:</strong> @${formData.telegram}</p>` : ''}
@@ -67,11 +66,10 @@ const handler = async (req: Request): Promise<Response> => {
         to: [formData.email],
         subject: "Thank you for contacting OGO Kite Academy!",
         html: `
-          <h1>Thank you for reaching out, ${formData.firstName}!</h1>
-          <p>We've received your message and will get back to you as soon as possible.</p>
-          <p>Our team typically responds within 24 hours.</p>
+          <h1>Thank you for reaching out, ${formData.name}!</h1>
+          <p>We've received your message and will get back to you within 24 hours on WhatsApp or Telegram.</p>
           <h2>Your Contact Information:</h2>
-          <p><strong>Name:</strong> ${formData.firstName} ${formData.lastName}</p>
+          <p><strong>Name:</strong> ${formData.name}</p>
           <p><strong>Email:</strong> ${formData.email}</p>
           <p><strong>Phone:</strong> ${formData.phone}</p>
           ${formData.telegram ? `<p><strong>Telegram:</strong> @${formData.telegram}</p>` : ''}
@@ -82,7 +80,7 @@ const handler = async (req: Request): Promise<Response> => {
           <hr>
           <p>In the meantime, feel free to connect with us on:</p>
           <p>
-            • <a href="https://t.me/ogdenchik">Telegram</a><br>
+            • <a href="https://t.me/ogodenchik">Telegram</a><br>
             • <a href="https://wa.me/48884035225">WhatsApp</a><br>
             • <a href="https://www.instagram.com/ogo_kite_academy/">Instagram</a>
           </p>
