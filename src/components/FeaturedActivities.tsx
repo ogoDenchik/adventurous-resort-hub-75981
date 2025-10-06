@@ -28,8 +28,8 @@ const ActivityCard: React.FC<ActivityProps> = ({ title, description, image, link
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           style={{ 
-            objectPosition: title === 'Brazil' ? '60% 40%' : title === 'Kite Safari' ? '50% 50%' : 'center',
-            transform: title === 'Brazil' ? 'scale(1.4)' : title === 'Kite Safari' ? 'scale(1.3)' : 'scale(1)'
+            objectPosition: title === 'Brazil' ? '50% 30%' : title === 'Kite Safari' ? '50% 50%' : 'center',
+            transform: title === 'Kite Safari' ? 'scale(1.3)' : 'scale(1)'
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
@@ -55,7 +55,7 @@ const FeaturedActivities: React.FC = () => {
       id: 1,
       title: "Brazil",
       description: "Experience the ultimate kitesurfing paradise with perfect winds, endless lagoons, and vibrant Brazilian culture.",
-      image: "/lovable-uploads/kite-safari-yacht-action-new.jpg",
+      image: "/lovable-uploads/brazil-rider-sunset.jpg",
       link: "/brazil"
     },
     {
