@@ -53,6 +53,66 @@ const galleryImages = [
     id: 8,
     src: "/lovable-uploads/cyprus-instructor-teaching.jpg",
     alt: "Professional kite instruction"
+  },
+  {
+    id: 9,
+    src: "/lovable-uploads/brazil-sunset-team.jpg",
+    alt: "Team at sunset in Brazil"
+  },
+  {
+    id: 10,
+    src: "/lovable-uploads/kite-safari-action-1.jpg",
+    alt: "Kite Safari action"
+  },
+  {
+    id: 11,
+    src: "/lovable-uploads/cyprus-beach-lesson.jpg",
+    alt: "Beach lesson in Cyprus"
+  },
+  {
+    id: 12,
+    src: "/lovable-uploads/brazil-lagoon-girl.jpg",
+    alt: "Kitesurfing at Brazilian lagoon"
+  },
+  {
+    id: 13,
+    src: "/lovable-uploads/safari-tandem-action.jpg",
+    alt: "Tandem kitesurfing"
+  },
+  {
+    id: 14,
+    src: "/lovable-uploads/gallery-action-yacht.jpg",
+    alt: "Kitesurfing from yacht"
+  },
+  {
+    id: 15,
+    src: "/lovable-uploads/brazil-kite-trick.jpg",
+    alt: "Kite trick in Brazil"
+  },
+  {
+    id: 16,
+    src: "/lovable-uploads/cyprus-riding-action.jpg",
+    alt: "Action riding in Cyprus"
+  },
+  {
+    id: 17,
+    src: "/lovable-uploads/kite-safari-sunset-1.jpg",
+    alt: "Safari sunset session"
+  },
+  {
+    id: 18,
+    src: "/lovable-uploads/about-kitesurfing-discovery.jpg",
+    alt: "Discovering kitesurfing"
+  },
+  {
+    id: 19,
+    src: "/lovable-uploads/gallery-group-sunset-kites.jpg",
+    alt: "Group session at sunset"
+  },
+  {
+    id: 20,
+    src: "/lovable-uploads/brazil-dunes-team.jpg",
+    alt: "Team at Brazilian dunes"
   }
 ];
 
@@ -114,11 +174,18 @@ const HomeGallery: React.FC = () => {
         </animated.div>
         
         <ScrollAnimationWrapper animation="animate-fade-in opacity-100" delay={200}>
-          <div className="relative mx-auto max-w-5xl px-8">
-            <Carousel className="w-full" setApi={setApi}>
-              <CarouselContent>
+          <div className="relative mx-auto max-w-6xl px-12">
+            <Carousel 
+              className="w-full" 
+              setApi={setApi}
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
+              <CarouselContent className="-ml-2 md:-ml-4">
                 {galleryImages.map((image, index) => (
-                  <CarouselItem key={image.id} className="md:basis-1/2 lg:basis-1/3">
+                  <CarouselItem key={image.id} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
                     <TiltCard 
                       perspective={1200} 
                       tiltFactor={20} 
@@ -143,8 +210,8 @@ const HomeGallery: React.FC = () => {
                   </CarouselItem>
                 ))}
               </CarouselContent>
-              <CarouselPrevious className="left-0 bg-white/80 backdrop-blur-sm hover:bg-white" />
-              <CarouselNext className="right-0 bg-white/80 backdrop-blur-sm hover:bg-white" />
+              <CarouselPrevious className="-left-4 bg-background/80 backdrop-blur-sm hover:bg-background border-border" />
+              <CarouselNext className="-right-4 bg-background/80 backdrop-blur-sm hover:bg-background border-border" />
             </Carousel>
           </div>
         </ScrollAnimationWrapper>

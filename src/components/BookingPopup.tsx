@@ -137,7 +137,7 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
 
           <Button
             type="submit"
-            className="w-full"
+            className="w-full bg-green-700 hover:bg-green-800 text-white"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Sending...' : 'Send Inquiry'}
