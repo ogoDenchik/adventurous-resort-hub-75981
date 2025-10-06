@@ -311,36 +311,71 @@ const KiteSafari: React.FC = () => {
                   <CarouselContent>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/nord-standard-cabin.jpg" 
-                        alt="Nord Standard Cabin" 
+                        src="/lovable-uploads/nord-yacht-sailing.jpg" 
+                        alt="Nord Yacht Sailing" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/nord-master-suite.jpg" 
-                        alt="Nord Master Suite" 
+                        src="/lovable-uploads/nord-deck-plan.jpg" 
+                        alt="Nord Deck Plan" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/nord-master-suite-2.jpg" 
-                        alt="Nord Master Suite Interior" 
+                        src="/lovable-uploads/nord-cabin-twin-1.jpg" 
+                        alt="Nord Twin Cabin" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/nord-bathroom.jpg" 
-                        alt="Nord Bathroom" 
+                        src="/lovable-uploads/nord-cabin-triple.jpg" 
+                        alt="Nord Triple Cabin" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
                     <CarouselItem>
                       <img 
-                        src="/lovable-uploads/kite-safari-sunset-1.jpg" 
-                        alt="Nord at Sunset" 
+                        src="/lovable-uploads/nord-cabin-twin-2.jpg" 
+                        alt="Nord Twin Cabin with Window" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-cabin-double.jpg" 
+                        alt="Nord Double Cabin" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-master-suite-view.jpg" 
+                        alt="Nord Master Suite with Sea View" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-master-suite-luxury.jpg" 
+                        alt="Nord Luxury Master Suite" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-shower.jpg" 
+                        alt="Nord Shower" 
+                        className="rounded-lg w-full h-[400px] object-cover"
+                      />
+                    </CarouselItem>
+                    <CarouselItem>
+                      <img 
+                        src="/lovable-uploads/nord-toilet.jpg" 
+                        alt="Nord Toilet" 
                         className="rounded-lg w-full h-[400px] object-cover"
                       />
                     </CarouselItem>
