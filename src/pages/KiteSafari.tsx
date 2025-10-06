@@ -146,73 +146,170 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
-          {/* Kitesurfing Program */}
+          {/* Kitesurfing Schedule */}
           <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12">
-            <div className="flex items-center gap-3 mb-8">
+            <div className="flex items-center gap-3 mb-8 justify-center">
               <Wind className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold">Kitesurfing Program</h2>
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-center">Kitesurfing Schedule</h2>
             </div>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              <Card>
-                <CardHeader>
-                  <CardTitle>Wind Guaranteed</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">15–25 knots almost daily</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>2–3 Sessions/Day</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Multiple opportunities to ride</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Perfect Spots</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Flat-water lagoons and wave spots</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>All Levels</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Beginners, intermediate, advanced</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Safety First</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Rescue boats on standby</p>
-                </CardContent>
-              </Card>
-              <Card>
-                <CardHeader>
-                  <CardTitle>Video Analysis</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground">Evening sessions to improve technique</p>
-                </CardContent>
-              </Card>
-            </div>
-            <div className="grid md:grid-cols-2 gap-6 mt-8">
-              <img 
-                src="/lovable-uploads/kite-safari-action-1.jpg" 
-                alt="Kitesurfing action" 
-                className="rounded-lg shadow-lg w-full h-[300px] object-cover"
-              />
-              <img 
-                src="/lovable-uploads/kite-safari-action-2.jpg" 
-                alt="Kitesurfing action" 
-                className="rounded-lg shadow-lg w-full h-[300px] object-cover"
-              />
+            <p className="text-center text-xl text-muted-foreground mb-12">
+              Is Our Schedule?
+            </p>
+            
+            <div className="space-y-8">
+              {/* Day 1 */}
+              <div className="flex gap-6 items-start animate-fade-in">
+                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary">
+                  <span className="text-2xl font-bold text-primary">1</span>
+                </div>
+                <div className="flex-1 grid md:grid-cols-2 gap-6">
+                  <Card className="hover-scale">
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Ship className="w-5 h-5 text-primary" />
+                        Day 1: Arrival to Hurghada Airport
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        All you need is to book your flight to Hurghada Airport, Egypt, and arrive during the first day of KiteSafari.
+                      </p>
+                      <p className="text-foreground mb-4">
+                        Send your flight number and full name to our manager (whom you'll be in contact with during booking), and we'll arrange your transfer – it's included in the KiteSafari price!
+                      </p>
+                      <p className="font-semibold text-primary">
+                        The transfer will take you straight to the yacht, and from this moment you can fully relax and not worry about anything.
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <img 
+                    src="/lovable-uploads/kite-safari-yacht.jpg" 
+                    alt="Yacht arrival" 
+                    className="rounded-lg shadow-lg w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+
+              {/* Days 2-5 */}
+              <div className="flex gap-6 items-start animate-fade-in" style={{ animationDelay: '0.1s' }}>
+                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary">
+                  <span className="text-xl font-bold text-primary">2-5</span>
+                </div>
+                <div className="flex-1">
+                  <Card className="hover-scale mb-6">
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Wind className="w-5 h-5 text-primary" />
+                        Days 2-5: Pure Kitesurfing Action
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        We're actively engaged in:
+                      </p>
+                      <ul className="space-y-2 mb-4">
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Kitesurfing in perfect conditions</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Parties and socializing with new people</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Snorkeling & Diving</span>
+                        </li>
+                        <li className="flex items-start gap-2">
+                          <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                          <span>Wakeboarding</span>
+                        </li>
+                      </ul>
+                      <p className="font-semibold text-primary">
+                        During all this time we completely disconnect from the outside world and immerse ourselves in the unique KiteSafari experience – enjoying and having fun!
+                      </p>
+                    </CardContent>
+                  </Card>
+                  <div className="grid md:grid-cols-3 gap-4">
+                    <img 
+                      src="/lovable-uploads/kite-safari-action-1.jpg" 
+                      alt="Kitesurfing action" 
+                      className="rounded-lg shadow-lg w-full h-[200px] object-cover"
+                    />
+                    <img 
+                      src="/lovable-uploads/kite-safari-community.jpg" 
+                      alt="Community and parties" 
+                      className="rounded-lg shadow-lg w-full h-[200px] object-cover"
+                    />
+                    <img 
+                      src="/lovable-uploads/kite-safari-sunset-jump.jpg" 
+                      alt="Sunset kitesurfing" 
+                      className="rounded-lg shadow-lg w-full h-[200px] object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* Day 6 */}
+              <div className="flex gap-6 items-start animate-fade-in" style={{ animationDelay: '0.2s' }}>
+                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary">
+                  <span className="text-2xl font-bold text-primary">6</span>
+                </div>
+                <div className="flex-1 grid md:grid-cols-2 gap-6">
+                  <img 
+                    src="/lovable-uploads/kite-safari-action-2.jpg" 
+                    alt="Last day kitesurfing" 
+                    className="rounded-lg shadow-lg w-full h-full object-cover"
+                  />
+                  <Card className="hover-scale">
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Clock className="w-5 h-5 text-primary" />
+                        Day 6: Last Session & Return
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        <strong>First half of the day:</strong> We continue kitesurfing and make the most of our last sessions.
+                      </p>
+                      <p className="text-muted-foreground mb-4">
+                        <strong>Lunchtime:</strong> We set sail back to the port. We must return before sunset.
+                      </p>
+                      <p className="font-semibold text-foreground">
+                        In the evening, upon returning to port, we pack our things and prepare for departure.
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
+
+              {/* Day 7 */}
+              <div className="flex gap-6 items-start animate-fade-in" style={{ animationDelay: '0.3s' }}>
+                <div className="flex-shrink-0 w-16 h-16 rounded-full bg-primary/20 flex items-center justify-center border-4 border-primary">
+                  <span className="text-2xl font-bold text-primary">7</span>
+                </div>
+                <div className="flex-1">
+                  <Card className="hover-scale">
+                    <CardHeader>
+                      <CardTitle className="flex items-center gap-2">
+                        <Users className="w-5 h-5 text-primary" />
+                        Day 7: Departure Day
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        This is the day we say goodbye to the yacht.
+                      </p>
+                      <p className="text-foreground mb-4">
+                        Remember, we'll also take care of your transfer from the yacht to the airport – we'll get you to your flight on time!
+                      </p>
+                      <p className="text-xl font-semibold text-primary text-center mt-6">
+                        🤗 Farewells, hugs, and see you on the next adventure!
+                      </p>
+                    </CardContent>
+                  </Card>
+                </div>
+              </div>
             </div>
           </section>
 
