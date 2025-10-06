@@ -128,7 +128,7 @@ const Cyprus: React.FC = () => {
       </section>
 
       {/* Video Section */}
-      <section className="py-20 bg-muted/30">
+      <section id="video-tutorial" className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-8">

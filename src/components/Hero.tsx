@@ -9,6 +9,7 @@ type SlideData = {
   imageSrc: string;
   title: string;
   subtitle: string;
+  link: string;
 }
 
 const slides: SlideData[] = [
@@ -16,31 +17,36 @@ const slides: SlideData[] = [
     id: 1,
     imageSrc: '/lovable-uploads/hero-kite-action.jpg',
     title: 'Learn to Kitesurf',
-    subtitle: 'Professional kitesurfing instruction in paradise locations'
+    subtitle: 'Professional kitesurfing instruction in paradise locations',
+    link: '/cyprus#video-tutorial'
   },
   {
     id: 2,
     imageSrc: '/lovable-uploads/hero-kite-learning.jpg',
     title: 'Kite Safari Adventures',
-    subtitle: 'Experience the ultimate kitesurfing journey across stunning destinations'
+    subtitle: 'Experience the ultimate kitesurfing journey across stunning destinations',
+    link: '/kite-safari'
   },
   {
     id: 3,
     imageSrc: '/lovable-uploads/hero-group-splash.jpg',
     title: 'Brazil Kitesurfing',
-    subtitle: 'Discover world-class kitesurfing spots in beautiful Brazil'
+    subtitle: 'Discover world-class kitesurfing spots in beautiful Brazil',
+    link: '/brazil'
   },
   {
     id: 4,
     imageSrc: '/lovable-uploads/hero-island-view.jpg', 
     title: 'Cyprus Kite Paradise',
-    subtitle: 'Perfect wind conditions and crystal clear Mediterranean waters'
+    subtitle: 'Perfect wind conditions and crystal clear Mediterranean waters',
+    link: '/cyprus'
   },
   {
     id: 5,
     imageSrc: '/lovable-uploads/hero-instructors.jpg', 
     title: 'Expert Instruction',
-    subtitle: 'Learn from certified IKO instructors with years of experience'
+    subtitle: 'Learn from certified IKO instructors with years of experience',
+    link: '/kite-safari#instructors'
   }
 ];
 
@@ -141,7 +147,7 @@ const Hero: React.FC = () => {
                 )}
               >
                 <Link 
-                  to="/booking" 
+                  to={slide.link} 
                   className="btn-primary text-lg hover:shadow-glow transition-all duration-300 transform hover:scale-110"
                 >
                   Book Your Adventure

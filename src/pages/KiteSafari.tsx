@@ -915,7 +915,7 @@ const KiteSafari: React.FC = () => {
           </section>
 
           {/* Why Choose Us */}
-          <section className="mb-20">
+          <section id="instructors" className="mb-20">
             <div className="flex items-center gap-3 mb-8 justify-center">
               <Users className="w-8 h-8 text-primary" />
               <h2 className="text-3xl md:text-4xl font-display font-bold">🌍 Why Choose Us?</h2>
