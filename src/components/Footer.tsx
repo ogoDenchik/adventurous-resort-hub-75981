@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MapPin, Phone, Instagram, MessageCircle, Send } from 'lucide-react';
+import { MapPin, Phone, Instagram, MessageCircle, Send, Youtube } from 'lucide-react';
 
 const Footer: React.FC = () => {
   return (
@@ -39,6 +39,15 @@ const Footer: React.FC = () => {
                 className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 hover:scale-125"
               >
                 <Send size={20} />
+              </a>
+              <a 
+                href="https://www.youtube.com/@ogoAcademy_EN" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 hover:scale-125"
+              >
+                <Youtube size={20} />
               </a>
             </div>
           </div>
@@ -132,6 +141,15 @@ const Footer: React.FC = () => {
               >
                 <Send size={18} />
                 <span>Telegram</span>
+              </a>
+              <a 
+                href="https://www.youtube.com/@ogoAcademy_EN" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2"
+              >
+                <Youtube size={18} />
+                <span>YouTube</span>
               </a>
             </div>
           </div>
