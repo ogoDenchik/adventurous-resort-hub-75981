@@ -41,7 +41,7 @@ export function AdPopup({ onBookNow, onShowInstructions, showInstructions, onClo
   };
 
   const handleTelegramClick = () => {
-    window.open(`https://t.me/ogokiteacademy`, '_blank');
+    window.open(`https://t.me/ogodenchik`, '_blank');
   };
 
   return (
