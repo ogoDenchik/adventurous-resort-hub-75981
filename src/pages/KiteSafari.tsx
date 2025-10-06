@@ -98,8 +98,8 @@ const KiteSafari: React.FC = () => {
             
             <div className="grid md:grid-cols-2 gap-8 mb-12">
               <img 
-                src="/lovable-uploads/safari-beach-instruction.jpg" 
-                alt="Beach kitesurfing instruction" 
+                src="/lovable-uploads/safari-woman-yacht-blue.png" 
+                alt="Kitesurfing with luxury yacht" 
                 className="rounded-lg shadow-xl w-full h-[400px] object-cover"
               />
               <img 
