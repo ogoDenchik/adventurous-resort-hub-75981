@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { BookingPopup } from '@/components/BookingPopup';
 import { Button } from '@/components/ui/button';
 import { PlaneLanding, PlaneTakeoff } from 'lucide-react';
 
 const Brazil: React.FC = () => {
+  const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
+
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
@@ -28,7 +31,11 @@ const Brazil: React.FC = () => {
           <p className="text-2xl md:text-4xl mb-12 font-light">
             2 Weeks of Pure Kitesurfing Freedom
           </p>
-          <Button size="lg" className="text-lg px-8 py-6">
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6"
+            onClick={() => setBookingPopupOpen(true)}
+          >
             Book Your Adventure
           </Button>
         </div>
@@ -562,12 +569,21 @@ const Brazil: React.FC = () => {
             <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
               Join us for 2 weeks of non-stop wind, progression, and adventure on the Brazilian coast.
             </p>
-            <Button size="lg" className="text-lg px-12 py-6">
+            <Button 
+              size="lg" 
+              className="text-lg px-12 py-6"
+              onClick={() => setBookingPopupOpen(true)}
+            >
               Contact Us
             </Button>
           </div>
         </section>
       </main>
+      
+      <BookingPopup 
+        open={bookingPopupOpen} 
+        onOpenChange={setBookingPopupOpen} 
+      />
       
       <Footer />
     </div>
