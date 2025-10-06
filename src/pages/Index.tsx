@@ -219,15 +219,16 @@ const Index: React.FC = () => {
               <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 Your Adventure Awaits!
               </h2>
-              <p className="text-xl mb-6 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              <p className="text-lg mb-6 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 Book your kitesurfing adventure now and create memories that will last a lifetime.
               </p>
-              <p className="text-lg mb-8 text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
+              <p className="text-base mb-8 text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
                 Not sure where to go? <a href="#our-programs" className="underline hover:text-white">Explore our destinations</a>
               </p>
               <Button 
                 onClick={() => setIsBookingOpen(true)}
-                className="inline-block px-8 py-4 bg-white text-green-700 font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:translate-y-[-2px] hover:scale-105"
+                size="lg"
+                className="bg-white text-green-700 hover:bg-white/90 font-medium"
               >
                 Book Your Adventure Now
               </Button>

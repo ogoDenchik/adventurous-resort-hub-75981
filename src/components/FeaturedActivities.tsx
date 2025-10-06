@@ -51,14 +51,14 @@ const FeaturedActivities: React.FC = () => {
       id: 1,
       title: "Brazil",
       description: "Experience the ultimate kitesurfing paradise with perfect winds, endless lagoons, and vibrant Brazilian culture.",
-      image: "/lovable-uploads/safari-woman-yacht-riding.jpg",
+      image: "/lovable-uploads/kite-safari-yacht-action.jpg",
       link: "/brazil"
     },
     {
       id: 2,
       title: "Kite Safari",
       description: "Sail the Red Sea aboard a luxury yacht, exploring Egypt's hidden kite spots and pristine waters.",
-      image: "/lovable-uploads/kite-safari-yacht-action.jpg",
+      image: "/lovable-uploads/kite-safari-yacht-action-new.jpg",
       link: "/kite-safari"
     },
     {
