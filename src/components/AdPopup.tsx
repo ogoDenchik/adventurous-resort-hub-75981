@@ -11,7 +11,11 @@ import { Button } from "@/components/ui/button";
 import { motion } from 'framer-motion';
 import { useIsMobile } from '@/hooks/use-mobile';
 
-export function AdPopup() {
+interface AdPopupProps {
+  onBookNow: () => void;
+}
+
+export function AdPopup({ onBookNow }: AdPopupProps) {
   const [isOpen, setIsOpen] = useState(false);
   const isMobile = useIsMobile();
 
@@ -23,9 +27,9 @@ export function AdPopup() {
     return () => clearTimeout(timer);
   }, []);
 
-  const handleWhatsAppClick = () => {
-    const message = encodeURIComponent("Hi! I'm interested in booking the Day Package for ₹799!");
-    window.open(`https://wa.me/+918904704234?text=${message}`, '_blank');
+  const handleBookNow = () => {
+    setIsOpen(false);
+    onBookNow();
   };
 
   return (
@@ -38,8 +42,8 @@ export function AdPopup() {
         >
           <div className="relative">
             <img 
-              src="/lovable-uploads/f97f4d91-56e4-4e2f-bb73-93760030da48.png" 
-              alt="Day Package"
+              src="/lovable-uploads/brazil-sunset-team.jpg" 
+              alt="Brazil Kite Safari"
               className={`w-full object-cover ${isMobile ? 'h-36' : 'h-48'}`}
             />
             <button 
@@ -58,7 +62,7 @@ export function AdPopup() {
                   animate={{ y: 0, opacity: 1 }}
                   transition={{ delay: 0.2 }}
                 >
-                  Special Offer! 🎉
+                  🔥 Hot Offer! 🔥
                 </motion.div>
               </DialogTitle>
             </DialogHeader>
@@ -70,10 +74,10 @@ export function AdPopup() {
               transition={{ delay: 0.3 }}
             >
               <h3 className="text-2xl font-bold text-green-600">
-                Day Package at Just ₹799!
+                Brazil Travel - 30% OFF!
               </h3>
               <p className="text-muted-foreground">
-                Experience the best of Dandeli at an unbeatable price
+                Don't miss this exclusive discount on your Brazilian kitesurfing adventure
               </p>
             </motion.div>
 
@@ -84,13 +88,13 @@ export function AdPopup() {
               transition={{ delay: 0.4 }}
             >
               <Button 
-                onClick={handleWhatsAppClick}
+                onClick={handleBookNow}
                 className="bg-green-600 hover:bg-green-700"
               >
-                Book Now on WhatsApp
+                Book Now
               </Button>
               <Button variant="outline" className="w-full" onClick={() => setIsOpen(false)}>
-                Maybe Later
+                Remind Me Later
               </Button>
             </motion.div>
           </div>

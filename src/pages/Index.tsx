@@ -7,7 +7,6 @@ import Hero from '@/components/Hero';
 import FeaturedActivities from '@/components/FeaturedActivities';
 import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
-import DiscountOffers from '@/components/DiscountOffers';
 import { BookingPopup } from '@/components/BookingPopup';
 
 import { ArrowRight, Globe, Users, GraduationCap, Phone } from 'lucide-react';
@@ -18,7 +17,7 @@ const Index: React.FC = () => {
 
   return <div className="min-h-screen flex flex-col">
       <Navbar />
-      <AdPopup />
+      <AdPopup onBookNow={() => setIsBookingOpen(true)} />
       <BookingPopup open={isBookingOpen} onOpenChange={setIsBookingOpen} />
       
       <main className="flex-grow">
@@ -101,9 +100,12 @@ const Index: React.FC = () => {
                 <Link to="/about" className="inline-flex items-center text-green-700 hover:underline group">
                   Learn more about us <ArrowRight size={16} className="ml-1 group-hover:translate-x-2 transition-transform duration-300" />
                 </Link>
-                <Link to="/contact" className="inline-flex items-center text-green-700 hover:underline group">
+                <button 
+                  onClick={() => setIsBookingOpen(true)}
+                  className="inline-flex items-center text-green-700 hover:underline group"
+                >
                   Contact us for directions <ArrowRight size={16} className="ml-1 group-hover:translate-x-2 transition-transform duration-300" />
-                </Link>
+                </button>
               </div>
             </div>
           </div>
@@ -114,9 +116,6 @@ const Index: React.FC = () => {
         
         {/* Gallery Section */}
         <HomeGallery />
-        
-        {/* Hot Offers */}
-        <DiscountOffers />
         
         {/* Testimonials */}
         <section className="section-padding container">
