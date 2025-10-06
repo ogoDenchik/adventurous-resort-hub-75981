@@ -9,7 +9,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler } from 'lucide-react';
+import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler, Anchor, PartyPopper } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
@@ -575,11 +575,23 @@ const KiteSafari: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Sun className="w-6 h-6 text-primary" />
-                      <span className="text-lg">Normal sundeck</span>
+                      <span className="text-lg">Standard sundeck</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <XCircle className="w-6 h-6 text-muted-foreground" />
                       <span className="text-lg text-muted-foreground">No Jacuzzi</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <PartyPopper className="w-6 h-6 text-primary" />
+                      <span className="text-lg">Normal party place</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-primary" />
+                      <span className="text-lg">Fast bar</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Anchor className="w-6 h-6 text-primary" />
+                      <span className="text-lg">Two zodiacs</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -599,11 +611,23 @@ const KiteSafari: React.FC = () => {
                     </div>
                     <div className="flex items-center gap-3">
                       <Sun className="w-6 h-6 text-primary" />
-                      <span className="text-lg font-semibold">Large sundeck for sunbathing</span>
+                      <span className="text-lg font-semibold">Wide sundeck for sunbathing</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <Sparkles className="w-6 h-6 text-primary" />
                       <span className="text-lg font-semibold">Jacuzzi included</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <PartyPopper className="w-6 h-6 text-primary" />
+                      <span className="text-lg font-semibold">Huge party place</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <CheckCircle className="w-6 h-6 text-primary" />
+                      <span className="text-lg font-semibold">Two bars</span>
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <Anchor className="w-6 h-6 text-primary" />
+                      <span className="text-lg font-semibold">Three zodiacs</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -646,11 +670,7 @@ const KiteSafari: React.FC = () => {
                   </li>
                   <li className="flex items-start gap-2">
                     <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                    <span>Visa (25€ at airport)</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-                    <span>Alcoholic drinks (can be bought onboard – beer €3 per bottle, or bring your own)</span>
+                    <span>Alcoholic drinks</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <XCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
