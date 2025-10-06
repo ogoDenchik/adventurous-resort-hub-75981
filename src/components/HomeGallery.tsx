@@ -190,7 +190,7 @@ const HomeGallery: React.FC = () => {
                       perspective={1200} 
                       tiltFactor={20} 
                       scale={1.05} 
-                      className="h-64"
+                      className="h-80 md:h-96"
                     >
                       <div className="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 h-full">
                         <img 
