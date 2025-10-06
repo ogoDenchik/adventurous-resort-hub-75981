@@ -3,6 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Search, Menu, X, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
+import { BookingPopup } from './BookingPopup';
 import { Dialog, DialogContent, DialogTitle, DialogHeader } from "@/components/ui/dialog";
 import { SearchForm } from './SearchForm';
 import ThemeToggle from './ThemeToggle';
@@ -10,6 +11,7 @@ const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
   useEffect(() => {
@@ -61,17 +63,25 @@ const Navbar: React.FC = () => {
         </nav>
         
         <div className="hidden md:flex items-center space-x-4">
-          <a href="tel:+918904704234" className="flex items-center gap-1 text-foreground/80 hover:text-foreground transition-colors duration-300">
+          <a 
+            href="https://wa.me/48884035225" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-foreground/80 hover:text-foreground transition-colors duration-300"
+          >
             <Phone size={16} />
-            <span>+91 8277385225</span>
+            <span>+48 884 035 225</span>
           </a>
           <button className="p-2 rounded-full text-foreground/70 hover:text-foreground transition-colors duration-300" onClick={() => setIsSearchOpen(true)}>
             <Search size={20} />
           </button>
           <ThemeToggle />
-          <Link to="/booking" className="btn-primary">
+          <button 
+            className="btn-primary"
+            onClick={() => setBookingPopupOpen(true)}
+          >
             Book Now
-          </Link>
+          </button>
         </div>
         
         {/* Mobile Right Controls */}
@@ -97,9 +107,15 @@ const Navbar: React.FC = () => {
           {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-xl font-medium py-2 border-b border-border', location.pathname === link.path ? 'text-accent' : 'text-foreground/80')} onClick={() => setIsMenuOpen(false)}>
               {link.name}
             </Link>)}
-          <a href="tel:+918904704234" className="text-xl font-medium py-2 border-b border-border text-foreground/80 flex items-center gap-2" onClick={() => setIsMenuOpen(false)}>
+          <a 
+            href="https://wa.me/48884035225" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-xl font-medium py-2 border-b border-border text-foreground/80 flex items-center gap-2" 
+            onClick={() => setIsMenuOpen(false)}
+          >
             <Phone size={20} className="text-green-600" />
-            Call Now: +91 8904704234
+            WhatsApp: +48 884 035 225
           </a>
           <button className="text-xl font-medium py-2 border-b border-border text-foreground/80 text-left flex items-center gap-2" onClick={() => {
           setIsMenuOpen(false);
@@ -108,9 +124,15 @@ const Navbar: React.FC = () => {
             <Search size={20} />
             Search
           </button>
-          <Link to="/booking" className="btn-primary text-center" onClick={() => setIsMenuOpen(false)}>
+          <button 
+            className="btn-primary text-center" 
+            onClick={() => {
+              setIsMenuOpen(false);
+              setBookingPopupOpen(true);
+            }}
+          >
             Book Now
-          </Link>
+          </button>
         </nav>
       </div>
       
@@ -123,6 +145,12 @@ const Navbar: React.FC = () => {
           <SearchForm />
         </DialogContent>
       </Dialog>
+
+      {/* Booking Popup */}
+      <BookingPopup 
+        open={bookingPopupOpen} 
+        onOpenChange={setBookingPopupOpen} 
+      />
     </header>;
 };
 export default Navbar;

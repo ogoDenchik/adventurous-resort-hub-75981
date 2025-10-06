@@ -1,12 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { BookingPopup } from '@/components/BookingPopup';
 import { Radio, Award, GraduationCap, MessageCircle } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const Cyprus: React.FC = () => {
+  const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
+
   const cyprusPhotos = [
     '/lovable-uploads/cyprus-beach-lesson.jpg',
     '/lovable-uploads/cyprus-happy-student.jpg',
@@ -41,9 +44,16 @@ const Cyprus: React.FC = () => {
           <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 animate-fadeIn">
             Kitesurfing in Cyprus — Your European Gateway to Kite Adventures
           </h1>
-          <p className="text-xl md:text-2xl max-w-3xl mx-auto animate-fadeIn">
+          <p className="text-xl md:text-2xl max-w-3xl mx-auto mb-8 animate-fadeIn">
             You don't need to fly far to Brazil or Egypt — you can start your kitesurfing journey right here in Europe.
           </p>
+          <Button 
+            size="lg" 
+            className="text-lg px-8 py-6"
+            onClick={handleWhatsApp}
+          >
+            Book Lesson
+          </Button>
         </div>
       </section>
 
@@ -183,6 +193,11 @@ const Cyprus: React.FC = () => {
           </div>
         </div>
       </section>
+      
+      <BookingPopup 
+        open={bookingPopupOpen} 
+        onOpenChange={setBookingPopupOpen} 
+      />
       
       <Footer />
     </div>
