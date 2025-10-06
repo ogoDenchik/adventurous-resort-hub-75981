@@ -161,13 +161,13 @@ const KiteSafari: React.FC = () => {
               <div className="animate-fade-in">
                 <Card className="hover-scale overflow-hidden">
                   <img 
-                    src="/lovable-uploads/kite-safari-yacht.jpg" 
-                    alt="Yacht arrival" 
+                    src="/lovable-uploads/kite-safari-airplane-arrival.jpg" 
+                    alt="Airplane arrival" 
                     className="w-full h-[200px] object-cover"
                   />
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Ship className="w-5 h-5 text-primary" />
+                      <Ship className="w-6 h-6 text-primary" />
                       Day 1: Arrival to Hurghada Airport
                     </CardTitle>
                   </CardHeader>
@@ -189,13 +189,13 @@ const KiteSafari: React.FC = () => {
               <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
                 <Card className="hover-scale overflow-hidden">
                   <img 
-                    src="/lovable-uploads/kite-safari-action-1.jpg" 
-                    alt="Kitesurfing action" 
+                    src="/lovable-uploads/kite-safari-girl-yacht.jpg" 
+                    alt="Kitesurfing with yacht in background" 
                     className="w-full h-[200px] object-cover"
                   />
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Wind className="w-5 h-5 text-primary" />
+                      <Wind className="w-6 h-6 text-primary" />
                       Days 2-5: Pure Kitesurfing Action
                     </CardTitle>
                   </CardHeader>
@@ -205,19 +205,19 @@ const KiteSafari: React.FC = () => {
                     </p>
                     <ul className="space-y-2 mb-4">
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                         <span>Kitesurfing in perfect conditions</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                         <span>Parties and socializing with new people</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                         <span>Snorkeling & Diving</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                        <CheckCircle className="w-6 h-6 text-primary flex-shrink-0 mt-0.5" />
                         <span>Wakeboarding</span>
                       </li>
                     </ul>
@@ -232,13 +232,13 @@ const KiteSafari: React.FC = () => {
               <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
                 <Card className="hover-scale overflow-hidden">
                   <img 
-                    src="/lovable-uploads/kite-safari-action-2.jpg" 
-                    alt="Last day kitesurfing" 
+                    src="/lovable-uploads/kite-safari-two-girls-kiter.png" 
+                    alt="Two girls and kiter flying" 
                     className="w-full h-[200px] object-cover"
                   />
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Clock className="w-5 h-5 text-primary" />
+                      <Clock className="w-6 h-6 text-primary" />
                       Day 6: Last Session & Return
                     </CardTitle>
                   </CardHeader>
@@ -258,10 +258,15 @@ const KiteSafari: React.FC = () => {
 
               {/* Day 7 */}
               <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <Card className="hover-scale">
+                <Card className="hover-scale overflow-hidden">
+                  <img 
+                    src="/lovable-uploads/kite-safari-yacht-group.webp" 
+                    alt="Yacht with group of people" 
+                    className="w-full h-[200px] object-cover"
+                  />
                   <CardHeader>
                     <CardTitle className="flex items-center gap-2">
-                      <Users className="w-5 h-5 text-primary" />
+                      <Users className="w-6 h-6 text-primary" />
                       Day 7: Departure Day
                     </CardTitle>
                   </CardHeader>
