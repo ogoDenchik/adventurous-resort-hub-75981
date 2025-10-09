@@ -1,49 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import { BookingPopup } from '@/components/BookingPopup';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Input } from '@/components/ui/input';
-import { Label } from '@/components/ui/label';
-import { Textarea } from '@/components/ui/textarea';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler, Anchor, PartyPopper, Wine } from 'lucide-react';
-import { useToast } from '@/hooks/use-toast';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
 const KiteSafari: React.FC = () => {
-  const { toast } = useToast();
-  const [formData, setFormData] = React.useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    telegram: '',
-    instagram: '',
-    selectedDate: '',
-    notes: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    toast({
-      title: "Request Submitted!",
-      description: "We'll contact you soon to confirm your booking.",
-    });
-    setFormData({
-      firstName: '',
-      lastName: '',
-      email: '',
-      phone: '',
-      telegram: '',
-      instagram: '',
-      selectedDate: '',
-      notes: ''
-    });
-  };
+  const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
@@ -70,7 +38,7 @@ const KiteSafari: React.FC = () => {
             </p>
             <Button 
               size="lg"
-              onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+              onClick={() => setBookingPopupOpen(true)}
             >
               Book Your Adventure
             </Button>
@@ -383,7 +351,7 @@ const KiteSafari: React.FC = () => {
                       </div>
                       <Button 
                         className="w-full" 
-                        onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => setBookingPopupOpen(true)}
                       >
                         Book now
                       </Button>
@@ -522,7 +490,7 @@ const KiteSafari: React.FC = () => {
                       </div>
                       <Button 
                         className="w-full"
-                        onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => setBookingPopupOpen(true)}
                       >
                         Book now
                       </Button>
@@ -544,7 +512,7 @@ const KiteSafari: React.FC = () => {
                       </div>
                       <Button 
                         className="w-full"
-                        onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                        onClick={() => setBookingPopupOpen(true)}
                       >
                         Book now
                       </Button>
@@ -742,109 +710,6 @@ const KiteSafari: React.FC = () => {
             </p>
           </section>
 
-          {/* Contact Form */}
-          <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12" id="booking-form">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
-              Book Your KiteSafari
-            </h2>
-            <form onSubmit={handleSubmit} className="max-w-2xl mx-auto space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="firstName">First Name</Label>
-                  <Input 
-                    id="firstName"
-                    value={formData.firstName}
-                    onChange={(e) => setFormData({...formData, firstName: e.target.value})}
-                    required
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="lastName">Last Name</Label>
-                  <Input 
-                    id="lastName"
-                    value={formData.lastName}
-                    onChange={(e) => setFormData({...formData, lastName: e.target.value})}
-                    required
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number *</Label>
-                <Input 
-                  id="phone"
-                  type="tel"
-                  value={formData.phone}
-                  onChange={(e) => setFormData({...formData, phone: e.target.value})}
-                  required
-                />
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input 
-                  id="email"
-                  type="email"
-                  value={formData.email}
-                  onChange={(e) => setFormData({...formData, email: e.target.value})}
-                />
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div className="space-y-2">
-                  <Label htmlFor="telegram">Telegram (optional)</Label>
-                  <Input 
-                    id="telegram"
-                    value={formData.telegram}
-                    onChange={(e) => setFormData({...formData, telegram: e.target.value})}
-                    placeholder="@username"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <Label htmlFor="instagram">Instagram (optional)</Label>
-                  <Input 
-                    id="instagram"
-                    value={formData.instagram}
-                    onChange={(e) => setFormData({...formData, instagram: e.target.value})}
-                    placeholder="@username"
-                  />
-                </div>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="dates">Select Your Dates</Label>
-                <Select value={formData.selectedDate} onValueChange={(value) => setFormData({...formData, selectedDate: value})}>
-                  <SelectTrigger id="dates">
-                    <SelectValue placeholder="Choose available dates" />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="april-2-9">April 2–9, 2025</SelectItem>
-                    <SelectItem value="april-9-16">April 9–16, 2025</SelectItem>
-                    <SelectItem value="october-18-25">October 18–25, 2025</SelectItem>
-                    <SelectItem value="november-3-17">November 3–17, 2025</SelectItem>
-                    <SelectItem value="november-21-dec-5">November 21 – December 5, 2025</SelectItem>
-                    <SelectItem value="december-28-jan-4">December 28 – January 4 (New Year Special)</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div className="space-y-2">
-                <Label htmlFor="notes">Notes (Optional)</Label>
-                <Textarea 
-                  id="notes"
-                  value={formData.notes}
-                  onChange={(e) => setFormData({...formData, notes: e.target.value})}
-                  placeholder="Any special requests or questions?"
-                  rows={4}
-                />
-              </div>
-
-              <Button type="submit" size="lg" className="w-full">
-                Submit Booking Request
-              </Button>
-            </form>
-          </section>
-
           {/* FAQ */}
           <section className="mb-20">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-8 text-center">
@@ -974,7 +839,7 @@ const KiteSafari: React.FC = () => {
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end justify-center pb-12">
                 <Button 
                   size="lg"
-                  onClick={() => document.getElementById('booking-form')?.scrollIntoView({ behavior: 'smooth' })}
+                  onClick={() => setBookingPopupOpen(true)}
                 >
                   Book Your KiteSafari Now
                 </Button>
@@ -984,6 +849,11 @@ const KiteSafari: React.FC = () => {
 
         </div>
       </main>
+      
+      <BookingPopup 
+        open={bookingPopupOpen} 
+        onOpenChange={setBookingPopupOpen} 
+      />
       
       <Footer />
     </div>

@@ -34,9 +34,8 @@ const ContactPage = () => {
     const data = {
       name: formData.get('name') as string,
       phone: formData.get('phone') as string,
-      email: formData.get('email') as string,
-      telegram: formData.get('telegram') as string,
-      message: formData.get('message') as string,
+      email: formData.get('email') as string || '',
+      message: formData.get('message') as string || '',
     };
 
     try {
@@ -166,7 +165,7 @@ const ContactPage = () => {
                 
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Name *</Label>
+                    <Label htmlFor="name">Your Full Name *</Label>
                     <Input
                       type="text"
                       id="name"
@@ -177,34 +176,23 @@ const ContactPage = () => {
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number *</Label>
+                    <Label htmlFor="phone">Phone Number (WhatsApp, Telegram) *</Label>
                     <Input
                       type="tel"
                       id="phone"
                       name="phone"
                       required
-                      placeholder="+1 234 567 8900"
+                      placeholder="+48 884 035 225"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email Address *</Label>
+                    <Label htmlFor="email">Email</Label>
                     <Input
                       type="email"
                       id="email"
                       name="email"
-                      required
-                      placeholder="john.doe@example.com"
-                    />
-                  </div>
-                  
-                  <div className="space-y-2">
-                    <Label htmlFor="telegram">Telegram Handle</Label>
-                    <Input
-                      type="text"
-                      id="telegram"
-                      name="telegram"
-                      placeholder="@yourusername"
+                      placeholder="your.email@example.com"
                     />
                   </div>
                   
@@ -221,7 +209,7 @@ const ContactPage = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full bg-primary hover:bg-primary/90 text-primary-foreground sticky bottom-4 md:static"
+                    className="w-full sticky bottom-4 md:static"
                     size="lg"
                     aria-label="Send message"
                   >
@@ -256,7 +244,8 @@ const ContactPage = () => {
               <Link to="/#programs">
                 <Button 
                   size="lg"
-                  className="bg-white text-foreground hover:bg-white/90 font-semibold px-8 py-6 text-lg"
+                  variant="secondary"
+                  className="font-semibold px-8 py-6 text-lg"
                   aria-label="Explore destinations"
                 >
                   Explore Destinations

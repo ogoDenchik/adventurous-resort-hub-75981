@@ -18,8 +18,7 @@ import { useToast } from "@/hooks/use-toast";
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  instagram: z.string().optional(),
-  telegram: z.string().optional(),
+  email: z.string().email('Please enter a valid email').optional().or(z.literal('')),
   message: z.string().optional(),
 });
 
@@ -104,7 +103,7 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
         
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
           <div>
-            <Label htmlFor="name">Name *</Label>
+            <Label htmlFor="name">Your Full Name *</Label>
             <Input
               id="name"
               {...register('name')}
@@ -117,7 +116,7 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
           </div>
 
           <div>
-            <Label htmlFor="phone">Phone Number *</Label>
+            <Label htmlFor="phone">Phone Number (WhatsApp, Telegram) *</Label>
             <Input
               id="phone"
               {...register('phone')}
@@ -130,27 +129,21 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
           </div>
 
           <div>
-            <Label htmlFor="instagram">Instagram (optional)</Label>
+            <Label htmlFor="email">Email</Label>
             <Input
-              id="instagram"
-              {...register('instagram')}
-              placeholder="@your_handle"
+              id="email"
+              type="email"
+              {...register('email')}
+              placeholder="your.email@example.com"
               className="mt-1"
             />
+            {errors.email && (
+              <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
+            )}
           </div>
 
           <div>
-            <Label htmlFor="telegram">Telegram (optional)</Label>
-            <Input
-              id="telegram"
-              {...register('telegram')}
-              placeholder="@your_handle"
-              className="mt-1"
-            />
-          </div>
-
-          <div>
-            <Label htmlFor="message">Message (optional)</Label>
+            <Label htmlFor="message">Message</Label>
             <Textarea
               id="message"
               {...register('message')}
@@ -161,7 +154,7 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
 
           <Button
             type="submit"
-            className="w-full bg-green-700 hover:bg-green-800 text-white"
+            className="w-full"
             disabled={isSubmitting}
           >
             {isSubmitting ? 'Sending...' : 'Send Inquiry'}
