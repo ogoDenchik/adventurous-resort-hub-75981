@@ -46,22 +46,19 @@ const ContactPage = () => {
 
       if (error) throw error;
 
-      // Send to n8n webhook
+      // Send to webhook via backend proxy to ensure JSON + avoid CORS
       try {
-        await fetch('https://ogodenchik.app.n8n.cloud/webhook/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({
+        const { error: proxyError } = await supabase.functions.invoke('forward-webhook', {
+          body: {
             ...data,
             form_type: 'contact',
             timestamp: new Date().toISOString(),
             ...getDeviceInfo(),
-          }),
+          },
         });
+        if (proxyError) throw proxyError;
       } catch (webhookError) {
-        console.error('n8n webhook error:', webhookError);
+        console.error('Webhook proxy error:', webhookError);
         // Don't fail the whole submission if webhook fails
       }
 
@@ -244,7 +241,7 @@ const ContactPage = () => {
               <Link to="/#programs">
                 <Button 
                   size="lg"
-                  variant="secondary"
+                  variant="default"
                   className="font-semibold px-8 py-6 text-lg"
                   aria-label="Explore destinations"
                 >

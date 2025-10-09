@@ -14,6 +14,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -58,19 +59,16 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
     setIsSubmitting(true);
     
     try {
-      // Send to n8n webhook
-      await fetch('https://ogodenchik.app.n8n.cloud/webhook/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
+      // Send via backend proxy to avoid CORS and ensure JSON
+      const { error } = await supabase.functions.invoke('forward-webhook', {
+        body: {
           ...data,
           form_type: 'booking_popup',
           timestamp: new Date().toISOString(),
           ...getDeviceInfo(),
-        }),
+        },
       });
+      if (error) throw error;
       
       toast({
         title: "Thank you!",
