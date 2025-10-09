@@ -44,7 +44,7 @@ const ContactPage = () => {
         body: data,
       });
 
-      if (error) throw error;
+      if (error) console.error('send-contact-email error:', error);
 
       // Send to webhook via backend proxy to ensure JSON + avoid CORS
       try {

@@ -40,6 +40,10 @@ Deno.serve(async (req: Request) => {
       });
     }
 
+    // Log only non-sensitive metadata
+    const { form_type, device_type, browser_language, timezone, platform } = (payload as any);
+    console.log("forward-webhook received", { form_type, device_type, browser_language, timezone, platform });
+
     // Forward to external webhook as JSON
     const forwardRes = await fetch(WEBHOOK_URL, {
       method: "POST",
@@ -47,13 +51,23 @@ Deno.serve(async (req: Request) => {
       body: JSON.stringify(payload),
     });
 
+    console.log("forward-webhook forwarded", { status: forwardRes.status, ok: forwardRes.ok });
+
     const text = await forwardRes.text();
+
+    if (!forwardRes.ok) {
+      return new Response(
+        JSON.stringify({ ok: false, upstream_status: forwardRes.status, body: text }),
+        { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
+    }
 
     return new Response(
       JSON.stringify({ ok: true, status: forwardRes.status, body: text }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err: any) {
+    console.error("forward-webhook error", String(err?.message || err));
     return new Response(JSON.stringify({ ok: false, error: String(err?.message || err) }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
