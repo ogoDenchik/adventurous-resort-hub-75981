@@ -47,8 +47,18 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
     setIsSubmitting(true);
     
     try {
-      // Send to backend (you can implement this later)
-      console.log('Booking inquiry:', data);
+      // Send to n8n webhook
+      await fetch('https://ogodenchik.app.n8n.cloud/webhook/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...data,
+          form_type: 'booking_popup',
+          timestamp: new Date().toISOString(),
+        }),
+      });
       
       toast({
         title: "Thank you!",
@@ -58,6 +68,7 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
       reset();
       onOpenChange(false);
     } catch (error) {
+      console.error('Error submitting booking:', error);
       toast({
         title: "Error",
         description: "Something went wrong. Please try again.",

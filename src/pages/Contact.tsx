@@ -28,11 +28,30 @@ const ContactPage = () => {
     };
 
     try {
+      // Send email via edge function
       const { error } = await supabase.functions.invoke('send-contact-email', {
         body: data,
       });
 
       if (error) throw error;
+
+      // Send to n8n webhook
+      try {
+        await fetch('https://ogodenchik.app.n8n.cloud/webhook/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            ...data,
+            form_type: 'contact',
+            timestamp: new Date().toISOString(),
+          }),
+        });
+      } catch (webhookError) {
+        console.error('n8n webhook error:', webhookError);
+        // Don't fail the whole submission if webhook fails
+      }
 
       toast({
         title: "Message Sent Successfully!",
