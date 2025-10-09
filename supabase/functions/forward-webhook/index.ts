@@ -47,13 +47,15 @@ Deno.serve(async (req: Request) => {
     // Forward to external webhook as JSON
     const forwardRes = await fetch(WEBHOOK_URL, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        "Content-Type": "application/json",
+        "Accept": "application/json",
+      },
       body: JSON.stringify(payload),
     });
 
-    console.log("forward-webhook forwarded", { status: forwardRes.status, ok: forwardRes.ok });
-
     const text = await forwardRes.text();
+    console.log("forward-webhook upstream", { status: forwardRes.status, ok: forwardRes.ok, body: text.slice(0, 500) });
 
     if (!forwardRes.ok) {
       return new Response(
