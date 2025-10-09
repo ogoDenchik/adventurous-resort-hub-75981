@@ -49,15 +49,8 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
     
     return {
       device_type: deviceType,
-      screen_width: window.screen.width,
-      screen_height: window.screen.height,
-      viewport_width: window.innerWidth,
-      viewport_height: window.innerHeight,
-      user_agent: navigator.userAgent,
       browser_language: navigator.language,
       timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      referrer: document.referrer || 'direct',
-      current_url: window.location.href,
       platform: navigator.platform,
     };
   };
