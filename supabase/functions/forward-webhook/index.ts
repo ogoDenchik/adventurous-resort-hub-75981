@@ -1,7 +1,7 @@
 // deno-lint-ignore-file no-explicit-any
 // Backend proxy to forward JSON payloads to the external webhook, solving CORS and ensuring proper headers
 
-const WEBHOOK_URL = "https://ogodenchik.app.n8n.cloud/webhook-test/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3";
+const WEBHOOK_URL = "https://ogodenchik.app.n8n.cloud/webhook/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
