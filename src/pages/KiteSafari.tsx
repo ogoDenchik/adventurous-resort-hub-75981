@@ -65,16 +65,50 @@ const KiteSafari: React.FC = () => {
             </div>
             
             <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <img 
-                src="/lovable-uploads/safari-instructor-student-yacht.jpg" 
-                alt="Instructor and student with yacht in background" 
-                className="rounded-lg shadow-xl w-full h-[400px] object-cover"
-              />
-              <img 
-                src="/lovable-uploads/safari-woman-yacht-riding.jpg" 
-                alt="Woman kitesurfing with yacht in background" 
-                className="rounded-lg shadow-xl w-full h-[400px] object-cover"
-              />
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src="/lovable-uploads/safari-instructor-student-yacht.jpg" 
+                  alt="Instructor and student with yacht in background" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+                <img 
+                  src="/lovable-uploads/safari-woman-yacht-riding.jpg" 
+                  alt="Woman kitesurfing with yacht in background" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+                <img 
+                  src="/lovable-uploads/safari-tandem-action.jpg" 
+                  alt="Tandem kitesurfing action" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+                <img 
+                  src="/lovable-uploads/safari-yacht-closeup.jpg" 
+                  alt="Yacht closeup view" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-2 gap-4">
+                <img 
+                  src="/lovable-uploads/safari-woman-purple-action.jpg" 
+                  alt="Woman kitesurfing in purple" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+                <img 
+                  src="/lovable-uploads/safari-male-yacht-action.jpg" 
+                  alt="Male kitesurfer near yacht" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+                <img 
+                  src="/lovable-uploads/safari-beach-instruction.jpg" 
+                  alt="Beach instruction session" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+                <img 
+                  src="/lovable-uploads/safari-group-riding.jpg" 
+                  alt="Group riding together" 
+                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
+                />
+              </div>
             </div>
           </section>
 
@@ -789,7 +823,7 @@ const KiteSafari: React.FC = () => {
               <Card className="text-center">
                 <CardContent className="pt-6">
                   <div className="text-4xl mb-3">🏆</div>
-                  <h3 className="font-bold mb-2">3+ Years Experience</h3>
+                  <h3 className="font-bold mb-2">5 Years Experience</h3>
                   <p className="text-muted-foreground text-sm">Organizing KiteSafaris in Egypt & Brazil</p>
                 </CardContent>
               </Card>
@@ -843,6 +877,38 @@ const KiteSafari: React.FC = () => {
                 >
                   Book Your KiteSafari Now
                 </Button>
+              </div>
+            </div>
+          </section>
+
+          {/* Photo Gallery - Egypt Vibes */}
+          <section className="mb-20">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-12">Egypt Vibes</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+                {[
+                  '/lovable-uploads/kite-safari-action-1.jpg',
+                  '/lovable-uploads/kite-safari-action-2.jpg',
+                  '/lovable-uploads/kite-safari-sunset-1.jpg',
+                  '/lovable-uploads/kite-safari-sunset-jump.jpg',
+                  '/lovable-uploads/kite-safari-yacht-action.jpg',
+                  '/lovable-uploads/kite-safari-beach.jpg',
+                  '/lovable-uploads/safari-trick-splash.jpg',
+                  '/lovable-uploads/safari-yellow-kite-trick.jpg',
+                  '/lovable-uploads/kite-safari-yacht-rider.jpg',
+                ].map((photo, index) => (
+                  <div 
+                    key={index} 
+                    className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer hover-lift"
+                  >
+                    <img
+                      src={photo}
+                      alt={`Egypt kitesurfing ${index + 1}`}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                ))}
               </div>
             </div>
           </section>

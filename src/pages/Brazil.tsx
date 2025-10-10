@@ -551,6 +551,37 @@ const Brazil: React.FC = () => {
           </div>
         </section>
 
+        {/* Photo Gallery - Brazil Vibes */}
+        <section className="py-20 bg-background">
+          <div className="container mx-auto px-4">
+            <h2 className="text-3xl md:text-5xl font-display font-bold text-center mb-12">Brazil Vibes</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-7xl mx-auto">
+              {[
+                '/lovable-uploads/brazil-beach-lesson.jpg',
+                '/lovable-uploads/brazil-instructor-1.jpg',
+                '/lovable-uploads/brazil-kite-aerial.jpg',
+                '/lovable-uploads/brazil-lagoon-girl.jpg',
+                '/lovable-uploads/brazil-rider-sunset.jpg',
+                '/lovable-uploads/brazil-sunset-team.jpg',
+                '/lovable-uploads/brazil-kite-trick.jpg',
+                '/lovable-uploads/brazil-dunes-team.jpg',
+                '/lovable-uploads/brazil-beach-relax.jpg',
+              ].map((photo, index) => (
+                <div 
+                  key={index} 
+                  className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer hover-lift"
+                >
+                  <img
+                    src={photo}
+                    alt={`Brazil kitesurfing ${index + 1}`}
+                    className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
         <section className="relative py-32 overflow-hidden">

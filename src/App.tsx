@@ -18,6 +18,7 @@ import Brazil from "./pages/Brazil";
 import Cyprus from "./pages/Cyprus";
 import TelegramButton from "./components/TelegramButton";
 import WhatsAppButton from "./components/WhatsAppButton";
+import ScrollToTopOnMount from "./components/ScrollToTopOnMount";
 
 // Create a new query client instance
 const queryClient = new QueryClient();
@@ -29,6 +30,7 @@ const App = () => {
         <Toaster />
         <Sonner />
         <BrowserRouter>
+          <ScrollToTopOnMount />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/accommodation" element={<Accommodation />} />
