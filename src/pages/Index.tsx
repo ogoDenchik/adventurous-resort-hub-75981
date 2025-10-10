@@ -178,18 +178,44 @@ const Index: React.FC = () => {
               <p className="text-foreground/70 mb-8">
                 Subscribe to our newsletter and be the first to know about upcoming trips, special offers, and kite destinations.
               </p>
-              <form className="flex flex-col sm:flex-row items-center max-w-md mx-auto gap-3" onSubmit={(e) => {
+              <form className="flex flex-col sm:flex-row items-center max-w-md mx-auto gap-3" onSubmit={async (e) => {
                 e.preventDefault();
                 const emailInput = e.currentTarget.querySelector('input[type="email"]') as HTMLInputElement;
                 if (emailInput && emailInput.value) {
-                  // We'll use the same subscription logic as in the footer
                   const { toast } = require("@/hooks/use-toast");
-                  toast({
-                    title: "Success!",
-                    description: "You've been subscribed to our newsletter",
-                    variant: "default",
-                  });
-                  emailInput.value = '';
+                  const { supabase } = require("@/integrations/supabase/client");
+                  
+                  try {
+                    const payload = {
+                      email: emailInput.value,
+                      form_type: "newsletter",
+                      timestamp: new Date().toISOString(),
+                      device_type: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "desktop",
+                      browser_language: navigator.language,
+                      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
+                      platform: navigator.platform,
+                    };
+
+                    const { data, error } = await supabase.functions.invoke('forward-webhook', {
+                      body: payload
+                    });
+
+                    if (error) throw error;
+
+                    toast({
+                      title: "Success!",
+                      description: "You've been subscribed to our newsletter",
+                      variant: "default",
+                    });
+                    emailInput.value = '';
+                  } catch (error) {
+                    console.error('Newsletter subscription error:', error);
+                    toast({
+                      title: "Error",
+                      description: "Failed to subscribe. Please try again.",
+                      variant: "destructive",
+                    });
+                  }
                 }
               }}>
                 <input type="email" placeholder="Your email address" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" required />
