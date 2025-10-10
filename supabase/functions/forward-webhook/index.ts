@@ -1,7 +1,7 @@
 // deno-lint-ignore-file no-explicit-any
 // Backend proxy to forward JSON payloads to the external webhook, solving CORS and ensuring proper headers
 
-const WEBHOOK_URL = "https://ogodenchik.app.n8n.cloud/webhook/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3";
+const WEBHOOK_URL = "https://ogodenchik.app.n8n.cloud/webhook-test/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -28,6 +28,57 @@ Deno.serve(async (req: Request) => {
         status: 400,
         headers: { ...corsHeaders, "Content-Type": "application/json" },
       });
+    }
+
+    // Self-test mode: send sample payloads and return statuses
+    if ((payload as any)._selftest === true) {
+      const sampleDevice = {
+        device_type: "desktop",
+        browser_language: "en-US",
+        timezone: "UTC",
+        platform: "Web",
+      };
+
+      const contactPayload = {
+        name: "Test User",
+        phone: "+10000000000",
+        email: "test@example.com",
+        message: "Contact form self-test",
+        form_type: "contact",
+        timestamp: new Date().toISOString(),
+        ...sampleDevice,
+      };
+
+      const bookingPayload = {
+        name: "Test Booker",
+        phone: "+10000000001",
+        email: "",
+        message: "Booking popup self-test",
+        form_type: "booking_popup",
+        timestamp: new Date().toISOString(),
+        ...sampleDevice,
+      };
+
+      const send = async (body: any) => {
+        const res = await fetch(WEBHOOK_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+          },
+          body: JSON.stringify(body),
+        });
+        const text = await res.text();
+        return { status: res.status, ok: res.ok, body: text.slice(0, 500) };
+      };
+
+      const [contactRes, bookingRes] = await Promise.all([send(contactPayload), send(bookingPayload)]);
+      console.log("forward-webhook selftest results", { contactRes, bookingRes });
+
+      return new Response(
+        JSON.stringify({ ok: contactRes.ok && bookingRes.ok, selftest: { contact: contactRes, booking_popup: bookingRes } }),
+        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
+      );
     }
 
     // Minimal input safety checks

@@ -13,6 +13,7 @@ import { supabase } from '@/integrations/supabase/client';
 const ContactPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isTesting, setIsTesting] = useState(false);
 
   const getDeviceInfo = () => {
     const width = window.innerWidth;
@@ -77,6 +78,25 @@ const ContactPage = () => {
       });
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  const runWebhookSelfTest = async () => {
+    setIsTesting(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('forward-webhook', { body: { _selftest: true } });
+      if (error) throw error as any;
+      const c = (data as any)?.selftest?.contact;
+      const b = (data as any)?.selftest?.booking_popup;
+      toast({
+        title: 'Webhook self-test',
+        description: `contact: ${c?.status} (${c?.ok ? 'ok' : 'fail'}), booking_popup: ${b?.status} (${b?.ok ? 'ok' : 'fail'})`,
+      });
+    } catch (err) {
+      console.error('Self-test error:', err);
+      toast({ title: 'Webhook self-test failed', description: 'Не удалось выполнить тест. Проверьте логи.', variant: 'destructive' });
+    } finally {
+      setIsTesting(false);
     }
   };
 
@@ -218,6 +238,18 @@ const ContactPage = () => {
                         Send Message
                       </>
                     )}
+                  </Button>
+
+                  <Button
+                    type="button"
+                    variant="secondary"
+                    disabled={isTesting}
+                    onClick={runWebhookSelfTest}
+                    className="w-full md:w-auto"
+                    size="sm"
+                    aria-label="Run webhook self-test"
+                  >
+                    {isTesting ? 'Testing…' : 'Запустить тест вебхука'}
                   </Button>
                 </form>
               </div>
