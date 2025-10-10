@@ -8,6 +8,8 @@ import FeaturedActivities from '@/components/FeaturedActivities';
 import SpecialOffers from '@/components/SpecialOffers';
 import HomeGallery from '@/components/HomeGallery';
 import { BookingPopup } from '@/components/BookingPopup';
+import { toast } from "@/hooks/use-toast";
+import { supabase } from "@/integrations/supabase/client";
 
 import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
 import { AdPopup } from '@/components/AdPopup';
@@ -182,9 +184,6 @@ const Index: React.FC = () => {
                 e.preventDefault();
                 const emailInput = e.currentTarget.querySelector('input[type="email"]') as HTMLInputElement;
                 if (emailInput && emailInput.value) {
-                  const { toast } = require("@/hooks/use-toast");
-                  const { supabase } = require("@/integrations/supabase/client");
-                  
                   try {
                     const payload = {
                       email: emailInput.value,
