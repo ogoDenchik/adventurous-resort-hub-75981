@@ -81,14 +81,27 @@ Deno.serve(async (req: Request) => {
       );
     }
 
-    // Minimal input safety checks
-    const nameOk = typeof (payload as any).name === "string" && (payload as any).name.trim().length >= 2;
-    const phoneOk = typeof (payload as any).phone === "string" && (payload as any).phone.trim().length >= 6;
-    if (!nameOk || !phoneOk) {
-      return new Response(JSON.stringify({ ok: false, error: "Missing or invalid required fields: name, phone" }), {
-        status: 400,
-        headers: { ...corsHeaders, "Content-Type": "application/json" },
-      });
+    // Minimal input safety checks with newsletter support
+    const formType = (payload as any).form_type;
+
+    if (formType === "newsletter") {
+      const emailVal = String((payload as any).email || "").trim();
+      const emailOk = emailVal.length > 3 && emailVal.length <= 255 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+      if (!emailOk) {
+        return new Response(JSON.stringify({ ok: false, error: "Invalid email for newsletter" }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
+    } else {
+      const nameOk = typeof (payload as any).name === "string" && (payload as any).name.trim().length >= 2;
+      const phoneOk = typeof (payload as any).phone === "string" && (payload as any).phone.trim().length >= 6;
+      if (!nameOk || !phoneOk) {
+        return new Response(JSON.stringify({ ok: false, error: "Missing or invalid required fields: name, phone" }), {
+          status: 400,
+          headers: { ...corsHeaders, "Content-Type": "application/json" },
+        });
+      }
     }
 
     // Log only non-sensitive metadata
