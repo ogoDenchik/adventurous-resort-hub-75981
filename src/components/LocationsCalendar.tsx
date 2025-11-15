@@ -81,7 +81,7 @@ const LocationsCalendar = () => {
 
         {/* Calendar */}
         <FadeIn direction="up" distance={30}>
-          <div className="max-w-2xl mx-auto">
+          <div className="max-w-3xl mx-auto">
             <div className="bg-card rounded-2xl p-6 md:p-10 shadow-xl border border-border/50">
               {/* Navigation */}
               <div className="flex items-center justify-between mb-6">
@@ -114,7 +114,7 @@ const LocationsCalendar = () => {
                 mode="single"
                 month={currentMonth}
                 onMonthChange={setCurrentMonth}
-                className="w-full pointer-events-auto"
+                className="w-full pointer-events-auto [&_.rdp-nav]:hidden [&_.rdp-day]:h-12 [&_.rdp-day]:w-12 md:[&_.rdp-day]:h-16 md:[&_.rdp-day]:w-16"
                 modifiers={modifiers}
                 components={{
                   Day: DayContent as any
