@@ -13,6 +13,7 @@ import { supabase } from "@/integrations/supabase/client";
 
 import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
 import { AdPopup } from '@/components/AdPopup';
+import TrustIndicators from '@/components/TrustIndicators';
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -30,6 +31,7 @@ const Index: React.FC = () => {
       
       <main className="flex-grow">
         <Hero />
+        <TrustIndicators />
         
         {/* Special Promotion Banner */}
         <div className="bg-green-700 text-white py-3 px-4 text-center shadow-md cursor-pointer hover:bg-green-800 transition-colors" onClick={() => setShowInstructions(true)}>
