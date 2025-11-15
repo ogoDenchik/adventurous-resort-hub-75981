@@ -12,33 +12,18 @@ import { toast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
 
 import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
-import { AdPopup } from '@/components/AdPopup';
 import TrustIndicators from '@/components/TrustIndicators';
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
-  const [showInstructions, setShowInstructions] = useState(false);
 
   return <div className="min-h-screen flex flex-col">
       <Navbar />
-      <AdPopup 
-        onBookNow={() => setIsBookingOpen(true)} 
-        onShowInstructions={() => setShowInstructions(true)}
-        showInstructions={showInstructions}
-        onCloseInstructions={() => setShowInstructions(false)}
-      />
       <BookingPopup open={isBookingOpen} onOpenChange={setIsBookingOpen} />
       
       <main className="flex-grow">
         <Hero />
         <TrustIndicators />
-        
-        {/* Special Promotion Banner */}
-        <div className="bg-green-700 text-white py-3 px-4 text-center shadow-md cursor-pointer hover:bg-green-800 transition-colors" onClick={() => setShowInstructions(true)}>
-          <div className="container mx-auto">
-            <p className="text-xl font-bold">30% discount for Brazil travel! <span className="underline ml-2 hover:text-yellow-200 transition-colors">Limited time offer</span></p>
-          </div>
-        </div>
         
         {/* About section */}
         <section className="section-padding container">
