@@ -4,7 +4,7 @@ import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
 import { BookingPopup } from '@/components/BookingPopup';
 import { Button } from '@/components/ui/button';
-import { PlaneLanding, PlaneTakeoff } from 'lucide-react';
+import { PlaneLanding, PlaneTakeoff, MessageCircle, Instagram, Send } from 'lucide-react';
 
 const Brazil: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
@@ -607,6 +607,78 @@ const Brazil: React.FC = () => {
             >
               Contact Us
             </Button>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section className="py-20 bg-muted/30">
+          <div className="container mx-auto px-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+              {/* WhatsApp */}
+              <div className="bg-card rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-200 to-amber-400 rounded-3xl flex items-center justify-center">
+                  <MessageCircle className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">WhatsApp Booking</h3>
+                <a 
+                  href="https://wa.me/48884035225" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-700 hover:text-amber-800 transition-colors"
+                >
+                  +48 884 035 225
+                </a>
+              </div>
+
+              {/* Email */}
+              <div className="bg-card rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-200 to-amber-400 rounded-3xl flex items-center justify-center">
+                  <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Email</h3>
+                <a 
+                  href="mailto:info@ogokiteacademy.com"
+                  className="text-amber-700 hover:text-amber-800 transition-colors break-all"
+                >
+                  info@ogokiteacademy.com
+                </a>
+              </div>
+
+              {/* Instagram */}
+              <div className="bg-card rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-200 to-amber-400 rounded-3xl flex items-center justify-center">
+                  <Instagram className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Follow Us</h3>
+                <a 
+                  href="https://www.instagram.com/ogo_kite_academy/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-700 hover:text-amber-800 transition-colors"
+                >
+                  @ogo_kite_academy
+                </a>
+              </div>
+
+              {/* Telegram */}
+              <div className="bg-card rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
+                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-amber-200 to-amber-400 rounded-3xl flex items-center justify-center">
+                  <Send className="w-10 h-10 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold mb-2">Telegram</h3>
+                <a 
+                  href="https://t.me/ogodenchik" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-700 hover:text-amber-800 transition-colors"
+                >
+                  @ogodenchik
+                </a>
+              </div>
+            </div>
           </div>
         </section>
       </main>
