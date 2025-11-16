@@ -13,7 +13,6 @@ import { supabase } from "@/integrations/supabase/client";
 
 import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
 import TrustIndicators from '@/components/TrustIndicators';
-import LocationsCalendar from '@/components/LocationsCalendar';
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -25,7 +24,6 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         <TrustIndicators />
-        <LocationsCalendar />
         
         {/* About section */}
         <section className="section-padding container">
