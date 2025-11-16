@@ -29,9 +29,6 @@ const Index: React.FC = () => {
         <CalendarLocations />
         <TrainingPrograms />
         
-        {/* Special Offers Section */}
-        <SpecialOffers />
-        
         {/* Testimonials */}
         <section className="section-padding container">
           <div className="text-center mb-16 animate-slide-up">
@@ -87,6 +84,9 @@ const Index: React.FC = () => {
             ))}
           </div>
         </section>
+        
+        {/* Special Offers Section */}
+        <SpecialOffers />
         
         {/* Gallery Section */}
         <HomeGallery />

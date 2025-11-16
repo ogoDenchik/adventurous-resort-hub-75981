@@ -190,7 +190,7 @@ const HomeGallery: React.FC = () => {
                       perspective={1200} 
                       tiltFactor={20} 
                       scale={1.05} 
-                      className="h-80 md:h-96"
+                      className="h-96 md:h-[500px]"
                     >
                       <div className="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 h-full">
                         <img 
@@ -218,7 +218,7 @@ const HomeGallery: React.FC = () => {
         
         <ScrollAnimationWrapper animation="animate-fade-in opacity-100" delay={400}>
           <div className="text-center mt-10">
-            <Link to="/gallery" className="btn-primary inline-flex items-center gap-2 hover-scale">
+            <Link to="/gallery" className="btn-primary inline-flex items-center gap-2 hover-scale whitespace-nowrap">
               View Full Gallery <ArrowRight size={16} />
             </Link>
           </div>

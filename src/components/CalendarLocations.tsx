@@ -286,8 +286,8 @@ const CalendarLocations: React.FC = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
-            <CarouselPrevious className="-left-2" />
-            <CarouselNext className="-right-2" />
+            <CarouselPrevious className="-left-6" />
+            <CarouselNext className="-right-6" />
           </Carousel>
         </div>
       </div>

@@ -56,35 +56,43 @@ const SpecialOffers: React.FC = () => {
     <section id="our-programs" className="py-16 bg-muted/30">
       <div className="container px-4">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Programs</h2>
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">Our Kitespots</h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Choose your perfect kitesurfing adventure with OGO Kite Academy
+            Discover world-class kitesurfing destinations with OGO Kite Academy
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           <Program 
-            title="Kite Safari"
-            subtitle="All Year Around"
-            description="Join our unique yacht-based kite adventures on the Red Sea. Explore multiple spots in one trip, enjoy stable wind, community vibes, and unforgettable sessions."
+            title="Egypt Islands"
+            subtitle="Red Sea Adventure"
+            description="Unique Red Sea lagoon system with world-class flat water, steady wind, safe shallow areas and multiple spots accessible by boat."
             imageUrl="/lovable-uploads/hero-kite-action.jpg"
             link="/kite-safari"
           />
           
           <Program 
             title="Brazil"
-            subtitle="November 4 – November 18"
-            description="Ride world-famous lagoons and ocean waves in Brazil. A two-week adventure full of downwinds, progression, and cultural experiences in a vibrant kite paradise."
+            subtitle="Coastal Paradise"
+            description="Over 1,000 km of windy coastline, downwind routes, lagoons and world-class flatwater conditions for fast progression."
             imageUrl="/lovable-uploads/hero-group-splash.jpg"
             link="/brazil"
           />
           
           <Program 
             title="Cyprus"
-            subtitle="All Year Around Education"
-            description="Learn and progress at our home base in Cyprus. Ideal conditions for beginners and intermediates, with certified instructors and premium equipment."
+            subtitle="Island Learning Hub"
+            description="6+ kite spots island-wide, including Avdimou Beach — steady wind, deep safety zone and perfect learning conditions."
             imageUrl="/lovable-uploads/hero-island-view.jpg"
             link="/cyprus"
+          />
+          
+          <Program 
+            title="Vietnam"
+            subtitle="Tropical Winds"
+            description="Phan Rang lagoon — perfectly flat water, consistent strong wind, warm temperatures. Additional spot: Mui Ne (wave spot, more advanced conditions)."
+            imageUrl="/lovable-uploads/cyprus-sunset-riding.jpg"
+            link="/contact"
           />
         </div>
       </div>
