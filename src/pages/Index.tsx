@@ -29,81 +29,8 @@ const Index: React.FC = () => {
         <CalendarLocations />
         <TrainingPrograms />
         
-        {/* About section */}
-        <section className="section-padding container">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-up">
-              <div className="relative">
-                <img src="/lovable-uploads/community-hug.jpg" alt="OGO Kite Academy Community" className="w-full h-[500px] object-cover rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300" />
-              </div>
-            </div>
-            
-            <div className="animate-slide-up animation-delay-200">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-                More than kitesurfing. We build community
-              </h2>
-              <p className="text-foreground/70 mb-6">
-                At OGO Kite Academy, every trip is more than just riding the wind — it's about merging into a global family of kitesurfers, exploring together, and building lifelong connections.
-              </p>
-              
-              <div className="space-y-4 mb-8">
-                <div className="flex items-start group hover-lift p-2 rounded-lg transition-all duration-300 hover:bg-green-50">
-                  <div className="mr-4 p-2 bg-secondary rounded-full text-green-700 group-hover:bg-green-100 transition-colors duration-300">
-                    <Globe size={20} className="group-hover:scale-125 transition-transform duration-300" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Global Adventures</h3>
-                    <p className="text-sm text-foreground/70">
-                      Explore the best kite spots worldwide — from Brazil to Cyprus — with a team that knows every detail.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start group hover-lift p-2 rounded-lg transition-all duration-300 hover:bg-green-50">
-                  <div className="mr-4 p-2 bg-secondary rounded-full text-green-700 group-hover:bg-green-100 transition-colors duration-300">
-                    <Users size={20} className="group-hover:scale-125 transition-transform duration-300" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Community Spirit</h3>
-                    <p className="text-sm text-foreground/70">
-                      More than a school — a family. Share emotions, progress together, and create friendships for life.
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start group hover-lift p-2 rounded-lg transition-all duration-300 hover:bg-green-50">
-                  <div className="mr-4 p-2 bg-secondary rounded-full text-green-700 group-hover:bg-green-100 transition-colors duration-300">
-                    <GraduationCap size={20} className="group-hover:scale-125 transition-transform duration-300" />
-                  </div>
-                  <div>
-                    <h3 className="font-medium group-hover:text-green-700 transition-colors duration-300">Certified Progress</h3>
-                    <p className="text-sm text-foreground/70">
-                      Learn with certified instructors and premium equipment. Safety and growth are always first.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              
-              <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/about" className="inline-flex items-center text-green-700 hover:underline group">
-                  Learn more about us <ArrowRight size={16} className="ml-1 group-hover:translate-x-2 transition-transform duration-300" />
-                </Link>
-                <button 
-                  onClick={() => setIsBookingOpen(true)}
-                  className="inline-flex items-center text-green-700 hover:underline group"
-                >
-                  Contact us for directions <ArrowRight size={16} className="ml-1 group-hover:translate-x-2 transition-transform duration-300" />
-                </button>
-              </div>
-            </div>
-          </div>
-        </section>
-        
         {/* Special Offers Section */}
         <SpecialOffers />
-        
-        {/* Gallery Section */}
-        <HomeGallery />
         
         {/* Testimonials */}
         <section className="section-padding container">
@@ -160,6 +87,9 @@ const Index: React.FC = () => {
             ))}
           </div>
         </section>
+        
+        {/* Gallery Section */}
+        <HomeGallery />
         
         {/* Newsletter sign-up */}
         <section className="py-16 bg-secondary/50">
