@@ -613,7 +613,7 @@ const Brazil: React.FC = () => {
         {/* Contact Section */}
         <section className="py-20 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
               {/* WhatsApp */}
               <div className="bg-card rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
                 <div className="w-20 h-20 mx-auto mb-6 bg-[#25D366] rounded-3xl flex items-center justify-center">
@@ -624,26 +624,9 @@ const Brazil: React.FC = () => {
                   href="https://wa.me/48884035225" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#25D366] hover:text-[#128C7E] transition-colors"
+                  className="text-[#25D366] hover:text-[#128C7E] transition-colors font-medium"
                 >
                   +48 884 035 225
-                </a>
-              </div>
-
-              {/* Email */}
-              <div className="bg-card rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1">
-                <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-[#EA4335] via-[#FBBC05] to-[#34A853] rounded-3xl flex items-center justify-center">
-                  <svg className="w-10 h-10 text-white" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                    <polyline points="22,6 12,13 2,6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Email</h3>
-                <a 
-                  href="mailto:info@ogokiteacademy.com"
-                  className="text-[#EA4335] hover:text-[#c5221f] transition-colors break-all"
-                >
-                  info@ogokiteacademy.com
                 </a>
               </div>
 
@@ -657,7 +640,7 @@ const Brazil: React.FC = () => {
                   href="https://www.instagram.com/ogo_kite_academy/" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#E1306C] hover:text-[#C13584] transition-colors"
+                  className="text-[#25D366] hover:text-[#128C7E] transition-colors font-medium"
                 >
                   @ogo_kite_academy
                 </a>
@@ -673,7 +656,7 @@ const Brazil: React.FC = () => {
                   href="https://t.me/ogodenchik" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-[#0088cc] hover:text-[#006699] transition-colors"
+                  className="text-[#25D366] hover:text-[#128C7E] transition-colors font-medium"
                 >
                   @ogodenchik
                 </a>
