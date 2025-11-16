@@ -15,6 +15,7 @@ import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
 import TrustIndicators from '@/components/TrustIndicators';
 import CalendarLocations from '@/components/CalendarLocations';
 import TrainingPrograms from '@/components/TrainingPrograms';
+import MeetYourCoach from '@/components/MeetYourCoach';
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -84,6 +85,9 @@ const Index: React.FC = () => {
             ))}
           </div>
         </section>
+        
+        {/* Meet Your Coach Section */}
+        <MeetYourCoach />
         
         {/* Special Offers Section */}
         <SpecialOffers />
