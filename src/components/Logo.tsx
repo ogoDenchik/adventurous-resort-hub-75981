@@ -14,7 +14,7 @@ const Logo: React.FC = () => {
         />
       </div>
       <div className="flex flex-col">
-        <span className="text-2xl font-display font-bold text-foreground leading-tight group-hover:text-accent transition-colors duration-300">
+        <span className="text-2xl font-display font-bold text-gray-900 leading-tight group-hover:text-accent transition-colors duration-300">
           OGO Kite Academy
         </span>
       </div>

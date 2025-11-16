@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-sm font-medium relative transition-all duration-300', 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0', 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300', 'hover:after:scale-x-100 hover:after:origin-bottom-left', location.pathname === link.path ? 'text-accent after:scale-x-100' : 'text-foreground/80 hover:text-foreground')}>
+          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-sm font-medium relative transition-all duration-300', 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0', 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300', 'hover:after:scale-x-100 hover:after:origin-bottom-left', location.pathname === link.path ? 'text-accent after:scale-x-100' : 'text-gray-900 hover:text-gray-700')}>
               {link.name}
             </Link>)}
         </nav>
@@ -67,12 +67,12 @@ const Navbar: React.FC = () => {
             href="https://wa.me/48884035225" 
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-foreground/80 hover:text-foreground transition-colors duration-300"
+            className="flex items-center gap-1 text-gray-900 hover:text-gray-700 transition-colors duration-300"
           >
             <Phone size={16} />
             <span>+48 884 035 225</span>
           </a>
-          <button className="p-2 rounded-full text-foreground/70 hover:text-foreground transition-colors duration-300" onClick={() => setIsSearchOpen(true)}>
+          <button className="p-2 rounded-full text-gray-900 hover:text-gray-700 transition-colors duration-300" onClick={() => setIsSearchOpen(true)}>
             <Search size={20} />
           </button>
           <ThemeToggle />
@@ -88,7 +88,7 @@ const Navbar: React.FC = () => {
         <div className="md:hidden flex items-center gap-2">
           <ThemeToggle />
           <button
-            className="text-foreground p-2"
+            className="text-gray-900 p-2"
             onClick={toggleMenu}
             aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           >
