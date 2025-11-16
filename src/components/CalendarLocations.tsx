@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -10,7 +10,9 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
+  type CarouselApi,
 } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 interface LocationCardProps {
   flag: string;
@@ -107,14 +109,46 @@ const LocationCard: React.FC<LocationCardProps> = ({
 };
 
 const CalendarLocations: React.FC = () => {
+  const sectionRef = useRef<HTMLElement>(null);
+  const [startAutoplay, setStartAutoplay] = useState(false);
+
+  const autoplayPlugin = useRef(
+    Autoplay({
+      delay: 4000,
+      stopOnInteraction: true,
+      stopOnMouseEnter: true,
+    })
+  );
+
+  useEffect(() => {
+    const section = sectionRef.current;
+    if (!section) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !startAutoplay) {
+            setTimeout(() => {
+              setStartAutoplay(true);
+            }, 5000);
+          }
+        });
+      },
+      { threshold: 0.3 }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, [startAutoplay]);
+
   const locations: LocationCardProps[] = [
     {
       flag: "🇻🇳",
       country: "VIETNAM",
       location: "Phan Rang",
       dates: [
-        "January 20 – January 30, 2025",
-        "March 1 – March 11, 2025"
+        "January 20 – January 30, 2026",
+        "March 1 – March 11, 2026"
       ],
       highlights: [
         "Perfect flat water",
@@ -139,8 +173,8 @@ const CalendarLocations: React.FC = () => {
       country: "EGYPT",
       location: "El Gouna / Red Sea",
       dates: [
-        "April 11 – April 18, 2025",
-        "April 18 – April 25, 2025"
+        "April 11 – April 18, 2026",
+        "April 18 – April 25, 2026"
       ],
       highlights: [
         "World-class lagoons",
@@ -165,7 +199,7 @@ const CalendarLocations: React.FC = () => {
       flag: "🇨🇾",
       country: "CYPRUS",
       location: "Avdimou Beach",
-      dates: ["All Year Round"],
+      dates: ["All Year Round, 2026"],
       highlights: [
         "Ideal for first steps",
         "Shallow water & steady wind",
@@ -189,8 +223,8 @@ const CalendarLocations: React.FC = () => {
       country: "BRAZIL",
       location: "Best Spots",
       dates: [
-        "November 1 – November 15, 2025",
-        "November 20 – December 4, 2025 (14 days)"
+        "November 1 – November 15, 2026",
+        "November 20 – December 4, 2026 (14 days)"
       ],
       highlights: [
         "Strong daily wind",
@@ -213,7 +247,7 @@ const CalendarLocations: React.FC = () => {
   ];
 
   return (
-    <section className="section-padding bg-gradient-to-b from-background to-muted/20">
+    <section ref={sectionRef} className="section-padding bg-gradient-to-b from-background to-muted/20">
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
@@ -238,7 +272,13 @@ const CalendarLocations: React.FC = () => {
 
         {/* Mobile Carousel */}
         <div className="md:hidden">
-          <Carousel className="w-full">
+          <Carousel 
+            className="w-full"
+            plugins={startAutoplay ? [autoplayPlugin.current] : []}
+            opts={{
+              loop: true,
+            }}
+          >
             <CarouselContent>
               {locations.map((location, index) => (
                 <CarouselItem key={index}>
