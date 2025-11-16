@@ -15,35 +15,35 @@ type SlideData = {
 const slides: SlideData[] = [
   {
     id: 1,
-    imageSrc: '/lovable-uploads/hero-kite-action.jpg',
+    imageSrc: '/lovable-uploads/hero-new-1.jpg',
     title: 'Learn to Kitesurf',
     subtitle: 'Professional kitesurfing instruction in paradise locations',
     link: '/cyprus#video-tutorial'
   },
   {
     id: 2,
-    imageSrc: '/lovable-uploads/hero-kite-learning.jpg',
+    imageSrc: '/lovable-uploads/hero-new-2.jpg',
     title: 'Kite Safari Adventures',
     subtitle: 'Experience the ultimate kitesurfing journey across stunning destinations',
     link: '/kite-safari'
   },
   {
     id: 3,
-    imageSrc: '/lovable-uploads/hero-group-splash.jpg',
+    imageSrc: '/lovable-uploads/hero-new-3.jpg',
     title: 'Brazil Kitesurfing',
     subtitle: 'Discover world-class kitesurfing spots in beautiful Brazil',
     link: '/brazil'
   },
   {
     id: 4,
-    imageSrc: '/lovable-uploads/hero-island-view.jpg', 
+    imageSrc: '/lovable-uploads/hero-new-4.jpg', 
     title: 'Cyprus Kite Paradise',
     subtitle: 'Perfect wind conditions and crystal clear Mediterranean waters',
     link: '/cyprus'
   },
   {
     id: 5,
-    imageSrc: '/lovable-uploads/hero-instructors.jpg', 
+    imageSrc: '/lovable-uploads/hero-new-5.jpg', 
     title: 'Expert Instruction',
     subtitle: 'Learn from certified IKO instructors with years of experience',
     link: '/kite-safari#instructors'
