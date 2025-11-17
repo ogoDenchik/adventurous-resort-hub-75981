@@ -71,7 +71,9 @@ const Index: React.FC = () => {
                 style={{ animationDelay: `${testimonial.delay}ms` }}
               >
                 <div className="flex items-center mb-4">
-                  <img src={testimonial.image} alt={testimonial.name} className="w-12 h-12 rounded-full mr-4 object-cover hover:scale-110 transition-transform duration-300" />
+                  <div className="w-12 h-12 rounded-full mr-4 overflow-hidden flex-shrink-0">
+                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover scale-150 hover:scale-[1.6] transition-transform duration-300" />
+                  </div>
                   <div>
                     <h4 className="font-medium text-base">{testimonial.name}</h4>
                     <p className="text-sm text-muted-foreground">{testimonial.location}</p>
