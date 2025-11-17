@@ -51,10 +51,10 @@ const Index: React.FC = () => {
                 delay: 0
               },
               {
-                name: "Vana",
+                name: "Kate",
                 location: "Brazil Trip",
                 quote: "Everything was absolutely top level. Training was world-class, the accommodations were excellent, and the whole trip was perfectly organized. I even learned my first backroll!",
-                image: "/lovable-uploads/testimonial-vana.jpg",
+                image: "/lovable-uploads/testimonial-kate.jpg",
                 delay: 200
               },
               {
