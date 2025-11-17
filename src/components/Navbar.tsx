@@ -78,24 +78,24 @@ const Navbar: React.FC = () => {
           </button>
         </div>
         
-        {/* Mobile Right Controls */}
-        <div className="md:hidden flex items-center gap-2">
-          <ThemeToggle />
-          <button
-            className="text-gray-900 p-2"
-            onClick={toggleMenu}
-            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-          >
-            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
+      {/* Mobile Right Controls */}
+      <div className="md:hidden flex items-center gap-2 relative z-[70]">
+        <ThemeToggle />
+        <button
+          className="text-gray-900 p-2 relative z-[70]"
+          onClick={toggleMenu}
+          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+        >
+          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+        </button>
+      </div>
       </div>
       
       {/* Mobile Navigation */}
       <div 
         className={cn(
-          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden',
-          isMenuOpen ? 'translate-x-0 z-[60]' : 'translate-x-full pointer-events-none z-0'
+          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[60]',
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         )}
         style={{ 
           backgroundColor: 'hsl(var(--background))',
