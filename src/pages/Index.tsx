@@ -6,10 +6,8 @@ import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import FeaturedActivities from '@/components/FeaturedActivities';
 import SpecialOffers from '@/components/SpecialOffers';
-import HomeGallery from '@/components/HomeGallery';
 import { BookingPopup } from '@/components/BookingPopup';
-import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import ContactCTA from '@/components/ContactCTA';
 
 import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
 import TrustIndicators from '@/components/TrustIndicators';
@@ -94,94 +92,8 @@ const Index: React.FC = () => {
         {/* Special Offers Section */}
         <SpecialOffers />
         
-        {/* Gallery Section */}
-        <HomeGallery />
-        
-        {/* Newsletter sign-up */}
-        <section className="py-16 bg-secondary/50">
-          <div className="container px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
-                Get Exclusive Updates
-              </h2>
-              <p className="text-foreground/70 mb-8">
-                Subscribe to our newsletter and be the first to know about upcoming trips, special offers, and kite destinations.
-              </p>
-              <form className="flex flex-col sm:flex-row items-center max-w-md mx-auto gap-3" onSubmit={async (e) => {
-                e.preventDefault();
-                const emailInput = e.currentTarget.querySelector('input[type="email"]') as HTMLInputElement;
-                if (emailInput && emailInput.value) {
-                  try {
-                    const payload = {
-                      email: emailInput.value,
-                      form_type: "newsletter",
-                      timestamp: new Date().toISOString(),
-                      device_type: /Mobile|Android|iPhone/i.test(navigator.userAgent) ? "mobile" : "desktop",
-                      browser_language: navigator.language,
-                      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-                      platform: navigator.platform,
-                    };
-
-                    const { data, error } = await supabase.functions.invoke('forward-webhook', {
-                      body: payload
-                    });
-
-                    if (error) throw error;
-
-                    toast({
-                      title: "Success!",
-                      description: "You've been subscribed to our newsletter",
-                      variant: "default",
-                    });
-                    emailInput.value = '';
-                  } catch (error) {
-                    console.error('Newsletter subscription error:', error);
-                    toast({
-                      title: "Error",
-                      description: "Failed to subscribe. Please try again.",
-                      variant: "destructive",
-                    });
-                  }
-                }
-              }}>
-                <input type="email" placeholder="Your email address" className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring" required />
-                <Button type="submit" variant="default" className="w-full sm:w-auto bg-green-700 hover:bg-green-800 hover:scale-105 transition-transform">
-                  Subscribe
-                </Button>
-              </form>
-              <p className="text-xs text-muted-foreground mt-4">
-                We respect your privacy. Unsubscribe at any time.
-              </p>
-            </div>
-          </div>
-        </section>
-        
-        {/* CTA */}
-        <section className="py-20 bg-green-700 text-white relative">
-          <div className="absolute inset-0 bg-[url('/lovable-uploads/kite-safari-sunset-1.jpg')] bg-cover bg-center">
-            <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-black/35"></div>
-          </div>
-          <div className="container relative z-10 px-4 text-center">
-            <div className="max-w-3xl mx-auto animate-fade-in">
-              <h2 className="text-3xl md:text-5xl font-display font-bold mb-6 text-white drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-                Your Adventure Awaits!
-              </h2>
-              <p className="text-lg mb-6 text-white/90 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-                Book your kitesurfing adventure now and create memories that will last a lifetime.
-              </p>
-              <p className="text-base mb-8 text-white/80 drop-shadow-[0_2px_8px_rgba(0,0,0,0.5)]">
-                Not sure where to go? <a href="#our-programs" className="underline hover:text-white">Explore our destinations</a>
-              </p>
-              <Button 
-                onClick={() => setIsBookingOpen(true)}
-                size="lg"
-                className="bg-white text-green-700 hover:bg-white/90 font-medium"
-              >
-                Book Your Adventure Now
-              </Button>
-            </div>
-          </div>
-        </section>
+        {/* Contact CTA Section */}
+        <ContactCTA />
       </main>
       
       <Footer />
