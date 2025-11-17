@@ -61,7 +61,7 @@ const Hero: React.FC = () => {
               textShadow: '0 0 15px rgba(255, 255, 255, 0.7)'
             }}
           >
-            YOUR KITESURFING COACH<br />IN WORLD'S BEST SPOTS
+            YOUR KITESURF COACH<br />IN WORLD'S BEST SPOTS
           </h1>
           <p 
             className="text-lg md:text-xl text-white max-w-2xl mb-8 text-shadow-md"
@@ -70,8 +70,8 @@ const Hero: React.FC = () => {
               textShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
             }}
           >
-            Private Coaching | Egypt • Vietnam • Brazil | 500+ Students<br />
-            Proven Step-by-Step Method
+            Egypt • Vietnam • Brazil • Cyprus<br />
+            Proven Step-by-Step Methodology
           </p>
           <button 
             onClick={scrollToCalendar}
