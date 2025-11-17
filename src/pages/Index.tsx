@@ -27,7 +27,9 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         <TrustIndicators />
-        <CalendarLocations />
+        <div id="calendar-section">
+          <CalendarLocations />
+        </div>
         <TrainingPrograms />
         
         {/* Testimonials */}
