@@ -61,7 +61,7 @@ const Index: React.FC = () => {
                 name: "Ilya",
                 location: "Vietnam Kite Camp",
                 quote: "I really enjoy Denis' approach. He teaches step-by-step — giving small pieces of information that later come together into a full picture. I progressed very fast. Highly recommended.",
-                image: "/lovable-uploads/testimonial-ilya.jpg",
+                image: "/lovable-uploads/testimonial-ilya-v2.jpg",
                 delay: 400
               }
             ].map((testimonial, index) => (
