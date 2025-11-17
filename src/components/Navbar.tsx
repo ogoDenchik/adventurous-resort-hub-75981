@@ -48,7 +48,7 @@ const Navbar: React.FC = () => {
     name: 'Contact Us',
     path: '/contact'
   }];
-  return <header className={cn('fixed w-full top-0 z-[100] transition-all duration-300', isScrolled ? 'glass py-3' : 'bg-transparent py-6')}>
+  return <header className={cn('fixed w-full top-0 z-[200] transition-all duration-300', isScrolled ? 'glass py-3' : 'bg-transparent py-6')}>
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Logo />
         
@@ -79,10 +79,10 @@ const Navbar: React.FC = () => {
         </div>
         
       {/* Mobile Right Controls */}
-      <div className="md:hidden flex items-center gap-2 relative z-[110]">
+      <div className="md:hidden flex items-center gap-2 relative z-[210]">
         <ThemeToggle />
         <button
-          className="text-gray-900 dark:text-gray-100 p-2 relative z-[110] cursor-pointer touch-manipulation"
+          className="text-gray-900 dark:text-gray-100 p-2 relative z-[210] cursor-pointer touch-manipulation"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
@@ -98,8 +98,8 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation */}
       <div 
         className={cn(
-          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[105]',
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
+           'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[205]',
+           isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         )}
         style={{ 
           backgroundColor: 'hsl(var(--background))',
@@ -107,7 +107,7 @@ const Navbar: React.FC = () => {
         }}
       >
         <button 
-          className="absolute top-4 right-4 p-2 text-foreground z-[110] cursor-pointer touch-manipulation" 
+          className="absolute top-4 right-4 p-2 text-foreground z-[215] cursor-pointer touch-manipulation" 
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
