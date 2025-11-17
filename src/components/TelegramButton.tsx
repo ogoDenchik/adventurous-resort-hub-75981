@@ -9,12 +9,12 @@ const TelegramButton: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-4 right-6 z-40">
+    <div className="fixed bottom-4 right-6 z-[70]">
       <Button
         onClick={handleTelegramClick}
         className={cn(
           "w-14 h-14 rounded-full shadow-lg flex items-center justify-center",
-          "bg-blue-500 hover:bg-blue-600 transition-all duration-300 animate-bounce"
+          "bg-blue-500 hover:bg-blue-600 transition-all duration-300 hover:scale-110"
         )}
         aria-label="Contact us on Telegram"
       >
