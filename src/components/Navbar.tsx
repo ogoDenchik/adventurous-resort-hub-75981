@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { Search, Menu, X, Phone } from 'lucide-react';
+import { Menu, X, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
 import { BookingPopup } from './BookingPopup';
-import { Dialog, DialogContent, DialogTitle, DialogHeader } from "@/components/ui/dialog";
-import { SearchForm } from './SearchForm';
 import ThemeToggle from './ThemeToggle';
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
@@ -72,9 +69,6 @@ const Navbar: React.FC = () => {
             <Phone size={16} />
             <span>+48 884 035 225</span>
           </a>
-          <button className="p-2 rounded-full text-gray-900 hover:text-gray-700 transition-colors duration-300" onClick={() => setIsSearchOpen(true)}>
-            <Search size={20} />
-          </button>
           <ThemeToggle />
           <button 
             className="btn-primary"
@@ -98,7 +92,7 @@ const Navbar: React.FC = () => {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={cn('fixed inset-0 pt-20 px-4 z-40 transition-all duration-300 ease-in-out md:hidden', 'bg-background dark:bg-background', isMenuOpen ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-full pointer-events-none')} style={{ backgroundColor: 'hsl(var(--background))' }}>
+      <div className={cn('fixed inset-0 pt-20 px-4 z-40 transition-transform duration-300 ease-in-out md:hidden bg-background', isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none')}>
         <button className="absolute top-4 right-4 p-2 text-foreground" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
           <X size={24} />
         </button>
@@ -117,13 +111,6 @@ const Navbar: React.FC = () => {
             <Phone size={20} className="text-green-600" />
             WhatsApp: +48 884 035 225
           </a>
-          <button className="text-xl font-medium py-2 border-b border-border text-foreground/80 text-left flex items-center gap-2" onClick={() => {
-          setIsMenuOpen(false);
-          setIsSearchOpen(true);
-        }}>
-            <Search size={20} />
-            Search
-          </button>
           <button 
             className="btn-primary text-center" 
             onClick={() => {
@@ -136,16 +123,6 @@ const Navbar: React.FC = () => {
         </nav>
       </div>
       
-      {/* Search Dialog */}
-      <Dialog open={isSearchOpen} onOpenChange={setIsSearchOpen}>
-        <DialogContent className="sm:max-w-3xl">
-          <DialogHeader>
-            <DialogTitle className="text-2xl font-display mb-4">Search for Availability</DialogTitle>
-          </DialogHeader>
-          <SearchForm />
-        </DialogContent>
-      </Dialog>
-
       {/* Booking Popup */}
       <BookingPopup 
         open={bookingPopupOpen} 
