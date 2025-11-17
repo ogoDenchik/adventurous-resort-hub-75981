@@ -44,24 +44,24 @@ const Index: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {[
               {
-                name: "M.K.",
-                location: "Kite Safari — Egypt",
-                quote: "An unforgettable week on the Red Sea! Perfect wind every day and the yacht made it feel like a luxury adventure.",
-                image: "/lovable-uploads/b2944dcd-84a0-4ab8-af63-861cd91c2d08.png",
+                name: "Misha",
+                location: "Egypt Kite Safari",
+                quote: "I met Denis two years ago. He got me riding independently in just 7 days — and since then, we've been traveling and progressing together non-stop. I love his approach and his methodology. It's clear, structured and incredibly effective.",
+                image: "/lovable-uploads/testimonial-misha.jpg",
                 delay: 0
               },
               {
-                name: "Anna L.",
+                name: "Vana",
                 location: "Brazil Trip",
-                quote: "Brazil with OGO was magical — incredible kite spots, amazing instructors, and a group that became like family. Can't wait to go back!",
-                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80",
+                quote: "Everything was absolutely top level. Training was world-class, the accommodations were excellent, and the whole trip was perfectly organized. I even learned my first backroll!",
+                image: "/lovable-uploads/testimonial-vana.jpg",
                 delay: 200
               },
               {
-                name: "Tom R.",
-                location: "Cyprus Lessons",
-                quote: "Learned to kitesurf in just one week thanks to the amazing team in Cyprus. The community vibe and support made all the difference.",
-                image: "/lovable-uploads/54f9733a-3115-43f8-8702-ac90313ce5aa.png",
+                name: "Ilya",
+                location: "Vietnam Kite Camp",
+                quote: "I really enjoy Denis' approach. He teaches step-by-step — giving small pieces of information that later come together into a full picture. I progressed very fast. Highly recommended.",
+                image: "/lovable-uploads/testimonial-ilya.jpg",
                 delay: 400
               }
             ].map((testimonial, index) => (
