@@ -92,7 +92,16 @@ const Navbar: React.FC = () => {
       </div>
       
       {/* Mobile Navigation */}
-      <div className={cn('fixed inset-0 pt-20 px-4 z-40 transition-transform duration-300 ease-in-out md:hidden bg-background', isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none')}>
+      <div 
+        className={cn(
+          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden',
+          isMenuOpen ? 'translate-x-0 z-[60]' : 'translate-x-full pointer-events-none z-0'
+        )}
+        style={{ 
+          backgroundColor: 'hsl(var(--background))',
+          opacity: 1
+        }}
+      >
         <button className="absolute top-4 right-4 p-2 text-foreground" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
           <X size={24} />
         </button>
