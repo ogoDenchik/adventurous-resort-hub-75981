@@ -82,7 +82,7 @@ const Navbar: React.FC = () => {
       <div className="md:hidden flex items-center gap-2 relative z-[210]">
         <ThemeToggle />
         <button
-          className="text-gray-900 dark:text-gray-100 p-2 relative z-[210] cursor-pointer touch-manipulation"
+          className="text-gray-900 p-2 relative z-[210] cursor-pointer touch-manipulation"
           onClick={(e) => {
             e.preventDefault();
             e.stopPropagation();
