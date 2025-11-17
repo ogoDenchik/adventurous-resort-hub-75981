@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
 import FeaturedActivities from '@/components/FeaturedActivities';
-import SpecialOffers from '@/components/SpecialOffers';
+
 import { BookingPopup } from '@/components/BookingPopup';
 import ContactCTA from '@/components/ContactCTA';
 
@@ -88,9 +88,6 @@ const Index: React.FC = () => {
         
         {/* Meet Your Coach Section */}
         <MeetYourCoach />
-        
-        {/* Special Offers Section */}
-        <SpecialOffers />
         
         {/* Contact CTA Section */}
         <ContactCTA />
