@@ -48,8 +48,8 @@ const Navbar: React.FC = () => {
     name: 'Contact Us',
     path: '/contact'
   }];
-  return <header className={cn('fixed w-full top-0 z-50 transition-all duration-300', isScrolled ? 'glass py-3' : 'bg-transparent py-6')}>
-      <div className="container mx-auto px-4 flex items-center justify-between">
+  return <header className={cn('fixed w-full top-0 z-[100] transition-all duration-300', isScrolled ? 'glass py-3' : 'bg-transparent py-6')}>
+      <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Logo />
         
         {/* Desktop Navigation */}
@@ -79,11 +79,15 @@ const Navbar: React.FC = () => {
         </div>
         
       {/* Mobile Right Controls */}
-      <div className="md:hidden flex items-center gap-2 relative z-[70]">
+      <div className="md:hidden flex items-center gap-2 relative z-[110]">
         <ThemeToggle />
         <button
-          className="text-gray-900 p-2 relative z-[70]"
-          onClick={toggleMenu}
+          className="text-gray-900 dark:text-gray-100 p-2 relative z-[110] cursor-pointer touch-manipulation"
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            toggleMenu();
+          }}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -94,7 +98,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation */}
       <div 
         className={cn(
-          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[60]',
+          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[105]',
           isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         )}
         style={{ 
@@ -102,7 +106,15 @@ const Navbar: React.FC = () => {
           opacity: 1
         }}
       >
-        <button className="absolute top-4 right-4 p-2 text-foreground" onClick={() => setIsMenuOpen(false)} aria-label="Close menu">
+        <button 
+          className="absolute top-4 right-4 p-2 text-foreground z-[110] cursor-pointer touch-manipulation" 
+          onClick={(e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            setIsMenuOpen(false);
+          }} 
+          aria-label="Close menu"
+        >
           <X size={24} />
         </button>
         
