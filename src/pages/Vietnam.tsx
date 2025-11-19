@@ -535,6 +535,246 @@ const Vietnam = () => {
     </div>
   </section>
 
+  {/* Investment / Pricing Section */}
+  <section className="py-20 bg-muted/30">
+    <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            INVESTMENT
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            All-Inclusive Camp Pricing
+          </p>
+        </div>
+
+        {/* Two Pricing Cards */}
+        <div className="grid lg:grid-cols-2 gap-8 mb-12">
+          
+          {/* Card 1: Standard Camp */}
+          <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+            <div className="text-center mb-6">
+              <h3 className="text-3xl font-bold text-foreground mb-2">
+                STANDARD CAMP
+              </h3>
+              <div className="text-4xl font-bold text-primary mb-2">
+                €1,200 – €1,400
+              </div>
+              <p className="text-muted-foreground">
+                10 Days — All Inclusive
+              </p>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="text-lg font-bold text-foreground mb-4">
+                WHAT'S INCLUDED
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">10 hours structured kitesurfing lessons</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Premium equipment (kite, board, harness, safety gear)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Accommodation — shared room (9 nights)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Breakfast daily</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Welcome & farewell dinners</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Group airport transfers (Cam Ranh ↔ Phan Rang)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">1–2 excursions (waterfall, market, cooking class)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Video analysis</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Safety training & theory</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">WhatsApp group & community</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
+                  <span className="text-muted-foreground">Photo content for social media</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-6 p-4 bg-muted/50 rounded-lg">
+              <p className="text-sm text-foreground mb-2">
+                <strong>Group size:</strong> 3–4 students per instructor
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <strong>Perfect for:</strong> Solo travellers, budget-conscious riders, those who enjoy group energy
+              </p>
+            </div>
+
+            <Button className="w-full mb-3">
+              BOOK STANDARD CAMP
+            </Button>
+
+            <p className="text-center text-sm text-muted-foreground">
+              Private room upgrade: +€150
+            </p>
+          </div>
+
+          {/* Card 2: Private Premium Experience */}
+          <div className="bg-background border-2 border-primary rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+            {/* Premium Badge */}
+            <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+              <span className="bg-primary text-primary-foreground px-6 py-2 rounded-full font-bold text-sm">
+                PREMIUM
+              </span>
+            </div>
+
+            <div className="text-center mb-6 mt-4">
+              <h3 className="text-3xl font-bold text-foreground mb-2">
+                PRIVATE PREMIUM EXPERIENCE
+              </h3>
+              <div className="text-4xl font-bold text-primary mb-2">
+                €2,500
+              </div>
+              <p className="text-muted-foreground">
+                10 Days — Full Private Coaching Upgrade
+              </p>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="text-lg font-bold text-foreground mb-4">
+                ⭐ EVERYTHING IN STANDARD + EXCLUSIVE BENEFITS
+              </h4>
+              <div className="space-y-3">
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Full 1-on-1 coaching (or max 2 pax private group)</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Direct Access to Denis for feedback & progression</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Customized step-by-step progression plan</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Extended video analysis with detailed breakdown</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Flexible session timing based on your goals</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Priority session slots</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Personal equipment setup tuning</span>
+                </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Advanced trick-focused drills</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="mb-6 p-4 bg-primary/10 rounded-lg border border-primary/20">
+              <p className="text-sm text-foreground mb-2">
+                <strong>Group size:</strong> 1–2 students (private sessions only)
+              </p>
+              <p className="text-sm text-muted-foreground">
+                <strong>Perfect for:</strong> Fast-track progression, riders aiming for tricks, couples/friends wanting exclusive training, professionals & advanced students
+              </p>
+            </div>
+
+            <Button className="w-full mb-3 bg-primary hover:bg-primary/90">
+              BOOK PRIVATE PREMIUM
+            </Button>
+
+            <div className="text-center">
+              <span className="inline-block bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold">
+                Only 4 spots per camp
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Terms Box */}
+        <div className="bg-muted/50 rounded-2xl p-8 border border-border">
+          <div className="grid md:grid-cols-3 gap-8 mb-6">
+            
+            {/* Payment Terms */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">💳</span>
+                <h4 className="text-lg font-bold text-foreground">PAYMENT TERMS</h4>
+              </div>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li>• 30% deposit to secure your spot</li>
+                <li>• Balance due 7 days before camp start</li>
+                <li>• Payments via Bank Transfer, Wise, PayPal</li>
+              </ul>
+            </div>
+
+            {/* Cancellation Policy */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">📅</span>
+                <h4 className="text-lg font-bold text-foreground">CANCELLATION POLICY</h4>
+              </div>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li>• 30+ days prior → Full refund minus 10% admin</li>
+                <li>• 15–29 days → 50% refund</li>
+                <li>• &lt;14 days → deposit non-refundable</li>
+                <li>• Weather cancellations → reschedule or refund</li>
+              </ul>
+            </div>
+
+            {/* Insurance */}
+            <div>
+              <div className="flex items-center gap-2 mb-4">
+                <span className="text-2xl">🛡</span>
+                <h4 className="text-lg font-bold text-foreground">INSURANCE</h4>
+              </div>
+              <ul className="space-y-2 text-muted-foreground text-sm">
+                <li>• Students covered during lessons</li>
+                <li>• Personal travel insurance required</li>
+              </ul>
+            </div>
+
+          </div>
+
+          <div className="text-center">
+            <Button variant="outline" className="mt-4">
+              VIEW FULL TERMS & CONDITIONS
+            </Button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <Footer />
     </div>
   );
