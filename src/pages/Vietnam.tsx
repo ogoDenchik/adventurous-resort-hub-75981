@@ -33,19 +33,11 @@ const Vietnam = () => {
             Ride. Explore. Connect.
           </p>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-12">
+          <p className="text-xl md:text-2xl text-white/90 mb-8">
             10 Days in Asia's Hidden Kitesurfing Paradise
           </p>
           
-          <div className="mb-8 text-white/95">
-            <p className="text-lg font-semibold mb-2">2026 Camps:</p>
-            <div className="flex flex-col gap-1 text-base md:text-lg">
-              <p>• 20–30 January</p>
-              <p>• 13–23 February</p>
-            </div>
-          </div>
-          
-          <div className="flex flex-col sm:flex-row gap-4 mt-4">
+          <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg" 
               className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
@@ -60,6 +52,23 @@ const Vietnam = () => {
             >
               Book Private Sessions
             </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Camp Dates Section */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <h3 className="text-2xl font-bold text-foreground mb-6">2026 CAMP DATES</h3>
+          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg">
+              <span className="text-2xl">📅</span>
+              <span className="text-lg font-medium text-foreground">20–30 January</span>
+            </div>
+            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg">
+              <span className="text-2xl">📅</span>
+              <span className="text-lg font-medium text-foreground">13–23 February</span>
+            </div>
           </div>
         </div>
       </section>
