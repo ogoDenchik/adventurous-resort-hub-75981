@@ -428,11 +428,114 @@ const Vietnam = () => {
               </ul>
             </div>
 
-          </div>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 
-      <Footer />
+  {/* Full Camp Schedule Section */}
+  <section className="py-20 bg-background">
+    <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            FULL CAMP SCHEDULE
+          </h2>
+        </div>
+
+        {/* Three Cards Grid */}
+        <div className="grid lg:grid-cols-3 gap-8">
+          
+          {/* Card 1: Day 1 - Arrival */}
+          <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+            <div className="text-center mb-6">
+              <div className="flex justify-center gap-2 text-3xl mb-4">
+                <span>🛬</span>
+                <span>🚐</span>
+                <span>🍽</span>
+                <span>🌅</span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                DAY 1 — ARRIVAL & WELCOME
+              </h3>
+            </div>
+
+            <div className="space-y-3 text-muted-foreground">
+              <p>• Airport pickup throughout the day</p>
+              <p>• Transfer to Phan Rang</p>
+              <p>• Check-in & settle into rooms</p>
+              <p>• Beach walk / chill time</p>
+              <p>• 18:00 — Group meet & introductions</p>
+              <p>• 19:30 — Welcome Dinner</p>
+              <p>• Good rest before kiting</p>
+            </div>
+          </div>
+
+          {/* Card 2: Days 2-9 - Kitesurfing & Adventure */}
+          <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+            <div className="text-center mb-6">
+              <div className="flex justify-center gap-2 text-3xl mb-4 flex-wrap">
+                <span>🪁</span>
+                <span>🍜</span>
+                <span>🏖</span>
+                <span>🌅</span>
+                <span>🎥</span>
+                <span>🔥</span>
+                <span>🛵</span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                DAYS 2–9 — KITESURFING & ADVENTURE
+              </h3>
+            </div>
+
+            <div className="space-y-3 text-muted-foreground mb-6">
+              <p>• Breakfast with ocean view</p>
+              <p>• 3–4 hour kite session with structured progression</p>
+              <p>• Lunch at a local spot (€3–5)</p>
+              <p>• Afternoon session: kiting / video review / scooter exploration / beach chill</p>
+              <p>• Sunset beach time</p>
+              <p>• Group dinner (seafood BBQ, hot pot, etc.)</p>
+              <p>• Evening social: bonfire, guitar, stories</p>
+            </div>
+
+            <div className="pt-4 border-t border-border">
+              <p className="text-foreground font-semibold">
+                🟦 Important:
+              </p>
+              <p className="text-muted-foreground mt-2">
+                One of these days is dedicated to a waterfall adventure trip — beautiful nature, swimming, photos, group bonding.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Day 10 - Departure */}
+          <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+            <div className="text-center mb-6">
+              <div className="flex justify-center gap-2 text-3xl mb-4">
+                <span>🛫</span>
+                <span>💬</span>
+                <span>🤝</span>
+              </div>
+              <h3 className="text-2xl font-bold text-foreground mb-2">
+                DAY 10 — DEPARTURE & TRANSFERS
+              </h3>
+            </div>
+
+            <div className="space-y-3 text-muted-foreground">
+              <p>• Breakfast</p>
+              <p>• Check-out</p>
+              <p>• Group transfers to Cam Ranh Airport</p>
+              <p>• Goodbye hugs & new friendships</p>
+              <p>• "See you on the next trip!"</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
     </div>
   );
 };
