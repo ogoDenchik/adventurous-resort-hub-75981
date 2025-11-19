@@ -194,6 +194,85 @@ const Vietnam = () => {
         </div>
       </section>
 
+      {/* When & Where Section - Camp Dates */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-5xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-12">
+              WHEN & WHERE
+            </h2>
+
+            <div className="grid md:grid-cols-2 gap-8">
+              {/* January Camp Card */}
+              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-center mb-6">
+                  <span className="text-5xl mb-4 block">📅</span>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    20–30 January 2026
+                  </h3>
+                </div>
+
+                <div className="space-y-4 text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl flex-shrink-0">📍</span>
+                    <p className="text-muted-foreground">
+                      Phan Rang, Ninh Thuan Province
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl flex-shrink-0">🌬</span>
+                    <p className="text-muted-foreground">
+                      Prime wind season
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3 pt-2 border-t border-border">
+                    <span className="text-xl flex-shrink-0">🎯</span>
+                    <p className="text-foreground font-semibold">
+                      Spots available: <span className="text-primary">9/12</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* February Camp Card */}
+              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-center mb-6">
+                  <span className="text-5xl mb-4 block">📅</span>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    13–23 February 2026
+                  </h3>
+                </div>
+
+                <div className="space-y-4 text-left">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl flex-shrink-0">📍</span>
+                    <p className="text-muted-foreground">
+                      Phan Rang, Ninh Thuan Province
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl flex-shrink-0">🌅</span>
+                    <p className="text-muted-foreground">
+                      Warmest period of the season
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3 pt-2 border-t border-border">
+                    <span className="text-xl flex-shrink-0">🔥</span>
+                    <p className="text-foreground font-semibold">
+                      Spots available: <span className="text-primary">5/12</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
