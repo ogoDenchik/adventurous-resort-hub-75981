@@ -33,17 +33,17 @@ const Vietnam = () => {
             Ride. Explore. Connect.
           </p>
           
-          <p className="text-xl md:text-2xl text-white/90 mb-6">
+          <p className="text-xl md:text-2xl text-white/90 mb-12">
             10 Days in Asia's Hidden Kitesurfing Paradise
           </p>
           
-          <Badge variant="secondary" className="mb-8 px-6 py-3 text-base md:text-lg bg-white/90 text-gray-900">
-            <span className="font-semibold">2026:</span>
-            <span className="mx-2">•</span>
-            <span>20–30 January</span>
-            <span className="mx-2">•</span>
-            <span>13–23 February</span>
-          </Badge>
+          <div className="mb-8 text-white/95">
+            <p className="text-lg font-semibold mb-2">2026 Camps:</p>
+            <div className="flex flex-col gap-1 text-base md:text-lg">
+              <p>• 20–30 January</p>
+              <p>• 13–23 February</p>
+            </div>
+          </div>
           
           <div className="flex flex-col sm:flex-row gap-4 mt-4">
             <Button 
