@@ -42,6 +42,9 @@ const Navbar: React.FC = () => {
     name: 'Cyprus',
     path: '/cyprus'
   }, {
+    name: 'Vietnam',
+    path: '/vietnam'
+  }, {
     name: 'Gallery',
     path: '/gallery'
   }, {
