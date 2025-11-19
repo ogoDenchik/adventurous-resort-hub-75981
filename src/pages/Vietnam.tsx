@@ -1219,7 +1219,255 @@ const Vietnam = () => {
     </div>
   </section>
 
-  <Footer />
+  {/* Contact Form Section */}
+  <section className="py-20 bg-muted/20">
+    <div className="container mx-auto px-4">
+      <div className="max-w-2xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            GET IN TOUCH
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            Questions? Special Requests? Let's Talk.
+          </p>
+        </div>
+
+        {/* Contact Form */}
+        <form className="bg-background rounded-2xl p-8 shadow-md border border-border mb-12">
+          <div className="space-y-6">
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-2">
+                Your Name *
+              </label>
+              <input
+                type="text"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="Enter your full name"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-2">
+                Email *
+              </label>
+              <input
+                type="email"
+                required
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="your@email.com"
+              />
+            </div>
+
+            <div>
+              <label className="block text-sm font-semibold text-foreground mb-2">
+                WhatsApp / Phone <span className="text-muted-foreground">(optional but recommended)</span>
+              </label>
+              <input
+                type="tel"
+                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                placeholder="+1 234 567 8900"
+              />
+            </div>
+
+            <div className="flex items-start gap-3">
+              <input
+                type="checkbox"
+                id="consent"
+                required
+                className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary"
+              />
+              <label htmlFor="consent" className="text-sm text-muted-foreground">
+                I agree to be contacted via email/WhatsApp regarding my booking
+              </label>
+            </div>
+
+            <Button type="submit" className="w-full text-lg py-6">
+              SEND MY REQUEST
+            </Button>
+
+            <p className="text-center text-sm text-muted-foreground mt-4">
+              We'll respond within 24 hours (usually faster!).<br />
+              By submitting, you agree to our Privacy Policy.
+            </p>
+          </div>
+        </form>
+
+        {/* Alternative Contact Methods */}
+        <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
+          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+            PREFER OTHER CHANNELS?
+          </h3>
+
+          <div className="space-y-6">
+            <div className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
+              <span className="text-3xl">📱</span>
+              <div>
+                <p className="font-semibold text-foreground mb-1">WhatsApp: +XX XXX XXX XXXX</p>
+                <p className="text-sm text-muted-foreground">→ Fastest response (I check daily, even on the water!)</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
+              <span className="text-3xl">📸</span>
+              <div>
+                <p className="font-semibold text-foreground mb-1">Instagram DM: @ogokiteacademy</p>
+                <p className="text-sm text-muted-foreground">→ Casual questions, quick answers</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
+              <span className="text-3xl">📧</span>
+              <div>
+                <p className="font-semibold text-foreground mb-1">Email: hello@ogokiteacademy.com</p>
+                <p className="text-sm text-muted-foreground">→ Detailed inquiries & booking confirmations</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-muted-foreground mt-8">
+            We respond to all messages.<br />
+            No question is too small. No request too specific.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* Trust Badges Section */}
+  <section className="py-16 bg-background border-y border-border">
+    <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+          
+          {/* Certificate */}
+          <div className="text-center">
+            <div className="text-5xl mb-3">🧾</div>
+            <h4 className="font-bold text-foreground mb-1">International Standards</h4>
+            <p className="text-sm text-muted-foreground">IKO Certified</p>
+          </div>
+
+          {/* Insured */}
+          <div className="text-center">
+            <div className="text-5xl mb-3">🛡</div>
+            <h4 className="font-bold text-foreground mb-1">Fully Insured</h4>
+            <p className="text-sm text-muted-foreground">Coverage during lessons</p>
+          </div>
+
+          {/* Students */}
+          <div className="text-center">
+            <div className="text-5xl mb-3">👥</div>
+            <h4 className="font-bold text-foreground mb-1">500+ Students</h4>
+            <p className="text-sm text-muted-foreground">Trained Worldwide</p>
+          </div>
+
+          {/* Rating */}
+          <div className="text-center">
+            <div className="text-5xl mb-3">⭐</div>
+            <h4 className="font-bold text-foreground mb-1">4.9 / 5 Rating</h4>
+            <p className="text-sm text-muted-foreground">Proven Results</p>
+          </div>
+
+          {/* Returning */}
+          <div className="text-center">
+            <div className="text-5xl mb-3">🔄</div>
+            <h4 className="font-bold text-foreground mb-1">70+ Returning Riders</h4>
+            <p className="text-sm text-muted-foreground">Strong Alumni Community</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* Custom Vietnam Footer */}
+  <footer className="bg-foreground text-background py-16">
+    <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Main Footer Content */}
+        <div className="grid md:grid-cols-2 gap-12 mb-12">
+          
+          {/* Left Column */}
+          <div>
+            <h3 className="text-3xl font-display font-bold mb-4">
+              OGO KITE ACADEMY
+            </h3>
+            <p className="text-xl mb-6">Vietnam Kite Camp</p>
+            
+            <p className="text-background/80 mb-8 italic">
+              Following the wind.<br />
+              Teaching mastery.<br />
+              Building community.
+            </p>
+
+            <div className="space-y-3">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📸</span>
+                <span>Instagram: @ogokiteacademy</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">💬</span>
+                <span>WhatsApp: +XX XXX XXX XXXX</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">📧</span>
+                <span>Email: hello@ogokiteacademy.com</span>
+              </div>
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">🌐</span>
+                <span>Website: ogokiteacademy.com</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Right Column */}
+          <div className="grid sm:grid-cols-2 gap-8">
+            <div>
+              <h4 className="text-xl font-bold mb-4">QUICK LINKS</h4>
+              <ul className="space-y-2 text-background/80">
+                <li><a href="/" className="hover:text-background transition-colors">Back to All Programs</a></li>
+                <li><a href="/vietnam" className="hover:text-background transition-colors">Private Coaching (Vietnam)</a></li>
+                <li><a href="/kite-safari" className="hover:text-background transition-colors">Egypt Kite Safari</a></li>
+                <li><a href="/about" className="hover:text-background transition-colors">About Denis</a></li>
+                <li><a href="#faq" className="hover:text-background transition-colors">FAQ</a></li>
+                <li><a href="#testimonials" className="hover:text-background transition-colors">Testimonials</a></li>
+                <li><a href="/contact" className="hover:text-background transition-colors">Contact</a></li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-xl font-bold mb-4">LEGAL</h4>
+              <ul className="space-y-2 text-background/80">
+                <li><a href="#terms" className="hover:text-background transition-colors">Terms & Conditions</a></li>
+                <li><a href="#cancellation" className="hover:text-background transition-colors">Cancellation Policy</a></li>
+                <li><a href="#privacy" className="hover:text-background transition-colors">Privacy Policy</a></li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="border-t border-background/20 pt-8 text-center">
+          <p className="text-background/80 mb-2">
+            © 2025 OGO Kite Academy | All Rights Reserved
+          </p>
+          <p className="text-background/80 mb-4">
+            Vietnam Kite Camp: January 10 – March 10, 2026
+          </p>
+          <p className="text-sm text-background/60">
+            📍 Based in: Phan Rang, Ninh Thuan Province, Vietnam<br />
+            🏆 IKO Certified Instructor | Fully Licensed & Insured
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
     </div>
   );
 };
