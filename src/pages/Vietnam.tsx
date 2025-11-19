@@ -73,6 +73,127 @@ const Vietnam = () => {
         </div>
       </section>
 
+      {/* Why Vietnam Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            
+            {/* Left Side - Image Collage */}
+            <div className="space-y-4">
+              {/* Large top image */}
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="/lovable-uploads/vietnam-hero-kite.jpg" 
+                  alt="Vietnam kitesurfing lagoon with mountains"
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+              
+              {/* Two smaller images side by side */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <img 
+                    src="/lovable-uploads/about-campfire-community.jpg" 
+                    alt="Evening community gathering"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <img 
+                    src="/lovable-uploads/about-sunset-reflection.jpg" 
+                    alt="Vietnam nature and waterfall"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Text Content */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                  WHY VIETNAM?
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Most kite destinations are crowded, expensive, or both.<br />
+                  Vietnam is different.
+                </p>
+              </div>
+
+              {/* Feature Blocks */}
+              <div className="space-y-6">
+                {/* Perfect Conditions */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🌊</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">PERFECT CONDITIONS</h3>
+                    <p className="text-muted-foreground">
+                      Flat shallow water ideal for learning<br />
+                      Consistent wind Jan-Mar (15-25 knots)<br />
+                      Warm climate — no wetsuit needed
+                    </p>
+                  </div>
+                </div>
+
+                {/* Untouched Beauty */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🏞</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">UNTOUCHED BEAUTY</h3>
+                    <p className="text-muted-foreground">
+                      Phan Rang: one of Asia's best-kept secrets<br />
+                      Stunning mountains meet turquoise water<br />
+                      Uncrowded spots, authentic local vibes
+                    </p>
+                  </div>
+                </div>
+
+                {/* Incredible Value */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">💰</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">INCREDIBLE VALUE</h3>
+                    <p className="text-muted-foreground">
+                      World-class training at realistic prices<br />
+                      Food, transport, activities — all affordable<br />
+                      More adventure, less tourist trap
+                    </p>
+                  </div>
+                </div>
+
+                {/* Community */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🤝</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">COMMUNITY</h3>
+                    <p className="text-muted-foreground">
+                      Meet like-minded riders from around the world<br />
+                      Solo travellers, couples, digital nomads<br />
+                      Lifelong friendships start here
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Closing Line */}
+              <p className="text-lg text-muted-foreground italic pt-4 border-t border-border">
+                This isn't just a kite lesson.<br />
+                It's an adventure you'll talk about for years.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
