@@ -273,6 +273,165 @@ const Vietnam = () => {
         </div>
       </section>
 
+      {/* What's Included Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            {/* Section Header */}
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                EVERYTHING YOU NEED
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                All-Inclusive Experience
+              </p>
+            </div>
+
+            {/* Two Column Grid */}
+            <div className="grid lg:grid-cols-2 gap-12 mb-12">
+              
+              {/* LEFT COLUMN */}
+              <div className="space-y-10">
+                
+                {/* Accommodation */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🏠</span>
+                    <h3 className="text-2xl font-bold text-foreground">ACCOMMODATION</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• Beachfront guesthouse / hotel</li>
+                    <li>• 2 minutes walking to the lagoon</li>
+                    <li>• Shared or private rooms available</li>
+                    <li>• Fast WiFi</li>
+                    <li>• Social common areas (terrace, hammocks, kitchen zone)</li>
+                    <li>• Hot water, AC, laundry service available</li>
+                    <li>• Safe, clean, comfortable — ideal for long stays</li>
+                  </ul>
+                </div>
+
+                {/* Kitesurfing */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🪁</span>
+                    <h3 className="text-2xl font-bold text-foreground">KITESURFING</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• 10 hours structured lessons (3–4h/day)</li>
+                    <li>• Premium equipment included (kite, board, harness)</li>
+                    <li>• All levels welcome (zero → advanced tricks)</li>
+                    <li>• Small groups: max 3–4 students per instructor</li>
+                    <li>• BbTalkin radio communication</li>
+                    <li>• Video analysis after key sessions</li>
+                    <li>• Theory + on-water progression</li>
+                    <li>• Safety briefing & system training</li>
+                  </ul>
+                </div>
+
+                {/* Food */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🍽</span>
+                    <h3 className="text-2xl font-bold text-foreground">FOOD</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• Daily breakfast at accommodation</li>
+                    <li>• Welcome dinner (Day 1 — group bonding)</li>
+                    <li>• Farewell dinner (final night celebration)</li>
+                    <li>• Lunches + other dinners at local restaurants</li>
+                    <li>• Budget: €10–15/day</li>
+                    <li>• Vietnamese cuisine = fresh, healthy, insanely delicious</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN */}
+              <div className="space-y-10">
+                
+                {/* Transportation */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🚐</span>
+                    <h3 className="text-2xl font-bold text-foreground">TRANSPORTATION</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• Airport transfer (Cam Ranh ↔ Phan Rang)</li>
+                    <li>• Group transfer for arrivals within set windows</li>
+                    <li>• Transport for group excursions included</li>
+                    <li>• Scooter rental available (optional, ~€5–8/day)</li>
+                    <li>• Lagoon is near — mostly walking distance</li>
+                  </ul>
+                </div>
+
+                {/* Activities & Excursions */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🎉</span>
+                    <h3 className="text-2xl font-bold text-foreground">ACTIVITIES & EXCURSIONS</h3>
+                  </div>
+                  <div className="ml-14 space-y-3">
+                    <div>
+                      <p className="font-semibold text-foreground mb-2">Included (1–2 activities):</p>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• Sunset viewpoint / bonfire night</li>
+                        <li>• Waterfall or canyon tour (depending on conditions)</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground mb-2">Optional extras (not included):</p>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• Dalat day trip (coffee plantations, cool climate)</li>
+                        <li>• Nha Trang city visit (beach, nightlife)</li>
+                        <li>• Yoga sessions (if available)</li>
+                        <li>• Snorkeling/diving on nearby islands</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Community & Extras */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">👥</span>
+                    <h3 className="text-2xl font-bold text-foreground">COMMUNITY & EXTRAS</h3>
+                  </div>
+                  <div className="ml-14 space-y-2 text-muted-foreground">
+                    <p>• Meet inspiring people from all over the world</p>
+                    <p>• Daily sharing sessions after kiting: feedback, tips, wins</p>
+                    <p>• Supportive atmosphere — zero pressure, all progress</p>
+                    <p>• Perfect for solo travellers, couples, remote workers</p>
+                    <p>• Evening hangouts, local dinners, sunset missions</p>
+                    <p>• Optional scooter rides to hidden spots, cafes, viewpoints</p>
+                    <p>• A perfect winter escape with warm water and constant wind</p>
+                    <p className="italic pt-2 border-t border-border mt-4">
+                      You come for kitesurfing — you stay for the people.
+                    </p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+
+            {/* NOT INCLUDED Box */}
+            <div className="mt-12 bg-muted/30 border-l-4 border-primary rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">⚠️</span>
+                <h3 className="text-xl font-bold text-foreground">NOT INCLUDED</h3>
+              </div>
+              <ul className="space-y-2 text-muted-foreground ml-12">
+                <li>• International flights to/from Vietnam</li>
+                <li>• Most lunches & dinners (~€5–10/day)</li>
+                <li>• Personal expenses (drinks, snacks, souvenirs)</li>
+                <li>• Vietnam visa (if required — check your country rules)</li>
+                <li>• Travel insurance (mandatory)</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <Footer />
     </div>
   );
