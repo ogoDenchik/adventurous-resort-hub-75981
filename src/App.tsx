@@ -16,6 +16,7 @@ import Contact from "./pages/Contact";
 import KiteSafari from "./pages/KiteSafari";
 import Brazil from "./pages/Brazil";
 import Cyprus from "./pages/Cyprus";
+import Vietnam from "./pages/Vietnam";
 import TelegramButton from "./components/TelegramButton";
 import WhatsAppButton from "./components/WhatsAppButton";
 import ScrollToTopOnMount from "./components/ScrollToTopOnMount";
@@ -39,6 +40,7 @@ const App = () => {
             <Route path="/kite-safari" element={<KiteSafari />} />
             <Route path="/brazil" element={<Brazil />} />
             <Route path="/cyprus" element={<Cyprus />} />
+            <Route path="/vietnam" element={<Vietnam />} />
             <Route path="/booking" element={<Booking />} />
             <Route path="/booking-success" element={<BookingSuccess />} />
             <Route path="/gallery" element={<Gallery />} />
