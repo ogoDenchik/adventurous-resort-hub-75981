@@ -775,6 +775,155 @@ const Vietnam = () => {
     </div>
   </section>
 
+  {/* Alternative - Private Sessions Section */}
+  <section className="py-20 bg-background">
+    <div className="container mx-auto px-4">
+      <div className="max-w-4xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            CAN'T MAKE CAMP DATES?
+          </h2>
+          <p className="text-2xl text-muted-foreground mb-6">
+            Book Private Sessions Instead
+          </p>
+          <div className="inline-block bg-primary/10 border border-primary/20 rounded-lg px-6 py-4">
+            <p className="text-lg font-semibold text-foreground mb-1">
+              🟣 I'm in Vietnam January 10 – March 10, 2026
+            </p>
+            <p className="text-muted-foreground">
+              Available for private coaching outside camp dates
+            </p>
+          </div>
+        </div>
+
+        {/* Private Coaching Card */}
+        <div className="bg-muted/30 rounded-2xl p-8 shadow-md border border-border mb-8">
+          <div className="text-center mb-6">
+            <h3 className="text-3xl font-bold text-foreground mb-4">
+              PRIVATE COACHING IN VIETNAM
+            </h3>
+            <p className="text-muted-foreground">
+              Available: January 10 – March 10, 2026
+            </p>
+          </div>
+
+          <div className="bg-background rounded-xl p-6 mb-6">
+            <h4 className="text-2xl font-bold text-primary mb-2">
+              📦 PACKAGE: 10 HOURS — €800
+            </h4>
+            <p className="text-lg font-semibold text-foreground mb-4">
+              WHAT YOU GET
+            </p>
+            <div className="space-y-3">
+              <div className="flex items-start gap-3">
+                <span className="text-green-500 text-xl">✓</span>
+                <span className="text-muted-foreground">1-on-1 or small group (max 3–4 students)</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-green-500 text-xl">✓</span>
+                <span className="text-muted-foreground">Flexible scheduling (3–5 days typical)</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-green-500 text-xl">✓</span>
+                <span className="text-muted-foreground">Premium equipment included</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-green-500 text-xl">✓</span>
+                <span className="text-muted-foreground">Video analysis after sessions</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-green-500 text-xl">✓</span>
+                <span className="text-muted-foreground">Step-by-step methodology</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-green-500 text-xl">✓</span>
+                <span className="text-muted-foreground">Safety briefing & theory</span>
+              </div>
+              <div className="flex items-start gap-3">
+                <span className="text-green-500 text-xl">✓</span>
+                <span className="text-muted-foreground">WhatsApp support during your stay</span>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-background rounded-xl p-6 mb-6">
+            <h4 className="text-lg font-semibold text-foreground mb-3">
+              ⭐ PERFECT FOR
+            </h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>• Those with specific travel dates</li>
+              <li>• Families or friends wanting private coaching</li>
+              <li>• Digital nomads already in Vietnam</li>
+              <li>• Advanced riders focusing on tricks/progression</li>
+            </ul>
+          </div>
+
+          <div className="bg-muted/50 rounded-xl p-6 mb-6 border border-border">
+            <h4 className="text-lg font-semibold text-foreground mb-3">
+              ❌ NOT INCLUDED
+            </h4>
+            <ul className="space-y-2 text-muted-foreground">
+              <li>• Accommodation (I can recommend options)</li>
+              <li>• Meals</li>
+              <li>• Transportation (I can help arrange)</li>
+            </ul>
+          </div>
+
+          <Button className="w-full text-lg py-6">
+            INQUIRE ABOUT PRIVATE SESSIONS
+          </Button>
+        </div>
+
+        {/* Add-ons Section */}
+        <div className="grid md:grid-cols-2 gap-6 mb-8">
+          {/* Refresh Course */}
+          <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-3xl">♻️</span>
+              <div>
+                <h4 className="text-lg font-bold text-foreground">
+                  REFRESH COURSE
+                </h4>
+                <p className="text-xl font-semibold text-primary">
+                  €270 / 3 hours
+                </p>
+              </div>
+            </div>
+            <p className="text-muted-foreground">
+              Get back in the game after a break
+            </p>
+          </div>
+
+          {/* Equipment Rental */}
+          <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
+            <div className="flex items-center gap-3 mb-3">
+              <span className="text-3xl">🪁</span>
+              <div>
+                <h4 className="text-lg font-bold text-foreground">
+                  EQUIPMENT RENTAL
+                </h4>
+                <p className="text-xl font-semibold text-primary">
+                  €85 / session
+                </p>
+              </div>
+            </div>
+            <p className="text-muted-foreground">
+              For independent riders (skill check required)
+            </p>
+          </div>
+        </div>
+
+        <div className="text-center">
+          <Button variant="outline" size="lg">
+            View All Programs
+          </Button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
   <Footer />
     </div>
   );
