@@ -45,7 +45,7 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 bg-black/50 z-10" />
       <animated.div 
         style={{
-          backgroundImage: `url(/lovable-uploads/hero-new-1.jpg)`,
+          backgroundImage: `url(/lovable-uploads/hero-main-coaching.jpg)`,
           filter: 'contrast(1.1) brightness(0.9)',
           transform: parallaxProps.transform
         }}
