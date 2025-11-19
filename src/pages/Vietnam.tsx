@@ -4,6 +4,12 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
 const Vietnam = () => {
   useEffect(() => {
@@ -775,149 +781,438 @@ const Vietnam = () => {
     </div>
   </section>
 
-  {/* Alternative - Private Sessions Section */}
+  {/* Who's It For Section */}
+  <section className="py-20 bg-muted/30">
+    <div className="container mx-auto px-4">
+      <div className="max-w-6xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            IS THIS CAMP FOR YOU?
+          </h2>
+          <p className="text-2xl text-muted-foreground">
+            Let's Be Honest
+          </p>
+        </div>
+
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-1 gap-8">
+          
+          {/* Left Column - Who It IS For */}
+          <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
+            <h3 className="text-2xl font-bold text-foreground mb-6">
+              This camp is perfect if you:
+            </h3>
+            
+            <div className="space-y-4">
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Love adventure over luxury</p>
+                  <p className="text-muted-foreground">This is authentic Vietnam, not a 5-star resort.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Want to learn systematically</p>
+                  <p className="text-muted-foreground">Step-by-step progression, not random practice.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Enjoy community & meeting new people</p>
+                  <p className="text-muted-foreground">Solo travellers thrive here.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Are open-minded & flexible</p>
+                  <p className="text-muted-foreground">We adapt to wind, culture, spontaneity.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Want real value for money</p>
+                  <p className="text-muted-foreground">World-class training without premium prices.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Are any skill level</p>
+                  <p className="text-muted-foreground">Beginners to advanced riders welcome.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Are 16+ years old</p>
+                  <p className="text-muted-foreground">For mature, independent travellers.</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                <div>
+                  <p className="font-semibold text-foreground">Want more than just lessons</p>
+                  <p className="text-muted-foreground">Kitesurfing + nature + culture + friendships.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  {/* FAQ Section */}
   <section className="py-20 bg-background">
     <div className="container mx-auto px-4">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            CAN'T MAKE CAMP DATES?
+            COMMON QUESTIONS
           </h2>
-          <p className="text-2xl text-muted-foreground mb-6">
-            Book Private Sessions Instead
+          <p className="text-xl text-muted-foreground">
+            Everything You Need to Know
           </p>
-          <div className="inline-block bg-primary/10 border border-primary/20 rounded-lg px-6 py-4">
-            <p className="text-lg font-semibold text-foreground mb-1">
-              🟣 I'm in Vietnam January 10 – March 10, 2026
-            </p>
-            <p className="text-muted-foreground">
-              Available for private coaching outside camp dates
-            </p>
+        </div>
+
+        {/* FAQ Accordion */}
+        <Accordion type="single" collapsible className="space-y-4">
+          
+          <AccordionItem value="beginner" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              I'm a complete beginner. Can I really learn in 10 days?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Absolutely! Most camp participants are beginners. My structured methodology breaks kitesurfing into manageable steps. By day 10, you'll be riding independently. Some even learn basic jumps!
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="solo" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              I'm coming solo. Will I feel out of place?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              70-80% of participants come solo! The camp is designed to bring people together. Shared meals, group activities, and evening hangouts create instant friendships. Many past students still travel together years later.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="wind" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              What if the wind is bad?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              January–March is peak season in Phan Rang with 90%+ windable days. If wind drops, we'll do theory sessions, video analysis, or explore Vietnam (waterfalls, local culture). We always make the most of every day.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="accommodation" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              What's the accommodation like?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Clean, safe, comfortable guesthouse walking distance to the lagoon. Shared rooms (2-4 people) with private room upgrades available. Hot water, AC, WiFi, common areas. Simple but cozy—perfect for adventurers, not luxury seekers.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="dietary" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              I have dietary restrictions — is that okay?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Vegetarian, vegan, gluten-free — all manageable in Vietnam. Local cuisine is naturally diverse and fresh. Just let me know in advance and we'll make sure you're well-fed!
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="airport" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              How do I get to Phan Rang?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Fly into Cam Ranh Airport (CXR). It's a 1.5-hour transfer to Phan Rang, included in the camp package. I coordinate group pickups throughout arrival day. Direct flights from Bangkok, Singapore, Kuala Lumpur, and major Asian hubs.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="visa" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              Do I need a visa for Vietnam?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Depends on nationality. Many countries get 15-30 days visa-free. Others need e-visa (easy online process, ~$25). Check Vietnam immigration requirements for your passport. I'll send detailed info after booking.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="weather" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              What's the weather like?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              28–32°C warm, sunny, dry season. Warm water (26°C), consistent NE wind (15-25 knots). No wetsuit needed—just boardshorts/bikini + rashguard for sun protection. Perfect winter escape!
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="extend" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              Can I extend my stay?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Absolutely! Many students stay longer to explore Vietnam (Dalat, Nha Trang, Hoi An, Hanoi) or book extra private sessions. I can recommend itineraries and connect you with other camp-goers extending their trip.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="packing" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              What should I bring?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Swimsuit, sunscreen (reef-safe!), rashguard, hat, sunglasses, flip-flops, light clothes, reusable water bottle. All kite gear provided. I'll send a full packing list after booking.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="advanced" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              I'm advanced — will it be boring?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              No — sessions are tailored to your level. Advanced riders work on tricks (backrolls, kiteloops, board-offs), transitions, style refinement, and upwind technique. Video analysis pinpoints exactly what to improve.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="health" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              COVID / health requirements?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Follow current Vietnam entry rules (check before travel). Vietnam is fully open for tourism. Travel insurance is mandatory. Bring basic meds (pain relief, stomach issues). Local clinics available if needed.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="female" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              Safe for solo female travelers?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Vietnam is one of the safest countries in SE Asia. The camp community is respectful and supportive. Many female solo travelers join every camp. You'll feel safe and welcomed.
+            </AccordionContent>
+          </AccordionItem>
+
+          <AccordionItem value="remote" className="bg-muted/30 rounded-lg px-6 border border-border">
+            <AccordionTrigger className="text-left font-semibold">
+              Can I work remotely during camp?
+            </AccordionTrigger>
+            <AccordionContent className="text-muted-foreground">
+              Yes! WiFi available at accommodation and local cafes. Morning/afternoon kite sessions leave time for work. Many digital nomads balance both. Phan Rang is quiet and focused—great for remote work.
+            </AccordionContent>
+          </AccordionItem>
+
+        </Accordion>
+
+        <div className="text-center mt-12">
+          <Button size="lg" variant="outline">
+            Still Have Questions? Ask Me Directly
+          </Button>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* Gallery Section */}
+  <section className="py-20 bg-muted/30">
+    <div className="container mx-auto px-4">
+      <div className="max-w-7xl mx-auto">
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+            EXPERIENCE VIETNAM
+          </h2>
+          <p className="text-xl text-muted-foreground">
+            A Glimpse of What Awaits
+          </p>
+        </div>
+
+        {/* Gallery Grid */}
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/vietnam-hero-kite.jpg" alt="Kitesurfing action" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/brazil-kite-aerial.jpg" alt="Aerial kiting view" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/brazil-lagoon-girl.jpg" alt="Lagoon kitesurfing" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/brazil-beach-lesson.jpg" alt="Beach instruction" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/brazil-sunset-team.jpg" alt="Sunset group" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/community-hug.jpg" alt="Community bonding" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/about-campfire-community.jpg" alt="Campfire gathering" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/brazil-instructor-1.jpg" alt="Instructor teaching" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/lyra-food.jpg" alt="Local food" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/brazil-location-jeri.jpg" alt="Beach landscape" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/about-kitesurfing-discovery.jpg" alt="Kitesurfing discovery" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+          </div>
+          <div className="aspect-square overflow-hidden rounded-lg">
+            <img src="/lovable-uploads/about-sunset-reflection.jpg" alt="Sunset reflection" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
         </div>
 
-        {/* Private Coaching Card */}
-        <div className="bg-muted/30 rounded-2xl p-8 shadow-md border border-border mb-8">
-          <div className="text-center mb-6">
-            <h3 className="text-3xl font-bold text-foreground mb-4">
-              PRIVATE COACHING IN VIETNAM
+        <div className="text-center mt-8">
+          <p className="text-muted-foreground mb-4">
+            📸 Follow daily updates: <span className="text-primary font-semibold">@ogokiteacademy</span>
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  {/* Final Booking Section */}
+  <section className="py-20 bg-cover bg-center relative" style={{backgroundImage: "url('/lovable-uploads/vietnam-hero-kite.jpg')"}}>
+    <div className="absolute inset-0 bg-black/70"></div>
+    <div className="container mx-auto px-4 relative z-10">
+      <div className="max-w-6xl mx-auto">
+        
+        {/* Section Header */}
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+            READY TO JOIN THE ADVENTURE?
+          </h2>
+          <p className="text-xl text-white/90">
+            Limited spots. Perfect conditions. Unforgettable experience.<br />
+            Don't let this season pass you by.
+          </p>
+        </div>
+
+        {/* Two Column Booking Cards */}
+        <div className="grid lg:grid-cols-2 gap-8">
+          
+          {/* Left: Camp Booking Box */}
+          <div className="bg-background rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              🏕 BOOK VIETNAM KITE CAMP
             </h3>
-            <p className="text-muted-foreground">
-              Available: January 10 – March 10, 2026
-            </p>
-          </div>
 
-          <div className="bg-background rounded-xl p-6 mb-6">
-            <h4 className="text-2xl font-bold text-primary mb-2">
-              📦 PACKAGE: 10 HOURS — €800
-            </h4>
-            <p className="text-lg font-semibold text-foreground mb-4">
-              WHAT YOU GET
-            </p>
-            <div className="space-y-3">
-              <div className="flex items-start gap-3">
-                <span className="text-green-500 text-xl">✓</span>
-                <span className="text-muted-foreground">1-on-1 or small group (max 3–4 students)</span>
+            <div className="mb-6">
+              <h4 className="font-semibold text-foreground mb-3">STEP 1: Choose Your Dates</h4>
+              <div className="space-y-2">
+                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                  <input type="radio" name="camp-dates" className="w-4 h-4" />
+                  <span className="text-foreground">January 20–30, 2026 <span className="text-primary">(5 spots left)</span></span>
+                </label>
+                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                  <input type="radio" name="camp-dates" className="w-4 h-4" />
+                  <span className="text-foreground">February 13–23, 2026 <span className="text-primary">(8 spots left)</span></span>
+                </label>
               </div>
-              <div className="flex items-start gap-3">
-                <span className="text-green-500 text-xl">✓</span>
-                <span className="text-muted-foreground">Flexible scheduling (3–5 days typical)</span>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="font-semibold text-foreground mb-3">STEP 2: Choose Your Package</h4>
+              <div className="space-y-2">
+                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                  <input type="radio" name="package" className="w-4 h-4" />
+                  <span className="text-foreground">Standard Camp (€1,200–1,400)</span>
+                </label>
+                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                  <input type="radio" name="package" className="w-4 h-4" />
+                  <span className="text-foreground">Private Premium (€2,500)</span>
+                </label>
               </div>
-              <div className="flex items-start gap-3">
-                <span className="text-green-500 text-xl">✓</span>
-                <span className="text-muted-foreground">Premium equipment included</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-green-500 text-xl">✓</span>
-                <span className="text-muted-foreground">Video analysis after sessions</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-green-500 text-xl">✓</span>
-                <span className="text-muted-foreground">Step-by-step methodology</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-green-500 text-xl">✓</span>
-                <span className="text-muted-foreground">Safety briefing & theory</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <span className="text-green-500 text-xl">✓</span>
-                <span className="text-muted-foreground">WhatsApp support during your stay</span>
-              </div>
+            </div>
+
+            <div className="mb-6">
+              <h4 className="font-semibold text-foreground mb-3">STEP 3: Secure Your Spot</h4>
+              <Button className="w-full mb-3 text-lg py-6">
+                RESERVE MY SPOT NOW
+              </Button>
+              <Button variant="outline" className="w-full">
+                I Have Questions First
+              </Button>
+            </div>
+
+            <div className="p-4 bg-primary/10 rounded-lg border border-primary/20 mb-4">
+              <p className="text-sm text-foreground font-semibold mb-1">🎁 Early Bird Bonus:</p>
+              <p className="text-sm text-muted-foreground">Book 30+ days early → Free pro photoshoot + Vietnam travel guide PDF.</p>
+            </div>
+
+            <div className="text-center text-sm text-muted-foreground">
+              🔒 Secure Booking: 30% deposit. Balance due 7 days before camp.
             </div>
           </div>
 
-          <div className="bg-background rounded-xl p-6 mb-6">
-            <h4 className="text-lg font-semibold text-foreground mb-3">
-              ⭐ PERFECT FOR
-            </h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>• Those with specific travel dates</li>
-              <li>• Families or friends wanting private coaching</li>
-              <li>• Digital nomads already in Vietnam</li>
-              <li>• Advanced riders focusing on tricks/progression</li>
-            </ul>
-          </div>
+          {/* Right: Private Sessions Box */}
+          <div className="bg-background rounded-2xl p-8 shadow-xl">
+            <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+              🎓 BOOK PRIVATE SESSIONS
+            </h3>
 
-          <div className="bg-muted/50 rounded-xl p-6 mb-6 border border-border">
-            <h4 className="text-lg font-semibold text-foreground mb-3">
-              ❌ NOT INCLUDED
-            </h4>
-            <ul className="space-y-2 text-muted-foreground">
-              <li>• Accommodation (I can recommend options)</li>
-              <li>• Meals</li>
-              <li>• Transportation (I can help arrange)</li>
-            </ul>
-          </div>
-
-          <Button className="w-full text-lg py-6">
-            INQUIRE ABOUT PRIVATE SESSIONS
-          </Button>
-        </div>
-
-        {/* Add-ons Section */}
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          {/* Refresh Course */}
-          <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-3xl">♻️</span>
-              <div>
-                <h4 className="text-lg font-bold text-foreground">
-                  REFRESH COURSE
-                </h4>
-                <p className="text-xl font-semibold text-primary">
-                  €270 / 3 hours
-                </p>
-              </div>
+            <div className="mb-6 p-4 bg-muted/50 rounded-lg">
+              <p className="text-foreground mb-2">
+                <strong>Available:</strong> January 10 – March 10 (outside camp dates)
+              </p>
+              <p className="text-2xl font-bold text-primary mb-2">€800 / 10 hours</p>
+              <p className="text-sm text-muted-foreground">
+                Optional: +€270 Refresh (3h) | +€85 Equipment Rental
+              </p>
             </div>
-            <p className="text-muted-foreground">
-              Get back in the game after a break
-            </p>
-          </div>
 
-          {/* Equipment Rental */}
-          <div className="bg-background border border-border rounded-xl p-6 shadow-sm">
-            <div className="flex items-center gap-3 mb-3">
-              <span className="text-3xl">🪁</span>
-              <div>
-                <h4 className="text-lg font-bold text-foreground">
-                  EQUIPMENT RENTAL
-                </h4>
-                <p className="text-xl font-semibold text-primary">
-                  €85 / session
-                </p>
-              </div>
+            <div className="mb-6">
+              <h4 className="font-semibold text-foreground mb-3">STEP 1: Check My Availability</h4>
+              <Button variant="outline" className="w-full mb-4">
+                📅 View Calendar
+              </Button>
             </div>
-            <p className="text-muted-foreground">
-              For independent riders (skill check required)
-            </p>
-          </div>
-        </div>
 
-        <div className="text-center">
-          <Button variant="outline" size="lg">
-            View All Programs
-          </Button>
+            <div className="mb-6">
+              <h4 className="font-semibold text-foreground mb-3">STEP 2: Tell Me Your Goals</h4>
+              <Button className="w-full text-lg py-6 mb-3">
+                REQUEST PRIVATE SESSIONS
+              </Button>
+            </div>
+
+            <div className="border-t border-border pt-6">
+              <p className="text-center text-muted-foreground mb-4">
+                Need to talk first?
+              </p>
+              <Button variant="outline" className="w-full">
+                📞 Schedule a Call
+              </Button>
+              <p className="text-center text-sm text-muted-foreground mt-2">
+                15-minute consultation (WhatsApp/Zoom)
+              </p>
+            </div>
+
+          </div>
+
         </div>
 
       </div>
