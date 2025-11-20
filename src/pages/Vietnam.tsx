@@ -407,7 +407,7 @@ const Vietnam = () => {
                     <h3 className="text-2xl font-bold text-foreground">TRANSPORTATION</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
-                    <li>• Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang (Funrang)</li>
+                    <li>• Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</li>
                     <li>• Group transfer for arrivals within set windows</li>
                     <li>• Transport for group excursions included</li>
                     <li>• Scooter rental available (optional, ~€5–8/day)</li>
