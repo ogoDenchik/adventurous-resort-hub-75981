@@ -238,7 +238,7 @@ const Vietnam = () => {
                   <div className="flex items-start gap-3 pt-2 border-t border-border">
                     <span className="text-xl flex-shrink-0">🎯</span>
                     <p className="text-foreground font-semibold">
-                      Spots available: <span className="text-primary">9/12</span>
+                      Spots available: <span className="text-primary">6/8</span>
                     </p>
                   </div>
                 </div>
@@ -271,7 +271,7 @@ const Vietnam = () => {
                   <div className="flex items-start gap-3 pt-2 border-t border-border">
                     <span className="text-xl flex-shrink-0">🔥</span>
                     <p className="text-foreground font-semibold">
-                      Spots available: <span className="text-primary">5/12</span>
+                      Spots available: <span className="text-primary">4/8</span>
                     </p>
                   </div>
                 </div>
@@ -1162,11 +1162,11 @@ const Vietnam = () => {
               <div className="space-y-2">
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
                   <input type="radio" name="camp-dates" className="w-4 h-4" />
-                  <span className="text-foreground">January 20–30, 2026 <span className="text-primary">(5 spots left)</span></span>
+                  <span className="text-foreground">January 20–30, 2026 <span className="text-primary">(6 spots left)</span></span>
                 </label>
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
                   <input type="radio" name="camp-dates" className="w-4 h-4" />
-                  <span className="text-foreground">February 13–23, 2026 <span className="text-primary">(8 spots left)</span></span>
+                  <span className="text-foreground">February 13–23, 2026 <span className="text-primary">(4 spots left)</span></span>
                 </label>
               </div>
             </div>
