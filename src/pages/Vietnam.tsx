@@ -1,5 +1,5 @@
 import React from 'react';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
@@ -12,8 +12,19 @@ import {
 } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Vietnam = () => {
+  const [termsOpen, setTermsOpen] = useState(false);
+  
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -807,9 +818,124 @@ const Vietnam = () => {
           </div>
 
           <div className="text-center">
-            <Button variant="outline" className="mt-4">
-              VIEW FULL TERMS & CONDITIONS
-            </Button>
+            <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
+              <DialogTrigger asChild>
+                <Button variant="outline" className="mt-4">
+                  VIEW FULL TERMS & CONDITIONS
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="max-w-3xl max-h-[80vh]">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold">Terms & Conditions – Kitesurf Camp</DialogTitle>
+                  <DialogDescription>
+                    Please read these terms carefully before booking
+                  </DialogDescription>
+                </DialogHeader>
+                <ScrollArea className="h-[60vh] pr-4">
+                  <div className="space-y-6 text-foreground">
+                    
+                    {/* Section 1 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">1. Booking & Payment</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• A deposit is required to secure your spot at the camp.</li>
+                        <li>• The remaining balance must be paid no later than 14 days before the camp start date.</li>
+                        <li>• Your booking is confirmed only after the deposit has been received.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 2 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">2. Cancellation Policy</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• Cancellations are allowed only up to 1.5 months (45 days) before the camp start date.</li>
+                        <li>• If you cancel within this period:
+                          <ul className="ml-6 mt-1">
+                            <li>- You receive a 50% refund of the camp price, or</li>
+                            <li>- You may transfer your full deposit to another future camp (subject to availability).</li>
+                          </ul>
+                        </li>
+                        <li>• Cancellations made later than 45 days before the camp are non-refundable.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 3 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">3. Travel Arrangements</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• Participants are responsible for booking their own flights.</li>
+                        <li>• The organizer is not responsible for missed flights, delays, or travel disruptions.</li>
+                        <li>• Airport transfer is provided only from the specified airport stated in camp details.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 4 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">4. Insurance</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• All participants must have valid travel and medical insurance, including coverage for water sports.</li>
+                        <li>• The organizer is not responsible for accidents, injuries, or loss/damage of personal items.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 5 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">5. Equipment</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• Rental equipment is available upon request and subject to availability.</li>
+                        <li>• Participants are responsible for any damage caused to rental gear during use.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 6 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">6. Weather Conditions</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• Kitesurfing depends on natural conditions.</li>
+                        <li>• No refunds are provided in case of insufficient wind or weather changes.</li>
+                        <li>• In such cases, alternative activities may be offered when possible.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 7 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">7. Safety Rules</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• All participants must follow the instructions of certified coaches.</li>
+                        <li>• The organizer reserves the right to refuse water access to any participant acting unsafely.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 8 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">8. Camp Modifications</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• The organizer may adjust the schedule, location, or daily program due to safety, weather, or logistical needs.</li>
+                        <li>• Any changes will be communicated to participants as early as possible.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 9 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">9. Image & Video Use</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• By joining the camp, participants agree that photos and videos taken during the camp may be used for marketing purposes unless they request otherwise.</li>
+                      </ul>
+                    </div>
+
+                    {/* Section 10 */}
+                    <div>
+                      <h3 className="text-lg font-bold mb-2">10. Responsibility Waiver</h3>
+                      <ul className="space-y-2 text-muted-foreground">
+                        <li>• By participating, you acknowledge that kitesurfing is an extreme sport and involves inherent risks.</li>
+                        <li>• The organizer is not liable for injuries, equipment loss, or personal damages occurring during the camp.</li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </ScrollArea>
+              </DialogContent>
+            </Dialog>
           </div>
         </div>
 
