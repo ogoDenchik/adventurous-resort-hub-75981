@@ -69,11 +69,11 @@ const Vietnam = () => {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h3 className="text-2xl font-bold text-foreground mb-6">2026 CAMP DATES</h3>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg">
+            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg border-2 border-foreground">
               <span className="text-2xl">📅</span>
               <span className="text-lg font-medium text-foreground">20–30 January</span>
             </div>
-            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg">
+            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg border-2 border-foreground">
               <span className="text-2xl">📅</span>
               <span className="text-lg font-medium text-foreground">13–23 February</span>
             </div>
@@ -101,8 +101,8 @@ const Vietnam = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-md">
                   <img 
-                    src="/lovable-uploads/vietnam-camp-date-2.jpg" 
-                    alt="Aerial view of Vietnam beach"
+                    src="/lovable-uploads/vietnam-waterfall-new.jpg" 
+                    alt="Beautiful Vietnam waterfall with mountains"
                     className="w-full h-[200px] object-cover"
                   />
                 </div>
@@ -110,7 +110,7 @@ const Vietnam = () => {
                   <img 
                     src="/lovable-uploads/vietnam-camp-date-3.jpg" 
                     alt="Kitesurfing students with instructor"
-                    className="w-full h-[200px] object-cover"
+                    className="w-full h-[200px] object-cover object-[center_20%]"
                   />
                 </div>
               </div>
