@@ -353,7 +353,7 @@ const Vietnam = () => {
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• Beachfront guesthouse / hotel</li>
                     <li>• 5 minutes walking to the lagoon</li>
-                    <li>• Shared or private rooms available</li>
+                    <li>• Private room (Discount for couples: –20%)</li>
                     <li>• Fast WiFi</li>
                     <li>• Social common areas (terrace, hammocks, kitchen zone)</li>
                     <li>• Hot water, AC, laundry service available</li>
@@ -407,7 +407,7 @@ const Vietnam = () => {
                     <h3 className="text-2xl font-bold text-foreground">TRANSPORTATION</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
-                    <li>• Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Cam Ranh</li>
+                    <li>• Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang (Funrang)</li>
                     <li>• Group transfer for arrivals within set windows</li>
                     <li>• Transport for group excursions included</li>
                     <li>• Scooter rental available (optional, ~€5–8/day)</li>
@@ -567,9 +567,8 @@ const Vietnam = () => {
               <p>• Leisurely breakfast</p>
               <p>• Final group photo & goodbyes</p>
               <p>• Check-out (flexible timing)</p>
-              <p>• Group transfer to Ho Chi Minh — Tan Son Nhat Airport (SGN)</p>
+              <p>• Group transfer to Ho Chi Minh (Tan Son Nhat Airport)</p>
               <p>• Option: Extend stay in Vietnam (I can stay longer for private sessions)</p>
-              <p>• Alumni WhatsApp group forever</p>
             </div>
           </div>
 
@@ -636,7 +635,7 @@ const Vietnam = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Group airport transfer — Ho Chi Minh (Tan Son Nhat Airport)</span>
+                  <span className="text-muted-foreground">Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
@@ -962,7 +961,7 @@ const Vietnam = () => {
               What's the accommodation like?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground">
-              Clean, safe, comfortable guesthouse walking distance to the lagoon. Private rooms with hot water, AC, WiFi, common areas. Simple but cozy—perfect for adventurers, not luxury seekers. Couples receive a 20% discount.
+              Clean, safe, comfortable guesthouse walking distance to the lagoon. Private room with hot water, AC, WiFi, common areas. Simple but cozy—perfect for adventurers, not luxury seekers. Couples receive a 20% discount.
             </AccordionContent>
           </AccordionItem>
 
@@ -980,7 +979,7 @@ const Vietnam = () => {
               How do I get to Phan Rang?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground">
-              Fly into Ho Chi Minh — Tan Son Nhat Airport (SGN). Group airport transfer from Ho Chi Minh to Cam Ranh is included in the camp package. I coordinate group pickups throughout arrival day. Direct flights from major international hubs to Ho Chi Minh.
+              Fly into Ho Chi Minh (Tan Son Nhat Airport). Group airport transfer from Ho Chi Minh to Phan Rang is included in the camp package. I coordinate group pickups throughout arrival day. Direct flights from major international hubs to Ho Chi Minh.
             </AccordionContent>
           </AccordionItem>
 
