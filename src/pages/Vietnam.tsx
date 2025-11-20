@@ -91,8 +91,8 @@ const Vietnam = () => {
               {/* Large top image */}
               <div className="rounded-2xl overflow-hidden shadow-lg">
                 <img 
-                  src="/lovable-uploads/vietnam-hero-kite.jpg" 
-                  alt="Vietnam kitesurfing lagoon with mountains"
+                  src="/lovable-uploads/vietnam-camp-date-1.jpg" 
+                  alt="Vietnam kitesurfing beach with equipment"
                   className="w-full h-[400px] object-cover"
                 />
               </div>
@@ -101,15 +101,15 @@ const Vietnam = () => {
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-md">
                   <img 
-                    src="/lovable-uploads/about-campfire-community.jpg" 
-                    alt="Evening community gathering"
+                    src="/lovable-uploads/vietnam-camp-date-2.jpg" 
+                    alt="Aerial view of Vietnam beach"
                     className="w-full h-[200px] object-cover"
                   />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-md">
                   <img 
-                    src="/lovable-uploads/about-sunset-reflection.jpg" 
-                    alt="Vietnam nature and waterfall"
+                    src="/lovable-uploads/vietnam-camp-date-3.jpg" 
+                    alt="Kitesurfing students with instructor"
                     className="w-full h-[200px] object-cover"
                   />
                 </div>
@@ -275,37 +275,6 @@ const Vietnam = () => {
                     </p>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Visual Section - Three Photos */}
-      <section className="py-12 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
-                <img 
-                  src="/lovable-uploads/vietnam-camp-date-1.jpg" 
-                  alt="Vietnam kitesurfing beach with equipment"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
-                <img 
-                  src="/lovable-uploads/vietnam-camp-date-2.jpg" 
-                  alt="Aerial view of Vietnam beach"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform"
-                />
-              </div>
-              <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
-                <img 
-                  src="/lovable-uploads/vietnam-camp-date-3.jpg" 
-                  alt="Kitesurfing students with instructor"
-                  className="w-full h-full object-cover hover:scale-105 transition-transform"
-                />
               </div>
             </div>
           </div>
