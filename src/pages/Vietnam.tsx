@@ -1333,13 +1333,15 @@ const Vietnam = () => {
 
           {/* Right: Private Sessions Box */}
           <div className="bg-background rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
-              🎓 BOOK PRIVATE SESSIONS
+            <h3 className="text-2xl font-bold text-foreground mb-6">
+              Can't Join the Camp Dates?<br />
+              Book Private Sessions in Vietnam.
             </h3>
 
             <div className="mb-6 p-4 bg-muted/50 rounded-lg">
               <p className="text-foreground mb-2">
-                <strong>Available:</strong> January 10 – March 10 (outside camp dates)
+                <strong>Available:</strong> January 15 – April 15<br />
+                (outside the camp dates)
               </p>
               <p className="text-2xl font-bold text-primary mb-2">€800 / 10 hours</p>
               <p className="text-sm text-muted-foreground">
@@ -1348,16 +1350,16 @@ const Vietnam = () => {
             </div>
 
             <div className="mb-6">
-              <h4 className="font-semibold text-foreground mb-3">STEP 1: Check My Availability</h4>
-              <Button variant="outline" className="w-full mb-4">
-                📅 View Calendar
+              <h4 className="font-semibold text-foreground mb-3">STEP 1: Set Your Kite Goals</h4>
+              <Button className="w-full text-lg py-6 mb-3">
+                REQUEST PRIVATE SESSIONS
               </Button>
             </div>
 
             <div className="mb-6">
-              <h4 className="font-semibold text-foreground mb-3">STEP 2: Tell Me Your Goals</h4>
-              <Button className="w-full text-lg py-6 mb-3">
-                REQUEST PRIVATE SESSIONS
+              <h4 className="font-semibold text-foreground mb-3">STEP 2: Check My Availability</h4>
+              <Button variant="outline" className="w-full mb-4">
+                📅 View Calendar
               </Button>
             </div>
 
