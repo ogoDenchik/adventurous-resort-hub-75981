@@ -407,7 +407,7 @@ const Vietnam = () => {
                     <h3 className="text-2xl font-bold text-foreground">TRANSPORTATION</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
-                    <li>• Airport transfer (Cam Ranh ↔ Phan Rang)</li>
+                    <li>• Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Cam Ranh</li>
                     <li>• Group transfer for arrivals within set windows</li>
                     <li>• Transport for group excursions included</li>
                     <li>• Scooter rental available (optional, ~€5–8/day)</li>
@@ -423,7 +423,7 @@ const Vietnam = () => {
                   </div>
                   <div className="ml-14 space-y-3">
                     <div>
-                      <p className="font-semibold text-foreground mb-2">Included (1–2 activities):</p>
+                      <p className="font-semibold text-foreground mb-2">Included (1 activity):</p>
                       <ul className="space-y-1 text-muted-foreground">
                         <li>• Sunset viewpoint / bonfire night</li>
                         <li>• Waterfall tour</li>
@@ -432,7 +432,6 @@ const Vietnam = () => {
                     <div>
                       <p className="font-semibold text-foreground mb-2">Optional extras (not included):</p>
                       <ul className="space-y-1 text-muted-foreground">
-                        <li>• Dalat day trip (coffee plantations, cool climate)</li>
                         <li>• Mui Ne city visit (beach & nightlife)</li>
                         <li>• Yoga sessions (if available)</li>
                         <li>• Snorkeling/diving on nearby islands</li>
@@ -472,7 +471,7 @@ const Vietnam = () => {
               </div>
               <ul className="space-y-2 text-muted-foreground ml-12">
                 <li>• International flights to/from Vietnam</li>
-                <li>• Lunches and dinners (~€5–10/day)</li>
+                <li>• Lunches and Dinners (~€5–10/day)</li>
                 <li>• Personal expenses (drinks, snacks, souvenirs)</li>
                 <li>• Vietnam visa (if required — check your country rules)</li>
                 <li>• Travel insurance (mandatory)</li>
@@ -568,7 +567,7 @@ const Vietnam = () => {
               <p>• Leisurely breakfast</p>
               <p>• Final group photo & goodbyes</p>
               <p>• Check-out (flexible timing)</p>
-              <p>• Group transfer to Cam Ranh Airport</p>
+              <p>• Group transfer to Ho Chi Minh — Tan Son Nhat Airport (SGN)</p>
               <p>• Option: Extend stay in Vietnam (I can stay longer for private sessions)</p>
               <p>• Alumni WhatsApp group forever</p>
             </div>
@@ -625,7 +624,7 @@ const Vietnam = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Accommodation — shared room (9 nights)</span>
+                  <span className="text-muted-foreground">Accommodation — private room (9 nights)</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
@@ -637,11 +636,11 @@ const Vietnam = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Group airport transfers (Cam Ranh ↔ Phan Rang)</span>
+                  <span className="text-muted-foreground">Group airport transfer — Ho Chi Minh (Tan Son Nhat Airport)</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">1–2 excursions (waterfall, market, cooking class)</span>
+                  <span className="text-muted-foreground">1 excursion included</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
@@ -676,7 +675,7 @@ const Vietnam = () => {
             </Button>
 
             <p className="text-center text-sm text-muted-foreground">
-              Private room upgrade: +€150
+              Discount for couples: –20%
             </p>
           </div>
 
@@ -708,7 +707,7 @@ const Vietnam = () => {
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
                   <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Full 1-on-1 coaching (or max 2 pax private group)</span>
+                  <span className="text-muted-foreground">One-to-one coaching or 2-person private group (only if both riders are the same level and learning the same trick)</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-primary text-xl">★</span>
@@ -756,7 +755,7 @@ const Vietnam = () => {
 
             <div className="text-center">
               <span className="inline-block bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold">
-                Only 4 spots per camp
+                Only 2 spots per camp
               </span>
             </div>
           </div>
@@ -963,7 +962,7 @@ const Vietnam = () => {
               What's the accommodation like?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground">
-              Clean, safe, comfortable guesthouse walking distance to the lagoon. Shared rooms (2-4 people) with private room upgrades available. Hot water, AC, WiFi, common areas. Simple but cozy—perfect for adventurers, not luxury seekers.
+              Clean, safe, comfortable guesthouse walking distance to the lagoon. Private rooms with hot water, AC, WiFi, common areas. Simple but cozy—perfect for adventurers, not luxury seekers. Couples receive a 20% discount.
             </AccordionContent>
           </AccordionItem>
 
@@ -981,7 +980,7 @@ const Vietnam = () => {
               How do I get to Phan Rang?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground">
-              Fly into Cam Ranh Airport (CXR). It's a 1.5-hour transfer to Phan Rang, included in the camp package. I coordinate group pickups throughout arrival day. Direct flights from Bangkok, Singapore, Kuala Lumpur, and major Asian hubs.
+              Fly into Ho Chi Minh — Tan Son Nhat Airport (SGN). Group airport transfer from Ho Chi Minh to Cam Ranh is included in the camp package. I coordinate group pickups throughout arrival day. Direct flights from major international hubs to Ho Chi Minh.
             </AccordionContent>
           </AccordionItem>
 
