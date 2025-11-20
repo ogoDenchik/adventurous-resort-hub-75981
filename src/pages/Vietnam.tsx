@@ -281,6 +281,37 @@ const Vietnam = () => {
         </div>
       </section>
 
+      {/* Visual Section - Three Photos */}
+      <section className="py-12 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
+                <img 
+                  src="/lovable-uploads/vietnam-camp-date-1.jpg" 
+                  alt="Vietnam kitesurfing beach with equipment"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
+                <img 
+                  src="/lovable-uploads/vietnam-camp-date-2.jpg" 
+                  alt="Aerial view of Vietnam beach"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+              <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
+                <img 
+                  src="/lovable-uploads/vietnam-camp-date-3.jpg" 
+                  alt="Kitesurfing students with instructor"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* What's Included Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
