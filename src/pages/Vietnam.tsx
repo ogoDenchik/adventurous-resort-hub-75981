@@ -1463,29 +1463,44 @@ const Vietnam = () => {
           </h3>
 
           <div className="space-y-6">
-            <div className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
+            <a 
+              href="https://wa.me/48884035225?text=Hey%2C%20I%27m%20interested%20in%20Vietnam%20Camp."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
+            >
               <span className="text-3xl">📱</span>
               <div>
-                <p className="font-semibold text-foreground mb-1">WhatsApp: +XX XXX XXX XXXX</p>
+                <p className="font-semibold text-foreground mb-1">WhatsApp: +48 884 035 225</p>
                 <p className="text-sm text-muted-foreground">→ Fastest response (I check daily, even on the water!)</p>
               </div>
-            </div>
+            </a>
 
-            <div className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
+            <a 
+              href="https://instagram.com/ogo_kite_academy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
+            >
               <span className="text-3xl">📸</span>
               <div>
-                <p className="font-semibold text-foreground mb-1">Instagram DM: @ogokiteacademy</p>
+                <p className="font-semibold text-foreground mb-1">Instagram DM: @ogo_kite_academy</p>
                 <p className="text-sm text-muted-foreground">→ Casual questions, quick answers</p>
               </div>
-            </div>
+            </a>
 
-            <div className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg">
-              <span className="text-3xl">📧</span>
+            <a 
+              href="https://t.me/+48884035225"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
+            >
+              <span className="text-3xl">✈️</span>
               <div>
-                <p className="font-semibold text-foreground mb-1">Email: hello@ogokiteacademy.com</p>
-                <p className="text-sm text-muted-foreground">→ Detailed inquiries & booking confirmations</p>
+                <p className="font-semibold text-foreground mb-1">Telegram: +48 884 035 225</p>
+                <p className="text-sm text-muted-foreground">→ Secure messaging, quick replies</p>
               </div>
-            </div>
+            </a>
           </div>
 
           <p className="text-center text-muted-foreground mt-8">
@@ -1502,7 +1517,7 @@ const Vietnam = () => {
   <section className="py-16 bg-background border-y border-border">
     <div className="container mx-auto px-4">
       <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
           
           {/* Certificate */}
           <div className="text-center">
@@ -1539,6 +1554,13 @@ const Vietnam = () => {
             <p className="text-sm text-muted-foreground">Strong Alumni Community</p>
           </div>
 
+          {/* Personal Approach */}
+          <div className="text-center">
+            <div className="text-5xl mb-3">🤝</div>
+            <h4 className="font-bold text-foreground mb-1">Personal Approach</h4>
+            <p className="text-sm text-muted-foreground">To Everybody</p>
+          </div>
+
         </div>
       </div>
     </div>
@@ -1566,18 +1588,18 @@ const Vietnam = () => {
             </p>
 
             <div className="space-y-3">
-              <div className="flex items-center gap-3">
+              <a href="https://instagram.com/ogo_kite_academy" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-background/60 transition-colors">
                 <span className="text-2xl">📸</span>
-                <span>Instagram: @ogokiteacademy</span>
-              </div>
-              <div className="flex items-center gap-3">
+                <span>Instagram: @ogo_kite_academy</span>
+              </a>
+              <a href="https://wa.me/48884035225" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-background/60 transition-colors">
                 <span className="text-2xl">💬</span>
-                <span>WhatsApp: +XX XXX XXX XXXX</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">📧</span>
-                <span>Email: hello@ogokiteacademy.com</span>
-              </div>
+                <span>WhatsApp: +48 884 035 225</span>
+              </a>
+              <a href="https://t.me/+48884035225" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-background/60 transition-colors">
+                <span className="text-2xl">✈️</span>
+                <span>Telegram: +48 884 035 225</span>
+              </a>
               <div className="flex items-center gap-3">
                 <span className="text-2xl">🌐</span>
                 <span>Website: ogokiteacademy.com</span>
