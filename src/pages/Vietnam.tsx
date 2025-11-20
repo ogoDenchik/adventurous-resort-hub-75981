@@ -50,7 +50,7 @@ const Vietnam = () => {
               size="lg" 
               className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
             >
-              JOIN THE CAMP (from €1,500)
+              Join the Camp from €2040
             </Button>
             
             <Button 
@@ -601,7 +601,7 @@ const Vietnam = () => {
                 STANDARD CAMP
               </h3>
               <div className="text-4xl font-bold text-primary mb-2">
-                €1,200 – €1,400
+                €2040
               </div>
               <p className="text-muted-foreground">
                 10 Days — All Inclusive
@@ -692,7 +692,7 @@ const Vietnam = () => {
                 PRIVATE PREMIUM EXPERIENCE
               </h3>
               <div className="text-4xl font-bold text-primary mb-2">
-                €2,500
+                €2740
               </div>
               <p className="text-muted-foreground">
                 10 Days — Full Private Coaching Upgrade
@@ -1176,11 +1176,11 @@ const Vietnam = () => {
               <div className="space-y-2">
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
                   <input type="radio" name="package" className="w-4 h-4" />
-                  <span className="text-foreground">Standard Camp (€1,200–1,400)</span>
+                  <span className="text-foreground">Standard Camp (€2040)</span>
                 </label>
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
                   <input type="radio" name="package" className="w-4 h-4" />
-                  <span className="text-foreground">Private Premium (€2,500)</span>
+                  <span className="text-foreground">Private Premium (€2740)</span>
                 </label>
               </div>
             </div>
