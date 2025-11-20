@@ -783,8 +783,8 @@ const Vietnam = () => {
                 <h4 className="text-lg font-bold text-foreground">PAYMENT TERMS</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
-                <li>• 30% deposit to secure your spot</li>
-                <li>• Balance due 7 days before camp start</li>
+                <li>• 30% Deposit — Secure Your Spot</li>
+                <li>• Rest 70% — 30 days before the camp</li>
                 <li>• Payments via Bank Transfer, Wise, PayPal</li>
               </ul>
             </div>
@@ -796,10 +796,8 @@ const Vietnam = () => {
                 <h4 className="text-lg font-bold text-foreground">CANCELLATION POLICY</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
-                <li>• 30+ days prior → Full refund minus 10% admin</li>
-                <li>• 15–29 days → 50% refund</li>
-                <li>• &lt;14 days → deposit non-refundable</li>
-                <li>• Weather cancellations → reschedule or refund</li>
+                <li>• Deposit is refundable within 7 days after payment</li>
+                <li>• It is possible to transfer your deposit to any of our next Vietnam camps</li>
               </ul>
             </div>
 
@@ -1018,7 +1016,7 @@ const Vietnam = () => {
               <div className="flex items-start gap-4">
                 <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
                 <div>
-                  <p className="font-semibold text-foreground">Are 16+ years old</p>
+                  <p className="font-semibold text-foreground">Are 18+ years old</p>
                   <p className="text-muted-foreground">For mature, independent travellers.</p>
                 </div>
               </div>
