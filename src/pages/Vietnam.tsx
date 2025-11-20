@@ -311,14 +311,14 @@ const Vietnam = () => {
               >
                 <CarouselContent>
                   {[
-                    "/lovable-uploads/vietnam-accommodation-1.jpg",
-                    "/lovable-uploads/vietnam-accommodation-2.jpg",
-                    "/lovable-uploads/vietnam-accommodation-3.jpg",
-                    "/lovable-uploads/vietnam-accommodation-4.jpg",
-                    "/lovable-uploads/vietnam-accommodation-5.jpg",
-                    "/lovable-uploads/vietnam-accommodation-6.jpg",
-                    "/lovable-uploads/vietnam-accommodation-7.jpg",
-                    "/lovable-uploads/vietnam-accommodation-8.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-1.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-2.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-3.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-4.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-5.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-6.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-7.jpg",
+                    "/lovable-uploads/vietnam-accommodation-new-8.jpg",
                   ].map((src, index) => (
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-2">
