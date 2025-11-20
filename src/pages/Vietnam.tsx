@@ -10,6 +10,8 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
 
 const Vietnam = () => {
   useEffect(() => {
@@ -293,6 +295,49 @@ const Vietnam = () => {
               </p>
             </div>
 
+            {/* Accommodation Photo Carousel */}
+            <div className="mb-16">
+              <Carousel
+                opts={{
+                  align: "start",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 4000,
+                  }),
+                ]}
+                className="w-full max-w-5xl mx-auto"
+              >
+                <CarouselContent>
+                  {[
+                    "/lovable-uploads/vietnam-accommodation-1.jpg",
+                    "/lovable-uploads/vietnam-accommodation-2.jpg",
+                    "/lovable-uploads/vietnam-accommodation-3.jpg",
+                    "/lovable-uploads/vietnam-accommodation-4.jpg",
+                    "/lovable-uploads/vietnam-accommodation-5.jpg",
+                    "/lovable-uploads/vietnam-accommodation-6.jpg",
+                    "/lovable-uploads/vietnam-accommodation-7.jpg",
+                    "/lovable-uploads/vietnam-accommodation-8.jpg",
+                  ].map((src, index) => (
+                    <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
+                      <div className="p-2">
+                        <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
+                          <img
+                            src={src}
+                            alt={`Vietnam accommodation ${index + 1}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
+                </CarouselContent>
+                <CarouselPrevious className="left-0 md:-left-12" />
+                <CarouselNext className="right-0 md:-right-12" />
+              </Carousel>
+            </div>
+
             {/* Two Column Grid */}
             <div className="grid lg:grid-cols-2 gap-12 mb-12">
               
@@ -307,7 +352,7 @@ const Vietnam = () => {
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• Beachfront guesthouse / hotel</li>
-                    <li>• 2 minutes walking to the lagoon</li>
+                    <li>• 5 minutes walking to the lagoon</li>
                     <li>• Shared or private rooms available</li>
                     <li>• Fast WiFi</li>
                     <li>• Social common areas (terrace, hammocks, kitchen zone)</li>
@@ -381,14 +426,14 @@ const Vietnam = () => {
                       <p className="font-semibold text-foreground mb-2">Included (1–2 activities):</p>
                       <ul className="space-y-1 text-muted-foreground">
                         <li>• Sunset viewpoint / bonfire night</li>
-                        <li>• Waterfall or canyon tour (depending on conditions)</li>
+                        <li>• Waterfall tour</li>
                       </ul>
                     </div>
                     <div>
                       <p className="font-semibold text-foreground mb-2">Optional extras (not included):</p>
                       <ul className="space-y-1 text-muted-foreground">
                         <li>• Dalat day trip (coffee plantations, cool climate)</li>
-                        <li>• Nha Trang city visit (beach, nightlife)</li>
+                        <li>• Mui Ne city visit (beach & nightlife)</li>
                         <li>• Yoga sessions (if available)</li>
                         <li>• Snorkeling/diving on nearby islands</li>
                       </ul>
@@ -427,7 +472,7 @@ const Vietnam = () => {
               </div>
               <ul className="space-y-2 text-muted-foreground ml-12">
                 <li>• International flights to/from Vietnam</li>
-                <li>• Most lunches & dinners (~€5–10/day)</li>
+                <li>• Lunches and dinners (~€5–10/day)</li>
                 <li>• Personal expenses (drinks, snacks, souvenirs)</li>
                 <li>• Vietnam visa (if required — check your country rules)</li>
                 <li>• Travel insurance (mandatory)</li>
@@ -455,11 +500,9 @@ const Vietnam = () => {
           {/* Card 1: Day 1 - Arrival */}
           <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
             <div className="text-center mb-6">
-              <div className="flex justify-center gap-2 text-3xl mb-4">
+              <div className="flex justify-center gap-3 text-2xl mb-4">
                 <span>🛬</span>
-                <span>🚐</span>
                 <span>🍽</span>
-                <span>🌅</span>
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-2">
                 DAY 1 — ARRIVAL & WELCOME
@@ -480,14 +523,9 @@ const Vietnam = () => {
           {/* Card 2: Days 2-9 - Kitesurfing & Adventure */}
           <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
             <div className="text-center mb-6">
-              <div className="flex justify-center gap-2 text-3xl mb-4 flex-wrap">
+              <div className="flex justify-center gap-3 text-2xl mb-4">
                 <span>🪁</span>
-                <span>🍜</span>
-                <span>🏖</span>
                 <span>🌅</span>
-                <span>🎥</span>
-                <span>🔥</span>
-                <span>🛵</span>
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-2">
                 DAYS 2–9 — KITESURFING & ADVENTURE
@@ -505,10 +543,10 @@ const Vietnam = () => {
             </div>
 
             <div className="pt-4 border-t border-border">
-              <p className="text-foreground font-semibold">
-                🟦 Important:
+              <p className="text-foreground font-semibold mb-2">
+                Important:
               </p>
-              <p className="text-muted-foreground mt-2">
+              <p className="text-muted-foreground">
                 One of these days is dedicated to a waterfall adventure trip — beautiful nature, swimming, photos, group bonding.
               </p>
             </div>
@@ -517,22 +555,22 @@ const Vietnam = () => {
           {/* Card 3: Day 10 - Departure */}
           <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
             <div className="text-center mb-6">
-              <div className="flex justify-center gap-2 text-3xl mb-4">
-                <span>🛫</span>
-                <span>💬</span>
-                <span>🤝</span>
+              <div className="flex justify-center gap-3 text-2xl mb-4">
+                <span>☕</span>
+                <span>✈️</span>
               </div>
               <h3 className="text-2xl font-bold text-foreground mb-2">
-                DAY 10 — DEPARTURE & TRANSFERS
+                DAY 10 — DEPARTURE
               </h3>
             </div>
 
             <div className="space-y-3 text-muted-foreground">
-              <p>• Breakfast</p>
-              <p>• Check-out</p>
-              <p>• Group transfers to Cam Ranh Airport</p>
-              <p>• Goodbye hugs & new friendships</p>
-              <p>• "See you on the next trip!"</p>
+              <p>• Leisurely breakfast</p>
+              <p>• Final group photo & goodbyes</p>
+              <p>• Check-out (flexible timing)</p>
+              <p>• Group transfer to Cam Ranh Airport</p>
+              <p>• Option: Extend stay in Vietnam (I can stay longer for private sessions)</p>
+              <p>• Alumni WhatsApp group forever</p>
             </div>
           </div>
 
