@@ -801,7 +801,7 @@ const Vietnam = () => {
         </div>
 
         {/* Terms Box */}
-        <div className="bg-muted/50 rounded-2xl p-8 border border-border">
+        <div id="payment-terms" className="bg-muted/50 rounded-2xl p-8 border border-border">
           <div className="grid md:grid-cols-3 gap-8 mb-6">
             
             {/* Payment Terms */}
@@ -1065,7 +1065,7 @@ const Vietnam = () => {
   </section>
 
   {/* FAQ Section */}
-  <section className="py-20 bg-background">
+  <section id="faq" className="py-20 bg-background">
     <div className="container mx-auto px-4">
       <div className="max-w-4xl mx-auto">
         {/* Section Header */}
@@ -1710,17 +1710,15 @@ const Vietnam = () => {
                 <li><a href="/kite-safari" className="hover:text-background transition-colors">Egypt Kite Safari</a></li>
                 <li><a href="/about" className="hover:text-background transition-colors">About Denis</a></li>
                 <li><a href="#faq" className="hover:text-background transition-colors">FAQ</a></li>
-                <li><a href="#guest-experience" className="hover:text-background transition-colors">Testimonials</a></li>
-                <li><a href="#contact" className="hover:text-background transition-colors">Contact</a></li>
+                <li><a href="/contact" className="hover:text-background transition-colors">Contact</a></li>
               </ul>
             </div>
 
             <div>
               <h4 className="text-xl font-bold mb-4">LEGAL</h4>
               <ul className="space-y-2 text-background/80">
-                <li><a href="#terms" className="hover:text-background transition-colors">Terms & Conditions</a></li>
-                <li><a href="#pricing" className="hover:text-background transition-colors">Cancellation Policy</a></li>
-                <li><a href="#privacy" className="hover:text-background transition-colors">Privacy Policy</a></li>
+                <li><a href="#payment-terms" className="hover:text-background transition-colors">Terms & Conditions</a></li>
+                <li><a href="#payment-terms" className="hover:text-background transition-colors">Cancellation Policy</a></li>
               </ul>
             </div>
           </div>
