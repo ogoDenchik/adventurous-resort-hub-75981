@@ -86,7 +86,10 @@ export const VietnamBookingPopup: React.FC<VietnamBookingPopupProps> = ({
     try {
       const { error } = await supabase.functions.invoke('forward-webhook', {
         body: {
-          ...data,
+          name: data.name,
+          phone: data.whatsapp,
+          email: data.email || '',
+          dates: data.dates,
           package: preselectedPackage,
           form_type: 'vietnam_camp_booking',
           timestamp: new Date().toISOString(),
