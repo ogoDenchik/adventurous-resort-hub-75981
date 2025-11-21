@@ -650,7 +650,7 @@ const Vietnam = () => {
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">1 excursion included</span>
+                  <span className="text-muted-foreground">Excursion to waterfalls</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <span className="text-green-500 text-xl">✓</span>
@@ -1319,13 +1319,8 @@ const Vietnam = () => {
               </Button>
             </div>
 
-            <div className="p-4 bg-primary/10 rounded-lg border border-primary/20 mb-4">
-              <p className="text-sm text-foreground font-semibold mb-1">🎁 Early Bird Bonus:</p>
-              <p className="text-sm text-muted-foreground">Book 30+ days early → Free pro photoshoot + Vietnam travel guide PDF.</p>
-            </div>
-
             <div className="text-center text-sm text-muted-foreground">
-              🔒 Secure Booking: 30% deposit. Balance due 7 days before camp.
+              🔒 Secure Booking: 30% deposit.
             </div>
           </div>
 
@@ -1643,9 +1638,6 @@ const Vietnam = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-background/20 pt-8 text-center">
-          <p className="text-background/80 mb-4">
-            Vietnam Kite Camp: January 10 – March 10, 2026
-          </p>
           <p className="text-sm text-background/60 mb-4">
             📍 Based in: Phan Rang, Ninh Thuan Province, Vietnam<br />
             🏆 IKO Certified Instructor | Fully Licensed & Insured
