@@ -1348,14 +1348,28 @@ const Vietnam = () => {
             </div>
 
             <div className="mb-6">
-              <h4 className="font-semibold text-foreground mb-3">STEP 1: Set Your Kite Goals</h4>
-              <Button className="w-full text-lg py-6 mb-3">
-                REQUEST PRIVATE SESSIONS
-              </Button>
+              <h4 className="font-semibold text-foreground mb-3">STEP 1: Set Your Kite Goal</h4>
+              <ul className="space-y-2 mb-4">
+                <li className="flex items-center gap-2 text-foreground">
+                  <span className="text-primary">•</span>
+                  <span>Learn kitesurfing</span>
+                </li>
+                <li className="flex items-center gap-2 text-foreground">
+                  <span className="text-primary">•</span>
+                  <span>Start jumping</span>
+                </li>
+                <li className="flex items-center gap-2 text-foreground">
+                  <span className="text-primary">•</span>
+                  <span>Learn new tricks</span>
+                </li>
+              </ul>
             </div>
 
             <div className="mb-6">
               <h4 className="font-semibold text-foreground mb-3">STEP 2: Check My Availability</h4>
+              <Button className="w-full text-lg py-6 mb-3" onClick={() => window.open('https://wa.me/48884035225?text=Hey,%20I%27m%20interested%20in%20private%20sessions%20in%20Vietnam', '_blank')}>
+                REQUEST PRIVATE LESSON
+              </Button>
               <Button variant="outline" className="w-full mb-4">
                 📅 View Calendar
               </Button>
@@ -1600,10 +1614,6 @@ const Vietnam = () => {
                 <span className="text-2xl">✈️</span>
                 <span>Telegram: +48 884 035 225</span>
               </a>
-              <div className="flex items-center gap-3">
-                <span className="text-2xl">🌐</span>
-                <span>Website: ogokiteacademy.com</span>
-              </div>
             </div>
           </div>
 
@@ -1613,12 +1623,12 @@ const Vietnam = () => {
               <h4 className="text-xl font-bold mb-4">QUICK LINKS</h4>
               <ul className="space-y-2 text-background/80">
                 <li><a href="/" className="hover:text-background transition-colors">Back to All Programs</a></li>
-                <li><a href="/vietnam" className="hover:text-background transition-colors">Private Coaching (Vietnam)</a></li>
+                <li><a href="#private-sessions" className="hover:text-background transition-colors">Private Coaching (Vietnam)</a></li>
                 <li><a href="/kite-safari" className="hover:text-background transition-colors">Egypt Kite Safari</a></li>
                 <li><a href="/about" className="hover:text-background transition-colors">About Denis</a></li>
                 <li><a href="#faq" className="hover:text-background transition-colors">FAQ</a></li>
-                <li><a href="#testimonials" className="hover:text-background transition-colors">Testimonials</a></li>
-                <li><a href="/contact" className="hover:text-background transition-colors">Contact</a></li>
+                <li><a href="#guest-experience" className="hover:text-background transition-colors">Testimonials</a></li>
+                <li><a href="#contact" className="hover:text-background transition-colors">Contact</a></li>
               </ul>
             </div>
 
@@ -1626,7 +1636,7 @@ const Vietnam = () => {
               <h4 className="text-xl font-bold mb-4">LEGAL</h4>
               <ul className="space-y-2 text-background/80">
                 <li><a href="#terms" className="hover:text-background transition-colors">Terms & Conditions</a></li>
-                <li><a href="#cancellation" className="hover:text-background transition-colors">Cancellation Policy</a></li>
+                <li><a href="#pricing" className="hover:text-background transition-colors">Cancellation Policy</a></li>
                 <li><a href="#privacy" className="hover:text-background transition-colors">Privacy Policy</a></li>
               </ul>
             </div>
@@ -1636,15 +1646,15 @@ const Vietnam = () => {
 
         {/* Bottom Bar */}
         <div className="border-t border-background/20 pt-8 text-center">
-          <p className="text-background/80 mb-2">
-            © 2025 OGO Kite Academy | All Rights Reserved
-          </p>
           <p className="text-background/80 mb-4">
             Vietnam Kite Camp: January 10 – March 10, 2026
           </p>
-          <p className="text-sm text-background/60">
+          <p className="text-sm text-background/60 mb-4">
             📍 Based in: Phan Rang, Ninh Thuan Province, Vietnam<br />
             🏆 IKO Certified Instructor | Fully Licensed & Insured
+          </p>
+          <p className="text-background/80">
+            © 2025 OGO Kite Academy. All Rights Reserved.
           </p>
         </div>
 
