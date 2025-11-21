@@ -364,7 +364,7 @@ const Vietnam = () => {
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• Beachfront guesthouse / hotel</li>
                     <li>• 5 minutes walking to the lagoon</li>
-                    <li>• Private room (Discount for couples: –20%)</li>
+                    <li>• Private room (Discount for couples: –10%)</li>
                     <li>• Fast WiFi</li>
                     <li>• Social common areas (terrace, hammocks, kitchen zone)</li>
                     <li>• Hot water, AC, laundry service available</li>
@@ -685,7 +685,7 @@ const Vietnam = () => {
             </Button>
 
             <p className="text-center text-sm text-muted-foreground">
-              Discount for couples: –20%
+              Discount for couples: –10%
             </p>
           </div>
 
@@ -1349,29 +1349,26 @@ const Vietnam = () => {
 
             <div className="mb-6">
               <h4 className="font-semibold text-foreground mb-3">STEP 1: Set Your Kite Goal</h4>
-              <ul className="space-y-2 mb-4">
-                <li className="flex items-center gap-2 text-foreground">
-                  <span className="text-primary">•</span>
-                  <span>Learn kitesurfing</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <span className="text-primary">•</span>
-                  <span>Start jumping</span>
-                </li>
-                <li className="flex items-center gap-2 text-foreground">
-                  <span className="text-primary">•</span>
-                  <span>Learn new tricks</span>
-                </li>
-              </ul>
+              <div className="space-y-2 mb-4">
+                <label className="flex items-center gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors">
+                  <input type="radio" name="kite-goal" value="learn" className="w-4 h-4 text-primary" />
+                  <span className="text-foreground">Learn kitesurfing</span>
+                </label>
+                <label className="flex items-center gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors">
+                  <input type="radio" name="kite-goal" value="jumping" className="w-4 h-4 text-primary" />
+                  <span className="text-foreground">Start jumping</span>
+                </label>
+                <label className="flex items-center gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors">
+                  <input type="radio" name="kite-goal" value="tricks" className="w-4 h-4 text-primary" />
+                  <span className="text-foreground">Learn new tricks</span>
+                </label>
+              </div>
             </div>
 
             <div className="mb-6">
               <h4 className="font-semibold text-foreground mb-3">STEP 2: Check My Availability</h4>
               <Button className="w-full text-lg py-6 mb-3" onClick={() => window.open('https://wa.me/48884035225?text=Hey,%20I%27m%20interested%20in%20private%20sessions%20in%20Vietnam', '_blank')}>
                 REQUEST PRIVATE LESSON
-              </Button>
-              <Button variant="outline" className="w-full mb-4">
-                📅 View Calendar
               </Button>
             </div>
 
