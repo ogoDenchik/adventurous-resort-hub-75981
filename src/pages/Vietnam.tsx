@@ -89,6 +89,15 @@ const Vietnam = () => {
               <span className="text-lg font-medium text-foreground">13–23 February</span>
             </div>
           </div>
+          
+          <div className="mt-8 text-center">
+            <p className="text-muted-foreground mb-4">
+              From January 15 to April 15, private coaching is available outside the camp dates.
+            </p>
+            <Button onClick={() => document.getElementById('private-sessions')?.scrollIntoView({ behavior: 'smooth' })}>
+              Get Coaching
+            </Button>
+          </div>
         </div>
       </section>
 
