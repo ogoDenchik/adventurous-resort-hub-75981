@@ -4,6 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { VietnamBookingPopup } from '@/components/VietnamBookingPopup';
 import {
   Accordion,
   AccordionContent,
@@ -24,6 +25,10 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Vietnam = () => {
   const [termsOpen, setTermsOpen] = useState(false);
+  const [bookingOpen, setBookingOpen] = useState(false);
+  const [selectedDates, setSelectedDates] = useState('');
+  const [selectedPackage, setSelectedPackage] = useState('');
+  const [selectedGoal, setSelectedGoal] = useState('');
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -60,6 +65,7 @@ const Vietnam = () => {
             <Button 
               size="lg" 
               className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
+              onClick={() => document.getElementById('standard-camp')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Join the Camp from €2040
             </Button>
@@ -68,6 +74,7 @@ const Vietnam = () => {
               size="lg" 
               variant="outline" 
               className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-gray-900"
+              onClick={() => document.getElementById('private-sessions')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Book Private Sessions
             </Button>
@@ -598,7 +605,7 @@ const Vietnam = () => {
   </section>
 
   {/* Investment / Pricing Section */}
-  <section className="py-20 bg-muted/30">
+  <section id="standard-camp" className="py-20 bg-muted/30">
     <div className="container mx-auto px-4">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -689,7 +696,13 @@ const Vietnam = () => {
               </p>
             </div>
 
-            <Button className="w-full mb-3">
+            <Button 
+              className="w-full mb-3"
+              onClick={() => {
+                setSelectedPackage('Standard Camp');
+                setBookingOpen(true);
+              }}
+            >
               BOOK STANDARD CAMP
             </Button>
 
@@ -768,7 +781,13 @@ const Vietnam = () => {
               </p>
             </div>
 
-            <Button className="w-full mb-3 bg-primary hover:bg-primary/90">
+            <Button 
+              className="w-full mb-3 bg-primary hover:bg-primary/90"
+              onClick={() => {
+                setSelectedPackage('Private Premium Experience');
+                setBookingOpen(true);
+              }}
+            >
               BOOK PRIVATE PREMIUM
             </Button>
 
@@ -1191,7 +1210,11 @@ const Vietnam = () => {
         </Accordion>
 
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
+          <Button 
+            size="lg" 
+            variant="outline"
+            onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20still%20have%20some%20questions%20about%20the%20Vietnam%20camp.', '_blank')}
+          >
             Still Have Questions? Ask Me Directly
           </Button>
         </div>
@@ -1294,11 +1317,23 @@ const Vietnam = () => {
               <h4 className="font-semibold text-foreground mb-3">STEP 1: Choose Your Dates</h4>
               <div className="space-y-2">
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input type="radio" name="camp-dates" className="w-4 h-4" />
+                  <input 
+                    type="radio" 
+                    name="camp-dates" 
+                    value="January 20–30, 2026"
+                    className="w-4 h-4"
+                    onChange={(e) => setSelectedDates(e.target.value)}
+                  />
                   <span className="text-foreground">January 20–30, 2026 <span className="text-primary">(6 spots left)</span></span>
                 </label>
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input type="radio" name="camp-dates" className="w-4 h-4" />
+                  <input 
+                    type="radio" 
+                    name="camp-dates" 
+                    value="February 13–23, 2026"
+                    className="w-4 h-4"
+                    onChange={(e) => setSelectedDates(e.target.value)}
+                  />
                   <span className="text-foreground">February 13–23, 2026 <span className="text-primary">(4 spots left)</span></span>
                 </label>
               </div>
@@ -1308,11 +1343,23 @@ const Vietnam = () => {
               <h4 className="font-semibold text-foreground mb-3">STEP 2: Choose Your Package</h4>
               <div className="space-y-2">
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input type="radio" name="package" className="w-4 h-4" />
+                  <input 
+                    type="radio" 
+                    name="package" 
+                    value="Standard Camp"
+                    className="w-4 h-4"
+                    onChange={(e) => setSelectedPackage(e.target.value)}
+                  />
                   <span className="text-foreground">Standard Camp (€2040)</span>
                 </label>
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input type="radio" name="package" className="w-4 h-4" />
+                  <input 
+                    type="radio" 
+                    name="package" 
+                    value="Private Premium"
+                    className="w-4 h-4"
+                    onChange={(e) => setSelectedPackage(e.target.value)}
+                  />
                   <span className="text-foreground">Private Premium (€2740)</span>
                 </label>
               </div>
@@ -1320,10 +1367,17 @@ const Vietnam = () => {
 
             <div className="mb-6">
               <h4 className="font-semibold text-foreground mb-3">STEP 3: Secure Your Spot</h4>
-              <Button className="w-full mb-3 text-lg py-6">
+              <Button 
+                className="w-full mb-3 text-lg py-6"
+                onClick={() => setBookingOpen(true)}
+              >
                 RESERVE MY SPOT NOW
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20still%20have%20some%20questions%20about%20the%20Vietnam%20camp.', '_blank')}
+              >
                 I Have Questions First
               </Button>
             </div>
@@ -1334,7 +1388,7 @@ const Vietnam = () => {
           </div>
 
           {/* Right: Private Sessions Box */}
-          <div className="bg-background rounded-2xl p-8 shadow-xl">
+          <div id="private-sessions" className="bg-background rounded-2xl p-8 shadow-xl">
             <h3 className="text-2xl font-bold text-foreground mb-6">
               Can't Join the Camp Dates?<br />
               Book Private Sessions in Vietnam.
@@ -1355,15 +1409,33 @@ const Vietnam = () => {
               <h4 className="font-semibold text-foreground mb-3">STEP 1: Set Your Kite Goal</h4>
               <div className="space-y-2 mb-4">
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors">
-                  <input type="radio" name="kite-goal" value="learn" className="w-4 h-4 text-primary" />
+                  <input 
+                    type="radio" 
+                    name="kite-goal" 
+                    value="Learn kitesurfing" 
+                    className="w-4 h-4 text-primary"
+                    onChange={(e) => setSelectedGoal(e.target.value)}
+                  />
                   <span className="text-foreground">Learn kitesurfing</span>
                 </label>
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors">
-                  <input type="radio" name="kite-goal" value="jumping" className="w-4 h-4 text-primary" />
+                  <input 
+                    type="radio" 
+                    name="kite-goal" 
+                    value="Start jumping" 
+                    className="w-4 h-4 text-primary"
+                    onChange={(e) => setSelectedGoal(e.target.value)}
+                  />
                   <span className="text-foreground">Start jumping</span>
                 </label>
                 <label className="flex items-center gap-3 p-3 border border-border rounded-lg cursor-pointer hover:bg-accent/50 transition-colors">
-                  <input type="radio" name="kite-goal" value="tricks" className="w-4 h-4 text-primary" />
+                  <input 
+                    type="radio" 
+                    name="kite-goal" 
+                    value="Learn new tricks" 
+                    className="w-4 h-4 text-primary"
+                    onChange={(e) => setSelectedGoal(e.target.value)}
+                  />
                   <span className="text-foreground">Learn new tricks</span>
                 </label>
               </div>
@@ -1371,7 +1443,13 @@ const Vietnam = () => {
 
             <div className="mb-6">
               <h4 className="font-semibold text-foreground mb-3">STEP 2: Check My Availability</h4>
-              <Button className="w-full text-lg py-6 mb-3" onClick={() => window.open('https://wa.me/48884035225?text=Hey,%20I%27m%20interested%20in%20private%20sessions%20in%20Vietnam', '_blank')}>
+              <Button 
+                className="w-full text-lg py-6 mb-3" 
+                onClick={() => {
+                  const goalText = selectedGoal ? `%20My%20goal%3A%20${encodeURIComponent(selectedGoal)}.` : '';
+                  window.open(`https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20lesson%20with%20you%20in%20Vietnam.${goalText}%20When%20do%20you%20have%20available%20spots%3F`, '_blank');
+                }}
+              >
                 REQUEST PRIVATE LESSON
               </Button>
             </div>
@@ -1380,7 +1458,11 @@ const Vietnam = () => {
               <p className="text-center text-muted-foreground mb-4">
                 Need to talk first?
               </p>
-              <Button variant="outline" className="w-full">
+              <Button 
+                variant="outline" 
+                className="w-full"
+                onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20talk%20with%20you%20directly.%20When%20are%20you%20available%3F', '_blank')}
+              >
                 📞 Schedule a Call
               </Button>
               <p className="text-center text-sm text-muted-foreground mt-2">
@@ -1659,6 +1741,13 @@ const Vietnam = () => {
       </div>
     </div>
   </footer>
+
+  <VietnamBookingPopup 
+    open={bookingOpen}
+    onOpenChange={setBookingOpen}
+    preselectedDates={selectedDates}
+    preselectedPackage={selectedPackage}
+  />
 
     </div>
   );
