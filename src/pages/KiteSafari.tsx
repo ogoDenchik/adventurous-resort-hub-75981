@@ -990,6 +990,47 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* Add-Ons Section */}
+          <section className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+                
+                {/* Card 1 - Beginner Group Course */}
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all p-6 flex flex-col items-center text-center">
+                  <div className="text-5xl mb-4">📘</div>
+                  <h3 className="text-xl font-bold mb-3">Beginner Group Course</h3>
+                  <p className="text-sm text-muted-foreground mb-6 flex-grow">3h per day (full safari)</p>
+                  <p className="text-3xl font-bold text-primary">€900</p>
+                </div>
+
+                {/* Card 2 - Progression Pack */}
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all p-6 flex flex-col items-center text-center">
+                  <div className="text-5xl mb-4">⚡</div>
+                  <h3 className="text-xl font-bold mb-3">Progression Pack</h3>
+                  <p className="text-sm text-muted-foreground mb-6 flex-grow">6 hours focused progression</p>
+                  <p className="text-3xl font-bold text-primary">€600</p>
+                </div>
+
+                {/* Card 3 - VIP 1:1 Coaching */}
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all p-6 flex flex-col items-center text-center">
+                  <div className="text-5xl mb-4">👑</div>
+                  <h3 className="text-xl font-bold mb-3">VIP 1:1 Coaching</h3>
+                  <p className="text-sm text-muted-foreground mb-6 flex-grow">All-safari coaching + video analysis<br />(Max 2 ppl per instructor)</p>
+                  <p className="text-3xl font-bold text-primary">€1500</p>
+                </div>
+
+                {/* Card 4 - Full Equipment Rental */}
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all p-6 flex flex-col items-center text-center">
+                  <div className="text-5xl mb-4">🪁</div>
+                  <h3 className="text-xl font-bold mb-3">Full Equipment Rental</h3>
+                  <p className="text-sm text-muted-foreground mb-6 flex-grow">1 week premium gear rental</p>
+                  <p className="text-3xl font-bold text-primary">€600</p>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
           {/* Payment Terms & Cancellation Policy */}
           <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4 max-w-3xl">
