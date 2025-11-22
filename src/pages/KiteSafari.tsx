@@ -847,7 +847,148 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* Pricing Section */}
+          <section className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-bold mb-4">PRICING & OPTIONS</h2>
+                <p className="text-xl text-muted-foreground mb-2">INVESTMENT</p>
+                <p className="text-lg text-muted-foreground">Choose your cabin type & add training if needed.</p>
+              </div>
 
+              <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+                {/* Twin Cabin Card */}
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all">
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/safari-twin-cabin.jpg" 
+                      alt="Twin Cabin"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">Twin Cabin (Per Person)</h3>
+                    <p className="text-3xl font-bold text-primary mb-6">From €1,750</p>
+                    
+                    <div className="space-y-2 mb-6">
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>7 days / 6 nights</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>3 meals daily</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>Snacks + drinks</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>All boat logistics</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>Rescue boat</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>SUP, snorkeling</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>WhatsApp group</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>Evening kite briefings</span>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground mb-6">Best for: Solo travelers, friends</p>
+                    
+                    <Button className="w-full">BOOK TWIN CABIN</Button>
+                  </div>
+                </div>
+
+                {/* Master Suite Card - Most Popular */}
+                <div className="bg-card rounded-xl overflow-hidden shadow-xl border-2 border-primary hover:shadow-2xl transition-all relative">
+                  <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold z-10">
+                    MOST POPULAR
+                  </div>
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/safari-master-suite.jpg" 
+                      alt="Master Suite"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">Master Suite (2 People)</h3>
+                    <p className="text-3xl font-bold text-primary mb-6">From €3,500 / cabin</p>
+                    
+                    <div className="space-y-2 mb-6">
+                      <p className="font-semibold mb-2">Everything in Twin Cabin +</p>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">⭐</span>
+                        <span>Larger cabin</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">⭐</span>
+                        <span>More comfort</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">⭐</span>
+                        <span>Better location onboard</span>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground mb-6">Best for: Couples, friends</p>
+                    
+                    <Button className="w-full">BOOK MASTER SUITE</Button>
+                  </div>
+                </div>
+
+                {/* Panoramic Suite Card */}
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all relative">
+                  <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold z-10">
+                    Only 1–2 per trip
+                  </div>
+                  <div className="aspect-[4/3] overflow-hidden">
+                    <img 
+                      src="/lovable-uploads/safari-panoramic-suite.jpg" 
+                      alt="Panoramic Suite"
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h3 className="text-2xl font-bold mb-2">Panoramic Suite (2 People)</h3>
+                    <p className="text-3xl font-bold text-primary mb-6">From €3,700 / cabin</p>
+                    
+                    <div className="space-y-2 mb-6">
+                      <p className="font-semibold mb-2">Everything in Master Suite +</p>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">⭐</span>
+                        <span>Panoramic windows</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">⭐</span>
+                        <span>Most premium cabin</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">⭐</span>
+                        <span>Maximum privacy</span>
+                      </div>
+                    </div>
+
+                    <p className="text-sm text-muted-foreground mb-6">Best for: Couples, premium travelers</p>
+                    
+                    <Button className="w-full">BOOK PANORAMIC SUITE</Button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
 
         </div>
       </main>
