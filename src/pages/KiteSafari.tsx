@@ -60,8 +60,11 @@ const KiteSafari: React.FC = () => {
         </div>
       </section>
 
+      {/* Gradient Transition */}
+      <div className="h-32 bg-gradient-to-b from-background/0 via-background/50 to-background"></div>
+
       {/* Trust Bar Section */}
-      <section className="py-12 bg-background border-y border-border">
+      <section className="py-12 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
