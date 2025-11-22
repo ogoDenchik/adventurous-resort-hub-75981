@@ -6,7 +6,7 @@ import { BookingPopup } from '@/components/BookingPopup';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler, Anchor, PartyPopper, Wine } from 'lucide-react';
+import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler, Anchor, PartyPopper, Wine, Calendar, MapPin, Flag, Target } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 
@@ -102,6 +102,132 @@ const KiteSafari: React.FC = () => {
                 <p className="text-sm text-muted-foreground">IKO Certified</p>
               </div>
 
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Dates & Availability Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-12">
+              DATES & AVAILABILITY
+            </h2>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-8">
+              {/* Card 1 - April 11-18 */}
+              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-center mb-6">
+                  <div className="flex justify-center mb-4">
+                    <Calendar className="w-12 h-12 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    April 11–18, 2026
+                  </h3>
+                </div>
+
+                <div className="space-y-4 text-left">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-muted-foreground">
+                      Red Sea, Egypt — Yacht Route
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Wind className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-muted-foreground">
+                      Strong spring winds
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3 pt-2 border-t border-border">
+                    <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-foreground font-semibold">
+                      Spots available: <span className="text-primary">15/30</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 2 - April 18-25 */}
+              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-center mb-6">
+                  <div className="flex justify-center mb-4">
+                    <Calendar className="w-12 h-12 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    April 18–25, 2026
+                  </h3>
+                </div>
+
+                <div className="space-y-4 text-left">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-muted-foreground">
+                      Northern Lagoon Route
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Wind className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-muted-foreground">
+                      Perfect warm-water conditions
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3 pt-2 border-t border-border">
+                    <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-foreground font-semibold">
+                      Spots available: <span className="text-primary">21/30</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Card 3 - April 30 - May 7 */}
+              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                <div className="text-center mb-6">
+                  <div className="flex justify-center mb-4">
+                    <Calendar className="w-12 h-12 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-2">
+                    April 30 – May 7, 2026
+                  </h3>
+                </div>
+
+                <div className="space-y-4 text-left">
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-muted-foreground">
+                      Red Sea, Egypt
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Flag className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-muted-foreground">
+                      Freeride + Progression Week
+                    </p>
+                  </div>
+
+                  <div className="flex items-start gap-3 pt-2 border-t border-border">
+                    <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                    <p className="text-foreground font-semibold">
+                      Spots available: <span className="text-primary">13/20</span>
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Warning Note */}
+            <div className="text-center">
+              <p className="text-muted-foreground flex items-center justify-center gap-2">
+                <span className="text-primary">⚠️</span>
+                <span>Small-group yacht trips. When cabins fill — booking closes.</span>
+              </p>
             </div>
           </div>
         </div>
