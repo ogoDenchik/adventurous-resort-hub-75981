@@ -30,7 +30,7 @@ const KiteSafari: React.FC = () => {
         </div>
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center pt-[250px]">
           <div className="max-w-3xl">
-            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4 -mt-[125px]">
               EGYPT KITE SAFARI
             </h1>
             <p className="text-base md:text-lg text-white/90 mb-6">
