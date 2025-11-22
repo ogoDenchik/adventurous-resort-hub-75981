@@ -31,17 +31,29 @@ const KiteSafari: React.FC = () => {
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
           <div className="max-w-3xl">
             <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-              KiteSafari
+              EGYPT KITE SAFARI
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8">
-              7-Day Adventure on the Red Sea
+              7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience
             </p>
-            <Button 
-              size="lg"
-              onClick={() => setBookingPopupOpen(true)}
-            >
-              Book Your Adventure
-            </Button>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                size="lg" 
+                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto whitespace-normal h-auto"
+                onClick={() => setBookingPopupOpen(true)}
+              >
+                JOIN THE KITE SAFARI (from €1,750 per person)
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto whitespace-normal h-auto"
+                onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20get%20the%20full%20PDF%20for%20the%20Egypt%20Kite%20Safari.', '_blank')}
+              >
+                Request Full PDF on WhatsApp
+              </Button>
+            </div>
           </div>
         </div>
       </section>
