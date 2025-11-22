@@ -990,6 +990,60 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* Payment Terms & Cancellation Policy */}
+          <section className="py-16 bg-muted/30">
+            <div className="container mx-auto px-4 max-w-3xl">
+              
+              {/* Payment Terms Block */}
+              <div className="mb-8">
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-3xl">💳</span>
+                  <h3 className="text-2xl font-bold text-foreground">PAYMENT TERMS</h3>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">💳</span>
+                    <p className="text-lg text-muted-foreground">30% deposit to secure cabin</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">💳</span>
+                    <p className="text-lg text-muted-foreground">Remaining balance due 30 days before departure</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">💳</span>
+                    <p className="text-lg text-muted-foreground">Payment options: Bank Transfer / Wise / Revolut / Crypto</p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Divider Line */}
+              <div className="border-t border-border my-8"></div>
+
+              {/* Cancellation Policy Block */}
+              <div>
+                <div className="flex items-center gap-3 mb-6">
+                  <span className="text-3xl">❗</span>
+                  <h3 className="text-2xl font-bold text-foreground">CANCELLATION POLICY</h3>
+                </div>
+                <div className="space-y-3">
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">❗</span>
+                    <p className="text-lg text-muted-foreground">Less than 30 days — deposit non-refundable</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">❗</span>
+                    <p className="text-lg text-muted-foreground">60 to 30 days — deposit can be transferred to the next OGO Academy trip</p>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <span className="text-xl mt-0.5">❗</span>
+                    <p className="text-lg text-muted-foreground">If the trip is cancelled by the organizer → full refund</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </section>
+
         </div>
       </main>
       
