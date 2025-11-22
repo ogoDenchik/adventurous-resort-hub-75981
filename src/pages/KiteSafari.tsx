@@ -471,61 +471,7 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-master-cabin-2.jpg" 
-                        alt="Lyra Yacht Lounge with Ocean View"
-                        className="w-full h-[400px] md:h-[500px] object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/lyra-master-suite-windows.jpg" 
-                        alt="Lyra Master Suite with Windows"
-                        className="w-full h-[400px] md:h-[500px] object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/nord-food.jpg" 
-                        alt="Delicious Food Spread"
-                        className="w-full h-[400px] md:h-[500px] object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/lyra-yacht-night.jpg" 
-                        alt="Lyra Yacht at Night"
-                        className="w-full h-[400px] md:h-[500px] object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/lyra-yacht-sunset.jpg" 
-                        alt="Lyra Yacht at Sunset"
-                        className="w-full h-[400px] md:h-[500px] object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/nord-dining.jpg" 
-                        alt="Nord Yacht Dining Area"
-                        className="w-full h-[400px] md:h-[500px] object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/nord-twin-cabin-new.jpg" 
+                        src="/lovable-uploads/nord-cabin-twin-1.jpg" 
                         alt="Nord Twin Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
@@ -534,8 +480,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-bathroom.jpg" 
-                        alt="Lyra Yacht Bathroom"
+                        src="/lovable-uploads/nord-cabin-twin-2.jpg" 
+                        alt="Nord Twin Cabin View"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -543,8 +489,71 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/nord-bathroom.jpg" 
-                        alt="Nord Yacht Bathroom"
+                        src="/lovable-uploads/nord-master-suite.jpg" 
+                        alt="Nord Master Suite Lounge"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/nord-master-suite-2.jpg" 
+                        alt="Nord Master Suite"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/nord-dining.jpg" 
+                        alt="Nord Dining Area"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/nord-food.jpg" 
+                        alt="Delicious Food Buffet"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/nord-deck-plan.jpg" 
+                        alt="Nord Deck Area with Sunset View"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-yacht-sunset.jpg" 
+                        alt="Yacht Deck at Sunset"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/nord-yacht-sailing.jpg" 
+                        alt="Nord Yacht Sailing Deck"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-aerial.jpg" 
+                        alt="Lyra Yacht Aerial View"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -562,7 +571,7 @@ const KiteSafari: React.FC = () => {
 
               {/* Pagination Dots */}
               <div className="flex justify-center gap-2 mt-6">
-                {[...Array(9)].map((_, i) => (
+                {[...Array(10)].map((_, i) => (
                   <div 
                     key={i}
                     className="w-2 h-2 rounded-full bg-muted-foreground/30"
