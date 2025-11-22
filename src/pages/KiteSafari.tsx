@@ -30,25 +30,25 @@ const KiteSafari: React.FC = () => {
         </div>
         <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
           <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4">
               EGYPT KITE SAFARI
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
+            <p className="text-base md:text-lg text-white/90 mb-6">
               7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button 
-                size="lg" 
-                className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto whitespace-normal h-auto"
+                size="default" 
+                className="text-sm px-5 py-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto whitespace-normal h-auto"
                 onClick={() => setBookingPopupOpen(true)}
               >
                 JOIN THE KITE SAFARI (from €1,750 per person)
               </Button>
               
               <Button 
-                size="lg" 
+                size="default" 
                 variant="outline" 
-                className="text-lg px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto whitespace-normal h-auto"
+                className="text-sm px-5 py-2 bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto whitespace-normal h-auto"
                 onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20get%20the%20full%20PDF%20for%20the%20Egypt%20Kite%20Safari.', '_blank')}
               >
                 Request Full PDF on WhatsApp
