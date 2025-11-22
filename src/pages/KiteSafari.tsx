@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
@@ -13,6 +13,40 @@ import Autoplay from "embla-carousel-autoplay";
 
 const KiteSafari: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
+  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
+  const autoplayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayPluginRef = useRef(
+    Autoplay({
+      delay: 5000,
+      stopOnInteraction: false,
+    })
+  );
+
+  // Handle user interaction - pause autoplay and resume after 10s
+  const handleUserInteraction = () => {
+    setIsAutoplayPaused(true);
+    autoplayPluginRef.current.stop();
+    
+    // Clear existing timeout
+    if (autoplayTimeoutRef.current) {
+      clearTimeout(autoplayTimeoutRef.current);
+    }
+    
+    // Resume autoplay after 10 seconds of no interaction
+    autoplayTimeoutRef.current = setTimeout(() => {
+      setIsAutoplayPaused(false);
+      autoplayPluginRef.current.play();
+    }, 10000);
+  };
+
+  // Cleanup timeout on unmount
+  useEffect(() => {
+    return () => {
+      if (autoplayTimeoutRef.current) {
+        clearTimeout(autoplayTimeoutRef.current);
+      }
+    };
+  }, []);
 
   return (
     <div className="min-h-screen bg-background">
@@ -430,18 +464,15 @@ const KiteSafari: React.FC = () => {
             <div className="mb-16">
               <Carousel 
                 className="w-full max-w-5xl mx-auto"
-                plugins={[
-                  Autoplay({
-                    delay: 4000,
-                  }),
-                ]}
+                plugins={[autoplayPluginRef.current]}
+                onMouseEnter={handleUserInteraction}
               >
                 <CarouselContent>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-yacht-front.jpg" 
-                        alt="Lyra Yacht Front View"
+                        src="/lovable-uploads/lyra-master-cabin-2.jpg" 
+                        alt="Lyra Yacht Lounge with Ocean View"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -449,8 +480,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-aerial.jpg" 
-                        alt="Lyra Yacht Aerial View"
+                        src="/lovable-uploads/lyra-master-suite-windows.jpg" 
+                        alt="Lyra Master Suite with Windows"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -458,8 +489,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-jacuzzi.jpg" 
-                        alt="Lyra Yacht Jacuzzi on Deck"
+                        src="/lovable-uploads/nord-food.jpg" 
+                        alt="Delicious Food Spread"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -467,8 +498,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-sunset.jpg" 
-                        alt="Lyra Yacht Sunset Deck"
+                        src="/lovable-uploads/lyra-yacht-night.jpg" 
+                        alt="Lyra Yacht at Night"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -476,8 +507,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-master-suite.jpg" 
-                        alt="Lyra Master Suite"
+                        src="/lovable-uploads/lyra-yacht-sunset.jpg" 
+                        alt="Lyra Yacht at Sunset"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -485,8 +516,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-lounge.jpg" 
-                        alt="Lyra Lounge Area"
+                        src="/lovable-uploads/nord-dining.jpg" 
+                        alt="Nord Yacht Dining Area"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -494,8 +525,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-standard-cabin.jpg" 
-                        alt="Lyra Standard Cabin"
+                        src="/lovable-uploads/nord-twin-cabin-new.jpg" 
+                        alt="Nord Twin Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -503,8 +534,8 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-double-cabin.jpg" 
-                        alt="Lyra Double Cabin"
+                        src="/lovable-uploads/lyra-bathroom.jpg" 
+                        alt="Lyra Yacht Bathroom"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
@@ -512,29 +543,26 @@ const KiteSafari: React.FC = () => {
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
                       <img 
-                        src="/lovable-uploads/lyra-twin-cabin.jpg" 
-                        alt="Lyra Twin Cabin"
-                        className="w-full h-[400px] md:h-[500px] object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                  <CarouselItem>
-                    <div className="rounded-2xl overflow-hidden">
-                      <img 
-                        src="/lovable-uploads/lyra-food.jpg" 
-                        alt="Lyra Dining Area"
+                        src="/lovable-uploads/nord-bathroom.jpg" 
+                        alt="Nord Yacht Bathroom"
                         className="w-full h-[400px] md:h-[500px] object-cover"
                       />
                     </div>
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious className="hidden md:flex" />
-                <CarouselNext className="hidden md:flex" />
+                <CarouselPrevious 
+                  className="left-4" 
+                  onClick={handleUserInteraction}
+                />
+                <CarouselNext 
+                  className="right-4"
+                  onClick={handleUserInteraction}
+                />
               </Carousel>
 
               {/* Pagination Dots */}
               <div className="flex justify-center gap-2 mt-6">
-                {[...Array(10)].map((_, i) => (
+                {[...Array(9)].map((_, i) => (
                   <div 
                     key={i}
                     className="w-2 h-2 rounded-full bg-muted-foreground/30"
