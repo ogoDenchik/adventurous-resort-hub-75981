@@ -1104,6 +1104,174 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* FAQ Section */}
+          <section id="faq" className="py-20 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                    COMMON QUESTIONS
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    Everything You Need to Know
+                  </p>
+                </div>
+
+                {/* FAQ Accordion */}
+                <Accordion type="single" collapsible className="space-y-4">
+                  
+                  <AccordionItem value="advanced" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      Do I need to be advanced to join the KiteSafari?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Not at all! All levels are welcome. Beginners get shallow-water spots with safety boats and coaching options. Intermediate riders progress fast thanks to perfect flat water. Advanced riders get big-air, freestyle and downwind opportunities.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="safe" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      Is it safe for beginners?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Yes. The lagoons we visit are shallow, sandy and safe. There is a rescue boat at all times, and all instructors are certified with 5+ years experience. You can also add beginner or progression coaching.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="yacht-life" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      What is life like on the yacht?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Very comfortable. You have AC cabins, showers, 3 meals daily, snacks, sundeck, jacuzzi, lounge areas, WiFi (when available), and a friendly crew. Think of it as a floating boutique hotel.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="wind" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      What if the wind drops?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      It's extremely rare in the Red Sea, but if it happens — we do snorkeling, SUP, island visits, video analysis, technique workshops, or a photoshoot. You never get bored.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="included" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      What is included in the price?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Accommodation, 3 meals daily, snacks, all boat logistics, rescue boat, SUP, snorkeling, island BBQ, and daily zodiac transfers. Coaching and equipment rental are optional add-ons.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="solo" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      Can I join alone?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Absolutely. 70% of guests come solo. The group becomes a family by Day 2. Cabins can be shared with another solo traveler of the same gender.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="internet" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      Will I have internet on the yacht?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Limited. Sometimes there is 4G depending on the spot. For full connectivity, bring your local SIM card with data.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="food" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      What is the food like?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Fresh and varied: fish, chicken, rice, salads, pasta, fruits, snacks. Vegetarian options available. BBQ on an uninhabited island is a highlight.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="gear" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      Do I need to bring my own gear?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      You can bring your gear or rent a full Duotone setup for the week. Skill check is required for rental.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="photographer" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      Is there a photographer or videographer?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Yes. You can book a professional photo/video package or get clips during coaching and video analysis sessions.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="transport" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      How do I get to the yacht?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Fly to Hurghada (HRG). Group transfers to the marina are included in the safari package.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="packing" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      What should I pack?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Boardshorts/bikini, lycra/rashguard, sunscreen SPF 50, sunglasses, flip flops, towel, personal meds, waterproof bag, GoPro (optional).
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="non-kiters" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      Can non-kiters join?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Yes. They can snorkel, relax, sunbathe, swim, explore islands — it's a great vacation even without kiting.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="group-size" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      What is the group size?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      Depending on the yacht: usually 20–28 people, plus crew and instructors.
+                    </AccordionContent>
+                  </AccordionItem>
+
+                  <AccordionItem value="age" className="bg-muted/30 rounded-lg px-6 border border-border">
+                    <AccordionTrigger className="text-left font-semibold">
+                      What is the age requirement?
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground">
+                      18+ (or 16+ with guardian).
+                    </AccordionContent>
+                  </AccordionItem>
+
+                </Accordion>
+
+                <div className="text-center mt-12">
+                  <Button 
+                    size="lg" 
+                    variant="outline"
+                    onClick={() => window.open('https://wa.me/48884035225', '_blank')}
+                  >
+                    Ask Your Question on WhatsApp
+                  </Button>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
           {/* Payment Terms & Cancellation Policy */}
           <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4 max-w-3xl">
