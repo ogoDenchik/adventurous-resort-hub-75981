@@ -272,6 +272,142 @@ const KiteSafari: React.FC = () => {
         </div>
       </section>
 
+      {/* Why Kite Safari Section */}
+      <section className="py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
+            
+            {/* Left Side - Image Collage */}
+            <div className="space-y-4">
+              {/* Large top image */}
+              <div className="rounded-2xl overflow-hidden shadow-lg">
+                <img 
+                  src="/lovable-uploads/egypt-safari-girls.jpg" 
+                  alt="Kitesurfing girls with yacht in background"
+                  className="w-full h-[400px] object-cover"
+                />
+              </div>
+              
+              {/* Two smaller images side by side */}
+              <div className="grid grid-cols-2 gap-4">
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <img 
+                    src="/lovable-uploads/egypt-safari-jump.jpg" 
+                    alt="Kiteboarder performing jump"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+                <div className="rounded-xl overflow-hidden shadow-md">
+                  <img 
+                    src="/lovable-uploads/egypt-safari-yacht-group.jpg" 
+                    alt="Group photo on yacht"
+                    className="w-full h-[200px] object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Right Side - Text Content */}
+            <div className="space-y-8">
+              <div>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                  WHY KITE SAFARI?
+                </h2>
+                <p className="text-lg text-muted-foreground">
+                  Most kite trips limit you to one beach.<br />
+                  Here — your hotel, restaurant, and kite station are all on the water.
+                </p>
+              </div>
+
+              {/* Feature Blocks */}
+              <div className="space-y-6">
+                {/* Perfect Conditions */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🌊</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">PERFECT CONDITIONS</h3>
+                    <p className="text-muted-foreground">
+                      3 flat-water lagoons in one week<br />
+                      Consistent wind, sandy bottom, no crowds<br />
+                      Shallow safe areas + rescue boat support
+                    </p>
+                  </div>
+                </div>
+
+                {/* Luxury Liveaboard Experience */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🛥</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">LUXURY LIVEABOARD EXPERIENCE</h3>
+                    <p className="text-muted-foreground">
+                      Your room, food, chill zones — everything on the yacht<br />
+                      Wake up on the spot — no transfers<br />
+                      Jacuzzi, sun deck, snorkeling, SUP
+                    </p>
+                  </div>
+                </div>
+
+                {/* True All-Inclusive Value */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">💰</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">TRUE ALL-INCLUSIVE VALUE</h3>
+                    <p className="text-muted-foreground">
+                      Accommodation, food, crew, fuel — included<br />
+                      Daily zodiac rides to spots included<br />
+                      Just ride, rest, and enjoy
+                    </p>
+                  </div>
+                </div>
+
+                {/* Progression-Focused */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🧠</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">PROGRESSION-FOCUSED</h3>
+                    <p className="text-muted-foreground">
+                      Top instructors with 5+ years of coaching<br />
+                      Optional training packages<br />
+                      Video analysis and technique breakdowns
+                    </p>
+                  </div>
+                </div>
+
+                {/* Community */}
+                <div className="flex gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🤝</span>
+                  </div>
+                  <div>
+                    <h3 className="text-xl font-bold text-foreground mb-2">COMMUNITY</h3>
+                    <p className="text-muted-foreground">
+                      Riders from Europe, Ukraine, Middle East<br />
+                      Solo travelers, couples, groups<br />
+                      Friendships formed on board last for years
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Closing Line */}
+              <p className="text-lg text-muted-foreground italic pt-4 border-t border-border">
+                This is not just a kite trip.<br />
+                This is full immersion into the kitesurf lifestyle.
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <main className="py-20">
         <div className="container mx-auto px-4">
 
