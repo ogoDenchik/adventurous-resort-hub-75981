@@ -19,30 +19,54 @@ const KiteSafari: React.FC = () => {
       <ScrollToTop />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src="/lovable-uploads/kite-safari-yacht.jpg" 
-            alt="KiteSafari Yacht" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
-        </div>
-        <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
-          <div className="max-w-3xl">
-            <h1 className="text-5xl md:text-6xl font-display font-bold text-white mb-6">
-              KiteSafari
-            </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8">
-              7-Day Adventure on the Red Sea
-            </p>
+      <section className="relative h-screen w-full overflow-hidden">
+        <div className="absolute inset-0 bg-black/40 z-10" />
+        <div 
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: `url(/lovable-uploads/kite-safari-yacht.jpg)`,
+          }}
+        />
+        
+        <div className="relative h-full flex flex-col items-center justify-center text-center px-4 z-20 max-w-6xl mx-auto">
+          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4">
+            EGYPT KITE SAFARI
+          </h1>
+          
+          <p className="text-2xl md:text-3xl text-white font-semibold mb-2">
+            Ride. Progress. Live on a Yacht.
+          </p>
+          
+          <p className="text-xl md:text-2xl text-white/90 mb-4">
+            7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience
+          </p>
+          
+          <p className="text-base md:text-lg text-white/80 mb-8">
+            Season: 2026 (Limited Avaliability)
+          </p>
+          
+          <div className="flex flex-col sm:flex-row gap-4 w-full max-w-3xl px-4">
             <Button 
-              size="lg"
+              size="lg" 
+              className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground whitespace-normal h-auto leading-tight"
               onClick={() => setBookingPopupOpen(true)}
             >
-              Book Your Adventure
+              JOIN THE KITE SAFARI (from €1,750 per person)
+            </Button>
+            
+            <Button 
+              size="lg" 
+              variant="outline" 
+              className="w-full sm:w-auto text-base sm:text-lg px-6 sm:px-8 py-6 bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 whitespace-normal h-auto leading-tight"
+              onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy,%20I%20want%20the%20full%20PDF%20for%20Egypt%20Kite%20Safari', '_blank')}
+            >
+              Request Full PDF on WhatsApp
             </Button>
           </div>
+          
+          <p className="text-xs md:text-sm text-white/70 mt-6 max-w-2xl">
+            Liveaboard yacht • Flat-water lagoons • Coaching & video analysis • Island BBQ
+          </p>
         </div>
       </section>
 
