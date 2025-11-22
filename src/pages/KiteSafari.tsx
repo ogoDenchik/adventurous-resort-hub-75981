@@ -408,6 +408,292 @@ const KiteSafari: React.FC = () => {
         </div>
       </section>
 
+      {/* What's Included Section */}
+      <section className="py-20 bg-muted/20">
+        <div className="container mx-auto px-4">
+          <div className="max-w-7xl mx-auto">
+            
+            {/* Section Header */}
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                WHAT'S INCLUDED
+              </h2>
+              <p className="text-xl text-muted-foreground">
+                EVERYTHING YOU NEED
+              </p>
+              <p className="text-lg text-muted-foreground mt-2">
+                A full Red Sea KiteSafari experience
+              </p>
+            </div>
+
+            {/* Yacht Photo Carousel */}
+            <div className="mb-16">
+              <Carousel 
+                className="w-full max-w-5xl mx-auto"
+                plugins={[
+                  Autoplay({
+                    delay: 4000,
+                  }),
+                ]}
+              >
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-yacht-front.jpg" 
+                        alt="Lyra Yacht Front View"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-aerial.jpg" 
+                        alt="Lyra Yacht Aerial View"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-jacuzzi.jpg" 
+                        alt="Lyra Yacht Jacuzzi on Deck"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-sunset.jpg" 
+                        alt="Lyra Yacht Sunset Deck"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-master-suite.jpg" 
+                        alt="Lyra Master Suite"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-lounge.jpg" 
+                        alt="Lyra Lounge Area"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-standard-cabin.jpg" 
+                        alt="Lyra Standard Cabin"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-double-cabin.jpg" 
+                        alt="Lyra Double Cabin"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-twin-cabin.jpg" 
+                        alt="Lyra Twin Cabin"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-food.jpg" 
+                        alt="Lyra Dining Area"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
+              </Carousel>
+
+              {/* Pagination Dots */}
+              <div className="flex justify-center gap-2 mt-6">
+                {[...Array(10)].map((_, i) => (
+                  <div 
+                    key={i}
+                    className="w-2 h-2 rounded-full bg-muted-foreground/30"
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* Two-Column Grid */}
+            <div className="grid lg:grid-cols-2 gap-12">
+              
+              {/* LEFT COLUMN */}
+              <div className="space-y-10">
+                
+                {/* Accommodation */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🏠</span>
+                    <h3 className="text-2xl font-bold text-foreground">ACCOMMODATION (ON THE YACHT)</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• 7 days / 6 nights on a comfortable liveaboard yacht</li>
+                    <li>• Twin cabins, Master Suites, Panoramic Suite (limited availability)</li>
+                    <li>• Air conditioning, private/shared bathrooms</li>
+                    <li>• Fresh linens, daily cleaning</li>
+                    <li>• Lounge areas, sun deck, jacuzzi</li>
+                    <li>• WiFi when available</li>
+                  </ul>
+                </div>
+
+                {/* Food & Drinks */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🍽</span>
+                    <h3 className="text-2xl font-bold text-foreground">FOOD & DRINKS</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• 3 meals per day</li>
+                    <li>• Snacks, fruits, tea, coffee, water</li>
+                    <li>• BBQ party on an uninhabited island</li>
+                    <li>• Vegetarian options available</li>
+                  </ul>
+                </div>
+
+                {/* Kitesurfing Logistics */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🪁</span>
+                    <h3 className="text-2xl font-bold text-foreground">KITESURFING LOGISTICS</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• Daily zodiac transfers to the spot/back (300m)</li>
+                    <li>• Launch/landing support</li>
+                    <li>• Rescue boat on duty</li>
+                    <li>• Full safety briefing</li>
+                    <li>• Possibility to add coaching or rental gear</li>
+                  </ul>
+                </div>
+
+              </div>
+
+              {/* RIGHT COLUMN */}
+              <div className="space-y-10">
+                
+                {/* Coaching Packages */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🎓</span>
+                    <h3 className="text-2xl font-bold text-foreground">COACHING PACKAGES (OPTIONAL)</h3>
+                  </div>
+                  <div className="ml-14 space-y-2 text-muted-foreground">
+                    <p className="italic">(Not included in base price)</p>
+                    <ul className="space-y-2 mt-3">
+                      <li>• Beginner, Intermediate, Advanced coaching</li>
+                      <li>• 1:1 or small-group coaching</li>
+                      <li>• Premium Duotone gear rental</li>
+                      <li>• Daily or evening video analysis</li>
+                      <li>• Clear progression roadmap</li>
+                    </ul>
+                  </div>
+                </div>
+
+                {/* Transportation */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🚐</span>
+                    <h3 className="text-2xl font-bold text-foreground">TRANSPORTATION</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• Group transfer from Hurghada (HRG) to marina</li>
+                    <li>• Boat transfers between lagoons</li>
+                    <li>• Zodiac to shallow water zones</li>
+                  </ul>
+                </div>
+
+                {/* Activities & Extras */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">🎉</span>
+                    <h3 className="text-2xl font-bold text-foreground">ACTIVITIES & EXTRAS</h3>
+                  </div>
+                  <div className="ml-14 space-y-3">
+                    <div>
+                      <p className="font-semibold text-foreground mb-2">Included:</p>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• Snorkeling reefs</li>
+                        <li>• SUP boards</li>
+                        <li>• Island visits</li>
+                        <li>• Deck hangouts, music, chill sessions</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-semibold text-foreground mb-2">Optional:</p>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• Alcoholic drinks</li>
+                        <li>• Extra coaching hours</li>
+                        <li>• Professional photo/video shoot</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Community & Vibes */}
+                <div>
+                  <div className="flex items-center gap-3 mb-4">
+                    <span className="text-4xl">👥</span>
+                    <h3 className="text-2xl font-bold text-foreground">COMMUNITY & VIBES</h3>
+                  </div>
+                  <ul className="space-y-2 text-muted-foreground ml-14">
+                    <li>• International group</li>
+                    <li>• Evening hangouts and talks</li>
+                    <li>• Shared learning, shared progress</li>
+                    <li>• Perfect for solo travelers</li>
+                  </ul>
+                </div>
+
+              </div>
+            </div>
+
+            {/* NOT INCLUDED Box */}
+            <div className="mt-12 bg-muted/30 border-l-4 border-primary rounded-lg p-8">
+              <div className="flex items-center gap-3 mb-4">
+                <span className="text-3xl">⚠️</span>
+                <h3 className="text-xl font-bold text-foreground">NOT INCLUDED:</h3>
+              </div>
+              <ul className="space-y-2 text-muted-foreground ml-12">
+                <li>• International flights</li>
+                <li>• Egyptian visa</li>
+                <li>• Kitesurfing lessons & rental gear</li>
+                <li>• Alcohol</li>
+                <li>• Travel insurance (mandatory)</li>
+                <li>• Tips</li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
       <main className="py-20">
         <div className="container mx-auto px-4">
 
