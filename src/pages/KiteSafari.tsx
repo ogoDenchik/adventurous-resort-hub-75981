@@ -60,71 +60,55 @@ const KiteSafari: React.FC = () => {
         </div>
       </section>
 
+      {/* Trust Bar Section */}
+      <section className="py-12 bg-background border-y border-border">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              
+              {/* Students Trained */}
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <GraduationCap className="w-12 h-12 text-primary" />
+                </div>
+                <h4 className="font-bold text-foreground mb-1">1150+ Students Trained</h4>
+                <p className="text-sm text-muted-foreground">Worldwide Experience</p>
+              </div>
+
+              {/* Non-Stop Kiting */}
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <Wind className="w-12 h-12 text-primary" />
+                </div>
+                <h4 className="font-bold text-foreground mb-1">7 Days Non-Stop Kiting</h4>
+                <p className="text-sm text-muted-foreground">Pure Adventure</p>
+              </div>
+
+              {/* Returning Riders */}
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <Users className="w-12 h-12 text-primary" />
+                </div>
+                <h4 className="font-bold text-foreground mb-1">200+ Returning Riders</h4>
+                <p className="text-sm text-muted-foreground">Strong Community</p>
+              </div>
+
+              {/* International Standards */}
+              <div className="text-center">
+                <div className="flex justify-center mb-3">
+                  <Sparkles className="w-12 h-12 text-primary" />
+                </div>
+                <h4 className="font-bold text-foreground mb-1">International Standards</h4>
+                <p className="text-sm text-muted-foreground">IKO Certified</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </section>
+
       <main className="py-20">
         <div className="container mx-auto px-4">
-          
-          {/* What is KiteSafari */}
-          <section className="mb-20">
-            <div className="max-w-4xl mx-auto text-center mb-12">
-              <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-                What is KiteSafari?
-              </h2>
-              <p className="text-lg text-muted-foreground leading-relaxed">
-                Picture this: a luxury yacht sailing Egypt's Red Sea, chasing the best kite spots. 
-                Crystal lagoons, perfect winds, sandy islands – and your floating 5-star hotel moving with you.
-              </p>
-              <p className="text-lg text-foreground font-semibold mt-4">
-                It's kitesurfing, adventure, and community rolled into one unforgettable week.
-              </p>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
-              <div className="grid grid-cols-2 gap-4">
-                <img 
-                  src="/lovable-uploads/safari-instructor-student-yacht.jpg" 
-                  alt="Instructor and student with yacht in background" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-                <img 
-                  src="/lovable-uploads/safari-woman-yacht-riding.jpg" 
-                  alt="Woman kitesurfing with yacht in background" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-                <img 
-                  src="/lovable-uploads/safari-tandem-action.jpg" 
-                  alt="Tandem kitesurfing action" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-                <img 
-                  src="/lovable-uploads/safari-yacht-closeup.jpg" 
-                  alt="Yacht closeup view" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <img 
-                  src="/lovable-uploads/safari-woman-purple-action.jpg" 
-                  alt="Woman kitesurfing in purple" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-                <img 
-                  src="/lovable-uploads/safari-male-yacht-action.jpg" 
-                  alt="Male kitesurfer near yacht" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-                <img 
-                  src="/lovable-uploads/safari-beach-instruction.jpg" 
-                  alt="Beach instruction session" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-                <img 
-                  src="/lovable-uploads/safari-group-riding.jpg" 
-                  alt="Group riding together" 
-                  className="rounded-lg shadow-xl w-full h-[200px] object-cover"
-                />
-              </div>
-            </div>
-          </section>
 
           {/* The Yacht */}
           <section className="mb-20">
