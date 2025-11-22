@@ -1031,6 +1031,79 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* Alternative - Coaching on Shore */}
+          <section className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4 max-w-4xl">
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-bold mb-4">ALTERNATIVE — COACHING ON SHORE</h2>
+                <p className="text-xl md:text-2xl font-semibold mb-2">CAN&apos;T JOIN THE YACHT DATES?</p>
+                <p className="text-lg text-muted-foreground">Train with us on shore in Egypt.</p>
+              </div>
+
+              <div className="bg-card rounded-xl p-8 shadow-lg border border-border mb-8">
+                <h3 className="text-2xl font-bold mb-6 text-center">COACHING — 10-HOUR PACKAGE (€900)</h3>
+                
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* Includes Column */}
+                  <div>
+                    <h4 className="font-bold mb-4 text-lg">Includes:</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>1:1 or small group</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>Flexible schedule</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>Premium equipment</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>Video analysis</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>Safety briefing</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-primary mt-1">✔</span>
+                        <span>WhatsApp support</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Not Included Column */}
+                  <div>
+                    <h4 className="font-bold mb-4 text-lg">Not included:</h4>
+                    <div className="space-y-2">
+                      <div className="flex items-start gap-2">
+                        <span className="text-destructive mt-1">✘</span>
+                        <span>Accommodation</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-destructive mt-1">✘</span>
+                        <span>Meals</span>
+                      </div>
+                      <div className="flex items-start gap-2">
+                        <span className="text-destructive mt-1">✘</span>
+                        <span>Transport</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex justify-center">
+                <Button size="lg" className="w-full md:w-auto md:min-w-[400px] text-lg px-8 py-6">
+                  REQUEST PRIVATE COACHING
+                </Button>
+              </div>
+            </div>
+          </section>
+
           {/* Payment Terms & Cancellation Policy */}
           <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4 max-w-3xl">
