@@ -14,6 +14,7 @@ import BookingSuccess from "./pages/BookingSuccess";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import KiteSafari from "./pages/KiteSafari";
+import KiteSafari2 from "./pages/KiteSafari2";
 import Brazil from "./pages/Brazil";
 import Cyprus from "./pages/Cyprus";
 import Vietnam from "./pages/Vietnam";
@@ -38,6 +39,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/activities" element={<Activities />} />
             <Route path="/kite-safari" element={<KiteSafari />} />
+            <Route path="/kitesafari2" element={<KiteSafari2 />} />
             <Route path="/brazil" element={<Brazil />} />
             <Route path="/cyprus" element={<Cyprus />} />
             <Route path="/vietnam" element={<Vietnam />} />
