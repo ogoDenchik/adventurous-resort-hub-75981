@@ -28,7 +28,7 @@ const KiteSafari: React.FC = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
-        <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
+        <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center pt-[250px]">
           <div className="max-w-3xl">
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-white mb-4">
               EGYPT KITE SAFARI
@@ -39,10 +39,10 @@ const KiteSafari: React.FC = () => {
             <div className="flex flex-col sm:flex-row gap-3 justify-center">
               <Button 
                 size="default" 
-                className="text-sm px-5 py-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto whitespace-normal h-auto"
+                className="text-sm px-5 py-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto whitespace-normal h-auto leading-tight"
                 onClick={() => setBookingPopupOpen(true)}
               >
-                JOIN THE KITE SAFARI (from €1,750 per person)
+                JOIN THE KITE SAFARI<br />(from €1,750 per person)
               </Button>
               
               <Button 
