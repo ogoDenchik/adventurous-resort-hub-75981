@@ -110,49 +110,6 @@ const KiteSafari: React.FC = () => {
       <main className="py-20">
         <div className="container mx-auto px-4">
 
-          {/* The Yacht */}
-          <section className="mb-20">
-            <div className="grid lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <div className="flex items-center gap-3 mb-6">
-                  <Ship className="w-8 h-8 text-primary" />
-                  <h2 className="text-3xl md:text-4xl font-display font-bold">The Yacht</h2>
-                </div>
-                <div className="space-y-4 text-muted-foreground">
-                  <p className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    Large luxury yacht accommodating up to 25–30 people
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    Spacious cabins (2 beds or double) with private bathrooms
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    Chill-out areas, two bars, sun decks, Jacuzzi
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    Dining room and lounge
-                  </p>
-                  <p className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    Rescue zodiacs to reach the best lagoons
-                  </p>
-                </div>
-                <p className="mt-6 text-foreground font-medium">
-                  You live, kite, eat, and relax all on the yacht. Every day we anchor near deserted sandy islands – 
-                  we kite directly from the beach while the yacht remains your base.
-                </p>
-              </div>
-              <img 
-                src="/lovable-uploads/kite-safari-yacht-kiting.jpg" 
-                alt="Luxury yacht with kitesurfers" 
-                className="rounded-lg shadow-xl w-full h-[500px] object-cover"
-              />
-            </div>
-          </section>
-
           {/* KiteSafari Schedule */}
           <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12">
             <div className="flex items-center gap-3 mb-8 justify-center">
