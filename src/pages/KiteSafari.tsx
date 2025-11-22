@@ -33,7 +33,7 @@ const KiteSafari: React.FC = () => {
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 -mt-[125px]">
               EGYPT<br />KITE SAFARI
             </h1>
-            <div className="mt-[125px]">
+            <div className="mt-[115px]">
               <p className="text-base md:text-lg text-white/90 mb-6">
                 7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience
               </p>
