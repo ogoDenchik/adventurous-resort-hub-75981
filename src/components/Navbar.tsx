@@ -36,9 +36,6 @@ const Navbar: React.FC = () => {
     name: 'Kite Safari',
     path: '/kite-safari'
   }, {
-    name: 'Egypt Kite Safari',
-    path: '/kitesafari2'
-  }, {
     name: 'Brazil',
     path: '/brazil'
   }, {
