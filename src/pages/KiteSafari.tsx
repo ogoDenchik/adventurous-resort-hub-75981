@@ -9,6 +9,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/
 import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye, Clock, Layers, Sparkles, Sun, Ruler, Anchor, PartyPopper, Wine, Calendar, MapPin, Flag, Target } from 'lucide-react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
+import Autoplay from "embla-carousel-autoplay";
 
 const KiteSafari: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
@@ -115,110 +116,148 @@ const KiteSafari: React.FC = () => {
               DATES & AVAILABILITY
             </h2>
 
-            <div className="grid md:grid-cols-3 gap-8 mb-8">
-              {/* Card 1 - April 11-18 */}
-              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
-                <div className="text-center mb-6">
-                  <div className="flex justify-center mb-4">
-                    <Calendar className="w-12 h-12 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    April 11–18, 2026
-                  </h3>
-                </div>
+            <div className="max-w-2xl mx-auto mb-8">
+              <Carousel
+                opts={{
+                  align: "center",
+                  loop: true,
+                }}
+                plugins={[
+                  Autoplay({
+                    delay: 5000,
+                  }),
+                ]}
+                className="w-full"
+              >
+                <CarouselContent>
+                  {/* Card 1 - April 11-18 */}
+                  <CarouselItem>
+                    <div className="px-4">
+                      <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                        <div className="text-center mb-6">
+                          <div className="flex justify-center mb-4">
+                            <Calendar className="w-12 h-12 text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-foreground mb-2">
+                            April 11–18, 2026
+                          </h3>
+                        </div>
 
-                <div className="space-y-4 text-left">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-muted-foreground">
-                      Red Sea, Egypt — Yacht Route
-                    </p>
-                  </div>
+                        <div className="space-y-4 text-left">
+                          <div className="flex items-start gap-3">
+                            <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Red Sea, Egypt — Yacht Route
+                            </p>
+                          </div>
 
-                  <div className="flex items-start gap-3">
-                    <Wind className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-muted-foreground">
-                      Strong spring winds
-                    </p>
-                  </div>
+                          <div className="flex items-start gap-3">
+                            <Wind className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Strong spring winds
+                            </p>
+                          </div>
 
-                  <div className="flex items-start gap-3 pt-2 border-t border-border">
-                    <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-foreground font-semibold">
-                      Spots available: <span className="text-primary">15/30</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
+                          <div className="flex items-start gap-3 pt-2 border-t border-border">
+                            <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-foreground font-semibold">
+                              Spots available: <span className="text-primary">15/30</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
 
-              {/* Card 2 - April 18-25 */}
-              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
-                <div className="text-center mb-6">
-                  <div className="flex justify-center mb-4">
-                    <Calendar className="w-12 h-12 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    April 18–25, 2026
-                  </h3>
-                </div>
+                  {/* Card 2 - April 18-25 */}
+                  <CarouselItem>
+                    <div className="px-4">
+                      <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                        <div className="text-center mb-6">
+                          <div className="flex justify-center mb-4">
+                            <Calendar className="w-12 h-12 text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-foreground mb-2">
+                            April 18–25, 2026
+                          </h3>
+                        </div>
 
-                <div className="space-y-4 text-left">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-muted-foreground">
-                      Northern Lagoon Route
-                    </p>
-                  </div>
+                        <div className="space-y-4 text-left">
+                          <div className="flex items-start gap-3">
+                            <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Northern Lagoon Route
+                            </p>
+                          </div>
 
-                  <div className="flex items-start gap-3">
-                    <Wind className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-muted-foreground">
-                      Perfect warm-water conditions
-                    </p>
-                  </div>
+                          <div className="flex items-start gap-3">
+                            <Wind className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Perfect warm-water conditions
+                            </p>
+                          </div>
 
-                  <div className="flex items-start gap-3 pt-2 border-t border-border">
-                    <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-foreground font-semibold">
-                      Spots available: <span className="text-primary">21/30</span>
-                    </p>
-                  </div>
-                </div>
-              </div>
+                          <div className="flex items-start gap-3 pt-2 border-t border-border">
+                            <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-foreground font-semibold">
+                              Spots available: <span className="text-primary">21/30</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
 
-              {/* Card 3 - April 30 - May 7 */}
-              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
-                <div className="text-center mb-6">
-                  <div className="flex justify-center mb-4">
-                    <Calendar className="w-12 h-12 text-primary" />
-                  </div>
-                  <h3 className="text-2xl font-bold text-foreground mb-2">
-                    April 30 – May 7, 2026
-                  </h3>
-                </div>
+                  {/* Card 3 - April 30 - May 7 */}
+                  <CarouselItem>
+                    <div className="px-4">
+                      <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                        <div className="text-center mb-6">
+                          <div className="flex justify-center mb-4">
+                            <Calendar className="w-12 h-12 text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-foreground mb-2">
+                            April 30 – May 7, 2026
+                          </h3>
+                        </div>
 
-                <div className="space-y-4 text-left">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-muted-foreground">
-                      Red Sea, Egypt
-                    </p>
-                  </div>
+                        <div className="space-y-4 text-left">
+                          <div className="flex items-start gap-3">
+                            <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Red Sea, Egypt
+                            </p>
+                          </div>
 
-                  <div className="flex items-start gap-3">
-                    <Flag className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-muted-foreground">
-                      Freeride + Progression Week
-                    </p>
-                  </div>
+                          <div className="flex items-start gap-3">
+                            <Flag className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Freeride + Progression Week
+                            </p>
+                          </div>
 
-                  <div className="flex items-start gap-3 pt-2 border-t border-border">
-                    <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
-                    <p className="text-foreground font-semibold">
-                      Spots available: <span className="text-primary">13/20</span>
-                    </p>
-                  </div>
-                </div>
+                          <div className="flex items-start gap-3 pt-2 border-t border-border">
+                            <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-foreground font-semibold">
+                              Spots available: <span className="text-primary">13/20</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+                </CarouselContent>
+                
+                {/* Carousel Navigation - Hidden on mobile for cleaner look */}
+                <CarouselPrevious className="hidden md:flex" />
+                <CarouselNext className="hidden md:flex" />
+              </Carousel>
+
+              {/* Pagination Dots */}
+              <div className="flex justify-center gap-2 mt-6">
+                <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                <div className="w-2 h-2 rounded-full bg-muted-foreground/30" />
+                <div className="w-2 h-2 rounded-full bg-muted-foreground/30" />
               </div>
             </div>
 
