@@ -254,46 +254,33 @@ const KiteSafari2 = () => {
       <TelegramButton />
 
       {/* SECTION 1: HERO */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
-        <div 
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ 
-            backgroundImage: "url('/lovable-uploads/kite-safari-yacht-action.jpg')",
-          }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/70" />
+      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
+        <div className="absolute inset-0">
+          <img 
+            src="/lovable-uploads/kite-safari-yacht-action.jpg" 
+            alt="Egypt Kite Safari" 
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
-        
-        <div className="relative z-10 container mx-auto px-4 text-center text-white">
-          <FadeIn>
-            <h1 className="text-5xl md:text-7xl font-bold mb-6">
+        <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center">
+          <div className="max-w-4xl w-full">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4">
               EGYPT KITE SAFARI
             </h1>
-          </FadeIn>
-          
-          <FadeIn delay={0.2}>
-            <p className="text-2xl md:text-4xl mb-4 font-light">
+            <p className="text-xl md:text-2xl text-white/90 mb-3">
               Ride. Progress. Live on a Yacht.
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.3}>
-            <p className="text-xl md:text-2xl mb-8">
+            <p className="text-lg md:text-xl text-white/80 mb-6">
               7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience
             </p>
-          </FadeIn>
-
-          <FadeIn delay={0.4}>
-            <div className="inline-block bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-6 py-3 mb-8">
-              <p className="text-lg font-semibold">Season: 2026 (Limited Availability)</p>
+            <div className="inline-block bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full px-4 py-2 mb-6">
+              <p className="text-sm md:text-base font-semibold text-white">Season: 2026 (Limited Availability)</p>
             </div>
-          </FadeIn>
-
-          <FadeIn delay={0.5}>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-6">
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-stretch sm:items-center max-w-3xl mx-auto px-4">
               <Button 
                 size="lg" 
-                className="text-lg px-8 py-6"
+                className="w-full sm:w-auto text-base md:text-lg px-6 py-6 whitespace-normal h-auto"
                 onClick={() => openBooking('', '')}
               >
                 JOIN THE KITE SAFARI (from €1,750 per person)
@@ -301,19 +288,16 @@ const KiteSafari2 = () => {
               <Button 
                 size="lg" 
                 variant="outline" 
-                className="text-lg px-8 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20"
+                className="w-full sm:w-auto text-base md:text-lg px-6 py-6 bg-white/10 backdrop-blur-sm border-white/30 text-white hover:bg-white/20 whitespace-normal h-auto"
                 onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy,%20I%20want%20the%20full%20PDF%20for%20Egypt%20Kite%20Safari', '_blank')}
               >
                 Request Full PDF on WhatsApp
               </Button>
             </div>
-          </FadeIn>
-
-          <FadeIn delay={0.6}>
-            <p className="text-sm text-white/80">
+            <p className="text-xs md:text-sm text-white/70 mt-4">
               Liveaboard yacht • Flat-water lagoons • Coaching & video analysis • Island BBQ
             </p>
-          </FadeIn>
+          </div>
         </div>
       </section>
 
