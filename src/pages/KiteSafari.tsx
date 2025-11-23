@@ -558,6 +558,96 @@ const KiteSafari: React.FC = () => {
                       />
                     </div>
                   </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-lounge.jpg" 
+                        alt="Yacht Lounge"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-master-cabin-1.jpg" 
+                        alt="Master Cabin"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-food.jpg" 
+                        alt="Yacht Food Service"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-yacht-night.jpg" 
+                        alt="Yacht at Night"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-yacht-sunset.jpg" 
+                        alt="Yacht at Sunset"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-dining.jpg" 
+                        alt="Yacht Dining Area"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-twin-cabin.jpg" 
+                        alt="Twin Cabin"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-bathroom.jpg" 
+                        alt="Yacht Bathroom"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-standard-cabin.jpg" 
+                        alt="Standard Cabin"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                  <CarouselItem>
+                    <div className="rounded-2xl overflow-hidden">
+                      <img 
+                        src="/lovable-uploads/lyra-shower.jpg" 
+                        alt="Yacht Shower"
+                        className="w-full h-[400px] md:h-[500px] object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
                 </CarouselContent>
                 <CarouselPrevious 
                   className="left-4" 
@@ -982,8 +1072,11 @@ const KiteSafari: React.FC = () => {
 
           {/* Add-Ons Section */}
           <section className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-              <div className="grid md:grid-cols-4 gap-8 max-w-7xl mx-auto">
+            <div className="container mx-auto px-4 max-w-7xl">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-center mb-12">
+                TRAINING & RENTAL (ADD-ONS)
+              </h2>
+              <div className="grid md:grid-cols-4 gap-8">
                 
                 {/* Card 1 - Beginner Group Course */}
                 <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all p-6 flex flex-col items-center text-center">
