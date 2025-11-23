@@ -814,115 +814,190 @@ const KiteSafari: React.FC = () => {
       <main className="py-20">
         <div className="container mx-auto px-4">
 
-          {/* KiteSafari Schedule */}
-          <section className="mb-20 bg-muted/30 rounded-2xl p-8 md:p-12">
-            <div className="flex items-center gap-3 mb-8 justify-center">
-              <Wind className="w-8 h-8 text-primary" />
-              <h2 className="text-3xl md:text-4xl font-display font-bold text-center">KiteSafari Schedule</h2>
-            </div>
-            <p className="text-center text-xl text-muted-foreground mb-12">
-              What is Our Plan?
-            </p>
-            
-            <div className="space-y-8">
-              {/* Day 1 */}
-              <div className="animate-fade-in">
-                <Card className="hover-scale overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/kite-safari-airplane-arrival.jpg" 
-                    alt="Airplane arrival" 
-                    className="w-full h-[200px] object-cover"
-                  />
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Ship className="w-6 h-6 text-primary" />
-                      Day 1: Arrival to Hurghada Airport
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      Book your flight to Hurghada Airport, Egypt. Send us your flight details – transfer to the yacht is included!
-                    </p>
-                    <p className="font-semibold text-primary">
-                      We'll pick you up and take you straight to the yacht. From this moment, just relax and enjoy!
-                    </p>
-                  </CardContent>
-                </Card>
+          {/* Typical Day Section */}
+          <section className="mb-20">
+            <div className="max-w-4xl mx-auto">
+              {/* Section Header */}
+              <div className="text-center mb-16">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                  TYPICAL DAY
+                </h2>
+                <p className="text-xl text-muted-foreground">
+                  A typical day on Kite Safari
+                </p>
               </div>
 
-              {/* Days 2-5 */}
-              <div className="animate-fade-in" style={{ animationDelay: '0.1s' }}>
-                <Card className="hover-scale overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/kite-safari-girl-yacht.jpg" 
-                    alt="Kitesurfing with yacht in background" 
-                    className="w-full h-[200px] object-cover"
-                  />
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Wind className="w-6 h-6 text-primary" />
-                      Days 2-5: Pure Kitesurfing Action
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      Pure kiting, parties, new friends, snorkeling, diving, wakeboarding.
-                    </p>
-                    <p className="font-semibold text-primary">
-                      Disconnect from the world. Live the unique KiteSafari experience!
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+              {/* Timeline Container */}
+              <div className="relative">
+                {/* Vertical Timeline Line */}
+                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
 
-              {/* Day 6 */}
-              <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-                <Card className="hover-scale overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/kite-safari-two-girls-kiter.png" 
-                    alt="Two girls and kiter flying" 
-                    className="w-full h-[200px] object-cover"
-                  />
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Clock className="w-6 h-6 text-primary" />
-                      Day 6: Last Session & Return
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      <strong>Morning:</strong> Last kite sessions. <strong>Afternoon:</strong> Sailing back to port.
-                    </p>
-                    <p className="font-semibold text-foreground">
-                      Evening: Pack up and prepare for departure.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
+                {/* Timeline Items */}
+                <div className="space-y-8">
+                  
+                  {/* Item 1 - Wake Up */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">☀️</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          07:30 — WAKE UP ON THE WATER
+                        </p>
+                        <p className="text-muted-foreground">
+                          Morning lagoon views. Short briefing, coffee.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
 
-              {/* Day 7 */}
-              <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-                <Card className="hover-scale overflow-hidden">
-                  <img 
-                    src="/lovable-uploads/kite-safari-yacht-group.webp" 
-                    alt="Yacht with group of people" 
-                    className="w-full h-[200px] object-cover"
-                  />
-                  <CardHeader>
-                    <CardTitle className="flex items-center gap-2">
-                      <Users className="w-6 h-6 text-primary" />
-                      Day 7: Departure Day
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p className="text-muted-foreground mb-4">
-                      Saying goodbye to the yacht. We'll arrange your airport transfer!
-                    </p>
-                    <p className="text-xl font-semibold text-primary text-center mt-6">
-                      🤗 Farewells, hugs, and see you on the next adventure!
-                    </p>
-                  </CardContent>
-                </Card>
+                  {/* Item 2 - Breakfast */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">🍳</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          08:00 — BREAKFAST
+                        </p>
+                        <p className="text-muted-foreground">
+                          Light buffet. Discuss wind & goals for the day.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 3 - First Kite Session */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">🪁</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          09:30 — FIRST KITE SESSION
+                        </p>
+                        <p className="text-muted-foreground">
+                          2–3 hours riding.<br />
+                          Focus depends on level (water start, upwind, jumps, tricks).
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 4 - Lunch & Rest */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">🍜</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          13:30 — LUNCH & REST
+                        </p>
+                        <p className="text-muted-foreground">
+                          Back to the yacht.<br />
+                          Eat → relax → snorkel → nap → review videos.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 5 - Second Session / Activities */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">🏖</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          15:30 — SECOND SESSION / ACTIVITIES
+                        </p>
+                        <p className="text-muted-foreground">
+                          Kite Session #2<br />
+                          Video shooting<br />
+                          SUP / snorkeling<br />
+                          Technique workshop
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 6 - Sunset & Chill */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">🌅</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          18:30 — SUNSET & CHILL
+                        </p>
+                        <p className="text-muted-foreground">
+                          Music, tea, hookah (optional), sunset photos.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 7 - Dinner */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">🍽</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          20:00 — DINNER
+                        </p>
+                        <p className="text-muted-foreground">
+                          Fresh seafood, salads, rice, dessert.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 8 - Video Analysis / Social Time */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">🔥</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          21:30 — VIDEO ANALYSIS / SOCIAL TIME (Party)
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Item 9 - Rest */}
+                  <div className="relative pl-0 md:pl-16">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                        <span className="text-2xl">💤</span>
+                      </div>
+                      <div className="flex-1">
+                        <p className="text-lg font-bold text-foreground mb-1">
+                          23:00 — REST
+                        </p>
+                        <p className="text-muted-foreground">
+                          Sleep to the sound of the sea.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                {/* Note at the bottom */}
+                <div className="mt-12 p-6 bg-muted/30 rounded-xl border-l-4 border-primary">
+                  <p className="text-sm text-muted-foreground italic">
+                    <strong>NOTE:</strong> Schedule adapts to wind & route — the goal is maximum riding.
+                  </p>
+                </div>
               </div>
             </div>
           </section>
