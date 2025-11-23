@@ -1497,6 +1497,346 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* Booking Section */}
+          <section className="py-20 bg-cover bg-center relative" style={{backgroundImage: "url('/lovable-uploads/kite-safari-yacht.jpg')"}}>
+            <div className="absolute inset-0 bg-black/70"></div>
+            <div className="container mx-auto px-4 relative z-10">
+              <div className="max-w-6xl mx-auto">
+                
+                {/* Section Header */}
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+                    READY TO JOIN THE ADVENTURE?
+                  </h2>
+                  <p className="text-xl text-white/90">
+                    Limited cabins. Prime wind season.<br />
+                    Don't just watch — be on the yacht.
+                  </p>
+                </div>
+
+                {/* Two Column Booking Cards */}
+                <div className="grid lg:grid-cols-2 gap-8">
+                  
+                  {/* Left: Booking Card */}
+                  <div className="bg-background rounded-2xl p-8 shadow-xl">
+                    <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+                      🛥 BOOKING
+                    </h3>
+
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3">STEP 1: Choose Your Dates</h4>
+                      <div className="space-y-2">
+                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                          <input 
+                            type="radio" 
+                            name="safari-dates" 
+                            value="April 11–18, 2026"
+                            className="w-4 h-4"
+                          />
+                          <span className="text-foreground">April 11–18, 2026 <span className="text-primary">(15 spots left)</span></span>
+                        </label>
+                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                          <input 
+                            type="radio" 
+                            name="safari-dates" 
+                            value="April 18–25, 2026"
+                            className="w-4 h-4"
+                          />
+                          <span className="text-foreground">April 18–25, 2026 <span className="text-primary">(21 spots left)</span></span>
+                        </label>
+                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                          <input 
+                            type="radio" 
+                            name="safari-dates" 
+                            value="April 30 – May 7, 2026"
+                            className="w-4 h-4"
+                          />
+                          <span className="text-foreground">April 30 – May 7, 2026 <span className="text-primary">(13 spots left)</span></span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3">STEP 2: Choose Your Cabin</h4>
+                      <div className="space-y-2">
+                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                          <input 
+                            type="radio" 
+                            name="cabin" 
+                            value="Twin Cabin"
+                            className="w-4 h-4"
+                          />
+                          <span className="text-foreground">Twin Cabin (from €1,750)</span>
+                        </label>
+                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                          <input 
+                            type="radio" 
+                            name="cabin" 
+                            value="Master Suite"
+                            className="w-4 h-4"
+                          />
+                          <span className="text-foreground">Master Suite (from €3,500)</span>
+                        </label>
+                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
+                          <input 
+                            type="radio" 
+                            name="cabin" 
+                            value="Panoramic Suite"
+                            className="w-4 h-4"
+                          />
+                          <span className="text-foreground">Panoramic Suite (from €3,700)</span>
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3">STEP 3: Add Training (Optional)</h4>
+                      <p className="text-sm text-muted-foreground mb-3">
+                        Beginner Group Course, Progression Pack, or VIP 1:1
+                      </p>
+                    </div>
+
+                    <div className="mb-6">
+                      <Button 
+                        className="w-full mb-3 text-lg py-6"
+                        onClick={() => setBookingPopupOpen(true)}
+                      >
+                        RESERVE MY CABIN
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="w-full"
+                        onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20get%20the%20full%20PDF%20for%20the%20Egypt%20Kite%20Safari.', '_blank')}
+                      >
+                        Get Full PDF on WhatsApp
+                      </Button>
+                    </div>
+
+                    <div className="bg-accent/10 rounded-lg p-4 mb-4">
+                      <p className="text-sm text-foreground font-semibold mb-1">
+                        🎁 Early Bird Bonus:
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Free photo pack + packing guide PDF
+                      </p>
+                    </div>
+
+                    <div className="text-center text-sm text-muted-foreground">
+                      🔒 Deposit: 30% to secure your spot
+                    </div>
+                  </div>
+
+                  {/* Right: Questions / Requests Card */}
+                  <div className="bg-background rounded-2xl p-8 shadow-xl">
+                    <h3 className="text-2xl font-bold text-foreground mb-6">
+                      QUESTIONS OR SPECIAL REQUESTS?
+                    </h3>
+
+                    <div className="mb-8 space-y-3">
+                      <p className="text-foreground flex items-center gap-2">
+                        <span>👨‍👩‍👧‍👦</span> Family trip?
+                      </p>
+                      <p className="text-foreground flex items-center gap-2">
+                        <span>👥</span> Group booking?
+                      </p>
+                      <p className="text-foreground flex items-center gap-2">
+                        <span>📅</span> Special dates?
+                      </p>
+                    </div>
+
+                    <div className="space-y-4">
+                      <Button 
+                        className="w-full text-lg py-6"
+                        onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20have%20questions%20about%20the%20Egypt%20Kite%20Safari.', '_blank')}
+                      >
+                        📱 Ask on WhatsApp
+                      </Button>
+                      <Button 
+                        variant="outline" 
+                        className="w-full text-lg py-6"
+                        onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20schedule%20a%2015-minute%20call%20about%20the%20Egypt%20Kite%20Safari.', '_blank')}
+                      >
+                        📞 Schedule 15-min Call
+                      </Button>
+                    </div>
+
+                    <p className="text-center text-sm text-muted-foreground mt-6">
+                      We respond within 24h (usually faster!)
+                    </p>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* Contact Form Section */}
+          <section className="py-20 bg-muted/20">
+            <div className="container mx-auto px-4">
+              <div className="max-w-2xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-12">
+                  <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                    GET IN TOUCH
+                  </h2>
+                  <p className="text-xl text-muted-foreground">
+                    Questions? Special Requests? Let's Talk.
+                  </p>
+                </div>
+
+                {/* Contact Form */}
+                <form className="bg-background rounded-2xl p-8 shadow-md border border-border mb-12">
+                  <div className="space-y-6">
+                    <div>
+                      <label className="block text-sm font-semibold text-foreground mb-2">
+                        Name *
+                      </label>
+                      <input
+                        type="text"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="Enter your name"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-foreground mb-2">
+                        Email *
+                      </label>
+                      <input
+                        type="email"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="your@email.com"
+                      />
+                    </div>
+
+                    <div>
+                      <label className="block text-sm font-semibold text-foreground mb-2">
+                        WhatsApp *
+                      </label>
+                      <input
+                        type="tel"
+                        required
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
+                        placeholder="+1 234 567 8900"
+                      />
+                    </div>
+
+                    <div className="flex items-start gap-3">
+                      <input
+                        type="checkbox"
+                        id="consent"
+                        required
+                        className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary"
+                      />
+                      <label htmlFor="consent" className="text-sm text-muted-foreground">
+                        I agree to be contacted via email/WhatsApp
+                      </label>
+                    </div>
+
+                    <Button type="submit" className="w-full text-lg py-6">
+                      SEND MY REQUEST
+                    </Button>
+
+                    <p className="text-center text-sm text-muted-foreground mt-4">
+                      We'll respond within 24 hours (usually faster!).<br />
+                      By submitting, you agree to our Privacy Policy.
+                    </p>
+                  </div>
+                </form>
+
+                {/* Alternative Contact Methods */}
+                <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
+                  <h3 className="text-2xl font-bold text-foreground text-center mb-8">
+                    ALTERNATIVE CHANNELS
+                  </h3>
+
+                  <div className="space-y-6">
+                    <a 
+                      href="https://wa.me/48884035225?text=Hey%2C%20I%27m%20interested%20in%20the%20Egypt%20Kite%20Safari."
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
+                    >
+                      <span className="text-3xl">📱</span>
+                      <div>
+                        <p className="font-semibold text-foreground mb-1">WhatsApp: +48 884 035 225</p>
+                        <p className="text-sm text-muted-foreground">→ Fastest response</p>
+                      </div>
+                    </a>
+
+                    <a 
+                      href="https://instagram.com/ogo_kite_academy"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
+                    >
+                      <span className="text-3xl">📸</span>
+                      <div>
+                        <p className="font-semibold text-foreground mb-1">Instagram: @ogo_kite_academy</p>
+                        <p className="text-sm text-muted-foreground">→ Casual questions, quick answers</p>
+                      </div>
+                    </a>
+                  </div>
+
+                  <p className="text-center text-muted-foreground mt-8">
+                    We respond to all messages.<br />
+                    No question is too small.
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </section>
+
+          {/* Trust Badges Section */}
+          <section className="py-16 bg-background border-y border-border">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+                  
+                  {/* International Standards */}
+                  <div className="text-center">
+                    <div className="text-5xl mb-3">🧾</div>
+                    <h4 className="font-bold text-foreground mb-1">International Standards</h4>
+                    <p className="text-sm text-muted-foreground">IKO Certified</p>
+                  </div>
+
+                  {/* Fully Insured */}
+                  <div className="text-center">
+                    <div className="text-5xl mb-3">🛡</div>
+                    <h4 className="font-bold text-foreground mb-1">Fully Insured</h4>
+                    <p className="text-sm text-muted-foreground">Coverage during lessons</p>
+                  </div>
+
+                  {/* 1150+ Students */}
+                  <div className="text-center">
+                    <div className="text-5xl mb-3">👥</div>
+                    <h4 className="font-bold text-foreground mb-1">1150+ Students</h4>
+                    <p className="text-sm text-muted-foreground">Trained Worldwide</p>
+                  </div>
+
+                  {/* 4.9/5 Rating */}
+                  <div className="text-center">
+                    <div className="text-5xl mb-3">⭐</div>
+                    <h4 className="font-bold text-foreground mb-1">4.9 / 5 Rating</h4>
+                    <p className="text-sm text-muted-foreground">Proven Results</p>
+                  </div>
+
+                  {/* 200+ Returning Riders */}
+                  <div className="text-center">
+                    <div className="text-5xl mb-3">🔄</div>
+                    <h4 className="font-bold text-foreground mb-1">200+ Returning Riders</h4>
+                    <p className="text-sm text-muted-foreground">Strong Community</p>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Payment Terms & Cancellation Policy */}
           <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4 max-w-3xl">
