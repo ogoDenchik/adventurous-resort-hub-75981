@@ -1355,6 +1355,73 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
+          {/* Who Is This Trip For Section */}
+          <section className="py-20 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-6xl mx-auto">
+                {/* Section Header */}
+                <div className="text-center mb-16">
+                  <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                    WHO IS THIS TRIP FOR?
+                  </h2>
+                  <p className="text-2xl text-muted-foreground">
+                    This Kite Safari is perfect if you:
+                  </p>
+                </div>
+
+                {/* Single Column Layout */}
+                <div className="grid lg:grid-cols-1 gap-8">
+                  
+                  {/* Checklist Card */}
+                  <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
+                    <div className="space-y-4">
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Prefer adventure over resorts</p>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Want to ride 2× daily</p>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Love community vibes</p>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Are OK with boat life</p>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Want real progression</p>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Are a beginner, intermediate, or advanced rider</p>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Are 18+ (or 16+ with guardian)</p>
+                      </div>
+
+                      <div className="flex items-start gap-4">
+                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <p className="text-lg text-foreground">Want the full experience — spots, islands, riding, community</p>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Payment Terms & Cancellation Policy */}
           <section className="py-16 bg-muted/30">
             <div className="container mx-auto px-4 max-w-3xl">
