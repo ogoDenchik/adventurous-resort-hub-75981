@@ -735,13 +735,13 @@ const Vietnam = () => {
                   price: '€2040',
                   highlights: ['10 Days', '10h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
                   included: [
-                    'Beachfront accommodation (private room)',
-                    '10 hours structured kitesurfing lessons',
-                    'Premium equipment included',
-                    'Daily breakfast',
-                    'Airport transfer (Ho Chi Minh)',
-                    'Excursion to waterfalls',
-                    'Community dinners & social events'
+                    '🏖️ Beachfront accommodation',
+                    '🌅 Sunset kite sessions',
+                    '🎥 Daily video analysis',
+                    '🤝 Warm community vibe',
+                    '📈 Progress-oriented training',
+                    '🏄‍♂️ Lifestyle & adventure',
+                    '🧑‍🏫 Full instructor support'
                   ]
                 });
                 setBookingOpen(true);
@@ -851,15 +851,13 @@ const Vietnam = () => {
                   price: '€2740',
                   highlights: ['10 Days', '15h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
                   included: [
-                    'Beachfront accommodation (private room)',
-                    '15 hours VIP 1-on-1 training',
-                    'Premium equipment included',
-                    'All meals included (breakfast, lunch, dinner)',
-                    'Airport transfer (Ho Chi Minh)',
-                    'All excursions included',
-                    'Video analysis after every session',
-                    'Personalized training plan',
-                    'Priority scheduling'
+                    '🏖️ Beachfront accommodation',
+                    '🌅 Sunset kite sessions',
+                    '🎥 Daily video analysis',
+                    '🤝 Warm community vibe',
+                    '📈 Progress-oriented training',
+                    '🏄‍♂️ Lifestyle & adventure',
+                    '🧑‍🏫 Full instructor support'
                   ]
                 });
                 setBookingOpen(true);
@@ -1455,7 +1453,16 @@ const Vietnam = () => {
                     price: price,
                     highlights: selectedPackage === 'Private Premium Experience' 
                       ? ['10 Days', '15h VIP Lessons', 'All Meals', 'Video Analysis']
-                      : ['10 Days', '10h Lessons', 'Breakfast', 'Excursion']
+                      : ['10 Days', '10h Lessons', 'Breakfast', 'Excursion'],
+                    included: [
+                      '🏖️ Beachfront accommodation',
+                      '🌅 Sunset kite sessions',
+                      '🎥 Daily video analysis',
+                      '🤝 Warm community vibe',
+                      '📈 Progress-oriented training',
+                      '🏄‍♂️ Lifestyle & adventure',
+                      '🧑‍🏫 Full instructor support'
+                    ]
                   });
                   setBookingOpen(true);
                 }}
