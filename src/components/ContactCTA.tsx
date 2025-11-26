@@ -75,7 +75,7 @@ const ContactCTA: React.FC = () => {
       
       <div className="container relative z-10 px-4 max-w-4xl mx-auto">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4 uppercase">
             READY TO START YOUR JOURNEY?
           </h2>
           <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto">
@@ -120,7 +120,7 @@ const ContactCTA: React.FC = () => {
         {/* Contact Form */}
         <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 shadow-2xl">
           <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold mb-2">📝 OR LEAVE A REQUEST</h3>
+            <h3 className="text-2xl font-display font-bold mb-2 uppercase">📝 OR LEAVE A REQUEST</h3>
             <p className="text-white/70">I'll get back to you within 24 hours</p>
           </div>
 

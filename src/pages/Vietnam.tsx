@@ -49,12 +49,12 @@ const Vietnam = () => {
         />
         
         <div className="relative h-full flex flex-col items-center justify-center text-center px-4 z-20 max-w-6xl mx-auto">
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-4">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 uppercase">
             VIETNAM KITE CAMP
           </h1>
           
-          <p className="text-2xl md:text-3xl text-white font-semibold mb-2">
-            Ride. Explore. Connect.
+          <p className="text-xl md:text-2xl text-white font-display font-semibold mb-2 uppercase">
+            RIDE. EXPLORE. CONNECT.
           </p>
           
           <p className="text-xl md:text-2xl text-white/90 mb-8">
@@ -85,7 +85,7 @@ const Vietnam = () => {
       {/* Camp Dates Section */}
       <section className="py-12 bg-background">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <h3 className="text-2xl font-bold text-foreground mb-6">2026 CAMP DATES</h3>
+          <h3 className="text-2xl font-display font-bold text-foreground mb-6 uppercase">2026 CAMP DATES</h3>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
             <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg border-2 border-foreground">
               <span className="text-2xl">📅</span>
@@ -146,7 +146,7 @@ const Vietnam = () => {
             {/* Right Side - Text Content */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
                   WHY VIETNAM?
                 </h2>
                 <p className="text-lg text-muted-foreground">
@@ -163,7 +163,7 @@ const Vietnam = () => {
                     <span className="text-2xl">🌊</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">PERFECT CONDITIONS</h3>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">PERFECT CONDITIONS</h3>
                     <p className="text-muted-foreground">
                       Flat shallow water ideal for learning<br />
                       Consistent wind Jan-Mar (15-25 knots)<br />
@@ -178,7 +178,7 @@ const Vietnam = () => {
                     <span className="text-2xl">🏞</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">UNTOUCHED BEAUTY</h3>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">UNTOUCHED BEAUTY</h3>
                     <p className="text-muted-foreground">
                       Phan Rang: one of Asia's best-kept secrets<br />
                       Stunning mountains meet turquoise water<br />
@@ -193,7 +193,7 @@ const Vietnam = () => {
                     <span className="text-2xl">💰</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">INCREDIBLE VALUE</h3>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">INCREDIBLE VALUE</h3>
                     <p className="text-muted-foreground">
                       World-class training at realistic prices<br />
                       Food, transport, activities — all affordable<br />
@@ -208,7 +208,7 @@ const Vietnam = () => {
                     <span className="text-2xl">🤝</span>
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-foreground mb-2">COMMUNITY</h3>
+                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">COMMUNITY</h3>
                     <p className="text-muted-foreground">
                       Meet like-minded riders from around the world<br />
                       Solo travellers, couples, digital nomads<br />
@@ -233,7 +233,7 @@ const Vietnam = () => {
       <section className="py-20 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-5xl mx-auto">
-            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-12">
+            <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground text-center mb-12 uppercase">
               WHEN & WHERE
             </h2>
 
@@ -314,7 +314,7 @@ const Vietnam = () => {
           <div className="max-w-6xl mx-auto">
             {/* Section Header */}
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
                 EVERYTHING YOU NEED
               </h2>
               <p className="text-xl text-muted-foreground">
@@ -375,7 +375,7 @@ const Vietnam = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">🏠</span>
-                    <h3 className="text-2xl font-bold text-foreground">ACCOMMODATION</h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACCOMMODATION</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• Beachfront guesthouse / hotel</li>
@@ -392,7 +392,7 @@ const Vietnam = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">🪁</span>
-                    <h3 className="text-2xl font-bold text-foreground">KITESURFING</h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">KITESURFING</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• 10 hours structured lessons (3–4h/day)</li>
@@ -410,7 +410,7 @@ const Vietnam = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">🍽</span>
-                    <h3 className="text-2xl font-bold text-foreground">FOOD</h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">FOOD</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• Daily breakfast at accommodation</li>
@@ -431,7 +431,7 @@ const Vietnam = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">🚐</span>
-                    <h3 className="text-2xl font-bold text-foreground">TRANSPORTATION</h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">TRANSPORTATION</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</li>
@@ -446,7 +446,7 @@ const Vietnam = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">🎉</span>
-                    <h3 className="text-2xl font-bold text-foreground">ACTIVITIES & EXCURSIONS</h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACTIVITIES & EXCURSIONS</h3>
                   </div>
                   <div className="ml-14 space-y-3">
                     <div>
@@ -471,7 +471,7 @@ const Vietnam = () => {
                 <div>
                   <div className="flex items-center gap-3 mb-4">
                     <span className="text-4xl">👥</span>
-                    <h3 className="text-2xl font-bold text-foreground">COMMUNITY & EXTRAS</h3>
+                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">COMMUNITY & EXTRAS</h3>
                   </div>
                   <div className="ml-14 space-y-2 text-muted-foreground">
                     <p>• Meet inspiring people from all over the world</p>
@@ -494,7 +494,7 @@ const Vietnam = () => {
             <div className="mt-12 bg-muted/30 border-l-4 border-primary rounded-lg p-8">
               <div className="flex items-center gap-3 mb-4">
                 <span className="text-3xl">⚠️</span>
-                <h3 className="text-xl font-bold text-foreground">NOT INCLUDED</h3>
+                <h3 className="text-xl font-display font-bold text-foreground uppercase">NOT INCLUDED</h3>
               </div>
               <ul className="space-y-2 text-muted-foreground ml-12">
                 <li>• International flights to/from Vietnam</li>
@@ -515,7 +515,7 @@ const Vietnam = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
             FULL CAMP SCHEDULE
           </h2>
         </div>
@@ -530,7 +530,7 @@ const Vietnam = () => {
                 <span>🛬</span>
                 <span>🍽</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-2 uppercase">
                 DAY 1 — ARRIVAL & WELCOME
               </h3>
             </div>
@@ -553,7 +553,7 @@ const Vietnam = () => {
                 <span>🪁</span>
                 <span>🌅</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-2 uppercase">
                 DAYS 2–9 — KITESURFING & ADVENTURE
               </h3>
             </div>
@@ -585,7 +585,7 @@ const Vietnam = () => {
                 <span>☕</span>
                 <span>✈️</span>
               </div>
-              <h3 className="text-2xl font-bold text-foreground mb-2">
+              <h3 className="text-2xl font-display font-bold text-foreground mb-2 uppercase">
                 DAY 10 — DEPARTURE
               </h3>
             </div>
@@ -610,11 +610,11 @@ const Vietnam = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
             INVESTMENT
           </h2>
-          <p className="text-xl text-muted-foreground">
-            All-Inclusive Camp Pricing
+          <p className="text-xl text-muted-foreground uppercase">
+            ALL-INCLUSIVE CAMP PRICING
           </p>
         </div>
 
@@ -624,7 +624,7 @@ const Vietnam = () => {
           {/* Card 1: Standard Camp */}
           <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
             <div className="text-center mb-6">
-              <h3 className="text-3xl font-bold text-foreground mb-2">
+              <h3 className="text-3xl font-display font-bold text-foreground mb-2 uppercase">
                 STANDARD CAMP
               </h3>
               <div className="text-4xl font-bold text-primary mb-2">
@@ -636,7 +636,7 @@ const Vietnam = () => {
             </div>
 
             <div className="mb-6">
-              <h4 className="text-lg font-bold text-foreground mb-4">
+              <h4 className="text-lg font-display font-bold text-foreground mb-4 uppercase">
                 WHAT'S INCLUDED
               </h4>
               <div className="space-y-3">
@@ -721,7 +721,7 @@ const Vietnam = () => {
             </div>
 
             <div className="text-center mb-6 mt-4">
-              <h3 className="text-3xl font-bold text-foreground mb-2">
+              <h3 className="text-3xl font-display font-bold text-foreground mb-2 uppercase">
                 PRIVATE PREMIUM EXPERIENCE
               </h3>
               <div className="text-4xl font-bold text-primary mb-2">
@@ -733,7 +733,7 @@ const Vietnam = () => {
             </div>
 
             <div className="mb-6">
-              <h4 className="text-lg font-bold text-foreground mb-4">
+              <h4 className="text-lg font-display font-bold text-foreground mb-4 uppercase">
                 ⭐ EVERYTHING IN STANDARD + EXCLUSIVE BENEFITS
               </h4>
               <div className="space-y-3">
@@ -808,7 +808,7 @@ const Vietnam = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">💳</span>
-                <h4 className="text-lg font-bold text-foreground">PAYMENT TERMS</h4>
+                <h4 className="text-lg font-display font-bold text-foreground uppercase">PAYMENT TERMS</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>• 30% Deposit — Secure Your Spot</li>
@@ -821,7 +821,7 @@ const Vietnam = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">📅</span>
-                <h4 className="text-lg font-bold text-foreground">CANCELLATION POLICY</h4>
+                <h4 className="text-lg font-display font-bold text-foreground uppercase">CANCELLATION POLICY</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>• Deposit is refundable within 7 days after payment</li>
@@ -833,7 +833,7 @@ const Vietnam = () => {
             <div>
               <div className="flex items-center gap-2 mb-4">
                 <span className="text-2xl">🛡</span>
-                <h4 className="text-lg font-bold text-foreground">INSURANCE</h4>
+                <h4 className="text-lg font-display font-bold text-foreground uppercase">INSURANCE</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>• Students covered during lessons</li>
@@ -975,11 +975,11 @@ const Vietnam = () => {
       <div className="max-w-6xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
             IS THIS CAMP FOR YOU?
           </h2>
-          <p className="text-2xl text-muted-foreground">
-            Let's Be Honest
+          <p className="text-2xl text-muted-foreground uppercase">
+            LET'S BE HONEST
           </p>
         </div>
 
@@ -988,8 +988,8 @@ const Vietnam = () => {
           
           {/* Left Column - Who It IS For */}
           <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              This camp is perfect if you:
+            <h3 className="text-2xl font-display font-bold text-foreground mb-6 uppercase">
+              THIS CAMP IS PERFECT IF YOU:
             </h3>
             
             <div className="space-y-4">
@@ -1229,11 +1229,11 @@ const Vietnam = () => {
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
             EXPERIENCE VIETNAM
           </h2>
-          <p className="text-xl text-muted-foreground">
-            A Glimpse of What Awaits
+          <p className="text-xl text-muted-foreground uppercase">
+            A GLIMPSE OF WHAT AWAITS
           </p>
         </div>
 
@@ -1295,7 +1295,7 @@ const Vietnam = () => {
         
         {/* Section Header */}
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 uppercase">
             READY TO JOIN THE ADVENTURE?
           </h2>
           <p className="text-xl text-white/90">
@@ -1309,7 +1309,7 @@ const Vietnam = () => {
           
           {/* Left: Camp Booking Box */}
           <div className="bg-background rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-foreground mb-6 flex items-center gap-2">
+            <h3 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-2 uppercase">
               🏕 BOOK VIETNAM KITE CAMP
             </h3>
 
@@ -1389,9 +1389,9 @@ const Vietnam = () => {
 
           {/* Right: Private Sessions Box */}
           <div id="private-sessions" className="bg-background rounded-2xl p-8 shadow-xl">
-            <h3 className="text-2xl font-bold text-foreground mb-6">
-              Can't Join the Camp Dates?<br />
-              Book Private Sessions in Vietnam.
+            <h3 className="text-2xl font-display font-bold text-foreground mb-6 uppercase">
+              CAN'T JOIN THE CAMP DATES?<br />
+              BOOK PRIVATE SESSIONS IN VIETNAM.
             </h3>
 
             <div className="mb-6 p-4 bg-muted/50 rounded-lg">

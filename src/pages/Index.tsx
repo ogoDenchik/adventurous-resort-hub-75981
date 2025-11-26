@@ -33,8 +33,8 @@ const Index: React.FC = () => {
         {/* Testimonials */}
         <section className="section-padding container">
           <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-              Guest Experiences
+            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">
+              GUEST EXPERIENCES
             </h2>
             <p className="text-foreground/70 max-w-2xl mx-auto">
               Hear from riders who've joined the OGO family on their kitesurfing adventures around the world.

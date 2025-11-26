@@ -82,11 +82,11 @@ const TrainingPrograms = () => {
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <div className="text-center mb-16 animate-slide-up">
-          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">
             TRAINING PROGRAMS
           </h2>
-          <p className="text-xl text-muted-foreground">
-            Choose Your Path to Mastery
+          <p className="text-xl text-muted-foreground uppercase">
+            CHOOSE YOUR PATH TO MASTERY
           </p>
         </div>
 
@@ -115,7 +115,7 @@ const TrainingPrograms = () => {
                   </div>
 
                   {/* Title & Subtitle */}
-                  <h3 className="text-2xl font-bold mb-2">{program.title}</h3>
+                  <h3 className="text-2xl font-display font-bold mb-2 uppercase">{program.title}</h3>
                   <p className="text-sm text-muted-foreground mb-4">{program.subtitle}</p>
                   
                   {/* Description */}

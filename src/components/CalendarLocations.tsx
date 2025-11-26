@@ -251,11 +251,11 @@ const CalendarLocations: React.FC = () => {
       <div className="container">
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">
             📅 CALENDAR / LOCATIONS
           </h2>
-          <p className="text-xl text-muted-foreground mb-2">
-            Following the Perfect Wind Seasons Worldwide
+          <p className="text-xl text-muted-foreground mb-2 uppercase">
+            FOLLOWING THE PERFECT WIND SEASONS WORLDWIDE
           </p>
           <p className="text-base text-muted-foreground">
             I move between the world's best kitesurfing spots depending on wind season and conditions.
