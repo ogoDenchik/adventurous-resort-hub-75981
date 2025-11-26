@@ -642,10 +642,82 @@ const Vietnam = () => {
               </p>
             </div>
 
+            {/* Included Tags */}
+            <div className="mb-6">
+              <h4 className="text-sm font-display font-bold text-foreground mb-3 uppercase">
+                Included
+              </h4>
+              <div className="flex flex-wrap gap-2">
+                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
+                  Transfers
+                </span>
+                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
+                  Accommodation
+                </span>
+                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
+                  10h Lessons
+                </span>
+                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
+                  Breakfast
+                </span>
+                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
+                  Excursion to Waterfalls
+                </span>
+              </div>
+            </div>
+
             <div className="mb-6">
               <h4 className="text-lg font-display font-bold text-foreground mb-4 uppercase">
-                WHAT'S INCLUDED
+                WHAT AWAITS YOU
               </h4>
+              
+              {/* Experience Highlights */}
+              <div className="space-y-3 mb-6 pb-6 border-b border-border">
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🌅</span>
+                  </div>
+                  <span className="text-muted-foreground">Sunset kite sessions</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎥</span>
+                  </div>
+                  <span className="text-muted-foreground">Daily video analysis</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🤝</span>
+                  </div>
+                  <span className="text-muted-foreground">Warm community vibe</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">📈</span>
+                  </div>
+                  <span className="text-muted-foreground">Progress-oriented training</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🏄‍♂️</span>
+                  </div>
+                  <span className="text-muted-foreground">Lifestyle & adventure</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🧑‍🏫</span>
+                  </div>
+                  <span className="text-muted-foreground">Full instructor support</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🏖️</span>
+                  </div>
+                  <span className="text-muted-foreground">Beachfront accommodation</span>
+                </div>
+              </div>
+
+              {/* What's Included List */}
               <div className="space-y-3">
                 <div className="flex items-center gap-3">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -733,7 +805,7 @@ const Vietnam = () => {
                   packageName: 'Standard Camp',
                   location: 'Vietnam Kite Camp',
                   price: '€2040',
-                  highlights: ['10 Days', '10h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
+                  highlights: ['Transfers', 'Accommodation', '10h Lessons', 'Breakfast', 'Excursion to Waterfalls'],
                   included: [
                     'Beachfront accommodation (private room)',
                     '10 hours structured kitesurfing lessons',
@@ -1455,7 +1527,7 @@ const Vietnam = () => {
                     price: price,
                     highlights: selectedPackage === 'Private Premium Experience' 
                       ? ['10 Days', '15h VIP Lessons', 'All Meals', 'Video Analysis']
-                      : ['10 Days', '10h Lessons', 'Breakfast', 'Excursion']
+                      : ['Transfers', 'Accommodation', '10h Lessons', 'Breakfast', 'Excursion to Waterfalls']
                   });
                   setBookingOpen(true);
                 }}
