@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
-import { BookingPopup } from '@/components/BookingPopup';
+import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
 import ContactCTA from '@/components/ContactCTA';
 import TrustIndicators from '@/components/TrustIndicators';
 import CalendarLocations from '@/components/CalendarLocations';
@@ -17,7 +17,13 @@ const Index: React.FC = () => {
 
   return <div className="min-h-screen flex flex-col">
       <Navbar />
-      <BookingPopup open={isBookingOpen} onOpenChange={setIsBookingOpen} />
+      <EnhancedBookingPopup 
+        open={isBookingOpen} 
+        onOpenChange={setIsBookingOpen}
+        backgroundImage="/lovable-uploads/hero-main-coaching.jpg"
+        title="Book Your Adventure"
+        description="Fill in your details and we'll get back to you shortly"
+      />
       
       <main className="flex-grow">
         <Hero />

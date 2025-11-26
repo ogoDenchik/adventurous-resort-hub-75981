@@ -2,7 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import { BookingPopup } from '@/components/BookingPopup';
+import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -1925,9 +1925,12 @@ const KiteSafari: React.FC = () => {
         </div>
       </main>
       
-      <BookingPopup 
+      <EnhancedBookingPopup 
         open={bookingPopupOpen} 
-        onOpenChange={setBookingPopupOpen} 
+        onOpenChange={setBookingPopupOpen}
+        backgroundImage="/lovable-uploads/kite-safari-yacht.jpg"
+        title="Book Egypt Kite Safari"
+        description="Fill in your details and we'll get back to you shortly"
       />
       
       <Footer />
