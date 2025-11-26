@@ -53,7 +53,7 @@ const MeetYourCoach = () => {
       <div className="container max-w-4xl">
         {/* Section Title */}
         <div className="text-center mb-12 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 uppercase">
             MEET YOUR COACH
           </h2>
         </div>
@@ -71,7 +71,7 @@ const MeetYourCoach = () => {
 
         {/* Name + Role */}
         <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '200ms' }}>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2">
+          <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2 uppercase">
             DENIS
           </h3>
           <p className="text-xl text-primary font-medium">
@@ -111,7 +111,7 @@ const MeetYourCoach = () => {
 
         {/* Why I'm Different */}
         <div className="animate-slide-up" style={{ animationDelay: '500ms' }}>
-          <h4 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-8 text-center">
+          <h4 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-8 text-center uppercase">
             WHY I'M DIFFERENT
           </h4>
           <div className="space-y-4 max-w-2xl mx-auto">
@@ -138,11 +138,11 @@ const MeetYourCoach = () => {
         {/* Why My Method Works - Method Map */}
         <div className="animate-slide-up mt-16 pt-16 border-t border-border/30" style={{ animationDelay: '600ms' }}>
           <div className="text-center mb-4">
-            <h4 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3">
+            <h4 className="text-2xl md:text-3xl font-display font-bold text-foreground mb-3 uppercase">
               WHY MY METHOD WORKS
             </h4>
-            <p className="text-xl text-primary font-semibold mb-2">
-              Not Random Practice — Systematic Progression
+            <p className="text-xl text-primary font-semibold mb-2 uppercase">
+              NOT RANDOM PRACTICE — SYSTEMATIC PROGRESSION
             </p>
             <p className="text-foreground/70 text-base max-w-2xl mx-auto">
               Most people struggle with kitesurfing because they learn chaotically. My step-by-step methodology eliminates guesswork.
@@ -165,7 +165,7 @@ const MeetYourCoach = () => {
                     <Target className="w-8 h-8" strokeWidth={1.5} />
                   </div>
                   <div className="text-sm font-bold text-primary mb-2">STEP 1</div>
-                  <h5 className="text-lg font-bold text-foreground mb-3">
+                  <h5 className="text-lg font-display font-bold text-foreground mb-3 uppercase">
                     PERSONALIZED APPROACH
                   </h5>
                   <p className="text-foreground/70 text-sm leading-relaxed">
@@ -181,7 +181,7 @@ const MeetYourCoach = () => {
                     <BarChart3 className="w-8 h-8" strokeWidth={1.5} />
                   </div>
                   <div className="text-sm font-bold text-primary mb-2">STEP 2</div>
-                  <h5 className="text-lg font-bold text-foreground mb-3">
+                  <h5 className="text-lg font-display font-bold text-foreground mb-3 uppercase">
                     STRUCTURED PROGRESSION
                   </h5>
                   <p className="text-foreground/70 text-sm leading-relaxed">
@@ -197,7 +197,7 @@ const MeetYourCoach = () => {
                     <Video className="w-8 h-8" strokeWidth={1.5} />
                   </div>
                   <div className="text-sm font-bold text-primary mb-2">STEP 3</div>
-                  <h5 className="text-lg font-bold text-foreground mb-3">
+                  <h5 className="text-lg font-display font-bold text-foreground mb-3 uppercase">
                     VIDEO ANALYSIS
                   </h5>
                   <p className="text-foreground/70 text-sm leading-relaxed">
@@ -213,7 +213,7 @@ const MeetYourCoach = () => {
                     <Brain className="w-8 h-8" strokeWidth={1.5} />
                   </div>
                   <div className="text-sm font-bold text-primary mb-2">STEP 4</div>
-                  <h5 className="text-lg font-bold text-foreground mb-3">
+                  <h5 className="text-lg font-display font-bold text-foreground mb-3 uppercase">
                     SKILL RETENTION & MINDSET
                   </h5>
                   <p className="text-foreground/70 text-sm leading-relaxed">
