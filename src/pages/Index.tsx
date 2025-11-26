@@ -89,9 +89,6 @@ const Index: React.FC = () => {
           </div>
         </section>
         
-        {/* 4. Numbers Section */}
-        <TrustIndicators />
-        
         {/* 6. Why My Method Works */}
         <WhyMyMethodWorks />
         
@@ -102,6 +99,9 @@ const Index: React.FC = () => {
         
         {/* 8. Training Programs */}
         <TrainingPrograms />
+        
+        {/* Numbers Section - Before Contact */}
+        <TrustIndicators />
         
         {/* 9. Trip Planning / Planning Information */}
         <ContactCTA />
