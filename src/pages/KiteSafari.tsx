@@ -662,10 +662,12 @@ const KiteSafari: React.FC = () => {
                 {/* Accommodation */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">🏠</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl">🏠</span>
+                    </div>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACCOMMODATION (ON THE YACHT)</h3>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground ml-14">
+                  <ul className="space-y-2 text-muted-foreground ml-16">
                     <li>• 7 days / 6 nights on a comfortable liveaboard yacht</li>
                     <li>• Twin cabins, Master Suites, Panoramic Suite (limited availability)</li>
                     <li>• Air conditioning, private/shared bathrooms</li>
@@ -678,10 +680,12 @@ const KiteSafari: React.FC = () => {
                 {/* Food & Drinks */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">🍽</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl">🍽</span>
+                    </div>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">FOOD & DRINKS</h3>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground ml-14">
+                  <ul className="space-y-2 text-muted-foreground ml-16">
                     <li>• 3 meals per day</li>
                     <li>• Snacks, fruits, tea, coffee, water</li>
                     <li>• BBQ party on an uninhabited island</li>
@@ -692,10 +696,12 @@ const KiteSafari: React.FC = () => {
                 {/* Kitesurfing Logistics */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">🪁</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl">🪁</span>
+                    </div>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">KITESURFING LOGISTICS</h3>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground ml-14">
+                  <ul className="space-y-2 text-muted-foreground ml-16">
                     <li>• Daily zodiac transfers to the spot/back (300m)</li>
                     <li>• Launch/landing support</li>
                     <li>• Rescue boat on duty</li>
@@ -712,10 +718,12 @@ const KiteSafari: React.FC = () => {
                 {/* Coaching Packages */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">🎓</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl">🎓</span>
+                    </div>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">COACHING PACKAGES (OPTIONAL)</h3>
                   </div>
-                  <div className="ml-14 space-y-2 text-muted-foreground">
+                  <div className="ml-16 space-y-2 text-muted-foreground">
                     <p className="italic">(Not included in base price)</p>
                     <ul className="space-y-2 mt-3">
                       <li>• Beginner, Intermediate, Advanced coaching</li>
@@ -730,10 +738,12 @@ const KiteSafari: React.FC = () => {
                 {/* Transportation */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">🚐</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl">🚐</span>
+                    </div>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">TRANSPORTATION</h3>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground ml-14">
+                  <ul className="space-y-2 text-muted-foreground ml-16">
                     <li>• Group transfer from Hurghada (HRG) to marina</li>
                     <li>• Boat transfers between lagoons</li>
                     <li>• Zodiac to shallow water zones</li>
@@ -743,10 +753,12 @@ const KiteSafari: React.FC = () => {
                 {/* Activities & Extras */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">🎉</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl">🎉</span>
+                    </div>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACTIVITIES & EXTRAS</h3>
                   </div>
-                  <div className="ml-14 space-y-3">
+                  <div className="ml-16 space-y-3">
                     <div>
                       <p className="font-semibold text-foreground mb-2">Included:</p>
                       <ul className="space-y-1 text-muted-foreground">
@@ -770,10 +782,12 @@ const KiteSafari: React.FC = () => {
                 {/* Community & Vibes */}
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-4xl">👥</span>
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-2xl">👥</span>
+                    </div>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">COMMUNITY & VIBES</h3>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground ml-14">
+                  <ul className="space-y-2 text-muted-foreground ml-16">
                     <li>• International group</li>
                     <li>• Evening hangouts and talks</li>
                     <li>• Shared learning, shared progress</li>
@@ -787,7 +801,9 @@ const KiteSafari: React.FC = () => {
             {/* NOT INCLUDED Box */}
             <div className="mt-12 bg-muted/30 border-l-4 border-primary rounded-lg p-8">
               <div className="flex items-center gap-3 mb-4">
-                <span className="text-3xl">⚠️</span>
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">⚠️</span>
+                </div>
                 <h3 className="text-xl font-display font-bold text-foreground uppercase">NOT INCLUDED:</h3>
               </div>
               <ul className="space-y-2 text-muted-foreground ml-12">
