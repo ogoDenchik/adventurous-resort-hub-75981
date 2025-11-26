@@ -197,7 +197,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
           {/* Form Content */}
           <div className="p-6">
             <DialogHeader className="mb-6">
-              <DialogDescription className="text-center text-base">
+              <DialogDescription className="text-center text-lg text-muted-foreground">
                 {description}
               </DialogDescription>
             </DialogHeader>
