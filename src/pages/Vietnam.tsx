@@ -756,40 +756,56 @@ const Vietnam = () => {
 
             <div className="mb-6">
               <h4 className="text-lg font-display font-bold text-foreground mb-4 uppercase">
-                ⭐ EVERYTHING IN STANDARD + EXCLUSIVE BENEFITS
+                1-TO-1 LIVE COACHING WITH BB TALKING SYSTEM
               </h4>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">One-to-one coaching or 2-person private group (only if both riders are the same level and learning the same trick)</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎧</span>
+                  </div>
+                  <span className="text-muted-foreground">1-to-1 Live Coaching</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Direct Access to Denis for feedback & progression</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">💬</span>
+                  </div>
+                  <span className="text-muted-foreground">Direct Access to Denis</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Customized step-by-step progression plan</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">📝</span>
+                  </div>
+                  <span className="text-muted-foreground">Customized Progression Plan</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Extended video analysis with detailed breakdown</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎥</span>
+                  </div>
+                  <span className="text-muted-foreground">Extended Video Analysis</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Flexible session timing based on your goals</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">⏱️</span>
+                  </div>
+                  <span className="text-muted-foreground">Flexible Session Timing</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Priority session slots</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">⭐</span>
+                  </div>
+                  <span className="text-muted-foreground">Priority Session Slots</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Personal equipment setup tuning</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🛠️</span>
+                  </div>
+                  <span className="text-muted-foreground">Equipment Setup</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Advanced trick-focused drills</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🔥</span>
+                  </div>
+                  <span className="text-muted-foreground">Advanced Trick Drills</span>
                 </div>
               </div>
             </div>
