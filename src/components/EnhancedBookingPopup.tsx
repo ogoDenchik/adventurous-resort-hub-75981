@@ -166,7 +166,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
 
                 {bookingDetails.highlights && bookingDetails.highlights.length > 0 && (
                   <div className="mb-4">
-                    <p className="text-sm font-semibold text-foreground mb-2 uppercase">Highlights:</p>
+                    <p className="text-sm font-semibold text-foreground mb-2 uppercase">INCLUDED:</p>
                     <div className="flex flex-wrap gap-2">
                       {bookingDetails.highlights.map((highlight, index) => (
                         <span key={index} className="text-xs bg-background px-3 py-1 rounded-full border border-border">
@@ -179,12 +179,14 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
 
                 {bookingDetails.included && bookingDetails.included.length > 0 && (
                   <div>
-                    <p className="text-sm font-semibold text-foreground mb-2 uppercase">What's Included:</p>
-                    <ul className="space-y-1">
+                    <p className="text-sm font-semibold text-foreground mb-3 uppercase">WHAT AWAITS YOU</p>
+                    <ul className="space-y-3">
                       {bookingDetails.included.map((item, index) => (
-                        <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-0.5">✓</span>
-                          <span>{item}</span>
+                        <li key={index} className="flex items-center gap-3">
+                          <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                            <span className="text-xl">{item.split(' ')[0]}</span>
+                          </div>
+                          <span className="text-sm text-muted-foreground">{item.split(' ').slice(1).join(' ')}</span>
                         </li>
                       ))}
                     </ul>
@@ -197,7 +199,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
           {/* Form Content */}
           <div className="p-6">
             <DialogHeader className="mb-6">
-              <DialogDescription className="text-center text-base">
+              <DialogDescription className="text-center text-base text-muted-foreground">
                 {description}
               </DialogDescription>
             </DialogHeader>
