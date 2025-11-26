@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import { X } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
@@ -115,14 +116,23 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
       <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden max-h-[90vh]">
+        {/* Close Button */}
+        <button
+          onClick={() => onOpenChange(false)}
+          className="absolute top-4 right-4 z-50 p-2 rounded-full bg-black/30 hover:bg-black/50 text-white transition-all duration-200 hover:scale-110"
+          aria-label="Close"
+        >
+          <X size={20} />
+        </button>
+
         <ScrollArea className="max-h-[90vh]">
           {/* Hero Image */}
-          <div className="relative h-48 w-full overflow-hidden">
+          <div className="relative h-64 md:h-80 w-full overflow-hidden">
             <div className="absolute inset-0 bg-black/40 z-10" />
             <img 
               src={backgroundImage} 
               alt="Booking background"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 z-20 flex items-center justify-center">
               <div className="text-center px-4">
