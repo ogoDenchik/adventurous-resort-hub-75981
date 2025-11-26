@@ -1,19 +1,16 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import { Button } from "@/components/ui/button";
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import Hero from '@/components/Hero';
-import FeaturedActivities from '@/components/FeaturedActivities';
-
 import { BookingPopup } from '@/components/BookingPopup';
 import ContactCTA from '@/components/ContactCTA';
-
-import { ArrowRight, Globe, Users, GraduationCap } from 'lucide-react';
 import TrustIndicators from '@/components/TrustIndicators';
 import CalendarLocations from '@/components/CalendarLocations';
 import TrainingPrograms from '@/components/TrainingPrograms';
-import MeetYourCoach from '@/components/MeetYourCoach';
+import MeetYourCoachIntro from '@/components/coach/MeetYourCoachIntro';
+import WhyImDifferent from '@/components/coach/WhyImDifferent';
+import CoachStatsTrustBar from '@/components/coach/CoachStatsTrustBar';
+import WhyMyMethodWorks from '@/components/coach/WhyMyMethodWorks';
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
@@ -24,13 +21,14 @@ const Index: React.FC = () => {
       
       <main className="flex-grow">
         <Hero />
-        <TrustIndicators />
-        <div id="calendar-section">
-          <CalendarLocations />
-        </div>
-        <TrainingPrograms />
         
-        {/* Testimonials */}
+        {/* 1. Meet Your Coach */}
+        <MeetYourCoachIntro />
+        
+        {/* 2. Why I Am Different */}
+        <WhyImDifferent />
+        
+        {/* 3. Guest Experiences (Reviews Section) */}
         <section className="section-padding container">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">
@@ -88,10 +86,24 @@ const Index: React.FC = () => {
           </div>
         </section>
         
-        {/* Meet Your Coach Section */}
-        <MeetYourCoach />
+        {/* 4. Trust Bar (Coach Stats) */}
+        <CoachStatsTrustBar />
         
-        {/* Contact CTA Section */}
+        {/* 5. Numbers Section */}
+        <TrustIndicators />
+        
+        {/* 6. Why My Method Works */}
+        <WhyMyMethodWorks />
+        
+        {/* 7. Calendar & Locations */}
+        <div id="calendar-section">
+          <CalendarLocations />
+        </div>
+        
+        {/* 8. Training Programs */}
+        <TrainingPrograms />
+        
+        {/* 9. Trip Planning / Planning Information */}
         <ContactCTA />
       </main>
       
