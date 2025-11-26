@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { Menu, X, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
-import { BookingPopup } from './BookingPopup';
+import { EnhancedBookingPopup } from './EnhancedBookingPopup';
 import ThemeToggle from './ThemeToggle';
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -148,9 +148,12 @@ const Navbar: React.FC = () => {
       </div>
       
       {/* Booking Popup */}
-      <BookingPopup 
+      <EnhancedBookingPopup 
         open={bookingPopupOpen} 
-        onOpenChange={setBookingPopupOpen} 
+        onOpenChange={setBookingPopupOpen}
+        backgroundImage="/lovable-uploads/hero-main-coaching.jpg"
+        title="Book Your Adventure"
+        description="Fill in your details and we'll get back to you shortly"
       />
     </header>;
 };

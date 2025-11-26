@@ -29,6 +29,13 @@ const Vietnam = () => {
   const [selectedDates, setSelectedDates] = useState('');
   const [selectedPackage, setSelectedPackage] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
+  const [bookingDetails, setBookingDetails] = useState<{
+    packageName: string;
+    location: string;
+    price?: string;
+    highlights?: string[];
+    included?: string[];
+  } | undefined>(undefined);
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -700,6 +707,21 @@ const Vietnam = () => {
               className="w-full mb-3"
               onClick={() => {
                 setSelectedPackage('Standard Camp');
+                setBookingDetails({
+                  packageName: 'Standard Camp',
+                  location: 'Vietnam Kite Camp',
+                  price: '€2040',
+                  highlights: ['10 Days', '10h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
+                  included: [
+                    'Beachfront accommodation (private room)',
+                    '10 hours structured kitesurfing lessons',
+                    'Premium equipment included',
+                    'Daily breakfast',
+                    'Airport transfer (Ho Chi Minh)',
+                    'Excursion to waterfalls',
+                    'Community dinners & social events'
+                  ]
+                });
                 setBookingOpen(true);
               }}
             >
@@ -785,6 +807,23 @@ const Vietnam = () => {
               className="w-full mb-3 bg-primary hover:bg-primary/90"
               onClick={() => {
                 setSelectedPackage('Private Premium Experience');
+                setBookingDetails({
+                  packageName: 'Private Premium Experience',
+                  location: 'Vietnam Kite Camp',
+                  price: '€2740',
+                  highlights: ['10 Days', '15h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
+                  included: [
+                    'Beachfront accommodation (private room)',
+                    '15 hours VIP 1-on-1 training',
+                    'Premium equipment included',
+                    'All meals included (breakfast, lunch, dinner)',
+                    'Airport transfer (Ho Chi Minh)',
+                    'All excursions included',
+                    'Video analysis after every session',
+                    'Personalized training plan',
+                    'Priority scheduling'
+                  ]
+                });
                 setBookingOpen(true);
               }}
             >
@@ -1369,7 +1408,19 @@ const Vietnam = () => {
               <h4 className="font-semibold text-foreground mb-3">STEP 3: Secure Your Spot</h4>
               <Button 
                 className="w-full mb-3 text-lg py-6"
-                onClick={() => setBookingOpen(true)}
+                onClick={() => {
+                  const packageName = selectedPackage || 'Standard Camp';
+                  const price = packageName === 'Private Premium Experience' ? '€2740' : '€2040';
+                  setBookingDetails({
+                    packageName: packageName,
+                    location: 'Vietnam Kite Camp',
+                    price: price,
+                    highlights: selectedPackage === 'Private Premium Experience' 
+                      ? ['10 Days', '15h VIP Lessons', 'All Meals', 'Video Analysis']
+                      : ['10 Days', '10h Lessons', 'Breakfast', 'Excursion']
+                  });
+                  setBookingOpen(true);
+                }}
               >
                 RESERVE MY SPOT NOW
               </Button>
@@ -1746,6 +1797,7 @@ const Vietnam = () => {
     backgroundImage="/lovable-uploads/vietnam-hero-kite.jpg"
     title="Book Vietnam Kite Camp"
     description="Fill in your details and we'll get back to you shortly"
+    bookingDetails={bookingDetails}
   />
 
     </div>

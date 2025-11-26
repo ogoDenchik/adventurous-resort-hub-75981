@@ -21,6 +21,13 @@ const KiteSafari: React.FC = () => {
       stopOnInteraction: false,
     })
   );
+  const [bookingDetails, setBookingDetails] = useState<{
+    packageName: string;
+    location: string;
+    price?: string;
+    highlights?: string[];
+    included?: string[];
+  } | undefined>(undefined);
 
   // Handle user interaction - pause autoplay and resume after 10s
   const handleUserInteraction = () => {
@@ -76,7 +83,23 @@ const KiteSafari: React.FC = () => {
                 <Button 
                   size="default" 
                   className="text-sm px-5 py-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
-                  onClick={() => setBookingPopupOpen(true)}
+                  onClick={() => {
+                    setBookingDetails({
+                      packageName: 'Egypt Kite Safari',
+                      location: 'Red Sea, Egypt',
+                      price: 'from €1,750',
+                      highlights: ['7 Days', '3 Epic Lagoons', 'Luxury Yacht', 'All Meals Included'],
+                      included: [
+                        'Luxury liveaboard accommodation',
+                        '7 days exploring 3 kite lagoons',
+                        'All meals & soft drinks included',
+                        'Equipment storage on yacht',
+                        'Transfer from/to Marsa Alam',
+                        'Experienced captain & crew'
+                      ]
+                    });
+                    setBookingPopupOpen(true);
+                  }}
                 >
                   Join — from €1,750 per person
                 </Button>
@@ -1456,7 +1479,15 @@ const KiteSafari: React.FC = () => {
                     <div className="mb-6">
                       <Button 
                         className="w-full mb-3 text-lg py-6"
-                        onClick={() => setBookingPopupOpen(true)}
+                        onClick={() => {
+                          setBookingDetails({
+                            packageName: 'Egypt Kite Safari',
+                            location: 'Red Sea, Egypt',
+                            price: 'from €1,750',
+                            highlights: ['7 Days', '3 Lagoons', 'Luxury Yacht', 'All Meals']
+                          });
+                          setBookingPopupOpen(true);
+                        }}
                       >
                         RESERVE MY CABIN
                       </Button>
@@ -1931,6 +1962,7 @@ const KiteSafari: React.FC = () => {
         backgroundImage="/lovable-uploads/kite-safari-yacht.jpg"
         title="Book Egypt Kite Safari"
         description="Fill in your details and we'll get back to you shortly"
+        bookingDetails={bookingDetails}
       />
       
       <Footer />
