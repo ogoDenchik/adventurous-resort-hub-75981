@@ -4,22 +4,27 @@ import { Clock, Globe, Users, TrendingUp, Target, BarChart3, Video, Brain } from
 const MeetYourCoach = () => {
   const highlights = [
     {
+      icon: "🏅",
       title: "Dual Certified: Kiteboarding + Snowboard Instructor",
       description: "Understanding board sports gives me unique teaching insight."
     },
     {
+      icon: "🌍",
       title: "Nomadic Coaching: I follow the best wind seasons worldwide",
       description: "So you always train in optimal conditions."
     },
     {
+      icon: "📈",
       title: "Results-Driven: 50+ students went from zero to independent riding",
       description: "In just 7 days."
     },
     {
+      icon: "🤝",
       title: "Returning Community: 70+ clients come back",
       description: "Season after season."
     },
     {
+      icon: "🚀",
       title: "Advanced Progression: 20–30 tricks library",
       description: "For riders wanting next-level skills."
     }
@@ -119,7 +124,7 @@ const MeetYourCoach = () => {
               <div key={index} className="flex gap-3">
                 <div className="flex-shrink-0 mt-1">
                   <div className="text-2xl leading-none">
-                    🎯
+                    {highlight.icon}
                   </div>
                 </div>
                 <div>
