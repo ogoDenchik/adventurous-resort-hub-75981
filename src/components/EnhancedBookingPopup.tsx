@@ -248,7 +248,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
               <Textarea
                 id="message"
                 {...register('message')}
-                placeholder="Which kite trip are you interested in?"
+                placeholder="Add details to your booking. Or ask questions in here."
                 className="mt-1 min-h-[100px]"
               />
             </div>
