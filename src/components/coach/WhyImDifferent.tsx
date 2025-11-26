@@ -38,11 +38,11 @@ const WhyImDifferent = () => {
           </h4>
           <div className="space-y-4 max-w-2xl mx-auto">
             {highlights.map((highlight, index) => (
-              <div key={index} className="flex gap-3">
-                <div className="flex-shrink-0 mt-1">
-                  <div className="text-2xl leading-none">
+              <div key={index} className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl leading-none">
                     {highlight.icon}
-                  </div>
+                  </span>
                 </div>
                 <div>
                   <p className="text-foreground font-semibold leading-relaxed">
