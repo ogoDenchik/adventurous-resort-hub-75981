@@ -4,7 +4,7 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
-import { VietnamBookingPopup } from '@/components/VietnamBookingPopup';
+import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
 import {
   Accordion,
   AccordionContent,
@@ -1740,11 +1740,12 @@ const Vietnam = () => {
     </div>
   </footer>
 
-  <VietnamBookingPopup 
+  <EnhancedBookingPopup 
     open={bookingOpen}
     onOpenChange={setBookingOpen}
-    preselectedDates={selectedDates}
-    preselectedPackage={selectedPackage}
+    backgroundImage="/lovable-uploads/vietnam-hero-kite.jpg"
+    title="Book Vietnam Kite Camp"
+    description="Fill in your details and we'll get back to you shortly"
   />
 
     </div>
