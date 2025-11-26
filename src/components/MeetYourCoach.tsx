@@ -1,5 +1,5 @@
 import React from 'react';
-import { Check, Clock, Globe, Users, TrendingUp, Target, BarChart3, Video, Brain } from 'lucide-react';
+import { Clock, Globe, Users, TrendingUp, Target, BarChart3, Video, Brain } from 'lucide-react';
 
 const MeetYourCoach = () => {
   const highlights = [
@@ -118,8 +118,8 @@ const MeetYourCoach = () => {
             {highlights.map((highlight, index) => (
               <div key={index} className="flex gap-3">
                 <div className="flex-shrink-0 mt-1">
-                  <div className="w-6 h-6 rounded-full bg-primary/10 flex items-center justify-center">
-                    <Check className="w-4 h-4 text-primary" strokeWidth={3} />
+                  <div className="text-2xl leading-none">
+                    🎯
                   </div>
                 </div>
                 <div>
