@@ -1276,42 +1276,58 @@ const KiteSafari: React.FC = () => {
                   <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
                     <div className="space-y-4">
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Prefer adventure over resorts</p>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Want to ride 2× daily</p>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Love community vibes</p>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Are OK with boat life</p>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Want real progression</p>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Are a beginner, intermediate, or advanced rider</p>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Are 18+ (or 16+ with guardian)</p>
                       </div>
 
                       <div className="flex items-start gap-4">
-                        <span className="text-green-500 text-2xl flex-shrink-0">✅</span>
+                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-2xl">✅</span>
+                        </div>
                         <p className="text-lg text-foreground">Want the full experience — spots, islands, riding, community</p>
                       </div>
                     </div>
