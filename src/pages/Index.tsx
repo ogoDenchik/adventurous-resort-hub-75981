@@ -22,6 +22,9 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         
+        {/* Trust Bar with Coach Stats */}
+        <CoachStatsTrustBar />
+        
         {/* 1. Meet Your Coach */}
         <MeetYourCoachIntro />
         
@@ -86,10 +89,7 @@ const Index: React.FC = () => {
           </div>
         </section>
         
-        {/* 4. Trust Bar (Coach Stats) */}
-        <CoachStatsTrustBar />
-        
-        {/* 5. Numbers Section */}
+        {/* 4. Numbers Section */}
         <TrustIndicators />
         
         {/* 6. Why My Method Works */}
