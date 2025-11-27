@@ -1731,25 +1731,39 @@ const KiteSafari: React.FC = () => {
               <Accordion type="single" collapsible className="space-y-4">
                 {/* Payment Terms Accordion */}
                 <AccordionItem value="payment-terms" className="bg-background rounded-lg px-6 border border-border">
-                  <AccordionTrigger className="text-left font-bold text-xl">
+                  <AccordionTrigger className="text-left font-bold text-xl uppercase">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">💳</span>
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="text-2xl">💳</span>
+                      </div>
                       <span>PAYMENT TERMS</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="space-y-3 pt-4">
-                      <div className="flex items-start gap-3">
-                        <span className="text-xl mt-0.5">💳</span>
-                        <p className="text-lg text-muted-foreground">30% deposit to secure cabin</p>
+                    <div className="space-y-4 pt-4">
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">How Payment Works</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• <strong>30% Deposit</strong> — Required to secure your cabin</li>
+                          <li>• <strong>Remaining 70%</strong> — Due 30 days before departure</li>
+                          <li>• Your booking is confirmed only after the deposit has been received</li>
+                        </ul>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-xl mt-0.5">💳</span>
-                        <p className="text-lg text-muted-foreground">Remaining balance due 30 days before departure</p>
+                      
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">Payment Methods</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• <strong>Bank Transfer</strong> — Direct transfer to our bank account</li>
+                          <li>• <strong>Wise</strong> — Fast and low-fee international transfer</li>
+                          <li>• <strong>Revolut</strong> — Quick transfer option</li>
+                          <li>• <strong>Crypto</strong> — USDT or BTC (contact us for details)</li>
+                        </ul>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-xl mt-0.5">💳</span>
-                        <p className="text-lg text-muted-foreground">Payment options: Bank Transfer / Wise / Revolut / Crypto</p>
+
+                      <div className="bg-accent/10 p-4 rounded-lg border border-border mt-4">
+                        <p className="text-sm text-foreground">
+                          <strong>Note:</strong> Payment details will be provided after you submit your booking request. All prices are in EUR (€).
+                        </p>
                       </div>
                     </div>
                   </AccordionContent>
@@ -1757,26 +1771,217 @@ const KiteSafari: React.FC = () => {
 
                 {/* Cancellation Policy Accordion */}
                 <AccordionItem value="cancellation-policy" className="bg-background rounded-lg px-6 border border-border">
-                  <AccordionTrigger className="text-left font-bold text-xl">
+                  <AccordionTrigger className="text-left font-bold text-xl uppercase">
                     <div className="flex items-center gap-3">
-                      <span className="text-2xl">❗</span>
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="text-2xl">📅</span>
+                      </div>
                       <span>CANCELLATION POLICY</span>
                     </div>
                   </AccordionTrigger>
                   <AccordionContent>
-                    <div className="space-y-3 pt-4">
-                      <div className="flex items-start gap-3">
-                        <span className="text-xl mt-0.5">❗</span>
-                        <p className="text-lg text-muted-foreground">Less than 30 days — deposit non-refundable</p>
+                    <div className="space-y-4 pt-4">
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">Deposit Refund Window</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• <strong>Within 7 days</strong> after payment — Deposit is fully refundable</li>
+                          <li>• <strong>After 7 days</strong> — Deposit becomes non-refundable</li>
+                        </ul>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-xl mt-0.5">❗</span>
-                        <p className="text-lg text-muted-foreground">60 to 30 days — deposit can be transferred to the next OGO Academy trip</p>
+
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">Transfer to Another Trip</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• You can transfer your deposit to any of our future trips</li>
+                          <li>• Subject to availability at the new dates</li>
+                          <li>• Must be requested at least 30 days before the original trip date</li>
+                          <li>• Transfer option is valid for trips within the next 12 months</li>
+                        </ul>
                       </div>
-                      <div className="flex items-start gap-3">
-                        <span className="text-xl mt-0.5">❗</span>
-                        <p className="text-lg text-muted-foreground">If the trip is cancelled by the organizer → full refund</p>
+
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">Full Cancellation</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Cancellations are allowed up to 1.5 months (45 days) before the trip start date</li>
+                          <li>• If you cancel within this period:
+                            <ul className="ml-6 mt-1">
+                              <li>- You receive a 50% refund of the trip price, or</li>
+                              <li>- You may transfer your full deposit to another future trip</li>
+                            </ul>
+                          </li>
+                          <li>• Cancellations made less than 45 days before the trip are non-refundable</li>
+                        </ul>
                       </div>
+
+                      <div className="bg-accent/10 p-4 rounded-lg border border-border mt-4">
+                        <p className="text-sm text-foreground">
+                          <strong>Important:</strong> We recommend purchasing travel insurance that covers trip cancellations for maximum flexibility.
+                        </p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Insurance Accordion */}
+                <AccordionItem value="insurance" className="bg-background rounded-lg px-6 border border-border">
+                  <AccordionTrigger className="text-left font-bold text-xl uppercase">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="text-2xl">🛡</span>
+                      </div>
+                      <span>INSURANCE</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-4 pt-4">
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">What We Cover</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• <strong>Lesson Coverage</strong> — All students are covered during kitesurfing lessons</li>
+                          <li>• <strong>Equipment Insurance</strong> — Our equipment is insured during structured sessions</li>
+                          <li>• <strong>Instructor Liability</strong> — Professional liability insurance for all instructors</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">What You Must Have</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• <strong>Personal Travel Insurance</strong> — Required for all participants</li>
+                          <li>• Must include coverage for water sports and extreme activities</li>
+                          <li>• Should cover medical expenses, emergency evacuation, and repatriation</li>
+                          <li>• Recommended: Trip cancellation coverage</li>
+                        </ul>
+                      </div>
+
+                      <div>
+                        <h4 className="text-lg font-bold mb-3">Liability Waiver</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• By participating, you acknowledge that kitesurfing is an extreme sport with inherent risks</li>
+                          <li>• The organizer is not liable for injuries, equipment loss, or personal damages occurring outside of structured lessons</li>
+                          <li>• All participants must sign a liability waiver before starting the safari</li>
+                        </ul>
+                      </div>
+
+                      <div className="bg-accent/10 p-4 rounded-lg border border-border mt-4">
+                        <p className="text-sm text-foreground">
+                          <strong>Recommendation:</strong> We suggest providers like World Nomads, SafetyWing, or True Traveller that specifically cover kitesurfing activities.
+                        </p>
+                      </div>
+                    </div>
+                  </AccordionContent>
+                </AccordionItem>
+
+                {/* Terms & Conditions Accordion */}
+                <AccordionItem value="terms-conditions" className="bg-background rounded-lg px-6 border border-border">
+                  <AccordionTrigger className="text-left font-bold text-xl uppercase">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                        <span className="text-2xl">📋</span>
+                      </div>
+                      <span>FULL TERMS & CONDITIONS</span>
+                    </div>
+                  </AccordionTrigger>
+                  <AccordionContent>
+                    <div className="space-y-6 pt-4">
+                      
+                      {/* Section 1 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">1. Booking & Payment</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• A deposit is required to secure your spot at the safari.</li>
+                          <li>• The remaining balance must be paid no later than 30 days before the safari start date.</li>
+                          <li>• Your booking is confirmed only after the deposit has been received.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 2 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">2. Cancellation Policy</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Cancellations are allowed only up to 1.5 months (45 days) before the safari start date.</li>
+                          <li>• If you cancel within this period:
+                            <ul className="ml-6 mt-1">
+                              <li>- You receive a 50% refund of the safari price, or</li>
+                              <li>- You may transfer your full deposit to another future safari (subject to availability).</li>
+                            </ul>
+                          </li>
+                          <li>• Cancellations made later than 45 days before the safari are non-refundable.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 3 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">3. Travel Arrangements</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Participants are responsible for booking their own flights.</li>
+                          <li>• The organizer is not responsible for missed flights, delays, or travel disruptions.</li>
+                          <li>• Transfer to the marina is provided from the specified airport stated in safari details.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 4 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">4. Insurance</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• All participants must have valid travel and medical insurance, including coverage for water sports.</li>
+                          <li>• The organizer is not responsible for accidents, injuries, or loss/damage of personal items.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 5 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">5. Equipment</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Rental equipment is available upon request and subject to availability.</li>
+                          <li>• Participants are responsible for any damage caused to rental gear during use.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 6 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">6. Weather Conditions</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• Kitesurfing depends on natural conditions.</li>
+                          <li>• No refunds are provided in case of insufficient wind or weather changes.</li>
+                          <li>• In such cases, alternative activities may be offered when possible.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 7 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">7. Safety Rules</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• All participants must follow the instructions of certified coaches.</li>
+                          <li>• The organizer reserves the right to refuse water access to any participant acting unsafely.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 8 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">8. Safari Modifications</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• The organizer may adjust the schedule, location, or daily program due to safety, weather, or logistical needs.</li>
+                          <li>• Any changes will be communicated to participants as early as possible.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 9 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">9. Image & Video Use</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• By joining the safari, participants agree that photos and videos taken during the trip may be used for marketing purposes unless they request otherwise.</li>
+                        </ul>
+                      </div>
+
+                      {/* Section 10 */}
+                      <div>
+                        <h4 className="text-lg font-bold mb-2">10. Responsibility Waiver</h4>
+                        <ul className="space-y-2 text-muted-foreground">
+                          <li>• By participating, you acknowledge that kitesurfing is an extreme sport and involves inherent risks.</li>
+                          <li>• The organizer is not liable for injuries, equipment loss, or personal damages occurring during the safari.</li>
+                        </ul>
+                      </div>
+
                     </div>
                   </AccordionContent>
                 </AccordionItem>
