@@ -944,18 +944,20 @@ const Vietnam = () => {
           <div className="text-center">
             <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
               <DialogTrigger asChild>
-                <Button variant="outline" className="mt-4">
-                  <div className="flex items-center gap-2">
-                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-lg">📋</span>
-                    </div>
-                    <span>VIEW FULL TERMS & CONDITIONS</span>
-                  </div>
+                <Button variant="outline" className="mt-4 mx-auto">
+                  VIEW FULL TERMS & CONDITIONS
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-3xl max-h-[80vh]">
+                <button
+                  onClick={() => setTermsOpen(false)}
+                  className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground z-50"
+                >
+                  <span className="text-2xl">✕</span>
+                  <span className="sr-only">Close</span>
+                </button>
                 <DialogHeader>
-                  <DialogTitle className="text-2xl font-bold">Terms & Conditions – Kitesurf Camp</DialogTitle>
+                  <DialogTitle className="text-2xl font-bold uppercase">Terms & Conditions – Kitesurf Camp</DialogTitle>
                   <DialogDescription>
                     Please read these terms carefully before booking
                   </DialogDescription>
@@ -1071,8 +1073,15 @@ const Vietnam = () => {
         {/* Payment Terms Dialog */}
         <Dialog open={paymentTermsOpen} onOpenChange={setPaymentTermsOpen}>
           <DialogContent className="max-w-2xl max-h-[80vh]">
+            <button
+              onClick={() => setPaymentTermsOpen(false)}
+              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground z-50"
+            >
+              <span className="text-2xl">✕</span>
+              <span className="sr-only">Close</span>
+            </button>
             <DialogHeader>
-              <DialogTitle className="text-2xl font-bold flex items-center gap-3">
+              <DialogTitle className="text-2xl font-bold flex items-center gap-3 uppercase">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-2xl">💳</span>
                 </div>
@@ -1114,8 +1123,15 @@ const Vietnam = () => {
         {/* Cancellation Policy Dialog */}
         <Dialog open={cancellationPolicyOpen} onOpenChange={setCancellationPolicyOpen}>
           <DialogContent className="max-w-2xl max-h-[80vh]">
+            <button
+              onClick={() => setCancellationPolicyOpen(false)}
+              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground z-50"
+            >
+              <span className="text-2xl">✕</span>
+              <span className="sr-only">Close</span>
+            </button>
             <DialogHeader>
-              <DialogTitle className="text-2xl font-bold flex items-center gap-3">
+              <DialogTitle className="text-2xl font-bold flex items-center gap-3 uppercase">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-2xl">📅</span>
                 </div>
@@ -1169,8 +1185,15 @@ const Vietnam = () => {
         {/* Insurance Dialog */}
         <Dialog open={insuranceOpen} onOpenChange={setInsuranceOpen}>
           <DialogContent className="max-w-2xl max-h-[80vh]">
+            <button
+              onClick={() => setInsuranceOpen(false)}
+              className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground z-50"
+            >
+              <span className="text-2xl">✕</span>
+              <span className="sr-only">Close</span>
+            </button>
             <DialogHeader>
-              <DialogTitle className="text-2xl font-bold flex items-center gap-3">
+              <DialogTitle className="text-2xl font-bold flex items-center gap-3 uppercase">
                 <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                   <span className="text-2xl">🛡</span>
                 </div>
