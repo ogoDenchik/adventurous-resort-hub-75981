@@ -642,147 +642,53 @@ const Vietnam = () => {
               </p>
             </div>
 
-            {/* Included Tags */}
-            <div className="mb-6">
-              <h4 className="text-sm font-display font-bold text-foreground mb-3 uppercase">
-                Included
-              </h4>
-              <div className="flex flex-wrap gap-2">
-                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
-                  Transfers
-                </span>
-                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
-                  Accommodation
-                </span>
-                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
-                  10h Lessons
-                </span>
-                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
-                  Breakfast
-                </span>
-                <span className="text-xs bg-primary/10 text-foreground px-3 py-1.5 rounded-full border border-primary/20">
-                  Excursion to Waterfalls
-                </span>
-              </div>
-            </div>
-
             <div className="mb-6">
               <h4 className="text-lg font-display font-bold text-foreground mb-4 uppercase">
-                WHAT AWAITS YOU
+                WHAT'S INCLUDED
               </h4>
-              
-              {/* Experience Highlights */}
-              <div className="space-y-3 mb-6 pb-6 border-b border-border">
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🌅</span>
-                  </div>
-                  <span className="text-muted-foreground">Sunset kite sessions</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🎥</span>
-                  </div>
-                  <span className="text-muted-foreground">Daily video analysis</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🤝</span>
-                  </div>
-                  <span className="text-muted-foreground">Warm community vibe</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">📈</span>
-                  </div>
-                  <span className="text-muted-foreground">Progress-oriented training</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🏄‍♂️</span>
-                  </div>
-                  <span className="text-muted-foreground">Lifestyle & adventure</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🧑‍🏫</span>
-                  </div>
-                  <span className="text-muted-foreground">Full instructor support</span>
-                </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🏖️</span>
-                  </div>
-                  <span className="text-muted-foreground">Beachfront accommodation</span>
-                </div>
-              </div>
-
-              {/* What's Included List */}
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🪁</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">10 hours structured kitesurfing lessons</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🎒</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Premium equipment (kite, board, harness, safety gear)</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🛏️</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Accommodation — private room (9 nights)</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🍳</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Breakfast daily</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🍽️</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Welcome & farewell dinners</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🚐</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🌊</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Excursion to waterfalls</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🎥</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Video analysis</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🦺</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Safety training & theory</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">💬</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">WhatsApp group & community</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">📸</span>
-                  </div>
+                <div className="flex items-start gap-3">
+                  <span className="text-green-500 text-xl">✓</span>
                   <span className="text-muted-foreground">Photo content for social media</span>
                 </div>
               </div>
@@ -805,7 +711,7 @@ const Vietnam = () => {
                   packageName: 'Standard Camp',
                   location: 'Vietnam Kite Camp',
                   price: '€2040',
-                  highlights: ['Transfers', 'Accommodation', '10h Lessons', 'Breakfast', 'Excursion to Waterfalls'],
+                  highlights: ['10 Days', '10h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
                   included: [
                     'Beachfront accommodation (private room)',
                     '10 hours structured kitesurfing lessons',
@@ -850,56 +756,40 @@ const Vietnam = () => {
 
             <div className="mb-6">
               <h4 className="text-lg font-display font-bold text-foreground mb-4 uppercase">
-                1-TO-1 LIVE COACHING WITH BB TALKING SYSTEM
+                ⭐ EVERYTHING IN STANDARD + EXCLUSIVE BENEFITS
               </h4>
               <div className="space-y-3">
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🎧</span>
-                  </div>
-                  <span className="text-muted-foreground">1-to-1 Live Coaching</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">One-to-one coaching or 2-person private group (only if both riders are the same level and learning the same trick)</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">💬</span>
-                  </div>
-                  <span className="text-muted-foreground">Direct Access to Denis</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Direct Access to Denis for feedback & progression</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">📝</span>
-                  </div>
-                  <span className="text-muted-foreground">Customized Progression Plan</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Customized step-by-step progression plan</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🎥</span>
-                  </div>
-                  <span className="text-muted-foreground">Extended Video Analysis</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Extended video analysis with detailed breakdown</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">⏱️</span>
-                  </div>
-                  <span className="text-muted-foreground">Flexible Session Timing</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Flexible session timing based on your goals</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">⭐</span>
-                  </div>
-                  <span className="text-muted-foreground">Priority Session Slots</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Priority session slots</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🛠️</span>
-                  </div>
-                  <span className="text-muted-foreground">Equipment Setup</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Personal equipment setup tuning</span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🔥</span>
-                  </div>
-                  <span className="text-muted-foreground">Advanced Trick Drills</span>
+                <div className="flex items-start gap-3">
+                  <span className="text-primary text-xl">★</span>
+                  <span className="text-muted-foreground">Advanced trick-focused drills</span>
                 </div>
               </div>
             </div>
@@ -1527,7 +1417,7 @@ const Vietnam = () => {
                     price: price,
                     highlights: selectedPackage === 'Private Premium Experience' 
                       ? ['10 Days', '15h VIP Lessons', 'All Meals', 'Video Analysis']
-                      : ['Transfers', 'Accommodation', '10h Lessons', 'Breakfast', 'Excursion to Waterfalls']
+                      : ['10 Days', '10h Lessons', 'Breakfast', 'Excursion']
                   });
                   setBookingOpen(true);
                 }}
