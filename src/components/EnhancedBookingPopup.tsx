@@ -179,7 +179,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
 
                 {bookingDetails.included && bookingDetails.included.length > 0 && (
                   <div>
-                    <p className="text-sm font-semibold text-foreground mb-2 uppercase">What's Included:</p>
+                    <p className="text-sm font-semibold text-foreground mb-2 uppercase">What awaits you:</p>
                     <ul className="space-y-1">
                       {bookingDetails.included.map((item, index) => (
                         <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
@@ -197,9 +197,13 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
           {/* Form Content */}
           <div className="p-6">
             <DialogHeader className="mb-6">
-              <DialogDescription className="text-center text-base">
-                {description}
-              </DialogDescription>
+              <div className="flex justify-center">
+                <div className="inline-block border-2 border-primary rounded-lg px-6 py-3 bg-background shadow-md">
+                  <p className="text-center text-base font-display font-semibold text-foreground uppercase">
+                    {description}
+                  </p>
+                </div>
+              </div>
             </DialogHeader>
             
             <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
