@@ -785,7 +785,7 @@ const Vietnam = () => {
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <span className="text-2xl">👤</span>
                   </div>
-                  <span className="text-muted-foreground flex items-center h-12">One-to-one coaching or 2-person private group (only if both riders are the same level and learning the same trick)</span>
+                  <span className="text-muted-foreground flex items-center h-12">1-to-1 Coaching</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -1448,15 +1448,44 @@ const Vietnam = () => {
                 className="w-full mb-3 text-lg py-6"
                 onClick={() => {
                   const packageName = selectedPackage || 'Standard Camp';
-                  const price = packageName === 'Private Premium Experience' ? '€2740' : '€2040';
-                  setBookingDetails({
-                    packageName: packageName,
-                    location: 'Vietnam Kite Camp',
-                    price: price,
-                    highlights: selectedPackage === 'Private Premium Experience' 
-                      ? ['10 Days', '15h VIP Lessons', 'All Meals', 'Video Analysis']
-                      : ['10 Days', '10h Lessons', 'Breakfast', 'Excursion']
-                  });
+                  const price = packageName === 'Private Premium' ? '€2740' : '€2040';
+                  
+                  if (packageName === 'Private Premium') {
+                    setBookingDetails({
+                      packageName: 'Private Premium Experience',
+                      location: 'Vietnam Kite Camp',
+                      price: '€2740',
+                      highlights: ['10 Days', '15h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
+                      included: [
+                        'Beachfront accommodation (private room)',
+                        '15 hours VIP 1-on-1 training',
+                        'Premium equipment included',
+                        'All meals included (breakfast, lunch, dinner)',
+                        'Airport transfer (Ho Chi Minh)',
+                        'All excursions included',
+                        'Video analysis after every session',
+                        'Personalized training plan',
+                        'Priority scheduling'
+                      ]
+                    });
+                  } else {
+                    setBookingDetails({
+                      packageName: 'Standard Camp',
+                      location: 'Vietnam Kite Camp',
+                      price: '€2040',
+                      highlights: ['10 Days', '10h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
+                      included: [
+                        'Beachfront accommodation (private room)',
+                        '10 hours structured kitesurfing lessons',
+                        'Premium equipment included',
+                        'Daily breakfast',
+                        'Airport transfer (Ho Chi Minh)',
+                        'Excursion to waterfalls',
+                        'Community dinners & social events'
+                      ]
+                    });
+                  }
+                  
                   setBookingOpen(true);
                 }}
               >
