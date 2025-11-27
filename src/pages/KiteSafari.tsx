@@ -14,6 +14,7 @@ import Autoplay from "embla-carousel-autoplay";
 const KiteSafari: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
   const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
+  const [selectedCabin, setSelectedCabin] = useState<string>('');
   const autoplayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const autoplayPluginRef = useRef(
     Autoplay({
@@ -1094,7 +1095,30 @@ const KiteSafari: React.FC = () => {
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Solo travelers, friends</p>
                     
-                    <Button className="w-full">BOOK TWIN CABIN</Button>
+                    <Button 
+                      className="w-full"
+                      onClick={() => {
+                        setBookingDetails({
+                          packageName: 'Twin Cabin',
+                          location: 'Egypt Kite Safari',
+                          price: 'From €1,750 per person',
+                          highlights: ['7 Days / 6 Nights', '3 Epic Lagoons', 'All Meals', 'Rescue Boat', 'Group Atmosphere'],
+                          included: [
+                            '7 days / 6 nights on yacht',
+                            '3 meals daily + snacks',
+                            'All boat logistics',
+                            'Rescue boat support',
+                            'SUP & snorkeling gear',
+                            'WhatsApp group access',
+                            'Evening kite briefings',
+                            'Twin cabin accommodation'
+                          ]
+                        });
+                        setBookingPopupOpen(true);
+                      }}
+                    >
+                      BOOK TWIN CABIN
+                    </Button>
                   </div>
                 </div>
 
@@ -1132,7 +1156,27 @@ const KiteSafari: React.FC = () => {
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, friends</p>
                     
-                    <Button className="w-full">BOOK MASTER SUITE</Button>
+                    <Button 
+                      className="w-full"
+                      onClick={() => {
+                        setBookingDetails({
+                          packageName: 'Master Suite',
+                          location: 'Egypt Kite Safari',
+                          price: 'From €3,500 / cabin',
+                          highlights: ['7 Days / 6 Nights', 'Larger Cabin', 'Premium Comfort', 'All Twin Cabin Benefits', 'Best Location'],
+                          included: [
+                            'Everything in Twin Cabin',
+                            'Larger cabin space',
+                            'Enhanced comfort',
+                            'Better location onboard',
+                            'Perfect for couples/friends'
+                          ]
+                        });
+                        setBookingPopupOpen(true);
+                      }}
+                    >
+                      BOOK MASTER SUITE
+                    </Button>
                   </div>
                 </div>
 
@@ -1170,7 +1214,28 @@ const KiteSafari: React.FC = () => {
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, premium travelers</p>
                     
-                    <Button className="w-full">BOOK PANORAMIC SUITE</Button>
+                    <Button 
+                      className="w-full"
+                      onClick={() => {
+                        setBookingDetails({
+                          packageName: 'Panoramic Suite',
+                          location: 'Egypt Kite Safari',
+                          price: 'From €3,700 / cabin',
+                          highlights: ['7 Days / 6 Nights', 'Panoramic Windows', 'Most Premium Cabin', 'Maximum Privacy', 'Exclusive Experience'],
+                          included: [
+                            'Everything in Master Suite',
+                            'Panoramic windows with ocean views',
+                            'Most premium cabin on yacht',
+                            'Maximum privacy & space',
+                            'Only 1-2 per trip',
+                            'Perfect for premium travelers'
+                          ]
+                        });
+                        setBookingPopupOpen(true);
+                      }}
+                    >
+                      BOOK PANORAMIC SUITE
+                    </Button>
                   </div>
                 </div>
               </div>
@@ -1445,6 +1510,7 @@ const KiteSafari: React.FC = () => {
                             name="cabin" 
                             value="Twin Cabin"
                             className="w-4 h-4"
+                            onChange={(e) => setSelectedCabin(e.target.value)}
                           />
                           <span className="text-foreground">Twin Cabin (from €1,750)</span>
                         </label>
@@ -1454,6 +1520,7 @@ const KiteSafari: React.FC = () => {
                             name="cabin" 
                             value="Master Suite"
                             className="w-4 h-4"
+                            onChange={(e) => setSelectedCabin(e.target.value)}
                           />
                           <span className="text-foreground">Master Suite (from €3,500)</span>
                         </label>
@@ -1463,6 +1530,7 @@ const KiteSafari: React.FC = () => {
                             name="cabin" 
                             value="Panoramic Suite"
                             className="w-4 h-4"
+                            onChange={(e) => setSelectedCabin(e.target.value)}
                           />
                           <span className="text-foreground">Panoramic Suite (from €3,700)</span>
                         </label>
@@ -1480,12 +1548,66 @@ const KiteSafari: React.FC = () => {
                       <Button 
                         className="w-full mb-3 text-lg py-6"
                         onClick={() => {
-                          setBookingDetails({
-                            packageName: 'Egypt Kite Safari',
-                            location: 'Red Sea, Egypt',
-                            price: 'from €1,750',
-                            highlights: ['7 Days', '3 Lagoons', 'Luxury Yacht', 'All Meals']
-                          });
+                          // Determine which cabin details to show based on selection
+                          let cabinDetails;
+                          
+                          if (selectedCabin === 'Twin Cabin') {
+                            cabinDetails = {
+                              packageName: 'Twin Cabin',
+                              location: 'Egypt Kite Safari',
+                              price: 'From €1,750 per person',
+                              highlights: ['7 Days / 6 Nights', '3 Epic Lagoons', 'All Meals', 'Rescue Boat', 'Group Atmosphere'],
+                              included: [
+                                '7 days / 6 nights on yacht',
+                                '3 meals daily + snacks',
+                                'All boat logistics',
+                                'Rescue boat support',
+                                'SUP & snorkeling gear',
+                                'WhatsApp group access',
+                                'Evening kite briefings',
+                                'Twin cabin accommodation'
+                              ]
+                            };
+                          } else if (selectedCabin === 'Master Suite') {
+                            cabinDetails = {
+                              packageName: 'Master Suite',
+                              location: 'Egypt Kite Safari',
+                              price: 'From €3,500 / cabin',
+                              highlights: ['7 Days / 6 Nights', 'Larger Cabin', 'Premium Comfort', 'All Twin Cabin Benefits', 'Best Location'],
+                              included: [
+                                'Everything in Twin Cabin',
+                                'Larger cabin space',
+                                'Enhanced comfort',
+                                'Better location onboard',
+                                'Perfect for couples/friends'
+                              ]
+                            };
+                          } else if (selectedCabin === 'Panoramic Suite') {
+                            cabinDetails = {
+                              packageName: 'Panoramic Suite',
+                              location: 'Egypt Kite Safari',
+                              price: 'From €3,700 / cabin',
+                              highlights: ['7 Days / 6 Nights', 'Panoramic Windows', 'Most Premium Cabin', 'Maximum Privacy', 'Exclusive Experience'],
+                              included: [
+                                'Everything in Master Suite',
+                                'Panoramic windows with ocean views',
+                                'Most premium cabin on yacht',
+                                'Maximum privacy & space',
+                                'Only 1-2 per trip',
+                                'Perfect for premium travelers'
+                              ]
+                            };
+                          } else {
+                            // Default if no cabin selected
+                            cabinDetails = {
+                              packageName: 'Egypt Kite Safari',
+                              location: 'Red Sea, Egypt',
+                              price: 'from €1,750',
+                              highlights: ['7 Days', '3 Lagoons', 'Luxury Yacht', 'All Meals']
+                            };
+                          }
+                          
+                          setBookingDetails(cabinDetails);
                           setBookingPopupOpen(true);
                         }}
                       >
