@@ -25,6 +25,9 @@ import { ScrollArea } from "@/components/ui/scroll-area";
 
 const Vietnam = () => {
   const [termsOpen, setTermsOpen] = useState(false);
+  const [paymentTermsOpen, setPaymentTermsOpen] = useState(false);
+  const [cancellationPolicyOpen, setCancellationPolicyOpen] = useState(false);
+  const [insuranceOpen, setInsuranceOpen] = useState(false);
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedDates, setSelectedDates] = useState('');
   const [selectedPackage, setSelectedPackage] = useState('');
@@ -402,7 +405,7 @@ const Vietnam = () => {
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">KITESURFING</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
-                    <li>• 10 hours structured lessons (3–4h/day)</li>
+                    <li>• 8 hours structured lessons (3–4h/day)</li>
                     <li>• Premium equipment included (kite, board, harness)</li>
                     <li>• All levels welcome (zero → advanced tricks)</li>
                     <li>• Small groups: max 3–4 students per instructor</li>
@@ -651,7 +654,7 @@ const Vietnam = () => {
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <span className="text-2xl">🪁</span>
                   </div>
-                  <span className="text-muted-foreground flex items-center h-12">10 hours structured kitesurfing lessons</span>
+                  <span className="text-muted-foreground flex items-center h-12">8 hours structured kitesurfing lessons</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
@@ -733,10 +736,10 @@ const Vietnam = () => {
                   packageName: 'Standard Camp',
                   location: 'Vietnam Kite Camp',
                   price: '€2040',
-                  highlights: ['10 Days', '10h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
+                  highlights: ['10 Days', '8h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
                   included: [
                     'Beachfront accommodation (private room)',
-                    '10 hours structured kitesurfing lessons',
+                    '8 hours structured kitesurfing lessons',
                     'Premium equipment included',
                     'Daily breakfast',
                     'Airport transfer (Ho Chi Minh)',
@@ -849,10 +852,10 @@ const Vietnam = () => {
                   packageName: 'Private Premium Experience',
                   location: 'Vietnam Kite Camp',
                   price: '€2740',
-                  highlights: ['10 Days', '15h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
+                  highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
                   included: [
                     'Beachfront accommodation (private room)',
-                    '15 hours VIP 1-on-1 training',
+                    '10 hours VIP 1-on-1 training',
                     'Premium equipment included',
                     'All meals included (breakfast, lunch, dinner)',
                     'Airport transfer (Ho Chi Minh)',
@@ -881,10 +884,15 @@ const Vietnam = () => {
         <div id="payment-terms" className="bg-muted/50 rounded-2xl p-8 border border-border">
           <div className="grid md:grid-cols-3 gap-8 mb-6">
             
-            {/* Payment Terms */}
-            <div>
+            {/* Payment Terms - Clickable */}
+            <div 
+              className="cursor-pointer hover:bg-accent/10 p-4 rounded-lg transition-colors"
+              onClick={() => setPaymentTermsOpen(true)}
+            >
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">💳</span>
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">💳</span>
+                </div>
                 <h4 className="text-lg font-display font-bold text-foreground uppercase">PAYMENT TERMS</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
@@ -892,30 +900,43 @@ const Vietnam = () => {
                 <li>• Rest 70% — 30 days before the camp</li>
                 <li>• Payments via Bank Transfer, Wise, PayPal</li>
               </ul>
+              <p className="text-xs text-primary mt-3 font-semibold">Click to read more →</p>
             </div>
 
-            {/* Cancellation Policy */}
-            <div>
+            {/* Cancellation Policy - Clickable */}
+            <div 
+              className="cursor-pointer hover:bg-accent/10 p-4 rounded-lg transition-colors"
+              onClick={() => setCancellationPolicyOpen(true)}
+            >
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">📅</span>
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">📅</span>
+                </div>
                 <h4 className="text-lg font-display font-bold text-foreground uppercase">CANCELLATION POLICY</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>• Deposit is refundable within 7 days after payment</li>
                 <li>• It is possible to transfer your deposit to any of our next Vietnam camps</li>
               </ul>
+              <p className="text-xs text-primary mt-3 font-semibold">Click to read more →</p>
             </div>
 
-            {/* Insurance */}
-            <div>
+            {/* Insurance - Clickable */}
+            <div 
+              className="cursor-pointer hover:bg-accent/10 p-4 rounded-lg transition-colors"
+              onClick={() => setInsuranceOpen(true)}
+            >
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-2xl">🛡</span>
+                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">🛡</span>
+                </div>
                 <h4 className="text-lg font-display font-bold text-foreground uppercase">INSURANCE</h4>
               </div>
               <ul className="space-y-2 text-muted-foreground text-sm">
                 <li>• Students covered during lessons</li>
                 <li>• Personal travel insurance required</li>
               </ul>
+              <p className="text-xs text-primary mt-3 font-semibold">Click to read more →</p>
             </div>
 
           </div>
@@ -924,7 +945,12 @@ const Vietnam = () => {
             <Dialog open={termsOpen} onOpenChange={setTermsOpen}>
               <DialogTrigger asChild>
                 <Button variant="outline" className="mt-4">
-                  VIEW FULL TERMS & CONDITIONS
+                  <div className="flex items-center gap-2">
+                    <div className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center">
+                      <span className="text-lg">📋</span>
+                    </div>
+                    <span>VIEW FULL TERMS & CONDITIONS</span>
+                  </div>
                 </Button>
               </DialogTrigger>
               <DialogContent className="max-w-3xl max-h-[80vh]">
@@ -1041,6 +1067,155 @@ const Vietnam = () => {
             </Dialog>
           </div>
         </div>
+
+        {/* Payment Terms Dialog */}
+        <Dialog open={paymentTermsOpen} onOpenChange={setPaymentTermsOpen}>
+          <DialogContent className="max-w-2xl max-h-[80vh]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">💳</span>
+                </div>
+                Payment Terms
+              </DialogTitle>
+            </DialogHeader>
+            <ScrollArea className="h-[60vh] pr-4">
+              <div className="space-y-4 text-foreground">
+                <div>
+                  <h3 className="text-lg font-bold mb-3">How Payment Works</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• <strong>30% Deposit</strong> — Required to secure your spot in the camp</li>
+                    <li>• <strong>Remaining 70%</strong> — Due 30 days before the camp start date</li>
+                    <li>• Your booking is confirmed only after the deposit has been received</li>
+                  </ul>
+                </div>
+                
+                <div>
+                  <h3 className="text-lg font-bold mb-3">Payment Methods</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• <strong>Bank Transfer</strong> — Direct transfer to our bank account</li>
+                    <li>• <strong>Wise</strong> — Fast and low-fee international transfer</li>
+                    <li>• <strong>PayPal</strong> — Secure online payment</li>
+                    <li>• <strong>Revolut</strong> — Quick transfer option</li>
+                    <li>• <strong>Crypto</strong> — USDT or BTC (contact us for details)</li>
+                  </ul>
+                </div>
+
+                <div className="bg-accent/10 p-4 rounded-lg border border-border">
+                  <p className="text-sm text-foreground">
+                    <strong>Note:</strong> Payment details will be provided after you submit your booking request. All prices are in EUR (€).
+                  </p>
+                </div>
+              </div>
+            </ScrollArea>
+          </DialogContent>
+        </Dialog>
+
+        {/* Cancellation Policy Dialog */}
+        <Dialog open={cancellationPolicyOpen} onOpenChange={setCancellationPolicyOpen}>
+          <DialogContent className="max-w-2xl max-h-[80vh]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">📅</span>
+                </div>
+                Cancellation Policy
+              </DialogTitle>
+            </DialogHeader>
+            <ScrollArea className="h-[60vh] pr-4">
+              <div className="space-y-4 text-foreground">
+                <div>
+                  <h3 className="text-lg font-bold mb-3">Deposit Refund Window</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• <strong>Within 7 days</strong> after payment — Deposit is fully refundable</li>
+                    <li>• <strong>After 7 days</strong> — Deposit becomes non-refundable</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-3">Transfer to Another Camp</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• You can transfer your deposit to any of our future Vietnam camps</li>
+                    <li>• Subject to availability at the new dates</li>
+                    <li>• Must be requested at least 30 days before the original camp date</li>
+                    <li>• Transfer option is valid for camps within the next 12 months</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-3">Full Cancellation</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• Cancellations are allowed up to 1.5 months (45 days) before the camp start date</li>
+                    <li>• If you cancel within this period:
+                      <ul className="ml-6 mt-1">
+                        <li>- You receive a 50% refund of the camp price, or</li>
+                        <li>- You may transfer your full deposit to another future camp</li>
+                      </ul>
+                    </li>
+                    <li>• Cancellations made less than 45 days before the camp are non-refundable</li>
+                  </ul>
+                </div>
+
+                <div className="bg-accent/10 p-4 rounded-lg border border-border">
+                  <p className="text-sm text-foreground">
+                    <strong>Important:</strong> We recommend purchasing travel insurance that covers trip cancellations for maximum flexibility.
+                  </p>
+                </div>
+              </div>
+            </ScrollArea>
+          </DialogContent>
+        </Dialog>
+
+        {/* Insurance Dialog */}
+        <Dialog open={insuranceOpen} onOpenChange={setInsuranceOpen}>
+          <DialogContent className="max-w-2xl max-h-[80vh]">
+            <DialogHeader>
+              <DialogTitle className="text-2xl font-bold flex items-center gap-3">
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">🛡</span>
+                </div>
+                Insurance Requirements
+              </DialogTitle>
+            </DialogHeader>
+            <ScrollArea className="h-[60vh] pr-4">
+              <div className="space-y-4 text-foreground">
+                <div>
+                  <h3 className="text-lg font-bold mb-3">What We Cover</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• <strong>Lesson Coverage</strong> — All students are covered during kitesurfing lessons</li>
+                    <li>• <strong>Equipment Insurance</strong> — Our equipment is insured during structured sessions</li>
+                    <li>• <strong>Instructor Liability</strong> — Professional liability insurance for all instructors</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-3">What You Must Have</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• <strong>Personal Travel Insurance</strong> — Required for all participants</li>
+                    <li>• Must include coverage for water sports and extreme activities</li>
+                    <li>• Should cover medical expenses, emergency evacuation, and repatriation</li>
+                    <li>• Recommended: Trip cancellation coverage</li>
+                  </ul>
+                </div>
+
+                <div>
+                  <h3 className="text-lg font-bold mb-3">Liability Waiver</h3>
+                  <ul className="space-y-2 text-muted-foreground">
+                    <li>• By participating, you acknowledge that kitesurfing is an extreme sport with inherent risks</li>
+                    <li>• The organizer is not liable for injuries, equipment loss, or personal damages occurring outside of structured lessons</li>
+                    <li>• All participants must sign a liability waiver before starting the camp</li>
+                  </ul>
+                </div>
+
+                <div className="bg-accent/10 p-4 rounded-lg border border-border">
+                  <p className="text-sm text-foreground">
+                    <strong>Recommendation:</strong> We suggest providers like World Nomads, SafetyWing, or True Traveller that specifically cover kitesurfing activities.
+                  </p>
+                </div>
+              </div>
+            </ScrollArea>
+          </DialogContent>
+        </Dialog>
 
       </div>
     </div>
@@ -1455,10 +1630,10 @@ const Vietnam = () => {
                       packageName: 'Private Premium Experience',
                       location: 'Vietnam Kite Camp',
                       price: '€2740',
-                      highlights: ['10 Days', '15h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
+                      highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
                       included: [
                         'Beachfront accommodation (private room)',
-                        '15 hours VIP 1-on-1 training',
+                        '10 hours VIP 1-on-1 training',
                         'Premium equipment included',
                         'All meals included (breakfast, lunch, dinner)',
                         'Airport transfer (Ho Chi Minh)',
@@ -1473,10 +1648,10 @@ const Vietnam = () => {
                       packageName: 'Standard Camp',
                       location: 'Vietnam Kite Camp',
                       price: '€2040',
-                      highlights: ['10 Days', '10h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
+                      highlights: ['10 Days', '8h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
                       included: [
                         'Beachfront accommodation (private room)',
-                        '10 hours structured kitesurfing lessons',
+                        '8 hours structured kitesurfing lessons',
                         'Premium equipment included',
                         'Daily breakfast',
                         'Airport transfer (Ho Chi Minh)',
