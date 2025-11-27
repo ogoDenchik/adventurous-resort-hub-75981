@@ -648,48 +648,70 @@ const Vietnam = () => {
               </h4>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">10 hours structured kitesurfing lessons</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🪁</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">10 hours structured kitesurfing lessons</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Premium equipment (kite, board, harness, safety gear)</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎒</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Premium equipment (kite, board, harness, safety gear)</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Accommodation — private room (9 nights)</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🏠</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Accommodation — private room (9 nights)</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Breakfast daily</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🥐</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Breakfast daily</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Welcome & farewell dinners</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🍽️</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Welcome & farewell dinners</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🚐</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Excursion to waterfalls</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">💦</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Excursion to waterfalls</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Video analysis</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">📹</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Video analysis</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Safety training & theory</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🛡️</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Safety training & theory</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">WhatsApp group & community</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">💬</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">WhatsApp group & community</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-green-500 text-xl">✓</span>
-                  <span className="text-muted-foreground">Photo content for social media</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">📸</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Photo content for social media</span>
                 </div>
               </div>
             </div>
@@ -760,36 +782,52 @@ const Vietnam = () => {
               </h4>
               <div className="space-y-3">
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">One-to-one coaching or 2-person private group (only if both riders are the same level and learning the same trick)</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">👤</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">One-to-one coaching or 2-person private group (only if both riders are the same level and learning the same trick)</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Direct Access to Denis for feedback & progression</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎯</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Direct Access to Denis for feedback & progression</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Customized step-by-step progression plan</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">📋</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Customized step-by-step progression plan</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Extended video analysis with detailed breakdown</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎥</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Extended video analysis with detailed breakdown</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Flexible session timing based on your goals</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">⏰</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Flexible session timing based on your goals</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Priority session slots</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">⭐</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Priority session slots</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Personal equipment setup tuning</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🔧</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Personal equipment setup tuning</span>
                 </div>
                 <div className="flex items-start gap-3">
-                  <span className="text-primary text-xl">★</span>
-                  <span className="text-muted-foreground">Advanced trick-focused drills</span>
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🚀</span>
+                  </div>
+                  <span className="text-muted-foreground flex items-center h-12">Advanced trick-focused drills</span>
                 </div>
               </div>
             </div>
