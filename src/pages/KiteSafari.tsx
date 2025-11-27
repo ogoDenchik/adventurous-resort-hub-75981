@@ -15,6 +15,7 @@ const KiteSafari: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
   const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
   const [selectedCabin, setSelectedCabin] = useState<string>('');
+  const [selectedCabinImage, setSelectedCabinImage] = useState<string>('/lovable-uploads/kite-safari-yacht.jpg');
   const autoplayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
   const autoplayPluginRef = useRef(
     Autoplay({
@@ -85,6 +86,7 @@ const KiteSafari: React.FC = () => {
                   size="default" 
                   className="text-sm px-5 py-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
                   onClick={() => {
+                    setSelectedCabinImage('/lovable-uploads/kite-safari-yacht.jpg');
                     setBookingDetails({
                       packageName: 'Egypt Kite Safari',
                       location: 'Red Sea, Egypt',
@@ -1098,6 +1100,7 @@ const KiteSafari: React.FC = () => {
                     <Button 
                       className="w-full"
                       onClick={() => {
+                        setSelectedCabinImage('/lovable-uploads/safari-twin-cabin.jpg');
                         setBookingDetails({
                           packageName: 'Twin Cabin',
                           location: 'Egypt Kite Safari',
@@ -1159,6 +1162,7 @@ const KiteSafari: React.FC = () => {
                     <Button 
                       className="w-full"
                       onClick={() => {
+                        setSelectedCabinImage('/lovable-uploads/safari-master-suite.jpg');
                         setBookingDetails({
                           packageName: 'Master Suite',
                           location: 'Egypt Kite Safari',
@@ -1217,6 +1221,7 @@ const KiteSafari: React.FC = () => {
                     <Button 
                       className="w-full"
                       onClick={() => {
+                        setSelectedCabinImage('/lovable-uploads/safari-panoramic-suite.jpg');
                         setBookingDetails({
                           packageName: 'Panoramic Suite',
                           location: 'Egypt Kite Safari',
@@ -1550,8 +1555,10 @@ const KiteSafari: React.FC = () => {
                         onClick={() => {
                           // Determine which cabin details to show based on selection
                           let cabinDetails;
+                          let cabinImage = '/lovable-uploads/kite-safari-yacht.jpg';
                           
                           if (selectedCabin === 'Twin Cabin') {
+                            cabinImage = '/lovable-uploads/safari-twin-cabin.jpg';
                             cabinDetails = {
                               packageName: 'Twin Cabin',
                               location: 'Egypt Kite Safari',
@@ -1569,6 +1576,7 @@ const KiteSafari: React.FC = () => {
                               ]
                             };
                           } else if (selectedCabin === 'Master Suite') {
+                            cabinImage = '/lovable-uploads/safari-master-suite.jpg';
                             cabinDetails = {
                               packageName: 'Master Suite',
                               location: 'Egypt Kite Safari',
@@ -1583,6 +1591,7 @@ const KiteSafari: React.FC = () => {
                               ]
                             };
                           } else if (selectedCabin === 'Panoramic Suite') {
+                            cabinImage = '/lovable-uploads/safari-panoramic-suite.jpg';
                             cabinDetails = {
                               packageName: 'Panoramic Suite',
                               location: 'Egypt Kite Safari',
@@ -1607,6 +1616,7 @@ const KiteSafari: React.FC = () => {
                             };
                           }
                           
+                          setSelectedCabinImage(cabinImage);
                           setBookingDetails(cabinDetails);
                           setBookingPopupOpen(true);
                         }}
@@ -2286,7 +2296,7 @@ const KiteSafari: React.FC = () => {
       <EnhancedBookingPopup 
         open={bookingPopupOpen} 
         onOpenChange={setBookingPopupOpen}
-        backgroundImage="/lovable-uploads/kite-safari-yacht.jpg"
+        backgroundImage={selectedCabinImage}
         title="Book Egypt Kite Safari"
         description="Fill in your details and we'll get back to you shortly"
         bookingDetails={bookingDetails}
