@@ -5,6 +5,7 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
+import { useToast } from '@/hooks/use-toast';
 import {
   Accordion,
   AccordionContent,
@@ -14,11 +15,15 @@ import {
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
+const VIETNAM_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
+
 const Vietnam = () => {
+  const { toast } = useToast();
   const [bookingOpen, setBookingOpen] = useState(false);
   const [selectedDates, setSelectedDates] = useState('');
   const [selectedPackage, setSelectedPackage] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
+  const [leadSource, setLeadSource] = useState('Vietnam Camp');
   const [bookingDetails, setBookingDetails] = useState<{
     packageName: string;
     location: string;
@@ -26,6 +31,62 @@ const Vietnam = () => {
     highlights?: string[];
     included?: string[];
   } | undefined>(undefined);
+  
+  // Contact form state
+  const [contactName, setContactName] = useState('');
+  const [contactEmail, setContactEmail] = useState('');
+  const [contactPhone, setContactPhone] = useState('');
+  const [contactConsent, setContactConsent] = useState(false);
+  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
+
+  const handleContactSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    if (!contactName || !contactEmail || !contactConsent) {
+      return;
+    }
+    
+    setIsContactSubmitting(true);
+    
+    try {
+      const response = await fetch(VIETNAM_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          lead_source: 'Get in Touch',
+          name: contactName,
+          phone: contactPhone || '',
+          email: contactEmail,
+          message: 'User clicked Get in Touch.',
+          timestamp: new Date().toISOString(),
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit');
+      }
+
+      toast({
+        title: "Thank you, we will reply within 24 hours!",
+        description: "Our team will contact you shortly.",
+      });
+      setContactName('');
+      setContactEmail('');
+      setContactPhone('');
+      setContactConsent(false);
+    } catch (error) {
+      console.error('Error submitting contact form:', error);
+      toast({
+        title: "Error",
+        description: "Something went wrong. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsContactSubmitting(false);
+    }
+  };
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -719,6 +780,7 @@ const Vietnam = () => {
               className="w-full mb-3"
               onClick={() => {
                 setSelectedPackage('Standard Camp');
+                setLeadSource('Vietnam Camp');
                 setBookingDetails({
                   packageName: 'Standard Camp',
                   location: 'Vietnam Kite Camp',
@@ -835,8 +897,9 @@ const Vietnam = () => {
               className="w-full mb-3 bg-primary hover:bg-primary/90"
               onClick={() => {
                 setSelectedPackage('Private Premium Experience');
+                setLeadSource('Vietnam Camp');
                 setBookingDetails({
-                  packageName: 'Private Premium Experience',
+                  packageName: 'Private Premium Experience (€2,500)',
                   location: 'Vietnam Kite Camp',
                   price: '€2740',
                   highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
@@ -1541,11 +1604,11 @@ const Vietnam = () => {
                 className="w-full mb-3 text-lg py-6"
                 onClick={() => {
                   const packageName = selectedPackage || 'Standard Camp';
-                  const price = packageName === 'Private Premium' ? '€2740' : '€2040';
+                  setLeadSource('Vietnam Camp Booking Box');
                   
                   if (packageName === 'Private Premium') {
                     setBookingDetails({
-                      packageName: 'Private Premium Experience',
+                      packageName: 'Private Premium Experience (€2,500)',
                       location: 'Vietnam Kite Camp',
                       price: '€2740',
                       highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
@@ -1657,11 +1720,12 @@ const Vietnam = () => {
               <Button 
                 className="w-full text-lg py-6 mb-3" 
                 onClick={() => {
-                  const goalText = selectedGoal ? `%20My%20goal%3A%20${encodeURIComponent(selectedGoal)}.` : '';
-                  window.open(`https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20lesson%20with%20you%20in%20Vietnam.${goalText}%20When%20do%20you%20have%20available%20spots%3F`, '_blank');
+                  const goalText = selectedGoal ? encodeURIComponent(`\nMy goal is: ${selectedGoal}`) : '';
+                  const message = `Hey OGO Academy! I want to book private lessons in Vietnam.${goalText}\nName: `;
+                  window.open(`https://wa.me/48884035225?text=${encodeURIComponent(message)}`, '_blank');
                 }}
               >
-                REQUEST PRIVATE LESSON
+                REQUEST PRIVATE LESSONS
               </Button>
             </div>
 
@@ -1704,7 +1768,7 @@ const Vietnam = () => {
         </div>
 
         {/* Contact Form */}
-        <form className="bg-background rounded-2xl p-8 shadow-md border border-border mb-12">
+        <form onSubmit={handleContactSubmit} className="bg-background rounded-2xl p-8 shadow-md border border-border mb-12">
           <div className="space-y-6">
             <div>
               <label className="block text-sm font-semibold text-foreground mb-2">
@@ -1713,6 +1777,8 @@ const Vietnam = () => {
               <input
                 type="text"
                 required
+                value={contactName}
+                onChange={(e) => setContactName(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 placeholder="Enter your full name"
               />
@@ -1725,6 +1791,8 @@ const Vietnam = () => {
               <input
                 type="email"
                 required
+                value={contactEmail}
+                onChange={(e) => setContactEmail(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 placeholder="your@email.com"
               />
@@ -1736,6 +1804,8 @@ const Vietnam = () => {
               </label>
               <input
                 type="tel"
+                value={contactPhone}
+                onChange={(e) => setContactPhone(e.target.value)}
                 className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
                 placeholder="+1 234 567 8900"
               />
@@ -1746,6 +1816,8 @@ const Vietnam = () => {
                 type="checkbox"
                 id="consent"
                 required
+                checked={contactConsent}
+                onChange={(e) => setContactConsent(e.target.checked)}
                 className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary"
               />
               <label htmlFor="consent" className="text-sm text-muted-foreground">
@@ -1753,8 +1825,8 @@ const Vietnam = () => {
               </label>
             </div>
 
-            <Button type="submit" className="w-full text-lg py-6">
-              SEND MY REQUEST
+            <Button type="submit" className="w-full text-lg py-6" disabled={isContactSubmitting}>
+              {isContactSubmitting ? 'SENDING...' : 'SEND MY REQUEST'}
             </Button>
 
             <p className="text-center text-sm text-muted-foreground mt-4">
@@ -1958,6 +2030,9 @@ const Vietnam = () => {
     title="Book Vietnam Kite Camp"
     description="Fill in your details and we'll get back to you shortly"
     bookingDetails={bookingDetails}
+    webhookUrl={VIETNAM_WEBHOOK_URL}
+    leadSource={leadSource}
+    selectedDates={selectedDates}
   />
 
     </div>
