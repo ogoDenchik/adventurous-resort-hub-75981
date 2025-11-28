@@ -4,27 +4,27 @@ const WhyImDifferent = () => {
   const highlights = [
     {
       icon: "🏅",
-      title: "Dual Certified: Kiteboarding + Snowboard Instructor",
+      title: "DUAL CERTIFIED: KITEBOARDING + SNOWBOARD INSTRUCTOR",
       description: "Understanding board sports gives me unique teaching insight."
     },
     {
       icon: "🌍",
-      title: "Nomadic Coaching: I follow the best wind seasons worldwide",
+      title: "NOMADIC COACHING: I FOLLOW THE BEST WIND SEASONS WORLDWIDE",
       description: "So you always train in optimal conditions."
     },
     {
       icon: "📈",
-      title: "Results-Driven: 50+ students went from zero to independent riding",
+      title: "RESULTS-DRIVEN: 50+ STUDENTS WENT FROM ZERO TO INDEPENDENT RIDING",
       description: "In just 7 days."
     },
     {
       icon: "🤝",
-      title: "Returning Community: 70+ clients come back",
+      title: "RETURNING COMMUNITY: 70+ CLIENTS COME BACK",
       description: "Season after season."
     },
     {
       icon: "🚀",
-      title: "Advanced Progression: 20–30 tricks library",
+      title: "ADVANCED PROGRESSION: 20–30 TRICKS LIBRARY",
       description: "For riders wanting next-level skills."
     }
   ];
