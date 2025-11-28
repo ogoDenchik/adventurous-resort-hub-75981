@@ -6,22 +6,22 @@ const CoachStatsTrustBar = () => {
     {
       icon: Clock,
       number: '5+',
-      label: 'Years Experience'
+      label: 'YEARS EXPERIENCE'
     },
     {
       icon: Globe,
       number: '50+',
-      label: 'Spots Worldwide'
+      label: 'SPOTS WORLDWIDE'
     },
     {
       icon: Users,
       number: '500+',
-      label: 'Students Trained'
+      label: 'STUDENTS TRAINED'
     },
     {
       icon: TrendingUp,
       number: '15.2m',
-      label: 'Highest Jump'
+      label: 'HIGHEST JUMP'
     }
   ];
 
@@ -37,7 +37,7 @@ const CoachStatsTrustBar = () => {
               <div className="text-3xl md:text-4xl font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
                 {stat.number}
               </div>
-              <div className="text-sm md:text-base text-muted-foreground font-medium">
+              <div className="text-sm md:text-base text-muted-foreground font-medium uppercase">
                 {stat.label}
               </div>
             </div>

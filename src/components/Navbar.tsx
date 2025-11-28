@@ -29,8 +29,8 @@ const Navbar: React.FC = () => {
     name: 'Home',
     path: '/'
   }, {
-    name: 'About',
-    path: '/about'
+    name: 'Vietnam',
+    path: '/vietnam'
   }, {
     name: 'Kite Safari',
     path: '/kite-safari'
@@ -41,36 +41,36 @@ const Navbar: React.FC = () => {
     name: 'Cyprus',
     path: '/cyprus'
   }, {
-    name: 'Vietnam',
-    path: '/vietnam'
-  }, {
     name: 'Gallery',
     path: '/gallery'
+  }, {
+    name: 'About',
+    path: '/about'
   }, {
     name: 'Contact Us',
     path: '/contact'
   }];
-  return <header className={cn('fixed w-full top-0 z-40 transition-all duration-300', isScrolled ? 'glass py-3' : 'bg-transparent py-6')}>
+  return <header className="fixed w-full top-0 z-40 bg-white py-3 shadow-sm">
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Logo />
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-sm font-medium relative transition-all duration-300', 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0', 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300', 'hover:after:scale-x-100 hover:after:origin-bottom-left', location.pathname === link.path ? 'text-accent after:scale-x-100' : 'text-gray-900 hover:text-gray-700')}>
+        <nav className="hidden md:flex items-center space-x-6">
+          <a 
+            href="https://wa.me/48884035225" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1 text-gray-900 hover:text-green-600 transition-colors duration-300 font-medium text-sm"
+          >
+            <Phone size={16} className="text-green-600" />
+            <span>+48 884 035 225</span>
+          </a>
+          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-sm font-medium relative transition-all duration-300 uppercase', 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0', 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300', 'hover:after:scale-x-100 hover:after:origin-bottom-left', location.pathname === link.path ? 'text-accent after:scale-x-100' : 'text-gray-900 hover:text-gray-700')}>
               {link.name}
             </Link>)}
         </nav>
         
         <div className="hidden md:flex items-center space-x-4">
-          <a 
-            href="https://wa.me/48884035225" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-1 text-gray-900 hover:text-gray-700 transition-colors duration-300"
-          >
-            <Phone size={16} />
-            <span>+48 884 035 225</span>
-          </a>
           <button 
             className="btn-primary"
             onClick={() => setBookingPopupOpen(true)}
@@ -119,19 +119,19 @@ const Navbar: React.FC = () => {
         </button>
         
         <nav className="flex flex-col space-y-6">
-          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-xl font-medium py-2 border-b border-border', location.pathname === link.path ? 'text-accent' : 'text-foreground/80')} onClick={() => setIsMenuOpen(false)}>
-              {link.name}
-            </Link>)}
           <a 
             href="https://wa.me/48884035225" 
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl font-medium py-2 border-b border-border text-foreground/80 flex items-center gap-2" 
+            className="text-xl font-medium py-2 border-b border-border text-foreground/80 flex items-center gap-2 uppercase" 
             onClick={() => setIsMenuOpen(false)}
           >
             <Phone size={20} className="text-green-600" />
-            WhatsApp: +48 884 035 225
+            WHATSAPP: +48 884 035 225
           </a>
+          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-xl font-medium py-2 border-b border-border uppercase', location.pathname === link.path ? 'text-accent' : 'text-foreground/80')} onClick={() => setIsMenuOpen(false)}>
+              {link.name}
+            </Link>)}
           <button 
             className="btn-primary text-center" 
             onClick={() => {

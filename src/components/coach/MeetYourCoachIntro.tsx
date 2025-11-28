@@ -27,8 +27,8 @@ const MeetYourCoachIntro = () => {
           <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2 uppercase">
             DENIS
           </h3>
-          <p className="text-xl text-primary font-medium">
-            Private Kiteboarding Coach
+          <p className="text-xl text-primary font-medium uppercase">
+            PRIVATE KITEBOARDING COACH
           </p>
         </div>
 
