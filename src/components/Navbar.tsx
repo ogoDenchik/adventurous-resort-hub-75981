@@ -4,12 +4,17 @@ import { Menu, X, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
 import { EnhancedBookingPopup } from './EnhancedBookingPopup';
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+
+  // Check if we're on the Kite Safari page
+  const isKiteSafariPage = location.pathname === '/kite-safari';
+
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -21,6 +26,7 @@ const Navbar: React.FC = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
@@ -50,7 +56,30 @@ const Navbar: React.FC = () => {
     name: 'Contact Us',
     path: '/contact'
   }];
-  return <header className="fixed w-full top-0 z-40 bg-white py-3 shadow-sm">
+
+  // Determine header styles based on page and scroll state
+  const getHeaderStyles = () => {
+    if (isKiteSafariPage && !isScrolled) {
+      // Kite Safari page before scroll: transparent
+      return 'bg-transparent';
+    }
+    // All other cases: white background
+    return 'bg-white shadow-sm';
+  };
+
+  // Determine text color based on page and scroll state
+  const getTextColor = () => {
+    if (isKiteSafariPage && !isScrolled) {
+      return 'text-white';
+    }
+    return 'text-gray-900';
+  };
+
+  return (
+    <header className={cn(
+      "fixed w-full top-0 z-40 py-3 transition-all duration-300",
+      getHeaderStyles()
+    )}>
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Logo />
         
@@ -60,14 +89,31 @@ const Navbar: React.FC = () => {
             href="https://wa.me/48884035225" 
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1 text-gray-900 hover:text-green-600 transition-colors duration-300 font-medium text-sm"
+            className={cn(
+              "flex items-center gap-1 hover:text-green-600 transition-colors duration-300 font-medium text-sm",
+              getTextColor()
+            )}
           >
             <Phone size={16} className="text-green-600" />
             <span>+48 884 035 225</span>
           </a>
-          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-sm font-medium relative transition-all duration-300 uppercase', 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0', 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300', 'hover:after:scale-x-100 hover:after:origin-bottom-left', location.pathname === link.path ? 'text-accent after:scale-x-100' : 'text-gray-900 hover:text-gray-700')}>
+          {navLinks.map(link => (
+            <Link 
+              key={link.path} 
+              to={link.path} 
+              className={cn(
+                'text-sm font-medium relative transition-all duration-300 uppercase',
+                'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0',
+                'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300',
+                'hover:after:scale-x-100 hover:after:origin-bottom-left',
+                location.pathname === link.path 
+                  ? 'text-accent after:scale-x-100' 
+                  : cn(getTextColor(), 'hover:text-gray-700')
+              )}
+            >
               {link.name}
-            </Link>)}
+            </Link>
+          ))}
         </nav>
         
         <div className="hidden md:flex items-center space-x-4">
@@ -79,20 +125,23 @@ const Navbar: React.FC = () => {
           </button>
         </div>
         
-      {/* Mobile Right Controls */}
-      <div className="md:hidden flex items-center gap-2 relative z-[210]">
-        <button
-          className="text-gray-900 p-2 relative z-[210] cursor-pointer touch-manipulation"
-          onClick={(e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            toggleMenu();
-          }}
-          aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-        >
-          {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
+        {/* Mobile Right Controls */}
+        <div className="md:hidden flex items-center gap-2 relative z-[210]">
+          <button
+            className={cn(
+              "p-2 relative z-[210] cursor-pointer touch-manipulation",
+              isMenuOpen ? 'text-gray-900' : getTextColor()
+            )}
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+              toggleMenu();
+            }}
+            aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
       
       {/* Mobile Navigation */}
@@ -129,9 +178,19 @@ const Navbar: React.FC = () => {
             <Phone size={20} className="text-green-600" />
             WHATSAPP: +48 884 035 225
           </a>
-          {navLinks.map(link => <Link key={link.path} to={link.path} className={cn('text-xl font-medium py-2 border-b border-border uppercase', location.pathname === link.path ? 'text-accent' : 'text-foreground/80')} onClick={() => setIsMenuOpen(false)}>
+          {navLinks.map(link => (
+            <Link 
+              key={link.path} 
+              to={link.path} 
+              className={cn(
+                'text-xl font-medium py-2 border-b border-border uppercase', 
+                location.pathname === link.path ? 'text-accent' : 'text-foreground/80'
+              )} 
+              onClick={() => setIsMenuOpen(false)}
+            >
               {link.name}
-            </Link>)}
+            </Link>
+          ))}
           <button 
             className="btn-primary text-center" 
             onClick={() => {
@@ -152,6 +211,8 @@ const Navbar: React.FC = () => {
         title="Book Your Adventure"
         description="Fill in your details and we'll get back to you shortly"
       />
-    </header>;
+    </header>
+  );
 };
+
 export default Navbar;

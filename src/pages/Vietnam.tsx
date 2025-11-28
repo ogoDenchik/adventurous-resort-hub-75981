@@ -457,7 +457,7 @@ const Vietnam = () => {
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
                     <li>• 8 hours structured lessons (3–4h/day)</li>
-                    <li>• Premium equipment included (kite, board, harness)</li>
+                    <li>• Premium equipment included</li>
                     <li>• All levels welcome (zero → advanced tricks)</li>
                     <li>• Small groups: max 3–4 students per instructor</li>
                     <li>• BbTalkin radio communication</li>
@@ -495,7 +495,7 @@ const Vietnam = () => {
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">TRANSPORTATION</h3>
                   </div>
                   <ul className="space-y-2 text-muted-foreground ml-14">
-                    <li>• Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</li>
+                    <li>• Group airport transfer from Ho Chi Minh</li>
                     <li>• Group transfer for arrivals within set windows</li>
                     <li>• Transport for group excursions included</li>
                     <li>• Scooter rental available (optional, ~€5–8/day)</li>
@@ -735,7 +735,7 @@ const Vietnam = () => {
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                     <span className="text-2xl">🚐</span>
                   </div>
-                  <span className="text-muted-foreground flex items-center h-12">Group airport transfer from Ho Chi Minh (Tan Son Nhat Airport) to Phan Rang</span>
+                  <span className="text-muted-foreground flex items-center h-12">Group airport transfer from Ho Chi Minh</span>
                 </div>
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
