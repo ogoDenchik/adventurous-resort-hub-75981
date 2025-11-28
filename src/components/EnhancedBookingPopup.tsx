@@ -43,6 +43,9 @@ interface EnhancedBookingPopupProps {
   title?: string;
   description?: string;
   bookingDetails?: BookingDetails;
+  webhookUrl?: string;
+  leadSource?: string;
+  selectedDates?: string;
 }
 
 export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({ 
@@ -51,7 +54,10 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
   backgroundImage,
   title = "Book Your Adventure",
   description = "Fill in your details and we'll get back to you shortly",
-  bookingDetails
+  bookingDetails,
+  webhookUrl,
+  leadSource,
+  selectedDates
 }) => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -81,22 +87,56 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.functions.invoke('forward-webhook', {
-        body: {
-          ...data,
-          form_type: 'booking_popup',
-          booking_package: bookingDetails?.packageName || 'General Inquiry',
-          booking_location: bookingDetails?.location || 'Not specified',
-          booking_price: bookingDetails?.price || 'Not specified',
+      // If custom webhook URL is provided, send directly to it
+      if (webhookUrl) {
+        const packageName = bookingDetails?.packageName || 'General Inquiry';
+        const messagePrefix = packageName.includes('Premium') 
+          ? 'Customer is interested in Private Premium Experience.'
+          : packageName.includes('Standard')
+          ? 'Customer is interested in Standard Camp.'
+          : `Customer is interested in ${packageName}.`;
+        
+        const webhookPayload = {
+          lead_source: leadSource || 'Website Booking',
+          package: packageName,
+          name: data.name,
+          phone: data.phone,
+          email: data.email || '',
+          message: data.message ? `${messagePrefix} ${data.message}` : messagePrefix,
+          ...(selectedDates && { selected_dates: selectedDates }),
           timestamp: new Date().toISOString(),
-          ...getDeviceInfo(),
-        },
-      });
-      if (error) throw error;
+        };
+
+        const response = await fetch(webhookUrl, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(webhookPayload),
+        });
+
+        if (!response.ok) {
+          throw new Error('Webhook request failed');
+        }
+      } else {
+        // Fallback to Supabase edge function
+        const { error } = await supabase.functions.invoke('forward-webhook', {
+          body: {
+            ...data,
+            form_type: 'booking_popup',
+            booking_package: bookingDetails?.packageName || 'General Inquiry',
+            booking_location: bookingDetails?.location || 'Not specified',
+            booking_price: bookingDetails?.price || 'Not specified',
+            timestamp: new Date().toISOString(),
+            ...getDeviceInfo(),
+          },
+        });
+        if (error) throw error;
+      }
       
       toast({
-        title: "Thank you!",
-        description: "Our manager will contact you shortly.",
+        title: "Thank you, we will reply within 24 hours!",
+        description: "Our team will contact you shortly.",
       });
       
       reset();
