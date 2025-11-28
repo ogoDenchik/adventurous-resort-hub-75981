@@ -3,6 +3,9 @@ import { createRoot } from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 
+// Set dark mode as permanent default
+document.documentElement.classList.add('dark');
+
 // This ensures the app is mounted to the DOM
 const rootElement = document.getElementById("root");
 

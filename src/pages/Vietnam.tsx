@@ -1720,8 +1720,13 @@ const Vietnam = () => {
               <Button 
                 className="w-full text-lg py-6 mb-3" 
                 onClick={() => {
-                  const goalText = selectedGoal ? encodeURIComponent(`\nMy goal is: ${selectedGoal}`) : '';
-                  const message = `Hey OGO Academy! I want to book private lessons in Vietnam.${goalText}\nName: `;
+                  const goalMap: Record<string, string> = {
+                    'Learn kitesurfing': 'learn kitesurfing',
+                    'Start jumping': 'start jumping',
+                    'Learn new tricks': 'learn new tricks'
+                  };
+                  const goalText = selectedGoal ? goalMap[selectedGoal] || selectedGoal.toLowerCase() : 'learn kitesurfing';
+                  const message = `Hey OGO ACADEMY! I want to ${goalText}.`;
                   window.open(`https://wa.me/48884035225?text=${encodeURIComponent(message)}`, '_blank');
                 }}
               >
