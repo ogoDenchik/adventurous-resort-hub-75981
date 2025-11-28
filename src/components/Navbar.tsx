@@ -4,7 +4,6 @@ import { Menu, X, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
 import { EnhancedBookingPopup } from './EnhancedBookingPopup';
-import ThemeToggle from './ThemeToggle';
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -72,7 +71,6 @@ const Navbar: React.FC = () => {
             <Phone size={16} />
             <span>+48 884 035 225</span>
           </a>
-          <ThemeToggle />
           <button 
             className="btn-primary"
             onClick={() => setBookingPopupOpen(true)}
@@ -83,7 +81,6 @@ const Navbar: React.FC = () => {
         
       {/* Mobile Right Controls */}
       <div className="md:hidden flex items-center gap-2 relative z-[210]">
-        <ThemeToggle />
         <button
           className="text-gray-900 p-2 relative z-[210] cursor-pointer touch-manipulation"
           onClick={(e) => {
