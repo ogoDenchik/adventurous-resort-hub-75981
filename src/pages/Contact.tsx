@@ -9,62 +9,60 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { useToast } from '@/hooks/use-toast';
 import { supabase } from '@/integrations/supabase/client';
+import { buildWebhookPayload } from '@/utils/tracking';
+
+const WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
 const ContactPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isTesting, setIsTesting] = useState(false);
 
-  const getDeviceInfo = () => {
-    const width = window.innerWidth;
-    const deviceType = width < 768 ? 'mobile' : width < 1024 ? 'tablet' : 'desktop';
-    
-    return {
-      device_type: deviceType,
-      browser_language: navigator.language,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      platform: navigator.platform,
-    };
-  };
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     const formData = new FormData(e.currentTarget);
-    const data = {
-      name: formData.get('name') as string,
-      phone: formData.get('phone') as string,
-      email: formData.get('email') as string || '',
-      message: formData.get('message') as string || '',
-    };
+    const name = formData.get('name') as string;
+    const phone = formData.get('phone') as string;
+    const email = formData.get('email') as string || '';
+    const message = formData.get('message') as string || '';
 
     try {
       // Send email via edge function
       const { error } = await supabase.functions.invoke('send-contact-email', {
-        body: data,
+        body: { name, phone, email, message },
       });
 
       if (error) console.error('send-contact-email error:', error);
 
-      // Send to webhook via backend proxy to ensure JSON + avoid CORS
+      // Send to webhook with standardized payload
       try {
-        const { error: proxyError } = await supabase.functions.invoke('forward-webhook', {
-          body: {
-            ...data,
-            form_type: 'contact',
-            timestamp: new Date().toISOString(),
-            ...getDeviceInfo(),
+        const webhookPayload = buildWebhookPayload(
+          'Contact Page',
+          'General Inquiry',
+          name,
+          phone,
+          email,
+          message || 'Customer sent a contact request.'
+        );
+
+        const response = await fetch(WEBHOOK_URL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
           },
+          body: JSON.stringify(webhookPayload),
         });
-        if (proxyError) throw proxyError;
+
+        if (!response.ok) throw new Error('Webhook failed');
       } catch (webhookError) {
-        console.error('Webhook proxy error:', webhookError);
+        console.error('Webhook error:', webhookError);
         // Don't fail the whole submission if webhook fails
       }
 
       toast({
-        title: "Message Sent Successfully!",
+        title: "Thank you, we will reply within 24 hours!",
         description: "Thanks! We'll reply within 24h on WhatsApp or Telegram.",
       });
       

@@ -20,7 +20,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { buildWebhookPayload } from "@/utils/tracking";
+
+const VIETNAM_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -68,38 +70,34 @@ export const VietnamBookingPopup: React.FC<VietnamBookingPopupProps> = ({
     }
   }, [preselectedDates, setValue]);
 
-  const getDeviceInfo = () => {
-    const width = window.innerWidth;
-    const deviceType = width < 768 ? 'mobile' : width < 1024 ? 'tablet' : 'desktop';
-    
-    return {
-      device_type: deviceType,
-      browser_language: navigator.language,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      platform: navigator.platform,
-    };
-  };
-
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
     
     try {
-      const { error } = await supabase.functions.invoke('forward-webhook', {
-        body: {
-          name: data.name,
-          phone: data.whatsapp,
-          email: data.email || '',
-          dates: data.dates,
-          package: preselectedPackage,
-          form_type: 'vietnam_camp_booking',
-          timestamp: new Date().toISOString(),
-          ...getDeviceInfo(),
+      const packageName = preselectedPackage || 'Vietnam Camp';
+      const message = `Customer is interested in ${packageName}. Selected dates: ${data.dates}`;
+      
+      const webhookPayload = buildWebhookPayload(
+        'Vietnam Camp',
+        packageName,
+        data.name,
+        data.whatsapp,
+        data.email || '',
+        message
+      );
+
+      const response = await fetch(VIETNAM_WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify(webhookPayload),
       });
-      if (error) throw error;
+
+      if (!response.ok) throw new Error('Request failed');
       
       toast({
-        title: "Booking Request Sent!",
+        title: "Thank you, we will reply within 24 hours!",
         description: "We'll contact you shortly to confirm your spot.",
       });
       

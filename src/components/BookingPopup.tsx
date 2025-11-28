@@ -14,7 +14,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { buildWebhookPayload } from "@/utils/tracking";
+
+const WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -43,35 +45,31 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
     resolver: zodResolver(bookingSchema),
   });
 
-  const getDeviceInfo = () => {
-    const width = window.innerWidth;
-    const deviceType = width < 768 ? 'mobile' : width < 1024 ? 'tablet' : 'desktop';
-    
-    return {
-      device_type: deviceType,
-      browser_language: navigator.language,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      platform: navigator.platform,
-    };
-  };
-
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
     
     try {
-      // Send via backend proxy to avoid CORS and ensure JSON
-      const { error } = await supabase.functions.invoke('forward-webhook', {
-        body: {
-          ...data,
-          form_type: 'booking_popup',
-          timestamp: new Date().toISOString(),
-          ...getDeviceInfo(),
+      const webhookPayload = buildWebhookPayload(
+        'Website Booking',
+        'General Inquiry',
+        data.name,
+        data.phone,
+        data.email || '',
+        data.message || 'Customer sent a general inquiry.'
+      );
+
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
+        body: JSON.stringify(webhookPayload),
       });
-      if (error) throw error;
+
+      if (!response.ok) throw new Error('Request failed');
       
       toast({
-        title: "Thank you!",
+        title: "Thank you, we will reply within 24 hours!",
         description: "Our manager will contact you shortly.",
       });
       

@@ -18,6 +18,7 @@ import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
 import { useToast } from "@/hooks/use-toast";
 import { supabase } from "@/integrations/supabase/client";
+import { buildWebhookPayload } from "@/utils/tracking";
 
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -71,42 +72,29 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
     resolver: zodResolver(bookingSchema),
   });
 
-  const getDeviceInfo = () => {
-    const width = window.innerWidth;
-    const deviceType = width < 768 ? 'mobile' : width < 1024 ? 'tablet' : 'desktop';
-    
-    return {
-      device_type: deviceType,
-      browser_language: navigator.language,
-      timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
-      platform: navigator.platform,
-    };
-  };
-
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
     
     try {
-      // If custom webhook URL is provided, send directly to it
-      if (webhookUrl) {
-        const packageName = bookingDetails?.packageName || 'General Inquiry';
-        const messagePrefix = packageName.includes('Premium') 
-          ? 'Customer is interested in Private Premium Experience.'
-          : packageName.includes('Standard')
-          ? 'Customer is interested in Standard Camp.'
-          : `Customer is interested in ${packageName}.`;
-        
-        const webhookPayload = {
-          lead_source: leadSource || 'Website Booking',
-          package: packageName,
-          name: data.name,
-          phone: data.phone,
-          email: data.email || '',
-          message: data.message ? `${messagePrefix} ${data.message}` : messagePrefix,
-          ...(selectedDates && { selected_dates: selectedDates }),
-          timestamp: new Date().toISOString(),
-        };
+      const packageName = bookingDetails?.packageName || 'General Inquiry';
+      const messagePrefix = packageName.includes('Premium') 
+        ? 'Customer is interested in Private Premium Experience.'
+        : packageName.includes('Standard')
+        ? 'Customer is interested in Standard Camp.'
+        : `Customer is interested in ${packageName}.`;
+      
+      const fullMessage = data.message ? `${messagePrefix} ${data.message}` : messagePrefix;
+      
+      const webhookPayload = buildWebhookPayload(
+        leadSource || 'Website Booking',
+        packageName,
+        data.name,
+        data.phone,
+        data.email || '',
+        fullMessage
+      );
 
+      if (webhookUrl) {
         const response = await fetch(webhookUrl, {
           method: 'POST',
           headers: {
@@ -121,15 +109,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
       } else {
         // Fallback to Supabase edge function
         const { error } = await supabase.functions.invoke('forward-webhook', {
-          body: {
-            ...data,
-            form_type: 'booking_popup',
-            booking_package: bookingDetails?.packageName || 'General Inquiry',
-            booking_location: bookingDetails?.location || 'Not specified',
-            booking_price: bookingDetails?.price || 'Not specified',
-            timestamp: new Date().toISOString(),
-            ...getDeviceInfo(),
-          },
+          body: webhookPayload,
         });
         if (error) throw error;
       }

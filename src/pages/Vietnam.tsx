@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { buildWebhookPayload } from '@/utils/tracking';
 
 const VIETNAM_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
@@ -49,19 +50,21 @@ const Vietnam = () => {
     setIsContactSubmitting(true);
     
     try {
+      const webhookPayload = buildWebhookPayload(
+        'Get in Touch',
+        'Vietnam Camp',
+        contactName,
+        contactPhone || '',
+        contactEmail,
+        'User clicked Get in Touch.'
+      );
+
       const response = await fetch(VIETNAM_WEBHOOK_URL, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({
-          lead_source: 'Get in Touch',
-          name: contactName,
-          phone: contactPhone || '',
-          email: contactEmail,
-          message: 'User clicked Get in Touch.',
-          timestamp: new Date().toISOString(),
-        }),
+        body: JSON.stringify(webhookPayload),
       });
 
       if (!response.ok) {
