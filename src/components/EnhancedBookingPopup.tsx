@@ -169,9 +169,9 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
               <div className="max-w-2xl mx-auto">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                    <Badge className="mb-2 bg-primary text-primary-foreground">
-                      {bookingDetails.packageName}
-                    </Badge>
+                  <Badge className="mb-2 bg-primary text-primary-foreground">
+                    {bookingDetails.packageName}
+                  </Badge>
                     <h3 className="text-2xl font-display font-bold text-foreground uppercase">
                       {bookingDetails.location}
                     </h3>

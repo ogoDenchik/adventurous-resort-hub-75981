@@ -64,14 +64,14 @@ const Hero: React.FC = () => {
             YOUR KITESURF COACH<br />IN WORLD'S BEST SPOTS
           </h1>
           <p 
-            className="text-lg md:text-xl text-white max-w-2xl mb-8 text-shadow-md"
+            className="text-lg md:text-xl text-white max-w-2xl mb-8 text-shadow-md uppercase"
             style={{
               color: '#FFFFFF',
               textShadow: '0 0 10px rgba(255, 255, 255, 0.5)'
             }}
           >
-            Egypt • Vietnam • Brazil • Cyprus<br />
-            Proven Step-by-Step Methodology
+            EGYPT • VIETNAM • BRAZIL • CYPRUS<br />
+            PROVEN STEP-BY-STEP METHODOLOGY
           </p>
           <button 
             onClick={scrollToCalendar}

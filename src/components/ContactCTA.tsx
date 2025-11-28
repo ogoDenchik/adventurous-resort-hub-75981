@@ -97,34 +97,34 @@ const ContactCTA: React.FC = () => {
         {/* Contact Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-16">
           <a
-            href="https://wa.me/YOUR_NUMBER"
+            href="https://wa.me/48884035225"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl text-center"
           >
             <MessageSquare className="w-8 h-8 mx-auto mb-3 text-green-400" />
-            <div className="font-semibold text-lg mb-1">💬 WHATSAPP</div>
-            <div className="text-sm text-white/60">Chat directly</div>
+            <div className="font-semibold text-lg mb-1 uppercase">💬 WHATSAPP</div>
+            <div className="text-sm text-white/60 uppercase">CHAT DIRECTLY</div>
           </a>
 
           <a
-            href="https://instagram.com/YOUR_HANDLE"
+            href="https://instagram.com/ogo_kite_academy"
             target="_blank"
             rel="noopener noreferrer"
             className="group bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl text-center"
           >
             <Instagram className="w-8 h-8 mx-auto mb-3 text-pink-400" />
-            <div className="font-semibold text-lg mb-1">📱 INSTAGRAM DM</div>
-            <div className="text-sm text-white/60">Message me</div>
+            <div className="font-semibold text-lg mb-1 uppercase">📱 INSTAGRAM DM</div>
+            <div className="text-sm text-white/60 uppercase">MESSAGE ME</div>
           </a>
 
           <a
-            href="mailto:your.email@example.com"
+            href="mailto:info@ogokiteacademy.com"
             className="group bg-white/10 hover:bg-white/20 backdrop-blur-sm border border-white/20 rounded-xl p-6 transition-all duration-300 hover:scale-105 hover:shadow-2xl text-center"
           >
             <Mail className="w-8 h-8 mx-auto mb-3 text-blue-400" />
-            <div className="font-semibold text-lg mb-1">📧 EMAIL</div>
-            <div className="text-sm text-white/60">Send a request</div>
+            <div className="font-semibold text-lg mb-1 uppercase">📧 EMAIL</div>
+            <div className="text-sm text-white/60 uppercase">SEND A REQUEST</div>
           </a>
         </div>
 

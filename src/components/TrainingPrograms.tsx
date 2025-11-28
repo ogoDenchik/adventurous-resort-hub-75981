@@ -1,15 +1,27 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button } from './ui/button';
 import { Badge } from './ui/badge';
 import { GraduationCap, Crown, RefreshCw, Tent, Check } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { EnhancedBookingPopup } from './EnhancedBookingPopup';
+import { buildWebhookPayload } from '@/utils/tracking';
+import { useToast } from '@/hooks/use-toast';
+
+const HOMEPAGE_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
 const TrainingPrograms = () => {
+  const { toast } = useToast();
+  const [leaveRequestOpen, setLeaveRequestOpen] = useState(false);
+
+  const handleWhatsAppClick = (message: string) => {
+    const encodedMessage = encodeURIComponent(message);
+    window.open(`https://wa.me/48884035225?text=${encodedMessage}`, '_blank');
+  };
+
   const programs = [
     {
       icon: GraduationCap,
       title: "PRIVATE COACHING",
-      subtitle: "10 Hours | Egypt & Vietnam",
+      subtitle: "10 HOURS | EGYPT & VIETNAM",
       description: "Perfect for beginners and intermediate riders",
       features: [
         "Structured step-by-step progression",
@@ -20,13 +32,13 @@ const TrainingPrograms = () => {
       ],
       price: "€800",
       cta: "BOOK NOW",
-      link: "/booking",
+      whatsappMessage: "Привет, я бы хотел забронировать уроки с OGO Academy.",
       badge: null
     },
     {
       icon: Crown,
       title: "VIP 1-ON-1 TRAINING",
-      subtitle: "10 Hours | Egypt Only",
+      subtitle: "10 HOURS | EGYPT ONLY",
       description: "Maximum attention, maximum results",
       features: [
         "Exclusively 1-on-1 (or max 2 students)",
@@ -37,13 +49,13 @@ const TrainingPrograms = () => {
       ],
       price: "€1,500",
       cta: "BOOK VIP",
-      link: "/booking",
+      whatsappMessage: "Привет, я бы хотел забронировать VIP обучение в OGO Academy.",
       badge: "PREMIUM"
     },
     {
       icon: RefreshCw,
       title: "REFRESH COURSE",
-      subtitle: "3 Hours | Egypt & Vietnam",
+      subtitle: "3 HOURS | EGYPT & VIETNAM",
       description: "Get back in the game after a break",
       features: [
         "Technique tune-up",
@@ -54,13 +66,13 @@ const TrainingPrograms = () => {
       ],
       price: "€270",
       cta: "BOOK REFRESH",
-      link: "/booking",
+      whatsappMessage: "Привет, я бы хотел забронировать Refresh курс.",
       badge: null
     },
     {
       icon: Tent,
       title: "KITE CAMPS & SAFARIS",
-      subtitle: "7-10 Days | Vietnam & Egypt",
+      subtitle: "7-10 DAYS | VIETNAM & EGYPT",
       description: "All-inclusive adventures",
       features: [
         "Accommodation + meals included",
@@ -72,7 +84,7 @@ const TrainingPrograms = () => {
       price: "From €1,200",
       priceSubtext: "EGYPT SAFARI: Custom pricing (families welcome)",
       cta: "REQUEST DETAILS",
-      link: "/contact",
+      whatsappMessage: "Привет, OGO Academy, я бы хотел больше узнать про ваши кемпы и кайт-сафари.",
       badge: null
     }
   ];
@@ -116,7 +128,7 @@ const TrainingPrograms = () => {
 
                   {/* Title & Subtitle */}
                   <h3 className="text-2xl font-display font-bold mb-2 uppercase">{program.title}</h3>
-                  <p className="text-sm text-muted-foreground mb-4">{program.subtitle}</p>
+                  <p className="text-sm text-muted-foreground mb-4 uppercase">{program.subtitle}</p>
                   
                   {/* Description */}
                   <p className="text-foreground/80 mb-6">{program.description}</p>
@@ -135,48 +147,52 @@ const TrainingPrograms = () => {
                   <div className="mb-6">
                     <p className="text-3xl font-bold text-primary mb-1">{program.price}</p>
                     {program.priceSubtext && (
-                      <p className="text-xs text-muted-foreground">{program.priceSubtext}</p>
+                      <p className="text-xs text-muted-foreground uppercase">{program.priceSubtext}</p>
                     )}
                   </div>
 
                   {/* CTA Button */}
-                  <Link to={program.link}>
-                    <Button 
-                      className="w-full h-12 text-base font-semibold rounded-xl"
-                      size="lg"
-                    >
-                      {program.cta}
-                    </Button>
-                  </Link>
+                  <Button 
+                    className="w-full h-12 text-base font-semibold rounded-xl"
+                    size="lg"
+                    onClick={() => handleWhatsAppClick(program.whatsappMessage)}
+                  >
+                    {program.cta}
+                  </Button>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* Footer Info */}
-        <div className="text-center space-y-4 animate-slide-up animation-delay-200">
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-sm text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <span className="text-lg">🛡</span>
-              <span>All programs include insurance coverage during lessons</span>
-            </div>
-            <div className="flex items-center gap-2">
-              <span className="text-lg">🎓</span>
-              <span>IKO Certification available upon request (additional fee)</span>
-            </div>
-          </div>
-          
-          <div className="pt-6">
-            <p className="text-foreground/70 mb-4">Not sure which program suits you?</p>
-            <Link to="/contact">
-              <Button variant="outline" size="lg" className="rounded-xl">
-                Contact me to discuss
-              </Button>
-            </Link>
-          </div>
+        {/* Leave a Request Section */}
+        <div className="text-center mt-12">
+          <p className="text-foreground/70 mb-4 uppercase">OR LEAVE A REQUEST</p>
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="rounded-xl"
+            onClick={() => setLeaveRequestOpen(true)}
+          >
+            LEAVE A REQUEST
+          </Button>
         </div>
       </div>
+
+      {/* Leave a Request Popup */}
+      <EnhancedBookingPopup 
+        open={leaveRequestOpen} 
+        onOpenChange={setLeaveRequestOpen}
+        backgroundImage="/lovable-uploads/hero-main-coaching.jpg"
+        title="LEAVE A REQUEST"
+        description="Fill in your details and we'll get back to you shortly"
+        webhookUrl={HOMEPAGE_WEBHOOK_URL}
+        leadSource="Homepage Training Programs - Leave a Request"
+        bookingDetails={{
+          packageName: "Request Details",
+          location: "Worldwide",
+        }}
+      />
     </section>
   );
 };

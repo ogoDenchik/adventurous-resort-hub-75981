@@ -50,18 +50,18 @@ const LocationCard: React.FC<LocationCardProps> = ({
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
         <div className="absolute top-4 right-4">
-          <Badge variant={badgeVariant} className="text-xs font-semibold">
+          <Badge variant={badgeVariant} className="text-xs font-semibold uppercase">
             {badge}
           </Badge>
         </div>
       </div>
       
       <CardHeader>
-        <CardTitle className="text-2xl flex items-center gap-2">
+        <CardTitle className="text-2xl flex items-center gap-2 uppercase">
           <span className="text-3xl">{flag}</span>
           {country}
         </CardTitle>
-        <CardDescription className="text-base font-medium">{location}</CardDescription>
+        <CardDescription className="text-base font-medium uppercase">{location}</CardDescription>
       </CardHeader>
 
       <CardContent className="flex-grow flex flex-col gap-4">
@@ -76,7 +76,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
 
         {/* Highlights */}
         <div className="space-y-2">
-          <p className="text-sm font-semibold text-muted-foreground">Highlights:</p>
+          <p className="text-sm font-semibold text-muted-foreground uppercase">HIGHLIGHTS:</p>
           <div className="space-y-1">
             {highlights.map((highlight, index) => (
               <div key={index} className="flex items-start gap-2">
@@ -89,7 +89,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
 
         {/* Available Services */}
         <div className="space-y-2">
-          <p className="text-sm font-semibold text-muted-foreground">Available:</p>
+          <p className="text-sm font-semibold text-muted-foreground uppercase">AVAILABLE:</p>
           <div className="space-y-1">
             {services.map((service, index) => (
               <p key={index} className="text-sm pl-4">
@@ -145,10 +145,10 @@ const CalendarLocations: React.FC = () => {
     {
       flag: "🇻🇳",
       country: "VIETNAM",
-      location: "Phan Rang",
+      location: "PHAN RANG",
       dates: [
         "January 20 – January 30, 2026",
-        "March 1 – March 11, 2026"
+        "February 13 – February 23, 2026"
       ],
       highlights: [
         "Perfect flat water",
@@ -165,16 +165,17 @@ const CalendarLocations: React.FC = () => {
       badge: "BOOKING OPEN",
       badgeVariant: "default",
       ctaText: "EXPLORE VIETNAM",
-      ctaLink: "/booking",
+      ctaLink: "/vietnam",
       image: "/lovable-uploads/hero-kite-action.jpg"
     },
     {
       flag: "🇪🇬",
       country: "EGYPT",
-      location: "El Gouna / Red Sea",
+      location: "EL GOUNA / RED SEA",
       dates: [
         "April 11 – April 18, 2026",
-        "April 18 – April 25, 2026"
+        "April 18 – April 25, 2026",
+        "April 30 – May 7, 2026"
       ],
       highlights: [
         "World-class lagoons",
@@ -192,13 +193,13 @@ const CalendarLocations: React.FC = () => {
       badge: "BOOKING OPEN",
       badgeVariant: "default",
       ctaText: "EXPLORE EGYPT",
-      ctaLink: "/booking",
+      ctaLink: "/kite-safari",
       image: "/lovable-uploads/safari-beach-instruction.jpg"
     },
     {
       flag: "🇨🇾",
       country: "CYPRUS",
-      location: "Avdimou Beach",
+      location: "AVDIMOU BEACH",
       dates: ["All Year Round, 2026"],
       highlights: [
         "Ideal for first steps",
@@ -221,10 +222,10 @@ const CalendarLocations: React.FC = () => {
     {
       flag: "🇧🇷",
       country: "BRAZIL",
-      location: "Best Spots",
+      location: "BEST SPOTS",
       dates: [
         "November 1 – November 15, 2026",
-        "November 20 – December 4, 2026 (14 days)"
+        "November 20 – December 4, 2026"
       ],
       highlights: [
         "Strong daily wind",

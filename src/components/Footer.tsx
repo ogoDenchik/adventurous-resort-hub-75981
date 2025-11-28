@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
       <div className="container mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 py-16 px-4">
           <div className="space-y-4 animate-fade-in">
-            <h3 className="text-2xl font-display font-semibold">OGO Kite Academy</h3>
+            <h3 className="text-2xl font-display font-semibold uppercase">OGO KITE ACADEMY</h3>
             <p className="text-accent-foreground/80 max-w-xs">
               Premium kitesurfing trips and training. We connect people through wind, travel and community across Cyprus, Brazil and Egypt.
             </p>
@@ -53,43 +53,53 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="space-y-4 animate-fade-in animation-delay-200">
-            <h4 className="text-lg font-display font-semibold">Quick Links</h4>
+            <h4 className="text-lg font-display font-semibold uppercase">QUICK LINKS</h4>
             <ul className="space-y-2">
               <li>
-                <Link to="/" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline">
-                  Home
+                <Link to="/" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  HOME
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline">
-                  About Us
+                <Link to="/vietnam" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  VIETNAM
                 </Link>
               </li>
               <li>
-                <Link to="/kite-safari" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline">
-                  KiteSafari
+                <Link to="/kite-safari" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  KITE SAFARI
                 </Link>
               </li>
               <li>
-                <Link to="/brazil" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline">
-                  Brazil
+                <Link to="/brazil" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  BRAZIL
                 </Link>
               </li>
               <li>
-                <Link to="/cyprus" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline">
-                  Cyprus
+                <Link to="/cyprus" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  CYPRUS
                 </Link>
               </li>
               <li>
-                <Link to="/gallery" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline">
-                  Gallery
+                <Link to="/gallery" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  GALLERY
+                </Link>
+              </li>
+              <li>
+                <Link to="/about" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  ABOUT
+                </Link>
+              </li>
+              <li>
+                <Link to="/contact" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 inline-block py-1 link-underline uppercase">
+                  CONTACT US
                 </Link>
               </li>
             </ul>
           </div>
           
           <div className="space-y-4 animate-fade-in animation-delay-400">
-            <h4 className="text-lg font-display font-semibold">Contact Info</h4>
+            <h4 className="text-lg font-display font-semibold uppercase">CONTACT INFO</h4>
             <ul className="space-y-4">
               <li className="flex items-start space-x-3">
                 <MapPin size={20} className="mt-1 flex-shrink-0" />
@@ -110,7 +120,7 @@ const Footer: React.FC = () => {
           </div>
           
           <div className="space-y-4 animate-fade-in animation-delay-600">
-            <h4 className="text-lg font-display font-semibold">Connect With Us</h4>
+            <h4 className="text-lg font-display font-semibold uppercase">CONNECT WITH US</h4>
             <p className="text-accent-foreground/80">
               Follow our adventures and stay updated with the latest kitesurfing trips.
             </p>
@@ -119,44 +129,44 @@ const Footer: React.FC = () => {
                 href="https://wa.me/48884035225" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2"
+                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase"
               >
                 <MessageCircle size={18} />
-                <span>WhatsApp</span>
+                <span>WHATSAPP</span>
               </a>
               <a 
                 href="https://www.instagram.com/ogo_kite_academy/" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2"
+                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase"
               >
                 <Instagram size={18} />
-                <span>Instagram</span>
+                <span>INSTAGRAM</span>
               </a>
               <a 
                 href="https://t.me/ogodenchik" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2"
+                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase"
               >
                 <Send size={18} />
-                <span>Telegram</span>
+                <span>TELEGRAM</span>
               </a>
               <a 
                 href="https://www.youtube.com/@ogoAcademy_EN" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2"
+                className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase"
               >
                 <Youtube size={18} />
-                <span>YouTube</span>
+                <span>YOUTUBE</span>
               </a>
             </div>
           </div>
         </div>
         
         <div className="border-t border-white/10 py-6 px-4 text-center text-accent-foreground/70">
-          <p>© 2022 OGO Kite Academy. All rights reserved.</p>
+          <p className="uppercase">© 2022 OGO KITE ACADEMY. ALL RIGHTS RESERVED.</p>
         </div>
       </div>
     </footer>

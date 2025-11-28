@@ -7,22 +7,22 @@ const TrustIndicators = () => {
     {
       icon: Users,
       number: '500+',
-      label: 'Students Trained'
+      label: 'STUDENTS TRAINED'
     },
     {
       icon: Rocket,
       number: '50+',
-      label: '"Zero to Hero" in 7 Days'
+      label: '"ZERO TO HERO" IN 7 DAYS'
     },
     {
       icon: Repeat,
       number: '70+',
-      label: 'Returning Clients'
+      label: 'RETURNING CLIENTS'
     },
     {
       icon: Globe,
       number: '50+',
-      label: 'Spots Worldwide'
+      label: 'SPOTS WORLDWIDE'
     }
   ];
 
@@ -39,7 +39,7 @@ const TrustIndicators = () => {
                 <div className="text-3xl md:text-4xl font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
                   {stat.number}
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium">
+                <div className="text-sm md:text-base text-muted-foreground font-medium uppercase">
                   {stat.label}
                 </div>
               </div>

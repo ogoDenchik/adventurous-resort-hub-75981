@@ -672,7 +672,7 @@ const Vietnam = () => {
         {/* Section Header */}
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
-            INVESTMENT
+            PICK YOUR PROGRAM
           </h2>
           <p className="text-xl text-muted-foreground uppercase">
             ALL-INCLUSIVE CAMP PRICING
@@ -902,7 +902,7 @@ const Vietnam = () => {
                 setSelectedPackage('Private Premium Experience');
                 setLeadSource('Vietnam Camp');
                 setBookingDetails({
-                  packageName: 'Private Premium Experience (€2,500)',
+                  packageName: 'Private Premium Experience',
                   location: 'Vietnam Kite Camp',
                   price: '€2740',
                   highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
@@ -1611,7 +1611,7 @@ const Vietnam = () => {
                   
                   if (packageName === 'Private Premium') {
                     setBookingDetails({
-                      packageName: 'Private Premium Experience (€2,500)',
+                      packageName: 'Private Premium Experience',
                       location: 'Vietnam Kite Camp',
                       price: '€2740',
                       highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
