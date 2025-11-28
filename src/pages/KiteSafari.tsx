@@ -11,6 +11,8 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
 
+const KITESAFARI_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
+
 const KiteSafari: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
   const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
@@ -2300,6 +2302,8 @@ const KiteSafari: React.FC = () => {
         title="Book Egypt Kite Safari"
         description="Fill in your details and we'll get back to you shortly"
         bookingDetails={bookingDetails}
+        webhookUrl={KITESAFARI_WEBHOOK_URL}
+        leadSource="Kite Safari Booking"
       />
       
       <Footer />

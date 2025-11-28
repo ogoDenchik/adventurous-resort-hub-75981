@@ -14,7 +14,9 @@ import {
 } from '@/components/ui/select';
 import { MessageSquare, Instagram, Mail } from 'lucide-react';
 import { toast } from '@/hooks/use-toast';
-import { supabase } from '@/integrations/supabase/client';
+import { buildWebhookPayload } from '@/utils/tracking';
+
+const WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
 interface ContactFormData {
   name: string;
@@ -41,20 +43,29 @@ const ContactCTA: React.FC = () => {
     }
 
     try {
-      const payload = {
-        ...data,
-        form_type: "contact_request",
-        timestamp: new Date().toISOString(),
-      };
+      const fullMessage = `Interest: ${data.interest || 'Not specified'}. Level: ${data.level || 'Not specified'}. ${data.message || ''}`;
+      
+      const webhookPayload = buildWebhookPayload(
+        'Ready to Start Journey',
+        data.interest || 'General Inquiry',
+        data.name,
+        data.phone || '',
+        data.email,
+        fullMessage
+      );
 
-      const { error } = await supabase.functions.invoke('forward-webhook', {
-        body: payload
+      const response = await fetch(WEBHOOK_URL, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(webhookPayload),
       });
 
-      if (error) throw error;
+      if (!response.ok) throw new Error('Request failed');
 
       toast({
-        title: "Request Sent!",
+        title: "Thank you, we will reply within 24 hours!",
         description: "I'll get back to you within 24 hours",
       });
       reset();
