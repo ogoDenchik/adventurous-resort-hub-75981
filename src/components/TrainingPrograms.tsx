@@ -32,7 +32,7 @@ const TrainingPrograms = () => {
       ],
       price: "€800",
       cta: "BOOK NOW",
-      whatsappMessage: "Привет, я бы хотел забронировать уроки с OGO Academy.",
+      whatsappMessage: "Hey, I would like to book lessons with OGO Academy.",
       badge: null
     },
     {
@@ -49,7 +49,7 @@ const TrainingPrograms = () => {
       ],
       price: "€1,500",
       cta: "BOOK VIP",
-      whatsappMessage: "Привет, я бы хотел забронировать VIP обучение в OGO Academy.",
+      whatsappMessage: "Hey, I would like to book VIP training with OGO Academy.",
       badge: "PREMIUM"
     },
     {
@@ -66,7 +66,7 @@ const TrainingPrograms = () => {
       ],
       price: "€270",
       cta: "BOOK REFRESH",
-      whatsappMessage: "Привет, я бы хотел забронировать Refresh курс.",
+      whatsappMessage: "Hey, I would like to book a Refresh course.",
       badge: null
     },
     {
@@ -84,7 +84,7 @@ const TrainingPrograms = () => {
       price: "From €1,200",
       priceSubtext: "EGYPT SAFARI: Custom pricing (families welcome)",
       cta: "REQUEST DETAILS",
-      whatsappMessage: "Привет, OGO Academy, я бы хотел больше узнать про ваши кемпы и кайт-сафари.",
+      whatsappMessage: "Hey OGO Academy, I would like to learn more about your camps and kite safaris.",
       badge: null
     }
   ];
