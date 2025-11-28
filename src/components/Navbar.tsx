@@ -12,9 +12,6 @@ const Navbar: React.FC = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Check if we're on the Kite Safari page
-  const isKiteSafariPage = location.pathname === '/kite-safari';
-
   useEffect(() => {
     const handleScroll = () => {
       if (window.scrollY > 50) {
@@ -57,19 +54,17 @@ const Navbar: React.FC = () => {
     path: '/contact'
   }];
 
-  // Determine header styles based on page and scroll state
+  // Determine header styles based on scroll state
   const getHeaderStyles = () => {
-    if (isKiteSafariPage && !isScrolled) {
-      // Kite Safari page before scroll: transparent
+    if (!isScrolled) {
       return 'bg-transparent';
     }
-    // All other cases: white background
     return 'bg-white shadow-sm';
   };
 
-  // Determine text color based on page and scroll state
+  // Determine text color based on scroll state
   const getTextColor = () => {
-    if (isKiteSafariPage && !isScrolled) {
+    if (!isScrolled) {
       return 'text-white';
     }
     return 'text-gray-900';
