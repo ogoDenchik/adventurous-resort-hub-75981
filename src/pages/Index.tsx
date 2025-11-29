@@ -20,7 +20,7 @@ const Index: React.FC = () => {
       <EnhancedBookingPopup 
         open={isBookingOpen} 
         onOpenChange={setIsBookingOpen}
-        backgroundImage="/lovable-uploads/hero-main-coaching.jpg"
+        backgroundImage="/lovable-uploads/hero-main-coaching-compressed.jpg"
         title="Book Your Adventure"
         description="Fill in your details and we'll get back to you shortly"
       />

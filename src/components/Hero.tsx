@@ -5,6 +5,7 @@ import { useSpring, animated } from '@react-spring/web';
 
 const Hero: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
+  const [imageLoaded, setImageLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
   
   const parallaxProps = useSpring({
@@ -32,6 +33,13 @@ const Hero: React.FC = () => {
       window.removeEventListener('scroll', handleScroll);
     };
   }, []);
+
+  // Preload image
+  useEffect(() => {
+    const img = new Image();
+    img.src = '/lovable-uploads/hero-main-coaching-compressed.jpg';
+    img.onload = () => setImageLoaded(true);
+  }, []);
   
   const scrollToCalendar = () => {
     const calendarSection = document.getElementById('calendar-section');
@@ -42,14 +50,25 @@ const Hero: React.FC = () => {
   
   return (
     <div ref={heroRef} className="relative h-screen w-full overflow-hidden">
+      {/* Loading placeholder with blur */}
+      <div 
+        className={cn(
+          "absolute inset-0 bg-gradient-to-b from-gray-800 to-gray-900 transition-opacity duration-500",
+          imageLoaded ? "opacity-0" : "opacity-100"
+        )}
+      />
+      
       <div className="absolute inset-0 bg-black/50 z-10" />
       <animated.div 
         style={{
-          backgroundImage: `url(/lovable-uploads/hero-main-coaching.jpg)`,
+          backgroundImage: `url(/lovable-uploads/hero-main-coaching-compressed.jpg)`,
           filter: 'contrast(1.1) brightness(0.9)',
           transform: parallaxProps.transform
         }}
-        className="absolute inset-0 w-full h-full bg-cover bg-center"
+        className={cn(
+          "absolute inset-0 w-full h-full bg-cover bg-center transition-opacity duration-700",
+          imageLoaded ? "opacity-100" : "opacity-0"
+        )}
       />
       
       <div className="relative h-full flex flex-col items-center justify-center text-center px-4 z-20">
