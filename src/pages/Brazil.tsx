@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import { BookingPopup } from '@/components/BookingPopup';
+import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
 import { Button } from '@/components/ui/button';
-import { PlaneLanding, PlaneTakeoff, MessageCircle, Instagram, Send } from 'lucide-react';
+import { PlaneLanding, PlaneTakeoff, MessageCircle, Instagram, Send, Home } from 'lucide-react';
 
 const Brazil: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
@@ -38,28 +39,6 @@ const Brazil: React.FC = () => {
           >
             Book Your Adventure
           </Button>
-        </div>
-      </section>
-
-      {/* Trip Dates Marquee */}
-      <section className="relative overflow-hidden bg-green-500 py-3">
-        <div className="flex animate-marquee whitespace-nowrap">
-          <div className="flex">
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-          </div>
-          <div className="flex" aria-hidden="true">
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-          </div>
         </div>
       </section>
 
@@ -192,28 +171,6 @@ const Brazil: React.FC = () => {
               <p className="text-lg text-white/80">
                 Instant feedback, faster progress, maximum safety
               </p>
-            </div>
-          </div>
-        </section>
-
-        {/* Trip Dates Marquee */}
-        <section className="relative overflow-hidden bg-green-500 py-3">
-          <div className="flex animate-marquee whitespace-nowrap">
-            <div className="flex">
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-            </div>
-            <div className="flex" aria-hidden="true">
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
-              <span className="mx-8 text-black font-semibold text-lg">Trip Dates: November 4–18</span>
             </div>
           </div>
         </section>
@@ -664,11 +621,53 @@ const Brazil: React.FC = () => {
             </div>
           </div>
         </section>
+
+        {/* Final CTA Block */}
+        <section className="py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="bg-card rounded-2xl p-8 md:p-12 max-w-3xl mx-auto text-center shadow-lg border border-border">
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 uppercase">
+                Want to Know More?
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Get more details about our Brazil trip or head back to explore other destinations
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full sm:w-auto text-base px-8 py-6 gap-2 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  >
+                    <Home className="w-5 h-5" />
+                    Back to Homepage
+                  </Button>
+                </Link>
+                <a 
+                  href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20know%20more%20about%20the%20Brazil%20trip!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto text-base px-8 py-6 gap-2"
+                  >
+                    <MessageCircle className="w-5 h-5" />
+                    Get More Details
+                  </Button>
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       
-      <BookingPopup 
+      <EnhancedBookingPopup 
         open={bookingPopupOpen} 
-        onOpenChange={setBookingPopupOpen} 
+        onOpenChange={setBookingPopupOpen}
+        backgroundImage="/lovable-uploads/brazil-hero-team.png"
+        title="Book Your Brazil Adventure"
+        description="Fill in your details and we'll get back to you shortly"
       />
       
       <Footer />
