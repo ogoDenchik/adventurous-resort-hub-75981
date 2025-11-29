@@ -33,7 +33,7 @@ const Cyprus: React.FC = () => {
       <ScrollToTop />
       
       {/* Hero Section */}
-      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+      <section className="relative h-[70vh] min-h-[500px] flex items-center justify-center overflow-hidden pt-20">
         <div 
           className="absolute inset-0 bg-cover bg-center"
           style={{ backgroundImage: 'url(/lovable-uploads/cyprus-hero-aerial.jpg)' }}

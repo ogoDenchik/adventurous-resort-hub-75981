@@ -1,8 +1,9 @@
-
 import React, { useState } from 'react';
-import { ArrowLeft, ArrowRight, X } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { ArrowLeft, ArrowRight, X, Home, Compass } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { Button } from '@/components/ui/button';
 
 const Gallery: React.FC = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -115,23 +116,30 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow pt-28 md:pt-32 pb-24">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16 animate-slide-up">
-            <h1 className="text-4xl md:text-5xl font-display font-bold mb-4">OGO Gallery</h1>
-            <p className="text-foreground/70 max-w-2xl mx-auto">
+          {/* Header Section - Kite Safari Style */}
+          <div className="text-center mb-16">
+            <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 uppercase tracking-wider">
+              Our Adventures
+            </span>
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 uppercase">
+              OGO Gallery
+            </h1>
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               Experience the energy, adventure, and community of OGO Kite Academy through 50 curated moments
             </p>
           </div>
           
+          {/* Gallery Grid - Kite Safari Style */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
             {galleryImages.map((image) => (
               <div 
                 key={image.id} 
-                className="relative overflow-hidden rounded-lg shadow-md group hover-scale"
+                className="relative overflow-hidden rounded-xl shadow-md group cursor-pointer transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
                 onClick={() => openModal(image.src)}
               >
                 <div className="aspect-square overflow-hidden">
@@ -141,50 +149,87 @@ const Gallery: React.FC = () => {
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
                   />
                 </div>
-                <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-40 transition-all duration-300 flex items-center justify-center">
-                  <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-center p-4">
-                    <p className="font-display text-lg">{image.alt}</p>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex items-end">
+                  <div className="p-4 w-full">
+                    <p className="font-display text-white text-sm font-medium">{image.alt}</p>
                   </div>
                 </div>
               </div>
             ))}
           </div>
+
+          {/* CTA Buttons - Kite Safari Style */}
+          <div className="mt-20 text-center">
+            <div className="bg-card rounded-2xl p-8 md:p-12 max-w-3xl mx-auto shadow-lg border border-border">
+              <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 uppercase">
+                Ready for Your Adventure?
+              </h2>
+              <p className="text-muted-foreground mb-8">
+                Explore our destinations or head back to the homepage
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/">
+                  <Button 
+                    variant="outline" 
+                    size="lg" 
+                    className="w-full sm:w-auto text-base px-8 py-6 gap-2 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
+                  >
+                    <Home className="w-5 h-5" />
+                    Homepage
+                  </Button>
+                </Link>
+                <Link to="/kite-safari">
+                  <Button 
+                    size="lg" 
+                    className="w-full sm:w-auto text-base px-8 py-6 gap-2"
+                  >
+                    <Compass className="w-5 h-5" />
+                    Explore Destinations
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
 
+      {/* Modal - Enhanced Style */}
       {selectedImage && (
-        <div className="fixed inset-0 bg-black bg-opacity-90 z-50 flex items-center justify-center p-4">
+        <div className="fixed inset-0 bg-black/95 z-50 flex items-center justify-center p-4">
           <div className="relative max-w-5xl w-full">
-            <button onClick={closeModal} className="absolute -top-12 right-0 text-white p-2 hover:text-gray-300 transition-colors">
-              <X size={24} />
+            <button 
+              onClick={closeModal} 
+              className="absolute -top-12 right-0 text-white p-2 hover:text-primary transition-colors rounded-full hover:bg-white/10"
+            >
+              <X size={28} />
             </button>
             
             <div className="flex justify-between items-center">
               <button 
                 onClick={() => navigateImage('prev')} 
-                className="bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-colors"
+                className="bg-white/10 text-white p-3 rounded-full hover:bg-primary transition-all duration-300"
               >
                 <ArrowLeft size={24} />
               </button>
               
-              <div className="flex-grow flex justify-center mx-2">
+              <div className="flex-grow flex justify-center mx-4">
                 <img 
                   src={selectedImage} 
                   alt="Gallery image" 
-                  className="max-h-[80vh] object-contain" 
+                  className="max-h-[80vh] object-contain rounded-lg" 
                 />
               </div>
               
               <button 
                 onClick={() => navigateImage('next')} 
-                className="bg-black/40 text-white p-3 rounded-full hover:bg-black/60 transition-colors"
+                className="bg-white/10 text-white p-3 rounded-full hover:bg-primary transition-all duration-300"
               >
                 <ArrowRight size={24} />
               </button>
             </div>
             
-            <div className="text-center text-white mt-4">
-              <p>{getCurrentIndex() + 1} / {galleryImages.length}</p>
+            <div className="text-center text-white/80 mt-6">
+              <p className="text-sm font-medium">{getCurrentIndex() + 1} / {galleryImages.length}</p>
             </div>
           </div>
         </div>

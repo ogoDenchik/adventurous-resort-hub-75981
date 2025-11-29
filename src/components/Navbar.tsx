@@ -54,8 +54,15 @@ const Navbar: React.FC = () => {
     path: '/contact'
   }];
 
+  // Pages that should always have white header
+  const whiteHeaderPages = ['/gallery', '/contact', '/about'];
+  const shouldUseWhiteHeader = whiteHeaderPages.includes(location.pathname);
+
   // Determine header styles based on scroll state
   const getHeaderStyles = () => {
+    if (shouldUseWhiteHeader) {
+      return 'bg-white shadow-sm';
+    }
     if (!isScrolled) {
       return 'bg-transparent';
     }
@@ -64,10 +71,10 @@ const Navbar: React.FC = () => {
 
   // Determine text color based on scroll state
   const getTextColor = () => {
-    if (!isScrolled) {
-      return 'text-white';
+    if (shouldUseWhiteHeader || isScrolled) {
+      return 'text-gray-900';
     }
-    return 'text-gray-900';
+    return 'text-white';
   };
 
   return (
