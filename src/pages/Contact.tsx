@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { Send, MessageCircle, Instagram } from 'lucide-react';
+import { Send, MessageCircle, Instagram, Phone, Mail, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
@@ -16,7 +16,6 @@ const WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac
 const ContactPage = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isTesting, setIsTesting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -58,7 +57,6 @@ const ContactPage = () => {
         if (!response.ok) throw new Error('Webhook failed');
       } catch (webhookError) {
         console.error('Webhook error:', webhookError);
-        // Don't fail the whole submission if webhook fails
       }
 
       toast({
@@ -79,175 +77,178 @@ const ContactPage = () => {
     }
   };
 
-  const runWebhookSelfTest = async () => {
-    setIsTesting(true);
-    try {
-      const { data, error } = await supabase.functions.invoke('forward-webhook', { body: { _selftest: true } });
-      if (error) throw error as any;
-      const c = (data as any)?.selftest?.contact;
-      const b = (data as any)?.selftest?.booking_popup;
-      toast({
-        title: 'Webhook self-test',
-        description: `contact: ${c?.status} (${c?.ok ? 'ok' : 'fail'}), booking_popup: ${b?.status} (${b?.ok ? 'ok' : 'fail'})`,
-      });
-    } catch (err) {
-      console.error('Self-test error:', err);
-      toast({ title: 'Webhook self-test failed', description: 'Не удалось выполнить тест. Проверьте логи.', variant: 'destructive' });
-    } finally {
-      setIsTesting(false);
-    }
-  };
+  const contactMethods = [
+    {
+      icon: MessageCircle,
+      title: "WhatsApp",
+      subtitle: "Quick responses, instant chat",
+      description: "+48 884 035 225",
+      link: "https://wa.me/48884035225",
+      color: "bg-green-500",
+      hoverColor: "hover:bg-green-600",
+    },
+    {
+      icon: Instagram,
+      title: "Instagram",
+      subtitle: "Follow our adventures",
+      description: "@ogodenchik",
+      link: "https://www.instagram.com/ogodenchik",
+      color: "bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400",
+      hoverColor: "hover:opacity-90",
+    },
+    {
+      icon: Send,
+      title: "Telegram",
+      subtitle: "Direct messaging",
+      description: "@ogodenchik",
+      link: "https://t.me/ogodenchik",
+      color: "bg-blue-500",
+      hoverColor: "hover:bg-blue-600",
+    },
+  ];
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col bg-background">
       <Navbar />
       
       <main className="flex-grow pt-24">
-        {/* Header Section */}
-        <section className="relative bg-gradient-to-br from-primary via-accent to-primary/90 text-white py-20 overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-black/35"></div>
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 animate-fade-in text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-              Get in Touch with OGO Kite Academy
+        {/* Header Section - Clean & Modern */}
+        <section className="py-16 md:py-24 bg-background">
+          <div className="container mx-auto px-4 text-center">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-foreground mb-6 uppercase">
+              GET IN TOUCH
             </h1>
-            <p className="text-lg md:text-xl max-w-3xl mx-auto animate-slide-up text-white/95" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-              We are here to answer your questions and help you join our next kitesurfing adventure.
+            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+              We're here to answer your questions and help you plan your next adventure.
             </p>
           </div>
         </section>
 
-        {/* Quick Contact Buttons */}
-        <section className="py-16 bg-background">
+        {/* Contact Cards - Kite Safari Style */}
+        <section className="py-12 bg-muted/30">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              <a
-                href="https://t.me/ogodenchik"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Message us on Telegram"
-                className="group bg-card hover:bg-accent/10 border-2 border-border hover:border-primary rounded-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="bg-primary/10 group-hover:bg-primary p-4 rounded-full transition-colors">
-                    <Send className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
+              {contactMethods.map((method, index) => (
+                <a
+                  key={index}
+                  href={method.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative bg-card rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
+                >
+                  {/* Icon Container */}
+                  <div className="flex justify-center mb-5">
+                    <div className={`${method.color} ${method.hoverColor} w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
+                      <method.icon className="w-8 h-8 text-white" />
+                    </div>
                   </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Message us on Telegram</h3>
-                <p className="text-muted-foreground text-sm">Quick responses and direct chat</p>
-              </a>
+                  
+                  {/* Content */}
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">
+                    {method.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm mb-3">
+                    {method.subtitle}
+                  </p>
+                  <p className="text-primary font-semibold">
+                    {method.description}
+                  </p>
 
-              <a
-                href="https://wa.me/48884035225"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="Chat on WhatsApp"
-                className="group bg-card hover:bg-accent/10 border-2 border-border hover:border-primary rounded-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="bg-primary/10 group-hover:bg-primary p-4 rounded-full transition-colors">
-                    <MessageCircle className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">Chat on WhatsApp</h3>
-                <p className="text-muted-foreground text-sm">Connect instantly via WhatsApp</p>
-              </a>
-
-              <a
-                href="https://www.instagram.com/ogo_kite_academy/"
-                target="_blank"
-                rel="noopener noreferrer"
-                aria-label="DM us on Instagram"
-                className="group bg-card hover:bg-accent/10 border-2 border-border hover:border-primary rounded-lg p-8 text-center transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-              >
-                <div className="flex justify-center mb-4">
-                  <div className="bg-primary/10 group-hover:bg-primary p-4 rounded-full transition-colors">
-                    <Instagram className="w-8 h-8 text-primary group-hover:text-primary-foreground" />
-                  </div>
-                </div>
-                <h3 className="text-xl font-semibold mb-2">DM us on Instagram</h3>
-                <p className="text-muted-foreground text-sm">Follow and message us</p>
-              </a>
+                  {/* Hover Effect Line */}
+                  <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                </a>
+              ))}
             </div>
           </div>
         </section>
 
-        {/* Contact Form */}
-        <section className="py-16 bg-muted/30">
+        {/* Contact Form - Clean Modern Style */}
+        <section className="py-16 md:py-24 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-card rounded-lg shadow-lg p-8 md:p-12">
-                <h2 className="text-3xl font-display font-bold mb-8 text-center">Send Us a Message</h2>
-                
+            <div className="max-w-2xl mx-auto">
+              {/* Form Header */}
+              <div className="text-center mb-12">
+                <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-4 uppercase">
+                  SEND US A MESSAGE
+                </h2>
+                <p className="text-muted-foreground">
+                  Fill out the form below and we'll get back to you within 24 hours.
+                </p>
+              </div>
+              
+              <div className="bg-card rounded-2xl shadow-lg border border-border p-8 md:p-10">
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div className="space-y-2">
-                    <Label htmlFor="name">Your Full Name *</Label>
+                    <Label htmlFor="name" className="text-foreground font-semibold">
+                      Your Full Name *
+                    </Label>
                     <Input
                       type="text"
                       id="name"
                       name="name"
                       required
-                      placeholder="Your full name"
+                      placeholder="Enter your full name"
+                      className="h-12 rounded-xl border-border focus:border-primary"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="phone">Phone Number (WhatsApp, Telegram) *</Label>
+                    <Label htmlFor="phone" className="text-foreground font-semibold">
+                      Phone Number (WhatsApp, Telegram) *
+                    </Label>
                     <Input
                       type="tel"
                       id="phone"
                       name="phone"
                       required
                       placeholder="+48 884 035 225"
+                      className="h-12 rounded-xl border-border focus:border-primary"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="email">Email</Label>
+                    <Label htmlFor="email" className="text-foreground font-semibold">
+                      Email (Optional)
+                    </Label>
                     <Input
                       type="email"
                       id="email"
                       name="email"
                       placeholder="your.email@example.com"
+                      className="h-12 rounded-xl border-border focus:border-primary"
                     />
                   </div>
                   
                   <div className="space-y-2">
-                    <Label htmlFor="message">Message</Label>
+                    <Label htmlFor="message" className="text-foreground font-semibold">
+                      Your Message
+                    </Label>
                     <Textarea
                       id="message"
                       name="message"
                       rows={5}
                       placeholder="Tell us about your kitesurfing goals, questions, or preferred dates..."
+                      className="rounded-xl border-border focus:border-primary resize-none"
                     />
                   </div>
                   
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full sticky bottom-4 md:static"
+                    className="w-full h-14 text-base font-semibold rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:shadow-lg"
                     size="lg"
-                    aria-label="Send message"
                   >
                     {isSubmitting ? (
-                      <>Sending...</>
+                      <span className="flex items-center gap-2">
+                        <div className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full animate-spin" />
+                        Sending...
+                      </span>
                     ) : (
-                      <>
-                        <Send className="w-4 h-4 mr-2" />
+                      <span className="flex items-center gap-2">
+                        <Send className="w-5 h-5" />
                         Send Message
-                      </>
+                      </span>
                     )}
-                  </Button>
-
-                  <Button
-                    type="button"
-                    variant="secondary"
-                    disabled={isTesting}
-                    onClick={runWebhookSelfTest}
-                    className="w-full md:w-auto"
-                    size="sm"
-                    aria-label="Run webhook self-test"
-                  >
-                    {isTesting ? 'Testing…' : 'Запустить тест вебхука'}
                   </Button>
                 </form>
               </div>
@@ -255,29 +256,39 @@ const ContactPage = () => {
           </div>
         </section>
 
-        {/* Closing CTA */}
-        <section className="relative py-20 bg-gradient-to-br from-primary via-accent to-primary/90 text-white overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-black/35"></div>
-          <div className="container mx-auto px-4 text-center relative z-10">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-8 text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-              Join the OGO Family — Your Next Adventure Starts Here.
-            </h2>
-            
-            <div className="bg-black/20 backdrop-blur-sm border border-white/20 rounded-lg p-8 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-semibold mb-4 text-white" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>Not sure where to go?</h3>
-              <p className="text-lg mb-6 text-white/95" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.5)' }}>
-                Explore our destinations and find the trip that inspires you most.
+        {/* CTA Section - Clean Modern Style */}
+        <section className="py-16 md:py-20 bg-muted/30">
+          <div className="container mx-auto px-4 text-center">
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-6 uppercase">
+                START YOUR ADVENTURE
+              </h2>
+              <p className="text-lg text-muted-foreground mb-8">
+                Not sure where to go? Explore our destinations and find the trip that inspires you most.
               </p>
-              <Link to="/#programs">
-                <Button 
-                  size="lg"
-                  variant="default"
-                  className="font-semibold px-8 py-6 text-lg"
-                  aria-label="Explore destinations"
-                >
-                  Explore Destinations
-                </Button>
-              </Link>
+              
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Link to="/#calendar-locations">
+                  <Button 
+                    size="lg"
+                    className="font-semibold px-8 py-6 text-base rounded-xl bg-primary hover:bg-primary/90 text-primary-foreground transition-all duration-300 hover:shadow-lg w-full sm:w-auto"
+                  >
+                    <MapPin className="w-5 h-5 mr-2" />
+                    Explore Destinations
+                  </Button>
+                </Link>
+                
+                <a href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20have%20a%20question!" target="_blank" rel="noopener noreferrer">
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="font-semibold px-8 py-6 text-base rounded-xl border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground transition-all duration-300 w-full sm:w-auto"
+                  >
+                    <MessageCircle className="w-5 h-5 mr-2" />
+                    Chat on WhatsApp
+                  </Button>
+                </a>
+              </div>
             </div>
           </div>
         </section>
