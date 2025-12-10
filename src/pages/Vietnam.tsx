@@ -125,10 +125,10 @@ const Vietnam = () => {
           <div className="flex flex-col sm:flex-row gap-4">
             <Button 
               size="lg" 
-              className="text-lg px-8 py-6 bg-primary hover:bg-primary/90 text-primary-foreground"
-              onClick={() => document.getElementById('standard-camp')?.scrollIntoView({ behavior: 'smooth' })}
+              className="text-lg px-8 py-6 bg-muted text-muted-foreground cursor-not-allowed"
+              disabled
             >
-              Join the Camp from €2040
+              SOLD OUT
             </Button>
             
             <Button 
@@ -148,13 +148,15 @@ const Vietnam = () => {
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <h3 className="text-2xl font-display font-bold text-foreground mb-6 uppercase">2026 CAMP DATES</h3>
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg border-2 border-foreground">
+            <div className="flex items-center gap-3 px-6 py-4 bg-destructive/10 rounded-lg border-2 border-destructive">
               <span className="text-2xl">📅</span>
               <span className="text-lg font-medium text-foreground">20–30 January</span>
+              <Badge variant="destructive">SOLD OUT</Badge>
             </div>
-            <div className="flex items-center gap-3 px-6 py-4 bg-accent/10 rounded-lg border-2 border-foreground">
+            <div className="flex items-center gap-3 px-6 py-4 bg-destructive/10 rounded-lg border-2 border-destructive">
               <span className="text-2xl">📅</span>
               <span className="text-lg font-medium text-foreground">13–23 February</span>
+              <Badge variant="destructive">SOLD OUT</Badge>
             </div>
           </div>
           
@@ -300,7 +302,8 @@ const Vietnam = () => {
 
             <div className="grid md:grid-cols-2 gap-8">
               {/* January Camp Card */}
-              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-background border-2 border-destructive rounded-2xl p-8 shadow-md relative">
+                <Badge variant="destructive" className="absolute top-4 right-4">SOLD OUT</Badge>
                 <div className="text-center mb-6">
                   <span className="text-5xl mb-4 block">📅</span>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
@@ -326,14 +329,15 @@ const Vietnam = () => {
                   <div className="flex items-start gap-3 pt-2 border-t border-border">
                     <span className="text-xl flex-shrink-0">🎯</span>
                     <p className="text-foreground font-semibold">
-                      Spots available: <span className="text-primary">6/8</span>
+                      Spots available: <span className="text-destructive">0/8 — SOLD OUT</span>
                     </p>
                   </div>
                 </div>
               </div>
 
               {/* February Camp Card */}
-              <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+              <div className="bg-background border-2 border-destructive rounded-2xl p-8 shadow-md relative">
+                <Badge variant="destructive" className="absolute top-4 right-4">SOLD OUT</Badge>
                 <div className="text-center mb-6">
                   <span className="text-5xl mb-4 block">📅</span>
                   <h3 className="text-2xl font-bold text-foreground mb-2">
@@ -359,7 +363,7 @@ const Vietnam = () => {
                   <div className="flex items-start gap-3 pt-2 border-t border-border">
                     <span className="text-xl flex-shrink-0">🔥</span>
                     <p className="text-foreground font-semibold">
-                      Spots available: <span className="text-primary">4/8</span>
+                      Spots available: <span className="text-destructive">0/8 — SOLD OUT</span>
                     </p>
                   </div>
                 </div>
@@ -683,12 +687,13 @@ const Vietnam = () => {
         <div className="grid lg:grid-cols-2 gap-8 mb-12">
           
           {/* Card 1: Standard Camp */}
-          <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
-            <div className="text-center mb-6">
+          <div className="bg-background border-2 border-destructive rounded-2xl p-8 shadow-md relative opacity-75">
+            <Badge variant="destructive" className="absolute -top-4 left-1/2 transform -translate-x-1/2">SOLD OUT</Badge>
+            <div className="text-center mb-6 mt-4">
               <h3 className="text-3xl font-display font-bold text-foreground mb-2 uppercase">
                 STANDARD CAMP
               </h3>
-              <div className="text-4xl font-bold text-primary mb-2">
+              <div className="text-4xl font-bold text-muted-foreground mb-2 line-through">
                 €2040
               </div>
               <p className="text-muted-foreground">
@@ -780,42 +785,23 @@ const Vietnam = () => {
             </div>
 
             <Button 
-              className="w-full mb-3"
-              onClick={() => {
-                setSelectedPackage('Standard Camp');
-                setLeadSource('Vietnam Camp');
-                setBookingDetails({
-                  packageName: 'Standard Camp',
-                  location: 'Vietnam Kite Camp',
-                  price: '€2040',
-                  highlights: ['10 Days', '8h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
-                  included: [
-                    'Beachfront accommodation (private room)',
-                    '8 hours structured kitesurfing lessons',
-                    'Premium equipment included',
-                    'Daily breakfast',
-                    'Airport transfer (Ho Chi Minh)',
-                    'Excursion to waterfalls',
-                    'Community dinners & social events'
-                  ]
-                });
-                setBookingOpen(true);
-              }}
+              className="w-full mb-3 bg-muted text-muted-foreground cursor-not-allowed"
+              disabled
             >
-              BOOK STANDARD CAMP
+              SOLD OUT
             </Button>
 
             <p className="text-center text-sm text-muted-foreground">
-              Discount for couples: –10%
+              All spots for 2026 camps are sold out
             </p>
           </div>
 
           {/* Card 2: Private Premium Experience */}
-          <div className="bg-background border-2 border-primary rounded-2xl p-8 shadow-lg hover:shadow-xl transition-shadow relative">
+          <div className="bg-background border-2 border-destructive rounded-2xl p-8 shadow-lg relative opacity-75">
             {/* Premium Badge */}
             <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-              <span className="bg-primary text-primary-foreground px-6 py-2 rounded-full font-bold text-sm">
-                PREMIUM
+              <span className="bg-destructive text-destructive-foreground px-6 py-2 rounded-full font-bold text-sm">
+                SOLD OUT
               </span>
             </div>
 
@@ -823,7 +809,7 @@ const Vietnam = () => {
               <h3 className="text-3xl font-display font-bold text-foreground mb-2 uppercase">
                 PRIVATE PREMIUM EXPERIENCE
               </h3>
-              <div className="text-4xl font-bold text-primary mb-2">
+              <div className="text-4xl font-bold text-muted-foreground mb-2 line-through">
                 €2740
               </div>
               <p className="text-muted-foreground">
@@ -897,36 +883,15 @@ const Vietnam = () => {
             </div>
 
             <Button 
-              className="w-full mb-3 bg-primary hover:bg-primary/90"
-              onClick={() => {
-                setSelectedPackage('Private Premium Experience');
-                setLeadSource('Vietnam Camp');
-                setBookingDetails({
-                  packageName: 'Private Premium Experience',
-                  location: 'Vietnam Kite Camp',
-                  price: '€2740',
-                  highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
-                  included: [
-                    'Beachfront accommodation (private room)',
-                    '10 hours VIP 1-on-1 training',
-                    'Premium equipment included',
-                    'All meals included (breakfast, lunch, dinner)',
-                    'Airport transfer (Ho Chi Minh)',
-                    'All excursions included',
-                    'Video analysis after every session',
-                    'Personalized training plan',
-                    'Priority scheduling'
-                  ]
-                });
-                setBookingOpen(true);
-              }}
+              className="w-full mb-3 bg-muted text-muted-foreground cursor-not-allowed"
+              disabled
             >
-              BOOK PRIVATE PREMIUM
+              SOLD OUT
             </Button>
 
             <div className="text-center">
-              <span className="inline-block bg-primary/20 text-primary px-4 py-1 rounded-full text-sm font-semibold">
-                Only 2 spots per camp
+              <span className="inline-block bg-destructive/20 text-destructive px-4 py-1 rounded-full text-sm font-semibold">
+                All spots for 2026 camps are sold out
               </span>
             </div>
           </div>
@@ -1544,123 +1509,41 @@ const Vietnam = () => {
         <div className="grid lg:grid-cols-2 gap-8">
           
           {/* Left: Camp Booking Box */}
-          <div className="bg-background rounded-2xl p-8 shadow-xl">
+          <div className="bg-background rounded-2xl p-8 shadow-xl opacity-75">
             <h3 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-2 uppercase">
               🏕 BOOK VIETNAM KITE CAMP
             </h3>
 
             <div className="mb-6">
-              <h4 className="font-semibold text-foreground mb-3">STEP 1: Choose Your Dates</h4>
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="camp-dates" 
-                    value="January 20–30, 2026"
-                    className="w-4 h-4"
-                    onChange={(e) => setSelectedDates(e.target.value)}
-                  />
-                  <span className="text-foreground">January 20–30, 2026 <span className="text-primary">(6 spots left)</span></span>
-                </label>
-                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="camp-dates" 
-                    value="February 13–23, 2026"
-                    className="w-4 h-4"
-                    onChange={(e) => setSelectedDates(e.target.value)}
-                  />
-                  <span className="text-foreground">February 13–23, 2026 <span className="text-primary">(4 spots left)</span></span>
-                </label>
+              <div className="bg-destructive/10 border-2 border-destructive rounded-lg p-6 text-center">
+                <Badge variant="destructive" className="text-lg px-6 py-2 mb-4">SOLD OUT</Badge>
+                <p className="text-foreground font-semibold mb-2">All spots for 2026 camps are sold out</p>
+                <p className="text-muted-foreground text-sm">
+                  January 20–30, 2026 — SOLD OUT<br />
+                  February 13–23, 2026 — SOLD OUT
+                </p>
               </div>
             </div>
 
             <div className="mb-6">
-              <h4 className="font-semibold text-foreground mb-3">STEP 2: Choose Your Package</h4>
-              <div className="space-y-2">
-                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="package" 
-                    value="Standard Camp"
-                    className="w-4 h-4"
-                    onChange={(e) => setSelectedPackage(e.target.value)}
-                  />
-                  <span className="text-foreground">Standard Camp (€2040)</span>
-                </label>
-                <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                  <input 
-                    type="radio" 
-                    name="package" 
-                    value="Private Premium"
-                    className="w-4 h-4"
-                    onChange={(e) => setSelectedPackage(e.target.value)}
-                  />
-                  <span className="text-foreground">Private Premium (€2740)</span>
-                </label>
-              </div>
+              <p className="text-muted-foreground text-center">
+                Want to be notified about future camps?<br />
+                Contact us via WhatsApp!
+              </p>
             </div>
 
-            <div className="mb-6">
-              <h4 className="font-semibold text-foreground mb-3">STEP 3: Secure Your Spot</h4>
-              <Button 
-                className="w-full mb-3 text-lg py-6"
-                onClick={() => {
-                  const packageName = selectedPackage || 'Standard Camp';
-                  setLeadSource('Vietnam Camp Booking Box');
-                  
-                  if (packageName === 'Private Premium') {
-                    setBookingDetails({
-                      packageName: 'Private Premium Experience',
-                      location: 'Vietnam Kite Camp',
-                      price: '€2740',
-                      highlights: ['10 Days', '10h VIP Lessons', 'Accommodation', 'All Meals', 'Video Analysis', 'Excursions'],
-                      included: [
-                        'Beachfront accommodation (private room)',
-                        '10 hours VIP 1-on-1 training',
-                        'Premium equipment included',
-                        'All meals included (breakfast, lunch, dinner)',
-                        'Airport transfer (Ho Chi Minh)',
-                        'All excursions included',
-                        'Video analysis after every session',
-                        'Personalized training plan',
-                        'Priority scheduling'
-                      ]
-                    });
-                  } else {
-                    setBookingDetails({
-                      packageName: 'Standard Camp',
-                      location: 'Vietnam Kite Camp',
-                      price: '€2040',
-                      highlights: ['10 Days', '8h Lessons', 'Accommodation', 'Breakfast', 'Excursion to waterfalls'],
-                      included: [
-                        'Beachfront accommodation (private room)',
-                        '8 hours structured kitesurfing lessons',
-                        'Premium equipment included',
-                        'Daily breakfast',
-                        'Airport transfer (Ho Chi Minh)',
-                        'Excursion to waterfalls',
-                        'Community dinners & social events'
-                      ]
-                    });
-                  }
-                  
-                  setBookingOpen(true);
-                }}
-              >
-                RESERVE MY SPOT NOW
-              </Button>
+            <div className="space-y-3">
               <Button 
                 variant="outline" 
                 className="w-full"
-                onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20still%20have%20some%20questions%20about%20the%20Vietnam%20camp.', '_blank')}
+                onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20be%20notified%20about%20future%20Vietnam%20camps.', '_blank')}
               >
-                I Have Questions First
+                Contact Us on WhatsApp
               </Button>
             </div>
 
-            <div className="text-center text-sm text-muted-foreground">
-              🔒 Secure Booking: 30% deposit.
+            <div className="text-center text-sm text-muted-foreground mt-4">
+              Private coaching still available outside camp dates!
             </div>
           </div>
 

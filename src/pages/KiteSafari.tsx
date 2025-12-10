@@ -92,7 +92,7 @@ const KiteSafari: React.FC = () => {
                     setBookingDetails({
                       packageName: 'Egypt Kite Safari',
                       location: 'Red Sea, Egypt',
-                      price: 'from €1,750',
+                      price: 'from €1,700',
                       highlights: ['7 Days', '3 Epic Lagoons', 'Luxury Yacht', 'All Meals Included'],
                       included: [
                         'Luxury liveaboard accommodation',
@@ -106,7 +106,7 @@ const KiteSafari: React.FC = () => {
                     setBookingPopupOpen(true);
                   }}
                 >
-                  Join — from €1,750 per person
+                  Join — from €1,700 per person
                 </Button>
                 
                 <Button 
@@ -1060,7 +1060,7 @@ const KiteSafari: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Twin Cabin (Per Person)</h3>
-                    <p className="text-3xl font-bold text-primary mb-6">From €1,750</p>
+                    <p className="text-3xl font-bold text-primary mb-6">€1,700</p>
                     
                     <div className="space-y-2 mb-6">
                       <div className="flex items-start gap-2">
@@ -1106,7 +1106,7 @@ const KiteSafari: React.FC = () => {
                         setBookingDetails({
                           packageName: 'Twin Cabin',
                           location: 'Egypt Kite Safari',
-                          price: 'From €1,750 per person',
+                          price: '€1,700 per person',
                           highlights: ['7 Days / 6 Nights', '3 Epic Lagoons', 'All Meals', 'Rescue Boat', 'Group Atmosphere'],
                           included: [
                             '7 days / 6 nights on yacht',
@@ -1141,7 +1141,7 @@ const KiteSafari: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Master Suite (2 People)</h3>
-                    <p className="text-3xl font-bold text-primary mb-6">From €3,500 / cabin</p>
+                    <p className="text-3xl font-bold text-primary mb-6">€4,000 / cabin</p>
                     
                     <div className="space-y-2 mb-6">
                       <p className="font-semibold mb-2">Everything in Twin Cabin +</p>
@@ -1168,7 +1168,7 @@ const KiteSafari: React.FC = () => {
                         setBookingDetails({
                           packageName: 'Master Suite',
                           location: 'Egypt Kite Safari',
-                          price: 'From €3,500 / cabin',
+                          price: '€4,000 / cabin',
                           highlights: ['7 Days / 6 Nights', 'Larger Cabin', 'Premium Comfort', 'All Twin Cabin Benefits', 'Best Location'],
                           included: [
                             'Everything in Twin Cabin',
@@ -1200,7 +1200,7 @@ const KiteSafari: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Panoramic Suite (2 People)</h3>
-                    <p className="text-3xl font-bold text-primary mb-6">From €3,700 / cabin</p>
+                    <p className="text-3xl font-bold text-primary mb-6">€4,500 / cabin</p>
                     
                     <div className="space-y-2 mb-6">
                       <p className="font-semibold mb-2">Everything in Master Suite +</p>
@@ -1227,7 +1227,7 @@ const KiteSafari: React.FC = () => {
                         setBookingDetails({
                           packageName: 'Panoramic Suite',
                           location: 'Egypt Kite Safari',
-                          price: 'From €3,700 / cabin',
+                          price: '€4,500 / cabin',
                           highlights: ['7 Days / 6 Nights', 'Panoramic Windows', 'Most Premium Cabin', 'Maximum Privacy', 'Exclusive Experience'],
                           included: [
                             'Everything in Master Suite',
