@@ -181,8 +181,8 @@ export const VietnamBookingPopup: React.FC<VietnamBookingPopupProps> = ({
                 <SelectValue placeholder="Select camp dates" />
               </SelectTrigger>
               <SelectContent>
-                <SelectItem value="January 20–30, 2026">January 20–30, 2026</SelectItem>
-                <SelectItem value="February 13–23, 2026">February 13–23, 2026</SelectItem>
+                <SelectItem value="January 20–30, 2026" disabled>January 20–30, 2026 — SOLD OUT</SelectItem>
+                <SelectItem value="February 13–23, 2026" disabled>February 13–23, 2026 — SOLD OUT</SelectItem>
               </SelectContent>
             </Select>
             {errors.dates && (

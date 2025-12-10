@@ -147,8 +147,8 @@ const CalendarLocations: React.FC = () => {
       country: "VIETNAM",
       location: "PHAN RANG",
       dates: [
-        "January 20 – January 30, 2026",
-        "February 13 – February 23, 2026"
+        "January 20 – January 30, 2026 — SOLD OUT",
+        "February 13 – February 23, 2026 — SOLD OUT"
       ],
       highlights: [
         "Perfect flat water",
@@ -162,8 +162,8 @@ const CalendarLocations: React.FC = () => {
         "Refresh Course (€270 / 3h)",
         "Equipment Rental (€85 / session)"
       ],
-      badge: "BOOKING OPEN",
-      badgeVariant: "default",
+      badge: "SOLD OUT",
+      badgeVariant: "destructive",
       ctaText: "EXPLORE VIETNAM",
       ctaLink: "/vietnam",
       image: "/lovable-uploads/hero-kite-action.jpg"
