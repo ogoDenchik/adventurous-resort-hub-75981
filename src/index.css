@@ -56,125 +56,143 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: 'Jost', 'Montserrat', sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.01em;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
 }
 
-@keyframes slide-down {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(6px);
-  }
-  100% {
-    transform: translateY(0);
-  }
+/* ── Editorial Typography Utilities ─────────────────────────────────────── */
+.heading-display {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.05;
 }
 
-@keyframes blob {
-  0% {
-    transform: translate(0px, 0px) scale(1);
-  }
-  33% {
-    transform: translate(30px, -50px) scale(1.1);
-  }
-  66% {
-    transform: translate(-20px, 20px) scale(0.9);
-  }
-  100% {
-    transform: translate(0px, 0px) scale(1);
-  }
+.heading-display-italic {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
 }
 
-@layer utilities {
-  .text-shadow-sm {
-    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-  }
-  
-  .text-shadow-md {
-    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-  }
-  
-  .text-shadow-lg {
-    text-shadow: 0 4px 6px rgba(0,0,0,0.4);
-  }
-  
-  .text-glow {
-    text-shadow: 0 0 20px rgba(255,255,255,0.5);
-  }
-  
-  .shadow-glow {
-    box-shadow: 0 0 15px rgba(255,255,255,0.5);
-  }
-  
-  .card-hover {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .card-hover:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
-  }
-  
-  .hover-lift {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  
-  .hover-lift:hover {
-    transform: translateY(-5px) scale(1.01);
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  }
-  
-  .hover-scale {
-    transition: transform 0.3s ease;
-  }
-  
-  .hover-scale:hover {
-    transform: scale(1.05);
-  }
-  
-  .animation-delay-2000 {
-    animation-delay: 2s;
-  }
-  
-  .animation-delay-4000 {
-    animation-delay: 4s;
-  }
-  
-  /* Glass effect for navbar */
-  .glass {
-    background: rgba(255, 255, 255, 0.95);
-    /* Removed backdrop-filter blur to prevent iOS/Safari pointer issues over fixed headers */
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    pointer-events: auto;
-  }
-  
-  .dark .glass {
-    background: rgba(255, 255, 255, 0.95);
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  }
+.label-caps {
+  font-family: 'Jost', sans-serif;
+  font-weight: 400;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
 }
 
+.section-number {
+  font-family: 'Jost', sans-serif;
+  font-weight: 200;
+  font-size: 0.75rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: hsl(var(--muted-foreground));
+}
+
+.section-divider {
+  height: 1px;
+  background: hsl(var(--foreground) / 0.12);
+  width: 100%;
+}
+
+/* ── Button Styles ────────────────────────────────────────────────────────── */
 .btn-primary {
-  @apply inline-block px-6 py-3 bg-green-700 text-white font-medium rounded-md shadow-md transition-all duration-300 hover:bg-green-800 hover:shadow-lg cursor-pointer;
+  @apply inline-block px-6 py-3 font-medium cursor-pointer relative overflow-hidden;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid hsl(var(--primary));
+  color: hsl(var(--primary));
+  background: transparent;
+  transition: color 0.4s ease;
 }
 
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: hsl(var(--primary));
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.btn-primary:hover::before {
+  transform: scaleY(1);
+}
+
+.btn-primary:hover {
+  color: hsl(var(--primary-foreground));
+}
+
+.btn-primary > * {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-primary-white {
+  @apply inline-block px-6 py-3 font-medium cursor-pointer relative overflow-hidden;
+  font-family: 'Jost', sans-serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  color: #ffffff;
+  background: transparent;
+  transition: color 0.4s ease;
+}
+
+.btn-primary-white::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: #ffffff;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 0;
+}
+
+.btn-primary-white:hover::before {
+  transform: scaleY(1);
+}
+
+.btn-primary-white:hover {
+  color: hsl(var(--foreground));
+}
+
+/* ── Section Utilities ───────────────────────────────────────────────────── */
 .section-padding {
   @apply py-16 md:py-24;
 }
 
+/* ── Scroll / Parallax Utilities ─────────────────────────────────────────── */
+@keyframes slide-down {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes blob {
+  0% { transform: translate(0px, 0px) scale(1); }
+  33% { transform: translate(30px, -50px) scale(1.1); }
+  66% { transform: translate(-20px, 20px) scale(0.9); }
+  100% { transform: translate(0px, 0px) scale(1); }
+}
+
+/* ── Legacy animation classes (kept for non-homepage pages) ──────────────── */
 @keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 .animate-fade-in {
@@ -188,21 +206,67 @@
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes slideUp {
-  0% {
-    opacity: 0;
-    transform: translateY(30px);
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Utility classes ─────────────────────────────────────────────────────── */
+@layer utilities {
+  .text-shadow-sm {
+    text-shadow: 0 1px 2px rgba(0,0,0,0.2);
   }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
+  .text-shadow-md {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  }
+  .text-shadow-lg {
+    text-shadow: 0 4px 6px rgba(0,0,0,0.4);
+  }
+  .text-glow {
+    text-shadow: 0 0 20px rgba(255,255,255,0.5);
+  }
+  .shadow-glow {
+    box-shadow: 0 0 15px rgba(255,255,255,0.5);
+  }
+  .card-hover {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+  }
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-5px) scale(1.01);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+  }
+  .hover-scale {
+    transition: transform 0.3s ease;
+  }
+  .hover-scale:hover {
+    transform: scale(1.05);
+  }
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+  .glass {
+    background: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    pointer-events: auto;
+  }
+  .dark .glass {
+    background: rgba(255, 255, 255, 0.95);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   }
 }
