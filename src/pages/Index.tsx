@@ -11,11 +11,37 @@ import MeetYourCoachIntro from '@/components/coach/MeetYourCoachIntro';
 import WhyImDifferent from '@/components/coach/WhyImDifferent';
 import CoachStatsTrustBar from '@/components/coach/CoachStatsTrustBar';
 import WhyMyMethodWorks from '@/components/coach/WhyMyMethodWorks';
+import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
+
+const testimonials = [
+  {
+    num: '01',
+    name: 'Misha',
+    location: 'Egypt Kite Safari',
+    quote: 'I met Denis two years ago. He got me riding independently in just 7 days — and since then, we\'ve been traveling and progressing together non-stop. I love his approach and his methodology. It\'s clear, structured and incredibly effective.',
+    image: '/lovable-uploads/testimonial-misha.jpg',
+  },
+  {
+    num: '02',
+    name: 'Kate',
+    location: 'Brazil Trip',
+    quote: 'Everything was absolutely top level. Training was world-class, the accommodations were excellent, and the whole trip was perfectly organized. I even learned my first backroll!',
+    image: '/lovable-uploads/testimonial-kate.jpg',
+  },
+  {
+    num: '03',
+    name: 'Ilya',
+    location: 'Vietnam Kite Camp',
+    quote: 'I really enjoy Denis\' approach. He teaches step-by-step — giving small pieces of information that later come together into a full picture. I progressed very fast. Highly recommended.',
+    image: '/lovable-uploads/testimonial-ilya-v2.jpg',
+  },
+];
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
 
-  return <div className="min-h-screen flex flex-col">
+  return (
+    <div className="min-h-screen flex flex-col">
       <Navbar />
       <EnhancedBookingPopup 
         open={isBookingOpen} 
@@ -28,104 +54,84 @@ const Index: React.FC = () => {
       <main className="flex-grow">
         <Hero />
         
-        {/* Trust Bar with Coach Stats */}
         <CoachStatsTrustBar />
         
-        {/* 1. Meet Your Coach */}
+        {/* 01 — Meet Your Coach */}
         <MeetYourCoachIntro />
         
-        {/* 2. Why I Am Different */}
+        {/* 02 — Why I Am Different */}
         <WhyImDifferent />
         
-        {/* 3. Guest Experiences (Reviews Section) */}
-        <section className="section-padding container">
-          <div className="text-center mb-16 animate-slide-up">
-            <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">
-              GUEST EXPERIENCES
-            </h2>
-            <p className="text-foreground/70 max-w-2xl mx-auto">
-              Hear from riders who've joined the OGO family on their kitesurfing adventures around the world.
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {[
-              {
-                name: "Misha",
-                location: "Egypt Kite Safari",
-                quote: "I met Denis two years ago. He got me riding independently in just 7 days — and since then, we've been traveling and progressing together non-stop. I love his approach and his methodology. It's clear, structured and incredibly effective.",
-                image: "/lovable-uploads/testimonial-misha.jpg",
-                delay: 0
-              },
-              {
-                name: "Kate",
-                location: "Brazil Trip",
-                quote: "Everything was absolutely top level. Training was world-class, the accommodations were excellent, and the whole trip was perfectly organized. I even learned my first backroll!",
-                image: "/lovable-uploads/testimonial-kate.jpg",
-                delay: 200
-              },
-              {
-                name: "Ilya",
-                location: "Vietnam Kite Camp",
-                quote: "I really enjoy Denis' approach. He teaches step-by-step — giving small pieces of information that later come together into a full picture. I progressed very fast. Highly recommended.",
-                image: "/lovable-uploads/testimonial-ilya-v2.jpg",
-                delay: 400
-              }
-            ].map((testimonial, index) => (
-              <div 
-                key={index}
-                className="bg-card p-6 rounded-xl shadow-md animate-slide-up hover-lift border border-border"
-                style={{ animationDelay: `${testimonial.delay}ms` }}
-              >
-                <div className="flex items-center mb-4">
-                  <div className="w-12 h-12 rounded-full mr-4 overflow-hidden flex-shrink-0">
-                    <img src={testimonial.image} alt={testimonial.name} className="w-full h-full object-cover scale-150 hover:scale-[1.6] transition-transform duration-300" />
+        {/* 03 — Guest Experiences */}
+        <section className="section-padding bg-muted/20">
+          <div className="container max-w-4xl">
+
+            <RevealOnScroll>
+              <p className="section-number mb-6">// 03 — Guest Experiences</p>
+            </RevealOnScroll>
+
+            <AnimatedLine className="mb-16" />
+
+            <RevealOnScroll delay={100} className="mb-14">
+              <h3 className="heading-display text-4xl md:text-5xl text-foreground">
+                What Riders Say
+              </h3>
+            </RevealOnScroll>
+
+            <StaggeredList staggerMs={130} baseDelay={150}>
+              {testimonials.map((t) => (
+                <div key={t.num} className="group">
+                  <div className="py-8 flex gap-6 md:gap-12">
+                    <span className="section-number text-base flex-shrink-0 pt-1">{t.num}</span>
+                    <div className="flex-1">
+                      <div className="flex items-center gap-4 mb-4">
+                        <div className="w-10 h-10 overflow-hidden flex-shrink-0">
+                          <img
+                            src={t.image}
+                            alt={t.name}
+                            className="w-full h-full object-cover scale-150"
+                          />
+                        </div>
+                        <div>
+                          <p className="label-caps text-foreground">{t.name}</p>
+                          <p className="label-caps text-muted-foreground">{t.location}</p>
+                        </div>
+                      </div>
+                      <p className="heading-display-italic text-xl md:text-2xl text-foreground/80 leading-relaxed">
+                        "{t.quote}"
+                      </p>
+                    </div>
                   </div>
-                  <div>
-                    <h4 className="font-medium text-base">{testimonial.name}</h4>
-                    <p className="text-sm text-muted-foreground">{testimonial.location}</p>
-                  </div>
+                  <div className="section-divider" />
                 </div>
-                <p className="text-foreground italic">"{testimonial.quote}"</p>
-                <div className="mt-4 flex">
-                  {[...Array(5)].map((_, starIndex) => <Star key={starIndex} filled={true} />)}
-                </div>
-              </div>
-            ))}
+              ))}
+            </StaggeredList>
+
           </div>
         </section>
         
-        {/* 6. Why My Method Works */}
+        {/* 05 — Why My Method Works */}
         <WhyMyMethodWorks />
         
-        {/* 7. Calendar & Locations */}
+        {/* Calendar & Locations */}
         <div id="calendar-section">
           <CalendarLocations />
         </div>
         
-        {/* 8. Training Programs */}
+        {/* Training Programs */}
         <TrainingPrograms />
         
-        {/* Numbers Section - Before Contact */}
+        {/* Numbers */}
         <TrustIndicators />
         
-        {/* 9. Trip Planning / Planning Information */}
+        {/* Contact CTA */}
         <ContactCTA />
       </main>
       
       <Footer />
-    </div>;
-};
-
-// Helper component for star rating
-const Star: React.FC<{
-  filled: boolean;
-}> = ({
-  filled
-}) => {
-  return <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="text-yellow-500 hover:scale-125 transition-transform duration-300">
-      <path d="M10 1L12.39 6.55L18.5 7.31L14.25 11.75L15.51 18L10 15.09L4.49 18L5.75 11.75L1.5 7.31L7.61 6.55L10 1Z" fill={filled ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>;
+    </div>
+  );
 };
 
 export default Index;
+
