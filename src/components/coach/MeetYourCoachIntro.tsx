@@ -1,47 +1,46 @@
 import React from 'react';
+import { RevealOnScroll, AnimatedLine } from '@/hooks/use-invisible-animation';
 
 const MeetYourCoachIntro = () => {
   return (
-    <section className="section-padding bg-muted/30">
+    <section className="section-padding bg-background">
       <div className="container max-w-4xl">
-        {/* Section Title */}
-        <div className="text-center mb-12 animate-slide-up">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4 uppercase">
-            MEET YOUR COACH
-          </h2>
-        </div>
+
+        {/* Section number */}
+        <RevealOnScroll>
+          <p className="section-number mb-6">// 01 — Meet Your Coach</p>
+        </RevealOnScroll>
+
+        <AnimatedLine className="mb-16" />
 
         {/* Portrait Photo */}
-        <div className="animate-slide-up mb-8" style={{ animationDelay: '100ms' }}>
-          <div className="relative rounded-2xl overflow-hidden shadow-2xl hover-lift max-w-md mx-auto">
+        <RevealOnScroll delay={100} className="mb-12">
+          <div className="relative overflow-hidden max-w-sm mx-auto">
             <img 
               src="/lovable-uploads/denis-coach-portrait.jpg" 
               alt="Denis - Professional Kiteboarding Coach" 
-              className="w-full h-auto object-cover"
+              className="w-full h-auto object-cover grayscale-[20%]"
             />
           </div>
-        </div>
+        </RevealOnScroll>
 
         {/* Name + Role */}
-        <div className="text-center mb-8 animate-slide-up" style={{ animationDelay: '200ms' }}>
-          <h3 className="text-3xl md:text-4xl font-display font-bold text-foreground mb-2 uppercase">
-            DENIS
-          </h3>
-          <p className="text-xl text-primary font-medium uppercase">
-            PRIVATE KITEBOARDING COACH
+        <RevealOnScroll delay={200} className="text-center mb-10">
+          <h2 className="heading-display text-5xl md:text-6xl text-foreground mb-3">
+            Denis
+          </h2>
+          <p className="label-caps text-primary tracking-widest">
+            Private Kiteboarding Coach
           </p>
-        </div>
+        </RevealOnScroll>
 
-        {/* Quote Block */}
-        <div className="animate-slide-up" style={{ animationDelay: '300ms' }}>
-          <div className="relative bg-card border-l-4 border-primary rounded-2xl shadow-lg p-6 md:p-8 max-w-3xl">
-            <div className="absolute -top-3 -left-3 text-primary/20 text-6xl font-serif">"</div>
-            <p className="text-foreground/90 text-lg md:text-xl leading-relaxed relative z-10 italic">
-              I'm not just an instructor — I'm your guide to mastering kitesurfing through a proven, systematic approach.
-              My step-by-step methodology breaks complex skills into simple, achievable steps — that's why my students progress faster.
-            </p>
-          </div>
-        </div>
+        {/* Quote */}
+        <RevealOnScroll delay={350} className="text-center max-w-2xl mx-auto">
+          <p className="heading-display-italic text-2xl md:text-3xl text-foreground/80 leading-relaxed">
+            "I'm not just an instructor — I'm your guide to mastering kitesurfing through a proven, systematic approach."
+          </p>
+        </RevealOnScroll>
+
       </div>
     </section>
   );

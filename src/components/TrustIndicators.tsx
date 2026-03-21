@@ -1,51 +1,33 @@
 import React from 'react';
-import { Users, Rocket, Repeat, Globe } from 'lucide-react';
-import { FadeIn } from '@/hooks/use-scroll-animation';
+import { RevealOnScroll, AnimatedLine } from '@/hooks/use-invisible-animation';
 
 const TrustIndicators = () => {
   const stats = [
-    {
-      icon: Users,
-      number: '500+',
-      label: 'STUDENTS TRAINED'
-    },
-    {
-      icon: Rocket,
-      number: '50+',
-      label: '"ZERO TO HERO" IN 7 DAYS'
-    },
-    {
-      icon: Repeat,
-      number: '70+',
-      label: 'RETURNING CLIENTS'
-    },
-    {
-      icon: Globe,
-      number: '50+',
-      label: 'SPOTS WORLDWIDE'
-    }
+    { number: '500+', label: 'Students Trained' },
+    { number: '50+', label: '"Zero to Hero" in 7 Days' },
+    { number: '70+', label: 'Returning Clients' },
+    { number: '50+', label: 'Spots Worldwide' },
   ];
 
   return (
-    <section className="bg-muted/30 py-12 md:py-16 border-y border-border/50">
+    <section className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+        <AnimatedLine className="mb-12" />
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-0">
           {stats.map((stat, index) => (
-            <FadeIn key={index} delay={index * 0.1} direction="up" distance={20}>
-              <div className="text-center group">
-                <div className="mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full bg-primary/10 text-primary transition-all duration-300 group-hover:bg-primary group-hover:text-primary-foreground group-hover:scale-110">
-                  <stat.icon className="w-8 h-8" strokeWidth={1.5} />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-foreground mb-2 transition-colors duration-300 group-hover:text-primary">
+            <RevealOnScroll key={index} delay={index * 100}>
+              <div className={`text-center py-6 ${index < stats.length - 1 ? 'lg:border-r border-border/40' : ''}`}>
+                <div className="heading-display text-4xl md:text-5xl text-foreground mb-2">
                   {stat.number}
                 </div>
-                <div className="text-sm md:text-base text-muted-foreground font-medium uppercase">
+                <div className="label-caps text-muted-foreground">
                   {stat.label}
                 </div>
               </div>
-            </FadeIn>
+            </RevealOnScroll>
           ))}
         </div>
+        <AnimatedLine className="mt-12" delay={400} />
       </div>
     </section>
   );
