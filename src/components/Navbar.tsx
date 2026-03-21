@@ -14,66 +14,36 @@ const Navbar: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
-  const navLinks = [{
-    name: 'Home',
-    path: '/'
-  }, {
-    name: 'Vietnam',
-    path: '/vietnam'
-  }, {
-    name: 'Kite Safari',
-    path: '/kite-safari'
-  }, {
-    name: 'Brazil',
-    path: '/brazil'
-  }, {
-    name: 'Cyprus',
-    path: '/cyprus'
-  }, {
-    name: 'Gallery',
-    path: '/gallery'
-  }, {
-    name: 'About',
-    path: '/about'
-  }, {
-    name: 'Contact Us',
-    path: '/contact'
-  }];
+  const navLinks = [
+    { name: 'Home', path: '/' },
+    { name: 'Vietnam', path: '/vietnam' },
+    { name: 'Kite Safari', path: '/kite-safari' },
+    { name: 'Brazil', path: '/brazil' },
+    { name: 'Cyprus', path: '/cyprus' },
+    { name: 'Gallery', path: '/gallery' },
+    { name: 'About', path: '/about' },
+    { name: 'Contact Us', path: '/contact' },
+  ];
 
-  // Pages that should always have white header
   const whiteHeaderPages = ['/gallery', '/contact', '/about'];
   const shouldUseWhiteHeader = whiteHeaderPages.includes(location.pathname);
 
-  // Determine header styles based on scroll state
   const getHeaderStyles = () => {
-    if (shouldUseWhiteHeader) {
-      return 'bg-white shadow-sm';
-    }
-    if (!isScrolled) {
-      return 'bg-transparent';
-    }
+    if (shouldUseWhiteHeader) return 'bg-white shadow-sm';
+    if (!isScrolled) return 'bg-transparent';
     return 'bg-white shadow-sm';
   };
 
-  // Determine text color based on scroll state
   const getTextColor = () => {
-    if (shouldUseWhiteHeader || isScrolled) {
-      return 'text-gray-900';
-    }
+    if (shouldUseWhiteHeader || isScrolled) return 'text-gray-900';
     return 'text-white';
   };
 
@@ -92,11 +62,11 @@ const Navbar: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              "flex items-center gap-1 hover:text-green-600 transition-colors duration-300 font-medium text-sm",
+              "flex items-center gap-1 hover:text-green-600 transition-colors duration-300 label-caps",
               getTextColor()
             )}
           >
-            <Phone size={16} className="text-green-600" />
+            <Phone size={14} className="text-green-600" />
             <span>+48 884 035 225</span>
           </a>
           {navLinks.map(link => (
@@ -104,13 +74,13 @@ const Navbar: React.FC = () => {
               key={link.path} 
               to={link.path} 
               className={cn(
-                'text-sm font-medium relative transition-all duration-300 uppercase',
-                'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-0.5 after:bottom-[-4px] after:left-0',
+                'label-caps relative transition-all duration-300',
+                'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-[-4px] after:left-0',
                 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300',
                 'hover:after:scale-x-100 hover:after:origin-bottom-left',
                 location.pathname === link.path 
                   ? 'text-accent after:scale-x-100' 
-                  : cn(getTextColor(), 'hover:text-gray-700')
+                  : cn(getTextColor(), 'hover:opacity-70')
               )}
             >
               {link.name}
@@ -149,13 +119,10 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation */}
       <div 
         className={cn(
-           'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[205]',
-           isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
+          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[205]',
+          isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
         )}
-        style={{ 
-          backgroundColor: 'hsl(var(--background))',
-          opacity: 1
-        }}
+        style={{ backgroundColor: 'hsl(var(--background))', opacity: 1 }}
       >
         <button 
           className="absolute top-4 right-4 p-2 text-foreground z-[215] cursor-pointer touch-manipulation" 
@@ -174,10 +141,10 @@ const Navbar: React.FC = () => {
             href="https://wa.me/48884035225" 
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xl font-medium py-2 border-b border-border text-foreground/80 flex items-center gap-2 uppercase" 
+            className="label-caps py-2 border-b border-border text-foreground/80 flex items-center gap-2" 
             onClick={() => setIsMenuOpen(false)}
           >
-            <Phone size={20} className="text-green-600" />
+            <Phone size={16} className="text-green-600" />
             WHATSAPP: +48 884 035 225
           </a>
           {navLinks.map(link => (
@@ -185,7 +152,7 @@ const Navbar: React.FC = () => {
               key={link.path} 
               to={link.path} 
               className={cn(
-                'text-xl font-medium py-2 border-b border-border uppercase', 
+                'label-caps py-3 border-b border-border text-base', 
                 location.pathname === link.path ? 'text-accent' : 'text-foreground/80'
               )} 
               onClick={() => setIsMenuOpen(false)}
@@ -194,7 +161,7 @@ const Navbar: React.FC = () => {
             </Link>
           ))}
           <button 
-            className="btn-primary text-center" 
+            className="btn-primary text-center mt-4" 
             onClick={() => {
               setIsMenuOpen(false);
               setBookingPopupOpen(true);
