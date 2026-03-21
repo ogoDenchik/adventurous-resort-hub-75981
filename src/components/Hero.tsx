@@ -85,9 +85,8 @@ const Hero: React.FC = () => {
 
         {/* Main headline — serif italic + uppercase mix */}
         <animated.h1
-          style={headline}
-          className="heading-display text-white text-5xl md:text-7xl lg:text-8xl max-w-4xl mb-6 leading-none"
           style={{ ...headline, textShadow: '0 2px 40px rgba(0,0,0,0.4)' }}
+          className="heading-display text-white text-5xl md:text-7xl lg:text-8xl max-w-4xl mb-6 leading-none"
         >
           Your Kitesurf Coach<br />
           <em>in the World's Best Spots</em>
