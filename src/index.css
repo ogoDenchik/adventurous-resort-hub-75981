@@ -115,6 +115,7 @@
 }
 
 /* ── Button Styles ────────────────────────────────────────────────────────── */
+/* Green outline → hover: green fill + white text */
 .btn-primary {
   @apply inline-block font-medium cursor-pointer;
   padding: 0.85rem 1.75rem;
@@ -125,14 +126,15 @@
   border: 1.5px solid hsl(var(--primary));
   color: hsl(var(--primary));
   background: transparent;
-  transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .btn-primary:hover {
   background: hsl(var(--primary));
-  color: hsl(var(--primary-foreground));
+  color: #ffffff;
 }
 
+/* White outline (for dark backgrounds) → hover: white fill + deep black text */
 .btn-primary-white {
   @apply inline-block font-medium cursor-pointer;
   padding: 0.85rem 1.75rem;
@@ -148,7 +150,7 @@
 
 .btn-primary-white:hover {
   background: #ffffff;
-  color: hsl(var(--foreground));
+  color: #0f172a;
 }
 
 /* ── Section Utilities ───────────────────────────────────────────────────── */
