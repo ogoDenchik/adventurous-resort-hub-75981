@@ -92,7 +92,7 @@ const KiteSafari: React.FC = () => {
                     setBookingDetails({
                       packageName: 'Egypt Kite Safari',
                       location: 'Red Sea, Egypt',
-                      price: 'from €1,700',
+                      price: 'from €1,750',
                       highlights: ['7 Days', '3 Epic Lagoons', 'Luxury Yacht', 'All Meals Included'],
                       included: [
                         'Luxury liveaboard accommodation',
@@ -106,7 +106,7 @@ const KiteSafari: React.FC = () => {
                     setBookingPopupOpen(true);
                   }}
                 >
-                  Join — from €1,700 per person
+                  Join — from €1,750 per person
                 </Button>
                 
                 <Button 
