@@ -1060,42 +1060,51 @@ const KiteSafari: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Twin Cabin (Per Person)</h3>
-                    <p className="text-3xl font-bold text-primary mb-6">€1,700</p>
-                    
-                    <div className="space-y-2 mb-6">
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>7 days / 6 nights</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>3 meals daily</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>Snacks + drinks</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>All boat logistics</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>Rescue boat</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>SUP, snorkeling</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>WhatsApp group</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">✔</span>
-                        <span>Evening kite briefings</span>
-                      </div>
-                    </div>
+                    <p className="text-3xl font-bold text-primary mb-4">€1,750</p>
+
+                    <Accordion type="single" collapsible className="mb-4">
+                      <AccordionItem value="twin-includes" className="border-border">
+                        <AccordionTrigger className="text-sm font-semibold py-2 hover:no-underline">
+                          What's included
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-2 pt-1">
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>7 days / 6 nights</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>3 meals daily</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>Snacks + drinks</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>All boat logistics</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>Rescue boat</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>SUP, snorkeling</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>WhatsApp group</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">✔</span>
+                              <span>Evening kite briefings</span>
+                            </div>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Solo travelers, friends</p>
                     
@@ -1106,7 +1115,7 @@ const KiteSafari: React.FC = () => {
                         setBookingDetails({
                           packageName: 'Twin Cabin',
                           location: 'Egypt Kite Safari',
-                          price: '€1,700 per person',
+                          price: '€1,750 per person',
                           highlights: ['7 Days / 6 Nights', '3 Epic Lagoons', 'All Meals', 'Rescue Boat', 'Group Atmosphere'],
                           included: [
                             '7 days / 6 nights on yacht',
