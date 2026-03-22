@@ -93,16 +93,16 @@
 
 .label-caps {
   font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-weight: 500;
+  font-size: 0.8rem;          /* was 0.7rem — now readable on mobile */
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .section-number {
   font-family: 'Jost', sans-serif;
-  font-weight: 200;
-  font-size: 0.75rem;
+  font-weight: 400;
+  font-size: 0.8rem;          /* was 0.75rem */
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: hsl(var(--muted-foreground));
