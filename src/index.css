@@ -116,12 +116,13 @@
 
 /* ── Button Styles ────────────────────────────────────────────────────────── */
 .btn-primary {
-  @apply inline-block px-6 py-3 font-medium cursor-pointer relative overflow-hidden;
+  @apply inline-block font-medium cursor-pointer relative overflow-hidden;
+  padding: 0.85rem 1.75rem;    /* bigger tap area */
   font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;           /* was 0.75rem — now readable */
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  border: 1px solid hsl(var(--primary));
+  border: 1.5px solid hsl(var(--primary));
   color: hsl(var(--primary));
   background: transparent;
   transition: color 0.4s ease;
