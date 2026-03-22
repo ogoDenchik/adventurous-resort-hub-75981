@@ -1750,11 +1750,8 @@ const Vietnam = () => {
     onOpenChange={setBookingOpen}
     backgroundImage="/lovable-uploads/vietnam-hero-kite.jpg"
     title="Book Vietnam Kite Camp"
-    description="Fill in your details and we'll get back to you shortly"
+    description="Contact us to reserve your spot"
     bookingDetails={bookingDetails}
-    webhookUrl={VIETNAM_WEBHOOK_URL}
-    leadSource={leadSource}
-    selectedDates={selectedDates}
   />
 
     </div>
