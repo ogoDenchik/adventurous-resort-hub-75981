@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
-import { EnhancedBookingPopup } from './EnhancedBookingPopup';
+import React from 'react';
 import { buildWebhookPayload } from '@/utils/tracking';
-import { useToast } from '@/hooks/use-toast';
 import { AnimatedLine, RevealOnScroll, StaggeredList } from '@/hooks/use-invisible-animation';
 
-const HOMEPAGE_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
-
 const TrainingPrograms = () => {
-  const { toast } = useToast();
-  const [leaveRequestOpen, setLeaveRequestOpen] = useState(false);
-
   const handleWhatsAppClick = (message: string) => {
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/48884035225?text=${encodedMessage}`, '_blank');
