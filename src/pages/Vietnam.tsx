@@ -1599,12 +1599,12 @@ const Vietnam = () => {
             <span>💬</span> WhatsApp: +48 884 035 225
           </a>
           <a
-            href="https://t.me/ogodenchik"
+            href="https://t.me/Denis_ogodenchik"
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-3 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] text-base"
           >
-            <span>✈️</span> Telegram: @ogodenchik
+            <span>✈️</span> Telegram: @Denis_ogodenchik
           </a>
         </div>
 

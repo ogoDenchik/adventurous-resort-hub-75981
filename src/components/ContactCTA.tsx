@@ -41,7 +41,7 @@ const ContactCTA: React.FC = () => {
             </a>
 
             <a
-              href="https://t.me/ogodenchik"
+              href="https://t.me/Denis_ogodenchik"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary-white flex items-center gap-3 w-full sm:w-auto justify-center text-base"
