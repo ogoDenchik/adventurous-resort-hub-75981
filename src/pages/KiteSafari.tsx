@@ -231,6 +231,7 @@ const KiteSafari: React.FC = () => {
                     </div>
                   </CarouselItem>
                 </CarouselContent>
+              </Carousel>
 
               {/* Pagination Dot - single date */}
               <div className="flex justify-center gap-2 mt-6">
