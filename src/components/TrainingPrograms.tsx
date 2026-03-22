@@ -154,27 +154,18 @@ const TrainingPrograms = () => {
 
         {/* Leave a request */}
         <RevealOnScroll delay={200} className="pt-12 text-center">
-          <p className="label-caps text-muted-foreground mb-6">Or leave a request</p>
-          <button
+          <p className="label-caps text-muted-foreground mb-6">Or contact us directly</p>
+          <a
+            href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27d%20like%20to%20know%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
-            onClick={() => setLeaveRequestOpen(true)}
           >
-            Leave a Request
-          </button>
+            Write on WhatsApp
+          </a>
         </RevealOnScroll>
 
       </div>
-
-      <EnhancedBookingPopup 
-        open={leaveRequestOpen} 
-        onOpenChange={setLeaveRequestOpen}
-        backgroundImage="/lovable-uploads/hero-main-coaching.jpg"
-        title="LEAVE A REQUEST"
-        description="Fill in your details and we'll get back to you shortly"
-        webhookUrl={HOMEPAGE_WEBHOOK_URL}
-        leadSource="Homepage Training Programs - Leave a Request"
-        bookingDetails={{ packageName: 'Request Details', location: 'Worldwide' }}
-      />
     </section>
   );
 };
