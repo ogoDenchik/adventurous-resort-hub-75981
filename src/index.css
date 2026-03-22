@@ -156,7 +156,7 @@
   @apply inline-block font-medium cursor-pointer relative overflow-hidden;
   padding: 0.85rem 1.75rem;
   font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.8);

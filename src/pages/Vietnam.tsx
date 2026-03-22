@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
-import { useToast } from '@/hooks/use-toast';
 import {
   Accordion,
   AccordionContent,
@@ -14,17 +13,10 @@ import {
 } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { buildWebhookPayload } from '@/utils/tracking';
-
-const VIETNAM_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
 const Vietnam = () => {
-  const { toast } = useToast();
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [selectedDates, setSelectedDates] = useState('');
-  const [selectedPackage, setSelectedPackage] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
-  const [leadSource, setLeadSource] = useState('Vietnam Camp');
   const [bookingDetails, setBookingDetails] = useState<{
     packageName: string;
     location: string;
@@ -32,64 +24,6 @@ const Vietnam = () => {
     highlights?: string[];
     included?: string[];
   } | undefined>(undefined);
-  
-  // Contact form state
-  const [contactName, setContactName] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
-  const [contactPhone, setContactPhone] = useState('');
-  const [contactConsent, setContactConsent] = useState(false);
-  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
-
-  const handleContactSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!contactName || !contactEmail || !contactConsent) {
-      return;
-    }
-    
-    setIsContactSubmitting(true);
-    
-    try {
-      const webhookPayload = buildWebhookPayload(
-        'Get in Touch',
-        'Vietnam Camp',
-        contactName,
-        contactPhone || '',
-        contactEmail,
-        'User clicked Get in Touch.'
-      );
-
-      const response = await fetch(VIETNAM_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(webhookPayload),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit');
-      }
-
-      toast({
-        title: "Thank you, we will reply within 24 hours!",
-        description: "Our team will contact you shortly.",
-      });
-      setContactName('');
-      setContactEmail('');
-      setContactPhone('');
-      setContactConsent(false);
-    } catch (error) {
-      console.error('Error submitting contact form:', error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsContactSubmitting(false);
-    }
-  };
   
   useEffect(() => {
     window.scrollTo(0, 0);
