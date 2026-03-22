@@ -153,7 +153,8 @@
 }
 
 .btn-primary-white {
-  @apply inline-block px-6 py-3 font-medium cursor-pointer relative overflow-hidden;
+  @apply inline-block font-medium cursor-pointer relative overflow-hidden;
+  padding: 0.85rem 1.75rem;
   font-family: 'Jost', sans-serif;
   font-size: 0.75rem;
   letter-spacing: 0.2em;
