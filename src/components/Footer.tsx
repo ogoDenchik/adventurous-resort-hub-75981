@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://t.me/ogodenchik" 
+                href="https://t.me/Denis_ogodenchik" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Telegram"
@@ -144,7 +144,7 @@ const Footer: React.FC = () => {
                 <span>INSTAGRAM</span>
               </a>
               <a 
-                href="https://t.me/ogodenchik" 
+                href="https://t.me/Denis_ogodenchik" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase"

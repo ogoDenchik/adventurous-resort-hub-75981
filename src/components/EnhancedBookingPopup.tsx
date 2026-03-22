@@ -137,7 +137,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
               </a>
 
               <a
-                href={`https://t.me/ogodenchik`}
+                href={`https://t.me/Denis_ogodenchik`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-3 w-full py-4 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] text-base"
