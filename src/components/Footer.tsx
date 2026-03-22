@@ -32,7 +32,7 @@ const Footer: React.FC = () => {
                 <Instagram size={20} />
               </a>
               <a 
-                href="https://t.me/ogodenchik" 
+                href="https://t.me/Denis_ogodenchik" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 aria-label="Telegram"
