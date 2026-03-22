@@ -1150,23 +1150,32 @@ const KiteSafari: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Master Suite (2 People)</h3>
-                    <p className="text-3xl font-bold text-primary mb-6">€4,000 / cabin</p>
-                    
-                    <div className="space-y-2 mb-6">
-                      <p className="font-semibold mb-2">Everything in Twin Cabin +</p>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">⭐</span>
-                        <span>Larger cabin</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">⭐</span>
-                        <span>More comfort</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">⭐</span>
-                        <span>Better location onboard</span>
-                      </div>
-                    </div>
+                    <p className="text-3xl font-bold text-primary mb-4">€4,200 / cabin</p>
+
+                    <Accordion type="single" collapsible className="mb-4">
+                      <AccordionItem value="master-includes" className="border-border">
+                        <AccordionTrigger className="text-sm font-semibold py-2 hover:no-underline">
+                          What's included
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-2 pt-1">
+                            <p className="font-semibold mb-2">Everything in Twin Cabin +</p>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">⭐</span>
+                              <span>Larger cabin</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">⭐</span>
+                              <span>More comfort</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">⭐</span>
+                              <span>Better location onboard</span>
+                            </div>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, friends</p>
                     
@@ -1177,7 +1186,7 @@ const KiteSafari: React.FC = () => {
                         setBookingDetails({
                           packageName: 'Master Suite',
                           location: 'Egypt Kite Safari',
-                          price: '€4,000 / cabin',
+                          price: '€4,200 / cabin',
                           highlights: ['7 Days / 6 Nights', 'Larger Cabin', 'Premium Comfort', 'All Twin Cabin Benefits', 'Best Location'],
                           included: [
                             'Everything in Twin Cabin',
@@ -1209,23 +1218,32 @@ const KiteSafari: React.FC = () => {
                   </div>
                   <div className="p-6">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Panoramic Suite (2 People)</h3>
-                    <p className="text-3xl font-bold text-primary mb-6">€4,500 / cabin</p>
-                    
-                    <div className="space-y-2 mb-6">
-                      <p className="font-semibold mb-2">Everything in Master Suite +</p>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">⭐</span>
-                        <span>Panoramic windows</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">⭐</span>
-                        <span>Most premium cabin</span>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <span className="text-primary mt-1">⭐</span>
-                        <span>Maximum privacy</span>
-                      </div>
-                    </div>
+                    <p className="text-3xl font-bold text-primary mb-4">€4,700 / cabin</p>
+
+                    <Accordion type="single" collapsible className="mb-4">
+                      <AccordionItem value="panoramic-includes" className="border-border">
+                        <AccordionTrigger className="text-sm font-semibold py-2 hover:no-underline">
+                          What's included
+                        </AccordionTrigger>
+                        <AccordionContent>
+                          <div className="space-y-2 pt-1">
+                            <p className="font-semibold mb-2">Everything in Master Suite +</p>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">⭐</span>
+                              <span>Panoramic windows</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">⭐</span>
+                              <span>Most premium cabin</span>
+                            </div>
+                            <div className="flex items-start gap-2">
+                              <span className="text-primary mt-1">⭐</span>
+                              <span>Maximum privacy</span>
+                            </div>
+                          </div>
+                        </AccordionContent>
+                      </AccordionItem>
+                    </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, premium travelers</p>
                     
@@ -1236,7 +1254,7 @@ const KiteSafari: React.FC = () => {
                         setBookingDetails({
                           packageName: 'Panoramic Suite',
                           location: 'Egypt Kite Safari',
-                          price: '€4,500 / cabin',
+                          price: '€4,700 / cabin',
                           highlights: ['7 Days / 6 Nights', 'Panoramic Windows', 'Most Premium Cabin', 'Maximum Privacy', 'Exclusive Experience'],
                           included: [
                             'Everything in Master Suite',
@@ -1270,8 +1288,8 @@ const KiteSafari: React.FC = () => {
                 <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all p-6 flex flex-col items-center text-center">
                   <div className="text-5xl mb-4">📘</div>
                   <h3 className="text-xl font-display font-bold mb-3 uppercase">Beginner Group Course</h3>
-                  <p className="text-sm text-muted-foreground mb-6 flex-grow">3h per day (full safari)</p>
-                  <p className="text-3xl font-bold text-primary">€900</p>
+                  <p className="text-sm text-muted-foreground mb-6 flex-grow">2h per day (full safari)</p>
+                  <p className="text-3xl font-bold text-primary">€850</p>
                 </div>
 
                 {/* Card 2 - Progression Pack */}
