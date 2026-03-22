@@ -57,10 +57,22 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Jost', 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 16px;
     letter-spacing: 0.01em;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Mobile-first readable font sizes */
+  p, li, span, label, input, textarea, select {
+    font-size: 1rem; /* 16px */
+    line-height: 1.7;
+  }
+
+  h1 { font-size: clamp(2rem, 8vw, 4rem); }
+  h2 { font-size: clamp(1.75rem, 6vw, 3.5rem); }
+  h3 { font-size: clamp(1.35rem, 4vw, 2rem); }
+  h4 { font-size: clamp(1.1rem, 3vw, 1.4rem); }
 }
 
 /* ── Editorial Typography Utilities ─────────────────────────────────────── */

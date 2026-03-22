@@ -1,33 +1,11 @@
-import React, { useState } from 'react';
-import { useForm } from 'react-hook-form';
-import { zodResolver } from '@hookform/resolvers/zod';
-import * as z from 'zod';
-import { X } from 'lucide-react';
+import React from 'react';
+import { X, MessageCircle, Send } from 'lucide-react';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
-  DialogHeader,
-  DialogTitle,
 } from "@/components/ui/dialog";
 import { ScrollArea } from "@/components/ui/scroll-area";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
 import { Badge } from "@/components/ui/badge";
-import { useToast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
-import { buildWebhookPayload } from "@/utils/tracking";
-
-const bookingSchema = z.object({
-  name: z.string().min(2, 'Name must be at least 2 characters'),
-  phone: z.string().min(10, 'Phone number must be at least 10 digits'),
-  email: z.string().email('Please enter a valid email').optional().or(z.literal('')),
-  message: z.string().optional(),
-});
-
-type BookingFormData = z.infer<typeof bookingSchema>;
 
 interface BookingDetails {
   packageName: string;
@@ -54,88 +32,16 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
   onOpenChange,
   backgroundImage,
   title = "Book Your Adventure",
-  description = "Fill in your details and we'll get back to you shortly",
+  description = "Contact us directly to reserve your spot",
   bookingDetails,
-  webhookUrl,
-  leadSource,
-  selectedDates
 }) => {
-  const { toast } = useToast();
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-    reset,
-  } = useForm<BookingFormData>({
-    resolver: zodResolver(bookingSchema),
-  });
-
-  const onSubmit = async (data: BookingFormData) => {
-    setIsSubmitting(true);
-    
-    try {
-      const packageName = bookingDetails?.packageName || 'General Inquiry';
-      const messagePrefix = packageName.includes('Premium') 
-        ? 'Customer is interested in Private Premium Experience.'
-        : packageName.includes('Standard')
-        ? 'Customer is interested in Standard Camp.'
-        : `Customer is interested in ${packageName}.`;
-      
-      const fullMessage = data.message ? `${messagePrefix} ${data.message}` : messagePrefix;
-      
-      const webhookPayload = buildWebhookPayload(
-        leadSource || 'Website Booking',
-        packageName,
-        data.name,
-        data.phone,
-        data.email || '',
-        fullMessage
-      );
-
-      if (webhookUrl) {
-        const response = await fetch(webhookUrl, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(webhookPayload),
-        });
-
-        if (!response.ok) {
-          throw new Error('Webhook request failed');
-        }
-      } else {
-        // Fallback to Supabase edge function
-        const { error } = await supabase.functions.invoke('forward-webhook', {
-          body: webhookPayload,
-        });
-        if (error) throw error;
-      }
-      
-      toast({
-        title: "Thank you, we will reply within 24 hours!",
-        description: "Our team will contact you shortly.",
-      });
-      
-      reset();
-      onOpenChange(false);
-    } catch (error) {
-      console.error('Error submitting booking:', error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
+  const packageName = bookingDetails?.packageName || 'General Inquiry';
+  const waMessage = encodeURIComponent(`Hey OGO Academy! I'm interested in ${packageName}. Can you help me book?`);
+  const tgMessage = encodeURIComponent(`Hey OGO Academy! I'm interested in ${packageName}.`);
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[800px] p-0 overflow-hidden max-h-[90vh]">
+      <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden max-h-[90vh]">
         {/* Close Button */}
         <button
           onClick={() => onOpenChange(false)}
@@ -147,8 +53,8 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
 
         <ScrollArea className="max-h-[90vh]">
           {/* Hero Image */}
-          <div className="relative h-64 md:h-80 w-full overflow-hidden">
-            <div className="absolute inset-0 bg-black/40 z-10" />
+          <div className="relative h-56 md:h-72 w-full overflow-hidden">
+            <div className="absolute inset-0 bg-black/50 z-10" />
             <img 
               src={backgroundImage} 
               alt="Booking background"
@@ -156,40 +62,40 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
             />
             <div className="absolute inset-0 z-20 flex items-center justify-center">
               <div className="text-center px-4">
-                <h2 className="text-3xl font-display font-bold text-white uppercase">
+                <h2 className="heading-display text-3xl md:text-4xl text-white uppercase">
                   {title}
                 </h2>
               </div>
             </div>
           </div>
 
-          {/* Booking Details Section */}
+          {/* Booking Details */}
           {bookingDetails && (
             <div className="bg-accent/10 border-b border-border p-6">
               <div className="max-w-2xl mx-auto">
                 <div className="flex items-center justify-between mb-4">
                   <div>
-                  <Badge className="mb-2 bg-primary text-primary-foreground">
-                    {bookingDetails.packageName}
-                  </Badge>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">
+                    <Badge className="mb-2 bg-primary text-primary-foreground">
+                      {bookingDetails.packageName}
+                    </Badge>
+                    <h3 className="text-xl font-semibold text-foreground uppercase">
                       {bookingDetails.location}
                     </h3>
                   </div>
                   {bookingDetails.price && (
                     <div className="text-right">
                       <p className="text-sm text-muted-foreground">Price</p>
-                      <p className="text-2xl font-bold text-primary">{bookingDetails.price}</p>
+                      <p className="heading-display text-2xl text-primary">{bookingDetails.price}</p>
                     </div>
                   )}
                 </div>
 
                 {bookingDetails.highlights && bookingDetails.highlights.length > 0 && (
                   <div className="mb-4">
-                    <p className="text-sm font-semibold text-foreground mb-2 uppercase">Highlights:</p>
+                    <p className="label-caps text-foreground mb-2">Highlights:</p>
                     <div className="flex flex-wrap gap-2">
                       {bookingDetails.highlights.map((highlight, index) => (
-                        <span key={index} className="text-xs bg-background px-3 py-1 rounded-full border border-border">
+                        <span key={index} className="text-sm bg-background px-3 py-1 rounded-full border border-border">
                           {highlight}
                         </span>
                       ))}
@@ -199,11 +105,11 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
 
                 {bookingDetails.included && bookingDetails.included.length > 0 && (
                   <div>
-                    <p className="text-sm font-semibold text-foreground mb-2 uppercase">What awaits you:</p>
+                    <p className="label-caps text-foreground mb-2">What's included:</p>
                     <ul className="space-y-1">
                       {bookingDetails.included.map((item, index) => (
                         <li key={index} className="text-sm text-muted-foreground flex items-start gap-2">
-                          <span className="text-primary mt-0.5">✓</span>
+                          <span className="text-primary mt-0.5">—</span>
                           <span>{item}</span>
                         </li>
                       ))}
@@ -214,78 +120,37 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
             </div>
           )}
 
-          {/* Form Content */}
-          <div className="p-6">
-            <DialogHeader className="mb-6">
-              <div className="flex justify-center">
-                <div className="inline-block border-2 border-primary rounded-lg px-6 py-3 bg-background shadow-md">
-                  <p className="text-center text-base font-display font-semibold text-foreground uppercase">
-                    {description}
-                  </p>
-                </div>
-              </div>
-            </DialogHeader>
-            
-            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-            <div>
-              <Label htmlFor="name">Your Full Name *</Label>
-              <Input
-                id="name"
-                {...register('name')}
-                placeholder="Your full name"
-                className="mt-1"
-              />
-              {errors.name && (
-                <p className="text-sm text-destructive mt-1">{errors.name.message}</p>
-              )}
+          {/* Contact Options */}
+          <div className="p-8">
+            <p className="text-center text-muted-foreground mb-2 label-caps">How to reach us</p>
+            <p className="text-center text-foreground text-lg mb-8 font-medium">{description}</p>
+
+            <div className="flex flex-col gap-4">
+              <a
+                href={`https://wa.me/48884035225?text=${waMessage}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 w-full py-4 px-6 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] text-base"
+              >
+                <MessageCircle size={22} />
+                Write on WhatsApp
+              </a>
+
+              <a
+                href={`https://t.me/ogodenchik`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 w-full py-4 px-6 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] text-base"
+              >
+                <Send size={22} />
+                Write on Telegram
+              </a>
             </div>
 
-            <div>
-              <Label htmlFor="phone">Phone Number (WhatsApp, Telegram) *</Label>
-              <Input
-                id="phone"
-                {...register('phone')}
-                placeholder="+48 884 035 225"
-                className="mt-1"
-              />
-              {errors.phone && (
-                <p className="text-sm text-destructive mt-1">{errors.phone.message}</p>
-              )}
-            </div>
-
-            <div>
-              <Label htmlFor="email">Email</Label>
-              <Input
-                id="email"
-                type="email"
-                {...register('email')}
-                placeholder="your.email@example.com"
-                className="mt-1"
-              />
-              {errors.email && (
-                <p className="text-sm text-destructive mt-1">{errors.email.message}</p>
-              )}
-            </div>
-
-            <div>
-              <Label htmlFor="message">Message</Label>
-              <Textarea
-                id="message"
-                {...register('message')}
-                placeholder="Add details to your booking. Or ask questions in here."
-                className="mt-1 min-h-[100px]"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              className="w-full"
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Sending...' : 'Send Inquiry'}
-            </Button>
-          </form>
-        </div>
+            <p className="text-center text-muted-foreground text-sm mt-6 label-caps">
+              We reply within 24 hours · Usually much faster
+            </p>
+          </div>
         </ScrollArea>
       </DialogContent>
     </Dialog>
