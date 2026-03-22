@@ -5,7 +5,6 @@ import Footer from '@/components/Footer';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
-import { useToast } from '@/hooks/use-toast';
 import {
   Accordion,
   AccordionContent,
@@ -14,17 +13,10 @@ import {
 } from "@/components/ui/accordion";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
-import { buildWebhookPayload } from '@/utils/tracking';
-
-const VIETNAM_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
 
 const Vietnam = () => {
-  const { toast } = useToast();
   const [bookingOpen, setBookingOpen] = useState(false);
-  const [selectedDates, setSelectedDates] = useState('');
-  const [selectedPackage, setSelectedPackage] = useState('');
   const [selectedGoal, setSelectedGoal] = useState('');
-  const [leadSource, setLeadSource] = useState('Vietnam Camp');
   const [bookingDetails, setBookingDetails] = useState<{
     packageName: string;
     location: string;
@@ -32,64 +24,6 @@ const Vietnam = () => {
     highlights?: string[];
     included?: string[];
   } | undefined>(undefined);
-  
-  // Contact form state
-  const [contactName, setContactName] = useState('');
-  const [contactEmail, setContactEmail] = useState('');
-  const [contactPhone, setContactPhone] = useState('');
-  const [contactConsent, setContactConsent] = useState(false);
-  const [isContactSubmitting, setIsContactSubmitting] = useState(false);
-
-  const handleContactSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    if (!contactName || !contactEmail || !contactConsent) {
-      return;
-    }
-    
-    setIsContactSubmitting(true);
-    
-    try {
-      const webhookPayload = buildWebhookPayload(
-        'Get in Touch',
-        'Vietnam Camp',
-        contactName,
-        contactPhone || '',
-        contactEmail,
-        'User clicked Get in Touch.'
-      );
-
-      const response = await fetch(VIETNAM_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(webhookPayload),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to submit');
-      }
-
-      toast({
-        title: "Thank you, we will reply within 24 hours!",
-        description: "Our team will contact you shortly.",
-      });
-      setContactName('');
-      setContactEmail('');
-      setContactPhone('');
-      setContactConsent(false);
-    } catch (error) {
-      console.error('Error submitting contact form:', error);
-      toast({
-        title: "Error",
-        description: "Something went wrong. Please try again.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsContactSubmitting(false);
-    }
-  };
   
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -1644,142 +1578,39 @@ const Vietnam = () => {
     </div>
   </section>
 
-  {/* Contact Form Section */}
+  {/* Contact Section */}
   <section className="py-20 bg-muted/20">
     <div className="container mx-auto px-4">
-      <div className="max-w-2xl mx-auto">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
-            GET IN TOUCH
-          </h2>
-          <p className="text-xl text-muted-foreground">
-            Questions? Special Requests? Let's Talk.
-          </p>
+      <div className="max-w-2xl mx-auto text-center">
+        <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4">
+          HAVE QUESTIONS?
+        </h2>
+        <p className="text-xl text-muted-foreground mb-10">
+          Write us directly — we reply fast, even from the water.
+        </p>
+
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-8">
+          <a
+            href="https://wa.me/48884035225?text=Hey%2C%20I%27m%20interested%20in%20Vietnam%20Camp."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 px-8 py-4 bg-green-500 hover:bg-green-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] text-base"
+          >
+            <span>💬</span> WhatsApp: +48 884 035 225
+          </a>
+          <a
+            href="https://t.me/ogodenchik"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-3 px-8 py-4 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded-xl transition-all duration-200 hover:scale-[1.02] text-base"
+          >
+            <span>✈️</span> Telegram: @ogodenchik
+          </a>
         </div>
 
-        {/* Contact Form */}
-        <form onSubmit={handleContactSubmit} className="bg-background rounded-2xl p-8 shadow-md border border-border mb-12">
-          <div className="space-y-6">
-            <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
-                Your Name *
-              </label>
-              <input
-                type="text"
-                required
-                value={contactName}
-                onChange={(e) => setContactName(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="Enter your full name"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
-                Email *
-              </label>
-              <input
-                type="email"
-                required
-                value={contactEmail}
-                onChange={(e) => setContactEmail(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="your@email.com"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-semibold text-foreground mb-2">
-                WhatsApp / Phone <span className="text-muted-foreground">(optional but recommended)</span>
-              </label>
-              <input
-                type="tel"
-                value={contactPhone}
-                onChange={(e) => setContactPhone(e.target.value)}
-                className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary"
-                placeholder="+1 234 567 8900"
-              />
-            </div>
-
-            <div className="flex items-start gap-3">
-              <input
-                type="checkbox"
-                id="consent"
-                required
-                checked={contactConsent}
-                onChange={(e) => setContactConsent(e.target.checked)}
-                className="mt-1 w-4 h-4 rounded border-border text-primary focus:ring-primary"
-              />
-              <label htmlFor="consent" className="text-sm text-muted-foreground">
-                I agree to be contacted via email/WhatsApp regarding my booking
-              </label>
-            </div>
-
-            <Button type="submit" className="w-full text-lg py-6" disabled={isContactSubmitting}>
-              {isContactSubmitting ? 'SENDING...' : 'SEND MY REQUEST'}
-            </Button>
-
-            <p className="text-center text-sm text-muted-foreground mt-4">
-              We'll respond within 24 hours (usually faster!).<br />
-              By submitting, you agree to our Privacy Policy.
-            </p>
-          </div>
-        </form>
-
-        {/* Alternative Contact Methods */}
-        <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
-          <h3 className="text-2xl font-bold text-foreground text-center mb-8">
-            PREFER OTHER CHANNELS?
-          </h3>
-
-          <div className="space-y-6">
-            <a 
-              href="https://wa.me/48884035225?text=Hey%2C%20I%27m%20interested%20in%20Vietnam%20Camp."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
-            >
-              <span className="text-3xl">📱</span>
-              <div>
-                <p className="font-semibold text-foreground mb-1">WhatsApp: +48 884 035 225</p>
-                <p className="text-sm text-muted-foreground">→ Fastest response (I check daily, even on the water!)</p>
-              </div>
-            </a>
-
-            <a 
-              href="https://instagram.com/ogo_kite_academy"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
-            >
-              <span className="text-3xl">📸</span>
-              <div>
-                <p className="font-semibold text-foreground mb-1">Instagram DM: @ogo_kite_academy</p>
-                <p className="text-sm text-muted-foreground">→ Casual questions, quick answers</p>
-              </div>
-            </a>
-
-            <a 
-              href="https://t.me/+48884035225"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-start gap-4 p-4 bg-muted/30 rounded-lg hover:bg-muted/50 transition-colors cursor-pointer"
-            >
-              <span className="text-3xl">✈️</span>
-              <div>
-                <p className="font-semibold text-foreground mb-1">Telegram: +48 884 035 225</p>
-                <p className="text-sm text-muted-foreground">→ Secure messaging, quick replies</p>
-              </div>
-            </a>
-          </div>
-
-          <p className="text-center text-muted-foreground mt-8">
-            We respond to all messages.<br />
-            No question is too small. No request too specific.
-          </p>
-        </div>
-
+        <p className="text-muted-foreground text-base">
+          We respond to all messages. No question is too small.
+        </p>
       </div>
     </div>
   </section>
@@ -1919,11 +1750,8 @@ const Vietnam = () => {
     onOpenChange={setBookingOpen}
     backgroundImage="/lovable-uploads/vietnam-hero-kite.jpg"
     title="Book Vietnam Kite Camp"
-    description="Fill in your details and we'll get back to you shortly"
+    description="Contact us to reserve your spot"
     bookingDetails={bookingDetails}
-    webhookUrl={VIETNAM_WEBHOOK_URL}
-    leadSource={leadSource}
-    selectedDates={selectedDates}
   />
 
     </div>

@@ -1,15 +1,8 @@
-import React, { useState } from 'react';
-import { EnhancedBookingPopup } from './EnhancedBookingPopup';
+import React from 'react';
 import { buildWebhookPayload } from '@/utils/tracking';
-import { useToast } from '@/hooks/use-toast';
 import { AnimatedLine, RevealOnScroll, StaggeredList } from '@/hooks/use-invisible-animation';
 
-const HOMEPAGE_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
-
 const TrainingPrograms = () => {
-  const { toast } = useToast();
-  const [leaveRequestOpen, setLeaveRequestOpen] = useState(false);
-
   const handleWhatsAppClick = (message: string) => {
     const encodedMessage = encodeURIComponent(message);
     window.open(`https://wa.me/48884035225?text=${encodedMessage}`, '_blank');
@@ -161,27 +154,18 @@ const TrainingPrograms = () => {
 
         {/* Leave a request */}
         <RevealOnScroll delay={200} className="pt-12 text-center">
-          <p className="label-caps text-muted-foreground mb-6">Or leave a request</p>
-          <button
+          <p className="label-caps text-muted-foreground mb-6">Or contact us directly</p>
+          <a
+            href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27d%20like%20to%20know%20more%20about%20your%20programs."
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
-            onClick={() => setLeaveRequestOpen(true)}
           >
-            Leave a Request
-          </button>
+            Write on WhatsApp
+          </a>
         </RevealOnScroll>
 
       </div>
-
-      <EnhancedBookingPopup 
-        open={leaveRequestOpen} 
-        onOpenChange={setLeaveRequestOpen}
-        backgroundImage="/lovable-uploads/hero-main-coaching.jpg"
-        title="LEAVE A REQUEST"
-        description="Fill in your details and we'll get back to you shortly"
-        webhookUrl={HOMEPAGE_WEBHOOK_URL}
-        leadSource="Homepage Training Programs - Leave a Request"
-        bookingDetails={{ packageName: 'Request Details', location: 'Worldwide' }}
-      />
     </section>
   );
 };

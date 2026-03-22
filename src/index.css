@@ -57,10 +57,22 @@
   body {
     @apply bg-background text-foreground;
     font-family: 'Jost', 'Montserrat', sans-serif;
-    font-weight: 300;
+    font-weight: 400;
+    font-size: 16px;
     letter-spacing: 0.01em;
     font-feature-settings: "rlig" 1, "calt" 1;
   }
+
+  /* Mobile-first readable font sizes */
+  p, li, span, label, input, textarea, select {
+    font-size: 1rem; /* 16px */
+    line-height: 1.7;
+  }
+
+  h1 { font-size: clamp(2rem, 8vw, 4rem); }
+  h2 { font-size: clamp(1.75rem, 6vw, 3.5rem); }
+  h3 { font-size: clamp(1.35rem, 4vw, 2rem); }
+  h4 { font-size: clamp(1.1rem, 3vw, 1.4rem); }
 }
 
 /* ── Editorial Typography Utilities ─────────────────────────────────────── */
@@ -81,16 +93,16 @@
 
 .label-caps {
   font-family: 'Jost', sans-serif;
-  font-weight: 400;
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
+  font-weight: 500;
+  font-size: 0.8rem;          /* was 0.7rem — now readable on mobile */
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 }
 
 .section-number {
   font-family: 'Jost', sans-serif;
-  font-weight: 200;
-  font-size: 0.75rem;
+  font-weight: 400;
+  font-size: 0.8rem;          /* was 0.75rem */
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: hsl(var(--muted-foreground));
@@ -104,12 +116,13 @@
 
 /* ── Button Styles ────────────────────────────────────────────────────────── */
 .btn-primary {
-  @apply inline-block px-6 py-3 font-medium cursor-pointer relative overflow-hidden;
+  @apply inline-block font-medium cursor-pointer relative overflow-hidden;
+  padding: 0.85rem 1.75rem;    /* bigger tap area */
   font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.2em;
+  font-size: 0.85rem;           /* was 0.75rem — now readable */
+  letter-spacing: 0.18em;
   text-transform: uppercase;
-  border: 1px solid hsl(var(--primary));
+  border: 1.5px solid hsl(var(--primary));
   color: hsl(var(--primary));
   background: transparent;
   transition: color 0.4s ease;
@@ -140,9 +153,10 @@
 }
 
 .btn-primary-white {
-  @apply inline-block px-6 py-3 font-medium cursor-pointer relative overflow-hidden;
+  @apply inline-block font-medium cursor-pointer relative overflow-hidden;
+  padding: 0.85rem 1.75rem;
   font-family: 'Jost', sans-serif;
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   border: 1px solid rgba(255, 255, 255, 0.8);
