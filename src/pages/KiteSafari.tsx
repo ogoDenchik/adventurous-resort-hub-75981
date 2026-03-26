@@ -203,6 +203,9 @@ const KiteSafari: React.FC = () => {
                           <h3 className="text-2xl font-bold text-foreground mb-2">
                             April 18–25, 2026
                           </h3>
+                          <span className="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-full">
+                            🔥 ONLY 5 SPOTS LEFT
+                          </span>
                         </div>
 
                         <div className="space-y-4 text-left">
