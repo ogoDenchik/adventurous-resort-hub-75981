@@ -1774,7 +1774,7 @@ const KiteSafari: React.FC = () => {
                   {/* 1150+ Students */}
                   <div className="text-center">
                     <div className="text-5xl mb-3">👥</div>
-                    <h4 className="font-bold text-foreground mb-1">1150+ Students</h4>
+                    <h4 className="font-bold text-foreground mb-1">500+ Students</h4>
                     <p className="text-sm text-muted-foreground">Trained Worldwide</p>
                   </div>
 
