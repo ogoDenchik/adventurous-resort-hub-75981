@@ -134,7 +134,7 @@ const KiteSafari: React.FC = () => {
                 <div className="flex justify-center mb-3">
                   <GraduationCap className="w-12 h-12 text-primary" />
                 </div>
-                <h4 className="font-bold text-foreground mb-1">1150+ Students Trained</h4>
+                <h4 className="font-bold text-foreground mb-1">500+ Students Trained</h4>
                 <p className="text-sm text-muted-foreground">Worldwide Experience</p>
               </div>
 
