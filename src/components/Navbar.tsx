@@ -24,10 +24,10 @@ const Navbar: React.FC = () => {
 
   const navLinks = [
     { name: 'Home', path: '/' },
-    { name: 'Vietnam', path: '/vietnam' },
+    { name: 'Cyprus', path: '/cyprus' },
     { name: 'Kite Safari', path: '/kite-safari' },
     { name: 'Brazil', path: '/brazil' },
-    { name: 'Cyprus', path: '/cyprus' },
+    { name: 'Vietnam', path: '/vietnam' },
     { name: 'Gallery', path: '/gallery' },
     { name: 'About', path: '/about' },
     { name: 'Contact Us', path: '/contact' },
