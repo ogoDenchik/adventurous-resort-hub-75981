@@ -134,7 +134,7 @@ const KiteSafari: React.FC = () => {
                 <div className="flex justify-center mb-3">
                   <GraduationCap className="w-12 h-12 text-primary" />
                 </div>
-                <h4 className="font-bold text-foreground mb-1">1150+ Students Trained</h4>
+                <h4 className="font-bold text-foreground mb-1">500+ Students Trained</h4>
                 <p className="text-sm text-muted-foreground">Worldwide Experience</p>
               </div>
 
@@ -152,7 +152,7 @@ const KiteSafari: React.FC = () => {
                 <div className="flex justify-center mb-3">
                   <Users className="w-12 h-12 text-primary" />
                 </div>
-                <h4 className="font-bold text-foreground mb-1">200+ Returning Riders</h4>
+                <h4 className="font-bold text-foreground mb-1">70+ Returning Riders</h4>
                 <p className="text-sm text-muted-foreground">Strong Community</p>
               </div>
 
@@ -203,6 +203,9 @@ const KiteSafari: React.FC = () => {
                           <h3 className="text-2xl font-bold text-foreground mb-2">
                             April 18–25, 2026
                           </h3>
+                          <span className="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-full">
+                            🔥 ONLY 5 SPOTS LEFT
+                          </span>
                         </div>
 
                         <div className="space-y-4 text-left">
@@ -1771,7 +1774,7 @@ const KiteSafari: React.FC = () => {
                   {/* 1150+ Students */}
                   <div className="text-center">
                     <div className="text-5xl mb-3">👥</div>
-                    <h4 className="font-bold text-foreground mb-1">1150+ Students</h4>
+                    <h4 className="font-bold text-foreground mb-1">500+ Students</h4>
                     <p className="text-sm text-muted-foreground">Trained Worldwide</p>
                   </div>
 
@@ -1785,7 +1788,7 @@ const KiteSafari: React.FC = () => {
                   {/* 200+ Returning Riders */}
                   <div className="text-center">
                     <div className="text-5xl mb-3">🔄</div>
-                    <h4 className="font-bold text-foreground mb-1">200+ Returning Riders</h4>
+                    <h4 className="font-bold text-foreground mb-1">70+ Returning Riders</h4>
                     <p className="text-sm text-muted-foreground">Strong Community</p>
                   </div>
 
