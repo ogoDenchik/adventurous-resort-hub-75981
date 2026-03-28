@@ -28,21 +28,21 @@ const CyprusTestimonials: React.FC = () => {
         <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
         <div className={cn('flex gap-5 w-max', paused ? '' : 'animate-marquee')} style={paused ? { animationPlayState: 'paused' } : undefined}>
-          {doubled.map((t, i) => (
+          {doubled.map((item, i) => (
             <div key={i} onClick={() => setPaused(p => !p)} className="flex-shrink-0 w-72 bg-card rounded-2xl border border-border/50 p-5 shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer select-none">
               <div className="flex gap-0.5 mb-3">
-                {Array.from({ length: t.stars }).map((_, si) => (
+                {Array.from({ length: item.stars }).map((_, si) => (
                   <Star key={si} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-sm text-foreground leading-relaxed mb-4">"{t.text}"</p>
+              <p className="text-sm text-foreground leading-relaxed mb-4">"{item.text}"</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                  <img src={t.photo} alt={t.name} className="w-full h-full object-cover" />
+                  <img src={item.photo} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
-                  <div className="text-sm font-semibold text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground">{t.location}</div>
+                  <div className="text-sm font-semibold text-foreground">{item.name}</div>
+                  <div className="text-xs text-muted-foreground">{item.location}</div>
                 </div>
               </div>
             </div>
