@@ -4,21 +4,21 @@ import { Menu, X, Phone } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Logo from './Logo';
 import { EnhancedBookingPopup } from './EnhancedBookingPopup';
+import { useLanguage, type Language } from '@/contexts/LanguageContext';
 
-const languages = [
-  { code: 'en', label: 'EN', flag: '🇬🇧' },
-  { code: 'ru', label: 'RU', flag: '🇷🇺' },
-  { code: 'gr', label: 'GR', flag: '🇬🇷' },
+const languages: { code: Language; label: string }[] = [
+  { code: 'en', label: 'EN' },
+  { code: 'ru', label: 'RU' },
+  { code: 'gr', label: 'GR' },
 ];
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
-  const [currentLang, setCurrentLang] = useState('en');
   const [langMenuOpen, setLangMenuOpen] = useState(false);
   const location = useLocation();
-  const navigate = useNavigate();
+  const { lang, setLang, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,14 +31,14 @@ const Navbar: React.FC = () => {
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'Cyprus', path: '/cyprus' },
-    { name: 'Kite Safari', path: '/kite-safari' },
-    { name: 'Brazil', path: '/brazil' },
-    { name: 'Vietnam', path: '/vietnam' },
-    { name: 'Gallery', path: '/gallery' },
-    { name: 'About', path: '/about' },
-    { name: 'Contact Us', path: '/contact' },
+    { name: t('nav.home'), path: '/' },
+    { name: t('nav.cyprus'), path: '/cyprus' },
+    { name: t('nav.kiteSafari'), path: '/kite-safari' },
+    { name: t('nav.brazil'), path: '/brazil' },
+    { name: t('nav.vietnam'), path: '/vietnam' },
+    { name: t('nav.gallery'), path: '/gallery' },
+    { name: t('nav.about'), path: '/about' },
+    { name: t('nav.contact'), path: '/contact' },
   ];
 
   const whiteHeaderPages = ['/gallery', '/contact', '/about'];
@@ -63,7 +63,7 @@ const Navbar: React.FC = () => {
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Logo />
 
-        {/* Language Switcher - visible on all viewports */}
+        {/* Language Switcher */}
         <div className="relative ml-2 md:ml-4">
           <button
             onClick={() => setLangMenuOpen(!langMenuOpen)}
@@ -76,23 +76,23 @@ const Navbar: React.FC = () => {
                   : 'border-white/30 text-white hover:bg-white/10'
             )}
           >
-            <span className="uppercase font-semibold">{currentLang}</span>
+            <span className="uppercase font-semibold">{lang.toUpperCase()}</span>
           </button>
           {langMenuOpen && (
             <div className="absolute top-full mt-1 left-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
-              {languages.map((lang) => (
+              {languages.map((l) => (
                 <button
-                  key={lang.code}
+                  key={l.code}
                   onClick={() => {
-                    setCurrentLang(lang.code);
+                    setLang(l.code);
                     setLangMenuOpen(false);
                   }}
                   className={cn(
                     'w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-muted transition-colors',
-                    currentLang === lang.code && 'bg-primary/10 text-primary font-medium'
+                    lang === l.code && 'bg-primary/10 text-primary font-medium'
                   )}
                 >
-                  <span className="font-semibold">{lang.label}</span>
+                  <span className="font-semibold">{l.label}</span>
                 </button>
               ))}
             </div>
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
             className="btn-primary"
             onClick={() => setBookingPopupOpen(true)}
           >
-            Book Now
+            {t('nav.bookNow')}
           </button>
         </div>
         
@@ -211,7 +211,7 @@ const Navbar: React.FC = () => {
               setBookingPopupOpen(true);
             }}
           >
-            Book Now
+            {t('nav.bookNow')}
           </button>
         </nav>
       </div>
@@ -221,8 +221,8 @@ const Navbar: React.FC = () => {
         open={bookingPopupOpen} 
         onOpenChange={setBookingPopupOpen}
         backgroundImage="/lovable-uploads/hero-main-coaching.jpg"
-        title="Book Your Adventure"
-        description="Fill in your details and we'll get back to you shortly"
+        title={t('nav.bookTitle')}
+        description={t('nav.bookDesc')}
       />
     </header>
   );
