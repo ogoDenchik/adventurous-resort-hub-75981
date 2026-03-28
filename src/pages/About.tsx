@@ -213,12 +213,24 @@ const About: React.FC = () => {
                 <Link to="/kite-safari" className="inline-block px-8 py-4 bg-white text-accent font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:translate-y-[-2px]">
                   View Kite Safaris
                 </Link>
-                <button 
-                  onClick={() => setBookingPopupOpen(true)}
-                  className="inline-block px-8 py-4 bg-transparent border-2 border-white text-white font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:translate-y-[-2px]"
+                <a 
+                  href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20have%20a%20question!"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:translate-y-[-2px]"
                 >
-                  Get In Touch
-                </button>
+                  <MessageCircle className="w-5 h-5" />
+                  WhatsApp
+                </a>
+                <a 
+                  href="https://t.me/Denis_ogodenchik"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:translate-y-[-2px]"
+                >
+                  <Send className="w-5 h-5" />
+                  Telegram
+                </a>
               </div>
             </div>
           </div>
