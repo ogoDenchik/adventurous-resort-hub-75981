@@ -103,6 +103,11 @@ export const translations: Translations = {
       lesson4: 'Lesson 4+',
       lesson4Title: 'Progression',
       lesson4Tags: 'Independent,Turns,Next level',
+      videoTitle: 'See How It Looks',
+      ctaTitle: 'Ready to Try?',
+      ctaSubtitle: 'Write to us — we\'ll find the right time and spot for your level',
+      egyptLink: '🇪🇬 Egypt',
+      brazilLink: '🇧🇷 Brazil',
     },
     // About page
     about: {
