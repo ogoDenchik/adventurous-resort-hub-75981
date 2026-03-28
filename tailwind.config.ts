@@ -124,7 +124,7 @@ export default {
 				'slide-up': 'slide-up 0.6s ease-out',
 				'slide-down': 'slide-down 0.6s ease-out',
 				'slide-in-right': 'slide-in-right 0.6s ease-out',
-				'marquee': 'marquee 20s linear infinite'
+				'marquee': 'marquee 45s linear infinite'
 			}
 		}
 	},
