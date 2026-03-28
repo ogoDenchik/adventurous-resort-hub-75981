@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
-import { ArrowRight, Leaf, Shield, Award, Users, Heart, BookOpen, Map, Calendar, Mountain, GitBranch, MapPin, MapPinIcon } from 'lucide-react';
+import { ArrowRight, Leaf, Shield, Award, Users, Heart, BookOpen, Map, Calendar, Mountain, GitBranch, MapPin, MapPinIcon, MessageCircle, Send } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { BookingPopup } from '@/components/BookingPopup';
 
 const About: React.FC = () => {
-  const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
 
   return <div className="min-h-screen flex flex-col">
       <Navbar />
