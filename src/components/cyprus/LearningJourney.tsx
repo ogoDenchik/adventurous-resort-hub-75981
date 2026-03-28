@@ -11,7 +11,7 @@ const LearningJourney: React.FC = () => {
     { day: t('cyprus.lesson1'), icon: Wind, title: t('cyprus.lesson1Title'), tags: t('cyprus.lesson1Tags').split(','), photo: '/lovable-uploads/kite-lesson-1.jpg', objectPosition: 'center 15%' },
     { day: t('cyprus.lesson2'), icon: Waves, title: t('cyprus.lesson2Title'), tags: t('cyprus.lesson2Tags').split(','), photo: '/lovable-uploads/kite-lesson-2.jpg', objectPosition: 'center' },
     { day: t('cyprus.lesson3'), icon: Zap, title: t('cyprus.lesson3Title'), tags: t('cyprus.lesson3Tags').split(','), photo: '/lovable-uploads/kite-lesson-3.jpg', objectPosition: 'center' },
-    { day: t('cyprus.lesson4'), icon: Trophy, title: t('cyprus.lesson4Title'), tags: t('cyprus.lesson4Tags').split(','), photo: '/lovable-uploads/kite-lesson-4.jpg', objectPosition: 'center 20%' },
+    { day: t('cyprus.lesson4'), icon: Trophy, title: t('cyprus.lesson4Title'), tags: t('cyprus.lesson4Tags').split(','), photo: '/lovable-uploads/kite-lesson-4.jpg', objectPosition: 'center 5%' },
   ];
 
   useEffect(() => {
