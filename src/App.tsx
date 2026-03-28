@@ -40,8 +40,6 @@ const App = () => {
               <Route path="/brazil" element={<Brazil />} />
               <Route path="/cyprus" element={<Cyprus />} />
               <Route path="/vietnam" element={<Vietnam />} />
-              <Route path="/booking" element={<Booking />} />
-              <Route path="/booking-success" element={<BookingSuccess />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />

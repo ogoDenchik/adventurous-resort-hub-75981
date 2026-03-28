@@ -237,10 +237,6 @@ const About: React.FC = () => {
         </section>
       </main>
       
-      <BookingPopup 
-        open={bookingPopupOpen} 
-        onOpenChange={setBookingPopupOpen} 
-      />
       
       <Footer />
     </div>;

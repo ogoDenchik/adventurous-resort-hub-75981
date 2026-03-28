@@ -70,7 +70,7 @@ const offers: OfferProps[] = [
     image: '/lovable-uploads/eab0dff8-9904-4338-ae38-67e97ade71cf.png',
     backgroundColor: 'bg-orange-500',
     textColor: 'text-white',
-    linkTo: '/booking?promo=FAMILY20',
+    linkTo: 'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20Family%20Special!',
     animationDelay: 200
   }
 ];
