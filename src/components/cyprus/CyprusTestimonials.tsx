@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Star } from 'lucide-react';
+import { cn } from '@/lib/utils';
 
 const testimonials = [
   {
     name: 'Миша',
-    flag: '🇪🇬',
-    text: 'За 7 дней встал на доску и поехал самостоятельно. Методика Дениса — огонь!',
+    text: 'Денис поставил меня на доску за неделю, хотя я вообще думал что это нереально)) сейчас уже сам катаюсь, второй сезон подряд едем вместе',
     initials: 'М',
     color: 'from-blue-500 to-cyan-400',
     stars: 5,
@@ -13,17 +13,15 @@ const testimonials = [
   },
   {
     name: 'Kate',
-    flag: '🇧🇷',
-    text: 'Всё на высшем уровне — обучение, организация, атмосфера. Выучила первый бэкролл!',
+    text: 'amazing experience! everything was perfectly organized, from training to accommodation. learned my first backroll 🤙',
     initials: 'K',
     color: 'from-pink-500 to-rose-400',
     stars: 5,
-    location: 'Бразилия',
+    location: 'Brazil',
   },
   {
     name: 'Илья',
-    flag: '🇻🇳',
-    text: 'Пошаговый подход: маленькие кусочки складываются в полную картину. Прогресс очень быстрый.',
+    text: 'Мне нравится что Денис дает информацию по чуть чуть, не грузит сразу всем. Потом все кусочки складываются и ты такой — о, я еду!',
     initials: 'И',
     color: 'from-emerald-500 to-teal-400',
     stars: 5,
@@ -31,8 +29,7 @@ const testimonials = [
   },
   {
     name: 'Андрей',
-    flag: '🇨🇾',
-    text: 'Живу на Кипре 3 года, наконец нашёл свой спорт. Теперь катаюсь каждые выходные!',
+    text: 'Переехал на Кипр, искал чем заняться кроме работы. Друг затащил на кайт — теперь не могу остановится, катаюсь каждые выхи 😅',
     initials: 'А',
     color: 'from-amber-500 to-orange-400',
     stars: 5,
@@ -40,8 +37,7 @@ const testimonials = [
   },
   {
     name: 'Лена',
-    flag: '🇨🇾',
-    text: 'Боялась воды, но Денис всё объяснил спокойно. На третий день уже каталась сама.',
+    text: 'я реально боялась, у меня был прям страх воды. Но Денис оч спокойно все обьяснил, без давления. на 3й день уже сама каталась, до сих пор не верю',
     initials: 'Л',
     color: 'from-violet-500 to-purple-400',
     stars: 5,
@@ -49,11 +45,10 @@ const testimonials = [
   },
   {
     name: 'Дима',
-    flag: '🇨🇾',
-    text: 'Лучшая инвестиция в отдых. Комьюнити тут потрясающее, сразу нашёл друзей.',
+    text: 'Лучшее что я сделал за последний год. Комьюнити здесь крутое, сразу нашел ребят с кем кататься',
     initials: 'Д',
     color: 'from-sky-500 to-indigo-400',
-    stars: 5,
+    stars: 4,
     location: 'Кипр',
   },
 ];
@@ -61,6 +56,8 @@ const testimonials = [
 const doubled = [...testimonials, ...testimonials];
 
 const CyprusTestimonials: React.FC = () => {
+  const [paused, setPaused] = useState(false);
+
   return (
     <section className="py-12 overflow-hidden bg-muted/30">
       <div className="container mx-auto px-4 mb-8">
@@ -76,13 +73,19 @@ const CyprusTestimonials: React.FC = () => {
         <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-5 animate-marquee w-max hover:[animation-play-state:paused]">
+        <div
+          className={cn(
+            'flex gap-5 w-max',
+            paused ? '' : 'animate-marquee'
+          )}
+          style={paused ? { animationPlayState: 'paused' } : undefined}
+        >
           {doubled.map((t, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-72 bg-card rounded-2xl border border-border/50 p-5 shadow-sm hover:shadow-md transition-shadow duration-300"
+              onClick={() => setPaused(p => !p)}
+              className="flex-shrink-0 w-72 bg-card rounded-2xl border border-border/50 p-5 shadow-sm hover:shadow-md transition-shadow duration-300 cursor-pointer select-none"
             >
-              {/* Stars */}
               <div className="flex gap-0.5 mb-3">
                 {Array.from({ length: t.stars }).map((_, si) => (
                   <Star key={si} className="w-4 h-4 fill-amber-400 text-amber-400" />
@@ -92,15 +95,12 @@ const CyprusTestimonials: React.FC = () => {
               <p className="text-sm text-foreground leading-relaxed mb-4">"{t.text}"</p>
 
               <div className="flex items-center gap-3">
-                {/* Avatar */}
                 <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center flex-shrink-0`}>
                   <span className="text-sm font-bold text-white">{t.initials}</span>
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-foreground">{t.name}</div>
-                  <div className="text-xs text-muted-foreground flex items-center gap-1">
-                    <span>{t.flag}</span> {t.location}
-                  </div>
+                  <div className="text-xs text-muted-foreground">{t.location}</div>
                 </div>
               </div>
             </div>
