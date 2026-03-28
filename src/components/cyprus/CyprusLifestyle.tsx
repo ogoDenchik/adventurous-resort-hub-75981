@@ -1,11 +1,27 @@
 import React from 'react';
-import { Laptop, Sun, Heart, TrendingUp } from 'lucide-react';
+import { Flame, Brain, Users, Sparkles } from 'lucide-react';
 
-const stats = [
-  { icon: Laptop, stat: '87%', label: 'студентов — IT и бизнес', color: 'from-blue-500/20 to-cyan-500/20' },
-  { icon: Sun, stat: '340', label: 'солнечных дней в году', color: 'from-amber-500/20 to-orange-500/20' },
-  { icon: Heart, stat: '70+', label: 'возвращаются снова', color: 'from-rose-500/20 to-pink-500/20' },
-  { icon: TrendingUp, stat: '3 дня', label: 'до первого катания', color: 'from-emerald-500/20 to-green-500/20' },
+const reasons = [
+  {
+    icon: Flame,
+    title: 'Новый вызов',
+    text: 'Спорт, который бросает вызов. Не нужна физическая подготовка — нужно желание.',
+  },
+  {
+    icon: Brain,
+    title: 'Полная перезагрузка',
+    text: 'Ты думаешь только про ветер и кайт. Голова разгружается за минуты.',
+  },
+  {
+    icon: Users,
+    title: 'Комьюнити экспатов',
+    text: 'Местное кайт-сообщество на Кипре. Новые друзья, совместные выезды, общая энергия.',
+  },
+  {
+    icon: Sparkles,
+    title: 'Доступен каждому',
+    text: 'Независимо от возраста и подготовки. Мы ставим на воду людей от 12 до 60 лет.',
+  },
 ];
 
 const CyprusLifestyle: React.FC = () => {
@@ -14,28 +30,32 @@ const CyprusLifestyle: React.FC = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-2">
-            Почему айтишники выбирают кайт
+            Зачем пробовать кайтсёрфинг
           </h2>
-          <p className="text-muted-foreground">Новое увлечение на всю жизнь</p>
+          <p className="text-muted-foreground max-w-lg mx-auto">
+            Приключение, которое меняет отношение к отдыху навсегда
+          </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mb-10">
-          {stats.map((item, index) => (
-            <div 
-              key={index} 
-              className={`relative bg-gradient-to-br ${item.color} rounded-xl p-5 text-center border border-border/30 hover:scale-105 transition-transform duration-300`}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl mx-auto mb-10">
+          {reasons.map((item, index) => (
+            <div
+              key={index}
+              className="bg-card rounded-xl border border-border/50 p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
             >
-              <item.icon className="w-6 h-6 text-primary mx-auto mb-2" />
-              <div className="text-3xl md:text-4xl font-display font-bold text-foreground">{item.stat}</div>
-              <div className="text-xs text-muted-foreground mt-1">{item.label}</div>
+              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <item.icon className="w-6 h-6 text-primary" />
+              </div>
+              <h3 className="text-lg font-bold mb-1">{item.title}</h3>
+              <p className="text-sm text-muted-foreground leading-relaxed">{item.text}</p>
             </div>
           ))}
         </div>
 
         {/* Photo strip */}
         <div className="max-w-5xl mx-auto rounded-xl overflow-hidden">
-          <img 
-            src="/lovable-uploads/cyprus-students-celebrating.jpg" 
+          <img
+            src="/lovable-uploads/cyprus-students-celebrating.jpg"
             alt="Счастливые студенты на Кипре"
             loading="lazy"
             className="w-full h-48 md:h-64 object-cover"
