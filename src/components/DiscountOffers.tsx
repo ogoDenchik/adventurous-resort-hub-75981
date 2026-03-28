@@ -128,15 +128,17 @@ const OfferCard: React.FC<OfferProps> = ({
             <span className="line-through opacity-75 text-sm">{priceFrom}</span>
             <span className="text-xl font-bold ml-2">{priceTo}</span>
           </div>
-          <Link 
-            to={linkTo} 
+          <a 
+            href={linkTo}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               "rounded-full py-2 px-4 inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-all",
               textColor
             )}
           >
             Book Now <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-          </Link>
+          </a>
         </div>
       </div>
     </motion.div>
