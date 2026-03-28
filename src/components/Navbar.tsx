@@ -92,8 +92,7 @@ const Navbar: React.FC = () => {
                     currentLang === lang.code && 'bg-primary/10 text-primary font-medium'
                   )}
                 >
-                  <span>{lang.flag}</span>
-                  <span>{lang.label}</span>
+                  <span className="font-semibold">{lang.label}</span>
                 </button>
               ))}
             </div>
