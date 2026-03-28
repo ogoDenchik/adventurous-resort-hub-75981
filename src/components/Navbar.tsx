@@ -5,10 +5,18 @@ import { cn } from '@/lib/utils';
 import Logo from './Logo';
 import { EnhancedBookingPopup } from './EnhancedBookingPopup';
 
+const languages = [
+  { code: 'en', label: 'EN', flag: '🇬🇧' },
+  { code: 'ru', label: 'RU', flag: '🇷🇺' },
+  { code: 'gr', label: 'GR', flag: '🇬🇷' },
+];
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('en');
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
