@@ -23,11 +23,11 @@ const CyprusHero: React.FC<CyprusHeroProps> = ({ onWhatsApp }) => {
         <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-sm font-medium">
           🌍 Круглый год • 340 дней ветра
         </div>
-        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-6 leading-tight">
-          Кайтсёрфинг<br className="hidden md:block" /> на Кипре
+        <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4 leading-tight">
+          Профессиональное обучение<br className="hidden md:block" /> кайтсёрфингу
         </h1>
-        <p className="text-lg md:text-xl max-w-xl mx-auto mb-8 text-white/90">
-          От нуля до самостоятельного катания за 3 дня
+        <p className="text-sm md:text-base max-w-lg mx-auto mb-8 text-white/70">
+          С сертифицированными инструкторами с более чем пятилетним опытом
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <Button size="lg" className="text-lg px-8 py-6" onClick={onWhatsApp}>

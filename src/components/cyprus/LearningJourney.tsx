@@ -3,32 +3,32 @@ import { Wind, Waves, Zap, Trophy } from 'lucide-react';
 
 const steps = [
   {
-    day: 'День 1',
+    day: 'Занятие 1',
     icon: Wind,
     title: 'Знакомство с кайтом',
     tags: ['Теория', '1-на-1', 'Оборудование включено'],
-    photo: '/lovable-uploads/cyprus-happy-student-1.jpg',
+    photo: '/lovable-uploads/kite-lesson-1.jpg',
   },
   {
-    day: 'День 2',
+    day: 'Занятие 2',
     icon: Waves,
     title: 'Bodydrag & контроль',
     tags: ['Bodydrag', 'Самоспасение', 'Постановка доски'],
-    photo: '/lovable-uploads/cyprus-student-thumbsup.jpg',
+    photo: '/lovable-uploads/kite-lesson-2.jpg',
   },
   {
-    day: 'День 3',
+    day: 'Занятие 3',
     icon: Zap,
     title: 'Waterstart! 🎉',
     tags: ['Waterstart', 'Первые галсы', 'BBTalking рация'],
-    photo: '/lovable-uploads/cyprus-student-waterstart-joy.jpg',
+    photo: '/lovable-uploads/kite-lesson-3.jpg',
   },
   {
-    day: 'День 4+',
+    day: 'Занятие 4+',
     icon: Trophy,
     title: 'Прогрессия',
     tags: ['Самостоятельно', 'Развороты', 'Следующий уровень'],
-    photo: '/lovable-uploads/cyprus-students-celebrating.jpg',
+    photo: '/lovable-uploads/kite-lesson-4.jpg',
   },
 ];
 
@@ -40,7 +40,7 @@ const LearningJourney: React.FC = () => {
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-2">
             От нуля до кайтера за 3 дня
           </h2>
-          <p className="text-muted-foreground">500+ студентов прошли этот путь</p>
+          <p className="text-muted-foreground">300+ студентов прошли этот путь</p>
         </div>
 
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 md:gap-6">
