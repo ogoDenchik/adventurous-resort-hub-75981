@@ -108,7 +108,6 @@ export const translations: Translations = {
       lesson4Title: 'Progression',
       lesson4Tags: 'Independent,Turns,Next level',
     },
-    },
     // About page
     about: {
       title: 'Our Story',
