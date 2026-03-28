@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Wifi, Coffee, Users, Tv } from 'lucide-react';
 import { cn } from '@/lib/utils';
 type Amenity = {

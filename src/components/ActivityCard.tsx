@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Clock, Users, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
