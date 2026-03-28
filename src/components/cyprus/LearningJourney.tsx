@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Wind, Waves, Zap, Trophy } from 'lucide-react';
 
 const steps = [
@@ -33,9 +33,34 @@ const steps = [
 ];
 
 const LearningJourney: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visibleSteps, setVisibleSteps] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    const cards = sectionRef.current?.querySelectorAll('[data-step]');
+    if (!cards) return;
+
+    cards.forEach((card, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleSteps((prev) => new Set(prev).add(index));
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.3 }
+      );
+      observer.observe(card);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   return (
     <section id="learning-journey" className="py-16 md:py-24">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4" ref={sectionRef}>
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-2">
             План обучения кайтсёрфера
@@ -45,27 +70,44 @@ const LearningJourney: React.FC = () => {
 
         {/* Roadmap */}
         <div className="relative max-w-3xl mx-auto">
-          {/* Vertical connecting line */}
-          <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-px bg-border md:-translate-x-px" />
+          {/* Vertical connecting line — dashed for "map route" feel */}
+          <div className="absolute left-7 md:left-1/2 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-primary/30 md:-translate-x-px" />
 
           {steps.map((step, index) => {
             const isEven = index % 2 === 0;
+            const isVisible = visibleSteps.has(index);
 
             return (
               <div
                 key={index}
-                className={`relative flex items-start gap-4 md:gap-0 mb-12 last:mb-0 ${
+                data-step={index}
+                className={`relative flex items-start gap-4 md:gap-0 mb-14 last:mb-0 ${
                   isEven ? 'md:flex-row' : 'md:flex-row-reverse'
                 }`}
               >
-                {/* Dot on the line */}
-                <div className="absolute left-6 md:left-1/2 top-4 z-10 -translate-x-1/2 w-3 h-3 rounded-full bg-primary ring-4 ring-background" />
+                {/* Numbered map marker */}
+                <div className="absolute left-7 md:left-1/2 top-4 z-10 -translate-x-1/2">
+                  <div
+                    className={`w-10 h-10 rounded-full bg-primary text-primary-foreground flex items-center justify-center font-bold text-sm shadow-lg ring-4 ring-background transition-all duration-700 ${
+                      isVisible ? 'scale-100 opacity-100' : 'scale-0 opacity-0'
+                    }`}
+                  >
+                    {index + 1}
+                  </div>
+                </div>
 
                 {/* Spacer for mobile left offset */}
-                <div className="w-12 shrink-0 md:hidden" />
+                <div className="w-14 shrink-0 md:hidden" />
 
                 {/* Card */}
-                <div className={`flex-1 md:w-[calc(50%-2rem)] ${isEven ? 'md:pr-10' : 'md:pl-10'}`}>
+                <div
+                  className={`flex-1 md:w-[calc(50%-2rem)] ${isEven ? 'md:pr-12' : 'md:pl-12'} transition-all duration-700 ${
+                    isVisible
+                      ? 'opacity-100 translate-y-0'
+                      : 'opacity-0 translate-y-8'
+                  }`}
+                  style={{ transitionDelay: `${index * 120}ms` }}
+                >
                   <div className="bg-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
                     <div className="aspect-[16/9] overflow-hidden relative">
                       <img
