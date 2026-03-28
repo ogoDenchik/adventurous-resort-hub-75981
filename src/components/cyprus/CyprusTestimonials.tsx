@@ -9,7 +9,6 @@ const testimonials = [
   { name: 'Дима', flag: '🇨🇾', text: 'Лучшая инвестиция в отдых. Комьюнити тут потрясающее, сразу нашёл друзей.' },
 ];
 
-// Duplicate for seamless loop
 const doubled = [...testimonials, ...testimonials];
 
 const CyprusTestimonials: React.FC = () => {
@@ -22,11 +21,10 @@ const CyprusTestimonials: React.FC = () => {
       </div>
 
       <div className="relative">
-        {/* Fade edges */}
         <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-muted/30 to-transparent z-10 pointer-events-none" />
         <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-muted/30 to-transparent z-10 pointer-events-none" />
 
-        <div className="flex gap-4 animate-[scroll-left_30s_linear_infinite] w-max">
+        <div className="flex gap-4 animate-marquee w-max hover:[animation-play-state:paused]">
           {doubled.map((t, i) => (
             <div
               key={i}

@@ -10,6 +10,7 @@ import LearningJourney from '@/components/cyprus/LearningJourney';
 import CyprusLifestyle from '@/components/cyprus/CyprusLifestyle';
 import CyprusAdvantages from '@/components/cyprus/CyprusAdvantages';
 import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
+import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
 
 const Cyprus: React.FC = () => {
   const handleWhatsApp = () => {
