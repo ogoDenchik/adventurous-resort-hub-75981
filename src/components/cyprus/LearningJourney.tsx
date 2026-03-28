@@ -6,72 +6,74 @@ const steps = [
     day: 'День 1',
     icon: Wind,
     title: 'Знакомство с кайтом',
-    description: 'Теория безопасности, управление кайтом на берегу, первые запуски в воде. Вы поймёте, как работает ветер.',
-    details: ['2-3 часа практики', 'Работа 1-на-1 с инструктором', 'Всё оборудование включено'],
+    tags: ['Теория', '1-на-1', 'Оборудование включено'],
+    photo: '/lovable-uploads/cyprus-happy-student-1.jpg',
   },
   {
     day: 'День 2',
     icon: Waves,
     title: 'Bodydrag & контроль',
-    description: 'Плавание с кайтом, контроль тяги, развороты. Вы научитесь чувствовать силу кайта в воде.',
-    details: ['Bodydrag по ветру и против', 'Самоспасение', 'Постановка доски'],
+    tags: ['Bodydrag', 'Самоспасение', 'Постановка доски'],
+    photo: '/lovable-uploads/cyprus-student-thumbsup.jpg',
   },
   {
     day: 'День 3',
     icon: Zap,
-    title: 'Waterstart!',
-    description: 'Встаёте на доску и едете! Первые метры самостоятельного катания — момент, который вы запомните навсегда.',
-    details: ['Waterstart техника', 'Первые галсы', 'Связь с инструктором через рацию'],
+    title: 'Waterstart! 🎉',
+    tags: ['Waterstart', 'Первые галсы', 'BBTalking рация'],
+    photo: '/lovable-uploads/cyprus-student-waterstart-joy.jpg',
   },
   {
     day: 'День 4+',
     icon: Trophy,
     title: 'Прогрессия',
-    description: 'Развороты, смена галса, катание против ветра. Вы уже кайтер — пора оттачивать стиль!',
-    details: ['Самостоятельное катание', 'Работа над ошибками', 'Переход на следующий уровень'],
+    tags: ['Самостоятельно', 'Развороты', 'Следующий уровень'],
+    photo: '/lovable-uploads/cyprus-students-celebrating.jpg',
   },
 ];
 
 const LearningJourney: React.FC = () => {
   return (
-    <section id="learning-journey" className="py-20">
+    <section id="learning-journey" className="py-16 md:py-20">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-display font-bold mb-4">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl md:text-5xl font-display font-bold mb-2">
             От нуля до кайтера за 3 дня
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Наша проверенная методика обучения — 500+ студентов прошли этот путь
-          </p>
+          <p className="text-muted-foreground">500+ студентов прошли этот путь</p>
         </div>
 
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-4 md:gap-6">
           {steps.map((step, index) => (
-            <div key={index} className="relative flex gap-6 md:gap-10 pb-12 last:pb-0 group">
-              {/* Timeline line */}
-              {index < steps.length - 1 && (
-                <div className="absolute left-[27px] md:left-[31px] top-[60px] w-0.5 h-[calc(100%-40px)] bg-gradient-to-b from-primary/50 to-primary/10" />
-              )}
-              
-              {/* Icon */}
-              <div className="relative z-10 flex-shrink-0">
-                <div className="w-14 h-14 md:w-16 md:h-16 rounded-2xl bg-primary/10 border-2 border-primary/30 flex items-center justify-center group-hover:bg-primary/20 group-hover:border-primary/50 transition-all duration-300">
-                  <step.icon className="w-7 h-7 text-primary" />
+            <div 
+              key={index} 
+              className="relative bg-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
+            >
+              <div className="aspect-[16/9] overflow-hidden">
+                <img 
+                  src={step.photo} 
+                  alt={step.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute top-3 left-3 flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold">
+                    {step.day}
+                  </span>
                 </div>
               </div>
-
-              {/* Content */}
-              <div className="flex-1 pb-2">
-                <div className="text-sm font-bold text-primary mb-1">{step.day}</div>
-                <h3 className="text-xl md:text-2xl font-bold mb-2">{step.title}</h3>
-                <p className="text-muted-foreground mb-3 leading-relaxed">{step.description}</p>
-                <div className="flex flex-wrap gap-2">
-                  {step.details.map((detail, i) => (
+              <div className="p-4 md:p-5">
+                <div className="flex items-center gap-2 mb-3">
+                  <step.icon className="w-5 h-5 text-primary" />
+                  <h3 className="text-lg font-bold">{step.title}</h3>
+                </div>
+                <div className="flex flex-wrap gap-1.5">
+                  {step.tags.map((tag, i) => (
                     <span 
                       key={i}
-                      className="text-xs px-3 py-1.5 rounded-full bg-muted text-muted-foreground font-medium"
+                      className="text-xs px-2.5 py-1 rounded-full bg-muted text-muted-foreground font-medium"
                     >
-                      {detail}
+                      {tag}
                     </span>
                   ))}
                 </div>
