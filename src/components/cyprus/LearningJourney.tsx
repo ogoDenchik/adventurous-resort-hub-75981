@@ -59,8 +59,40 @@ const LearningJourney: React.FC = () => {
   }, []);
 
   return (
-    <section id="learning-journey" className="py-16 md:py-24">
-      <div className="container mx-auto px-4" ref={sectionRef}>
+    <section id="learning-journey" className="relative py-16 md:py-24 overflow-hidden">
+      {/* Green decorative accent — kite line swoosh */}
+      <div className="absolute inset-0 pointer-events-none">
+        <svg
+          className="absolute top-0 left-0 w-full h-full opacity-[0.07]"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+          fill="none"
+        >
+          <path
+            d="M-100,200 C200,100 400,500 600,300 S900,600 1300,250"
+            stroke="hsl(var(--primary))"
+            strokeWidth="180"
+            strokeLinecap="round"
+          />
+        </svg>
+        {/* Secondary thin line */}
+        <svg
+          className="absolute top-0 left-0 w-full h-full opacity-[0.12]"
+          viewBox="0 0 1200 800"
+          preserveAspectRatio="none"
+          fill="none"
+        >
+          <path
+            d="M-50,350 C250,200 500,600 750,350 S1000,500 1350,200"
+            stroke="hsl(var(--primary))"
+            strokeWidth="4"
+            strokeLinecap="round"
+            strokeDasharray="20 15"
+          />
+        </svg>
+      </div>
+
+      <div className="container mx-auto px-4 relative z-10" ref={sectionRef}>
         <div className="text-center mb-14">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-2">
             План обучения кайтсёрфера
@@ -70,7 +102,7 @@ const LearningJourney: React.FC = () => {
 
         {/* Roadmap */}
         <div className="relative max-w-3xl mx-auto">
-          {/* Vertical connecting line — dashed for "map route" feel */}
+          {/* Vertical connecting line — dashed route */}
           <div className="absolute left-7 md:left-1/2 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-primary/30 md:-translate-x-px" />
 
           {steps.map((step, index) => {

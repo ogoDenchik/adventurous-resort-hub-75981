@@ -17,8 +17,7 @@ import KiteSafari from "./pages/KiteSafari";
 import Brazil from "./pages/Brazil";
 import Cyprus from "./pages/Cyprus";
 import Vietnam from "./pages/Vietnam";
-import TelegramButton from "./components/TelegramButton";
-import WhatsAppButton from "./components/WhatsAppButton";
+import ContactFAB from "./components/ContactFAB";
 import ScrollToTopOnMount from "./components/ScrollToTopOnMount";
 
 // Create a new query client instance
@@ -47,8 +46,7 @@ const App = () => {
             <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <TelegramButton />
-          <WhatsAppButton />
+          <ContactFAB />
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
