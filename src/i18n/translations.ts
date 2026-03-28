@@ -107,13 +107,7 @@ export const translations: Translations = {
       lesson4: 'Lesson 4+',
       lesson4Title: 'Progression',
       lesson4Tags: 'Independent,Turns,Next level',
-      // Video
-      videoTitle: 'See How It Looks',
-      // CTA
-      ctaTitle: 'Ready to Try?',
-      ctaSubtitle: 'Message us — we\'ll find the right time and spot for your level',
-      egyptLink: '🇪🇬 Egypt',
-      brazilLink: '🇧🇷 Brazil',
+    },
     },
     // About page
     about: {
