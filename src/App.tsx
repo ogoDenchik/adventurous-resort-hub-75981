@@ -27,29 +27,31 @@ const queryClient = new QueryClient();
 const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <ScrollToTopOnMount />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/accommodation" element={<Accommodation />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/activities" element={<Activities />} />
-            <Route path="/kite-safari" element={<KiteSafari />} />
-            <Route path="/brazil" element={<Brazil />} />
-            <Route path="/cyprus" element={<Cyprus />} />
-            <Route path="/vietnam" element={<Vietnam />} />
-            <Route path="/booking" element={<Booking />} />
-            <Route path="/booking-success" element={<BookingSuccess />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-          <ContactFAB />
-        </BrowserRouter>
-      </TooltipProvider>
+      <LanguageProvider>
+        <TooltipProvider>
+          <Toaster />
+          <Sonner />
+          <BrowserRouter>
+            <ScrollToTopOnMount />
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/accommodation" element={<Accommodation />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/activities" element={<Activities />} />
+              <Route path="/kite-safari" element={<KiteSafari />} />
+              <Route path="/brazil" element={<Brazil />} />
+              <Route path="/cyprus" element={<Cyprus />} />
+              <Route path="/vietnam" element={<Vietnam />} />
+              <Route path="/booking" element={<Booking />} />
+              <Route path="/booking-success" element={<BookingSuccess />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+            <ContactFAB />
+          </BrowserRouter>
+        </TooltipProvider>
+      </LanguageProvider>
     </QueryClientProvider>
   );
 };
