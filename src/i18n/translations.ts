@@ -36,8 +36,6 @@ export const translations: Translations = {
     },
     // Cyprus page
     cyprus: {
-      heroTitle: 'Professional Kitesurfing Training',
-      heroSubtitle: 'Certified instructors with 5+ years of experience in Cyprus',
       whatsapp: 'Message on WhatsApp',
       // Trust bar
       students: 'students',
@@ -55,8 +53,6 @@ export const translations: Translations = {
       reason3Text: 'Local kite community in Cyprus. New friends, group sessions, shared energy.',
       reason4Title: 'For Everyone',
       reason4Text: 'Regardless of age or fitness. We get people riding from age 12 to 60.',
-      // Learning Journey
-      learningTitle: 'Learning Journey',
       // Testimonials
       testimonialsTitle: 'Student Reviews',
       testimonialsSubtitle: 'Real stories from those who completed training',
