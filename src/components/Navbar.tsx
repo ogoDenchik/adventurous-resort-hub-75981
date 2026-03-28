@@ -76,8 +76,7 @@ const Navbar: React.FC = () => {
                   : 'border-white/30 text-white hover:bg-white/10'
             )}
           >
-            {languages.find(l => l.code === currentLang)?.flag}
-            <span className="uppercase">{currentLang}</span>
+            <span className="uppercase font-semibold">{currentLang}</span>
           </button>
           {langMenuOpen && (
             <div className="absolute top-full mt-1 left-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
@@ -93,8 +92,7 @@ const Navbar: React.FC = () => {
                     currentLang === lang.code && 'bg-primary/10 text-primary font-medium'
                   )}
                 >
-                  <span>{lang.flag}</span>
-                  <span>{lang.label}</span>
+                  <span className="font-semibold">{lang.label}</span>
                 </button>
               ))}
             </div>
