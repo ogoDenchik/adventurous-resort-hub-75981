@@ -10,8 +10,6 @@ import NotFound from "./pages/NotFound";
 import Accommodation from "./pages/Accommodation";
 import About from "./pages/About";
 import Activities from "./pages/Activities";
-import Booking from "./pages/Booking";
-import BookingSuccess from "./pages/BookingSuccess";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import KiteSafari from "./pages/KiteSafari";
