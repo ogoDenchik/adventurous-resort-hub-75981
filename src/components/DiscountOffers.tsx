@@ -44,7 +44,7 @@ const offers: OfferProps[] = [
     image: '/lovable-uploads/44997248-2a7d-4c4b-8656-13d704d35b37.png',
     backgroundColor: 'bg-blue-500',
     textColor: 'text-white',
-    linkTo: '/booking?promo=RIVER25',
+    linkTo: 'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20Riverside%20Retreat!',
     animationDelay: 0
   },
   {
