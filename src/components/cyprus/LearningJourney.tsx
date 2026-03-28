@@ -8,10 +8,10 @@ const LearningJourney: React.FC = () => {
   const [visibleSteps, setVisibleSteps] = useState<Set<number>>(new Set());
 
   const steps = [
-    { day: t('cyprus.lesson1'), icon: Wind, title: t('cyprus.lesson1Title'), tags: t('cyprus.lesson1Tags').split(','), photo: '/lovable-uploads/kite-lesson-1.jpg' },
-    { day: t('cyprus.lesson2'), icon: Waves, title: t('cyprus.lesson2Title'), tags: t('cyprus.lesson2Tags').split(','), photo: '/lovable-uploads/kite-lesson-2.jpg' },
-    { day: t('cyprus.lesson3'), icon: Zap, title: t('cyprus.lesson3Title'), tags: t('cyprus.lesson3Tags').split(','), photo: '/lovable-uploads/kite-lesson-3.jpg' },
-    { day: t('cyprus.lesson4'), icon: Trophy, title: t('cyprus.lesson4Title'), tags: t('cyprus.lesson4Tags').split(','), photo: '/lovable-uploads/kite-lesson-4.jpg' },
+    { day: t('cyprus.lesson1'), icon: Wind, title: t('cyprus.lesson1Title'), tags: t('cyprus.lesson1Tags').split(','), photo: '/lovable-uploads/kite-lesson-1.jpg', objectPosition: 'center 30%' },
+    { day: t('cyprus.lesson2'), icon: Waves, title: t('cyprus.lesson2Title'), tags: t('cyprus.lesson2Tags').split(','), photo: '/lovable-uploads/kite-lesson-2.jpg', objectPosition: 'center' },
+    { day: t('cyprus.lesson3'), icon: Zap, title: t('cyprus.lesson3Title'), tags: t('cyprus.lesson3Tags').split(','), photo: '/lovable-uploads/kite-lesson-3.jpg', objectPosition: 'center' },
+    { day: t('cyprus.lesson4'), icon: Trophy, title: t('cyprus.lesson4Title'), tags: t('cyprus.lesson4Tags').split(','), photo: '/lovable-uploads/kite-lesson-4.jpg', objectPosition: 'center 35%' },
   ];
 
   useEffect(() => {
@@ -59,7 +59,7 @@ const LearningJourney: React.FC = () => {
                 <div className={`flex-1 md:w-[calc(50%-2rem)] ${isEven ? 'md:pr-12' : 'md:pl-12'} transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: `${index * 120}ms` }}>
                   <div className="bg-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
                     <div className="aspect-[16/9] overflow-hidden relative">
-                      <img src={step.photo} alt={step.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={step.photo} alt={step.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{ objectPosition: step.objectPosition }} />
                       <div className="absolute top-3 left-3">
                         <span className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold">{step.day}</span>
                       </div>
