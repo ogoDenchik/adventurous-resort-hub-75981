@@ -69,9 +69,11 @@ const Navbar: React.FC = () => {
             onClick={() => setLangMenuOpen(!langMenuOpen)}
             className={cn(
               "flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-all duration-300 border",
-              shouldUseWhiteHeader || isScrolled || isMenuOpen
-                ? 'border-border/50 text-foreground hover:bg-muted'
-                : 'border-white/30 text-white hover:bg-white/10'
+              shouldUseWhiteHeader || isScrolled
+                ? 'border-gray-300 text-gray-900 hover:bg-gray-100'
+                : isMenuOpen
+                  ? 'border-border/50 text-foreground hover:bg-muted'
+                  : 'border-white/30 text-white hover:bg-white/10'
             )}
           >
             {languages.find(l => l.code === currentLang)?.flag}
