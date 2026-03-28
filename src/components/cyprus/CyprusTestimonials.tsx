@@ -89,8 +89,8 @@ const CyprusTestimonials: React.FC = () => {
               <p className="text-sm text-foreground leading-relaxed mb-4">"{t.text}"</p>
 
               <div className="flex items-center gap-3">
-                <div className={`w-10 h-10 rounded-full bg-gradient-to-br ${t.color} flex items-center justify-center flex-shrink-0`}>
-                  <span className="text-sm font-bold text-white">{t.initials}</span>
+                <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
+                  <img src={t.photo} alt={t.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-foreground">{t.name}</div>
