@@ -11,8 +11,11 @@ import CyprusLifestyle from '@/components/cyprus/CyprusLifestyle';
 import CyprusAdvantages from '@/components/cyprus/CyprusAdvantages';
 import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
 import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Cyprus: React.FC = () => {
+  const { t } = useLanguage();
+
   const handleWhatsApp = () => {
     window.open('https://wa.me/48884035225?text=Hi!%20I%27m%20interested%20in%20kitesurfing%20in%20Cyprus', '_blank');
   };
@@ -33,7 +36,7 @@ const Cyprus: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-6">
-              Посмотрите, как это выглядит
+              {t('cyprus.videoTitle')}
             </h2>
             <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
               <iframe
@@ -55,22 +58,22 @@ const Cyprus: React.FC = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-3xl mx-auto bg-card rounded-2xl border border-border/50 p-8 md:p-10 text-center">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
-              Готовы попробовать?
+              {t('cyprus.ctaTitle')}
             </h2>
             <p className="text-muted-foreground mb-4">
-              Напишите — подберём время и спот под ваш уровень
+              {t('cyprus.ctaSubtitle')}
             </p>
             <div className="flex flex-wrap justify-center gap-2 mb-6 text-sm">
               <Link to="/brazil" className="px-4 py-2 rounded-full bg-muted hover:bg-primary/10 hover:text-primary transition-colors font-medium">
-                🇧🇷 Бразилия
+                {t('cyprus.brazilLink')}
               </Link>
               <Link to="/kite-safari" className="px-4 py-2 rounded-full bg-muted hover:bg-primary/10 hover:text-primary transition-colors font-medium">
-                🇪🇬 Египет
+                {t('cyprus.egyptLink')}
               </Link>
             </div>
             <Button size="lg" className="text-lg px-8 py-6 gap-3" onClick={handleWhatsApp}>
               <MessageCircle className="w-5 h-5" />
-              Написать в WhatsApp
+              {t('cyprus.whatsapp')}
             </Button>
           </div>
         </div>
