@@ -57,7 +57,7 @@ const offers: OfferProps[] = [
     image: '/lovable-uploads/f97f4d91-56e4-4e2f-bb73-93760030da48.png',
     backgroundColor: 'bg-green-600',
     textColor: 'text-white',
-    linkTo: '/booking?promo=ADVENTURE30',
+    linkTo: 'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20Adventure%20Package!',
     animationDelay: 100
   },
   {
