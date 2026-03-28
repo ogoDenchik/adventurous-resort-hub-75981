@@ -25,6 +25,7 @@ const Cyprus: React.FC = () => {
       <CyprusHero onWhatsApp={handleWhatsApp} />
       <LearningJourney />
       <CyprusLifestyle />
+      <CyprusTestimonials />
       <CyprusAdvantages />
 
       {/* Video */}
