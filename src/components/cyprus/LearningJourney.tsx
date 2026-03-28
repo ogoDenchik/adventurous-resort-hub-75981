@@ -59,7 +59,7 @@ const LearningJourney: React.FC = () => {
                 <div className={`flex-1 md:w-[calc(50%-2rem)] ${isEven ? 'md:pr-12' : 'md:pl-12'} transition-all duration-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`} style={{ transitionDelay: `${index * 120}ms` }}>
                   <div className="bg-card rounded-xl border border-border/50 overflow-hidden hover:border-primary/30 hover:shadow-lg transition-all duration-300 group">
                     <div className="aspect-[16/9] overflow-hidden relative">
-                      <img src={step.photo} alt={step.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                      <img src={step.photo} alt={step.title} loading="lazy" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" style={{ objectPosition: step.objectPosition }} />
                       <div className="absolute top-3 left-3">
                         <span className="px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-bold">{step.day}</span>
                       </div>
