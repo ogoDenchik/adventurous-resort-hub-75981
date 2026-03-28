@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { cn } from '@/lib/utils';
@@ -30,7 +30,7 @@ const offers: OfferProps[] = [
     image: '/lovable-uploads/f97f4d91-56e4-4e2f-bb73-93760030da48.png',
     backgroundColor: 'bg-green-600',
     textColor: 'text-white',
-    linkTo: '/booking?package=day',
+    linkTo: 'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20Day%20Package!',
     animationDelay: 0,
     featured: true
   },
@@ -44,7 +44,7 @@ const offers: OfferProps[] = [
     image: '/lovable-uploads/44997248-2a7d-4c4b-8656-13d704d35b37.png',
     backgroundColor: 'bg-blue-500',
     textColor: 'text-white',
-    linkTo: '/booking?promo=RIVER25',
+    linkTo: 'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20Riverside%20Retreat!',
     animationDelay: 0
   },
   {
@@ -57,7 +57,7 @@ const offers: OfferProps[] = [
     image: '/lovable-uploads/f97f4d91-56e4-4e2f-bb73-93760030da48.png',
     backgroundColor: 'bg-green-600',
     textColor: 'text-white',
-    linkTo: '/booking?promo=ADVENTURE30',
+    linkTo: 'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20Adventure%20Package!',
     animationDelay: 100
   },
   {
@@ -70,7 +70,7 @@ const offers: OfferProps[] = [
     image: '/lovable-uploads/eab0dff8-9904-4338-ae38-67e97ade71cf.png',
     backgroundColor: 'bg-orange-500',
     textColor: 'text-white',
-    linkTo: '/booking?promo=FAMILY20',
+    linkTo: 'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20Family%20Special!',
     animationDelay: 200
   }
 ];
@@ -128,15 +128,17 @@ const OfferCard: React.FC<OfferProps> = ({
             <span className="line-through opacity-75 text-sm">{priceFrom}</span>
             <span className="text-xl font-bold ml-2">{priceTo}</span>
           </div>
-          <Link 
-            to={linkTo} 
+          <a 
+            href={linkTo}
+            target="_blank"
+            rel="noopener noreferrer"
             className={cn(
               "rounded-full py-2 px-4 inline-flex items-center gap-1 bg-white/20 hover:bg-white/30 transition-all",
               textColor
             )}
           >
             Book Now <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-300" />
-          </Link>
+          </a>
         </div>
       </div>
     </motion.div>

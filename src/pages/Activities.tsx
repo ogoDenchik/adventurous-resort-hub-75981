@@ -176,12 +176,14 @@ const Activities: React.FC = () => {
             <p className="text-lg md:text-xl max-w-2xl mb-8 animate-fade-in animation-delay-200">
               Discover thrilling experiences in the heart of Western Ghats' wilderness
             </p>
-            <Link 
-              to="/booking" 
+            <a 
+              href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20an%20adventure!"
+              target="_blank"
+              rel="noopener noreferrer"
               className="bg-white text-accent px-8 py-3 rounded-md font-medium text-lg transition-all duration-300 hover:bg-white/90 hover:shadow-lg animate-slide-up animation-delay-400"
             >
-              Book an Adventure
-            </Link>
+              Book via WhatsApp
+            </a>
           </div>
         </section>
         
@@ -340,12 +342,14 @@ const Activities: React.FC = () => {
               <p className="text-xl mb-8 text-accent-foreground/90">
                 Book your activity now and create memories that will last a lifetime.
               </p>
-              <Link 
-                to="/booking" 
+              <a 
+                href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20ready%20for%20an%20adventure!"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block px-8 py-4 bg-white text-accent font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/90 hover:shadow-lg hover:translate-y-[-2px]"
               >
-                Book Your Adventure
-              </Link>
+                Book via WhatsApp
+              </a>
             </div>
           </div>
         </section>

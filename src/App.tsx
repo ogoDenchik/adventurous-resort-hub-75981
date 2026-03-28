@@ -10,8 +10,6 @@ import NotFound from "./pages/NotFound";
 import Accommodation from "./pages/Accommodation";
 import About from "./pages/About";
 import Activities from "./pages/Activities";
-import Booking from "./pages/Booking";
-import BookingSuccess from "./pages/BookingSuccess";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import KiteSafari from "./pages/KiteSafari";
@@ -42,8 +40,6 @@ const App = () => {
               <Route path="/brazil" element={<Brazil />} />
               <Route path="/cyprus" element={<Cyprus />} />
               <Route path="/vietnam" element={<Vietnam />} />
-              <Route path="/booking" element={<Booking />} />
-              <Route path="/booking-success" element={<BookingSuccess />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />

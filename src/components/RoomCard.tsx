@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Wifi, Coffee, Users, Tv } from 'lucide-react';
 import { cn } from '@/lib/utils';
 type Amenity = {
@@ -61,9 +61,9 @@ const RoomCard: React.FC<RoomCardProps> = ({
             </div>)}
         </div>
         
-        <Link to="/booking" className="block w-full py-3 text-center bg-accent text-accent-foreground rounded-md transition-all duration-300 hover:bg-accent/90">
+        <a href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20booking!" target="_blank" rel="noopener noreferrer" className="block w-full py-3 text-center bg-accent text-accent-foreground rounded-md transition-all duration-300 hover:bg-accent/90">
           Book Now
-        </Link>
+        </a>
       </div>
     </div>;
 };

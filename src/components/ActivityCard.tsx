@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 import { Clock, Users, Star } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
@@ -88,12 +88,14 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
             ₹{price * 83} <span className="text-sm font-normal text-foreground/70">per person</span>
           </div>
           
-          <Link 
-            to="/booking" 
+          <a 
+            href="https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%27m%20interested%20in%20booking!"
+            target="_blank"
+            rel="noopener noreferrer"
             className="btn-primary"
           >
             Book Now
-          </Link>
+          </a>
         </div>
       </div>
     </div>
