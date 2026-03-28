@@ -1,5 +1,12 @@
-import React from 'react';
-import { Flame, Brain, Users, Sparkles } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Flame, Brain, Users, Sparkles, Sun, Heart, TrendingUp, Award } from 'lucide-react';
+
+const stats = [
+  { icon: Award, stat: '500+', label: 'студентов' },
+  { icon: Sun, stat: '340', label: 'дней ветра/год' },
+  { icon: Heart, stat: '70+', label: 'возвращаются' },
+  { icon: TrendingUp, stat: '3 дня', label: 'до первого катания' },
+];
 
 const reasons = [
   {
@@ -25,12 +32,51 @@ const reasons = [
 ];
 
 const CyprusLifestyle: React.FC = () => {
+  const sectionRef = useRef<HTMLDivElement>(null);
+  const [visibleCards, setVisibleCards] = useState<Set<number>>(new Set());
+
+  useEffect(() => {
+    const observers: IntersectionObserver[] = [];
+    const cards = sectionRef.current?.querySelectorAll('[data-reason]');
+    if (!cards) return;
+
+    cards.forEach((card, index) => {
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleCards((prev) => new Set(prev).add(index));
+            observer.unobserve(entry.target);
+          }
+        },
+        { threshold: 0.2 }
+      );
+      observer.observe(card);
+      observers.push(observer);
+    });
+
+    return () => observers.forEach((o) => o.disconnect());
+  }, []);
+
   return (
     <section className="py-16 bg-muted/30">
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4" ref={sectionRef}>
+        {/* Trust Bar */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4 max-w-4xl mx-auto mb-14">
+          {stats.map((item, index) => (
+            <div
+              key={index}
+              className="bg-card rounded-xl border border-border/50 p-4 text-center hover:border-primary/30 transition-all duration-300"
+            >
+              <item.icon className="w-5 h-5 text-primary mx-auto mb-1.5" />
+              <div className="text-2xl md:text-3xl font-display font-bold text-foreground">{item.stat}</div>
+              <div className="text-xs text-muted-foreground mt-0.5">{item.label}</div>
+            </div>
+          ))}
+        </div>
+
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-5xl font-display font-bold mb-2">
-            Зачем пробовать кайтсёрфинг
+            Почему тебе понравится кайтсёрфинг
           </h2>
           <p className="text-muted-foreground max-w-lg mx-auto">
             Приключение, которое меняет отношение к отдыху навсегда
@@ -41,7 +87,13 @@ const CyprusLifestyle: React.FC = () => {
           {reasons.map((item, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl border border-border/50 p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-300 group"
+              data-reason={index}
+              className={`bg-card rounded-xl border border-border/50 p-6 hover:border-primary/30 hover:shadow-lg transition-all duration-700 group ${
+                visibleCards.has(index)
+                  ? 'opacity-100 translate-y-0'
+                  : 'opacity-0 translate-y-8'
+              }`}
+              style={{ transitionDelay: `${index * 120}ms` }}
             >
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
                 <item.icon className="w-6 h-6 text-primary" />

@@ -5,10 +5,18 @@ import { cn } from '@/lib/utils';
 import Logo from './Logo';
 import { EnhancedBookingPopup } from './EnhancedBookingPopup';
 
+const languages = [
+  { code: 'en', label: 'EN', flag: '🇬🇧' },
+  { code: 'ru', label: 'RU', flag: '🇷🇺' },
+  { code: 'gr', label: 'GR', flag: '🇬🇷' },
+];
+
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
+  const [currentLang, setCurrentLang] = useState('en');
+  const [langMenuOpen, setLangMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
@@ -54,6 +62,42 @@ const Navbar: React.FC = () => {
     )}>
       <div className="container mx-auto px-4 flex items-center justify-between relative">
         <Logo />
+
+        {/* Language Switcher - visible on all viewports */}
+        <div className="relative ml-2 md:ml-4">
+          <button
+            onClick={() => setLangMenuOpen(!langMenuOpen)}
+            className={cn(
+              "flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-all duration-300 border",
+              shouldUseWhiteHeader || isScrolled || isMenuOpen
+                ? 'border-border/50 text-foreground hover:bg-muted'
+                : 'border-white/30 text-white hover:bg-white/10'
+            )}
+          >
+            {languages.find(l => l.code === currentLang)?.flag}
+            <span className="uppercase">{currentLang}</span>
+          </button>
+          {langMenuOpen && (
+            <div className="absolute top-full mt-1 left-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
+              {languages.map((lang) => (
+                <button
+                  key={lang.code}
+                  onClick={() => {
+                    setCurrentLang(lang.code);
+                    setLangMenuOpen(false);
+                  }}
+                  className={cn(
+                    'w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-muted transition-colors',
+                    currentLang === lang.code && 'bg-primary/10 text-primary font-medium'
+                  )}
+                >
+                  <span>{lang.flag}</span>
+                  <span>{lang.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
         
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-6">
