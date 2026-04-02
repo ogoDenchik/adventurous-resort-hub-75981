@@ -17,7 +17,6 @@ const KiteSafari: React.FC = () => {
 
   // Handle user interaction - pause autoplay and resume after 10s
   const handleUserInteraction = () => {
-    setIsAutoplayPaused(true);
     autoplayPluginRef.current.stop();
     
     // Clear existing timeout
