@@ -67,24 +67,7 @@ const KiteSafari: React.FC = () => {
                 <Button 
                   size="default" 
                   className="text-sm px-5 py-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
-                  onClick={() => {
-                    setSelectedCabinImage('/lovable-uploads/kite-safari-yacht.jpg');
-                    setBookingDetails({
-                      packageName: 'Egypt Kite Safari',
-                      location: 'Red Sea, Egypt',
-                      price: 'from €1,750',
-                      highlights: ['7 Days', '3 Epic Lagoons', 'Luxury Yacht', 'All Meals Included'],
-                      included: [
-                        'Luxury liveaboard accommodation',
-                        '7 days exploring 3 kite lagoons',
-                        'All meals & soft drinks included',
-                        'Equipment storage on yacht',
-                        'Transfer from/to Marsa Alam',
-                        'Experienced captain & crew'
-                      ]
-                    });
-                    setBookingPopupOpen(true);
-                  }}
+                  onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20join%20the%20Egypt%20Kite%20Safari%20from%20%E2%82%AC1%2C750.', '_blank')}
                 >
                   Join — from €1,750 per person
                 </Button>
