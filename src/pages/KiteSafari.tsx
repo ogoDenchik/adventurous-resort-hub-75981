@@ -1044,23 +1044,7 @@ const KiteSafari: React.FC = () => {
                     
                     <Button 
                       className="w-full"
-                      onClick={() => {
-                        setSelectedCabinImage('/lovable-uploads/safari-master-suite.jpg');
-                        setBookingDetails({
-                          packageName: 'Master Suite',
-                          location: 'Egypt Kite Safari',
-                          price: '€4,200 / cabin',
-                          highlights: ['7 Days / 6 Nights', 'Larger Cabin', 'Premium Comfort', 'All Twin Cabin Benefits', 'Best Location'],
-                          included: [
-                            'Everything in Twin Cabin',
-                            'Larger cabin space',
-                            'Enhanced comfort',
-                            'Better location onboard',
-                            'Perfect for couples/friends'
-                          ]
-                        });
-                        setBookingPopupOpen(true);
-                      }}
+                      onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Master%20Suite%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC4%2C200).', '_blank')}
                     >
                       BOOK MASTER SUITE
                     </Button>
