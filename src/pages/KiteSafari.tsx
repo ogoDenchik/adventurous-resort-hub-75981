@@ -1216,7 +1216,11 @@ const KiteSafari: React.FC = () => {
               </div>
 
               <div className="flex justify-center">
-                <Button size="lg" className="w-full md:w-auto md:min-w-[400px] text-lg px-8 py-6">
+                <Button 
+                  size="lg" 
+                  className="w-full md:w-auto md:min-w-[400px] text-lg px-8 py-6"
+                  onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20request%20private%20coaching%20on%20shore%20in%20Egypt.', '_blank')}
+                >
                   REQUEST PRIVATE COACHING
                 </Button>
               </div>
