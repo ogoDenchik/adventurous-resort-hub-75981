@@ -13,24 +13,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 
 const KiteSafari: React.FC = () => {
-  const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
-  const [isAutoplayPaused, setIsAutoplayPaused] = useState(false);
-  const [selectedCabin, setSelectedCabin] = useState<string>('');
-  const [selectedCabinImage, setSelectedCabinImage] = useState<string>('/lovable-uploads/kite-safari-yacht.jpg');
   const autoplayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const autoplayPluginRef = useRef(
-    Autoplay({
-      delay: 5000,
-      stopOnInteraction: false,
-    })
-  );
-  const [bookingDetails, setBookingDetails] = useState<{
-    packageName: string;
-    location: string;
-    price?: string;
-    highlights?: string[];
-    included?: string[];
-  } | undefined>(undefined);
 
   // Handle user interaction - pause autoplay and resume after 10s
   const handleUserInteraction = () => {
