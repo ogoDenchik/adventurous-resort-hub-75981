@@ -93,7 +93,7 @@ const KiteSafari: React.FC = () => {
       </section>
 
       {/* Trust Bar Section */}
-      <section className="py-12 bg-background border-y border-border">
+      <section className="py-6 md:py-8 bg-background border-y border-border -mt-12 relative z-10">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
