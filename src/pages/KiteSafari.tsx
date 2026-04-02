@@ -992,26 +992,7 @@ const KiteSafari: React.FC = () => {
                     
                     <Button 
                       className="w-full"
-                      onClick={() => {
-                        setSelectedCabinImage('/lovable-uploads/safari-twin-cabin.jpg');
-                        setBookingDetails({
-                          packageName: 'Twin Cabin',
-                          location: 'Egypt Kite Safari',
-                          price: '€1,750 per person',
-                          highlights: ['7 Days / 6 Nights', '3 Epic Lagoons', 'All Meals', 'Rescue Boat', 'Group Atmosphere'],
-                          included: [
-                            '7 days / 6 nights on yacht',
-                            '3 meals daily + snacks',
-                            'All boat logistics',
-                            'Rescue boat support',
-                            'SUP & snorkeling gear',
-                            'WhatsApp group access',
-                            'Evening kite briefings',
-                            'Twin cabin accommodation'
-                          ]
-                        });
-                        setBookingPopupOpen(true);
-                      }}
+                      onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Twin%20Cabin%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC1%2C750).', '_blank')}
                     >
                       BOOK TWIN CABIN
                     </Button>
