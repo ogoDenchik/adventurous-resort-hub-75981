@@ -26,7 +26,6 @@ const KiteSafari: React.FC = () => {
     
     // Resume autoplay after 10 seconds of no interaction
     autoplayTimeoutRef.current = setTimeout(() => {
-      setIsAutoplayPaused(false);
       autoplayPluginRef.current.play();
     }, 10000);
   };
