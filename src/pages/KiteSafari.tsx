@@ -14,6 +14,12 @@ import Autoplay from "embla-carousel-autoplay";
 
 const KiteSafari: React.FC = () => {
   const autoplayTimeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const autoplayPluginRef = useRef(
+    Autoplay({
+      delay: 5000,
+      stopOnInteraction: false,
+    })
+  );
 
   // Handle user interaction - pause autoplay and resume after 10s
   const handleUserInteraction = () => {
