@@ -1840,16 +1840,6 @@ const KiteSafari: React.FC = () => {
         </div>
       </main>
       
-      <EnhancedBookingPopup 
-        open={bookingPopupOpen} 
-        onOpenChange={setBookingPopupOpen}
-        backgroundImage={selectedCabinImage}
-        title="Book Egypt Kite Safari"
-        description="Fill in your details and we'll get back to you shortly"
-        bookingDetails={bookingDetails}
-        webhookUrl={KITESAFARI_WEBHOOK_URL}
-        leadSource="Kite Safari Booking"
-      />
       
       <Footer />
     </div>
