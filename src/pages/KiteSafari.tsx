@@ -1310,237 +1310,40 @@ const KiteSafari: React.FC = () => {
             </div>
           </section>
 
-          {/* Booking Section */}
+          {/* Booking CTA Section */}
           <section className="py-20 bg-cover bg-center relative" style={{backgroundImage: "url('/lovable-uploads/kite-safari-yacht.jpg')"}}>
             <div className="absolute inset-0 bg-black/70"></div>
             <div className="container mx-auto px-4 relative z-10">
-              <div className="max-w-6xl mx-auto">
+              <div className="max-w-3xl mx-auto text-center">
                 
-                {/* Section Header */}
-                <div className="text-center mb-12">
-                  <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 uppercase">
-                    READY TO JOIN THE ADVENTURE?
-                  </h2>
-                  <p className="text-xl text-white/90">
-                    Limited cabins. Prime wind season.<br />
-                    Don't just watch — be on the yacht.
-                  </p>
+                <h2 className="text-4xl md:text-5xl font-display font-bold text-white mb-4 uppercase">
+                  READY TO JOIN THE ADVENTURE?
+                </h2>
+                <p className="text-xl text-white/90 mb-10">
+                  Limited cabins. Prime wind season.<br />
+                  Don't just watch — be on the yacht.
+                </p>
+
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <Button 
+                    size="lg"
+                    className="text-lg px-8 py-6 bg-[#25D366] hover:bg-[#20BD5C] text-white"
+                    onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20the%20Egypt%20Kite%20Safari!', '_blank')}
+                  >
+                    📱 Book via WhatsApp
+                  </Button>
+                  <Button 
+                    size="lg"
+                    className="text-lg px-8 py-6 bg-[#229ED9] hover:bg-[#1A8BC2] text-white"
+                    onClick={() => window.open('https://t.me/Denis_ogodenchik', '_blank')}
+                  >
+                    ✈️ Book via Telegram
+                  </Button>
                 </div>
 
-                {/* Two Column Booking Cards */}
-                <div className="grid lg:grid-cols-2 gap-8">
-                  
-                  {/* Left: Booking Card */}
-                  <div className="bg-background rounded-2xl p-8 shadow-xl">
-                    <h3 className="text-2xl font-display font-bold text-foreground mb-6 flex items-center gap-2 uppercase">
-                      🛥 BOOKING
-                    </h3>
-
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">STEP 1: Choose Your Dates</h4>
-                      <div className="space-y-2">
-                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                          <input 
-                            type="radio" 
-                            name="safari-dates" 
-                            value="April 11–18, 2026"
-                            className="w-4 h-4"
-                          />
-                          <span className="text-foreground">April 11–18, 2026 <span className="text-primary">(15 spots left)</span></span>
-                        </label>
-                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                          <input 
-                            type="radio" 
-                            name="safari-dates" 
-                            value="April 18–25, 2026"
-                            className="w-4 h-4"
-                          />
-                          <span className="text-foreground">April 18–25, 2026 <span className="text-primary">(21 spots left)</span></span>
-                        </label>
-                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                          <input 
-                            type="radio" 
-                            name="safari-dates" 
-                            value="April 30 – May 7, 2026"
-                            className="w-4 h-4"
-                          />
-                          <span className="text-foreground">April 30 – May 7, 2026 <span className="text-primary">(13 spots left)</span></span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">STEP 2: Choose Your Cabin</h4>
-                      <div className="space-y-2">
-                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                          <input 
-                            type="radio" 
-                            name="cabin" 
-                            value="Twin Cabin"
-                            className="w-4 h-4"
-                            onChange={(e) => setSelectedCabin(e.target.value)}
-                          />
-                          <span className="text-foreground">Twin Cabin (from €1,750)</span>
-                        </label>
-                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                          <input 
-                            type="radio" 
-                            name="cabin" 
-                            value="Master Suite"
-                            className="w-4 h-4"
-                            onChange={(e) => setSelectedCabin(e.target.value)}
-                          />
-                          <span className="text-foreground">Master Suite (from €3,500)</span>
-                        </label>
-                        <label className="flex items-center gap-3 p-3 border border-border rounded-lg hover:border-primary cursor-pointer">
-                          <input 
-                            type="radio" 
-                            name="cabin" 
-                            value="Panoramic Suite"
-                            className="w-4 h-4"
-                            onChange={(e) => setSelectedCabin(e.target.value)}
-                          />
-                          <span className="text-foreground">Panoramic Suite (from €3,700)</span>
-                        </label>
-                      </div>
-                    </div>
-
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3">STEP 3: Add Training (Optional)</h4>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Beginner Group Course, Progression Pack, or VIP 1:1
-                      </p>
-                    </div>
-
-                    <div className="mb-6">
-                      <Button 
-                        className="w-full mb-3 text-lg py-6"
-                        onClick={() => {
-                          // Determine which cabin details to show based on selection
-                          let cabinDetails;
-                          let cabinImage = '/lovable-uploads/kite-safari-yacht.jpg';
-                          
-                          if (selectedCabin === 'Twin Cabin') {
-                            cabinImage = '/lovable-uploads/safari-twin-cabin.jpg';
-                            cabinDetails = {
-                              packageName: 'Twin Cabin',
-                              location: 'Egypt Kite Safari',
-                              price: 'From €1,750 per person',
-                              highlights: ['7 Days / 6 Nights', '3 Epic Lagoons', 'All Meals', 'Rescue Boat', 'Group Atmosphere'],
-                              included: [
-                                '7 days / 6 nights on yacht',
-                                '3 meals daily + snacks',
-                                'All boat logistics',
-                                'Rescue boat support',
-                                'SUP & snorkeling gear',
-                                'WhatsApp group access',
-                                'Evening kite briefings',
-                                'Twin cabin accommodation'
-                              ]
-                            };
-                          } else if (selectedCabin === 'Master Suite') {
-                            cabinImage = '/lovable-uploads/safari-master-suite.jpg';
-                            cabinDetails = {
-                              packageName: 'Master Suite',
-                              location: 'Egypt Kite Safari',
-                              price: 'From €3,500 / cabin',
-                              highlights: ['7 Days / 6 Nights', 'Larger Cabin', 'Premium Comfort', 'All Twin Cabin Benefits', 'Best Location'],
-                              included: [
-                                'Everything in Twin Cabin',
-                                'Larger cabin space',
-                                'Enhanced comfort',
-                                'Better location onboard',
-                                'Perfect for couples/friends'
-                              ]
-                            };
-                          } else if (selectedCabin === 'Panoramic Suite') {
-                            cabinImage = '/lovable-uploads/safari-panoramic-suite.jpg';
-                            cabinDetails = {
-                              packageName: 'Panoramic Suite',
-                              location: 'Egypt Kite Safari',
-                              price: 'From €3,700 / cabin',
-                              highlights: ['7 Days / 6 Nights', 'Panoramic Windows', 'Most Premium Cabin', 'Maximum Privacy', 'Exclusive Experience'],
-                              included: [
-                                'Everything in Master Suite',
-                                'Panoramic windows with ocean views',
-                                'Most premium cabin on yacht',
-                                'Maximum privacy & space',
-                                'Only 1-2 per trip',
-                                'Perfect for premium travelers'
-                              ]
-                            };
-                          } else {
-                            // Default if no cabin selected
-                            cabinDetails = {
-                              packageName: 'Egypt Kite Safari',
-                              location: 'Red Sea, Egypt',
-                              price: 'from €1,750',
-                              highlights: ['7 Days', '3 Lagoons', 'Luxury Yacht', 'All Meals']
-                            };
-                          }
-                          
-                          setSelectedCabinImage(cabinImage);
-                          setBookingDetails(cabinDetails);
-                          setBookingPopupOpen(true);
-                        }}
-                      >
-                        RESERVE MY CABIN
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        className="w-full"
-                        onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20get%20the%20full%20PDF%20for%20the%20Egypt%20Kite%20Safari.', '_blank')}
-                      >
-                        Get Full PDF on WhatsApp
-                      </Button>
-                    </div>
-
-
-                    <div className="text-center text-sm text-muted-foreground">
-                      🔒 Deposit: 30% to secure your spot
-                    </div>
-                  </div>
-
-                  {/* Right: Questions / Requests Card */}
-                  <div className="bg-background rounded-2xl p-8 shadow-xl">
-                    <h3 className="text-2xl font-display font-bold text-foreground mb-6 uppercase">
-                      QUESTIONS OR SPECIAL REQUESTS?
-                    </h3>
-
-                    <div className="mb-8 space-y-3">
-                      <p className="text-foreground flex items-center gap-2">
-                        <span>👨‍👩‍👧‍👦</span> Family trip?
-                      </p>
-                      <p className="text-foreground flex items-center gap-2">
-                        <span>👥</span> Group booking?
-                      </p>
-                      <p className="text-foreground flex items-center gap-2">
-                        <span>📅</span> Special dates?
-                      </p>
-                    </div>
-
-                    <div className="space-y-4">
-                      <Button 
-                        className="w-full text-lg py-6"
-                        onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20have%20questions%20about%20the%20Egypt%20Kite%20Safari.', '_blank')}
-                      >
-                        📱 Ask on WhatsApp
-                      </Button>
-                      <Button 
-                        variant="outline" 
-                        className="w-full text-lg py-6"
-                        onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20schedule%20a%2015-minute%20call%20about%20the%20Egypt%20Kite%20Safari.', '_blank')}
-                      >
-                        📞 Schedule 15-min Call
-                      </Button>
-                    </div>
-
-                    <p className="text-center text-sm text-muted-foreground mt-6">
-                      We respond within 24h (usually faster!)
-                    </p>
-                  </div>
-
-                </div>
+                <p className="text-white/70 mt-6 text-sm">
+                  We respond within 24h (usually faster!)
+                </p>
 
               </div>
             </div>
