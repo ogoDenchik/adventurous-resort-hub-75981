@@ -42,13 +42,13 @@ const ContactPage = () => {
       
       <main className="flex-grow pt-24">
         {/* Header */}
-        <section className="py-16 md:py-24 bg-background">
+        <section className="py-10 md:py-24 bg-background">
           <div className="container mx-auto px-4 text-center">
-            <p className="section-number mb-4">// Contact</p>
-            <h1 className="heading-display text-5xl md:text-7xl text-foreground mb-6">
+            <p className="section-number mb-2 md:mb-4">// Contact</p>
+            <h1 className="heading-display text-4xl md:text-7xl text-foreground mb-3 md:mb-6">
               Get in Touch
             </h1>
-            <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
               We're here to answer your questions and help you plan your next adventure.
             </p>
           </div>
