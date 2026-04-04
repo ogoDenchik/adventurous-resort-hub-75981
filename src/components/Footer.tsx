@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
               <a href="https://www.instagram.com/ogo_kite_academy/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 hover:scale-125">
                 <Instagram size={20} />
               </a>
-              <a href="https://t.me/Denis_ogodenchik" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 hover:scale-125">
+              <a href="https://t.me/ogo_kite_academy" target="_blank" rel="noopener noreferrer" aria-label="Telegram" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 hover:scale-125">
                 <Send size={20} />
               </a>
               <a href="https://www.youtube.com/@ogoAcademy_EN" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 hover:scale-125">
@@ -81,7 +81,7 @@ const Footer: React.FC = () => {
               <a href="https://www.instagram.com/ogo_kite_academy/" target="_blank" rel="noopener noreferrer" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase">
                 <Instagram size={18} /><span>INSTAGRAM</span>
               </a>
-              <a href="https://t.me/Denis_ogodenchik" target="_blank" rel="noopener noreferrer" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase">
+              <a href="https://t.me/ogo_kite_academy" target="_blank" rel="noopener noreferrer" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase">
                 <Send size={18} /><span>TELEGRAM</span>
               </a>
               <a href="https://www.youtube.com/@ogoAcademy_EN" target="_blank" rel="noopener noreferrer" className="text-accent-foreground/80 hover:text-accent-foreground transition-colors duration-300 flex items-center space-x-2 uppercase">
