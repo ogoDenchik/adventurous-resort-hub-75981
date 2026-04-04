@@ -55,38 +55,37 @@ const ContactPage = () => {
         </section>
 
         {/* Contact Cards */}
-        <section className="py-12 bg-muted/30">
+        <section className="py-6 md:py-12 bg-muted/30">
           <div className="container mx-auto px-4">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
               {contactMethods.map((method, index) => (
                 <a
                   key={index}
                   href={method.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group relative bg-card rounded-2xl p-8 text-center transition-all duration-300 hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
+                  className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
                 >
-                  <div className="flex justify-center mb-5">
-                    <div className={`${method.color} ${method.hoverColor} w-16 h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
-                      <method.icon className="w-8 h-8 text-white" />
+                  <div className="flex-shrink-0 md:flex md:justify-center md:mb-5">
+                    <div className={`${method.color} ${method.hoverColor} w-11 h-11 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
+                      <method.icon className="w-5 h-5 md:w-8 md:h-8 text-white" />
                     </div>
                   </div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2 uppercase tracking-wide">
-                    {method.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm mb-3">
-                    {method.subtitle}
-                  </p>
-                  <p className="text-primary font-semibold text-base">
-                    {method.description}
-                  </p>
+                  <div className="min-w-0">
+                    <h3 className="text-base md:text-xl font-semibold text-foreground uppercase tracking-wide">
+                      {method.title}
+                    </h3>
+                    <p className="text-muted-foreground text-xs md:text-sm">
+                      {method.description}
+                    </p>
+                  </div>
                   <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
                 </a>
               ))}
             </div>
 
-            <div className="text-center mt-12">
-              <p className="text-muted-foreground text-base">
+            <div className="text-center mt-6 md:mt-12">
+              <p className="text-muted-foreground text-sm md:text-base">
                 We respond to all messages — usually within a few hours.
               </p>
             </div>
