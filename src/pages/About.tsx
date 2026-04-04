@@ -223,7 +223,7 @@ const About: React.FC = () => {
                   WhatsApp
                 </a>
                 <a 
-                  href="https://t.me/Denis_ogodenchik"
+                  href="https://t.me/ogo_kite_academy"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 px-8 py-4 bg-transparent border-2 border-white text-white font-medium text-lg rounded-md transition-all duration-300 hover:bg-white/10 hover:shadow-lg hover:translate-y-[-2px]"
