@@ -49,7 +49,7 @@ const ContactPage = () => {
               Get in Touch
             </h1>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              We're here to answer your questions and help you plan your next adventure.
+              Want to book a lesson in Cyprus or join a kite trip? Reach out via WhatsApp, Instagram, or Telegram — and we'll get you riding this week.
             </p>
           </div>
         </section>
