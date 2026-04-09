@@ -47,6 +47,7 @@ const Cyprus: React.FC = () => {
       <ScrollToTop />
       
       <CyprusHero />
+      <TrustIndicators />
       <LearningJourney />
       <CyprusLifestyle />
       <CyprusTestimonials />
