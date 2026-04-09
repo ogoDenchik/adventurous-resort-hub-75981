@@ -163,10 +163,10 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation */}
       <div 
         className={cn(
-          'fixed inset-0 pt-20 px-4 overflow-y-auto transition-transform duration-300 ease-in-out md:hidden z-[205]',
-          isMenuOpen ? 'translate-x-0' : 'translate-x-full pointer-events-none'
+          'fixed inset-0 pt-24 px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden z-[205]',
+          isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
         )}
-        style={{ backgroundColor: 'hsl(var(--background))', opacity: 1 }}
+        style={{ backgroundColor: 'hsl(var(--background))' }}
       >
         <button 
           className="absolute top-4 right-4 p-2 text-foreground z-[215] cursor-pointer touch-manipulation" 
@@ -179,33 +179,54 @@ const Navbar: React.FC = () => {
         >
           <X size={24} />
         </button>
+
+        <p className="text-muted-foreground/40 text-[10px] tracking-[0.3em] uppercase mb-8">// Navigation</p>
         
-        <nav className="flex flex-col space-y-6">
-          <a 
-            href="https://wa.me/48884035225" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className="label-caps py-2 border-b border-border text-foreground/80 flex items-center gap-2" 
-            onClick={() => setIsMenuOpen(false)}
-          >
-            <Phone size={16} className="text-green-600" />
-            WHATSAPP: +48 884 035 225
-          </a>
-          {navLinks.map(link => (
+        <nav className="flex flex-col">
+          {navLinks.map((link, index) => (
             <Link 
               key={link.path} 
               to={link.path} 
               className={cn(
-                'label-caps py-3 border-b border-border text-base', 
-                location.pathname === link.path ? 'text-accent' : 'text-foreground/80'
+                'py-4 border-b border-border/30 flex items-baseline gap-4 transition-all duration-300',
+                isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-8 opacity-0',
+                location.pathname === link.path ? 'text-foreground' : 'text-foreground/50'
               )} 
+              style={{ transitionDelay: isMenuOpen ? `${index * 50}ms` : '0ms' }}
               onClick={() => setIsMenuOpen(false)}
             >
-              {link.name}
+              <span className="text-[10px] tracking-[0.2em] text-muted-foreground/40 font-light tabular-nums">
+                {String(index + 1).padStart(2, '0')}
+              </span>
+              <span className="heading-display text-2xl">
+                {link.name}
+              </span>
             </Link>
           ))}
+        </nav>
+
+        <div 
+          className={cn(
+            'mt-10 space-y-4 transition-all duration-300',
+            isMenuOpen ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
+          )}
+          style={{ transitionDelay: isMenuOpen ? '450ms' : '0ms' }}
+        >
+          <a 
+            href="https://wa.me/48884035225" 
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-3 text-foreground/50 hover:text-foreground transition-colors text-sm tracking-wide" 
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <Phone size={14} />
+            <span>+48 884 035 225</span>
+          </a>
+
+          <div className="h-px bg-border/20 my-4" />
+
           <button 
-            className="btn-primary text-center mt-4" 
+            className="btn-primary w-full text-center" 
             onClick={() => {
               setIsMenuOpen(false);
               setBookingPopupOpen(true);
@@ -213,7 +234,7 @@ const Navbar: React.FC = () => {
           >
             {t('nav.bookNow')}
           </button>
-        </nav>
+        </div>
       </div>
       
       {/* Booking Popup */}
