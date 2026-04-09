@@ -1,10 +1,8 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
-import { Button } from '@/components/ui/button';
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle, Send, Instagram } from 'lucide-react';
 import CyprusHero from '@/components/cyprus/CyprusHero';
 import LearningJourney from '@/components/cyprus/LearningJourney';
 import CyprusLifestyle from '@/components/cyprus/CyprusLifestyle';
@@ -13,19 +11,42 @@ import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
 import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
 import { useLanguage } from '@/contexts/LanguageContext';
 
+const contactMethods = [
+  {
+    icon: MessageCircle,
+    title: "WhatsApp",
+    description: "+48 884 035 225",
+    link: "https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20have%20a%20question!",
+    color: "bg-green-500",
+    hoverColor: "hover:bg-green-600",
+  },
+  {
+    icon: Instagram,
+    title: "Instagram",
+    description: "@ogo_kite_academy",
+    link: "https://www.instagram.com/ogo_kite_academy",
+    color: "bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400",
+    hoverColor: "hover:opacity-90",
+  },
+  {
+    icon: Send,
+    title: "Telegram",
+    description: "@ogodenchik_official",
+    link: "https://t.me/ogodenchik_official",
+    color: "bg-blue-500",
+    hoverColor: "hover:bg-blue-600",
+  },
+];
+
 const Cyprus: React.FC = () => {
   const { t } = useLanguage();
-
-  const handleWhatsApp = () => {
-    window.open('https://wa.me/48884035225?text=Hi!%20I%27m%20interested%20in%20kitesurfing%20in%20Cyprus', '_blank');
-  };
 
   return (
     <div className="min-h-screen bg-background">
       <Navbar />
       <ScrollToTop />
       
-      <CyprusHero onWhatsApp={handleWhatsApp} />
+      <CyprusHero />
       <LearningJourney />
       <CyprusLifestyle />
       <CyprusTestimonials />
@@ -51,33 +72,48 @@ const Cyprus: React.FC = () => {
         </div>
       </section>
 
-      <CyprusFAQ />
-
-      {/* CTA */}
-      <section className="py-16">
+      {/* Contact Cards */}
+      <section id="cyprus-contact" className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto bg-card rounded-2xl border border-border/50 p-8 md:p-10 text-center">
-            <h2 className="text-3xl md:text-4xl font-display font-bold mb-3">
-              {t('cyprus.ctaTitle')}
-            </h2>
-            <p className="text-muted-foreground mb-4">
-              {t('cyprus.ctaSubtitle')}
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 mb-6 text-sm">
-              <Link to="/brazil" className="px-4 py-2 rounded-full bg-muted hover:bg-primary/10 hover:text-primary transition-colors font-medium">
-                {t('cyprus.brazilLink')}
-              </Link>
-              <Link to="/kite-safari" className="px-4 py-2 rounded-full bg-muted hover:bg-primary/10 hover:text-primary transition-colors font-medium">
-                {t('cyprus.egyptLink')}
-              </Link>
-            </div>
-            <Button size="lg" className="text-lg px-8 py-6 gap-3" onClick={handleWhatsApp}>
-              <MessageCircle className="w-5 h-5" />
-              {t('cyprus.whatsapp')}
-            </Button>
+          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-2">
+            {t('cyprus.contactTitle')}
+          </h2>
+          <p className="text-center text-muted-foreground mb-8">
+            {t('cyprus.contactSubtitle')}
+          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
+            {contactMethods.map((method, index) => (
+              <a
+                key={index}
+                href={method.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
+              >
+                <div className="flex-shrink-0 md:flex md:justify-center md:mb-5">
+                  <div className={`${method.color} ${method.hoverColor} w-11 h-11 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
+                    <method.icon className="w-5 h-5 md:w-8 md:h-8 text-white" />
+                  </div>
+                </div>
+                <div className="min-w-0">
+                  <h3 className="text-base md:text-xl font-semibold text-foreground uppercase tracking-wide">
+                    {method.title}
+                  </h3>
+                  <p className="text-muted-foreground text-xs md:text-sm">
+                    {method.description}
+                  </p>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+              </a>
+            ))}
           </div>
+          <p className="text-center text-muted-foreground text-sm mt-6">
+            {t('contact.responseNote')}
+          </p>
         </div>
       </section>
+
+      <CyprusFAQ />
       
       <Footer />
     </div>
