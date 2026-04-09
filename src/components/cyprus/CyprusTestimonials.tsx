@@ -72,8 +72,8 @@ const doubled = [...testimonials, ...testimonials];
 
 const CyprusTestimonials: React.FC = () => {
   const [paused, setPaused] = useState(false);
-  const { t, language } = useLanguage();
-  const lang = language as LangKey;
+  const { t, lang } = useLanguage();
+  const langKey = lang as LangKey;
 
   return (
     <section className="py-12 overflow-hidden bg-muted/30">
