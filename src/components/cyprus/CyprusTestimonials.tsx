@@ -92,14 +92,14 @@ const CyprusTestimonials: React.FC = () => {
                   <Star key={si} className="w-4 h-4 fill-amber-400 text-amber-400" />
                 ))}
               </div>
-              <p className="text-sm text-foreground leading-relaxed mb-4">"{item.text[lang]}"</p>
+              <p className="text-sm text-foreground leading-relaxed mb-4">"{item.text[langKey]}"</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
                   <img src={item.photo} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-foreground">{item.name}</div>
-                  <div className="text-xs text-muted-foreground">{item.location[lang]}</div>
+                  <div className="text-xs text-muted-foreground">{item.location[langKey]}</div>
                 </div>
               </div>
             </div>
