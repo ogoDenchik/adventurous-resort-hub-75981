@@ -92,8 +92,26 @@ const ContactPage = () => {
           </div>
         </section>
 
+        {/* Video */}
+        <section className="py-8 md:py-16 bg-background">
+          <div className="container mx-auto px-4">
+            <div className="max-w-sm mx-auto">
+              <div className="relative w-full rounded-2xl overflow-hidden shadow-xl" style={{ aspectRatio: '9/16' }}>
+                <iframe
+                  src="https://www.youtube.com/embed/ZEg4JkGOVWg"
+                  title="OGO Kite Academy"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  loading="lazy"
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
-        <section className="py-16 md:py-20 bg-background">
+        <section className="py-12 md:py-20 bg-background">
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-display text-3xl md:text-5xl text-foreground mb-6">
