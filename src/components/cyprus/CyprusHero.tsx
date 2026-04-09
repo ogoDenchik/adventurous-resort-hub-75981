@@ -1,16 +1,16 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown } from 'lucide-react';
+import { ChevronDown, MessageCircle } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-interface CyprusHeroProps {
-  onWhatsApp: () => void;
-}
-
-const CyprusHero: React.FC<CyprusHeroProps> = ({ onWhatsApp }) => {
+const CyprusHero: React.FC = () => {
   const { t } = useLanguage();
   const scrollToJourney = () => {
     document.getElementById('learning-journey')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToContact = () => {
+    document.getElementById('cyprus-contact')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -29,7 +29,10 @@ const CyprusHero: React.FC<CyprusHeroProps> = ({ onWhatsApp }) => {
           {t('cyprus.heroSubtitle')}
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <Button size="lg" className="text-lg px-8 py-6" onClick={onWhatsApp}>{t('cyprus.heroBtn')}</Button>
+          <Button size="lg" className="text-lg px-8 py-6 gap-2" onClick={scrollToContact}>
+            <MessageCircle className="w-5 h-5" />
+            {t('cyprus.askQuestion')}
+          </Button>
           <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white/40 text-white hover:bg-white/10 bg-white/5" onClick={scrollToJourney}>
             {t('cyprus.heroBtn2')}
           </Button>
