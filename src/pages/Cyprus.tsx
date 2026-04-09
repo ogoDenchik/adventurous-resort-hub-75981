@@ -5,7 +5,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import { MessageCircle, Send, Instagram } from 'lucide-react';
 import CyprusHero from '@/components/cyprus/CyprusHero';
 import LearningJourney from '@/components/cyprus/LearningJourney';
-import TrustIndicators from '@/components/TrustIndicators';
+import CyprusTrustBar from '@/components/cyprus/CyprusTrustBar';
 import CyprusLifestyle from '@/components/cyprus/CyprusLifestyle';
 import CyprusAdvantages from '@/components/cyprus/CyprusAdvantages';
 import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
@@ -48,7 +48,7 @@ const Cyprus: React.FC = () => {
       <ScrollToTop />
       
       <CyprusHero />
-      <TrustIndicators />
+      <CyprusTrustBar />
       <LearningJourney />
       <CyprusLifestyle />
       <CyprusTestimonials />
