@@ -86,8 +86,11 @@ export const translations: Translations = {
       heroBadge: '🌍 Year-round • 340 wind days',
       heroTitle: 'Professional kitesurfing training',
       heroSubtitle: 'With certified instructors with over five years of experience',
-      heroBtn: 'Sign up',
+      heroBtn: 'Ask a Question',
+      askQuestion: 'Ask a Question',
       heroBtn2: 'How does it work?',
+      contactTitle: 'Get in Touch',
+      contactSubtitle: 'Write to us — we respond within a few hours',
       // Learning Journey
       learningTitle: 'Kitesurfer Training Plan',
       learningSubtitle: '300+ students completed this path',
