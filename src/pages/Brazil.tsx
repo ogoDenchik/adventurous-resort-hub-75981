@@ -610,12 +610,12 @@ const Brazil: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-semibold mb-2">Telegram</h3>
                 <a 
-                  href="https://t.me/ogo_kite_academy" 
+                  href="https://t.me/ogodenchik_official" 
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="text-[#25D366] hover:text-[#128C7E] transition-colors font-medium"
                 >
-                  @ogo_kite_academy
+                  @ogodenchik_official
                 </a>
               </div>
             </div>

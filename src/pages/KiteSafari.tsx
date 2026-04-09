@@ -1341,7 +1341,7 @@ const KiteSafari: React.FC = () => {
                   <Button 
                     size="lg"
                     className="text-lg px-8 py-6 bg-[#229ED9] hover:bg-[#1A8BC2] text-white"
-                    onClick={() => window.open('https://t.me/ogo_kite_academy', '_blank')}
+                    onClick={() => window.open('https://t.me/ogodenchik_official', '_blank')}
                   >
                     ✈️ Book via Telegram
                   </Button>

@@ -5,7 +5,7 @@ import { cn } from '@/lib/utils';
 
 const TelegramButton: React.FC = () => {
   const handleTelegramClick = () => {
-    window.open('https://t.me/ogo_kite_academy', '_blank');
+    window.open('https://t.me/ogodenchik_official', '_blank');
   };
 
   return (

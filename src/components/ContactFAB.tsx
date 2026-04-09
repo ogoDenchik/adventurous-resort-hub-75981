@@ -28,7 +28,7 @@ const ContactFAB: React.FC = () => {
         </a>
         {/* Telegram */}
         <a
-          href="https://t.me/ogo_kite_academy"
+          href="https://t.me/ogodenchik_official"
           target="_blank"
           rel="noopener noreferrer"
           className="w-12 h-12 bg-[#0088cc] hover:bg-[#006daa] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
