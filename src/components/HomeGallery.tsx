@@ -193,7 +193,7 @@ const HomeGallery: React.FC = () => {
                       className="h-[500px] md:h-[600px] lg:h-[700px]"
                     >
                       <div className="group relative overflow-hidden rounded-xl shadow-md transition-all duration-300 h-full">
-                        <img 
+                        <img loading="lazy" 
                           src={image.src} 
                           alt={image.alt} 
                           className="w-full h-full object-cover transition-transform duration-500" 

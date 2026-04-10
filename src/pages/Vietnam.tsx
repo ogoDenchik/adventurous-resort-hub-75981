@@ -114,7 +114,7 @@ const Vietnam = () => {
             <div className="space-y-4">
               {/* Large top image */}
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
+                <img loading="lazy" 
                   src="/lovable-uploads/vietnam-camp-date-1.jpg" 
                   alt="Vietnam kitesurfing beach with equipment"
                   className="w-full h-[400px] object-cover"
@@ -124,14 +124,14 @@ const Vietnam = () => {
               {/* Two smaller images side by side */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-md">
-                  <img 
+                  <img loading="lazy" 
                     src="/lovable-uploads/vietnam-waterfall-new.jpg" 
                     alt="Beautiful Vietnam waterfall with mountains"
                     className="w-full h-[200px] object-cover"
                   />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-md">
-                  <img 
+                  <img loading="lazy" 
                     src="/lovable-uploads/vietnam-camp-date-3.jpg" 
                     alt="Kitesurfing students with instructor"
                     className="w-full h-[200px] object-cover object-[center_20%]"
@@ -349,7 +349,7 @@ const Vietnam = () => {
                     <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
                       <div className="p-2">
                         <div className="rounded-xl overflow-hidden shadow-lg aspect-[4/3]">
-                          <img
+                          <img loading="lazy"
                             src={src}
                             alt={`Vietnam accommodation ${index + 1}`}
                             className="w-full h-full object-cover"
@@ -1375,40 +1375,40 @@ const Vietnam = () => {
         {/* Gallery Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/vietnam-hero-kite.jpg" alt="Kitesurfing action" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/vietnam-hero-kite.jpg" alt="Kitesurfing action" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/brazil-kite-aerial.jpg" alt="Aerial kiting view" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/brazil-kite-aerial.jpg" alt="Aerial kiting view" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/brazil-lagoon-girl.jpg" alt="Lagoon kitesurfing" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/brazil-lagoon-girl.jpg" alt="Lagoon kitesurfing" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/brazil-beach-lesson.jpg" alt="Beach instruction" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/brazil-beach-lesson.jpg" alt="Beach instruction" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/brazil-sunset-team.jpg" alt="Sunset group" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/brazil-sunset-team.jpg" alt="Sunset group" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/community-hug.jpg" alt="Community bonding" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/community-hug.jpg" alt="Community bonding" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/about-campfire-community.jpg" alt="Campfire gathering" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/about-campfire-community.jpg" alt="Campfire gathering" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/brazil-instructor-1.jpg" alt="Instructor teaching" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/brazil-instructor-1.jpg" alt="Instructor teaching" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/lyra-food.jpg" alt="Local food" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/lyra-food.jpg" alt="Local food" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/brazil-location-jeri.jpg" alt="Beach landscape" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/brazil-location-jeri.jpg" alt="Beach landscape" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/about-kitesurfing-discovery.jpg" alt="Kitesurfing discovery" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/about-kitesurfing-discovery.jpg" alt="Kitesurfing discovery" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
           <div className="aspect-square overflow-hidden rounded-lg">
-            <img src="/lovable-uploads/about-sunset-reflection.jpg" alt="Sunset reflection" className="w-full h-full object-cover hover:scale-105 transition-transform" />
+            <img loading="lazy" src="/lovable-uploads/about-sunset-reflection.jpg" alt="Sunset reflection" className="w-full h-full object-cover hover:scale-105 transition-transform" />
           </div>
         </div>
 

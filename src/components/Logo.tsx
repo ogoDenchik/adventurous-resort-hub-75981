@@ -7,7 +7,7 @@ const Logo: React.FC = () => {
   return (
     <Link to="/" className="flex items-center gap-3 group">
       <div className="relative w-16 h-16 overflow-hidden">
-        <img 
+        <img loading="lazy" 
           src={ogoLogo} 
           alt="OGO Kite Academy" 
           className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"

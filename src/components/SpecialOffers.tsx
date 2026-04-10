@@ -23,7 +23,7 @@ const Program: React.FC<ProgramProps> = ({
   return (
     <Card className="overflow-hidden group hover:shadow-lg transition-shadow duration-300">
       <div className="relative h-48 overflow-hidden">
-        <img 
+        <img loading="lazy" 
           src={imageUrl} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"

@@ -53,7 +53,7 @@ const KiteSafari: React.FC = () => {
       {/* Hero Section */}
       <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
         <div className="absolute inset-0">
-          <img 
+          <img loading="lazy" 
             src="/lovable-uploads/kite-safari-yacht.jpg" 
             alt="KiteSafari Yacht" 
             className="w-full h-full object-cover"
@@ -224,7 +224,7 @@ const KiteSafari: React.FC = () => {
             <div className="space-y-4">
               {/* Large top image */}
               <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img 
+                <img loading="lazy" 
                   src="/lovable-uploads/egypt-safari-girls.jpg" 
                   alt="Kitesurfing girls with yacht in background"
                   className="w-full h-[400px] object-cover"
@@ -234,14 +234,14 @@ const KiteSafari: React.FC = () => {
               {/* Two smaller images side by side */}
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-xl overflow-hidden shadow-md">
-                  <img 
+                  <img loading="lazy" 
                     src="/lovable-uploads/egypt-safari-jump.jpg" 
                     alt="Kiteboarder performing jump"
                     className="w-full h-[200px] object-cover"
                   />
                 </div>
                 <div className="rounded-xl overflow-hidden shadow-md">
-                  <img 
+                  <img loading="lazy" 
                     src="/lovable-uploads/egypt-safari-yacht-group.jpg" 
                     alt="Group photo on yacht"
                     className="w-full h-[200px] object-cover"
@@ -379,7 +379,7 @@ const KiteSafari: React.FC = () => {
                 <CarouselContent>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-1.jpg" 
                         alt="Lyra Yacht"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -388,7 +388,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-2.jpg" 
                         alt="Lyra Yacht Aerial View"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -397,7 +397,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-3.jpg" 
                         alt="Yacht Deck Jacuzzi"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -406,7 +406,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-4.jpg" 
                         alt="Yacht Deck Lounge"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -415,7 +415,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-5.jpg" 
                         alt="Master Suite"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -424,7 +424,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-6.jpg" 
                         alt="Yacht Lounge Area"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -433,7 +433,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-7.jpg" 
                         alt="Yacht Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -442,7 +442,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-8.jpg" 
                         alt="Double Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -451,7 +451,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-9.jpg" 
                         alt="Twin Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -460,7 +460,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-10.jpg" 
                         alt="Dining Area"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -469,7 +469,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-lounge.jpg" 
                         alt="Yacht Lounge"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -478,7 +478,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-master-cabin-1.jpg" 
                         alt="Master Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -487,7 +487,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-food.jpg" 
                         alt="Yacht Food Service"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -496,7 +496,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-night.jpg" 
                         alt="Yacht at Night"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -505,7 +505,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-yacht-sunset.jpg" 
                         alt="Yacht at Sunset"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -514,7 +514,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-dining.jpg" 
                         alt="Yacht Dining Area"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -523,7 +523,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-twin-cabin.jpg" 
                         alt="Twin Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -532,7 +532,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-bathroom.jpg" 
                         alt="Yacht Bathroom"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -541,7 +541,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-standard-cabin.jpg" 
                         alt="Standard Cabin"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -550,7 +550,7 @@ const KiteSafari: React.FC = () => {
                   </CarouselItem>
                   <CarouselItem>
                     <div className="rounded-2xl overflow-hidden">
-                      <img 
+                      <img loading="lazy" 
                         src="/lovable-uploads/lyra-shower.jpg" 
                         alt="Yacht Shower"
                         className="w-full h-[400px] md:h-[500px] object-cover"
@@ -940,7 +940,7 @@ const KiteSafari: React.FC = () => {
                 {/* Twin Cabin Card */}
                 <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all">
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img 
+                    <img loading="lazy" 
                       src="/lovable-uploads/safari-twin-cabin.jpg" 
                       alt="Twin Cabin"
                       className="w-full h-full object-cover"
@@ -1011,7 +1011,7 @@ const KiteSafari: React.FC = () => {
                     MOST POPULAR
                   </div>
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img 
+                    <img loading="lazy" 
                       src="/lovable-uploads/safari-master-suite.jpg" 
                       alt="Master Suite"
                       className="w-full h-full object-cover"
@@ -1063,7 +1063,7 @@ const KiteSafari: React.FC = () => {
                     Only 1–2 per trip
                   </div>
                   <div className="aspect-[4/3] overflow-hidden">
-                    <img 
+                    <img loading="lazy" 
                       src="/lovable-uploads/safari-panoramic-suite.jpg" 
                       alt="Panoramic Suite"
                       className="w-full h-full object-cover"

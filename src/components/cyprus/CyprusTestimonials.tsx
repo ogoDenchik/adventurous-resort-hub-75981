@@ -95,7 +95,7 @@ const CyprusTestimonials: React.FC = () => {
               <p className="text-sm text-foreground leading-relaxed mb-4">"{item.text[langKey]}"</p>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
-                  <img src={item.photo} alt={item.name} className="w-full h-full object-cover" />
+                  <img loading="lazy" src={item.photo} alt={item.name} className="w-full h-full object-cover" />
                 </div>
                 <div>
                   <div className="text-sm font-semibold text-foreground">{item.name}</div>

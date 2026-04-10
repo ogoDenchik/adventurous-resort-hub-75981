@@ -143,7 +143,7 @@ const Gallery: React.FC = () => {
                 onClick={() => openModal(image.src)}
               >
                 <div className="aspect-square overflow-hidden">
-                  <img 
+                  <img loading="lazy" 
                     src={image.src} 
                     alt={image.alt} 
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" 
@@ -213,7 +213,7 @@ const Gallery: React.FC = () => {
               </button>
               
               <div className="flex-grow flex justify-center mx-4">
-                <img 
+                <img loading="lazy" 
                   src={selectedImage} 
                   alt="Gallery image" 
                   className="max-h-[80vh] object-contain rounded-lg" 

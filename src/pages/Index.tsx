@@ -86,7 +86,7 @@ const Index: React.FC = () => {
                     <div className="flex-1">
                       <div className="flex items-center gap-4 mb-4">
                         <div className="w-10 h-10 overflow-hidden flex-shrink-0">
-                          <img
+                          <img loading="lazy"
                             src={t.image}
                             alt={t.name}
                             className="w-full h-full object-cover scale-150"

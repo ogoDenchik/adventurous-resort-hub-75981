@@ -78,7 +78,7 @@ const CyprusLifestyle: React.FC = () => {
 
         {/* Photo strip */}
         <div className="max-w-5xl mx-auto rounded-xl overflow-hidden">
-          <img
+          <img loading="lazy"
             src="/lovable-uploads/cyprus-students-celebrating.jpg"
             alt="Happy students in Cyprus"
             loading="lazy"

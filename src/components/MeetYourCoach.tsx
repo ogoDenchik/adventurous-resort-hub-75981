@@ -66,7 +66,7 @@ const MeetYourCoach = () => {
         {/* Portrait Photo */}
         <div className="animate-slide-up mb-8" style={{ animationDelay: '100ms' }}>
           <div className="relative rounded-2xl overflow-hidden shadow-2xl hover-lift max-w-md mx-auto">
-            <img 
+            <img loading="lazy" 
               src="/lovable-uploads/denis-coach-portrait.jpg" 
               alt="Denis - Professional Kiteboarding Coach" 
               className="w-full h-auto object-cover"

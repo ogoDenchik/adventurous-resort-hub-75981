@@ -55,7 +55,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
           {/* Hero Image */}
           <div className="relative h-56 md:h-72 w-full overflow-hidden">
             <div className="absolute inset-0 bg-black/50 z-10" />
-            <img 
+            <img loading="lazy" 
               src={backgroundImage} 
               alt="Booking background"
               className="w-full h-full object-cover object-center"

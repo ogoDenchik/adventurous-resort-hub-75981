@@ -19,7 +19,7 @@ const Brazil: React.FC = () => {
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/70 z-10" />
         <div className="absolute inset-0">
-          <img 
+          <img loading="lazy" 
             src="/lovable-uploads/brazil-hero-team.png" 
             alt="Brazil Kitesurf Adventure" 
             className="w-full h-full object-cover"
@@ -48,7 +48,7 @@ const Brazil: React.FC = () => {
           <div className="grid md:grid-cols-2">
             {/* Image */}
             <div className="relative h-[60vh] md:h-screen">
-              <img 
+              <img loading="lazy" 
                 src="/lovable-uploads/brazil-instructor-1.jpg" 
                 alt="Professional Kitesurfing Training" 
                 className="w-full h-full object-cover"
@@ -107,7 +107,7 @@ const Brazil: React.FC = () => {
             
             {/* Image */}
             <div className="relative h-[60vh] md:h-screen order-1 md:order-2">
-              <img 
+              <img loading="lazy" 
                 src="/lovable-uploads/brazil-beach-lesson.jpg" 
                 alt="Kitesurfing Lessons on Brazilian Beach" 
                 className="w-full h-full object-cover"
@@ -120,7 +120,7 @@ const Brazil: React.FC = () => {
         <section className="relative py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/70 z-10" />
           <div className="absolute inset-0">
-            <img 
+            <img loading="lazy" 
               src="/lovable-uploads/brazil-kites-beach.jpg" 
               alt="Kitesurfing beach with colorful kites" 
               className="w-full h-full object-cover"
@@ -154,7 +154,7 @@ const Brazil: React.FC = () => {
         <section className="relative h-[70vh] flex items-center overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent z-10" />
           <div className="absolute inset-0">
-            <img 
+            <img loading="lazy" 
               src="/lovable-uploads/brazil-bbtalkin-instructor.jpg" 
               alt="BbTalkin Communication System" 
               className="w-full h-full object-cover"
@@ -243,7 +243,7 @@ const Brazil: React.FC = () => {
           <div className="grid md:grid-cols-2">
             {/* Image */}
             <div className="relative h-[60vh] md:h-screen">
-              <img 
+              <img loading="lazy" 
                 src="/lovable-uploads/brazil-instructor-denis.jpg" 
                 alt="Denis Udovenko - Professional Kitesurfing Guide" 
                 className="w-full h-full object-cover object-center"
@@ -327,7 +327,7 @@ const Brazil: React.FC = () => {
                     </p>
                   </div>
                   <div className="relative h-[400px] rounded-lg overflow-hidden group">
-                    <img 
+                    <img loading="lazy" 
                       src="/lovable-uploads/brazil-location-guajiru.jpg" 
                       alt="Ilha de Guajiru aerial view" 
                       className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
@@ -358,7 +358,7 @@ const Brazil: React.FC = () => {
               <div className="mb-16">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden group">
-                    <img 
+                    <img loading="lazy" 
                       src="/lovable-uploads/brazil-location-jeri.jpg" 
                       alt="Jericoacoara beach with hammocks" 
                       className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
@@ -417,7 +417,7 @@ const Brazil: React.FC = () => {
                     </p>
                   </div>
                   <div className="relative h-[400px] rounded-lg overflow-hidden group">
-                    <img 
+                    <img loading="lazy" 
                       src="/lovable-uploads/brazil-location-barra.jpg" 
                       alt="Barra Grande mangrove lagoon" 
                       className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
@@ -448,7 +448,7 @@ const Brazil: React.FC = () => {
               <div className="mb-16">
                 <div className="grid md:grid-cols-2 gap-8 items-center">
                   <div className="order-2 md:order-1 relative h-[400px] rounded-lg overflow-hidden group">
-                    <img 
+                    <img loading="lazy" 
                       src="/lovable-uploads/brazil-location-cumbuco.jpg" 
                       alt="Cumbuco sunset beach" 
                       className="w-full h-full object-cover md:brightness-100 brightness-[0.7]"
@@ -528,7 +528,7 @@ const Brazil: React.FC = () => {
                   key={index} 
                   className="relative aspect-square overflow-hidden rounded-lg group cursor-pointer hover-lift"
                 >
-                  <img
+                  <img loading="lazy"
                     src={photo}
                     alt={`Brazil kitesurfing ${index + 1}`}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-110"
@@ -544,7 +544,7 @@ const Brazil: React.FC = () => {
         <section className="relative py-32 overflow-hidden">
           <div className="absolute inset-0 bg-gradient-to-b from-black/70 to-black/60 z-10" />
           <div className="absolute inset-0">
-            <img 
+            <img loading="lazy" 
               src="/lovable-uploads/brazil-kite-aerial.jpg" 
               alt="Aerial view of kitesurfing" 
               className="w-full h-full object-cover"
