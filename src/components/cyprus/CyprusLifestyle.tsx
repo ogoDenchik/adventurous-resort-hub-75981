@@ -81,7 +81,7 @@ const CyprusLifestyle: React.FC = () => {
           <img loading="lazy"
             src="/lovable-uploads/cyprus-students-celebrating.jpg"
             alt="Happy students in Cyprus"
-            loading="lazy"
+            
             className="w-full h-48 md:h-64 object-cover"
           />
         </div>
