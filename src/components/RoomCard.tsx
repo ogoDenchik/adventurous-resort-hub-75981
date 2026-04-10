@@ -30,7 +30,7 @@ const RoomCard: React.FC<RoomCardProps> = ({
     animationDelay: `${delay}ms`
   }}>
       <div className="aspect-video relative overflow-hidden">
-        <img src={image} alt={title} className="w-full h-full object-cover" />
+        <img loading="lazy" src={image} alt={title} className="w-full h-full object-cover" />
         <div className="absolute top-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full font-medium text-accent">
           ${price} <span className="text-sm text-foreground/70">/night</span>
         </div>

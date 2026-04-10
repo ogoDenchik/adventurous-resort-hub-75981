@@ -101,7 +101,7 @@ const OfferCard: React.FC<OfferProps> = ({
       viewport={{ once: true }}
     >
       <div className={cn("relative", featured ? "h-96" : "h-64")}>
-        <img 
+        <img loading="lazy" 
           src={image} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"

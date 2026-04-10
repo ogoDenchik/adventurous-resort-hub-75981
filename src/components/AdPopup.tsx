@@ -55,7 +55,7 @@ export function AdPopup({ onBookNow, onShowInstructions, showInstructions, onClo
             transition={{ duration: 0.3 }}
           >
             <div className="relative">
-              <img 
+              <img loading="lazy" 
                 src="/lovable-uploads/brazil-sunset-team.jpg" 
                 alt="Brazil Kite Safari"
                 className={`w-full object-cover ${isMobile ? 'h-36' : 'h-48'}`}
@@ -129,7 +129,7 @@ export function AdPopup({ onBookNow, onShowInstructions, showInstructions, onClo
             transition={{ duration: 0.3 }}
           >
             <div className="relative">
-              <img 
+              <img loading="lazy" 
                 src="/lovable-uploads/brazil-flag-booking.jpg" 
                 alt="Brazil Flag"
                 className={`w-full object-cover ${isMobile ? 'h-36' : 'h-48'}`}

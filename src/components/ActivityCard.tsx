@@ -45,7 +45,7 @@ const ActivityCard: React.FC<ActivityCardProps> = ({
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="md:w-2/5 lg:w-1/3 relative">
-        <img 
+        <img loading="lazy" 
           src={image} 
           alt={title} 
           className="w-full h-full object-cover"

@@ -27,9 +27,9 @@ const About: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div className="animate-slide-up">
               <div className="relative">
-                <img src="/lovable-uploads/about-instructor-student.jpg" alt="Kitesurfing instruction" className="w-full h-[500px] object-cover rounded-xl shadow-lg" />
+                <img src="/lovable-uploads/about-instructor-student.jpg" alt="Kitesurfing instruction" loading="lazy" className="w-full h-[500px] object-cover rounded-xl shadow-lg" />
                 <div className="absolute -bottom-6 -right-6 bg-white dark:bg-gray-800 p-4 rounded-xl shadow-xl hidden md:block">
-                  <img src="/lovable-uploads/about-beach-relax.jpg" alt="Beach community" className="w-40 h-32 object-cover rounded-md" />
+                  <img src="/lovable-uploads/about-beach-relax.jpg" alt="Beach community" loading="lazy" className="w-40 h-32 object-cover rounded-md" />
                 </div>
               </div>
             </div>
@@ -137,14 +137,14 @@ const About: React.FC = () => {
                 </p>
               </div>
               <div className="order-1 md:order-2">
-                <img src="/lovable-uploads/about-campfire-community.jpg" alt="Adventure spirit" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
+                <img src="/lovable-uploads/about-campfire-community.jpg" alt="Adventure spirit" loading="lazy" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
               </div>
             </div>
 
             {/* Discovery */}
             <div className="grid md:grid-cols-2 gap-8 items-center animate-fade-in animation-delay-200">
               <div>
-                <img src="/lovable-uploads/about-kitesurfing-discovery.jpg" alt="Discovering kitesurfing" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
+                <img src="/lovable-uploads/about-kitesurfing-discovery.jpg" alt="Discovering kitesurfing" loading="lazy" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
               </div>
               <div>
                 <h3 className="text-2xl font-display font-bold mb-4">The Missing Piece</h3>
@@ -169,7 +169,7 @@ const About: React.FC = () => {
                 </p>
               </div>
               <div className="order-1 md:order-2">
-                <img src="/lovable-uploads/about-instructors-teaching.jpg" alt="Teaching kitesurfing" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
+                <img src="/lovable-uploads/about-instructors-teaching.jpg" alt="Teaching kitesurfing" loading="lazy" className="w-full h-[300px] object-cover rounded-xl shadow-lg" />
               </div>
             </div>
 
@@ -192,8 +192,8 @@ const About: React.FC = () => {
 
             {/* Gallery */}
             <div className="grid grid-cols-2 gap-4 animate-fade-in animation-delay-500">
-              <img src="/lovable-uploads/about-team-yacht.jpg" alt="Team adventures" className="w-full h-[250px] object-cover rounded-xl shadow-lg" />
-              <img src="/lovable-uploads/about-team-community.jpg" alt="OGO community" className="w-full h-[250px] object-cover object-[center_30%] rounded-xl shadow-lg" />
+              <img src="/lovable-uploads/about-team-yacht.jpg" alt="Team adventures" loading="lazy" className="w-full h-[250px] object-cover rounded-xl shadow-lg" />
+              <img src="/lovable-uploads/about-team-community.jpg" alt="OGO community" loading="lazy" className="w-full h-[250px] object-cover object-[center_30%] rounded-xl shadow-lg" />
             </div>
           </div>
         </section>

@@ -103,7 +103,7 @@ const NearbyAttractions: React.FC = () => {
               <TiltCard perspective={1500} tiltFactor={8}>
                 <div className="bg-secondary/30 rounded-xl overflow-hidden shadow-md flex flex-col md:flex-row hover-lift group">
                   <div className="md:w-2/5 overflow-hidden">
-                    <img 
+                    <img loading="lazy" 
                       src={attraction.image} 
                       alt={attraction.name} 
                       className="w-full h-48 md:h-full object-cover transition-transform duration-500 group-hover:scale-110" 

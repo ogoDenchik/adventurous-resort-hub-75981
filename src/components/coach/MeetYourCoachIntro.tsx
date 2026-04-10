@@ -16,7 +16,7 @@ const MeetYourCoachIntro = () => {
         {/* Portrait Photo */}
         <RevealOnScroll delay={100} className="mb-12">
           <div className="relative overflow-hidden max-w-sm mx-auto">
-            <img 
+            <img loading="lazy" 
               src="/lovable-uploads/denis-coach-portrait.jpg" 
               alt="Denis - Professional Kiteboarding Coach" 
               className="w-full h-auto object-cover grayscale-[20%]"

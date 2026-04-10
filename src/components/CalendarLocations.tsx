@@ -44,7 +44,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   return (
     <Card className="overflow-hidden group hover:shadow-xl transition-all duration-300 h-full flex flex-col">
       <div className="relative h-64 overflow-hidden">
-        <img
+        <img loading="lazy"
           src={image}
           alt={`${country} - ${location}`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"

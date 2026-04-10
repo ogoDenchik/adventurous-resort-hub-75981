@@ -161,7 +161,7 @@ const Activities: React.FC = () => {
         {/* Hero Section */}
         <section className="relative h-[40vh] md:h-[50vh] lg:h-[60vh] overflow-hidden">
           <div className="absolute inset-0">
-            <img 
+            <img loading="lazy" 
               src="/lovable-uploads/1d3255ca-7296-4e20-b1fb-416cfb82fa82.png" 
               alt="Adventure activities" 
               className="w-full h-full object-cover"
@@ -311,7 +311,7 @@ const Activities: React.FC = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="h-48 overflow-hidden">
-                    <img 
+                    <img loading="lazy" 
                       src={guideline.image} 
                       alt={guideline.title} 
                       className="w-full h-full object-cover transition-transform duration-500 hover:scale-110"

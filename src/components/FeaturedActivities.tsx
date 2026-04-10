@@ -23,7 +23,7 @@ const ActivityCard: React.FC<ActivityProps> = ({ title, description, image, link
       style={{ animationDelay: `${delay}ms` }}
     >
       <div className="aspect-[4/5] relative overflow-hidden">
-        <img 
+        <img loading="lazy" 
           src={image} 
           alt={title} 
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
