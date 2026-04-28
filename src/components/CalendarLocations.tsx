@@ -114,21 +114,8 @@ const CalendarLocations: React.FC = () => {
         "January 20 – January 30, 2026 — SOLD OUT",
         "February 13 – February 23, 2026 — SOLD OUT"
       ],
-      highlights: [
-        "Perfect flat water",
-        "Consistent 15–25 knots",
-        "Warm climate",
-        "Uncrowded authentic spot"
-      ],
-      services: [
-        "Private Coaching (€800 / 10h)",
-        "Kite Camp (7–10 days, from €1200)",
-        "Refresh Course (€270 / 3h)",
-        "Equipment Rental (€85 / session)"
-      ],
-      badge: "SOLD OUT",
-      badgeVariant: "destructive",
-      ctaText: "EXPLORE VIETNAM",
+      summary: "Flat water, steady wind and warm conditions for focused progression.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/vietnam",
       image: "/lovable-uploads/hero-kite-action.jpg"
     },
@@ -141,22 +128,8 @@ const CalendarLocations: React.FC = () => {
         "April 18 – April 25, 2026",
         "April 30 – May 7, 2026"
       ],
-      highlights: [
-        "World-class lagoons",
-        "El Gouna / Red Sea Islands",
-        "300+ sunny days",
-        "Ideal for beginners"
-      ],
-      services: [
-        "Private Coaching (€800 / 10h)",
-        "1-to-1 Premium Training (€1500 / 10h)",
-        "Kite Safari (custom pricing)",
-        "Refresh Course (€270 / 3h)",
-        "Equipment Rental (€85 / session)"
-      ],
-      badge: "BOOKING OPEN",
-      badgeVariant: "default",
-      ctaText: "EXPLORE EGYPT",
+      summary: "Red Sea lagoons, reliable wind and a strong setup for beginners and progression.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/kite-safari",
       image: "/lovable-uploads/safari-beach-instruction.jpg"
     },
@@ -165,21 +138,8 @@ const CalendarLocations: React.FC = () => {
       country: "CYPRUS",
       location: "AVDIMOU BEACH",
       dates: ["All Year Round, 2026"],
-      highlights: [
-        "Ideal for first steps",
-        "Shallow water & steady wind",
-        "BbTalkin communication system",
-        "Duotone premium equipment"
-      ],
-      services: [
-        "Private Coaching (full package range)",
-        "Video Analysis (+€20 / session)",
-        "Progression Lessons",
-        "Equipment Included"
-      ],
-      badge: "ALWAYS AVAILABLE",
-      badgeVariant: "secondary",
-      ctaText: "EXPLORE CYPRUS",
+      summary: "Easy local spot near Limassol for first lessons and regular training.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/cyprus",
       image: "/lovable-uploads/cyprus-hero-sunset-action.jpg"
     },
@@ -191,21 +151,8 @@ const CalendarLocations: React.FC = () => {
         "November 1 – November 15, 2026",
         "November 20 – December 4, 2026"
       ],
-      highlights: [
-        "Strong daily wind",
-        "Flatwater lagoons",
-        "Downwinds",
-        "Fast progression environment"
-      ],
-      services: [
-        "Kite Adventure Trips",
-        "Downwind Experiences",
-        "Private Coaching",
-        "Group Coaching Packages"
-      ],
-      badge: "SEASON OPEN",
-      badgeVariant: "default",
-      ctaText: "EXPLORE BRAZIL",
+      summary: "Strong wind, lagoons and downwind routes for a high-energy kite trip.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/brazil",
       image: "/lovable-uploads/brazil-hero-main.png"
     }
