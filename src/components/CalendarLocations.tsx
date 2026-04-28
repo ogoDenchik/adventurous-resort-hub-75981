@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Carousel,
@@ -19,10 +17,7 @@ interface LocationCardProps {
   country: string;
   location: string;
   dates: string[];
-  highlights: string[];
-  services: string[];
-  badge: string;
-  badgeVariant: "default" | "secondary" | "destructive" | "outline";
+  summary: string;
   ctaText: string;
   ctaLink: string;
   image: string;
@@ -33,10 +28,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   country,
   location,
   dates,
-  highlights,
-  services,
-  badge,
-  badgeVariant,
+  summary,
   ctaText,
   ctaLink,
   image,
@@ -49,11 +41,6 @@ const LocationCard: React.FC<LocationCardProps> = ({
           alt={`${country} - ${location}`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute top-4 right-4">
-          <Badge variant={badgeVariant} className="text-xs font-semibold uppercase">
-            {badge}
-          </Badge>
-        </div>
       </div>
       
       <CardHeader>
@@ -64,42 +51,19 @@ const LocationCard: React.FC<LocationCardProps> = ({
         <CardDescription className="text-base font-medium uppercase">{location}</CardDescription>
       </CardHeader>
 
-      <CardContent className="flex-grow flex flex-col gap-4">
-        {/* Dates */}
-        <div className="space-y-1">
+      <CardContent className="flex-grow flex flex-col gap-6">
+        <div className="space-y-2">
           {dates.map((date, index) => (
-            <p key={index} className="text-sm font-semibold text-primary">
-              • {date}
+            <p key={index} className="text-sm md:text-base font-semibold text-primary">
+              {date}
             </p>
           ))}
         </div>
 
-        {/* Highlights */}
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-muted-foreground uppercase">HIGHLIGHTS:</p>
-          <div className="space-y-1">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm">{highlight}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          {summary}
+        </p>
 
-        {/* Available Services */}
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-muted-foreground uppercase">AVAILABLE:</p>
-          <div className="space-y-1">
-            {services.map((service, index) => (
-              <p key={index} className="text-sm pl-4">
-                • {service}
-              </p>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Button */}
         <Button asChild className="mt-auto w-full" size="lg">
           <Link to={ctaLink}>{ctaText}</Link>
         </Button>
@@ -150,21 +114,8 @@ const CalendarLocations: React.FC = () => {
         "January 20 – January 30, 2026 — SOLD OUT",
         "February 13 – February 23, 2026 — SOLD OUT"
       ],
-      highlights: [
-        "Perfect flat water",
-        "Consistent 15–25 knots",
-        "Warm climate",
-        "Uncrowded authentic spot"
-      ],
-      services: [
-        "Private Coaching (€800 / 10h)",
-        "Kite Camp (7–10 days, from €1200)",
-        "Refresh Course (€270 / 3h)",
-        "Equipment Rental (€85 / session)"
-      ],
-      badge: "SOLD OUT",
-      badgeVariant: "destructive",
-      ctaText: "EXPLORE VIETNAM",
+      summary: "Flat water, steady wind and warm conditions for focused progression.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/vietnam",
       image: "/lovable-uploads/hero-kite-action.jpg"
     },
@@ -177,22 +128,8 @@ const CalendarLocations: React.FC = () => {
         "April 18 – April 25, 2026",
         "April 30 – May 7, 2026"
       ],
-      highlights: [
-        "World-class lagoons",
-        "El Gouna / Red Sea Islands",
-        "300+ sunny days",
-        "Ideal for beginners"
-      ],
-      services: [
-        "Private Coaching (€800 / 10h)",
-        "1-to-1 Premium Training (€1500 / 10h)",
-        "Kite Safari (custom pricing)",
-        "Refresh Course (€270 / 3h)",
-        "Equipment Rental (€85 / session)"
-      ],
-      badge: "BOOKING OPEN",
-      badgeVariant: "default",
-      ctaText: "EXPLORE EGYPT",
+      summary: "Red Sea lagoons, reliable wind and a strong setup for beginners and progression.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/kite-safari",
       image: "/lovable-uploads/safari-beach-instruction.jpg"
     },
@@ -201,21 +138,8 @@ const CalendarLocations: React.FC = () => {
       country: "CYPRUS",
       location: "AVDIMOU BEACH",
       dates: ["All Year Round, 2026"],
-      highlights: [
-        "Ideal for first steps",
-        "Shallow water & steady wind",
-        "BbTalkin communication system",
-        "Duotone premium equipment"
-      ],
-      services: [
-        "Private Coaching (full package range)",
-        "Video Analysis (+€20 / session)",
-        "Progression Lessons",
-        "Equipment Included"
-      ],
-      badge: "ALWAYS AVAILABLE",
-      badgeVariant: "secondary",
-      ctaText: "EXPLORE CYPRUS",
+      summary: "Easy local spot near Limassol for first lessons and regular training.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/cyprus",
       image: "/lovable-uploads/cyprus-hero-sunset-action.jpg"
     },
@@ -227,21 +151,8 @@ const CalendarLocations: React.FC = () => {
         "November 1 – November 15, 2026",
         "November 20 – December 4, 2026"
       ],
-      highlights: [
-        "Strong daily wind",
-        "Flatwater lagoons",
-        "Downwinds",
-        "Fast progression environment"
-      ],
-      services: [
-        "Kite Adventure Trips",
-        "Downwind Experiences",
-        "Private Coaching",
-        "Group Coaching Packages"
-      ],
-      badge: "SEASON OPEN",
-      badgeVariant: "default",
-      ctaText: "EXPLORE BRAZIL",
+      summary: "Strong wind, lagoons and downwind routes for a high-energy kite trip.",
+      ctaText: "EXPLORE MORE",
       ctaLink: "/brazil",
       image: "/lovable-uploads/brazil-hero-main.png"
     }
