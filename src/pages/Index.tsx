@@ -6,7 +6,6 @@ import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
 import ContactCTA from '@/components/ContactCTA';
 import TrustIndicators from '@/components/TrustIndicators';
 import CalendarLocations from '@/components/CalendarLocations';
-import TrainingPrograms from '@/components/TrainingPrograms';
 import MeetYourCoachIntro from '@/components/coach/MeetYourCoachIntro';
 import WhyImDifferent from '@/components/coach/WhyImDifferent';
 import CoachStatsTrustBar from '@/components/coach/CoachStatsTrustBar';
@@ -117,9 +116,6 @@ const Index: React.FC = () => {
         <div id="calendar-section">
           <CalendarLocations />
         </div>
-        
-        {/* Training Programs */}
-        <TrainingPrograms />
         
         {/* Numbers */}
         <TrustIndicators />
