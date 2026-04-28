@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import {
   Carousel,
@@ -19,10 +17,7 @@ interface LocationCardProps {
   country: string;
   location: string;
   dates: string[];
-  highlights: string[];
-  services: string[];
-  badge: string;
-  badgeVariant: "default" | "secondary" | "destructive" | "outline";
+  summary: string;
   ctaText: string;
   ctaLink: string;
   image: string;
@@ -33,10 +28,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
   country,
   location,
   dates,
-  highlights,
-  services,
-  badge,
-  badgeVariant,
+  summary,
   ctaText,
   ctaLink,
   image,
@@ -49,11 +41,6 @@ const LocationCard: React.FC<LocationCardProps> = ({
           alt={`${country} - ${location}`}
           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
         />
-        <div className="absolute top-4 right-4">
-          <Badge variant={badgeVariant} className="text-xs font-semibold uppercase">
-            {badge}
-          </Badge>
-        </div>
       </div>
       
       <CardHeader>
@@ -64,42 +51,19 @@ const LocationCard: React.FC<LocationCardProps> = ({
         <CardDescription className="text-base font-medium uppercase">{location}</CardDescription>
       </CardHeader>
 
-      <CardContent className="flex-grow flex flex-col gap-4">
-        {/* Dates */}
-        <div className="space-y-1">
+      <CardContent className="flex-grow flex flex-col gap-6">
+        <div className="space-y-2">
           {dates.map((date, index) => (
-            <p key={index} className="text-sm font-semibold text-primary">
-              • {date}
+            <p key={index} className="text-sm md:text-base font-semibold text-primary">
+              {date}
             </p>
           ))}
         </div>
 
-        {/* Highlights */}
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-muted-foreground uppercase">HIGHLIGHTS:</p>
-          <div className="space-y-1">
-            {highlights.map((highlight, index) => (
-              <div key={index} className="flex items-start gap-2">
-                <Check className="w-4 h-4 text-primary mt-0.5 flex-shrink-0" />
-                <span className="text-sm">{highlight}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+        <p className="text-sm md:text-base text-muted-foreground leading-relaxed">
+          {summary}
+        </p>
 
-        {/* Available Services */}
-        <div className="space-y-2">
-          <p className="text-sm font-semibold text-muted-foreground uppercase">AVAILABLE:</p>
-          <div className="space-y-1">
-            {services.map((service, index) => (
-              <p key={index} className="text-sm pl-4">
-                • {service}
-              </p>
-            ))}
-          </div>
-        </div>
-
-        {/* CTA Button */}
         <Button asChild className="mt-auto w-full" size="lg">
           <Link to={ctaLink}>{ctaText}</Link>
         </Button>
