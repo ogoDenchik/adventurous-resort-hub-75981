@@ -8,25 +8,25 @@ const WhyMyMethodWorks = () => {
       num: '01',
       icon: Target,
       title: 'Personalized Approach',
-      description: 'Small groups (max 3–4) or 1-on-1. Your goals, your pace, your progress — no cookie-cutter lessons.',
+      description: 'Goal check → level check → clear training plan.',
     },
     {
       num: '02',
       icon: BarChart3,
       title: 'Structured Progression',
-      description: 'Not "try everything and see what sticks". Every lesson builds on the previous one, creating a clear path from first theory to confident riding.',
+      description: 'Theory → kite control → waterstart → independent riding.',
     },
     {
       num: '03',
       icon: Video,
       title: 'Video Analysis',
-      description: 'See yourself through my eyes. After key sessions, we review footage so you understand exactly what worked and what to adjust.',
+      description: 'Record → review → fix one key mistake at a time.',
     },
     {
       num: '04',
       icon: Brain,
       title: 'Skill Retention & Mindset',
-      description: 'I teach you what to feel, not just what to do. You learn to read the wind, stay calm under pressure, and maintain progress session after session.',
+      description: 'Build confidence, wind awareness and calm decision-making.',
     },
   ];
 
@@ -47,19 +47,22 @@ const WhyMyMethodWorks = () => {
         </RevealOnScroll>
 
         <RevealOnScroll delay={200} className="mb-14">
-          <p className="text-muted-foreground max-w-xl mt-4">
-            Most people struggle with kitesurfing because they learn chaotically. My step-by-step methodology eliminates guesswork.
+          <p className="label-caps text-muted-foreground mt-4">
+            A clear system from first session to independent riding
           </p>
         </RevealOnScroll>
 
-        <StaggeredList staggerMs={130} baseDelay={200} className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-0">
+        <StaggeredList staggerMs={130} baseDelay={200} className="grid grid-cols-1 md:grid-cols-4 gap-0 border-y border-border/40">
           {steps.map((step) => (
-            <div key={step.num} className="py-8 border-b border-border/40">
-              <p className="section-number mb-3">{step.num}</p>
-              <h4 className="font-medium text-foreground uppercase text-sm tracking-widest mb-3">
+            <div key={step.num} className="relative py-8 md:px-6 border-b md:border-b-0 md:border-r last:border-b-0 md:last:border-r-0 border-border/40">
+              <div className="mb-6 flex items-center justify-between">
+                <p className="section-number">{step.num}</p>
+                <step.icon className="w-5 h-5 text-primary" strokeWidth={1.5} />
+              </div>
+              <h4 className="font-medium text-foreground uppercase text-sm tracking-widest mb-4 min-h-10">
                 {step.title}
               </h4>
-              <p className="text-muted-foreground text-sm leading-relaxed">
+              <p className="text-muted-foreground text-sm leading-relaxed max-w-[14rem]">
                 {step.description}
               </p>
             </div>
