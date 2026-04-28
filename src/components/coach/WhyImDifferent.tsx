@@ -15,12 +15,12 @@ const WhyImDifferent = () => {
     },
     {
       num: '03',
-      title: 'Results-Driven: 50+ Students Went from Zero to Independent Riding',
+      title: 'Results-Driven: 500+ Students Trained',
       description: 'In just 7 days.',
     },
     {
       num: '04',
-      title: 'Returning Community: 70+ Clients Come Back',
+      title: 'Returning Community: 150+ Students Come Back',
       description: 'Season after season.',
     },
     {
