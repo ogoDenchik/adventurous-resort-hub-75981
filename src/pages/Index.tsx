@@ -11,6 +11,7 @@ import WhyImDifferent from '@/components/coach/WhyImDifferent';
 import CoachStatsTrustBar from '@/components/coach/CoachStatsTrustBar';
 import WhyMyMethodWorks from '@/components/coach/WhyMyMethodWorks';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const testimonials = [
   {
@@ -38,6 +39,7 @@ const testimonials = [
 
 const Index: React.FC = () => {
   const [isBookingOpen, setIsBookingOpen] = useState(false);
+  const { t } = useLanguage();
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -46,8 +48,8 @@ const Index: React.FC = () => {
         open={isBookingOpen} 
         onOpenChange={setIsBookingOpen}
         backgroundImage="/lovable-uploads/hero-main-coaching-compressed.jpg"
-        title="Book Your Adventure"
-        description="Get in touch and we'll be happy to help with any questions"
+        title={t('nav.bookTitle')}
+        description={t('nav.bookDesc')}
       />
       
       <main className="flex-grow">
@@ -66,14 +68,14 @@ const Index: React.FC = () => {
           <div className="container max-w-4xl">
 
             <RevealOnScroll>
-              <p className="section-number mb-6">// 03 — Guest Experiences</p>
+              <p className="section-number mb-6">{t('index.guestExperiences')}</p>
             </RevealOnScroll>
 
             <AnimatedLine className="mb-16" />
 
             <RevealOnScroll delay={100} className="mb-14">
               <h3 className="heading-display text-4xl md:text-5xl text-foreground">
-                What Riders Say
+                {t('index.whatRidersSay')}
               </h3>
             </RevealOnScroll>
 

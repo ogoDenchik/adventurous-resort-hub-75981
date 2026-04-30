@@ -219,7 +219,7 @@ const Navbar: React.FC = () => {
           <X size={24} />
         </button>
 
-        <p className="text-muted-foreground/40 text-[10px] tracking-[0.3em] uppercase mb-8">// Navigation</p>
+        <p className="text-muted-foreground/40 text-[10px] tracking-[0.3em] uppercase mb-8">{t('menu.navigation')}</p>
         
         <nav className="flex flex-col">
           {navLinks.map((link, index) => (
