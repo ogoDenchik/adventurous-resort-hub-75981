@@ -63,7 +63,7 @@ const KiteSafari: React.FC = () => {
           </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
-        <div className="relative container mx-auto px-4 text-center pb-16 md:pb-0">
+        <div className="relative container mx-auto px-4 text-center pb-2 md:pb-0">
           <div className="max-w-3xl mx-auto">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 uppercase leading-tight">
               EGYPT<br />KITE SAFARI
