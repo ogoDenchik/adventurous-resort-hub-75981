@@ -51,7 +51,7 @@ const KiteSafari: React.FC = () => {
       <ScrollToTop />
       
       {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
+      <section className="relative min-h-[80vh] md:min-h-[85vh] overflow-hidden flex items-center pt-24 pb-20">
         <div className="absolute inset-0">
           <img loading="lazy" 
             src="/lovable-uploads/kite-safari-yacht.jpg" 
@@ -60,40 +60,38 @@ const KiteSafari: React.FC = () => {
           />
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
-        <div className="relative container mx-auto px-4 h-full flex items-center justify-center text-center pt-[250px]">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-4 -mt-[125px] uppercase">
+        <div className="relative container mx-auto px-4 text-center">
+          <div className="max-w-3xl mx-auto">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white mb-6 uppercase leading-tight">
               EGYPT<br />KITE SAFARI
             </h1>
-            <div className="mt-[115px]">
-              <p className="text-base md:text-lg text-white/90 mb-6">
-                7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience
-              </p>
-              <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                <Button 
-                  size="default" 
-                  className="text-sm px-5 py-2 bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
-                  onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20join%20the%20Egypt%20Kite%20Safari%20from%20%E2%82%AC1%2C750.', '_blank')}
-                >
-                  Join — from €1,750 per person
-                </Button>
-                
-                <Button 
-                  size="default" 
-                  variant="outline" 
-                  className="text-sm px-5 py-2 bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto whitespace-normal h-auto"
-                  onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20get%20the%20full%20PDF%20for%20the%20Egypt%20Kite%20Safari.', '_blank')}
-                >
-                  Request Full PDF on WhatsApp
-                </Button>
-              </div>
+            <p className="text-base md:text-lg text-white/90 mb-8">
+              7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience
+            </p>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
+              <Button 
+                size="lg" 
+                className="bg-primary hover:bg-primary/90 text-primary-foreground w-full sm:w-auto"
+                onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20join%20the%20Egypt%20Kite%20Safari%20from%20%E2%82%AC1%2C750.', '_blank')}
+              >
+                Join — from €1,750 per person
+              </Button>
+              
+              <Button 
+                size="lg" 
+                variant="outline" 
+                className="bg-white/10 border-white text-white hover:bg-white hover:text-gray-900 w-full sm:w-auto"
+                onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20get%20the%20full%20PDF%20for%20the%20Egypt%20Kite%20Safari.', '_blank')}
+              >
+                Request Full PDF on WhatsApp
+              </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Trust Bar Section */}
-      <section className="py-6 md:py-8 bg-background border-y border-border -mt-12 relative z-10">
+      <section className="py-10 md:py-12 bg-background border-b border-border">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
@@ -418,6 +416,7 @@ const KiteSafari: React.FC = () => {
                 className="w-full max-w-5xl mx-auto"
                 plugins={[autoplayPluginRef.current]}
                 onMouseEnter={handleUserInteraction}
+                onPointerDownCapture={handleUserInteraction}
               >
                 <CarouselContent>
                   <CarouselItem>
@@ -601,14 +600,8 @@ const KiteSafari: React.FC = () => {
                     </div>
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious 
-                  className="left-4" 
-                  onClick={handleUserInteraction}
-                />
-                <CarouselNext 
-                  className="right-4"
-                  onClick={handleUserInteraction}
-                />
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
               </Carousel>
             </div>
 
