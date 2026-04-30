@@ -416,6 +416,7 @@ const KiteSafari: React.FC = () => {
                 className="w-full max-w-5xl mx-auto"
                 plugins={[autoplayPluginRef.current]}
                 onMouseEnter={handleUserInteraction}
+                onPointerDownCapture={handleUserInteraction}
               >
                 <CarouselContent>
                   <CarouselItem>
