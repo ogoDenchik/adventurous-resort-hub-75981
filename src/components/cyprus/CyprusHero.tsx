@@ -18,7 +18,7 @@ const CyprusHero: React.FC = () => {
       <div className="absolute inset-0 bg-cover bg-top md:bg-center md:bg-[url('/lovable-uploads/cyprus-hero-kate.jpg')] bg-[url('/lovable-uploads/cyprus-hero-mobile.jpg')]" style={{ backgroundPosition: 'center top' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
       </div>
-      <div className="relative z-10 container mx-auto px-4 text-center text-white">
+      <div className="relative z-10 container mx-auto px-4 text-center text-white -translate-y-[10px] md:translate-y-0">
         <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-sm font-medium">
           {t('cyprus.heroBadge')}
         </div>
