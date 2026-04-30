@@ -13,8 +13,8 @@ const Logo: React.FC = () => {
           className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-110"
         />
       </div>
-      <div className="flex flex-col max-w-[110px] xl:max-w-none">
-        <span className="text-sm lg:text-[15px] xl:text-base 2xl:text-lg font-display font-bold text-gray-900 leading-tight group-hover:text-accent transition-colors duration-300 uppercase">
+      <div className="flex flex-col">
+        <span className="text-base lg:text-lg xl:text-xl 2xl:text-2xl font-display font-bold text-gray-900 leading-tight whitespace-nowrap group-hover:text-accent transition-colors duration-300 uppercase">
           OGO KITE ACADEMY
         </span>
       </div>
