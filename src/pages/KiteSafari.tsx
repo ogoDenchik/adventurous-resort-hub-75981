@@ -787,9 +787,9 @@ const KiteSafari: React.FC = () => {
                 <div className="space-y-8">
                   
                   {/* Item 1 - Wake Up */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">☀️</span>
                       </div>
                       <div className="flex-1">
@@ -804,9 +804,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 2 - Breakfast */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🍳</span>
                       </div>
                       <div className="flex-1">
@@ -821,9 +821,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 3 - First Kite Session */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🪁</span>
                       </div>
                       <div className="flex-1">
@@ -839,9 +839,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 4 - Lunch & Rest */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🍜</span>
                       </div>
                       <div className="flex-1">
@@ -857,9 +857,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 5 - Second Session / Activities */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🏖</span>
                       </div>
                       <div className="flex-1">
@@ -877,9 +877,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 6 - Sunset & Chill */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🌅</span>
                       </div>
                       <div className="flex-1">
@@ -894,9 +894,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 7 - Dinner */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🍽</span>
                       </div>
                       <div className="flex-1">
@@ -911,9 +911,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 8 - Video Analysis / Social Time */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🔥</span>
                       </div>
                       <div className="flex-1">
@@ -925,9 +925,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 9 - Rest */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">💤</span>
                       </div>
                       <div className="flex-1">
