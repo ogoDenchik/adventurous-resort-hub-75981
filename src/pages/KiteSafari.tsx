@@ -53,11 +53,14 @@ const KiteSafari: React.FC = () => {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] md:min-h-[85vh] overflow-hidden flex items-center pt-24 pb-20">
         <div className="absolute inset-0">
-          <img loading="lazy" 
-            src="/lovable-uploads/kitesafari-hero-yachts.jpg" 
-            alt="KiteSafari Yacht" 
-            className="w-full h-full object-cover"
-          />
+          <picture>
+            <source media="(min-width: 768px)" srcSet="/lovable-uploads/kitesafari-hero-yachts.jpg" />
+            <img loading="lazy"
+              src="/lovable-uploads/kitesafari-hero-yachts-mobile.jpg"
+              alt="KiteSafari Yacht"
+              className="w-full h-full object-cover"
+            />
+          </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
         </div>
         <div className="relative container mx-auto px-4 text-center">
