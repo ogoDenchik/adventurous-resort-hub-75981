@@ -525,7 +525,6 @@ export const ruDictionary: Record<string, string> = {
 
   // Socials
   "WhatsApp": "WhatsApp",
-  "Telegram": "Telegram",
   "Instagram": "Instagram",
   "YouTube": "YouTube",
   "WHATSAPP": "WHATSAPP",
