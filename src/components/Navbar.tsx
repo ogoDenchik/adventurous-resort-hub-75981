@@ -9,7 +9,6 @@ import { useLanguage, type Language } from '@/contexts/LanguageContext';
 const languages: { code: Language; label: string }[] = [
   { code: 'en', label: 'EN' },
   { code: 'ru', label: 'RU' },
-  { code: 'gr', label: 'GR' },
 ];
 
 const Navbar: React.FC = () => {
