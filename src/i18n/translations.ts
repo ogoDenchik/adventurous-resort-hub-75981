@@ -278,7 +278,7 @@ export const translations: Translations = {
       whatRidersSay: 'Что говорят райдеры',
       heroEyebrow: 'ЛИЧНЫЙ ТРЕНЕР ПО КАЙТСЁРФИНГУ',
       heroTitle1: 'Твой тренер по кайтсёрфингу',
-      heroTitle2: 'в лучших спотах мира',
+      heroTitle2: 'на лучших спотах мира',
       heroLocations: 'ЕГИПЕТ · ВЬЕТНАМ · БРАЗИЛИЯ · КИПР',
       heroCta: 'Где я сейчас',
       heroScroll: 'листай',
