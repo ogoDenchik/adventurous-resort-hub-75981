@@ -26,6 +26,9 @@ import { ruDictionary } from '@/i18n/runtimeDictionary';
 // an entry in the EN→RU dictionary.
 
 const ORIGINAL_ATTR = 'data-en-original';
+const originalTextNodes = new WeakMap<Text, string>();
+
+const translatableAttrs = ['alt', 'title', 'aria-label', 'placeholder'] as const;
 
 function applyTranslation(target: 'ru' | 'en') {
   if (typeof document === 'undefined') return;
@@ -52,14 +55,14 @@ function applyTranslation(target: 'ru' | 'en') {
 
   for (const node of nodes) {
     const parent = node.parentElement!;
-    const original = parent.getAttribute(ORIGINAL_ATTR);
+    const original = originalTextNodes.get(node);
     const raw = node.nodeValue ?? '';
     const trimmed = raw.trim();
 
     if (target === 'ru') {
       const translation = ruDictionary[trimmed];
       if (translation && translation !== trimmed) {
-        if (!original) parent.setAttribute(ORIGINAL_ATTR, raw);
+        if (!original) originalTextNodes.set(node, raw);
         // Preserve surrounding whitespace
         const leading = raw.match(/^\s*/)?.[0] ?? '';
         const trailing = raw.match(/\s*$/)?.[0] ?? '';
@@ -69,10 +72,30 @@ function applyTranslation(target: 'ru' | 'en') {
       // Restore English if we previously swapped
       if (original) {
         node.nodeValue = original;
-        parent.removeAttribute(ORIGINAL_ATTR);
+        originalTextNodes.delete(node);
       }
     }
   }
+
+  document.querySelectorAll<HTMLElement>('*').forEach((el) => {
+    translatableAttrs.forEach((attr) => {
+      const value = el.getAttribute(attr);
+      const originalAttr = `${ORIGINAL_ATTR}-${attr}`;
+      const original = el.getAttribute(originalAttr);
+
+      if (target === 'ru') {
+        if (!value) return;
+        const translation = ruDictionary[value.trim()];
+        if (translation && translation !== value) {
+          if (!original) el.setAttribute(originalAttr, value);
+          el.setAttribute(attr, translation);
+        }
+      } else if (original) {
+        el.setAttribute(attr, original);
+        el.removeAttribute(originalAttr);
+      }
+    });
+  });
 }
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
