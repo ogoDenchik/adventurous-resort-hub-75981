@@ -20,7 +20,27 @@ export const useLanguage = () => {
 import { translations } from '@/i18n/translations';
 
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  const [lang, setLang] = useState<Language>('en');
+  const [lang, setLangState] = useState<Language>(() => {
+    if (typeof window === 'undefined') return 'en';
+    const saved = window.localStorage.getItem('ogo-lang');
+    return (saved === 'en' || saved === 'ru' || saved === 'gr') ? saved : 'en';
+  });
+
+  const setLang = useCallback((l: Language) => {
+    setLangState(l);
+    if (typeof window !== 'undefined') {
+      window.localStorage.setItem('ogo-lang', l);
+    }
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = l === 'gr' ? 'el' : l;
+    }
+  }, []);
+
+  React.useEffect(() => {
+    if (typeof document !== 'undefined') {
+      document.documentElement.lang = lang === 'gr' ? 'el' : lang;
+    }
+  }, [lang]);
 
   const t = useCallback((key: string): string => {
     const keys = key.split('.');
