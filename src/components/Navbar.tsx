@@ -60,7 +60,7 @@ const Navbar: React.FC = () => {
       "fixed w-full top-0 z-40 py-3 transition-all duration-300",
       getHeaderStyles()
     )}>
-      <div className="container mx-auto px-4 flex items-center gap-3 xl:gap-5 relative">
+      <div className="container mx-auto px-4 flex items-center gap-2 lg:gap-3 xl:gap-4 relative">
         <Logo />
 
         {/* Language Switcher (desktop, next to logo) */}
@@ -68,7 +68,7 @@ const Navbar: React.FC = () => {
           <button
             onClick={() => setLangMenuOpen(!langMenuOpen)}
             className={cn(
-              "flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-300 border",
+              "flex items-center gap-1 px-2 py-1 rounded-md text-[11px] font-medium transition-all duration-300 border",
               shouldUseWhiteHeader || isScrolled
                 ? 'border-gray-300 text-gray-900 hover:bg-gray-100'
                 : 'border-white/30 text-white hover:bg-white/10'
@@ -97,14 +97,14 @@ const Navbar: React.FC = () => {
           )}
         </div>
 
-        {/* Phone (visible on desktop, before nav) */}
+        {/* Phone (visible on very wide screens only) */}
         <a 
           href="https://wa.me/48884035225" 
           target="_blank"
           rel="noopener noreferrer"
           className={cn(
-            "hidden lg:flex items-center gap-1.5 hover:text-green-600 transition-colors duration-300 whitespace-nowrap shrink-0",
-            "text-[11px] xl:text-xs tracking-[0.15em] uppercase font-medium",
+            "hidden 2xl:flex items-center gap-1.5 hover:text-green-600 transition-colors duration-300 whitespace-nowrap shrink-0",
+            "text-[11px] tracking-[0.15em] uppercase font-medium",
             getTextColor()
           )}
         >
@@ -113,14 +113,14 @@ const Navbar: React.FC = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-x-3 xl:gap-x-5 flex-1 justify-center">
+        <nav className="hidden lg:flex items-center gap-x-2.5 xl:gap-x-4 ml-auto">
           {navLinks.map(link => (
             <Link 
               key={link.path} 
               to={link.path} 
               className={cn(
                 'relative transition-all duration-300 whitespace-nowrap',
-                'text-[11px] xl:text-xs tracking-[0.18em] uppercase font-medium',
+                'text-[10px] xl:text-[11px] 2xl:text-xs tracking-[0.16em] xl:tracking-[0.18em] uppercase font-medium',
                 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-[-4px] after:left-0',
                 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300',
                 'hover:after:scale-x-100 hover:after:origin-bottom-left',
@@ -137,7 +137,7 @@ const Navbar: React.FC = () => {
         {/* Book Now button (right) */}
         <div className="hidden lg:flex items-center shrink-0">
           <button 
-            className="btn-primary !px-5 !py-2.5 !min-h-0 !text-[11px] xl:!text-xs"
+            className="btn-primary !px-3 xl:!px-4 !py-2 !min-h-0 !text-[10px] xl:!text-[11px] !tracking-[0.18em]"
             onClick={() => setBookingPopupOpen(true)}
           >
             {t('nav.bookNow')}
