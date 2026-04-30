@@ -11,6 +11,7 @@ import {
   type CarouselApi,
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface LocationCardProps {
   flag: string;
@@ -73,6 +74,7 @@ const LocationCard: React.FC<LocationCardProps> = ({
 };
 
 const CalendarLocations: React.FC = () => {
+  const { t } = useLanguage();
   const sectionRef = useRef<HTMLElement>(null);
   const [startAutoplay, setStartAutoplay] = useState(false);
 
@@ -108,50 +110,50 @@ const CalendarLocations: React.FC = () => {
   const locations: LocationCardProps[] = [
     {
       flag: "🇻🇳",
-      country: "VIETNAM",
-      location: "PHAN RANG",
+      country: t('home.vietnamCountry'),
+      location: t('home.vietnamLocation'),
       dates: [
-        "January 20 – January 30, 2026 — SOLD OUT",
-        "February 13 – February 23, 2026 — SOLD OUT"
+        `January 20 – January 30, 2026 — ${t('home.soldOut')}`,
+        `February 13 – February 23, 2026 — ${t('home.soldOut')}`
       ],
-      summary: "Flat water, steady wind and warm conditions for focused progression.",
-      ctaText: "EXPLORE MORE",
+      summary: t('home.vietnamSummary'),
+      ctaText: t('home.exploreMore'),
       ctaLink: "/vietnam",
       image: "/lovable-uploads/hero-kite-action.jpg"
     },
     {
       flag: "🇪🇬",
-      country: "EGYPT",
-      location: "EL GOUNA / RED SEA",
+      country: t('home.egyptCountry'),
+      location: t('home.egyptLocation'),
       dates: [
         "July 13 – July 20, 2026",
         "October 17 – October 24, 2026"
       ],
-      summary: "Red Sea lagoons, reliable wind and a strong setup for beginners and progression.",
-      ctaText: "EXPLORE MORE",
+      summary: t('home.egyptSummary'),
+      ctaText: t('home.exploreMore'),
       ctaLink: "/kite-safari",
       image: "/lovable-uploads/safari-beach-instruction.jpg"
     },
     {
       flag: "🇨🇾",
-      country: "CYPRUS",
-      location: "AVDIMOU BEACH",
-      dates: ["All Year Round, 2026"],
-      summary: "Easy local spot near Limassol for first lessons and regular training.",
-      ctaText: "EXPLORE MORE",
+      country: t('home.cyprusCountry'),
+      location: t('home.cyprusLocation'),
+      dates: [t('home.cyprusDates')],
+      summary: t('home.cyprusSummary'),
+      ctaText: t('home.exploreMore'),
       ctaLink: "/cyprus",
       image: "/lovable-uploads/cyprus-hero-sunset-action.jpg"
     },
     {
       flag: "🇧🇷",
-      country: "BRAZIL",
-      location: "BEST SPOTS",
+      country: t('home.brazilCountry'),
+      location: t('home.brazilLocation'),
       dates: [
         "November 1 – November 15, 2026",
         "November 20 – December 4, 2026"
       ],
-      summary: "Strong wind, lagoons and downwind routes for a high-energy kite trip.",
-      ctaText: "EXPLORE MORE",
+      summary: t('home.brazilSummary'),
+      ctaText: t('home.exploreMore'),
       ctaLink: "/brazil",
       image: "/lovable-uploads/brazil-hero-main.png"
     }
@@ -163,14 +165,13 @@ const CalendarLocations: React.FC = () => {
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
           <h2 className="text-4xl md:text-5xl font-display font-bold mb-4 uppercase">
-            📅 CALENDAR / LOCATIONS
+            {t('home.calendarTitle')}
           </h2>
           <p className="text-xl text-muted-foreground mb-2 uppercase">
-            FOLLOWING THE PERFECT WIND SEASONS WORLDWIDE
+            {t('home.calendarSubtitle')}
           </p>
           <p className="text-base text-muted-foreground">
-            I move between the world's best kitesurfing spots depending on wind season and conditions.
-            Here are the locations where I teach:
+            {t('home.calendarDesc')}
           </p>
         </div>
 

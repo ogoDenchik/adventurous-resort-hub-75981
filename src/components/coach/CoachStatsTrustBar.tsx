@@ -1,12 +1,14 @@
 import React from 'react';
 import { AnimatedLine, RevealOnScroll } from '@/hooks/use-invisible-animation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const CoachStatsTrustBar = () => {
+  const { t } = useLanguage();
   const stats = [
-    { number: '5+', label: 'Years Experience' },
-    { number: '50+', label: 'Spots Worldwide' },
-    { number: '500+', label: 'Students Trained' },
-    { number: '15.2m', label: 'Highest Jump' },
+    { number: '5+', label: t('home.yearsExp') },
+    { number: '50+', label: t('home.spotsWorldwide') },
+    { number: '500+', label: t('home.studentsTrained') },
+    { number: '15.2m', label: t('home.highestJump') },
   ];
 
   return (

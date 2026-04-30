@@ -1,33 +1,15 @@
 import React from 'react';
 import { AnimatedLine, RevealOnScroll, StaggeredList } from '@/hooks/use-invisible-animation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const WhyImDifferent = () => {
+  const { t } = useLanguage();
   const highlights = [
-    {
-      num: '01',
-      title: 'Dual Certified: Kiteboarding + Snowboard Instructor',
-      description: 'Understanding board sports gives me unique teaching insight.',
-    },
-    {
-      num: '02',
-      title: 'Nomadic Coaching: I Follow the Best Wind Seasons Worldwide',
-      description: 'So you always train in optimal conditions.',
-    },
-    {
-      num: '03',
-      title: 'Results-Driven: 500+ Students Trained',
-      description: 'In just 7 days.',
-    },
-    {
-      num: '04',
-      title: 'Returning Community: 150+ Students Come Back',
-      description: 'Season after season.',
-    },
-    {
-      num: '05',
-      title: 'Advanced Progression: 20–30 Tricks Library',
-      description: 'For riders wanting next-level skills.',
-    },
+    { num: '01', title: t('home.diff1Title'), description: t('home.diff1Desc') },
+    { num: '02', title: t('home.diff2Title'), description: t('home.diff2Desc') },
+    { num: '03', title: t('home.diff3Title'), description: t('home.diff3Desc') },
+    { num: '04', title: t('home.diff4Title'), description: t('home.diff4Desc') },
+    { num: '05', title: t('home.diff5Title'), description: t('home.diff5Desc') },
   ];
 
   return (
@@ -35,14 +17,14 @@ const WhyImDifferent = () => {
       <div className="container max-w-4xl">
 
         <RevealOnScroll>
-          <p className="section-number mb-6">// 02 — Why I'm Different</p>
+          <p className="section-number mb-6">{t('home.whyDifferent')}</p>
         </RevealOnScroll>
 
         <AnimatedLine className="mb-16" />
 
         <RevealOnScroll delay={100} className="mb-12">
           <h3 className="heading-display text-4xl md:text-5xl text-foreground">
-            What Sets Me Apart
+            {t('home.whatSetsApart')}
           </h3>
         </RevealOnScroll>
 
