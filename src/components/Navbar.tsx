@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
         </div>
         
         {/* Mobile Right Controls */}
-        <div className="md:hidden flex items-center gap-2 relative z-[210]">
+        <div className="lg:hidden flex items-center gap-2 relative z-[210]">
           <button
             className={cn(
               "p-2 relative z-[210] cursor-pointer touch-manipulation",
@@ -163,7 +163,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation */}
       <div 
         className={cn(
-          'fixed inset-0 pt-24 px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden z-[205]',
+          'fixed inset-0 pt-24 px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden z-[205]',
           isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
         )}
         style={{ backgroundColor: 'hsl(var(--background))' }}
