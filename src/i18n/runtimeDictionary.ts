@@ -178,7 +178,7 @@ export const ruDictionary: Record<string, string> = {
   "Dining Area": "Обеденная зона",
 
   // ===== Vietnam-specific =====
-  "Vietnam Kite Camp": "Кайт-кэмп во Вьетнаме",
+  // (Vietnam Kite Camp moved to top)
   "Book Vietnam Kite Camp": "Забронировать кэмп во Вьетнаме",
   "Beautiful Vietnam waterfall with mountains": "Красивый водопад во Вьетнаме с горами",
   "Vietnam kitesurfing beach with equipment": "Кайт-пляж во Вьетнаме с экипировкой",
