@@ -60,11 +60,11 @@ const Navbar: React.FC = () => {
       "fixed w-full top-0 z-40 py-3 transition-all duration-300",
       getHeaderStyles()
     )}>
-      <div className="container mx-auto px-4 flex items-center justify-between relative">
+      <div className="container mx-auto px-4 flex items-center justify-between gap-3 relative">
         <Logo />
 
         {/* Language Switcher */}
-        <div className="relative ml-2 md:ml-4">
+        <div className="relative ml-1 lg:ml-2">
           <button
             onClick={() => setLangMenuOpen(!langMenuOpen)}
             className={cn(
