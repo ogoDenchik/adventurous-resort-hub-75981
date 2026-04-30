@@ -259,134 +259,127 @@ const KiteSafari: React.FC = () => {
       {/* Why Kite Safari Section */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
-            
-            {/* Left Side - Image Collage */}
-            <div className="space-y-4">
-              {/* Large top image */}
-              <div className="rounded-2xl overflow-hidden shadow-lg">
-                <img loading="lazy" 
-                  src="/lovable-uploads/egypt-safari-girls.jpg" 
-                  alt="Kitesurfing girls with yacht in background"
-                  className="w-full h-[400px] object-cover"
-                />
-              </div>
-              
-              {/* Two smaller images side by side */}
-              <div className="grid grid-cols-2 gap-4">
-                <div className="rounded-xl overflow-hidden shadow-md">
-                  <img loading="lazy" 
-                    src="/lovable-uploads/egypt-safari-jump.jpg" 
-                    alt="Kiteboarder performing jump"
-                    className="w-full h-[200px] object-cover"
-                  />
-                </div>
-                <div className="rounded-xl overflow-hidden shadow-md">
-                  <img loading="lazy" 
-                    src="/lovable-uploads/egypt-safari-yacht-group.jpg" 
-                    alt="Group photo on yacht"
-                    className="w-full h-[200px] object-cover"
-                  />
-                </div>
-              </div>
-            </div>
+          <div className="max-w-7xl mx-auto">
 
-            {/* Right Side - Text Content */}
-            <div className="space-y-8">
-              <div>
-                <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
-                  WHY KITE SAFARI?
-                </h2>
-                <p className="text-lg text-muted-foreground">
-                  Most kite trips limit you to one beach.<br />
-                  Here — your hotel, restaurant, and kite station are all on the water.
-                </p>
-              </div>
-
-              {/* Feature Blocks */}
-              <div className="space-y-6">
-                {/* Perfect Conditions */}
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🌊</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">PERFECT CONDITIONS</h3>
-                    <p className="text-muted-foreground">
-                      3 flat-water lagoons in one week<br />
-                      Consistent wind, sandy bottom, no crowds<br />
-                      Shallow safe areas + rescue boat support
-                    </p>
-                  </div>
-                </div>
-
-                {/* Luxury Liveaboard Experience */}
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🛥</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">LUXURY LIVEABOARD EXPERIENCE</h3>
-                    <p className="text-muted-foreground">
-                      Your room, food, chill zones — everything on the yacht<br />
-                      Wake up on the spot — no transfers<br />
-                      Jacuzzi, sun deck, snorkeling, SUP
-                    </p>
-                  </div>
-                </div>
-
-                {/* True All-Inclusive Value */}
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">💰</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">TRUE ALL-INCLUSIVE VALUE</h3>
-                    <p className="text-muted-foreground">
-                      Accommodation, food, crew, fuel — included<br />
-                      Daily zodiac rides to spots included<br />
-                      Just ride, rest, and enjoy
-                    </p>
-                  </div>
-                </div>
-
-                {/* Progression-Focused */}
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🧠</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">PROGRESSION-FOCUSED</h3>
-                    <p className="text-muted-foreground">
-                      Top instructors with 5+ years of coaching<br />
-                      Optional training packages<br />
-                      Video analysis and technique breakdowns
-                    </p>
-                  </div>
-                </div>
-
-                {/* Community */}
-                <div className="flex gap-4">
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                    <span className="text-2xl">🤝</span>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">COMMUNITY</h3>
-                    <p className="text-muted-foreground">
-                      Riders from Europe, Ukraine, Middle East<br />
-                      Solo travelers, couples, groups<br />
-                      Friendships formed on board last for years
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Closing Line */}
-              <p className="text-lg text-muted-foreground italic pt-4 border-t border-border">
-                This is not just a kite trip.<br />
-                This is full immersion into the kitesurf lifestyle.
+            {/* Section Header */}
+            <div className="text-center max-w-3xl mx-auto mb-14">
+              <h2 className="text-4xl md:text-5xl font-display font-bold text-foreground mb-4 uppercase">
+                WHY KITE SAFARI?
+              </h2>
+              <p className="text-lg text-muted-foreground">
+                Most kite trips limit you to one beach. Here — your hotel, restaurant, and kite station are all on the water.
               </p>
             </div>
+
+            {/* Top: Image Collage */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-14">
+              <div className="md:col-span-2 rounded-2xl overflow-hidden shadow-lg">
+                <img loading="lazy"
+                  src="/lovable-uploads/egypt-safari-girls.jpg"
+                  alt="Kitesurfing girls with yacht in background"
+                  className="w-full h-[280px] md:h-[380px] object-cover"
+                />
+              </div>
+              <div className="grid grid-cols-2 md:grid-cols-1 gap-4">
+                <div className="rounded-2xl overflow-hidden shadow-md">
+                  <img loading="lazy"
+                    src="/lovable-uploads/egypt-safari-jump.jpg"
+                    alt="Kiteboarder performing jump"
+                    className="w-full h-[180px] object-cover"
+                  />
+                </div>
+                <div className="rounded-2xl overflow-hidden shadow-md">
+                  <img loading="lazy"
+                    src="/lovable-uploads/egypt-safari-yacht-group.jpg"
+                    alt="Group photo on yacht"
+                    className="w-full h-[180px] object-cover"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Feature Blocks - 2 columns on desktop */}
+            <div className="grid md:grid-cols-2 gap-x-10 gap-y-8">
+              {/* Perfect Conditions */}
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">🌊</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">PERFECT CONDITIONS</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    3 flat-water lagoons in one week<br />
+                    Consistent wind, sandy bottom, no crowds<br />
+                    Shallow safe areas + rescue boat support
+                  </p>
+                </div>
+              </div>
+
+              {/* Luxury Liveaboard Experience */}
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">🛥</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">LUXURY LIVEABOARD</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Your room, food, chill zones — all on the yacht<br />
+                    Wake up on the spot — no transfers<br />
+                    Jacuzzi, sun deck, snorkeling, SUP
+                  </p>
+                </div>
+              </div>
+
+              {/* True All-Inclusive Value */}
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">💰</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">TRUE ALL-INCLUSIVE VALUE</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Accommodation, food, crew, fuel — included<br />
+                    Daily zodiac rides to spots included<br />
+                    Just ride, rest, and enjoy
+                  </p>
+                </div>
+              </div>
+
+              {/* Progression-Focused */}
+              <div className="flex gap-4">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">🧠</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">PROGRESSION-FOCUSED</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Top instructors with 5+ years of coaching<br />
+                    Optional training packages<br />
+                    Video analysis and technique breakdowns
+                  </p>
+                </div>
+              </div>
+
+              {/* Community - spans full width on desktop, centered */}
+              <div className="flex gap-4 md:col-span-2 md:max-w-xl md:mx-auto">
+                <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                  <span className="text-2xl">🤝</span>
+                </div>
+                <div>
+                  <h3 className="text-xl font-display font-bold text-foreground mb-2 uppercase">COMMUNITY</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    Riders from Europe, Ukraine, Middle East<br />
+                    Solo travelers, couples, groups<br />
+                    Friendships formed on board last for years
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Closing Line */}
+            <p className="text-lg text-muted-foreground italic text-center mt-14 pt-8 border-t border-border max-w-2xl mx-auto">
+              This is not just a kite trip. This is full immersion into the kitesurf lifestyle.
+            </p>
 
           </div>
         </div>
