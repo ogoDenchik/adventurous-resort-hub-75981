@@ -115,20 +115,26 @@
 }
 
 /* ── Button Styles ────────────────────────────────────────────────────────── */
-/* Green outline → hover: green fill + white text */
-.btn-primary {
-  @apply inline-block font-medium cursor-pointer;
-  padding: 0.85rem 1.75rem;
+/* Unified editorial button base — used by both primary variants */
+.btn-primary,
+.btn-primary-white {
+  @apply inline-flex items-center justify-center font-medium cursor-pointer;
+  padding: 0.95rem 2rem;
+  min-height: 3rem;
   font-family: 'Jost', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.18em;
+  font-size: 0.8rem;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  border: 1.5px solid hsl(var(--primary));
-  color: hsl(var(--primary));
   background: transparent;
-  transition: background 0.25s ease, color 0.25s ease;
+  transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+  white-space: nowrap;
 }
 
+/* Green outline → hover: green fill + white text */
+.btn-primary {
+  border: 1.5px solid hsl(var(--primary));
+  color: hsl(var(--primary));
+}
 .btn-primary:hover {
   background: hsl(var(--primary));
   color: #ffffff;
@@ -136,18 +142,9 @@
 
 /* White outline (for dark backgrounds) → hover: white fill + deep black text */
 .btn-primary-white {
-  @apply inline-block font-medium cursor-pointer;
-  padding: 0.85rem 1.75rem;
-  font-family: 'Jost', sans-serif;
-  font-size: 0.85rem;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
   border: 1.5px solid rgba(255, 255, 255, 0.85);
   color: #ffffff;
-  background: transparent;
-  transition: background 0.25s ease, color 0.25s ease;
 }
-
 .btn-primary-white:hover {
   background: #ffffff;
   color: #0f172a;
@@ -155,7 +152,7 @@
 
 /* ── Section Utilities ───────────────────────────────────────────────────── */
 .section-padding {
-  @apply py-16 md:py-24;
+  @apply py-16 md:py-24 lg:py-28;
 }
 
 /* ── Scroll / Parallax Utilities ─────────────────────────────────────────── */
