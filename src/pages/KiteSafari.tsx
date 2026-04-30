@@ -783,9 +783,6 @@ const KiteSafari: React.FC = () => {
 
               {/* Timeline Container */}
               <div className="relative">
-                {/* Vertical Timeline Line */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
-
                 {/* Timeline Items */}
                 <div className="space-y-8">
                   
