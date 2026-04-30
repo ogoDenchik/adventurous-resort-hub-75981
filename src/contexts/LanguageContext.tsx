@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useState, useCallback } from 'react';
 
-export type Language = 'en' | 'ru' | 'gr';
+export type Language = 'en' | 'ru';
 
 interface LanguageContextType {
   lang: Language;
@@ -23,7 +23,10 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
   const [lang, setLangState] = useState<Language>(() => {
     if (typeof window === 'undefined') return 'en';
     const saved = window.localStorage.getItem('ogo-lang');
-    return (saved === 'en' || saved === 'ru' || saved === 'gr') ? saved : 'en';
+    if (saved === 'en' || saved === 'ru') return saved;
+    // Migrate any legacy 'gr' value
+    if (saved === 'gr') window.localStorage.setItem('ogo-lang', 'en');
+    return 'en';
   });
 
   const setLang = useCallback((l: Language) => {
@@ -32,13 +35,13 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
       window.localStorage.setItem('ogo-lang', l);
     }
     if (typeof document !== 'undefined') {
-      document.documentElement.lang = l === 'gr' ? 'el' : l;
+      document.documentElement.lang = l;
     }
   }, []);
 
   React.useEffect(() => {
     if (typeof document !== 'undefined') {
-      document.documentElement.lang = lang === 'gr' ? 'el' : lang;
+      document.documentElement.lang = lang;
     }
   }, [lang]);
 
