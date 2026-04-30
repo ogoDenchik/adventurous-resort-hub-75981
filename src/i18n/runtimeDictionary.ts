@@ -555,13 +555,7 @@ export const ruDictionary: Record<string, string> = {
   "OGO KITE ACADEMY": "OGO KITE ACADEMY",
   "Water Start Tutorial": "Урок: водный старт",
 
-  // Testimonials / names
-  "Misha": "Миша",
-  "Kate": "Катя",
-  "Ilya": "Илья",
-  "Brazil Trip": "Поездка в Бразилию",
-  "Everything was absolutely top level. Training was world-class, the accommodations were excellent, and the whole trip was perfectly organized. I even learned my first backroll!":
-    "Всё было на высочайшем уровне. Тренировки мирового класса, отличное проживание, поездка идеально организована. Я даже выучила свой первый бэкролл!",
+  // (Testimonials moved to top of file)
 
   // Image alt texts (Gallery / pages)
   "Gallery image": "Фото из галереи",
