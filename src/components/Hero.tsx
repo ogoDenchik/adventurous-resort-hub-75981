@@ -2,8 +2,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useSpring, animated } from '@react-spring/web';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Hero: React.FC = () => {
+  const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
   const [imageLoaded, setImageLoaded] = useState(false);
   const heroRef = useRef<HTMLDivElement>(null);
@@ -80,7 +82,7 @@ const Hero: React.FC = () => {
           style={eyebrow}
           className="label-caps text-white/70 mb-6 tracking-widest"
         >
-          PRIVATE KITEBOARDING COACH
+          {t('index.heroEyebrow')}
         </animated.p>
 
         {/* Main headline — serif italic + uppercase mix */}
@@ -88,8 +90,8 @@ const Hero: React.FC = () => {
           style={{ ...headline, textShadow: '0 2px 40px rgba(0,0,0,0.4)' }}
           className="heading-display text-white text-5xl md:text-7xl lg:text-8xl max-w-4xl mb-6 leading-none"
         >
-          Your Kitesurf Coach<br />
-          <em>in the World's Best Spots</em>
+          {t('index.heroTitle1')}<br />
+          <em>{t('index.heroTitle2')}</em>
         </animated.h1>
 
         {/* Thin divider */}
@@ -103,7 +105,7 @@ const Hero: React.FC = () => {
           style={sub}
           className="label-caps text-white/80 mb-10 tracking-[0.25em]"
         >
-          EGYPT · VIETNAM · BRAZIL · CYPRUS
+          {t('index.heroLocations')}
         </animated.p>
 
         {/* CTA */}
@@ -112,7 +114,7 @@ const Hero: React.FC = () => {
             onClick={scrollToCalendar}
             className="btn-primary-white text-sm"
           >
-            See Where I Am Now
+            {t('index.heroCta')}
           </button>
         </animated.div>
       </div>
@@ -122,7 +124,7 @@ const Hero: React.FC = () => {
         style={scrollInd}
         className="absolute bottom-10 left-1/2 -translate-x-1/2 z-20 hidden md:flex flex-col items-center gap-2"
       >
-        <span className="label-caps text-white/40 text-[10px]">scroll</span>
+        <span className="label-caps text-white/40 text-[10px]">{t('index.heroScroll')}</span>
         <div className="w-px h-10 bg-white/20 relative overflow-hidden">
           <div className="w-full h-full bg-white/70 animate-[slide-down_2s_ease-in-out_infinite]" />
         </div>
