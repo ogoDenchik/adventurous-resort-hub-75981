@@ -14,8 +14,8 @@ const CyprusHero: React.FC = () => {
   };
 
   return (
-    <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden pt-20">
-      <div className="absolute inset-0 bg-cover bg-top md:bg-center md:bg-[url('/lovable-uploads/cyprus-hero-kate.jpg')] bg-[url('/lovable-uploads/cyprus-hero-mobile.jpg')]" style={{ backgroundPosition: 'center top' }}>
+    <section className="relative min-h-[600px] md:min-h-[100vh] md:h-auto md:aspect-[3/2] flex items-center justify-center overflow-hidden pt-20 h-[85vh]">
+      <div className="absolute inset-0 md:bg-contain bg-cover bg-no-repeat bg-top md:bg-center md:bg-[url('/lovable-uploads/cyprus-hero-kate.jpg')] bg-[url('/lovable-uploads/cyprus-hero-mobile.jpg')] bg-black" style={{ backgroundPosition: 'center top' }}>
         <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/30 to-black/60" />
       </div>
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
