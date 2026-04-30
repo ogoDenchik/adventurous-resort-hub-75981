@@ -4,8 +4,10 @@ import { ArrowLeft, ArrowRight, X, Home, Compass } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const Gallery: React.FC = () => {
+  const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   
   const galleryImages = [
@@ -124,15 +126,14 @@ const Gallery: React.FC = () => {
           {/* Header Section - Kite Safari Style */}
           <div className="text-center mb-16">
             <span className="inline-block px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-medium mb-4 uppercase tracking-wider">
-              Our Adventures
+              {t('gallery.badge')}
             </span>
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 uppercase">
-              OGO Gallery
+              {t('gallery.title')}
             </h1>
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Experience the energy, adventure, and community of OGO Kite Academy through 50 curated moments
+              {t('gallery.subtitle')}
             </p>
-          </div>
           
           {/* Gallery Grid - Kite Safari Style */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
@@ -162,10 +163,10 @@ const Gallery: React.FC = () => {
           <div className="mt-20 text-center">
             <div className="bg-card rounded-2xl p-8 md:p-12 max-w-3xl mx-auto shadow-lg border border-border">
               <h2 className="text-2xl md:text-3xl font-display font-bold mb-4 uppercase">
-                Ready for Your Adventure?
+                {t('gallery.ctaTitle')}
               </h2>
               <p className="text-muted-foreground mb-8">
-                Explore our destinations or head back to the homepage
+                {t('gallery.ctaSubtitle')}
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link to="/">
@@ -175,7 +176,7 @@ const Gallery: React.FC = () => {
                     className="w-full sm:w-auto text-base px-8 py-6 gap-2 border-2 hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                   >
                     <Home className="w-5 h-5" />
-                    Homepage
+                    {t('gallery.homepage')}
                   </Button>
                 </Link>
                 <Link to="/kite-safari">
@@ -184,7 +185,7 @@ const Gallery: React.FC = () => {
                     className="w-full sm:w-auto text-base px-8 py-6 gap-2"
                   >
                     <Compass className="w-5 h-5" />
-                    Explore Destinations
+                    {t('gallery.explore')}
                   </Button>
                 </Link>
               </div>

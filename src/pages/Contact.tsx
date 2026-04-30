@@ -4,13 +4,15 @@ import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import { Send, MessageCircle, Instagram, MapPin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const ContactPage = () => {
+  const { t } = useLanguage();
   const contactMethods = [
     {
       icon: MessageCircle,
-      title: "WhatsApp",
-      subtitle: "Quick responses, instant chat",
+      title: t('contact.whatsappTitle'),
+      subtitle: t('contact.whatsappSubtitle'),
       description: "+48 884 035 225",
       link: "https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20have%20a%20question!",
       color: "bg-green-500",
@@ -18,8 +20,8 @@ const ContactPage = () => {
     },
     {
       icon: Instagram,
-      title: "Instagram",
-      subtitle: "Follow our adventures",
+      title: t('contact.instagramTitle'),
+      subtitle: t('contact.instagramSubtitle'),
       description: "@ogo_kite_academy",
       link: "https://www.instagram.com/ogo_kite_academy",
       color: "bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400",
@@ -27,8 +29,8 @@ const ContactPage = () => {
     },
     {
       icon: Send,
-      title: "Telegram",
-      subtitle: "Direct messaging",
+      title: t('contact.telegramTitle'),
+      subtitle: t('contact.telegramSubtitle'),
       description: "@ogodenchik_official",
       link: "https://t.me/ogodenchik_official",
       color: "bg-blue-500",
@@ -44,12 +46,12 @@ const ContactPage = () => {
         {/* Header */}
         <section className="py-10 md:py-24 bg-background">
           <div className="container mx-auto px-4 text-center">
-            <p className="section-number mb-2 md:mb-4">// Contact</p>
+            <p className="section-number mb-2 md:mb-4">{t('contact.sectionNum')}</p>
             <h1 className="heading-display text-4xl md:text-7xl text-foreground mb-3 md:mb-6">
-              Get in Touch
+              {t('contact.title')}
             </h1>
             <p className="text-base md:text-xl text-muted-foreground max-w-2xl mx-auto">
-              Want to book a lesson in Cyprus or join a kite trip? Reach out via WhatsApp, Instagram, or Telegram — and we'll get you riding this week.
+              {t('contact.subtitle')}
             </p>
           </div>
         </section>
@@ -86,7 +88,7 @@ const ContactPage = () => {
 
             <div className="text-center mt-6 md:mt-12">
               <p className="text-muted-foreground text-sm md:text-base">
-                We respond to all messages — usually within a few hours.
+                {t('contact.responseNote')}
               </p>
             </div>
           </div>
@@ -115,10 +117,10 @@ const ContactPage = () => {
           <div className="container mx-auto px-4 text-center">
             <div className="max-w-3xl mx-auto">
               <h2 className="heading-display text-3xl md:text-5xl text-foreground mb-6">
-                Start Your Adventure
+                {t('contact.ctaTitle')}
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                Not sure where to go? Explore our destinations.
+                {t('contact.ctaSubtitle')}
               </p>
               <Link to="/#calendar-section">
                 <Button 
@@ -126,7 +128,7 @@ const ContactPage = () => {
                   className="font-semibold px-8 py-6 text-base"
                 >
                   <MapPin className="w-5 h-5 mr-2" />
-                  Explore Destinations
+                  {t('contact.exploreBtn')}
                 </Button>
               </Link>
             </div>
