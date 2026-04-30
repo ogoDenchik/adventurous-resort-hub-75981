@@ -60,10 +60,44 @@ const Navbar: React.FC = () => {
       "fixed w-full top-0 z-40 py-3 transition-all duration-300",
       getHeaderStyles()
     )}>
-      <div className="container mx-auto px-4 flex items-center justify-between gap-4 relative">
+      <div className="container mx-auto px-4 flex items-center gap-3 xl:gap-5 relative">
         <Logo />
 
-        {/* Phone (visible on desktop, between logo and nav) */}
+        {/* Language Switcher (desktop, next to logo) */}
+        <div className="hidden lg:block relative shrink-0">
+          <button
+            onClick={() => setLangMenuOpen(!langMenuOpen)}
+            className={cn(
+              "flex items-center gap-1 px-2.5 py-1.5 rounded-md text-xs font-medium transition-all duration-300 border",
+              shouldUseWhiteHeader || isScrolled
+                ? 'border-gray-300 text-gray-900 hover:bg-gray-100'
+                : 'border-white/30 text-white hover:bg-white/10'
+            )}
+          >
+            <span className="uppercase font-semibold">{lang.toUpperCase()}</span>
+          </button>
+          {langMenuOpen && (
+            <div className="absolute top-full mt-1 left-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
+              {languages.map((l) => (
+                <button
+                  key={l.code}
+                  onClick={() => {
+                    setLang(l.code);
+                    setLangMenuOpen(false);
+                  }}
+                  className={cn(
+                    'w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-muted transition-colors',
+                    lang === l.code && 'bg-primary/10 text-primary font-medium'
+                  )}
+                >
+                  <span className="font-semibold">{l.label}</span>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+
+        {/* Phone (visible on desktop, before nav) */}
         <a 
           href="https://wa.me/48884035225" 
           target="_blank"
@@ -100,42 +134,8 @@ const Navbar: React.FC = () => {
           ))}
         </nav>
 
-        {/* Right side: Language + Book Now */}
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
-          {/* Language Switcher */}
-          <div className="relative">
-            <button
-              onClick={() => setLangMenuOpen(!langMenuOpen)}
-              className={cn(
-                "flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-all duration-300 border",
-                shouldUseWhiteHeader || isScrolled
-                  ? 'border-gray-300 text-gray-900 hover:bg-gray-100'
-                  : 'border-white/30 text-white hover:bg-white/10'
-              )}
-            >
-              <span className="uppercase font-semibold">{lang.toUpperCase()}</span>
-            </button>
-            {langMenuOpen && (
-              <div className="absolute top-full mt-1 right-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
-                {languages.map((l) => (
-                  <button
-                    key={l.code}
-                    onClick={() => {
-                      setLang(l.code);
-                      setLangMenuOpen(false);
-                    }}
-                    className={cn(
-                      'w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-muted transition-colors',
-                      lang === l.code && 'bg-primary/10 text-primary font-medium'
-                    )}
-                  >
-                    <span className="font-semibold">{l.label}</span>
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
-
+        {/* Book Now button (right) */}
+        <div className="hidden lg:flex items-center shrink-0">
           <button 
             className="btn-primary !px-5 !py-2.5 !min-h-0 !text-[11px] xl:!text-xs"
             onClick={() => setBookingPopupOpen(true)}
