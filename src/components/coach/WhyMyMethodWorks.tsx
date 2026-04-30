@@ -1,33 +1,15 @@
 import React from 'react';
 import { Target, BarChart3, Video, Brain } from 'lucide-react';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const WhyMyMethodWorks = () => {
+  const { t } = useLanguage();
   const steps = [
-    {
-      num: '01',
-      icon: Target,
-      title: 'Personalized Approach',
-      description: 'Goal check → level check → clear training plan.',
-    },
-    {
-      num: '02',
-      icon: BarChart3,
-      title: 'Structured Progression',
-      description: 'Theory → kite control → waterstart → independent riding.',
-    },
-    {
-      num: '03',
-      icon: Video,
-      title: 'Video Analysis',
-      description: 'Record → review → fix one key mistake at a time.',
-    },
-    {
-      num: '04',
-      icon: Brain,
-      title: 'Skill Retention & Mindset',
-      description: 'Build confidence, wind awareness and calm decision-making.',
-    },
+    { num: '01', icon: Target, title: t('home.method1Title'), description: t('home.method1Desc') },
+    { num: '02', icon: BarChart3, title: t('home.method2Title'), description: t('home.method2Desc') },
+    { num: '03', icon: Video, title: t('home.method3Title'), description: t('home.method3Desc') },
+    { num: '04', icon: Brain, title: t('home.method4Title'), description: t('home.method4Desc') },
   ];
 
   return (
@@ -35,20 +17,20 @@ const WhyMyMethodWorks = () => {
       <div className="container max-w-4xl">
 
         <RevealOnScroll>
-          <p className="section-number mb-6">// 05 — Method</p>
+          <p className="section-number mb-6">{t('home.methodNum')}</p>
         </RevealOnScroll>
 
         <AnimatedLine className="mb-16" />
 
         <RevealOnScroll delay={100} className="mb-4">
           <h3 className="heading-display text-4xl md:text-5xl text-foreground">
-            Why My Method Works
+            {t('home.methodTitle')}
           </h3>
         </RevealOnScroll>
 
         <RevealOnScroll delay={200} className="mb-14">
           <p className="label-caps text-muted-foreground mt-4">
-            A clear system from first session to independent riding
+            {t('home.methodSubtitle')}
           </p>
         </RevealOnScroll>
 

@@ -1,12 +1,14 @@
 import React from 'react';
 import { RevealOnScroll, AnimatedLine } from '@/hooks/use-invisible-animation';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const TrustIndicators = () => {
+  const { t } = useLanguage();
   const stats = [
-    { number: '500+', label: 'Students Trained' },
-    { number: '50+', label: '"Zero to Hero" in 7 Days' },
-    { number: '70+', label: 'Returning Clients' },
-    { number: '50+', label: 'Spots Worldwide' },
+    { number: '500+', label: t('home.trustStudents') },
+    { number: '50+', label: t('home.trustZeroHero') },
+    { number: '70+', label: t('home.trustReturning') },
+    { number: '50+', label: t('home.trustSpots') },
   ];
 
   return (
