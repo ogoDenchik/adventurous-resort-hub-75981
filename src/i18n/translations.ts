@@ -33,6 +33,16 @@ export const translations: Translations = {
     index: {
       guestExperiences: '// 03 — Guest Experiences',
       whatRidersSay: 'What Riders Say',
+      heroEyebrow: 'PRIVATE KITEBOARDING COACH',
+      heroTitle1: 'Your Kitesurf Coach',
+      heroTitle2: 'in the World\'s Best Spots',
+      heroLocations: 'EGYPT · VIETNAM · BRAZIL · CYPRUS',
+      heroCta: 'See Where I Am Now',
+      heroScroll: 'scroll',
+    },
+    // Mobile menu
+    menu: {
+      navigation: '// Navigation',
     },
     // Cyprus page
     cyprus: {
@@ -203,6 +213,15 @@ export const translations: Translations = {
     index: {
       guestExperiences: '// 03 — Отзывы',
       whatRidersSay: 'Что говорят райдеры',
+      heroEyebrow: 'ЛИЧНЫЙ ТРЕНЕР ПО КАЙТСЁРФИНГУ',
+      heroTitle1: 'Твой тренер по кайтсёрфингу',
+      heroTitle2: 'в лучших спотах мира',
+      heroLocations: 'ЕГИПЕТ · ВЬЕТНАМ · БРАЗИЛИЯ · КИПР',
+      heroCta: 'Где я сейчас',
+      heroScroll: 'листай',
+    },
+    menu: {
+      navigation: '// Меню',
     },
     cyprus: {
       whatsapp: 'Написать в WhatsApp',
@@ -362,6 +381,15 @@ export const translations: Translations = {
     index: {
       guestExperiences: '// 03 — Εμπειρίες',
       whatRidersSay: 'Τι λένε οι αναβάτες',
+      heroEyebrow: 'ΠΡΟΣΩΠΙΚΟΣ ΠΡΟΠΟΝΗΤΗΣ KITEBOARDING',
+      heroTitle1: 'Ο προπονητής kitesurf σας',
+      heroTitle2: 'στα καλύτερα σημεία του κόσμου',
+      heroLocations: 'ΑΙΓΥΠΤΟΣ · ΒΙΕΤΝΑΜ · ΒΡΑΖΙΛΙΑ · ΚΥΠΡΟΣ',
+      heroCta: 'Δείτε πού βρίσκομαι',
+      heroScroll: 'κύλιση',
+    },
+    menu: {
+      navigation: '// Πλοήγηση',
     },
     cyprus: {
       whatsapp: 'Μήνυμα στο WhatsApp',
