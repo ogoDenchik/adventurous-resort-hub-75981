@@ -206,8 +206,7 @@ export const ruDictionary: Record<string, string> = {
   "Ilha de Guajiru": "Илья-де-Гуажиру",
   "Ilha de Guajiru aerial view": "Вид с воздуха на Илья-де-Гуажиру",
 
-  // ===== Egypt =====
-  "Egypt Kite Safari": "Кайт-сафари в Египте",
+  // ===== Egypt ===== (Egypt Kite Safari moved to top)
 
   // ===== Coaching / programs =====
   "1-to-1 Coaching": "Индивидуальные тренировки",
