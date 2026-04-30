@@ -17,7 +17,7 @@ export const translations: Translations = {
       contact: 'Contact Us',
       bookNow: 'Book Now',
       bookTitle: 'Book Your Adventure',
-      bookDesc: 'Fill in your details and we\'ll get back to you shortly',
+      bookDesc: 'Get in touch and we\'ll be happy to help with any questions',
     },
     // Footer
     footer: {
@@ -189,7 +189,7 @@ export const translations: Translations = {
       contact: 'Контакты',
       bookNow: 'Забронировать',
       bookTitle: 'Забронируйте приключение',
-      bookDesc: 'Заполните данные и мы свяжемся с вами в ближайшее время',
+      bookDesc: 'Свяжитесь с нами — будем рады ответить на любые вопросы',
     },
     footer: {
       description: 'Премиальные кайтсёрфинг-трипы и обучение. Мы объединяем людей через ветер, путешествия и сообщество на Кипре, в Бразилии и Египте.',
@@ -348,7 +348,7 @@ export const translations: Translations = {
       contact: 'Επικοινωνία',
       bookNow: 'Κράτηση',
       bookTitle: 'Κλείστε την περιπέτειά σας',
-      bookDesc: 'Συμπληρώστε τα στοιχεία σας και θα επικοινωνήσουμε σύντομα',
+      bookDesc: 'Επικοινωνήστε μαζί μας — είμαστε εδώ για κάθε ερώτηση',
     },
     footer: {
       description: 'Premium ταξίδια και εκπαίδευση kitesurfing. Συνδέουμε ανθρώπους μέσω του ανέμου, των ταξιδιών και της κοινότητας σε Κύπρο, Βραζιλία και Αίγυπτο.',
