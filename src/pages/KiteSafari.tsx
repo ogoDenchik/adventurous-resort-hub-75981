@@ -51,14 +51,14 @@ const KiteSafari: React.FC = () => {
       <ScrollToTop />
       
       {/* Hero Section */}
-      <section className="relative min-h-[80vh] md:min-h-[85vh] overflow-hidden flex items-center pt-24 pb-20">
+      <section className="relative min-h-[80vh] md:min-h-[85vh] overflow-hidden flex items-end md:items-center pt-24 pb-20">
         <div className="absolute inset-0">
           <picture>
             <source media="(min-width: 768px)" srcSet="/lovable-uploads/kitesafari-hero-desktop-v2.jpg" />
             <img loading="lazy"
               src="/lovable-uploads/kitesafari-hero-yachts-mobile.jpg"
               alt="KiteSafari Yacht"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-110 md:scale-100 origin-center"
             />
           </picture>
           <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-background" />
