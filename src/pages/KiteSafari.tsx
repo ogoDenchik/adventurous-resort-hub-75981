@@ -738,7 +738,7 @@ const KiteSafari: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-display font-bold text-foreground uppercase">NOT INCLUDED:</h3>
               </div>
-              <ul className="space-y-2 text-muted-foreground ml-12">
+              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 text-muted-foreground ml-12">
                 <li>• International flights</li>
                 <li>• Egyptian visa</li>
                 <li>• Kitesurfing lessons & rental gear</li>
