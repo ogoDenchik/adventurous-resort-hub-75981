@@ -47,7 +47,7 @@ const Index: React.FC = () => {
         onOpenChange={setIsBookingOpen}
         backgroundImage="/lovable-uploads/hero-main-coaching-compressed.jpg"
         title="Book Your Adventure"
-        description="Fill in your details and we'll get back to you shortly"
+        description="Get in touch and we'll be happy to help with any questions"
       />
       
       <main className="flex-grow">

@@ -148,7 +148,7 @@ export const EnhancedBookingPopup: React.FC<EnhancedBookingPopupProps> = ({
             </div>
 
             <p className="text-center text-muted-foreground text-sm mt-6 label-caps">
-              We reply within 24 hours · Usually much faster
+              We reply within 30 minutes
             </p>
           </div>
         </ScrollArea>

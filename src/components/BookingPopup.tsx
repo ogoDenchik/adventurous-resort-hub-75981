@@ -93,7 +93,7 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
         <DialogHeader>
           <DialogTitle className="text-2xl">Book Your Adventure</DialogTitle>
           <DialogDescription>
-            Fill in your details and we'll get back to you shortly
+            Get in touch and we'll be happy to help with any questions
           </DialogDescription>
         </DialogHeader>
         

@@ -667,7 +667,7 @@ const Brazil: React.FC = () => {
         onOpenChange={setBookingPopupOpen}
         backgroundImage="/lovable-uploads/brazil-hero-team.png"
         title="Book Your Brazil Adventure"
-        description="Fill in your details and we'll get back to you shortly"
+        description="Get in touch and we'll be happy to help with any questions"
       />
       
       <Footer />
