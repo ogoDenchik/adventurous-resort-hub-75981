@@ -660,6 +660,7 @@ export const ruDictionary: Record<string, string> = {
   "EGYPT": "ЕГИПЕТ",
   "KITE SAFARI": "КАЙТ-САФАРИ",
   "Kite Safari": "Кайт-сафари",
+  "Kite Lessons in Limassol, Cyprus | OGO Kite Academy": "Уроки кайта в Лимассоле, Кипр | OGO Kite Academy",
   "7 Days • 3 Epic Kite Lagoons • Luxury Liveaboard Experience": "7 дней • 3 эпичные кайт-лагуны • люкс-формат проживания на яхте",
   "Join — from €1,750 per person": "Присоединиться — от €1,750 с человека",
   "Request Full PDF on WhatsApp": "Запросить полный PDF в WhatsApp",
