@@ -119,9 +119,6 @@ const Index: React.FC = () => {
           <CalendarLocations />
         </div>
         
-        {/* Numbers */}
-        <TrustIndicators />
-        
         {/* Contact CTA */}
         <ContactCTA />
       </main>
