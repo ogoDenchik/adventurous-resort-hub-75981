@@ -632,6 +632,30 @@ export const ruDictionary: Record<string, string> = {
   "Experience the energy, adventure, and community of OGO Kite Academy through 50 curated moments":
     "Почувствуй энергию, приключение и комьюнити OGO Kite Academy через 50 отобранных моментов",
 
+  // ===== Kite Safari page (audit) =====
+  "3 meals daily": "3 приёма пищи в день",
+  "7 days / 6 nights": "7 дней / 6 ночей",
+  "All boat logistics": "Вся логистика на борту",
+  "Are 18+ (or 16+ with guardian)": "18+ (или 16+ с сопровождающим)",
+  "Are OK with boat life": "Готовы к жизни на яхте",
+  "Are a beginner, intermediate, or advanced rider": "Новичок, средний или продвинутый райдер",
+  "Better location onboard": "Лучшее расположение на борту",
+  "Evening kite briefings": "Вечерние кайт-брифинги",
+  "Larger cabin": "Более просторная каюта",
+  "Love community vibes": "Любите атмосферу комьюнити",
+  "Maximum privacy": "Максимум приватности",
+  "More comfort": "Больше комфорта",
+  "Most premium cabin": "Самая премиальная каюта",
+  "Panoramic windows": "Панорамные окна",
+  "Prefer adventure over resorts": "Предпочитаете приключения курортам",
+  "Rescue boat": "Лодка сопровождения",
+  "SUP, snorkeling": "САП, снорклинг",
+  "Snacks + drinks": "Снеки и напитки",
+  "Want real progression": "Хотите реального прогресса",
+  "Want the full experience — spots, islands, riding, community": "Хотите полный опыт — споты, острова, катание, комьюнити",
+  "Want to ride 2× daily": "Хотите кататься 2 раза в день",
+  "WhatsApp group": "Группа в WhatsApp",
+
   // Misc placeholders
   "your.email@example.com": "your.email@example.com",
 };
