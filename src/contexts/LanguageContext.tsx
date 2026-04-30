@@ -27,11 +27,20 @@ import { ruDictionary } from '@/i18n/runtimeDictionary';
 
 const ORIGINAL_ATTR = 'data-en-original';
 const originalTextNodes = new WeakMap<Text, string>();
+let originalDocumentTitle = '';
 
 const translatableAttrs = ['alt', 'title', 'aria-label', 'placeholder'] as const;
 
 function applyTranslation(target: 'ru' | 'en') {
   if (typeof document === 'undefined') return;
+
+  if (target === 'ru') {
+    if (!originalDocumentTitle) originalDocumentTitle = document.title;
+    const translatedTitle = ruDictionary[document.title] ?? ruDictionary[originalDocumentTitle];
+    if (translatedTitle) document.title = translatedTitle;
+  } else if (originalDocumentTitle) {
+    document.title = originalDocumentTitle;
+  }
 
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
     acceptNode(node) {
