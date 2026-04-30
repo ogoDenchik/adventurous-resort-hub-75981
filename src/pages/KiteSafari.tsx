@@ -598,149 +598,136 @@ const KiteSafari: React.FC = () => {
               </Carousel>
             </div>
 
-            {/* Two-Column Grid */}
-            <div className="grid lg:grid-cols-2 gap-12">
-              
-              {/* LEFT COLUMN */}
-              <div className="space-y-10">
-                
-                {/* Accommodation */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🏠</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACCOMMODATION (ON THE YACHT)</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• 7 days / 6 nights on a comfortable liveaboard yacht</li>
-                    <li>• Twin cabins, Master Suites, Panoramic Suite (limited availability)</li>
-                    <li>• Air conditioning, private/shared bathrooms</li>
-                    <li>• Fresh linens, daily cleaning</li>
-                    <li>• Lounge areas, sun deck, jacuzzi</li>
-                    <li>• WiFi when available</li>
-                  </ul>
-                </div>
+            {/* Balanced 3-Column Card Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                {/* Food & Drinks */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🍽</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">FOOD & DRINKS</h3>
+              {/* Accommodation */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🏠</span>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• 3 meals per day</li>
-                    <li>• Snacks, fruits, tea, coffee, water</li>
-                    <li>• BBQ party on an uninhabited island</li>
-                    <li>• Vegetarian options available</li>
-                  </ul>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">ACCOMMODATION</h3>
                 </div>
-
-                {/* Kitesurfing Logistics */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🪁</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">KITESURFING LOGISTICS</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• Daily zodiac transfers to the spot/back (300m)</li>
-                    <li>• Launch/landing support</li>
-                    <li>• Rescue boat on duty</li>
-                    <li>• Full safety briefing</li>
-                    <li>• Possibility to add coaching or rental gear</li>
-                  </ul>
-                </div>
-
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• 7 days / 6 nights on a liveaboard yacht</li>
+                  <li>• Twin, Master & Panoramic Suites</li>
+                  <li>• Air conditioning, private/shared bathrooms</li>
+                  <li>• Fresh linens, daily cleaning</li>
+                  <li>• Lounge areas, sun deck, jacuzzi</li>
+                  <li>• WiFi when available</li>
+                </ul>
               </div>
 
-              {/* RIGHT COLUMN */}
-              <div className="space-y-10">
-                
-                {/* Coaching Packages */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🎓</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">COACHING PACKAGES (OPTIONAL)</h3>
+              {/* Food & Drinks */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🍽</span>
                   </div>
-                  <div className="ml-16 space-y-2 text-muted-foreground">
-                    <p className="italic">(Not included in base price)</p>
-                    <ul className="space-y-2 mt-3">
-                      <li>• Beginner, Intermediate, Advanced coaching</li>
-                      <li>• 1:1 or small-group coaching</li>
-                      <li>• Premium Duotone gear rental</li>
-                      <li>• Daily or evening video analysis</li>
-                      <li>• Clear progression roadmap</li>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">FOOD & DRINKS</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• 3 meals per day</li>
+                  <li>• Snacks, fruits, tea, coffee, water</li>
+                  <li>• BBQ party on an uninhabited island</li>
+                  <li>• Vegetarian options available</li>
+                </ul>
+              </div>
+
+              {/* Kitesurfing Logistics */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🪁</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">KITE LOGISTICS</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Daily zodiac transfers (300m)</li>
+                  <li>• Launch/landing support</li>
+                  <li>• Rescue boat on duty</li>
+                  <li>• Full safety briefing</li>
+                  <li>• Optional coaching/rental gear</li>
+                </ul>
+              </div>
+
+              {/* Coaching Packages */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎓</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">COACHING (OPTIONAL)</h3>
+                </div>
+                <p className="text-xs italic text-muted-foreground mb-2">(Not in base price)</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Beginner / Intermediate / Advanced</li>
+                  <li>• 1:1 or small-group coaching</li>
+                  <li>• Premium Duotone gear rental</li>
+                  <li>• Daily video analysis</li>
+                  <li>• Clear progression roadmap</li>
+                </ul>
+              </div>
+
+              {/* Transportation */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🚐</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">TRANSPORTATION</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Group transfer from Hurghada (HRG) to marina</li>
+                  <li>• Boat transfers between lagoons</li>
+                  <li>• Zodiac to shallow water zones</li>
+                </ul>
+              </div>
+
+              {/* Activities & Extras */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎉</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">ACTIVITIES & EXTRAS</h3>
+                </div>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-foreground mb-1 uppercase tracking-wider">Included</p>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Snorkeling reefs, SUP boards</li>
+                      <li>• Island visits, deck hangouts</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-foreground mb-1 uppercase tracking-wider">Optional</p>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Alcoholic drinks</li>
+                      <li>• Extra coaching hours</li>
+                      <li>• Pro photo/video shoot</li>
                     </ul>
                   </div>
                 </div>
-
-                {/* Transportation */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🚐</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">TRANSPORTATION</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• Group transfer from Hurghada (HRG) to marina</li>
-                    <li>• Boat transfers between lagoons</li>
-                    <li>• Zodiac to shallow water zones</li>
-                  </ul>
-                </div>
-
-                {/* Activities & Extras */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🎉</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACTIVITIES & EXTRAS</h3>
-                  </div>
-                  <div className="ml-16 space-y-3">
-                    <div>
-                      <p className="font-semibold text-foreground mb-2">Included:</p>
-                      <ul className="space-y-1 text-muted-foreground">
-                        <li>• Snorkeling reefs</li>
-                        <li>• SUP boards</li>
-                        <li>• Island visits</li>
-                        <li>• Deck hangouts, music, chill sessions</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground mb-2">Optional:</p>
-                      <ul className="space-y-1 text-muted-foreground">
-                        <li>• Alcoholic drinks</li>
-                        <li>• Extra coaching hours</li>
-                        <li>• Professional photo/video shoot</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Community & Vibes */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">👥</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">COMMUNITY & VIBES</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• International group</li>
-                    <li>• Evening hangouts and talks</li>
-                    <li>• Shared learning, shared progress</li>
-                    <li>• Perfect for solo travelers</li>
-                  </ul>
-                </div>
-
               </div>
+
+              {/* Community & Vibes — full width on desktop to balance */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-3">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">👥</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">COMMUNITY & VIBES</h3>
+                </div>
+                <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                  <li>• International group</li>
+                  <li>• Evening hangouts and talks</li>
+                  <li>• Shared learning, shared progress</li>
+                  <li>• Perfect for solo travelers</li>
+                </ul>
+              </div>
+
             </div>
 
             {/* NOT INCLUDED Box */}
