@@ -962,17 +962,17 @@ const KiteSafari: React.FC = () => {
                 <p className="text-lg text-muted-foreground uppercase">CHOOSE YOUR CABIN TYPE & ADD TRAINING IF NEEDED.</p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              <div className="flex flex-col gap-8 max-w-5xl mx-auto">
                 {/* Twin Cabin Card */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img loading="lazy" 
-                      src="/lovable-uploads/safari-twin-cabin.jpg" 
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all grid md:grid-cols-[40%_1fr]">
+                  <div className="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                    <img loading="lazy"
+                      src="/lovable-uploads/safari-twin-cabin.jpg"
                       alt="Twin Cabin"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-8 flex flex-col">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Twin Cabin (Per Person)</h3>
                     <p className="text-3xl font-bold text-primary mb-4">€1,750</p>
 
@@ -982,48 +982,22 @@ const KiteSafari: React.FC = () => {
                           What's included
                         </AccordionTrigger>
                         <AccordionContent>
-                          <div className="space-y-2 pt-1">
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>7 days / 6 nights</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>3 meals daily</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>Snacks + drinks</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>All boat logistics</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>Rescue boat</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>SUP, snorkeling</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>WhatsApp group</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>Evening kite briefings</span>
-                            </div>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pt-1">
+                            {['7 days / 6 nights','3 meals daily','Snacks + drinks','All boat logistics','Rescue boat','SUP, snorkeling','WhatsApp group','Evening kite briefings'].map((item) => (
+                              <div key={item} className="flex items-start gap-2">
+                                <span className="text-primary mt-1">✔</span>
+                                <span>{item}</span>
+                              </div>
+                            ))}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Solo travelers, friends</p>
-                    
-                    <Button 
-                      className="w-full"
+
+                    <Button
+                      className="w-full mt-auto"
                       onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Twin%20Cabin%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC1%2C750).', '_blank')}
                     >
                       BOOK TWIN CABIN
@@ -1032,18 +1006,18 @@ const KiteSafari: React.FC = () => {
                 </div>
 
                 {/* Master Suite Card - Most Popular */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-xl border-2 border-primary hover:shadow-2xl transition-all relative">
+                <div className="bg-card rounded-xl overflow-hidden shadow-xl border-2 border-primary hover:shadow-2xl transition-all relative grid md:grid-cols-[40%_1fr]">
                   <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold z-10">
                     MOST POPULAR
                   </div>
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img loading="lazy" 
-                      src="/lovable-uploads/safari-master-suite.jpg" 
+                  <div className="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                    <img loading="lazy"
+                      src="/lovable-uploads/safari-master-suite.jpg"
                       alt="Master Suite"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-8 flex flex-col">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Master Suite (2 People)</h3>
                     <p className="text-3xl font-bold text-primary mb-4">€4,200 / cabin</p>
 
@@ -1055,17 +1029,13 @@ const KiteSafari: React.FC = () => {
                         <AccordionContent>
                           <div className="space-y-2 pt-1">
                             <p className="font-semibold mb-2">Everything in Twin Cabin +</p>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Larger cabin</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>More comfort</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Better location onboard</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                              {['Larger cabin','More comfort','Better location onboard'].map((item) => (
+                                <div key={item} className="flex items-start gap-2">
+                                  <span className="text-primary mt-1">⭐</span>
+                                  <span>{item}</span>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </AccordionContent>
@@ -1073,9 +1043,9 @@ const KiteSafari: React.FC = () => {
                     </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, friends</p>
-                    
-                    <Button 
-                      className="w-full"
+
+                    <Button
+                      className="w-full mt-auto"
                       onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Master%20Suite%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC4%2C200).', '_blank')}
                     >
                       BOOK MASTER SUITE
@@ -1084,18 +1054,18 @@ const KiteSafari: React.FC = () => {
                 </div>
 
                 {/* Panoramic Suite Card */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all relative">
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all relative grid md:grid-cols-[40%_1fr]">
                   <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold z-10">
                     Only 1–2 per trip
                   </div>
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img loading="lazy" 
-                      src="/lovable-uploads/safari-panoramic-suite.jpg" 
+                  <div className="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                    <img loading="lazy"
+                      src="/lovable-uploads/safari-panoramic-suite.jpg"
                       alt="Panoramic Suite"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-8 flex flex-col">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Panoramic Suite (2 People)</h3>
                     <p className="text-3xl font-bold text-primary mb-4">€4,700 / cabin</p>
 
@@ -1107,17 +1077,13 @@ const KiteSafari: React.FC = () => {
                         <AccordionContent>
                           <div className="space-y-2 pt-1">
                             <p className="font-semibold mb-2">Everything in Master Suite +</p>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Panoramic windows</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Most premium cabin</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Maximum privacy</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                              {['Panoramic windows','Most premium cabin','Maximum privacy'].map((item) => (
+                                <div key={item} className="flex items-start gap-2">
+                                  <span className="text-primary mt-1">⭐</span>
+                                  <span>{item}</span>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </AccordionContent>
@@ -1125,9 +1091,9 @@ const KiteSafari: React.FC = () => {
                     </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, premium travelers</p>
-                    
-                    <Button 
-                      className="w-full"
+
+                    <Button
+                      className="w-full mt-auto"
                       onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Panoramic%20Suite%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC4%2C700).', '_blank')}
                     >
                       BOOK PANORAMIC SUITE
