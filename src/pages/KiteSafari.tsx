@@ -598,149 +598,136 @@ const KiteSafari: React.FC = () => {
               </Carousel>
             </div>
 
-            {/* Two-Column Grid */}
-            <div className="grid lg:grid-cols-2 gap-12">
-              
-              {/* LEFT COLUMN */}
-              <div className="space-y-10">
-                
-                {/* Accommodation */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🏠</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACCOMMODATION (ON THE YACHT)</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• 7 days / 6 nights on a comfortable liveaboard yacht</li>
-                    <li>• Twin cabins, Master Suites, Panoramic Suite (limited availability)</li>
-                    <li>• Air conditioning, private/shared bathrooms</li>
-                    <li>• Fresh linens, daily cleaning</li>
-                    <li>• Lounge areas, sun deck, jacuzzi</li>
-                    <li>• WiFi when available</li>
-                  </ul>
-                </div>
+            {/* Balanced 3-Column Card Grid */}
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
-                {/* Food & Drinks */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🍽</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">FOOD & DRINKS</h3>
+              {/* Accommodation */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🏠</span>
                   </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• 3 meals per day</li>
-                    <li>• Snacks, fruits, tea, coffee, water</li>
-                    <li>• BBQ party on an uninhabited island</li>
-                    <li>• Vegetarian options available</li>
-                  </ul>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">ACCOMMODATION</h3>
                 </div>
-
-                {/* Kitesurfing Logistics */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🪁</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">KITESURFING LOGISTICS</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• Daily zodiac transfers to the spot/back (300m)</li>
-                    <li>• Launch/landing support</li>
-                    <li>• Rescue boat on duty</li>
-                    <li>• Full safety briefing</li>
-                    <li>• Possibility to add coaching or rental gear</li>
-                  </ul>
-                </div>
-
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• 7 days / 6 nights on a liveaboard yacht</li>
+                  <li>• Twin, Master & Panoramic Suites</li>
+                  <li>• Air conditioning, private/shared bathrooms</li>
+                  <li>• Fresh linens, daily cleaning</li>
+                  <li>• Lounge areas, sun deck, jacuzzi</li>
+                  <li>• WiFi when available</li>
+                </ul>
               </div>
 
-              {/* RIGHT COLUMN */}
-              <div className="space-y-10">
-                
-                {/* Coaching Packages */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🎓</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">COACHING PACKAGES (OPTIONAL)</h3>
+              {/* Food & Drinks */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🍽</span>
                   </div>
-                  <div className="ml-16 space-y-2 text-muted-foreground">
-                    <p className="italic">(Not included in base price)</p>
-                    <ul className="space-y-2 mt-3">
-                      <li>• Beginner, Intermediate, Advanced coaching</li>
-                      <li>• 1:1 or small-group coaching</li>
-                      <li>• Premium Duotone gear rental</li>
-                      <li>• Daily or evening video analysis</li>
-                      <li>• Clear progression roadmap</li>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">FOOD & DRINKS</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• 3 meals per day</li>
+                  <li>• Snacks, fruits, tea, coffee, water</li>
+                  <li>• BBQ party on an uninhabited island</li>
+                  <li>• Vegetarian options available</li>
+                </ul>
+              </div>
+
+              {/* Kitesurfing Logistics */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🪁</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">KITE LOGISTICS</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Daily zodiac transfers (300m)</li>
+                  <li>• Launch/landing support</li>
+                  <li>• Rescue boat on duty</li>
+                  <li>• Full safety briefing</li>
+                  <li>• Optional coaching/rental gear</li>
+                </ul>
+              </div>
+
+              {/* Coaching Packages */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎓</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">COACHING (OPTIONAL)</h3>
+                </div>
+                <p className="text-xs italic text-muted-foreground mb-2">(Not in base price)</p>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Beginner / Intermediate / Advanced</li>
+                  <li>• 1:1 or small-group coaching</li>
+                  <li>• Premium Duotone gear rental</li>
+                  <li>• Daily video analysis</li>
+                  <li>• Clear progression roadmap</li>
+                </ul>
+              </div>
+
+              {/* Transportation */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🚐</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">TRANSPORTATION</h3>
+                </div>
+                <ul className="space-y-2 text-sm text-muted-foreground">
+                  <li>• Group transfer from Hurghada (HRG) to marina</li>
+                  <li>• Boat transfers between lagoons</li>
+                  <li>• Zodiac to shallow water zones</li>
+                </ul>
+              </div>
+
+              {/* Activities & Extras */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">🎉</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">ACTIVITIES & EXTRAS</h3>
+                </div>
+                <div className="space-y-3">
+                  <div>
+                    <p className="text-xs font-semibold text-foreground mb-1 uppercase tracking-wider">Included</p>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Snorkeling reefs, SUP boards</li>
+                      <li>• Island visits, deck hangouts</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="text-xs font-semibold text-foreground mb-1 uppercase tracking-wider">Optional</p>
+                    <ul className="space-y-1 text-sm text-muted-foreground">
+                      <li>• Alcoholic drinks</li>
+                      <li>• Extra coaching hours</li>
+                      <li>• Pro photo/video shoot</li>
                     </ul>
                   </div>
                 </div>
-
-                {/* Transportation */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🚐</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">TRANSPORTATION</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• Group transfer from Hurghada (HRG) to marina</li>
-                    <li>• Boat transfers between lagoons</li>
-                    <li>• Zodiac to shallow water zones</li>
-                  </ul>
-                </div>
-
-                {/* Activities & Extras */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🎉</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">ACTIVITIES & EXTRAS</h3>
-                  </div>
-                  <div className="ml-16 space-y-3">
-                    <div>
-                      <p className="font-semibold text-foreground mb-2">Included:</p>
-                      <ul className="space-y-1 text-muted-foreground">
-                        <li>• Snorkeling reefs</li>
-                        <li>• SUP boards</li>
-                        <li>• Island visits</li>
-                        <li>• Deck hangouts, music, chill sessions</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-foreground mb-2">Optional:</p>
-                      <ul className="space-y-1 text-muted-foreground">
-                        <li>• Alcoholic drinks</li>
-                        <li>• Extra coaching hours</li>
-                        <li>• Professional photo/video shoot</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Community & Vibes */}
-                <div>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">👥</span>
-                    </div>
-                    <h3 className="text-2xl font-display font-bold text-foreground uppercase">COMMUNITY & VIBES</h3>
-                  </div>
-                  <ul className="space-y-2 text-muted-foreground ml-16">
-                    <li>• International group</li>
-                    <li>• Evening hangouts and talks</li>
-                    <li>• Shared learning, shared progress</li>
-                    <li>• Perfect for solo travelers</li>
-                  </ul>
-                </div>
-
               </div>
+
+              {/* Community & Vibes — full width on desktop to balance */}
+              <div className="bg-background rounded-xl border border-border p-6 hover:shadow-md transition-shadow sm:col-span-2 lg:col-span-3">
+                <div className="flex items-center gap-3 mb-4">
+                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
+                    <span className="text-2xl">👥</span>
+                  </div>
+                  <h3 className="text-lg font-display font-bold text-foreground uppercase leading-tight">COMMUNITY & VIBES</h3>
+                </div>
+                <ul className="grid sm:grid-cols-2 lg:grid-cols-4 gap-x-6 gap-y-2 text-sm text-muted-foreground">
+                  <li>• International group</li>
+                  <li>• Evening hangouts and talks</li>
+                  <li>• Shared learning, shared progress</li>
+                  <li>• Perfect for solo travelers</li>
+                </ul>
+              </div>
+
             </div>
 
             {/* NOT INCLUDED Box */}
@@ -751,7 +738,7 @@ const KiteSafari: React.FC = () => {
                 </div>
                 <h3 className="text-xl font-display font-bold text-foreground uppercase">NOT INCLUDED:</h3>
               </div>
-              <ul className="space-y-2 text-muted-foreground ml-12">
+              <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-6 gap-y-2 text-muted-foreground ml-12">
                 <li>• International flights</li>
                 <li>• Egyptian visa</li>
                 <li>• Kitesurfing lessons & rental gear</li>
@@ -783,16 +770,13 @@ const KiteSafari: React.FC = () => {
 
               {/* Timeline Container */}
               <div className="relative">
-                {/* Vertical Timeline Line */}
-                <div className="absolute left-6 top-0 bottom-0 w-0.5 bg-border hidden md:block" />
-
                 {/* Timeline Items */}
                 <div className="space-y-8">
                   
                   {/* Item 1 - Wake Up */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">☀️</span>
                       </div>
                       <div className="flex-1">
@@ -807,9 +791,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 2 - Breakfast */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🍳</span>
                       </div>
                       <div className="flex-1">
@@ -824,9 +808,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 3 - First Kite Session */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🪁</span>
                       </div>
                       <div className="flex-1">
@@ -842,9 +826,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 4 - Lunch & Rest */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🍜</span>
                       </div>
                       <div className="flex-1">
@@ -860,9 +844,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 5 - Second Session / Activities */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🏖</span>
                       </div>
                       <div className="flex-1">
@@ -880,9 +864,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 6 - Sunset & Chill */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🌅</span>
                       </div>
                       <div className="flex-1">
@@ -897,9 +881,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 7 - Dinner */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🍽</span>
                       </div>
                       <div className="flex-1">
@@ -914,9 +898,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 8 - Video Analysis / Social Time */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">🔥</span>
                       </div>
                       <div className="flex-1">
@@ -928,9 +912,9 @@ const KiteSafari: React.FC = () => {
                   </div>
 
                   {/* Item 9 - Rest */}
-                  <div className="relative pl-0 md:pl-16">
+                  <div className="relative">
                     <div className="flex items-start gap-4">
-                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center md:absolute md:left-0 md:-translate-x-1/2">
+                      <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
                         <span className="text-2xl">💤</span>
                       </div>
                       <div className="flex-1">
@@ -965,17 +949,17 @@ const KiteSafari: React.FC = () => {
                 <p className="text-lg text-muted-foreground uppercase">CHOOSE YOUR CABIN TYPE & ADD TRAINING IF NEEDED.</p>
               </div>
 
-              <div className="grid md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+              <div className="flex flex-col gap-8 max-w-5xl mx-auto">
                 {/* Twin Cabin Card */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all">
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img loading="lazy" 
-                      src="/lovable-uploads/safari-twin-cabin.jpg" 
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all grid md:grid-cols-[40%_1fr]">
+                  <div className="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                    <img loading="lazy"
+                      src="/lovable-uploads/safari-twin-cabin.jpg"
                       alt="Twin Cabin"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-8 flex flex-col">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Twin Cabin (Per Person)</h3>
                     <p className="text-3xl font-bold text-primary mb-4">€1,750</p>
 
@@ -985,48 +969,22 @@ const KiteSafari: React.FC = () => {
                           What's included
                         </AccordionTrigger>
                         <AccordionContent>
-                          <div className="space-y-2 pt-1">
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>7 days / 6 nights</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>3 meals daily</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>Snacks + drinks</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>All boat logistics</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>Rescue boat</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>SUP, snorkeling</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>WhatsApp group</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">✔</span>
-                              <span>Evening kite briefings</span>
-                            </div>
+                          <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2 pt-1">
+                            {['7 days / 6 nights','3 meals daily','Snacks + drinks','All boat logistics','Rescue boat','SUP, snorkeling','WhatsApp group','Evening kite briefings'].map((item) => (
+                              <div key={item} className="flex items-start gap-2">
+                                <span className="text-primary mt-1">✔</span>
+                                <span>{item}</span>
+                              </div>
+                            ))}
                           </div>
                         </AccordionContent>
                       </AccordionItem>
                     </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Solo travelers, friends</p>
-                    
-                    <Button 
-                      className="w-full"
+
+                    <Button
+                      className="w-full mt-auto"
                       onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Twin%20Cabin%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC1%2C750).', '_blank')}
                     >
                       BOOK TWIN CABIN
@@ -1035,18 +993,18 @@ const KiteSafari: React.FC = () => {
                 </div>
 
                 {/* Master Suite Card - Most Popular */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-xl border-2 border-primary hover:shadow-2xl transition-all relative">
+                <div className="bg-card rounded-xl overflow-hidden shadow-xl border-2 border-primary hover:shadow-2xl transition-all relative grid md:grid-cols-[40%_1fr]">
                   <div className="absolute top-4 left-4 bg-primary text-primary-foreground px-4 py-2 rounded-full text-sm font-bold z-10">
                     MOST POPULAR
                   </div>
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img loading="lazy" 
-                      src="/lovable-uploads/safari-master-suite.jpg" 
+                  <div className="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                    <img loading="lazy"
+                      src="/lovable-uploads/safari-master-suite.jpg"
                       alt="Master Suite"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-8 flex flex-col">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Master Suite (2 People)</h3>
                     <p className="text-3xl font-bold text-primary mb-4">€4,200 / cabin</p>
 
@@ -1058,17 +1016,13 @@ const KiteSafari: React.FC = () => {
                         <AccordionContent>
                           <div className="space-y-2 pt-1">
                             <p className="font-semibold mb-2">Everything in Twin Cabin +</p>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Larger cabin</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>More comfort</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Better location onboard</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                              {['Larger cabin','More comfort','Better location onboard'].map((item) => (
+                                <div key={item} className="flex items-start gap-2">
+                                  <span className="text-primary mt-1">⭐</span>
+                                  <span>{item}</span>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </AccordionContent>
@@ -1076,9 +1030,9 @@ const KiteSafari: React.FC = () => {
                     </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, friends</p>
-                    
-                    <Button 
-                      className="w-full"
+
+                    <Button
+                      className="w-full mt-auto"
                       onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Master%20Suite%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC4%2C200).', '_blank')}
                     >
                       BOOK MASTER SUITE
@@ -1087,18 +1041,18 @@ const KiteSafari: React.FC = () => {
                 </div>
 
                 {/* Panoramic Suite Card */}
-                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all relative">
+                <div className="bg-card rounded-xl overflow-hidden shadow-lg border border-border hover:shadow-xl transition-all relative grid md:grid-cols-[40%_1fr]">
                   <div className="absolute top-4 right-4 bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-xs font-semibold z-10">
                     Only 1–2 per trip
                   </div>
-                  <div className="aspect-[4/3] overflow-hidden">
-                    <img loading="lazy" 
-                      src="/lovable-uploads/safari-panoramic-suite.jpg" 
+                  <div className="aspect-[4/3] md:aspect-auto md:h-full overflow-hidden">
+                    <img loading="lazy"
+                      src="/lovable-uploads/safari-panoramic-suite.jpg"
                       alt="Panoramic Suite"
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="p-6">
+                  <div className="p-8 flex flex-col">
                     <h3 className="text-2xl font-display font-bold mb-2 uppercase">Panoramic Suite (2 People)</h3>
                     <p className="text-3xl font-bold text-primary mb-4">€4,700 / cabin</p>
 
@@ -1110,17 +1064,13 @@ const KiteSafari: React.FC = () => {
                         <AccordionContent>
                           <div className="space-y-2 pt-1">
                             <p className="font-semibold mb-2">Everything in Master Suite +</p>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Panoramic windows</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Most premium cabin</span>
-                            </div>
-                            <div className="flex items-start gap-2">
-                              <span className="text-primary mt-1">⭐</span>
-                              <span>Maximum privacy</span>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2">
+                              {['Panoramic windows','Most premium cabin','Maximum privacy'].map((item) => (
+                                <div key={item} className="flex items-start gap-2">
+                                  <span className="text-primary mt-1">⭐</span>
+                                  <span>{item}</span>
+                                </div>
+                              ))}
                             </div>
                           </div>
                         </AccordionContent>
@@ -1128,9 +1078,9 @@ const KiteSafari: React.FC = () => {
                     </Accordion>
 
                     <p className="text-sm text-muted-foreground mb-6">Best for: Couples, premium travelers</p>
-                    
-                    <Button 
-                      className="w-full"
+
+                    <Button
+                      className="w-full mt-auto"
                       onClick={() => window.open('https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20want%20to%20book%20a%20Panoramic%20Suite%20for%20the%20Egypt%20Kite%20Safari%20(%E2%82%AC4%2C700).', '_blank')}
                     >
                       BOOK PANORAMIC SUITE
@@ -1276,70 +1226,27 @@ const KiteSafari: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Single Column Layout */}
-                <div className="grid lg:grid-cols-1 gap-8">
-                  
-                  {/* Checklist Card */}
-                  <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
+                {/* Two-column checklist */}
+                <div className="bg-background rounded-2xl p-8 md:p-10 shadow-md border border-border max-w-5xl mx-auto">
+                  <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+                    {[
+                      'Prefer adventure over resorts',
+                      'Want to ride 2× daily',
+                      'Love community vibes',
+                      'Are OK with boat life',
+                      'Want real progression',
+                      'Are a beginner, intermediate, or advanced rider',
+                      'Are 18+ (or 16+ with guardian)',
+                      'Want the full experience — spots, islands, riding, community',
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-xl">✅</span>
                         </div>
-                        <p className="text-lg text-foreground">Prefer adventure over resorts</p>
+                        <p className="text-base md:text-lg text-foreground pt-1.5">{item}</p>
                       </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Want to ride 2× daily</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Love community vibes</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Are OK with boat life</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Want real progression</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Are a beginner, intermediate, or advanced rider</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Are 18+ (or 16+ with guardian)</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Want the full experience — spots, islands, riding, community</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
-
                 </div>
               </div>
             </div>
