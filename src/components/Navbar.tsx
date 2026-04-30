@@ -100,13 +100,13 @@ const Navbar: React.FC = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
           <a 
             href="https://wa.me/48884035225" 
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              "flex items-center gap-1 hover:text-green-600 transition-colors duration-300 label-caps",
+              "hidden xl:flex items-center gap-1 hover:text-green-600 transition-colors duration-300 label-caps whitespace-nowrap",
               getTextColor()
             )}
           >
@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
               key={link.path} 
               to={link.path} 
               className={cn(
-                'label-caps relative transition-all duration-300',
+                'label-caps relative transition-all duration-300 whitespace-nowrap',
                 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-[-4px] after:left-0',
                 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300',
                 'hover:after:scale-x-100 hover:after:origin-bottom-left',
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
           ))}
         </nav>
         
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <button 
             className="btn-primary"
             onClick={() => setBookingPopupOpen(true)}
