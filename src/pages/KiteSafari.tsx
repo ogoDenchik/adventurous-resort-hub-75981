@@ -1239,70 +1239,27 @@ const KiteSafari: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Single Column Layout */}
-                <div className="grid lg:grid-cols-1 gap-8">
-                  
-                  {/* Checklist Card */}
-                  <div className="bg-background rounded-2xl p-8 shadow-md border border-border">
-                    <div className="space-y-4">
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
+                {/* Two-column checklist */}
+                <div className="bg-background rounded-2xl p-8 md:p-10 shadow-md border border-border max-w-5xl mx-auto">
+                  <div className="grid sm:grid-cols-2 gap-x-8 gap-y-5">
+                    {[
+                      'Prefer adventure over resorts',
+                      'Want to ride 2× daily',
+                      'Love community vibes',
+                      'Are OK with boat life',
+                      'Want real progression',
+                      'Are a beginner, intermediate, or advanced rider',
+                      'Are 18+ (or 16+ with guardian)',
+                      'Want the full experience — spots, islands, riding, community',
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                          <span className="text-xl">✅</span>
                         </div>
-                        <p className="text-lg text-foreground">Prefer adventure over resorts</p>
+                        <p className="text-base md:text-lg text-foreground pt-1.5">{item}</p>
                       </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Want to ride 2× daily</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Love community vibes</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Are OK with boat life</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Want real progression</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Are a beginner, intermediate, or advanced rider</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Are 18+ (or 16+ with guardian)</p>
-                      </div>
-
-                      <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center">
-                          <span className="text-2xl">✅</span>
-                        </div>
-                        <p className="text-lg text-foreground">Want the full experience — spots, islands, riding, community</p>
-                      </div>
-                    </div>
+                    ))}
                   </div>
-
                 </div>
               </div>
             </div>
