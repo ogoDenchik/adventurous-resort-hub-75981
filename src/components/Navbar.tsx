@@ -60,11 +60,11 @@ const Navbar: React.FC = () => {
       "fixed w-full top-0 z-40 py-3 transition-all duration-300",
       getHeaderStyles()
     )}>
-      <div className="container mx-auto px-4 flex items-center justify-between relative">
+      <div className="container mx-auto px-4 flex items-center justify-between gap-3 relative">
         <Logo />
 
         {/* Language Switcher */}
-        <div className="relative ml-2 md:ml-4">
+        <div className="relative ml-1 lg:ml-2">
           <button
             onClick={() => setLangMenuOpen(!langMenuOpen)}
             className={cn(
@@ -100,13 +100,13 @@ const Navbar: React.FC = () => {
         </div>
         
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
           <a 
             href="https://wa.me/48884035225" 
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              "flex items-center gap-1 hover:text-green-600 transition-colors duration-300 label-caps",
+              "hidden xl:flex items-center gap-1 hover:text-green-600 transition-colors duration-300 label-caps whitespace-nowrap",
               getTextColor()
             )}
           >
@@ -118,7 +118,7 @@ const Navbar: React.FC = () => {
               key={link.path} 
               to={link.path} 
               className={cn(
-                'label-caps relative transition-all duration-300',
+                'label-caps relative transition-all duration-300 whitespace-nowrap',
                 'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-[-4px] after:left-0',
                 'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300',
                 'hover:after:scale-x-100 hover:after:origin-bottom-left',
@@ -132,7 +132,7 @@ const Navbar: React.FC = () => {
           ))}
         </nav>
         
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden lg:flex items-center space-x-4">
           <button 
             className="btn-primary"
             onClick={() => setBookingPopupOpen(true)}
@@ -142,7 +142,7 @@ const Navbar: React.FC = () => {
         </div>
         
         {/* Mobile Right Controls */}
-        <div className="md:hidden flex items-center gap-2 relative z-[210]">
+        <div className="lg:hidden flex items-center gap-2 relative z-[210]">
           <button
             className={cn(
               "p-2 relative z-[210] cursor-pointer touch-manipulation",
@@ -163,7 +163,7 @@ const Navbar: React.FC = () => {
       {/* Mobile Navigation */}
       <div 
         className={cn(
-          'fixed inset-0 pt-24 px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] md:hidden z-[205]',
+          'fixed inset-0 pt-24 px-6 overflow-y-auto transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] lg:hidden z-[205]',
           isMenuOpen ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0 pointer-events-none'
         )}
         style={{ backgroundColor: 'hsl(var(--background))' }}
