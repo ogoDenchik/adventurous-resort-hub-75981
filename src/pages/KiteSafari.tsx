@@ -161,7 +161,7 @@ const KiteSafari: React.FC = () => {
                 className="w-full"
               >
                 <CarouselContent>
-                  {/* Card - April 18-25 */}
+                  {/* Card - July 13-20, 2026 */}
                   <CarouselItem>
                     <div className="px-4">
                       <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
@@ -170,10 +170,10 @@ const KiteSafari: React.FC = () => {
                             <Calendar className="w-12 h-12 text-primary" />
                           </div>
                           <h3 className="text-2xl font-bold text-foreground mb-2">
-                            April 18–25, 2026
+                            July 13–20, 2026
                           </h3>
                           <span className="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-full">
-                            🔥 ONLY 5 SPOTS LEFT
+                            🔥 ONLY 10 SPOTS LEFT
                           </span>
                         </div>
 
@@ -195,7 +195,49 @@ const KiteSafari: React.FC = () => {
                           <div className="flex items-start gap-3 pt-2 border-t border-border">
                             <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
                             <p className="text-foreground font-semibold">
-                              Spots available: <span className="text-primary">5/30</span>
+                              Spots available: <span className="text-primary">10/30</span>
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </CarouselItem>
+
+                  {/* Card - October 17-24, 2026 */}
+                  <CarouselItem>
+                    <div className="px-4">
+                      <div className="bg-background border border-border rounded-2xl p-8 shadow-md hover:shadow-lg transition-shadow">
+                        <div className="text-center mb-6">
+                          <div className="flex justify-center mb-4">
+                            <Calendar className="w-12 h-12 text-primary" />
+                          </div>
+                          <h3 className="text-2xl font-bold text-foreground mb-2">
+                            October 17–24, 2026
+                          </h3>
+                          <span className="inline-block bg-red-600 text-white text-sm font-bold px-3 py-1 rounded-full">
+                            🔥 ONLY 15 SPOTS LEFT
+                          </span>
+                        </div>
+
+                        <div className="space-y-4 text-left">
+                          <div className="flex items-start gap-3">
+                            <MapPin className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Red Sea, Egypt — Yacht Route
+                            </p>
+                          </div>
+
+                          <div className="flex items-start gap-3">
+                            <Wind className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-muted-foreground">
+                              Perfect warm-water conditions
+                            </p>
+                          </div>
+
+                          <div className="flex items-start gap-3 pt-2 border-t border-border">
+                            <Target className="w-5 h-5 text-primary flex-shrink-0 mt-1" />
+                            <p className="text-foreground font-semibold">
+                              Spots available: <span className="text-primary">15/30</span>
                             </p>
                           </div>
                         </div>
@@ -205,9 +247,10 @@ const KiteSafari: React.FC = () => {
                 </CarouselContent>
               </Carousel>
 
-              {/* Pagination Dot - single date */}
+              {/* Pagination Dots */}
               <div className="flex justify-center gap-2 mt-6">
                 <div className="w-2 h-2 rounded-full bg-primary" />
+                <div className="w-2 h-2 rounded-full bg-primary/30" />
               </div>
             </div>
 

@@ -124,9 +124,8 @@ const CalendarLocations: React.FC = () => {
       country: "EGYPT",
       location: "EL GOUNA / RED SEA",
       dates: [
-        "April 11 – April 18, 2026",
-        "April 18 – April 25, 2026",
-        "April 30 – May 7, 2026"
+        "July 13 – July 20, 2026",
+        "October 17 – October 24, 2026"
       ],
       summary: "Red Sea lagoons, reliable wind and a strong setup for beginners and progression.",
       ctaText: "EXPLORE MORE",
