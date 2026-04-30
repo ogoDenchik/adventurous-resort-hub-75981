@@ -932,55 +932,6 @@ const Vietnam = () => {
                 </AccordionContent>
               </AccordionItem>
 
-              {/* Insurance Accordion */}
-              <AccordionItem value="insurance" className="bg-background rounded-lg px-6 border border-border">
-                <AccordionTrigger className="text-left font-bold text-xl uppercase">
-                  <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
-                      <span className="text-2xl">🛡</span>
-                    </div>
-                    <span>INSURANCE</span>
-                  </div>
-                </AccordionTrigger>
-                <AccordionContent>
-                  <div className="space-y-4 pt-4">
-                    <div>
-                      <h4 className="text-lg font-bold mb-3">What We Cover</h4>
-                      <ul className="space-y-2 text-muted-foreground">
-                        <li>• <strong>Lesson Coverage</strong> — All students are covered during kitesurfing lessons</li>
-                        <li>• <strong>Equipment Insurance</strong> — Our equipment is insured during structured sessions</li>
-                        <li>• <strong>Instructor Liability</strong> — Professional liability insurance for all instructors</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-bold mb-3">What You Must Have</h4>
-                      <ul className="space-y-2 text-muted-foreground">
-                        <li>• <strong>Personal Travel Insurance</strong> — Required for all participants</li>
-                        <li>• Must include coverage for water sports and extreme activities</li>
-                        <li>• Should cover medical expenses, emergency evacuation, and repatriation</li>
-                        <li>• Recommended: Trip cancellation coverage</li>
-                      </ul>
-                    </div>
-
-                    <div>
-                      <h4 className="text-lg font-bold mb-3">Liability Waiver</h4>
-                      <ul className="space-y-2 text-muted-foreground">
-                        <li>• By participating, you acknowledge that kitesurfing is an extreme sport with inherent risks</li>
-                        <li>• The organizer is not liable for injuries, equipment loss, or personal damages occurring outside of structured lessons</li>
-                        <li>• All participants must sign a liability waiver before starting the camp</li>
-                      </ul>
-                    </div>
-
-                    <div className="bg-accent/10 p-4 rounded-lg border border-border mt-4">
-                      <p className="text-sm text-foreground">
-                        <strong>Recommendation:</strong> We suggest providers like World Nomads, SafetyWing, or True Traveller that specifically cover kitesurfing activities.
-                      </p>
-                    </div>
-                  </div>
-                </AccordionContent>
-              </AccordionItem>
-
               {/* Terms & Conditions Accordion */}
               <AccordionItem value="terms-conditions" className="bg-background rounded-lg px-6 border border-border">
                 <AccordionTrigger className="text-left font-bold text-xl uppercase">
