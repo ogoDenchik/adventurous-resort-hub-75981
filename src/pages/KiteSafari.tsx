@@ -600,14 +600,8 @@ const KiteSafari: React.FC = () => {
                     </div>
                   </CarouselItem>
                 </CarouselContent>
-                <CarouselPrevious 
-                  className="left-4" 
-                  onClick={handleUserInteraction}
-                />
-                <CarouselNext 
-                  className="right-4"
-                  onClick={handleUserInteraction}
-                />
+                <CarouselPrevious className="left-4" />
+                <CarouselNext className="right-4" />
               </Carousel>
             </div>
 
