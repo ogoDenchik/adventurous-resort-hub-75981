@@ -4,6 +4,26 @@
 // Keep keys in their original casing/punctuation as they appear in JSX.
 
 export const ruDictionary: Record<string, string> = {
+  // ===== Homepage testimonials & calendar dates =====
+  "I met Denis two years ago. He got me riding independently in just 7 days — and since then, we've been traveling and progressing together non-stop. I love his approach and his methodology. It's clear, structured and incredibly effective.":
+    "Я познакомился с Денисом два года назад. Он научил меня кататься самостоятельно всего за 7 дней — и с тех пор мы постоянно путешествуем и прогрессируем вместе. Мне нравится его подход и методика. Всё чётко, структурировано и невероятно эффективно.",
+  "Everything was absolutely top level. Training was world-class, the accommodations were excellent, and the whole trip was perfectly organized. I even learned my first backroll!":
+    "Всё было на высшем уровне. Тренировки мирового класса, проживание отличное, поездка организована безупречно. Я даже выучила свой первый бэкролл!",
+  "I really enjoy Denis' approach. He teaches step-by-step — giving small pieces of information that later come together into a full picture. I progressed very fast. Highly recommended.":
+    "Мне очень нравится подход Дениса. Он учит шаг за шагом — даёт небольшие порции информации, которые потом складываются в общую картину. Я прогрессировал очень быстро. Настоятельно рекомендую.",
+  "Misha": "Миша",
+  "Kate": "Кейт",
+  "Ilya": "Илья",
+  "Egypt Kite Safari": "Кайт-сафари в Египте",
+  "Brazil Trip": "Поездка в Бразилию",
+  "Vietnam Kite Camp": "Кайт-кэмп во Вьетнаме",
+  "January 20 – January 30, 2026": "20 – 30 января 2026",
+  "February 13 – February 23, 2026": "13 – 23 февраля 2026",
+  "July 13 – July 20, 2026": "13 – 20 июля 2026",
+  "October 17 – October 24, 2026": "17 – 24 октября 2026",
+  "November 1 – November 15, 2026": "1 – 15 ноября 2026",
+  "November 20 – December 4, 2026": "20 ноября – 4 декабря 2026",
+
   // ===== Navigation / global =====
   "Home": "Главная",
   "Cyprus": "Кипр",
@@ -158,7 +178,7 @@ export const ruDictionary: Record<string, string> = {
   "Dining Area": "Обеденная зона",
 
   // ===== Vietnam-specific =====
-  "Vietnam Kite Camp": "Кайт-кэмп во Вьетнаме",
+  // (Vietnam Kite Camp moved to top)
   "Book Vietnam Kite Camp": "Забронировать кэмп во Вьетнаме",
   "Beautiful Vietnam waterfall with mountains": "Красивый водопад во Вьетнаме с горами",
   "Vietnam kitesurfing beach with equipment": "Кайт-пляж во Вьетнаме с экипировкой",
@@ -186,8 +206,7 @@ export const ruDictionary: Record<string, string> = {
   "Ilha de Guajiru": "Илья-де-Гуажиру",
   "Ilha de Guajiru aerial view": "Вид с воздуха на Илья-де-Гуажиру",
 
-  // ===== Egypt =====
-  "Egypt Kite Safari": "Кайт-сафари в Египте",
+  // ===== Egypt ===== (Egypt Kite Safari moved to top)
 
   // ===== Coaching / programs =====
   "1-to-1 Coaching": "Индивидуальные тренировки",
@@ -535,13 +554,7 @@ export const ruDictionary: Record<string, string> = {
   "OGO KITE ACADEMY": "OGO KITE ACADEMY",
   "Water Start Tutorial": "Урок: водный старт",
 
-  // Testimonials / names
-  "Misha": "Миша",
-  "Kate": "Катя",
-  "Ilya": "Илья",
-  "Brazil Trip": "Поездка в Бразилию",
-  "Everything was absolutely top level. Training was world-class, the accommodations were excellent, and the whole trip was perfectly organized. I even learned my first backroll!":
-    "Всё было на высочайшем уровне. Тренировки мирового класса, отличное проживание, поездка идеально организована. Я даже выучила свой первый бэкролл!",
+  // (Testimonials moved to top of file)
 
   // Image alt texts (Gallery / pages)
   "Gallery image": "Фото из галереи",
