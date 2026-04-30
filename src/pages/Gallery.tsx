@@ -134,6 +134,7 @@ const Gallery: React.FC = () => {
             <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
               {t('gallery.subtitle')}
             </p>
+          </div>
           
           {/* Gallery Grid - Kite Safari Style */}
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
