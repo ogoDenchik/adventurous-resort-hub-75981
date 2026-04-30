@@ -60,11 +60,92 @@ const Navbar: React.FC = () => {
       "fixed w-full top-0 z-40 py-3 transition-all duration-300",
       getHeaderStyles()
     )}>
-      <div className="container mx-auto px-4 flex items-center justify-between gap-3 relative">
+      <div className="container mx-auto px-4 flex items-center justify-between gap-4 relative">
         <Logo />
 
-        {/* Language Switcher */}
-        <div className="relative ml-1 lg:ml-2">
+        {/* Phone (visible on desktop, between logo and nav) */}
+        <a 
+          href="https://wa.me/48884035225" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            "hidden lg:flex items-center gap-1.5 hover:text-green-600 transition-colors duration-300 whitespace-nowrap shrink-0",
+            "text-[11px] xl:text-xs tracking-[0.15em] uppercase font-medium",
+            getTextColor()
+          )}
+        >
+          <Phone size={13} className="text-green-600" />
+          <span>+48 884 035 225</span>
+        </a>
+
+        {/* Desktop Navigation */}
+        <nav className="hidden lg:flex items-center gap-x-3 xl:gap-x-5 flex-1 justify-center">
+          {navLinks.map(link => (
+            <Link 
+              key={link.path} 
+              to={link.path} 
+              className={cn(
+                'relative transition-all duration-300 whitespace-nowrap',
+                'text-[11px] xl:text-xs tracking-[0.18em] uppercase font-medium',
+                'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-[-4px] after:left-0',
+                'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300',
+                'hover:after:scale-x-100 hover:after:origin-bottom-left',
+                location.pathname === link.path 
+                  ? 'text-accent after:scale-x-100' 
+                  : cn(getTextColor(), 'hover:opacity-70')
+              )}
+            >
+              {link.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Right side: Language + Book Now */}
+        <div className="hidden lg:flex items-center gap-3 shrink-0">
+          {/* Language Switcher */}
+          <div className="relative">
+            <button
+              onClick={() => setLangMenuOpen(!langMenuOpen)}
+              className={cn(
+                "flex items-center gap-1 px-2 py-1 rounded-md text-xs font-medium transition-all duration-300 border",
+                shouldUseWhiteHeader || isScrolled
+                  ? 'border-gray-300 text-gray-900 hover:bg-gray-100'
+                  : 'border-white/30 text-white hover:bg-white/10'
+              )}
+            >
+              <span className="uppercase font-semibold">{lang.toUpperCase()}</span>
+            </button>
+            {langMenuOpen && (
+              <div className="absolute top-full mt-1 right-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
+                {languages.map((l) => (
+                  <button
+                    key={l.code}
+                    onClick={() => {
+                      setLang(l.code);
+                      setLangMenuOpen(false);
+                    }}
+                    className={cn(
+                      'w-full px-3 py-2 text-left text-sm flex items-center gap-2 hover:bg-muted transition-colors',
+                      lang === l.code && 'bg-primary/10 text-primary font-medium'
+                    )}
+                  >
+                    <span className="font-semibold">{l.label}</span>
+                  </button>
+                ))}
+              </div>
+            )}
+          </div>
+
+          <button 
+            className="btn-primary !px-5 !py-2.5 !min-h-0 !text-[11px] xl:!text-xs"
+            onClick={() => setBookingPopupOpen(true)}
+          >
+            {t('nav.bookNow')}
+          </button>
+        </div>
+
+        {/* Mobile: Language Switcher (visible on mobile) */}
+        <div className="lg:hidden relative ml-auto mr-2">
           <button
             onClick={() => setLangMenuOpen(!langMenuOpen)}
             className={cn(
@@ -79,7 +160,7 @@ const Navbar: React.FC = () => {
             <span className="uppercase font-semibold">{lang.toUpperCase()}</span>
           </button>
           {langMenuOpen && (
-            <div className="absolute top-full mt-1 left-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
+            <div className="absolute top-full mt-1 right-0 bg-card border border-border rounded-lg shadow-xl overflow-hidden min-w-[100px] z-50">
               {languages.map((l) => (
                 <button
                   key={l.code}
@@ -97,48 +178,6 @@ const Navbar: React.FC = () => {
               ))}
             </div>
           )}
-        </div>
-        
-        {/* Desktop Navigation */}
-        <nav className="hidden lg:flex items-center gap-x-4 xl:gap-x-6">
-          <a 
-            href="https://wa.me/48884035225" 
-            target="_blank"
-            rel="noopener noreferrer"
-            className={cn(
-              "hidden xl:flex items-center gap-1 hover:text-green-600 transition-colors duration-300 label-caps whitespace-nowrap",
-              getTextColor()
-            )}
-          >
-            <Phone size={14} className="text-green-600" />
-            <span>+48 884 035 225</span>
-          </a>
-          {navLinks.map(link => (
-            <Link 
-              key={link.path} 
-              to={link.path} 
-              className={cn(
-                'label-caps relative transition-all duration-300 whitespace-nowrap',
-                'after:content-[""] after:absolute after:w-full after:scale-x-0 after:h-px after:bottom-[-4px] after:left-0',
-                'after:bg-accent after:origin-bottom-right after:transition-transform after:duration-300',
-                'hover:after:scale-x-100 hover:after:origin-bottom-left',
-                location.pathname === link.path 
-                  ? 'text-accent after:scale-x-100' 
-                  : cn(getTextColor(), 'hover:opacity-70')
-              )}
-            >
-              {link.name}
-            </Link>
-          ))}
-        </nav>
-        
-        <div className="hidden lg:flex items-center space-x-4">
-          <button 
-            className="btn-primary"
-            onClick={() => setBookingPopupOpen(true)}
-          >
-            {t('nav.bookNow')}
-          </button>
         </div>
         
         {/* Mobile Right Controls */}
