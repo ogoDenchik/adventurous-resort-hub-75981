@@ -121,6 +121,7 @@ const Cyprus: React.FC = () => {
                 href={method.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackContactClick(method.channel, 'cyprus_contact_card')}
                 className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
               >
                 <div className="flex-shrink-0 md:flex md:justify-center md:mb-5">
