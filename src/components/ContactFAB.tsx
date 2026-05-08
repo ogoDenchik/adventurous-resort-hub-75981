@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, Send, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { trackContactClick } from '@/utils/metaTracking';
 
 const ContactFAB: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -19,6 +20,7 @@ const ContactFAB: React.FC = () => {
           href="https://wa.me/48884035225?text=Hi!%20I%27m%20interested%20in%20OGO%20Kite%20Academy"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContactClick('whatsapp', 'cyprus_fab')}
           className="w-12 h-12 bg-[#25D366] hover:bg-[#20BD5C] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
           aria-label="WhatsApp"
         >
@@ -31,6 +33,7 @@ const ContactFAB: React.FC = () => {
           href="https://t.me/ogodenchik_official"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContactClick('telegram', 'cyprus_fab')}
           className="w-12 h-12 bg-[#0088cc] hover:bg-[#006daa] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
           aria-label="Telegram"
         >

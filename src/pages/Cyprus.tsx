@@ -11,8 +11,17 @@ import CyprusAdvantages from '@/components/cyprus/CyprusAdvantages';
 import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
 import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { trackContactClick, type ContactChannel } from '@/utils/metaTracking';
 
-const contactMethods = [
+const contactMethods: Array<{
+  icon: typeof MessageCircle;
+  title: string;
+  description: string;
+  link: string;
+  color: string;
+  hoverColor: string;
+  channel: ContactChannel;
+}> = [
   {
     icon: MessageCircle,
     title: "WhatsApp",
@@ -20,6 +29,7 @@ const contactMethods = [
     link: "https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%20have%20a%20question!",
     color: "bg-green-500",
     hoverColor: "hover:bg-green-600",
+    channel: 'whatsapp',
   },
   {
     icon: Instagram,
@@ -28,6 +38,7 @@ const contactMethods = [
     link: "https://www.instagram.com/ogo_kite_academy",
     color: "bg-gradient-to-br from-purple-500 via-pink-500 to-orange-400",
     hoverColor: "hover:opacity-90",
+    channel: 'instagram',
   },
   {
     icon: Send,
@@ -36,6 +47,7 @@ const contactMethods = [
     link: "https://t.me/ogodenchik_official",
     color: "bg-blue-500",
     hoverColor: "hover:bg-blue-600",
+    channel: 'telegram',
   },
 ];
 
@@ -109,6 +121,7 @@ const Cyprus: React.FC = () => {
                 href={method.link}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackContactClick(method.channel, 'cyprus_contact_card')}
                 className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
               >
                 <div className="flex-shrink-0 md:flex md:justify-center md:mb-5">
