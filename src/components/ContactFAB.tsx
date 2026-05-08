@@ -20,6 +20,7 @@ const ContactFAB: React.FC = () => {
           href="https://wa.me/48884035225?text=Hi!%20I%27m%20interested%20in%20OGO%20Kite%20Academy"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContactClick('whatsapp', 'cyprus_fab')}
           className="w-12 h-12 bg-[#25D366] hover:bg-[#20BD5C] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
           aria-label="WhatsApp"
         >
