@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MessageCircle, Send, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { trackContactClick } from '@/utils/metaTracking';
 
 const ContactFAB: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
