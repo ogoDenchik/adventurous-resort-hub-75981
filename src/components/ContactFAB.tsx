@@ -33,6 +33,7 @@ const ContactFAB: React.FC = () => {
           href="https://t.me/ogodenchik_official"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackContactClick('telegram', 'cyprus_fab')}
           className="w-12 h-12 bg-[#0088cc] hover:bg-[#006daa] rounded-full shadow-lg flex items-center justify-center transition-all duration-300 hover:scale-110"
           aria-label="Telegram"
         >
