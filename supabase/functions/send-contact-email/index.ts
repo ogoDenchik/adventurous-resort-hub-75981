@@ -16,17 +16,52 @@ interface ContactFormData {
   message?: string;
 }
 
+const escapeHtml = (input: unknown): string =>
+  String(input ?? "")
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#x27;")
+    .replace(/\//g, "&#x2F;");
+
+const clip = (v: unknown, max: number) => String(v ?? "").trim().slice(0, max);
+
+const isValidEmail = (v: string) =>
+  v.length > 3 && v.length <= 255 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+
 const handler = async (req: Request): Promise<Response> => {
   if (req.method === "OPTIONS") {
     return new Response(null, { headers: corsHeaders });
   }
 
   try {
-    const formData: ContactFormData = await req.json();
-    
-    console.log("Processing contact form submission:", formData);
+    const raw: ContactFormData = await req.json();
 
-    // Send email to admin using fetch
+    // Validate + clip lengths
+    const name = clip(raw.name, 100);
+    const email = clip(raw.email, 255);
+    const phone = clip(raw.phone, 30);
+    const telegram = clip(raw.telegram, 50);
+    const message = clip(raw.message, 2000);
+
+    if (name.length < 2 || !isValidEmail(email) || phone.length < 6) {
+      return new Response(
+        JSON.stringify({ success: false, error: "Invalid input" }),
+        { status: 400, headers: { "Content-Type": "application/json", ...corsHeaders } },
+      );
+    }
+
+    // Pre-escape all user-supplied values for HTML interpolation
+    const eName = escapeHtml(name);
+    const eEmail = escapeHtml(email);
+    const ePhone = escapeHtml(phone);
+    const eTelegram = escapeHtml(telegram);
+    const eMessage = escapeHtml(message).replace(/\n/g, "<br>");
+
+    console.log("Processing contact form submission", { hasMessage: !!message, hasTelegram: !!telegram });
+
+    // Send email to admin
     const adminEmailResponse = await fetch("https://api.resend.com/emails", {
       method: "POST",
       headers: {
@@ -36,17 +71,17 @@ const handler = async (req: Request): Promise<Response> => {
       body: JSON.stringify({
         from: "OGO Kite Academy <onboarding@resend.dev>",
         to: ["ogdenchik@gmail.com"],
-        subject: `New Contact Form Submission from ${formData.name}`,
+        subject: `New Contact Form Submission from ${name}`,
         html: `
           <h1>New Contact Form Submission</h1>
           <h2>Contact Details:</h2>
-          <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Phone:</strong> ${formData.phone}</p>
-          ${formData.telegram ? `<p><strong>Telegram:</strong> @${formData.telegram}</p>` : ''}
-          ${formData.message ? `
+          <p><strong>Name:</strong> ${eName}</p>
+          <p><strong>Email:</strong> ${eEmail}</p>
+          <p><strong>Phone:</strong> ${ePhone}</p>
+          ${telegram ? `<p><strong>Telegram:</strong> @${eTelegram}</p>` : ''}
+          ${message ? `
             <h2>Message:</h2>
-            <p>${formData.message.replace(/\n/g, '<br>')}</p>
+            <p>${eMessage}</p>
           ` : ''}
           <hr>
           <p><small>This email was sent from the OGO Kite Academy contact form.</small></p>
@@ -63,19 +98,19 @@ const handler = async (req: Request): Promise<Response> => {
       },
       body: JSON.stringify({
         from: "OGO Kite Academy <onboarding@resend.dev>",
-        to: [formData.email],
+        to: [email],
         subject: "Thank you for contacting OGO Kite Academy!",
         html: `
-          <h1>Thank you for reaching out, ${formData.name}!</h1>
+          <h1>Thank you for reaching out, ${eName}!</h1>
           <p>We've received your message and will get back to you within 24 hours on WhatsApp or Telegram.</p>
           <h2>Your Contact Information:</h2>
-          <p><strong>Name:</strong> ${formData.name}</p>
-          <p><strong>Email:</strong> ${formData.email}</p>
-          <p><strong>Phone:</strong> ${formData.phone}</p>
-          ${formData.telegram ? `<p><strong>Telegram:</strong> @${formData.telegram}</p>` : ''}
-          ${formData.message ? `
+          <p><strong>Name:</strong> ${eName}</p>
+          <p><strong>Email:</strong> ${eEmail}</p>
+          <p><strong>Phone:</strong> ${ePhone}</p>
+          ${telegram ? `<p><strong>Telegram:</strong> @${eTelegram}</p>` : ''}
+          ${message ? `
             <h2>Your Message:</h2>
-            <p>${formData.message.replace(/\n/g, '<br>')}</p>
+            <p>${eMessage}</p>
           ` : ''}
           <hr>
           <p>In the meantime, feel free to connect with us on:</p>
@@ -89,7 +124,8 @@ const handler = async (req: Request): Promise<Response> => {
       }),
     });
 
-    console.log("Emails sent successfully:", { adminEmailResponse, userEmailResponse });
+    console.log("Emails sent", { admin: adminEmailResponse.status, user: userEmailResponse.status });
+
 
     return new Response(
       JSON.stringify({ 
