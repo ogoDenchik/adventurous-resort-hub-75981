@@ -34,13 +34,10 @@ const Navbar: React.FC = () => {
     { name: t('nav.cyprus'), path: '/cyprus' },
     { name: t('nav.kiteSafari'), path: '/kite-safari' },
     { name: t('nav.brazil'), path: '/brazil' },
-    { name: t('nav.vietnam'), path: '/vietnam' },
     { name: t('nav.gallery'), path: '/gallery' },
-    { name: t('nav.about'), path: '/about' },
-    { name: t('nav.contact'), path: '/contact' },
   ];
 
-  const whiteHeaderPages = ['/gallery', '/contact', '/about'];
+  const whiteHeaderPages = ['/gallery'];
   const shouldUseWhiteHeader = whiteHeaderPages.includes(location.pathname);
 
   const getHeaderStyles = () => {

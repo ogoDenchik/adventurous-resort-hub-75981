@@ -7,19 +7,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-import Accommodation from "./pages/Accommodation";
-import About from "./pages/About";
-import Activities from "./pages/Activities";
 import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
 import KiteSafari from "./pages/KiteSafari";
 import Brazil from "./pages/Brazil";
 import Cyprus from "./pages/Cyprus";
-import Vietnam from "./pages/Vietnam";
 import ContactFAB from "./components/ContactFAB";
 import ScrollToTopOnMount from "./components/ScrollToTopOnMount";
 
-// Create a new query client instance
 const queryClient = new QueryClient();
 
 const App = () => {
@@ -33,15 +27,10 @@ const App = () => {
             <ScrollToTopOnMount />
             <Routes>
               <Route path="/" element={<Index />} />
-              <Route path="/accommodation" element={<Accommodation />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/activities" element={<Activities />} />
               <Route path="/kite-safari" element={<KiteSafari />} />
               <Route path="/brazil" element={<Brazil />} />
               <Route path="/cyprus" element={<Cyprus />} />
-              <Route path="/vietnam" element={<Vietnam />} />
               <Route path="/gallery" element={<Gallery />} />
-              <Route path="/contact" element={<Contact />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
             <ContactFAB />

@@ -1,52 +1,58 @@
+## Цель
+1. Сделать backup всего текущего проекта в один скачиваемый файл.
+2. На странице Home оставить только Hero (заглавная) — всё остальное содержание убрать.
+3. Удалить разделы Vietnam, About, Contact Us — страницы, ссылки в навигации (desktop + mobile), маршруты и упоминания в Footer.
+4. Оставить навигацию: Home, Cyprus, Kite Safari, Brazil, Gallery.
 
-## Index Page Redesign — Editorial / Luxury Style
+## Шаг 1 — Backup
+Создать zip-архив всего репозитория (исключая `node_modules`, `dist`, `.git`) и положить его в `/mnt/documents/ogo-backup-2026-06-14.zip`. Я отдам его через `<presentation-artifact>` — ты сможешь скачать одним кликом и хранить локально как точку отката.
 
-This is a full visual redesign of the homepage inspired by the "INVISIBLE" editorial aesthetic. No functionality, routing, forms, or data changes. Only visual styling.
+Дополнительно: напомню, что в любой момент можно откатиться через History в чате — это вторая страховка.
 
-### What changes
+## Шаг 2 — Home (`src/pages/Index.tsx`)
+Оставить только:
+- `Navbar`
+- `Hero`
+- `Footer`
 
-**Typography system (new fonts)**
-- Add `Cormorant Garamond` (serif, display headings) + `Jost` (thin sans, body) via Google Fonts
-- New CSS utilities: `.heading-display`, `.label-caps`, `.section-number`, `.section-divider`
-- Body font switches to Jost 300 weight with wide letter spacing
+Удалить из Index.tsx использование и импорты:
+- `EnhancedBookingPopup`, `ContactCTA`, `TrustIndicators`, `CalendarLocations`
+- `MeetYourCoachIntro`, `WhyImDifferent`, `CoachStatsTrustBar`, `WhyMyMethodWorks`
+- Блок testimonials (Misha/Kate/Ilya) и секцию Guest Experiences
+- `RevealOnScroll`, `AnimatedLine`, `StaggeredList`, `useState`, `useLanguage` (если больше не нужны)
 
-**Button style**
-- `.btn-primary` becomes outline (transparent bg, green border) with liquid fill hover animation
-- New `.btn-primary-white` variant for hero (white border, white text, fills white on hover)
+Файлы компонентов на диске пока **не удаляю** — оставлю в `src/components/` на случай, если захочешь вернуть отдельные секции. Скажи, если нужно вычистить и их.
 
-**Animation system**
-- New hook `src/hooks/use-invisible-animation.tsx` with `RevealOnScroll`, `AnimatedLine`, `StaggeredList` components
-- CSS keyframes: `invisibleFadeUp`, `clipReveal`, `lineGrow`
-- Replaces `animate-slide-up` with scroll-triggered entrance animations
+## Шаг 3 — Удаление страниц
+Удалить файлы:
+- `src/pages/Vietnam.tsx`
+- `src/pages/About.tsx`
+- `src/pages/Contact.tsx`
+- `src/components/VietnamBookingPopup.tsx` (используется только на Vietnam)
+- Все `src/components/cyprus/...` НЕ трогаю — Cyprus остаётся.
 
-### Files to edit
+## Шаг 4 — Роутинг (`src/App.tsx`)
+Убрать маршруты `/vietnam`, `/about`, `/contact` и их импорты. Оставить: `/`, `/cyprus`, `/kite-safari`, `/brazil`, `/gallery`, `*` (NotFound).
 
-1. **`src/index.css`** — add fonts import, CSS variables, utility classes, new button styles, animation keyframes
+## Шаг 5 — Навигация
+- `src/components/Navbar.tsx` — удалить пункты Vietnam, About, Contact (desktop + mobile menu).
+- `src/components/Footer.tsx` — удалить ссылки на эти страницы.
+- `src/components/ContactFAB.tsx` оставляю (это глобальная кнопка WhatsApp/Telegram, по памяти проекта она нужна на всех страницах).
+- Внутренние ссылки `to="/contact"` / `to="/about"` / `to="/vietnam"` в оставшихся страницах (Cyprus, KiteSafari, Brazil, Gallery) заменю на безопасные:
+  - ссылки "contact" → на WhatsApp `https://wa.me/48884035225`
+  - ссылки на Vietnam / About → удалить или указать на Home.
 
-2. **`src/components/Hero.tsx`** — new JSX: serif headline with `<em>` italic, eyebrow label, thin divider line, scroll indicator becomes a vertical line, staggered entrance animations per element
+## Шаг 6 — i18n
+Ключи переводов для Vietnam/About/Contact в `src/i18n/translations.ts` оставлю как есть (не сломает сборку). Удалять не буду, чтобы не зацепить случайно что-то ещё. Скажи, если хочешь почистить.
 
-3. **`src/components/coach/CoachStatsTrustBar.tsx`** — remove icons and rounded backgrounds; numbers use `.heading-display` serif font, labels use `.label-caps`; horizontal dividers between items
+## Технические детали
+- Edge-функции (`send-contact-email`, `meta-capi`) **не удаляю** — `meta-capi` используется для трекинга на всех страницах, `send-contact-email` может ещё пригодиться. Если хочешь снести `send-contact-email` — отдельной командой.
+- Память проекта (`mem://pages/vietnam-camp/*`, `mem://pages/contact/*`) почищу после удаления страниц, чтобы не вводить в заблуждение будущие правки.
+- После правок проверю сборку и открою preview, чтобы убедиться что нет битых ссылок и роуты работают.
 
-4. **`src/components/coach/MeetYourCoachIntro.tsx`** — remove card/border-l-4 quote box; portrait loses `rounded-2xl`; quote becomes centered italic serif text; section gets `//01` number; `RevealOnScroll` + `AnimatedLine` wrapping
+## Что НЕ делаю (подтверди если нужно)
+- Не удаляю файлы секций Home с диска (MeetYourCoach, WhyImDifferent и т.д.).
+- Не чищу i18n ключи Vietnam/About/Contact.
+- Не удаляю edge-функции.
 
-5. **`src/components/coach/WhyImDifferent.tsx`** — remove emoji icons and rounded circles; items become numbered list (`01`, `02`…) with `//02` section header; `StaggeredList` + `hover:pl-2` micro-interaction
-
-6. **`src/pages/Index.tsx`** — replace testimonials section: card grid becomes a flat numbered list with horizontal dividers; `StaggeredList` for entrance; remove `Star` component
-
-7. **`src/components/TrainingPrograms.tsx`** — remove card grid with `rounded-3xl`; becomes editorial list layout with program number, title, price, features (dashes instead of checkmarks); `StaggeredList` + `AnimatedLine`
-
-8. **`src/components/TrustIndicators.tsx`** — same treatment as CoachStatsTrustBar: remove icons, serif numbers, caps labels, border dividers
-
-9. **`src/components/coach/WhyMyMethodWorks.tsx`** — add `//05` section number and `AnimatedLine`; heading uses `.heading-display`
-
-10. **`src/components/Navbar.tsx`** — nav links get `.label-caps` styling; Book Now button uses `btn-primary` outline style
-
-11. **`src/hooks/use-invisible-animation.tsx`** — create new file with `RevealOnScroll`, `AnimatedLine`, `StaggeredList`
-
-### Visual result
-- Light background kept throughout
-- Serif display headings (Cormorant Garamond) mixed with thin sans-serif (Jost) body text
-- No emoji in UI, no `rounded-3xl` cards, no filled green buttons
-- Sections numbered `//01` through `//05`
-- Slow, elegant scroll reveal animations on all sections
-- Hero: full-screen with staggered text entrance (eyebrow → headline → divider → subheading → CTA)
+Подтверди план — и я выполню всё одним заходом.
