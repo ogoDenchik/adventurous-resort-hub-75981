@@ -26,7 +26,7 @@ const App = () => {
             <ScrollToTopOnMount />
             <Routes>
               <Route path="/" element={<Cyprus />} />
-              <Route path="/cyprus" element={<Cyprus />} />
+              <Route path="/cyprus" element={<Navigate to="/" replace />} />
               <Route path="/kite-safari" element={<KiteSafari />} />
               <Route path="/brazil" element={<Brazil />} />
               <Route path="/gallery" element={<Gallery />} />
