@@ -7,8 +7,7 @@ const Footer: React.FC = () => {
   const { t } = useLanguage();
 
   const navLinks = [
-    { name: t('nav.home'), path: '/' },
-    { name: t('nav.cyprus'), path: '/cyprus' },
+    { name: t('nav.cyprus'), path: '/' },
     { name: t('nav.kiteSafari'), path: '/kite-safari' },
     { name: t('nav.brazil'), path: '/brazil' },
     { name: t('nav.gallery'), path: '/gallery' },
