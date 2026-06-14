@@ -21,8 +21,7 @@ import {
 } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
 import { buildWebhookPayload } from "@/utils/tracking";
-
-const VIETNAM_WEBHOOK_URL = 'https://ogodenchik.app.n8n.cloud/webhook/11ba0950-0d0d-46ac-b106-efe6059a0c87';
+import { supabase } from "@/integrations/supabase/client";
 
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -77,24 +76,22 @@ export const VietnamBookingPopup: React.FC<VietnamBookingPopupProps> = ({
       const packageName = preselectedPackage || 'Vietnam Camp';
       const message = `Customer is interested in ${packageName}. Selected dates: ${data.dates}`;
       
-      const webhookPayload = buildWebhookPayload(
-        'Vietnam Camp',
-        packageName,
-        data.name,
-        data.whatsapp,
-        data.email || '',
-        message
-      );
+      const webhookPayload = {
+        ...buildWebhookPayload(
+          'Vietnam Camp',
+          packageName,
+          data.name,
+          data.whatsapp,
+          data.email || '',
+          message
+        ),
+        form_type: 'vietnam_booking',
+      };
 
-      const response = await fetch(VIETNAM_WEBHOOK_URL, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(webhookPayload),
+      const { data: resp, error } = await supabase.functions.invoke('forward-webhook', {
+        body: webhookPayload,
       });
-
-      if (!response.ok) throw new Error('Request failed');
+      if (error || !(resp as any)?.ok) throw new Error('Request failed');
       
       toast({
         title: "Thank you, we will reply within 24 hours!",
