@@ -14,8 +14,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { buildWebhookPayload } from "@/utils/tracking";
-import { supabase } from "@/integrations/supabase/client";
+
+const WHATSAPP_NUMBER = '48884035225';
 
 const bookingSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -46,37 +46,30 @@ export const BookingPopup: React.FC<BookingPopupProps> = ({ open, onOpenChange }
 
   const onSubmit = async (data: BookingFormData) => {
     setIsSubmitting(true);
-    
-    try {
-      const webhookPayload = {
-        ...buildWebhookPayload(
-          'Website Booking',
-          'General Inquiry',
-          data.name,
-          data.phone,
-          data.email || '',
-          data.message || 'Customer sent a general inquiry.'
-        ),
-        form_type: 'booking_popup',
-      };
 
-      const { data: resp, error } = await supabase.functions.invoke('forward-webhook', {
-        body: webhookPayload,
-      });
-      if (error || !(resp as any)?.ok) throw new Error('Request failed');
-      
+    try {
+      const lines = [
+        'Hi! I would like to get in touch with OGO Kite Academy.',
+        `Name: ${data.name}`,
+        `Phone: ${data.phone}`,
+        data.email ? `Email: ${data.email}` : '',
+        data.message ? `Message: ${data.message}` : '',
+      ].filter(Boolean);
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(lines.join('\n'))}`;
+      window.open(url, '_blank', 'noopener,noreferrer');
+
       toast({
-        title: "Thank you, we will reply within 24 hours!",
-        description: "Our manager will contact you shortly.",
+        title: "Opening WhatsApp",
+        description: "Please send the prefilled message to complete your request.",
       });
-      
+
       reset();
       onOpenChange(false);
     } catch (error) {
-      console.error('Error submitting booking:', error);
+      console.error('Error opening WhatsApp:', error);
       toast({
         title: "Error",
-        description: "Something went wrong. Please try again.",
+        description: "Something went wrong. Please contact us directly on WhatsApp.",
         variant: "destructive",
       });
     } finally {
