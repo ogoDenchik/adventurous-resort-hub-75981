@@ -1,13 +1,39 @@
 // deno-lint-ignore-file no-explicit-any
-// Backend proxy to forward JSON payloads to the external webhook, solving CORS and ensuring proper headers
+// Backend proxy to forward JSON payloads to the external webhooks.
+// Webhook URLs are stored as Supabase secrets and never exposed to the client.
 
-const WEBHOOK_URL = "https://ogodenchik.app.n8n.cloud/webhook/75b33b6a-7c37-4d8a-8750-778a3a9aa6f3";
+const CONTACT_WEBHOOK_URL = Deno.env.get("N8N_CONTACT_WEBHOOK_URL") || "";
+const BOOKING_WEBHOOK_URL = Deno.env.get("N8N_BOOKING_WEBHOOK_URL") || "";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
   "Access-Control-Allow-Headers": "authorization, x-client-info, apikey, content-type",
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
+
+const MAX_PAYLOAD_BYTES = 10 * 1024; // 10KB
+const MAX_NAME = 100;
+const MAX_PHONE = 30;
+const MAX_EMAIL = 255;
+const MAX_MESSAGE = 2000;
+const MAX_GENERIC_STRING = 500;
+
+function clipString(v: unknown, max: number): string {
+  if (typeof v !== "string") return "";
+  return v.trim().slice(0, max);
+}
+
+function pickUrlForFormType(formType: string): string {
+  // Booking-related forms go to the booking webhook; everything else goes to contact.
+  if (
+    formType === "booking_popup" ||
+    formType === "vietnam_booking" ||
+    formType === "kitesafari_booking"
+  ) {
+    return BOOKING_WEBHOOK_URL || CONTACT_WEBHOOK_URL;
+  }
+  return CONTACT_WEBHOOK_URL || BOOKING_WEBHOOK_URL;
+}
 
 Deno.serve(async (req: Request) => {
   if (req.method === "OPTIONS") {
@@ -22,7 +48,29 @@ Deno.serve(async (req: Request) => {
       });
     }
 
-    const payload = await req.json().catch(() => (null));
+    // Enforce maximum payload size to mitigate resource-exhaustion attacks
+    const contentLength = Number(req.headers.get("content-length") || "0");
+    if (contentLength > MAX_PAYLOAD_BYTES) {
+      return new Response(JSON.stringify({ ok: false, error: "Payload too large" }), {
+        status: 413,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    const rawText = await req.text();
+    if (rawText.length > MAX_PAYLOAD_BYTES) {
+      return new Response(JSON.stringify({ ok: false, error: "Payload too large" }), {
+        status: 413,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
+
+    let payload: any = null;
+    try {
+      payload = JSON.parse(rawText);
+    } catch {
+      payload = null;
+    }
     if (!payload || typeof payload !== "object") {
       return new Response(JSON.stringify({ ok: false, error: "Invalid JSON body" }), {
         status: 400,
@@ -30,86 +78,56 @@ Deno.serve(async (req: Request) => {
       });
     }
 
-    // Self-test mode: send sample payloads and return statuses
-    if ((payload as any)._selftest === true) {
-      const sampleDevice = {
-        device_type: "desktop",
-        browser_language: "en-US",
-        timezone: "UTC",
-        platform: "Web",
-      };
+    const formType = clipString(payload.form_type, 50);
 
-      const contactPayload = {
-        name: "Test User",
-        phone: "+10000000000",
-        email: "test@example.com",
-        message: "Contact form self-test",
-        form_type: "contact",
-        timestamp: new Date().toISOString(),
-        ...sampleDevice,
-      };
-
-      const bookingPayload = {
-        name: "Test Booker",
-        phone: "+10000000001",
-        email: "",
-        message: "Booking popup self-test",
-        form_type: "booking_popup",
-        timestamp: new Date().toISOString(),
-        ...sampleDevice,
-      };
-
-      const send = async (body: any) => {
-        const res = await fetch(WEBHOOK_URL, {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json",
-          },
-          body: JSON.stringify(body),
-        });
-        const text = await res.text();
-        return { status: res.status, ok: res.ok, body: text.slice(0, 500) };
-      };
-
-      const [contactRes, bookingRes] = await Promise.all([send(contactPayload), send(bookingPayload)]);
-      console.log("forward-webhook selftest results", { contactRes, bookingRes });
-
-      return new Response(
-        JSON.stringify({ ok: contactRes.ok && bookingRes.ok, selftest: { contact: contactRes, booking_popup: bookingRes } }),
-        { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
-      );
-    }
-
-    // Minimal input safety checks with newsletter support
-    const formType = (payload as any).form_type;
-
+    // Field validation + clipping
     if (formType === "newsletter") {
-      const emailVal = String((payload as any).email || "").trim();
-      const emailOk = emailVal.length > 3 && emailVal.length <= 255 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
+      const emailVal = clipString(payload.email, MAX_EMAIL);
+      const emailOk =
+        emailVal.length > 3 && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailVal);
       if (!emailOk) {
         return new Response(JSON.stringify({ ok: false, error: "Invalid email for newsletter" }), {
           status: 400,
           headers: { ...corsHeaders, "Content-Type": "application/json" },
         });
       }
+      payload.email = emailVal;
     } else {
-      const nameOk = typeof (payload as any).name === "string" && (payload as any).name.trim().length >= 2;
-      const phoneOk = typeof (payload as any).phone === "string" && (payload as any).phone.trim().length >= 6;
-      if (!nameOk || !phoneOk) {
-        return new Response(JSON.stringify({ ok: false, error: "Missing or invalid required fields: name, phone" }), {
-          status: 400,
-          headers: { ...corsHeaders, "Content-Type": "application/json" },
-        });
+      const name = clipString(payload.name, MAX_NAME);
+      const phone = clipString(payload.phone, MAX_PHONE);
+      if (name.length < 2 || phone.length < 6) {
+        return new Response(
+          JSON.stringify({ ok: false, error: "Missing or invalid required fields: name, phone" }),
+          { status: 400, headers: { ...corsHeaders, "Content-Type": "application/json" } },
+        );
+      }
+      payload.name = name;
+      payload.phone = phone;
+      payload.email = clipString(payload.email, MAX_EMAIL);
+      payload.message = clipString(payload.message, MAX_MESSAGE);
+    }
+
+    // Defensive clipping for any other string fields we forward
+    for (const key of Object.keys(payload)) {
+      if (typeof payload[key] === "string" && !["name", "phone", "email", "message"].includes(key)) {
+        payload[key] = (payload[key] as string).slice(0, MAX_GENERIC_STRING);
       }
     }
 
-    // Log only non-sensitive metadata
-    const { form_type, device_type, browser_language, timezone, platform } = (payload as any);
-    console.log("forward-webhook received", { form_type, device_type, browser_language, timezone, platform });
+    const targetUrl = pickUrlForFormType(formType);
+    if (!targetUrl) {
+      console.error("forward-webhook: no upstream URL configured");
+      return new Response(JSON.stringify({ ok: false, error: "Upstream not configured" }), {
+        status: 500,
+        headers: { ...corsHeaders, "Content-Type": "application/json" },
+      });
+    }
 
-    // Forward to external webhook as JSON
-    const forwardRes = await fetch(WEBHOOK_URL, {
+    // Log only non-sensitive metadata
+    const { device_type, browser_language, timezone, platform } = payload;
+    console.log("forward-webhook received", { form_type: formType, device_type, browser_language, timezone, platform });
+
+    const forwardRes = await fetch(targetUrl, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -119,22 +137,22 @@ Deno.serve(async (req: Request) => {
     });
 
     const text = await forwardRes.text();
-    console.log("forward-webhook upstream", { status: forwardRes.status, ok: forwardRes.ok, body: text.slice(0, 500) });
+    console.log("forward-webhook upstream", { status: forwardRes.status, ok: forwardRes.ok });
 
     if (!forwardRes.ok) {
       return new Response(
-        JSON.stringify({ ok: false, upstream_status: forwardRes.status, body: text }),
+        JSON.stringify({ ok: false, upstream_status: forwardRes.status }),
         { status: 502, headers: { ...corsHeaders, "Content-Type": "application/json" } }
       );
     }
 
     return new Response(
-      JSON.stringify({ ok: true, status: forwardRes.status, body: text }),
+      JSON.stringify({ ok: true, status: forwardRes.status }),
       { status: 200, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   } catch (err: any) {
     console.error("forward-webhook error", String(err?.message || err));
-    return new Response(JSON.stringify({ ok: false, error: String(err?.message || err) }), {
+    return new Response(JSON.stringify({ ok: false, error: "Internal error" }), {
       status: 500,
       headers: { ...corsHeaders, "Content-Type": "application/json" },
     });
