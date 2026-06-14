@@ -1649,7 +1649,7 @@ const Vietnam = () => {
                 <span className="text-2xl">💬</span>
                 <span>WhatsApp: +48 884 035 225</span>
               </a>
-              <a href="https://t.me/+48884035225" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-background/60 transition-colors">
+              <a href="https://t.me/ogodenchik_official" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 hover:text-background/60 transition-colors">
                 <span className="text-2xl">✈️</span>
                 <span>Telegram: +48 884 035 225</span>
               </a>
