@@ -5,7 +5,6 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
-import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Gallery from "./pages/Gallery";
 import KiteSafari from "./pages/KiteSafari";
@@ -26,10 +25,10 @@ const App = () => {
           <BrowserRouter>
             <ScrollToTopOnMount />
             <Routes>
-              <Route path="/" element={<Index />} />
+              <Route path="/" element={<Cyprus />} />
+              <Route path="/cyprus" element={<Cyprus />} />
               <Route path="/kite-safari" element={<KiteSafari />} />
               <Route path="/brazil" element={<Brazil />} />
-              <Route path="/cyprus" element={<Cyprus />} />
               <Route path="/gallery" element={<Gallery />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
