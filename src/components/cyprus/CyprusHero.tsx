@@ -10,7 +10,7 @@ const CyprusHero: React.FC = () => {
   };
 
   const scrollToProgressionCoach = () => {
-    document.getElementById('cyprus-team')?.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('denis-progression')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
