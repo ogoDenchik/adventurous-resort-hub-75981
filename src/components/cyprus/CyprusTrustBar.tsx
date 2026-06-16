@@ -1,12 +1,12 @@
 import React from 'react';
-import { Award, Clock, GraduationCap, Target } from 'lucide-react';
+import { Clock, GraduationCap, MapPin, Target } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const CyprusTrustBar: React.FC = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { icon: Award, stat: '500+', label: t('cyprus.students'), iconColor: 'text-amber-500', bgColor: 'bg-amber-500/10' },
+    { icon: MapPin, stat: '25 Min', label: t('cyprus.driveFromLimassol'), iconColor: 'text-rose-500', bgColor: 'bg-rose-500/10' },
     { icon: Clock, stat: '12-20:00', label: t('cyprus.windDays'), iconColor: 'text-sky-600', bgColor: 'bg-sky-500/10' },
     { icon: Target, label: t('cyprus.returning'), iconColor: 'text-violet-500', bgColor: 'bg-violet-500/10' },
     { icon: GraduationCap, label: t('cyprus.firstRide'), iconColor: 'text-teal-500', bgColor: 'bg-teal-500/10' },
