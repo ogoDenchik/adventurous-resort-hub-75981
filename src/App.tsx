@@ -10,6 +10,7 @@ import ScrollToTopOnMount from "./components/ScrollToTopOnMount";
 
 // Code-split non-landing routes so the homepage ships less JS on first load.
 const KiteSafari = lazy(() => import("./pages/KiteSafari"));
+const CatamaranKiteSafari = lazy(() => import("./pages/CatamaranKiteSafari"));
 const Brazil = lazy(() => import("./pages/Brazil"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const NotFound = lazy(() => import("./pages/NotFound"));
