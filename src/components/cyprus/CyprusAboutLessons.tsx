@@ -1,33 +1,22 @@
 import React from 'react';
-import { Radio, Package, User, ArrowRight } from 'lucide-react';
+import { Radio, Package, User, Wind, ArrowRight } from 'lucide-react';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
 import { trackContactClick } from '@/utils/metaTracking';
 
-const inclusions = [
-  {
-    icon: Package,
-    title: 'FULL DUOTONE KIT',
-    desc: 'Kites, boards, harness, helmet, wetsuit and safety gear. The latest models, fresh every season. Just bring yourself.',
-  },
-  {
-    icon: Radio,
-    title: 'BB TALKIN’ RADIO',
-    desc: 'Real-time voice from your coach — on the beach or out on the water. Guidance, corrections and answers the moment you need them.',
-  },
-  {
-    icon: User,
-    title: 'STRICTLY 1-ON-1',
-    desc: 'Always personal. Never a group. Every session is built around your level, your goals and the wind of the day.',
-  },
+const pillars = [
+  { icon: Package, title: 'DUOTONE GEAR', desc: 'Kites, boards, harness, helmet. All included.' },
+  { icon: Radio,   title: 'BB TALKIN’ RADIO', desc: 'Live coaching in your ear — on land or in the water.' },
+  { icon: User,    title: '1-ON-1 FORMAT', desc: 'Always private. Never a group.' },
+  { icon: Wind,    title: 'SESSIONS, NOT HOURS', desc: '~1.5h of pure active training per session.' },
 ];
 
 const roadmap = [
-  { num: '01', title: 'KITE PILOTING', desc: 'Reading wind, the wind window, controlling the kite with confidence.' },
-  { num: '02', title: 'LAND DRILLS', desc: 'Swings sitting and standing. Building the muscle memory before the water.' },
-  { num: '03', title: 'WATER SWINGS & BODY DRAG', desc: 'Moving with the kite in the water. Learning to recover your board.' },
-  { num: '04', title: 'POSITIONING & WATER STARTS', desc: 'Standing up. Riding your first meters. The breakthrough moment.' },
-  { num: '05', title: 'INDEPENDENT RIDING', desc: 'Upwind, transitions, full control in changing conditions.' },
-  { num: '06', title: 'ADVANCED & TRICKS', desc: 'Backrolls, frontrolls, rotations, kiteloops, heeloops, downloops.' },
+  { num: '01', title: 'KITE PILOTING' },
+  { num: '02', title: 'LAND DRILLS' },
+  { num: '03', title: 'BODY DRAG' },
+  { num: '04', title: 'WATER START' },
+  { num: '05', title: 'INDEPENDENT RIDING' },
+  { num: '06', title: 'TRICKS & ROTATIONS' },
 ];
 
 const bookHref =
@@ -35,132 +24,107 @@ const bookHref =
 
 const CyprusAboutLessons: React.FC = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background overflow-hidden">
       <div className="container max-w-5xl">
-        {/* Section header */}
+        {/* Header */}
         <RevealOnScroll>
-          <p className="section-number mb-6">04 — ABOUT OUR LESSONS</p>
+          <p className="section-number mb-6">04 — OUR LESSONS</p>
         </RevealOnScroll>
 
-        <AnimatedLine className="mb-16" />
+        <AnimatedLine className="mb-12" />
 
-        <RevealOnScroll delay={100} className="mb-6">
+        <RevealOnScroll delay={100} className="mb-16 md:mb-20">
           <h2 className="heading-display text-4xl md:text-6xl text-foreground leading-tight">
-            LESSONS BUILT AROUND YOU,<br className="hidden md:block" /> NOT THE CLOCK.
+            BUILT AROUND YOU.<br />
+            <span className="italic font-light text-muted-foreground">Not the clock.</span>
           </h2>
         </RevealOnScroll>
 
-        <RevealOnScroll delay={200} className="mb-20 max-w-2xl">
-          <p className="text-muted-foreground text-base md:text-lg leading-relaxed font-light">
-            A clear method, premium gear and a coach in your ear. Everything we do is designed
-            so you progress faster, ride safer, and fall in love with the sport along the way.
-          </p>
-        </RevealOnScroll>
+        {/* 4 pillars */}
+        <StaggeredList
+          staggerMs={120}
+          baseDelay={150}
+          className="grid grid-cols-2 md:grid-cols-4 gap-0 border-y border-border/40 mb-24"
+        >
+          {pillars.map((p) => (
+            <div
+              key={p.title}
+              className="group relative py-8 md:py-10 px-4 md:px-6 border-r last:border-r-0 [&:nth-child(3)]:border-r-0 md:[&:nth-child(3)]:border-r [&:nth-child(-n+2)]:border-b md:[&:nth-child(-n+2)]:border-b-0 border-border/40 transition-colors duration-500 hover:bg-muted/30"
+            >
+              <p.icon
+                className="w-5 h-5 md:w-6 md:h-6 text-primary mb-5 transition-transform duration-500 group-hover:-translate-y-1 group-hover:rotate-[-4deg]"
+                strokeWidth={1.25}
+              />
+              <h4 className="font-medium text-foreground uppercase text-xs md:text-sm tracking-widest mb-2 leading-tight">
+                {p.title}
+              </h4>
+              <p className="text-muted-foreground text-xs md:text-sm leading-relaxed font-light">
+                {p.desc}
+              </p>
+              <div className="absolute left-0 bottom-0 h-px bg-primary w-0 group-hover:w-full transition-all duration-700" />
+            </div>
+          ))}
+        </StaggeredList>
 
-        {/* Block 1 — Sessions, not hours */}
+        {/* Method — big pull quote */}
         <RevealOnScroll delay={100}>
-          <div className="grid grid-cols-1 md:grid-cols-[auto_1fr] gap-8 md:gap-16 items-start py-12 border-y border-border/40 mb-24">
-            <div>
-              <p className="section-number mb-3">SESSION FORMAT</p>
-              <p className="heading-display text-7xl md:text-8xl text-foreground leading-none">
-                1.5<span className="text-3xl md:text-4xl align-top ml-1">h</span>
-              </p>
-              <p className="label-caps text-muted-foreground mt-3">One active session</p>
-            </div>
-            <div className="md:pt-6">
-              <p className="text-foreground text-lg md:text-xl leading-relaxed font-light">
-                We don’t sell hours. We sell <em className="not-italic font-normal text-foreground">sessions</em> —
-                roughly 1.5 hours of pure 1-on-1 active training on the water with your coach.
-                No waiting, no sharing, no wasted wind.
-              </p>
-            </div>
+          <div className="relative py-14 md:py-20 mb-24 border-y border-border/40">
+            <p className="section-number mb-6">THE METHOD</p>
+            <p className="heading-display text-3xl md:text-5xl text-foreground leading-tight max-w-3xl">
+              The <span className="italic">Denis Evdorenko</span> Method —
+              <span className="text-muted-foreground"> proven fundamentals, </span>
+              sharpened with the small details that
+              <span className="border-b-2 border-primary"> actually make you ride</span>.
+            </p>
+            <span className="absolute -top-3 -left-2 md:-left-6 text-7xl md:text-9xl text-primary/10 font-serif leading-none select-none pointer-events-none">
+              “
+            </span>
           </div>
         </RevealOnScroll>
 
-        {/* Block 2 — What's included */}
-        <div className="mb-24">
-          <RevealOnScroll>
-            <p className="section-number mb-6">WHAT’S INCLUDED</p>
-          </RevealOnScroll>
-          <StaggeredList
-            staggerMs={130}
-            baseDelay={150}
-            className="grid grid-cols-1 md:grid-cols-3 gap-0 border-y border-border/40"
-          >
-            {inclusions.map((item) => (
-              <div
-                key={item.title}
-                className="py-10 md:px-8 border-b md:border-b-0 md:border-r last:border-b-0 md:last:border-r-0 border-border/40"
-              >
-                <item.icon className="w-6 h-6 text-primary mb-6" strokeWidth={1.25} />
-                <h4 className="font-medium text-foreground uppercase text-sm tracking-widest mb-4">
-                  {item.title}
-                </h4>
-                <p className="text-muted-foreground text-sm leading-relaxed font-light">
-                  {item.desc}
-                </p>
-              </div>
-            ))}
-          </StaggeredList>
-        </div>
-
-        {/* Block 3 — The Method (featured) */}
-        <div className="mb-24 grid grid-cols-1 md:grid-cols-[1fr_2fr] gap-10 md:gap-16 relative">
-          <div className="md:border-r md:border-border/40 md:pr-10">
-            <RevealOnScroll>
-              <p className="section-number mb-6">THE METHOD</p>
-              <h3 className="heading-display text-3xl md:text-4xl text-foreground leading-tight">
-                THE DENIS<br />EVDORENKO<br />METHOD.
-              </h3>
-            </RevealOnScroll>
-          </div>
-          <div>
-            <RevealOnScroll delay={150}>
-              <p className="text-foreground text-base md:text-lg leading-relaxed font-light mb-6">
-                A personal teaching system built by Denis on top of proven kitesurfing fundamentals
-                — and sharpened with years of his own refinements on the water with hundreds
-                of students.
-              </p>
-              <p className="text-muted-foreground text-base leading-relaxed font-light">
-                On paper, the exercises look like any school: kite piloting, swings on land, body drag,
-                positioning, water starts. In practice, each step carries its own details and
-                <em className="not-italic text-foreground"> nuances</em> — the small things that turn
-                “I took a course” into “I actually ride”. Faster progression. Safer learning.
-                A real love for the sport.
-              </p>
-            </RevealOnScroll>
-          </div>
-        </div>
-
-        {/* Block 4 — Roadmap */}
+        {/* Roadmap — horizontal animated track */}
         <div className="mb-16">
-          <RevealOnScroll className="mb-10">
-            <p className="section-number mb-6">PROGRESSION ROADMAP</p>
-            <h3 className="heading-display text-3xl md:text-4xl text-foreground">
-              FROM FIRST TOUCH TO FIRST KITELOOP.
-            </h3>
+          <RevealOnScroll className="mb-10 flex items-end justify-between gap-6 flex-wrap">
+            <div>
+              <p className="section-number mb-4">PROGRESSION</p>
+              <h3 className="heading-display text-3xl md:text-4xl text-foreground leading-tight">
+                FIRST TOUCH<br />→ FIRST KITELOOP.
+              </h3>
+            </div>
+            <p className="text-muted-foreground text-sm font-light max-w-xs">
+              A clear path from total beginner to advanced rider — at your own pace.
+            </p>
           </RevealOnScroll>
 
-          <StaggeredList staggerMs={90} baseDelay={120}>
-            {roadmap.map((step) => (
-              <div key={step.num} className="group">
-                <div className="grid grid-cols-[auto_1fr] md:grid-cols-[80px_1fr_2fr] gap-4 md:gap-10 py-6 items-baseline transition-all duration-300 group-hover:pl-2">
-                  <span className="section-number text-base">{step.num}</span>
-                  <p className="font-medium text-foreground uppercase text-sm md:text-base tracking-wide col-span-1 md:col-span-1">
-                    {step.title}
-                  </p>
-                  <p className="text-muted-foreground text-sm leading-relaxed font-light col-span-2 md:col-span-1">
-                    {step.desc}
+          {/* Animated progress line */}
+          <RevealOnScroll delay={100} className="relative">
+            <div className="absolute left-0 right-0 top-[18px] h-px bg-border/60" />
+            <div className="absolute left-0 top-[18px] h-px bg-primary animate-[progress_2.5s_ease-out_forwards] origin-left" style={{ width: '100%', transform: 'scaleX(0)', animationFillMode: 'forwards' }} />
+            <StaggeredList
+              staggerMs={120}
+              baseDelay={250}
+              className="grid grid-cols-3 md:grid-cols-6 gap-x-2 gap-y-8 relative"
+            >
+              {roadmap.map((s) => (
+                <div key={s.num} className="flex flex-col items-center text-center group">
+                  <div className="relative z-10 mb-4">
+                    <div className="w-9 h-9 rounded-full bg-background border border-border flex items-center justify-center transition-all duration-300 group-hover:border-primary group-hover:scale-110">
+                      <span className="text-[10px] tracking-widest text-muted-foreground group-hover:text-primary transition-colors">
+                        {s.num}
+                      </span>
+                    </div>
+                  </div>
+                  <p className="font-medium text-foreground uppercase text-[10px] md:text-xs tracking-widest leading-tight">
+                    {s.title}
                   </p>
                 </div>
-                <div className="section-divider" />
-              </div>
-            ))}
-          </StaggeredList>
+              ))}
+            </StaggeredList>
+          </RevealOnScroll>
 
-          <RevealOnScroll delay={200} className="mt-10 max-w-2xl">
-            <p className="text-foreground text-lg md:text-xl leading-relaxed font-light italic">
-              “Becoming independent isn’t the finish line — it’s where the fun starts.”
+          <RevealOnScroll delay={300} className="mt-14 max-w-xl">
+            <p className="text-foreground text-base md:text-lg leading-relaxed font-light italic">
+              “Going independent isn’t the finish line — it’s where the fun starts.”
             </p>
           </RevealOnScroll>
         </div>
@@ -179,6 +143,13 @@ const CyprusAboutLessons: React.FC = () => {
           </a>
         </RevealOnScroll>
       </div>
+
+      <style>{`
+        @keyframes progress {
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
+        }
+      `}</style>
     </section>
   );
 };
