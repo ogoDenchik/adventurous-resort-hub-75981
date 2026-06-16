@@ -6,6 +6,7 @@ import { Button } from '@/components/ui/button';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
+import Seo from '@/components/Seo';
 
 const BookingSuccess = () => {
   const navigate = useNavigate();
@@ -17,6 +18,11 @@ const BookingSuccess = () => {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <Seo
+        title="Booking Confirmed — OGO Kite Academy"
+        description="Your booking has been confirmed. OGO Kite Academy will contact you shortly with further details."
+        path="/booking-success"
+      />
       <Navbar />
       <main className="flex-grow flex items-center justify-center bg-gray-50 p-4 pt-24 pb-24">
         <motion.div
@@ -49,7 +55,7 @@ const BookingSuccess = () => {
             transition={{ delay: 0.4 }}
             className="text-gray-600 mb-8"
           >
-            Thank you for choosing Dandeli Adventures. We've sent a confirmation email to your registered email address.
+            Thank you for choosing OGO Kite Academy. We've sent a confirmation email to your registered email address.
           </motion.p>
 
           <motion.div
