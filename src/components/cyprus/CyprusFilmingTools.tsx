@@ -3,6 +3,7 @@ import { Camera, Aperture, Plane } from 'lucide-react';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import filmingToolsPhoto from '@/assets/filming-tools.jpg.asset.json';
+import LazyYouTube from '@/components/LazyYouTube';
 
 const CyprusFilmingTools: React.FC = () => {
   const { t } = useLanguage();
@@ -23,16 +24,32 @@ const CyprusFilmingTools: React.FC = () => {
         <AnimatedLine className="mb-12" />
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-          {/* Image */}
+          {/* Image + mini video */}
           <RevealOnScroll delay={100}>
-            <div className="relative overflow-hidden rounded-2xl md:rounded-3xl aspect-[4/5] bg-muted">
-              <img
-                src={filmingToolsPhoto.url}
-                alt="Sony Alpha 4, Tamron 150-500mm lens and DJI Mini 4 Pro drone"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+            <div className="relative">
+              <div className="relative overflow-hidden rounded-2xl md:rounded-3xl aspect-[4/5] bg-muted">
+                <img
+                  src={filmingToolsPhoto.url}
+                  alt="Sony Alpha 4, Tamron 150-500mm lens and DJI Mini 4 Pro drone"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
+              </div>
+
+              {/* Mini YouTube Shorts — sample footage */}
+              <div className="mt-4 md:mt-0 md:absolute md:-bottom-6 md:-right-6 md:w-40 lg:w-48 md:z-10">
+                <div className="relative w-full md:w-auto max-w-[180px] md:max-w-none mx-auto md:mx-0" style={{ aspectRatio: '9/16' }}>
+                  <LazyYouTube
+                    videoId="m9UP99hHl0Q"
+                    title="Sample footage shot with our filming tools"
+                    className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-border md:ring-2 md:ring-background"
+                  />
+                  <p className="mt-2 text-[9px] md:text-[10px] tracking-[0.25em] text-muted-foreground text-center font-light uppercase">
+                    {t('cyprus.filmingSampleLabel')}
+                  </p>
+                </div>
+              </div>
             </div>
           </RevealOnScroll>
 

@@ -220,6 +220,7 @@ export const translations: Translations = {
       filmingTool2: 'Tamron 150–500mm lens',
       filmingTool3: 'DJI Mini 4 Pro drone',
       filmingNote: 'This setup lets us film you from any angle and in the highest quality. Denis reviews the footage with you so you can see your tricks from the outside and progress faster.',
+      filmingSampleLabel: 'Sample footage',
       // Session photos
       sessionPhotosSectionNum: '08 — IN THE FRAME',
       sessionPhotosTitle: 'OUR PHOTOS DURING KITE SESSIONS',
@@ -489,6 +490,7 @@ export const translations: Translations = {
       filmingTool2: 'Объектив Tamron 150–500',
       filmingTool3: 'Дрон DJI Mini 4 Pro',
       filmingNote: 'С такой техникой мы снимаем вас с любого ракурса в максимальном качестве. Денис разбирает кадры вместе с вами — вы видите себя со стороны и прогрессируете быстрее.',
+      filmingSampleLabel: 'Пример съёмки',
       // Session photos
       sessionPhotosSectionNum: '08 — В КАДРЕ',
       sessionPhotosTitle: 'НАШИ ФОТО С КАЙТ-СЕССИЙ',
