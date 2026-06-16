@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowLeft, ArrowRight, X, Home, Compass } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Seo from '@/components/Seo';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
 
@@ -119,7 +120,13 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo
+        title="Kitesurfing Photo Gallery | OGO Kite Academy"
+        description="Photos from our kite lessons in Cyprus, the Egypt safari and the Brazil camp. Sessions, students, sunsets and trips."
+        path="/gallery"
+      />
       <Navbar />
+      
       
       <main className="flex-grow pt-28 md:pt-32 pb-24">
         <div className="container mx-auto px-4">

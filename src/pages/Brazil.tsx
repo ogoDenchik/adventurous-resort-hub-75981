@@ -3,17 +3,35 @@ import { Link } from 'react-router-dom';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import Seo from '@/components/Seo';
 import { EnhancedBookingPopup } from '@/components/EnhancedBookingPopup';
 import { Button } from '@/components/ui/button';
 import { PlaneLanding, PlaneTakeoff, MessageCircle, Instagram, Send, Home } from 'lucide-react';
+
+const brazilJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Brazil Kitesurfing Camp with OGO Kite Academy',
+  description: 'Two weeks of kitesurfing freedom in Brazil with coaching, downwinders and accommodation.',
+  brand: { '@type': 'Brand', name: 'OGO Kite Academy' },
+  image: 'https://ogokiteacademy.com/lovable-uploads/brazil-hero-team.png',
+  offers: { '@type': 'Offer', priceCurrency: 'EUR', availability: 'https://schema.org/InStock', url: 'https://ogokiteacademy.com/brazil' },
+};
 
 const Brazil: React.FC = () => {
   const [bookingPopupOpen, setBookingPopupOpen] = useState(false);
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Brazil Kitesurfing Camp — 2 Weeks of Freedom | OGO Kite Academy"
+        description="Join our Brazil kitesurfing camp for two weeks of riding in Jericoacoara. Coaching, downwinders, accommodation. Book your spot via DM."
+        path="/brazil"
+        jsonLd={brazilJsonLd}
+      />
       <Navbar />
       <ScrollToTop />
+      <main>
       
       {/* Hero Section */}
       <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -669,7 +687,7 @@ const Brazil: React.FC = () => {
         title="Book Your Brazil Adventure"
         description="Get in touch and we'll be happy to help with any questions"
       />
-      
+      </main>
       <Footer />
     </div>
   );

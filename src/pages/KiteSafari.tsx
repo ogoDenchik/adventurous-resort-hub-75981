@@ -2,6 +2,7 @@ import React, { useRef, useEffect } from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import Seo from '@/components/Seo';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
@@ -9,6 +10,16 @@ import { Ship, Wind, Users, GraduationCap, CheckCircle, XCircle, Euro, Bed, Eye,
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from '@/components/ui/carousel';
 import Autoplay from "embla-carousel-autoplay";
+
+const kiteSafariJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: 'Egypt Kite Safari with OGO Kite Academy',
+  description: 'A week-long kitesurfing safari on a luxury catamaran in Egypt with coaching, accommodation and meals included.',
+  brand: { '@type': 'Brand', name: 'OGO Kite Academy' },
+  image: 'https://ogokiteacademy.com/lovable-uploads/kitesafari-hero-desktop-v2.jpg',
+  offers: { '@type': 'Offer', priceCurrency: 'EUR', price: '1850', availability: 'https://schema.org/InStock', url: 'https://ogokiteacademy.com/kite-safari' },
+};
 
 
 
@@ -47,6 +58,12 @@ const KiteSafari: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Egypt Kite Safari — Luxury Catamaran Trip | OGO Kite Academy"
+        description="Join a week-long kite safari in Egypt aboard a luxury catamaran. Coaching, gear, cabins and meals included. Limited cabins each season."
+        path="/kite-safari"
+        jsonLd={kiteSafariJsonLd}
+      />
       <Navbar />
       <ScrollToTop />
       
