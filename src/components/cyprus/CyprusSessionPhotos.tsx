@@ -4,16 +4,15 @@ import { RevealOnScroll, AnimatedLine } from '@/hooks/use-invisible-animation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import p1 from '@/assets/kite-sessions/photo_2026-06-14_10-54-19.jpg.asset.json';
 import p2 from '@/assets/kite-sessions/photo_2026-06-04_01-41-22.jpg.asset.json';
-import p3 from '@/assets/kite-sessions/photo_2026-06-14_23-43-01.jpg.asset.json';
-import p4 from '@/assets/kite-sessions/photo_2026-06-04_01-38-44.jpg.asset.json';
-import p5 from '@/assets/kite-sessions/photo_2026-06-01_00-29-00.jpg.asset.json';
-import p6 from '@/assets/kite-sessions/photo_2026-06-14_10-58-15.jpg.asset.json';
-import p7 from '@/assets/kite-sessions/photo_2026-06-04_01-41-23.jpg.asset.json';
-import p8 from '@/assets/kite-sessions/photo_2026-06-04_01-41-11.jpg.asset.json';
-import p9 from '@/assets/kite-sessions/photo_2026-06-01_00-28-57.jpg.asset.json';
-import p10 from '@/assets/kite-sessions/photo_2026-05-28_23-25-47.jpg.asset.json';
+import p3 from '@/assets/kite-sessions/photo_2026-06-14_10-58-15.jpg.asset.json';
+import p4 from '@/assets/kite-sessions/photo_2026-06-04_01-41-23.jpg.asset.json';
+import n1 from '@/assets/kite-sessions/IMG_8914.jpg.asset.json';
+import n2 from '@/assets/kite-sessions/P5200536.jpg.asset.json';
+import n3 from '@/assets/kite-sessions/IMG_9184.jpg.asset.json';
+import n4 from '@/assets/kite-sessions/IMG_8913.jpg.asset.json';
+import n5 from '@/assets/kite-sessions/IMG_9181.jpg.asset.json';
 
-const photos = [p1, p2, p3, p4, p5, p6, p7, p8, p9, p10].map((a) => a.url);
+const photos = [n1, p1, n2, p2, n3, p3, n4, p4, n5].map((a) => a.url);
 
 const CyprusSessionPhotos: React.FC = () => {
   const { t } = useLanguage();
