@@ -38,6 +38,9 @@ const App = () => {
                 <Route path="/catamaran-kite-safari" element={<CatamaranKiteSafari />} />
                 <Route path="/brazil" element={<Brazil />} />
                 <Route path="/gallery" element={<Gallery />} />
+                <Route path="/guides/kitesurfing-limassol" element={<GuideKitesurfingLimassol />} />
+                <Route path="/guides/how-to-learn-kitesurfing" element={<GuideHowToLearnKitesurfing />} />
+                <Route path="/guides/egypt-kite-safari-guide" element={<GuideEgyptKiteSafari />} />
                 <Route path="*" element={<NotFound />} />
               </Routes>
               <ContactFAB />
