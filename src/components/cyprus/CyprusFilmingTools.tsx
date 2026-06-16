@@ -1,9 +1,16 @@
 import React from 'react';
-import { Camera, Aperture, Plane } from 'lucide-react';
+import { Camera, Aperture, Plane, Play } from 'lucide-react';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import filmingToolsPhoto from '@/assets/filming-tools.jpg.asset.json';
-import LazyYouTube from '@/components/LazyYouTube';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+  DialogTitle,
+} from '@/components/ui/dialog';
+
+
 
 const CyprusFilmingTools: React.FC = () => {
   const { t } = useLanguage();
@@ -37,18 +44,36 @@ const CyprusFilmingTools: React.FC = () => {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent pointer-events-none" />
               </div>
 
-              {/* Mini YouTube Shorts — sample footage */}
-              <div className="mt-4 md:mt-0 md:absolute md:-bottom-6 md:-right-6 md:w-40 lg:w-48 md:z-10">
-                <div className="relative w-full md:w-auto max-w-[180px] md:max-w-none mx-auto md:mx-0" style={{ aspectRatio: '9/16' }}>
-                  <LazyYouTube
-                    videoId="m9UP99hHl0Q"
-                    title="Sample footage shot with our filming tools"
-                    className="relative w-full h-full rounded-xl md:rounded-2xl overflow-hidden shadow-2xl ring-1 ring-border md:ring-2 md:ring-background"
-                  />
-                  <p className="mt-2 text-[9px] md:text-[10px] tracking-[0.25em] text-muted-foreground text-center font-light uppercase">
-                    {t('cyprus.filmingSampleLabel')}
-                  </p>
-                </div>
+              {/* YouTube sample footage — compact icon trigger */}
+              <div className="mt-4 md:mt-0 md:absolute md:-bottom-5 md:-right-5 md:z-10">
+                <Dialog>
+                  <DialogTrigger asChild>
+                    <button
+                      type="button"
+                      className="group flex items-center gap-3 mx-auto md:mx-0 transition-transform duration-300 hover:scale-105"
+                      aria-label="Watch sample footage"
+                    >
+                      <span className="w-12 h-12 flex items-center justify-center rounded-full bg-background/90 backdrop-blur-sm border border-border/60 shadow-xl text-primary transition-all duration-300 group-hover:border-primary/40 group-hover:text-foreground">
+                        <Play className="w-5 h-5 ml-0.5" fill="currentColor" strokeWidth={0} />
+                      </span>
+                      <p className="text-[10px] md:text-[11px] tracking-[0.25em] text-muted-foreground text-center font-light uppercase transition-colors duration-300 group-hover:text-foreground">
+                        {t('cyprus.filmingSampleLabel')}
+                      </p>
+                    </button>
+                  </DialogTrigger>
+                  <DialogContent className="w-[calc(100%-2rem)] max-w-sm p-0 border-0 bg-black overflow-hidden rounded-2xl">
+                    <DialogTitle className="sr-only">Sample footage shot with our filming tools</DialogTitle>
+                    <div style={{ aspectRatio: '9/16' }}>
+                      <iframe
+                        src={`https://www.youtube.com/embed/QEMI2Xh-B9c`}
+                        title="Sample footage shot with our filming tools"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        className="w-full h-full"
+                      />
+                    </div>
+                  </DialogContent>
+                </Dialog>
               </div>
             </div>
           </RevealOnScroll>
