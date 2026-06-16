@@ -11,8 +11,10 @@ import n2 from '@/assets/kite-sessions/P5200536.jpg.asset.json';
 import n3 from '@/assets/kite-sessions/IMG_9184.jpg.asset.json';
 import n4 from '@/assets/kite-sessions/IMG_8913.jpg.asset.json';
 import n5 from '@/assets/kite-sessions/IMG_9181.jpg.asset.json';
+import n6 from '@/assets/kite-sessions/student_thumbsup.jpg.asset.json';
+import n7 from '@/assets/kite-sessions/students_duo.jpg.asset.json';
 
-const photos = [n1, p1, n2, p2, n3, p3, n4, p4, n5].map((a) => a.url);
+const photos = [n1, p1, n2, p2, n3, p3, n4, p4, n5, n6, n7].map((a) => a.url);
 
 const CyprusSessionPhotos: React.FC = () => {
   const { t } = useLanguage();
