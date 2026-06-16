@@ -174,7 +174,7 @@ const Cyprus: React.FC = () => {
       </section>
 
       <CyprusFAQ />
-      
+      </main>
       <Footer />
     </div>
   );
