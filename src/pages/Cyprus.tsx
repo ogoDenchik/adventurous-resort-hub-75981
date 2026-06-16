@@ -146,7 +146,7 @@ const Cyprus: React.FC = () => {
             </h2>
             <LazyYouTube
               videoId="jn9oejNBv2A"
-              title="Water Start Tutorial"
+              title="Kitesurfing Water Start Tutorial — OGO Kite Academy"
               className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
             />
           </div>
