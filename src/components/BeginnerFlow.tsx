@@ -23,7 +23,7 @@ const steps = [
     num: '03',
     title: 'Board Start',
     description: 'Your first real rides. Learn water starts, board control, and how to ride short distances with instructor support.',
-    icon: Surfboard,
+    icon: Zap,
     duration: '3–5 hours',
     skills: ['Water start', 'Board stance', 'First rides', 'Speed control'],
   },
