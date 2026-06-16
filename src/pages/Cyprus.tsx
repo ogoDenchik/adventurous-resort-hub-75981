@@ -126,7 +126,7 @@ const Cyprus: React.FC = () => {
           <div className="max-w-sm mx-auto" style={{ aspectRatio: '9/16' }}>
             <LazyYouTube
               videoId="ZEg4JkGOVWg"
-              title="OGO Kite Academy"
+              title="OGO Kite Academy — Kitesurfing in Limassol, Cyprus"
               className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl"
             />
           </div>
