@@ -15,6 +15,9 @@ const Brazil = lazy(() => import("./pages/Brazil"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 const ContactFAB = lazy(() => import("./components/ContactFAB"));
+const GuideKitesurfingLimassol = lazy(() => import("./pages/guides/KitesurfingLimassol"));
+const GuideHowToLearnKitesurfing = lazy(() => import("./pages/guides/HowToLearnKitesurfing"));
+const GuideEgyptKiteSafari = lazy(() => import("./pages/guides/EgyptKiteSafariGuide"));
 
 const queryClient = new QueryClient();
 
