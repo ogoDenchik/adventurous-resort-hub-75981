@@ -71,7 +71,7 @@ const CyprusAboutLessons: React.FC = () => {
           <div className="relative py-14 md:py-20 mb-24 border-y border-border/40">
             <p className="section-number mb-6">THE METHOD</p>
             <p className="heading-display text-3xl md:text-5xl text-foreground leading-tight max-w-3xl">
-              The <span className="italic">Denis Evdorenko</span> Method —
+              The <span className="italic">Denis Udovenko</span> Method —
               <span className="text-muted-foreground"> proven fundamentals, </span>
               sharpened with the small details that
               <span className="border-b-2 border-primary"> actually make you ride</span>.
