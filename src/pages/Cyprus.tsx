@@ -7,6 +7,7 @@ import { MessageCircle, Send, Instagram } from 'lucide-react';
 import CyprusHero from '@/components/cyprus/CyprusHero';
 import LearningJourney from '@/components/cyprus/LearningJourney';
 import CyprusTrustBar from '@/components/cyprus/CyprusTrustBar';
+import CyprusAboutLessons from '@/components/cyprus/CyprusAboutLessons';
 import CyprusLifestyle from '@/components/cyprus/CyprusLifestyle';
 import CyprusAdvantages from '@/components/cyprus/CyprusAdvantages';
 import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
@@ -119,6 +120,7 @@ const Cyprus: React.FC = () => {
       <CyprusHero />
       <CyprusTrustBar />
       <LearningJourney />
+      <CyprusAboutLessons />
 
       {/* YouTube Shorts Video */}
       <section className="py-12 md:py-16 bg-background">

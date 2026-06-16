@@ -1,58 +1,52 @@
-## Цель
-1. Сделать backup всего текущего проекта в один скачиваемый файл.
-2. На странице Home оставить только Hero (заглавная) — всё остальное содержание убрать.
-3. Удалить разделы Vietnam, About, Contact Us — страницы, ссылки в навигации (desktop + mobile), маршруты и упоминания в Footer.
-4. Оставить навигацию: Home, Cyprus, Kite Safari, Brazil, Gallery.
 
-## Шаг 1 — Backup
-Создать zip-архив всего репозитория (исключая `node_modules`, `dist`, `.git`) и положить его в `/mnt/documents/ogo-backup-2026-06-14.zip`. Я отдам его через `<presentation-artifact>` — ты сможешь скачать одним кликом и хранить локально как точку отката.
+# About Our Lessons — New Section
 
-Дополнительно: напомню, что в любой момент можно откатиться через History в чате — это вторая страховка.
+A new editorial section for the Cyprus (home) page, placed **between `LearningJourney` (Beginner Flow) and the YouTube Shorts video**. Same luxury editorial language as the rest of the site: Cormorant Garamond headings in ALL CAPS, Jost body, no rounded cards, numbered items, animated reveals.
 
-## Шаг 2 — Home (`src/pages/Index.tsx`)
-Оставить только:
-- `Navbar`
-- `Hero`
-- `Footer`
+## Structure
 
-Удалить из Index.tsx использование и импорты:
-- `EnhancedBookingPopup`, `ContactCTA`, `TrustIndicators`, `CalendarLocations`
-- `MeetYourCoachIntro`, `WhyImDifferent`, `CoachStatsTrustBar`, `WhyMyMethodWorks`
-- Блок testimonials (Misha/Kate/Ilya) и секцию Guest Experiences
-- `RevealOnScroll`, `AnimatedLine`, `StaggeredList`, `useState`, `useLanguage` (если больше не нужны)
+**Section label:** `04 — ABOUT OUR LESSONS` (section-number style)
+**Heading:** `LESSONS BUILT AROUND YOU, NOT THE CLOCK`
+**Lead paragraph:** Short editorial intro that sets the tone — personal, methodical, progression-driven.
 
-Файлы компонентов на диске пока **не удаляю** — оставлю в `src/components/` на случай, если захочешь вернуть отдельные секции. Скажи, если нужно вычистить и их.
+### Block 1 — Sessions, not hours (hero stat row)
+Large editorial number `1.5h` with label "ONE ACTIVE SESSION".
+Short copy: *"We don't sell hours. We sell sessions — ~1.5h of pure 1-on-1 active training on the water with your coach. No waiting, no sharing, no wasted wind."*
 
-## Шаг 3 — Удаление страниц
-Удалить файлы:
-- `src/pages/Vietnam.tsx`
-- `src/pages/About.tsx`
-- `src/pages/Contact.tsx`
-- `src/components/VietnamBookingPopup.tsx` (используется только на Vietnam)
-- Все `src/components/cyprus/...` НЕ трогаю — Cyprus остаётся.
+### Block 2 — What's included (3 icon items in a clean row, no cards)
+- **FULL DUOTONE KIT** — Kites, boards, harness, safety gear. Bring yourself.
+- **BB TALKIN' RADIO** — Real-time voice from your coach. On the beach or out on the water — guidance, corrections, questions answered the moment they happen.
+- **1-ON-1 FORMAT** — Always personal. Never a group.
 
-## Шаг 4 — Роутинг (`src/App.tsx`)
-Убрать маршруты `/vietnam`, `/about`, `/contact` и их импорты. Оставить: `/`, `/cyprus`, `/kite-safari`, `/brazil`, `/gallery`, `*` (NotFound).
+### Block 3 — The Denis Evdorenko Method (featured highlight)
+Two-column editorial layout with a vertical accent line.
+- Left: small label `THE METHOD`, big heading `THE DENIS EVDORENKO METHOD`
+- Right: 2 short paragraphs explaining it's his personal methodology built on top of proven fundamentals + his own refinements that accelerate progression and keep you safe. Same exercises every school teaches (kite piloting, swings on land, body drag, water start, positioning) — but every step has its own nuances and details that make the difference between "took a course" and "actually rides".
 
-## Шаг 5 — Навигация
-- `src/components/Navbar.tsx` — удалить пункты Vietnam, About, Contact (desktop + mobile menu).
-- `src/components/Footer.tsx` — удалить ссылки на эти страницы.
-- `src/components/ContactFAB.tsx` оставляю (это глобальная кнопка WhatsApp/Telegram, по памяти проекта она нужна на всех страницах).
-- Внутренние ссылки `to="/contact"` / `to="/about"` / `to="/vietnam"` в оставшихся страницах (Cyprus, KiteSafari, Brazil, Gallery) заменю на безопасные:
-  - ссылки "contact" → на WhatsApp `https://wa.me/48884035225`
-  - ссылки на Vietnam / About → удалить или указать на Home.
+### Block 4 — Progression roadmap (numbered list, editorial)
+Numbered `01 → 06`, each one line with title + one-line description:
+- `01 — KITE PILOTING` Foundation. Reading wind, controlling the kite.
+- `02 — LAND DRILLS` Swings sitting and standing. Building muscle memory.
+- `03 — WATER SWINGS & BODY DRAG` Moving with the kite in the water.
+- `04 — POSITIONING & WATER STARTS` Standing up. Riding your first meters.
+- `05 — INDEPENDENT RIDING` Upwind, transitions, control in any condition.
+- `06 — ADVANCED & TRICKS` Backrolls, frontrolls, rotations, kiteloops, heeloops, downloops.
 
-## Шаг 6 — i18n
-Ключи переводов для Vietnam/About/Contact в `src/i18n/translations.ts` оставлю как есть (не сломает сборку). Удалять не буду, чтобы не зацепить случайно что-то ещё. Скажи, если хочешь почистить.
+Closing line under the list: *"Becoming independent isn't the finish line. It's where the fun starts."*
 
-## Технические детали
-- Edge-функции (`send-contact-email`, `meta-capi`) **не удаляю** — `meta-capi` используется для трекинга на всех страницах, `send-contact-email` может ещё пригодиться. Если хочешь снести `send-contact-email` — отдельной командой.
-- Память проекта (`mem://pages/vietnam-camp/*`, `mem://pages/contact/*`) почищу после удаления страниц, чтобы не вводить в заблуждение будущие правки.
-- После правок проверю сборку и открою preview, чтобы убедиться что нет битых ссылок и роуты работают.
+### CTA
+Single editorial link/button: `BOOK A SESSION →` → opens WhatsApp with pre-filled message *"Hey OGO Academy, I'd like to book a kitesurfing session in Cyprus!"*
 
-## Что НЕ делаю (подтверди если нужно)
-- Не удаляю файлы секций Home с диска (MeetYourCoach, WhyImDifferent и т.д.).
-- Не чищу i18n ключи Vietnam/About/Contact.
-- Не удаляю edge-функции.
+## Technical
 
-Подтверди план — и я выполню всё одним заходом.
+- New file: `src/components/cyprus/CyprusAboutLessons.tsx`
+- i18n keys added to `src/i18n/translations.ts` under `cyprus.lessons.*` for EN, RU, GR
+- Mount in `src/pages/Cyprus.tsx` between `<LearningJourney />` and the YouTube Shorts `<section>`
+- Use existing animation primitives: `RevealOnScroll`, `AnimatedLine`, `StaggeredList`, `section-number`, `heading-display`, `section-divider`, `label-caps`
+- Icons (lucide-react): `Clock3`, `Radio`, `Package`, `User`, `Compass` — thin stroke (`strokeWidth={1.5}`), no filled backgrounds
+- No rounded cards — flat editorial blocks separated by hairline dividers, matching `WhyImDifferent` and `WhyMyMethodWorks` patterns
+- Mobile: stacks vertically, numbers stay prominent
+
+## Awaiting approval
+
+I'll wait for your approval before implementing. Reply with any changes (copy tweaks, reordering, more/fewer blocks) or ✅ to build it as described.
