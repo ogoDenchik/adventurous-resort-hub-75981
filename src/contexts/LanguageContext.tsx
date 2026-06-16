@@ -110,6 +110,9 @@ function applyTranslation(target: 'ru' | 'en') {
 export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [lang, setLangState] = useState<Language>(() => {
     if (typeof window === 'undefined') return 'en';
+    // 1) URL ?lang= wins so hreflang URLs land in the right language.
+    const urlLang = new URLSearchParams(window.location.search).get('lang');
+    if (urlLang === 'en' || urlLang === 'ru') return urlLang;
     const saved = window.localStorage.getItem('ogo-lang');
     if (saved === 'en' || saved === 'ru') return saved;
     if (saved === 'gr') window.localStorage.setItem('ogo-lang', 'en');
@@ -120,6 +123,11 @@ export const LanguageProvider: React.FC<{ children: React.ReactNode }> = ({ chil
     setLangState(l);
     if (typeof window !== 'undefined') {
       window.localStorage.setItem('ogo-lang', l);
+      // Reflect language in URL for shareable hreflang-correct links.
+      const url = new URL(window.location.href);
+      if (l === 'en') url.searchParams.delete('lang');
+      else url.searchParams.set('lang', l);
+      window.history.replaceState({}, '', url.toString());
     }
     if (typeof document !== 'undefined') {
       document.documentElement.lang = l;

@@ -106,7 +106,7 @@ const CatamaranKiteSafari: React.FC = () => {
               loading="eager"
               fetchPriority="high"
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/30 to-black/70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/55 to-black/85" />
           </div>
           <div className="container mx-auto px-4 relative z-10 text-white">
             <p className="uppercase tracking-[0.3em] text-xs md:text-sm mb-4 opacity-90">Egypt · Red Sea · 7 nights</p>

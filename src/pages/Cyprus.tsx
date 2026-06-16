@@ -40,6 +40,28 @@ const cyprusJsonLd = [
       { '@type': 'Question', name: 'How do I book a lesson?', acceptedAnswer: { '@type': 'Answer', text: 'Message us on WhatsApp at +48 884 035 225 or Telegram @ogodenchik_official to reserve your spot.' } },
     ],
   },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'OGO Kite Academy — Kitesurfing in Limassol, Cyprus',
+    description: 'Short film from OGO Kite Academy showing kitesurfing lessons and lifestyle in Limassol, Cyprus.',
+    thumbnailUrl: ['https://i.ytimg.com/vi/ZEg4JkGOVWg/hqdefault.jpg'],
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=ZEg4JkGOVWg',
+    embedUrl: 'https://www.youtube.com/embed/ZEg4JkGOVWg',
+    publisher: { '@type': 'Organization', name: 'OGO Kite Academy' },
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Kitesurfing Water Start Tutorial — OGO Kite Academy',
+    description: 'Step-by-step water start tutorial for kitesurfing beginners by OGO Kite Academy in Cyprus.',
+    thumbnailUrl: ['https://i.ytimg.com/vi/jn9oejNBv2A/hqdefault.jpg'],
+    uploadDate: '2024-06-01',
+    contentUrl: 'https://www.youtube.com/watch?v=jn9oejNBv2A',
+    embedUrl: 'https://www.youtube.com/embed/jn9oejNBv2A',
+    publisher: { '@type': 'Organization', name: 'OGO Kite Academy' },
+  },
 ];
 
 const contactMethods: Array<{
@@ -104,7 +126,7 @@ const Cyprus: React.FC = () => {
           <div className="max-w-sm mx-auto" style={{ aspectRatio: '9/16' }}>
             <LazyYouTube
               videoId="ZEg4JkGOVWg"
-              title="OGO Kite Academy"
+              title="OGO Kite Academy — Kitesurfing in Limassol, Cyprus"
               className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl"
             />
           </div>
@@ -124,7 +146,7 @@ const Cyprus: React.FC = () => {
             </h2>
             <LazyYouTube
               videoId="jn9oejNBv2A"
-              title="Water Start Tutorial"
+              title="Kitesurfing Water Start Tutorial — OGO Kite Academy"
               className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
             />
           </div>

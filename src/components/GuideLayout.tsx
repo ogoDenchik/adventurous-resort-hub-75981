@@ -86,7 +86,7 @@ const GuideLayout: React.FC<GuideLayoutProps> = ({
         <section className="relative min-h-[60vh] flex items-end pt-24 pb-16 overflow-hidden">
           <div className="absolute inset-0">
             <img src={heroImage} alt={heroAlt} className="w-full h-full object-cover" loading="eager" fetchPriority="high" />
-            <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/40 to-black/70" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/65 via-black/60 to-black/85" />
           </div>
           <div className="container mx-auto px-4 relative z-10 text-white">
             <p className="uppercase tracking-[0.3em] text-xs md:text-sm mb-4 opacity-90">{eyebrow}</p>

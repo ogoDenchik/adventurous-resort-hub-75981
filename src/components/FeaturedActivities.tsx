@@ -32,7 +32,7 @@ const ActivityCard: React.FC<ActivityProps> = ({ title, description, image, link
             transform: title === 'Kite Safari' ? 'scale(1.3)' : 'scale(1)'
           }}
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/20" />
       </div>
       
       <div className="absolute bottom-0 p-6 w-full">
