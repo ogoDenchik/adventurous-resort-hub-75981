@@ -62,6 +62,7 @@ const CyprusFilmingTools: React.FC = () => {
                     </button>
                   </DialogTrigger>
                   <DialogContent className="w-[calc(100%-2rem)] max-w-sm p-0 border-0 bg-black overflow-hidden rounded-2xl">
+                    <DialogTitle className="sr-only">Sample footage shot with our filming tools</DialogTitle>
                     <div style={{ aspectRatio: '9/16' }}>
                       <iframe
                         src={`https://www.youtube.com/embed/QEMI2Xh-B9c`}
