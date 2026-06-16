@@ -118,6 +118,7 @@ const Cyprus: React.FC = () => {
       <ScrollToTop />
       <main>
       <CyprusHero />
+      <BeginnerFlow />
       <CyprusTrustBar />
       <LearningJourney />
 
