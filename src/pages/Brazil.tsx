@@ -687,7 +687,7 @@ const Brazil: React.FC = () => {
         title="Book Your Brazil Adventure"
         description="Get in touch and we'll be happy to help with any questions"
       />
-      
+      </main>
       <Footer />
     </div>
   );
