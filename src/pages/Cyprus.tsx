@@ -2,6 +2,7 @@ import React from 'react';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ScrollToTop from '@/components/ScrollToTop';
+import Seo from '@/components/Seo';
 import { MessageCircle, Send, Instagram } from 'lucide-react';
 import CyprusHero from '@/components/cyprus/CyprusHero';
 import LearningJourney from '@/components/cyprus/LearningJourney';
@@ -13,6 +14,33 @@ import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { trackContactClick, type ContactChannel } from '@/utils/metaTracking';
 import LazyYouTube from '@/components/LazyYouTube';
+
+const cyprusJsonLd = [
+  {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'OGO Kite Academy',
+    url: 'https://ogokiteacademy.com',
+    logo: 'https://storage.googleapis.com/gpt-engineer-file-uploads/a1t2DDCIfRg0ny8VzbGk9R2nnG52/uploads/1759850302477-Дизайн_без_названия__40_-removebg-preview.png',
+    sameAs: ['https://www.instagram.com/ogo_kite_academy', 'https://t.me/ogodenchik_official'],
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'OGO Kite Academy',
+    url: 'https://ogokiteacademy.com',
+  },
+  {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      { '@type': 'Question', name: 'Do I need previous experience to start kitesurfing?', acceptedAnswer: { '@type': 'Answer', text: 'No prior experience is needed. Our beginner courses in Limassol take complete beginners to independent riding.' } },
+      { '@type': 'Question', name: 'Is all the kite gear included in lessons?', acceptedAnswer: { '@type': 'Answer', text: 'Yes — kites, boards, harnesses and safety equipment from Duotone are included with every lesson.' } },
+      { '@type': 'Question', name: 'Where do lessons take place in Cyprus?', acceptedAnswer: { '@type': 'Answer', text: 'Lessons run on the kite spots around Limassol, chosen each day based on the wind direction.' } },
+      { '@type': 'Question', name: 'How do I book a lesson?', acceptedAnswer: { '@type': 'Answer', text: 'Message us on WhatsApp at +48 884 035 225 or Telegram @ogodenchik_official to reserve your spot.' } },
+    ],
+  },
+];
 
 const contactMethods: Array<{
   icon: typeof MessageCircle;
