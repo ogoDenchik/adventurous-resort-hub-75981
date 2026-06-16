@@ -1,6 +1,6 @@
 import React from 'react';
 import { RevealOnScroll, AnimatedLine } from '@/hooks/use-invisible-animation';
-import { Wind, Droplets, Surfboard, Trophy } from 'lucide-react';
+import { Wind, Droplets, Zap, Trophy } from 'lucide-react';
 
 const steps = [
   {
