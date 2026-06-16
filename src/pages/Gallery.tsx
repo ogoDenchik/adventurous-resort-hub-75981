@@ -120,7 +120,13 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <Seo
+        title="Kitesurfing Photo Gallery | OGO Kite Academy"
+        description="Photos from our kite lessons in Cyprus, the Egypt safari and the Brazil camp. Sessions, students, sunsets and trips."
+        path="/gallery"
+      />
       <Navbar />
+      
       
       <main className="flex-grow pt-28 md:pt-32 pb-24">
         <div className="container mx-auto px-4">
