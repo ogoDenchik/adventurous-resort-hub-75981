@@ -140,6 +140,7 @@ const Cyprus: React.FC = () => {
       <CyprusLifestyle />
       <CyprusTestimonials />
       <CyprusTeam />
+      <CyprusFilmingTools />
       <CyprusAdvantages />
 
       {/* Video */}
