@@ -156,7 +156,7 @@ export const translations: Translations = {
       faq5q: 'When is the best season?',
       faq5a: 'Cyprus is a year-round spot. Best wind: April–October. Water 17–28°C.',
       // Hero
-      heroBadge: '📍 Cyprus, Limassol',
+      heroBadge: 'Cyprus, Limassol',
       heroTitle: 'Professional kitesurfing training',
       heroBtn: 'Ask a Question',
       askQuestion: 'Ask a Question',
@@ -452,7 +452,7 @@ export const translations: Translations = {
       faq4a: 'Рация в шлеме — инструктор даёт подсказки прямо в воде. Обучение в 2x быстрее.',
       faq5q: 'Когда лучший сезон?',
       faq5a: 'Кипр — круглогодичный спот. Лучший ветер: апрель–октябрь. Вода 17–28°C.',
-      heroBadge: '📍 Кипр, Лимассол',
+      heroBadge: 'Кипр, Лимассол',
       heroTitle: 'Профессиональное обучение кайтсёрфингу',
       heroBtn: 'Задать вопрос',
       askQuestion: 'Задать вопрос',
