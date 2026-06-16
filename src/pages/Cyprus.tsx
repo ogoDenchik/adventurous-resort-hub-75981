@@ -15,6 +15,7 @@ import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
 import CyprusTeam from '@/components/cyprus/CyprusTeam';
 import CyprusFilmingTools from '@/components/cyprus/CyprusFilmingTools';
 import CyprusSessionPhotos from '@/components/cyprus/CyprusSessionPhotos';
+import CyprusPricingTiers from '@/components/cyprus/CyprusPricingTiers';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { trackContactClick, type ContactChannel } from '@/utils/metaTracking';
 import LazyYouTube from '@/components/LazyYouTube';
