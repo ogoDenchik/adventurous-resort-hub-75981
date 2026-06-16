@@ -1,71 +1,89 @@
 import React from 'react';
-import { Instagram } from 'lucide-react';
-import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
+import { Instagram, User, Waves, ShieldCheck, Sparkles, Play, Camera } from 'lucide-react';
+import { RevealOnScroll, AnimatedLine } from '@/hooks/use-invisible-animation';
+import { useLanguage } from '@/contexts/LanguageContext';
 import denisPhoto from '@/assets/team/denis.jpg';
 import igorPhoto from '@/assets/team/igor.jpg';
 
-type Member = {
-  num: string;
-  name: string;
-  role: string;
-  tagline: string;
-  bio: string;
-  photo: string;
-  stats: { value: string; label: string }[];
-  instagram?: string;
-};
-
-const team: Member[] = [
-  {
-    num: '01',
-    name: 'DENIS',
-    role: 'FOUNDER · HEAD COACH',
-    tagline: 'The Method.',
-    bio: "5+ years coaching. 500+ students taken from zero to independent riding. Builds every session around the rider, not the clock.",
-    photo: denisPhoto,
-    stats: [
-      { value: '500+', label: 'STUDENTS' },
-      { value: '5+',   label: 'YEARS' },
-    ],
-    instagram: 'https://www.instagram.com/ogo_kite_academy',
-  },
-  {
-    num: '02',
-    name: 'IGOR',
-    role: 'INSTRUCTOR · CYPRUS',
-    tagline: 'The Wingman.',
-    bio: "Patient, technical, fluent in the small details that make a beginner click. Your second pair of eyes on every Limassol session.",
-    photo: igorPhoto,
-    stats: [
-      { value: '1-on-1', label: 'FORMAT' },
-      { value: 'CY',     label: 'BASED' },
-    ],
-  },
-];
-
 const CyprusTeam: React.FC = () => {
+  const { t } = useLanguage();
+
+  const team = [
+    {
+      num: '01',
+      name: 'IGOR',
+      role: t('cyprus.igorRole') as string,
+      badge: t('cyprus.igorBadge') as string,
+      badgeColor: 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20',
+      tagline: t('cyprus.igorTagline') as string,
+      focus: [
+        { icon: User, text: t('cyprus.igorFocus1') as string },
+        { icon: Waves, text: t('cyprus.igorFocus2') as string },
+        { icon: ShieldCheck, text: t('cyprus.igorFocus3') as string },
+      ],
+      bio: t('cyprus.igorBio') as string,
+      photo: igorPhoto,
+      stats: [
+        { value: t('cyprus.igorStat1') as string, label: t('cyprus.igorStat1Label') as string },
+        { value: t('cyprus.igorStat2') as string, label: t('cyprus.igorStat2Label') as string },
+      ],
+    },
+    {
+      num: '02',
+      name: 'DENIS',
+      role: t('cyprus.denisRole') as string,
+      badge: t('cyprus.denisBadge') as string,
+      badgeColor: 'bg-primary/10 text-primary border-primary/20',
+      tagline: t('cyprus.denisTagline') as string,
+      focus: [
+        { icon: Sparkles, text: t('cyprus.denisFocus1') as string },
+        { icon: Play, text: t('cyprus.denisFocus2') as string },
+        { icon: Camera, text: t('cyprus.denisFocus3') as string },
+      ],
+      bio: t('cyprus.denisBio') as string,
+      photo: denisPhoto,
+      stats: [
+        { value: t('cyprus.denisStat1') as string, label: t('cyprus.denisStat1Label') as string },
+        { value: t('cyprus.denisStat2') as string, label: t('cyprus.denisStat2Label') as string },
+      ],
+      instagram: 'https://www.instagram.com/ogo_kite_academy',
+    },
+  ];
+
   return (
     <section className="section-padding bg-background overflow-hidden">
       <div className="container max-w-6xl">
         <RevealOnScroll>
-          <p className="section-number mb-6">06 — OUR TEAM</p>
+          <p className="section-number mb-6">{t('cyprus.teamSectionNum')}</p>
         </RevealOnScroll>
 
         <AnimatedLine className="mb-12" />
 
-        <RevealOnScroll delay={100} className="mb-16 md:mb-24 flex items-end justify-between gap-8 flex-wrap">
-          <h2 className="heading-display text-4xl md:text-6xl text-foreground leading-tight">
-            THE PEOPLE<br />
-            <span className="italic font-light text-muted-foreground">behind every session.</span>
+        <RevealOnScroll delay={100} className="mb-8 md:mb-12">
+          <h2 className="heading-display text-4xl md:text-6xl text-foreground leading-tight mb-4">
+            {t('cyprus.teamTitle')}
           </h2>
-          <p className="text-muted-foreground text-sm font-light max-w-xs">
-            Two coaches. One standard. Always on the water with you, never watching from the shore.
+          <p className="text-muted-foreground text-sm md:text-base font-light max-w-md">
+            {t('cyprus.teamSubtitle')}
           </p>
         </RevealOnScroll>
 
-        <StaggeredList staggerMs={180} baseDelay={150} className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <RevealOnScroll delay={150} className="mb-12 md:mb-16">
+          <p className="text-foreground text-base md:text-lg font-light max-w-2xl leading-relaxed">
+            {t('cyprus.teamIntro')}
+          </p>
+        </RevealOnScroll>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {team.map((m, idx) => (
             <article key={m.name} className="group">
+              {/* Badge */}
+              <div className={`inline-flex items-center px-4 py-2 border ${m.badgeColor} mb-5`}>
+                <span className="text-[10px] tracking-[0.25em] font-medium uppercase">
+                  {m.badge}
+                </span>
+              </div>
+
               {/* Photo */}
               <div className="relative overflow-hidden mb-6 aspect-[3/4] bg-muted">
                 <img
@@ -95,7 +113,7 @@ const CyprusTeam: React.FC = () => {
               </div>
 
               {/* Tagline */}
-              <p className="heading-display-italic text-2xl md:text-3xl text-foreground mb-3">
+              <p className="heading-display-italic text-2xl md:text-3xl text-foreground mb-4">
                 {m.tagline}
               </p>
 
@@ -103,6 +121,16 @@ const CyprusTeam: React.FC = () => {
               <p className="text-muted-foreground text-sm md:text-base leading-relaxed font-light mb-6 max-w-md">
                 {m.bio}
               </p>
+
+              {/* Focus list */}
+              <ul className="space-y-3 mb-6">
+                {m.focus.map((item) => (
+                  <li key={item.text} className="flex items-start gap-3 text-sm md:text-base text-foreground font-light">
+                    <item.icon className="w-5 h-5 mt-0.5 text-primary flex-shrink-0" strokeWidth={1.5} />
+                    <span>{item.text}</span>
+                  </li>
+                ))}
+              </ul>
 
               {/* Stats + IG */}
               <div className="flex items-end justify-between gap-6 pt-5 border-t border-border/50">
@@ -132,7 +160,7 @@ const CyprusTeam: React.FC = () => {
               </div>
             </article>
           ))}
-        </StaggeredList>
+        </div>
       </div>
     </section>
   );
