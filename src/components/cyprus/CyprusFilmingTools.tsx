@@ -1,9 +1,14 @@
-import React from 'react';
-import { Camera, Aperture, Plane } from 'lucide-react';
+import React, { useState } from 'react';
+import { Camera, Aperture, Plane, Play } from 'lucide-react';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import filmingToolsPhoto from '@/assets/filming-tools.jpg.asset.json';
-import LazyYouTube from '@/components/LazyYouTube';
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from '@/components/ui/dialog';
+
 
 const CyprusFilmingTools: React.FC = () => {
   const { t } = useLanguage();
