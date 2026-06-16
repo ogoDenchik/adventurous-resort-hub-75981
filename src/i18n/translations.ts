@@ -111,7 +111,7 @@ export const translations: Translations = {
     cyprus: {
       whatsapp: 'Message on WhatsApp',
       // Trust bar
-      driveFromLimassol: 'drive from limassol',
+      driveFromLimassol: 'drive from Limassol',
       windDays: 'we work everyday',
       returning: 'Progression coaching',
       firstRide: 'Beginner course',
