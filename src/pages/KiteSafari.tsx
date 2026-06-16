@@ -62,6 +62,7 @@ const KiteSafari: React.FC = () => {
         title="Egypt Kite Safari — Luxury Catamaran Trip | OGO Kite Academy"
         description="Join a week-long kite safari in Egypt aboard a luxury catamaran. Coaching, gear, cabins and meals included. Limited cabins each season."
         path="/kite-safari"
+        image="https://ogokiteacademy.com/lovable-uploads/kitesafari-hero-desktop-v2.jpg"
         jsonLd={kiteSafariJsonLd}
       />
       <Navbar />
