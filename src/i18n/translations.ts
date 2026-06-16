@@ -158,7 +158,6 @@ export const translations: Translations = {
       // Hero
       heroBadge: '📍 Cyprus, Limassol',
       heroTitle: 'Professional kitesurfing training',
-      heroSubtitle: 'With certified instructors with over five years of experience',
       heroBtn: 'Ask a Question',
       askQuestion: 'Ask a Question',
       heroBtn2: 'How does it work?',
@@ -455,7 +454,6 @@ export const translations: Translations = {
       faq5a: 'Кипр — круглогодичный спот. Лучший ветер: апрель–октябрь. Вода 17–28°C.',
       heroBadge: '📍 Кипр, Лимассол',
       heroTitle: 'Профессиональное обучение кайтсёрфингу',
-      heroSubtitle: 'С сертифицированными инструкторами с более чем пятилетним опытом',
       heroBtn: 'Задать вопрос',
       askQuestion: 'Задать вопрос',
       heroBtn2: 'Как это работает?',
