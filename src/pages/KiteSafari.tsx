@@ -58,6 +58,12 @@ const KiteSafari: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Egypt Kite Safari — Luxury Catamaran Trip | OGO Kite Academy"
+        description="Join a week-long kite safari in Egypt aboard a luxury catamaran. Coaching, gear, cabins and meals included. Limited cabins each season."
+        path="/kite-safari"
+        jsonLd={kiteSafariJsonLd}
+      />
       <Navbar />
       <ScrollToTop />
       
