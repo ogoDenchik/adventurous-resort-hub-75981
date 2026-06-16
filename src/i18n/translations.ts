@@ -165,8 +165,8 @@ export const translations: Translations = {
       contactTitle: 'Get in Touch',
       contactSubtitle: 'Write to us — we respond within a few hours',
       // Learning Journey
-      learningTitle: 'Kitesurfer Training Plan',
-      learningSubtitle: '300+ students completed this path',
+      learningTitle: 'Beginner flow',
+      learningSubtitle: '500+ students completed this path',
       lesson1: 'Lesson 1',
       lesson1Title: 'Getting to know the kite',
       lesson1Tags: 'Theory,1-on-1,Equipment included',
