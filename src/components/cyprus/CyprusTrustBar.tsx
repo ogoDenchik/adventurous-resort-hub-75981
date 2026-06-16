@@ -6,10 +6,10 @@ const CyprusTrustBar: React.FC = () => {
   const { t } = useLanguage();
 
   const stats = [
-    { icon: Award, stat: '500+', label: t('cyprus.students'), iconColor: 'text-amber-500', bgColor: 'bg-amber-500/10' },
-    { icon: Clock, stat: '12-20:00', label: t('cyprus.windDays'), iconColor: 'text-sky-600', bgColor: 'bg-sky-500/10' },
-    { icon: Target, stat: '70+', label: t('cyprus.returning'), iconColor: 'text-violet-500', bgColor: 'bg-violet-500/10' },
-    { icon: GraduationCap, stat: '8', label: t('cyprus.firstRide'), iconColor: 'text-teal-500', bgColor: 'bg-teal-500/10' },
+    { icon: Award, label: t('cyprus.students'), iconColor: 'text-amber-500', bgColor: 'bg-amber-500/10' },
+    { icon: Clock, label: t('cyprus.windDays'), iconColor: 'text-sky-600', bgColor: 'bg-sky-500/10' },
+    { icon: Target, label: t('cyprus.returning'), iconColor: 'text-violet-500', bgColor: 'bg-violet-500/10' },
+    { icon: GraduationCap, label: t('cyprus.firstRide'), iconColor: 'text-teal-500', bgColor: 'bg-teal-500/10' },
   ];
 
   return (
@@ -19,13 +19,14 @@ const CyprusTrustBar: React.FC = () => {
           {stats.map((item, index) => (
             <div
               key={index}
-              className="bg-card rounded-xl border border-border/50 p-4 text-center hover:border-primary/30 hover:shadow-lg transition-all duration-300"
+              className="bg-card rounded-xl border border-border/50 p-5 text-center hover:border-primary/30 hover:shadow-lg transition-all duration-300 flex flex-col items-center justify-center gap-3"
             >
-              <div className={`w-10 h-10 rounded-full ${item.bgColor} flex items-center justify-center mx-auto mb-2`}>
-                <item.icon className={`w-5 h-5 ${item.iconColor}`} />
+              <div className={`w-12 h-12 rounded-full ${item.bgColor} flex items-center justify-center`}>
+                <item.icon className={`w-6 h-6 ${item.iconColor}`} />
               </div>
-              <div className="text-2xl md:text-3xl font-display font-bold text-foreground">{item.stat}</div>
-              <div className="text-xs text-muted-foreground mt-0.5">{item.label}</div>
+              <div className="text-sm md:text-base font-medium text-foreground leading-tight">
+                {item.label}
+              </div>
             </div>
           ))}
         </div>
