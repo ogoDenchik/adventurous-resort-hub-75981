@@ -112,7 +112,7 @@ export const translations: Translations = {
       whatsapp: 'Message on WhatsApp',
       // Trust bar
       students: 'students',
-      windDays: 'wind days/year',
+      windDays: 'we work everyday',
       returning: 'returning',
       firstRide: 'sessions to independence',
       // Lifestyle
@@ -346,7 +346,7 @@ export const translations: Translations = {
     cyprus: {
       whatsapp: 'Написать в WhatsApp',
       students: 'студентов',
-      windDays: 'дней ветра/год',
+      windDays: 'работаем ежедневно',
       returning: 'возвращаются',
       firstRide: 'занятий до самостоятельности',
       lifestyleTitle: 'Почему тебе понравится кайтсёрфинг',
