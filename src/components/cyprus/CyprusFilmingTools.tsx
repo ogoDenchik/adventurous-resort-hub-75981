@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Camera, Aperture, Plane, Play } from 'lucide-react';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -7,7 +7,9 @@ import {
   Dialog,
   DialogContent,
   DialogTrigger,
+  DialogTitle,
 } from '@/components/ui/dialog';
+
 
 
 const CyprusFilmingTools: React.FC = () => {
