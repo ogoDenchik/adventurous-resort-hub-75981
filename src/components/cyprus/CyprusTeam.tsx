@@ -1,6 +1,6 @@
 import React from 'react';
 import { Instagram, User, Waves, ShieldCheck, Sparkles, Play, Camera } from 'lucide-react';
-import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
+import { RevealOnScroll, AnimatedLine } from '@/hooks/use-invisible-animation';
 import { useLanguage } from '@/contexts/LanguageContext';
 import denisPhoto from '@/assets/team/denis.jpg';
 import igorPhoto from '@/assets/team/igor.jpg';
