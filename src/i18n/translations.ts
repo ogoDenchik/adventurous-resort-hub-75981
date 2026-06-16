@@ -345,7 +345,7 @@ export const translations: Translations = {
     },
     cyprus: {
       whatsapp: 'Написать в WhatsApp',
-      students: 'студентов',
+      driveFromLimassol: 'езды от Лимассола',
       windDays: 'работаем ежедневно',
       returning: 'Прогресс-тренинг',
       firstRide: 'Курс для начинающих',
