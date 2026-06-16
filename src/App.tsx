@@ -32,6 +32,7 @@ const App = () => {
                 <Route path="/" element={<Cyprus />} />
                 <Route path="/cyprus" element={<Navigate to="/" replace />} />
                 <Route path="/kite-safari" element={<KiteSafari />} />
+                <Route path="/catamaran-kite-safari" element={<CatamaranKiteSafari />} />
                 <Route path="/brazil" element={<Brazil />} />
                 <Route path="/gallery" element={<Gallery />} />
                 <Route path="*" element={<NotFound />} />
