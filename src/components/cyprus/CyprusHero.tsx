@@ -25,9 +25,6 @@ const CyprusHero: React.FC = () => {
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4 leading-tight px-2">
           {t('cyprus.heroTitle')}
         </h1>
-        <p className="text-xs sm:text-sm md:text-base max-w-md mx-auto mb-8 text-white/70 px-4">
-          {t('cyprus.heroSubtitle')}
-        </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
           <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToBeginnerFlow}>
             {t('cyprus.heroBtnLearn')}
