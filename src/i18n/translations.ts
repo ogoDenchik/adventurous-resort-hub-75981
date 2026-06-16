@@ -113,8 +113,8 @@ export const translations: Translations = {
       // Trust bar
       students: 'students',
       windDays: 'we work everyday',
-      returning: 'returning',
-      firstRide: 'sessions to independence',
+      returning: 'Progression coaching',
+      firstRide: 'Beginner course',
       // Lifestyle
       lifestyleTitle: 'Why You\'ll Love Kitesurfing',
       lifestyleSubtitle: 'An adventure that changes how you think about leisure forever',
@@ -347,8 +347,8 @@ export const translations: Translations = {
       whatsapp: 'Написать в WhatsApp',
       students: 'студентов',
       windDays: 'работаем ежедневно',
-      returning: 'возвращаются',
-      firstRide: 'занятий до самостоятельности',
+      returning: 'Прогресс-тренинг',
+      firstRide: 'Курс для начинающих',
       lifestyleTitle: 'Почему тебе понравится кайтсёрфинг',
       lifestyleSubtitle: 'Приключение, которое меняет отношение к отдыху навсегда',
       reason1Title: 'Новый вызов',
