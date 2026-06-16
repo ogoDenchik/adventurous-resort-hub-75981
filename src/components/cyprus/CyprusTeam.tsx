@@ -52,7 +52,8 @@ const CyprusTeam: React.FC = () => {
   ];
 
   return (
-    <section className="section-padding bg-background overflow-hidden">
+    <section id="cyprus-team" className="section-padding bg-background overflow-hidden">
+
       <div className="container max-w-6xl">
         <RevealOnScroll>
           <p className="section-number mb-6">{t('cyprus.teamSectionNum')}</p>

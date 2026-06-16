@@ -1,16 +1,16 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
-import { ChevronDown, MessageCircle } from 'lucide-react';
+import { ChevronDown } from 'lucide-react';
 import { useLanguage } from '@/contexts/LanguageContext';
 
 const CyprusHero: React.FC = () => {
   const { t } = useLanguage();
-  const scrollToJourney = () => {
+  const scrollToBeginnerFlow = () => {
     document.getElementById('learning-journey')?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const scrollToContact = () => {
-    document.getElementById('cyprus-contact')?.scrollIntoView({ behavior: 'smooth' });
+  const scrollToProgressionCoach = () => {
+    document.getElementById('cyprus-team')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -29,16 +29,15 @@ const CyprusHero: React.FC = () => {
           {t('cyprus.heroSubtitle')}
         </p>
         <div className="flex flex-col sm:flex-row gap-3 justify-center items-center">
-          <Button size="lg" className="text-lg px-8 py-6 gap-2" onClick={scrollToContact}>
-            <MessageCircle className="w-5 h-5" />
-            {t('cyprus.askQuestion')}
+          <Button size="lg" className="text-lg px-8 py-6" onClick={scrollToBeginnerFlow}>
+            {t('cyprus.heroBtnLearn')}
           </Button>
-          <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white/40 text-white hover:bg-white/10 bg-white/5" onClick={scrollToJourney}>
-            {t('cyprus.heroBtn2')}
+          <Button size="lg" variant="outline" className="text-lg px-8 py-6 border-white/40 text-white hover:bg-white/10 bg-white/5" onClick={scrollToProgressionCoach}>
+            {t('cyprus.heroBtnProgress')}
           </Button>
         </div>
       </div>
-      <button onClick={scrollToJourney} aria-label="Scroll to learning journey" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce">
+      <button onClick={scrollToBeginnerFlow} aria-label="Scroll to learning journey" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce">
         <ChevronDown className="w-8 h-8" />
       </button>
     </section>
