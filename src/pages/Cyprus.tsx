@@ -14,6 +14,7 @@ import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
 import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
 import CyprusTeam from '@/components/cyprus/CyprusTeam';
 import CyprusFilmingTools from '@/components/cyprus/CyprusFilmingTools';
+import CyprusSessionPhotos from '@/components/cyprus/CyprusSessionPhotos';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { trackContactClick, type ContactChannel } from '@/utils/metaTracking';
 import LazyYouTube from '@/components/LazyYouTube';
@@ -141,6 +142,7 @@ const Cyprus: React.FC = () => {
       <CyprusTestimonials />
       <CyprusTeam />
       <CyprusFilmingTools />
+      <CyprusSessionPhotos />
       <CyprusAdvantages />
 
       {/* Video */}
