@@ -1,5 +1,5 @@
 import React from 'react';
-import { Radio, Package, User, Wind, MessageCircle } from 'lucide-react';
+import { Radio, Package, User, Wind, ArrowRight } from 'lucide-react';
 import { RevealOnScroll, AnimatedLine, StaggeredList } from '@/hooks/use-invisible-animation';
 import { trackContactClick } from '@/utils/metaTracking';
 
@@ -19,8 +19,8 @@ const roadmap = [
   { num: '06', title: 'TRICKS & ROTATIONS' },
 ];
 
-const contactHref =
-  'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%E2%80%99d%20like%20to%20ask%20a%20question%20about%20kitesurfing%20in%20Cyprus!';
+const bookHref =
+  'https://wa.me/48884035225?text=Hey%20OGO%20Academy%2C%20I%E2%80%99d%20like%20to%20book%20a%20kitesurfing%20session%20in%20Cyprus!';
 
 const CyprusAboutLessons: React.FC = () => {
   return (
@@ -130,16 +130,16 @@ const CyprusAboutLessons: React.FC = () => {
         </div>
 
         {/* CTA */}
-        <RevealOnScroll delay={150} className="flex justify-center">
+        <RevealOnScroll delay={150}>
           <a
-            href={contactHref}
+            href={bookHref}
             target="_blank"
             rel="noopener noreferrer"
-            onClick={() => trackContactClick('whatsapp', 'cyprus_about_lessons_contact_us')}
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-md text-sm tracking-widest uppercase font-medium hover:opacity-90 transition-opacity duration-300"
+            onClick={() => trackContactClick('whatsapp', 'cyprus_about_lessons_cta')}
+            className="inline-flex items-center gap-3 text-sm tracking-widest uppercase font-medium text-foreground border-b border-foreground pb-2 hover:gap-5 transition-all duration-300"
           >
-            <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
-            Contact us
+            Book a session
+            <ArrowRight className="w-4 h-4" strokeWidth={1.5} />
           </a>
         </RevealOnScroll>
       </div>
