@@ -490,6 +490,7 @@ export const translations: Translations = {
       filmingTool2: 'Объектив Tamron 150–500',
       filmingTool3: 'Дрон DJI Mini 4 Pro',
       filmingNote: 'С такой техникой мы снимаем вас с любого ракурса в максимальном качестве. Денис разбирает кадры вместе с вами — вы видите себя со стороны и прогрессируете быстрее.',
+      filmingSampleLabel: 'Пример съёмки',
       // Session photos
       sessionPhotosSectionNum: '08 — В КАДРЕ',
       sessionPhotosTitle: 'НАШИ ФОТО С КАЙТ-СЕССИЙ',
