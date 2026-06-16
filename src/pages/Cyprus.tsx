@@ -67,13 +67,13 @@ const Cyprus: React.FC = () => {
       {/* YouTube Shorts Video */}
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-sm mx-auto">
+          <div className="max-w-sm mx-auto" style={{ aspectRatio: '9/16' }}>
             <LazyYouTube
               videoId="ZEg4JkGOVWg"
               title="OGO Kite Academy"
-              className="relative w-full rounded-2xl overflow-hidden shadow-xl"
+              className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl"
             />
-            <style>{`#cyprus-contact + *, .max-w-sm > div { aspect-ratio: 9/16; }`}</style>
+          </div>
           </div>
         </div>
       </section>
