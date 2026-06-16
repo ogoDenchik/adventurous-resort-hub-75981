@@ -85,9 +85,15 @@ const Cyprus: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <Seo
+        title="Kite Lessons in Limassol, Cyprus | OGO Kite Academy"
+        description="Learn kitesurfing in Cyprus with a certified instructor. Personal lessons in Limassol, all Duotone gear included. 500+ students. Book via DM."
+        path="/"
+        jsonLd={cyprusJsonLd}
+      />
       <Navbar />
       <ScrollToTop />
-      
+      <main>
       <CyprusHero />
       <CyprusTrustBar />
       <LearningJourney />
