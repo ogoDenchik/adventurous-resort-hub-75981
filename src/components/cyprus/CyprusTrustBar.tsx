@@ -7,7 +7,7 @@ const CyprusTrustBar: React.FC = () => {
 
   const stats = [
     { icon: Award, stat: '500+', label: t('cyprus.students'), iconColor: 'text-amber-500', bgColor: 'bg-amber-500/10' },
-    { icon: Clock, stat: '12—20:00', label: t('cyprus.windDays'), iconColor: 'text-sky-600', bgColor: 'bg-sky-500/10' },
+    { icon: Clock, stat: '12 — 20:00', label: t('cyprus.windDays'), iconColor: 'text-sky-600', bgColor: 'bg-sky-500/10' },
     { icon: Heart, stat: '70+', label: t('cyprus.returning'), iconColor: 'text-rose-500', bgColor: 'bg-rose-500/10' },
     { icon: TrendingUp, stat: '8', label: t('cyprus.firstRide'), iconColor: 'text-emerald-500', bgColor: 'bg-emerald-500/10' },
   ];
