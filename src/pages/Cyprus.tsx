@@ -74,7 +74,6 @@ const Cyprus: React.FC = () => {
               className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl"
             />
           </div>
-          </div>
         </div>
       </section>
 
@@ -89,15 +88,11 @@ const Cyprus: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-6">
               {t('cyprus.videoTitle')}
             </h2>
-            <div className="relative aspect-video rounded-xl overflow-hidden shadow-2xl">
-              <iframe
-                className="absolute inset-0 w-full h-full"
-                src="https://www.youtube.com/embed/jn9oejNBv2A"
-                title="Water Start Tutorial"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              />
-            </div>
+            <LazyYouTube
+              videoId="jn9oejNBv2A"
+              title="Water Start Tutorial"
+              className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
+            />
           </div>
         </div>
       </section>
