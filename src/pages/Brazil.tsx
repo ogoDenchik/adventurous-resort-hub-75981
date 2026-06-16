@@ -27,6 +27,7 @@ const Brazil: React.FC = () => {
         title="Brazil Kitesurfing Camp — 2 Weeks of Freedom | OGO Kite Academy"
         description="Join our Brazil kitesurfing camp for two weeks of riding in Jericoacoara. Coaching, downwinders, accommodation. Book your spot via DM."
         path="/brazil"
+        image="https://ogokiteacademy.com/lovable-uploads/brazil-hero-main.png"
         jsonLd={brazilJsonLd}
       />
       <Navbar />

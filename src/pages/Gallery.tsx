@@ -124,6 +124,7 @@ const Gallery: React.FC = () => {
         title="Kitesurfing Photo Gallery | OGO Kite Academy"
         description="Photos from our kite lessons in Cyprus, the Egypt safari and the Brazil camp. Sessions, students, sunsets and trips."
         path="/gallery"
+        image="https://ogokiteacademy.com/lovable-uploads/gallery-group-sunset-kites.jpg"
       />
       <Navbar />
       
