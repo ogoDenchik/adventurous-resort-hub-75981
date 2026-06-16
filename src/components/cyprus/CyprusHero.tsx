@@ -19,9 +19,9 @@ const CyprusHero: React.FC = () => {
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/55 to-black/80" />
       </div>
       <div className="relative z-10 container mx-auto px-4 text-center text-white">
-        <div className="inline-block mb-4 px-4 py-1.5 rounded-full border border-white/30 bg-white/10 backdrop-blur-sm text-sm font-medium -translate-y-[60px] md:translate-y-0">
+        <p className="label-caps text-white/70 mb-4 tracking-[0.2em] -translate-y-[60px] md:translate-y-0">
           {t('cyprus.heroBadge')}
-        </div>
+        </p>
         <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-display font-bold mb-4 leading-tight px-2">
           {t('cyprus.heroTitle')}
         </h1>
