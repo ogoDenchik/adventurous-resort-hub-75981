@@ -38,7 +38,9 @@ const CyprusHero: React.FC = () => {
           </Button>
         </div>
       </div>
-      <button onClick={scrollToJourney} className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce">
+      <button onClick={scrollToJourney} aria-label="Scroll to learning journey" className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white/70 hover:text-white transition-colors animate-bounce">
+        <ChevronDown size={32} />
+      </button>
         <ChevronDown className="w-8 h-8" />
       </button>
     </section>
