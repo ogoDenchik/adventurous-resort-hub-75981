@@ -145,7 +145,6 @@ const Cyprus: React.FC = () => {
       <CyprusFilmingTools />
       <CyprusSessionPhotos />
       <CyprusAdvantages />
-      <CyprusPricingTiers />
 
       {/* Video */}
       <section className="py-16 md:py-24 bg-muted/30">
@@ -167,6 +166,8 @@ const Cyprus: React.FC = () => {
           </div>
         </div>
       </section>
+
+      <CyprusPricingTiers />
 
       {/* Contact Cards */}
       <section id="cyprus-contact" className="py-12 md:py-16 bg-background">
