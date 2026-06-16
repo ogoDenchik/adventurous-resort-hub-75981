@@ -12,6 +12,7 @@ import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
 import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { trackContactClick, type ContactChannel } from '@/utils/metaTracking';
+import LazyYouTube from '@/components/LazyYouTube';
 
 const contactMethods: Array<{
   icon: typeof MessageCircle;
@@ -67,16 +68,12 @@ const Cyprus: React.FC = () => {
       <section className="py-12 md:py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-sm mx-auto">
-            <div className="relative w-full rounded-2xl overflow-hidden shadow-xl" style={{ aspectRatio: '9/16' }}>
-              <iframe
-                src="https://www.youtube.com/embed/ZEg4JkGOVWg"
-                title="OGO Kite Academy"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                loading="lazy"
-                className="absolute inset-0 w-full h-full"
-              />
-            </div>
+            <LazyYouTube
+              videoId="ZEg4JkGOVWg"
+              title="OGO Kite Academy"
+              className="relative w-full rounded-2xl overflow-hidden shadow-xl"
+            />
+            <style>{`#cyprus-contact + *, .max-w-sm > div { aspect-ratio: 9/16; }`}</style>
           </div>
         </div>
       </section>
