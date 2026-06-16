@@ -212,6 +212,14 @@ export const translations: Translations = {
       denisStat1Label: 'TRICKS',
       denisStat2: 'VIDEO',
       denisStat2Label: 'ANALYSIS',
+      // Filming tools
+      filmingSectionNum: '07 — FILMING TOOLS',
+      filmingTitle: 'OUR FILMING TOOLS',
+      filmingSubtitle: 'Gear that captures every angle',
+      filmingTool1: 'Sony Alpha 4',
+      filmingTool2: 'Tamron 150–500mm lens',
+      filmingTool3: 'DJI Mini 4 Pro drone',
+      filmingNote: 'This setup lets us film you from any angle and in the highest quality. Denis reviews the footage with you so you can see your tricks from the outside and progress faster.',
     },
     // About page
     about: {
@@ -468,6 +476,14 @@ export const translations: Translations = {
       denisStat1Label: 'ТРЮКОВ',
       denisStat2: 'ВИДЕО',
       denisStat2Label: 'РАЗБОР',
+      // Filming tools
+      filmingSectionNum: '07 — СЪЁМОЧНЫЕ ИНСТРУМЕНТЫ',
+      filmingTitle: 'НАШИ СЪЁМОЧНЫЕ ИНСТРУМЕНТЫ',
+      filmingSubtitle: 'Техника, которая снимает с любого ракурса',
+      filmingTool1: 'Sony Alpha 4',
+      filmingTool2: 'Объектив Tamron 150–500',
+      filmingTool3: 'Дрон DJI Mini 4 Pro',
+      filmingNote: 'С такой техникой мы снимаем вас с любого ракурса в максимальном качестве. Денис разбирает кадры вместе с вами — вы видите себя со стороны и прогрессируете быстрее.',
     },
     about: {
       title: 'Наша история',
