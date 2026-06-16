@@ -39,6 +39,7 @@ const CyprusTeam: React.FC = () => {
         { icon: Sparkles, text: t('cyprus.denisFocus1') as string },
         { icon: Play, text: t('cyprus.denisFocus2') as string },
         { icon: Camera, text: t('cyprus.denisFocus3') as string },
+        { icon: Sparkles, text: t('cyprus.denisFocus4') as string },
       ],
       bio: t('cyprus.denisBio') as string,
       photo: denisPhoto,
