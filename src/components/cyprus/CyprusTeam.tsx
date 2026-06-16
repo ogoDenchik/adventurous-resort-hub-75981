@@ -52,7 +52,8 @@ const CyprusTeam: React.FC = () => {
   ];
 
   return (
-    <section className="section-padding bg-background overflow-hidden">
+    <section id="cyprus-team" className="section-padding bg-background overflow-hidden">
+
       <div className="container max-w-6xl">
         <RevealOnScroll>
           <p className="section-number mb-6">{t('cyprus.teamSectionNum')}</p>
@@ -77,7 +78,8 @@ const CyprusTeam: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-16">
           {team.map((m, idx) => (
-            <article key={m.name} className="group">
+            <article id={m.name === 'DENIS' ? 'denis-progression' : undefined} key={m.name} className="group">
+
               {/* Badge */}
               <div className={`inline-flex items-center px-4 py-2 border ${m.badgeColor} mb-5`}>
                 <span className="text-[10px] tracking-[0.25em] font-medium uppercase">
