@@ -208,6 +208,7 @@ const Gallery: React.FC = () => {
           <div className="relative max-w-5xl w-full">
             <button 
               onClick={closeModal} 
+              aria-label="Close image viewer"
               className="absolute -top-12 right-0 text-white p-2 hover:text-primary transition-colors rounded-full hover:bg-white/10"
             >
               <X size={28} />
@@ -216,6 +217,7 @@ const Gallery: React.FC = () => {
             <div className="flex justify-between items-center">
               <button 
                 onClick={() => navigateImage('prev')} 
+                aria-label="Previous image"
                 className="bg-white/10 text-white p-3 rounded-full hover:bg-primary transition-all duration-300"
               >
                 <ArrowLeft size={24} />
@@ -231,6 +233,7 @@ const Gallery: React.FC = () => {
               
               <button 
                 onClick={() => navigateImage('next')} 
+                aria-label="Next image"
                 className="bg-white/10 text-white p-3 rounded-full hover:bg-primary transition-all duration-300"
               >
                 <ArrowRight size={24} />

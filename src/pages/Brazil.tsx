@@ -45,7 +45,7 @@ const Brazil: React.FC = () => {
         </div>
         <div className="relative z-20 text-center text-white px-4" style={{ transform: 'translateY(150px)' }}>
           <h1 className="text-6xl md:text-8xl font-display font-bold mb-6 animate-fade-in">
-            Brazil
+            Kitesurfing Trips and Training in Brazil
           </h1>
           <p className="text-2xl md:text-4xl mb-12 font-light">
             2 Weeks of Pure Kitesurfing Freedom
