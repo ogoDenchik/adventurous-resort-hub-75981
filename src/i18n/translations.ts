@@ -220,6 +220,7 @@ export const translations: Translations = {
       filmingTool2: 'Tamron 150–500mm lens',
       filmingTool3: 'DJI Mini 4 Pro drone',
       filmingNote: 'This setup lets us film you from any angle and in the highest quality. Denis reviews the footage with you so you can see your tricks from the outside and progress faster.',
+      filmingSampleLabel: 'Sample footage',
       // Session photos
       sessionPhotosSectionNum: '08 — IN THE FRAME',
       sessionPhotosTitle: 'OUR PHOTOS DURING KITE SESSIONS',
