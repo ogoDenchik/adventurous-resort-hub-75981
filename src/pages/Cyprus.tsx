@@ -5,6 +5,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import Seo from '@/components/Seo';
 import { MessageCircle, Send, Instagram } from 'lucide-react';
 import CyprusHero from '@/components/cyprus/CyprusHero';
+import BeginnerFlow from '@/components/BeginnerFlow';
 import LearningJourney from '@/components/cyprus/LearningJourney';
 import CyprusTrustBar from '@/components/cyprus/CyprusTrustBar';
 import CyprusLifestyle from '@/components/cyprus/CyprusLifestyle';
