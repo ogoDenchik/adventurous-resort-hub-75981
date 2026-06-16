@@ -58,8 +58,8 @@ const cyprusJsonLd = [
   {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: 'Kitesurfing Water Start Tutorial — OGO Kite Academy',
-    description: 'Step-by-step water start tutorial for kitesurfing beginners by OGO Kite Academy in Cyprus.',
+    name: 'Water Start Breakdown — OGO Kite Academy',
+    description: 'In this YouTube video the OGO Kite Academy head coach explains how to do water starts the right way, sharing the principles behind his teaching.',
     thumbnailUrl: ['https://i.ytimg.com/vi/jn9oejNBv2A/hqdefault.jpg'],
     uploadDate: '2024-06-01',
     contentUrl: 'https://www.youtube.com/watch?v=jn9oejNBv2A',
@@ -146,15 +146,20 @@ const Cyprus: React.FC = () => {
       <CyprusAdvantages />
 
       {/* Video */}
-      <section className="py-16 bg-muted/30">
+      <section className="py-16 md:py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-6">
-              {t('cyprus.videoTitle')}
-            </h2>
+            <div className="text-center mb-8 md:mb-10">
+              <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+                {t('cyprus.videoTitle')}
+              </h2>
+              <p className="text-muted-foreground text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed">
+                {t('cyprus.videoDescription')}
+              </p>
+            </div>
             <LazyYouTube
               videoId="jn9oejNBv2A"
-              title="Kitesurfing Water Start Tutorial — OGO Kite Academy"
+              title={t('cyprus.videoTitle')}
               className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
             />
           </div>
