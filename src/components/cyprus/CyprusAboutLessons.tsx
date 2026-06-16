@@ -136,7 +136,7 @@ const CyprusAboutLessons: React.FC = () => {
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackContactClick('whatsapp', 'cyprus_about_lessons_contact_us')}
-            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 text-sm tracking-widest uppercase font-medium hover:opacity-90 transition-opacity duration-300"
+            className="inline-flex items-center gap-3 bg-primary text-primary-foreground px-8 py-4 rounded-md text-sm tracking-widest uppercase font-medium hover:opacity-90 transition-opacity duration-300"
           >
             <MessageCircle className="w-5 h-5" strokeWidth={1.5} />
             Contact us
