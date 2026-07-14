@@ -457,7 +457,7 @@ export const translations: Translations = {
       heroBtn: 'Задать вопрос',
       askQuestion: 'Задать вопрос',
       heroBtn2: 'Как это работает?',
-      heroBtnLearn: 'Хочу научиться',
+      heroBtnLearn: 'Я новичок',
       heroBtnProgress: 'Хочу прогресс-тренинг',
       contactTitle: 'Свяжитесь с нами',
 
