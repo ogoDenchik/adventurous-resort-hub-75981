@@ -161,7 +161,7 @@ export const translations: Translations = {
       heroBtn: 'Ask a Question',
       askQuestion: 'Ask a Question',
       heroBtn2: 'How does it work?',
-      heroBtnLearn: 'I want to learn',
+      heroBtnLearn: 'I am beginner',
       heroBtnProgress: 'I want progress coaching',
       contactTitle: 'Get in Touch',
 
