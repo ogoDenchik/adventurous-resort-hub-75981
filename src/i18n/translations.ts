@@ -161,7 +161,7 @@ export const translations: Translations = {
       heroBtn: 'Ask a Question',
       askQuestion: 'Ask a Question',
       heroBtn2: 'How does it work?',
-      heroBtnLearn: 'I want to learn',
+      heroBtnLearn: 'I am beginner',
       heroBtnProgress: 'I want progress coaching',
       contactTitle: 'Get in Touch',
 
@@ -457,7 +457,7 @@ export const translations: Translations = {
       heroBtn: 'Задать вопрос',
       askQuestion: 'Задать вопрос',
       heroBtn2: 'Как это работает?',
-      heroBtnLearn: 'Хочу научиться',
+      heroBtnLearn: 'Я новичок',
       heroBtnProgress: 'Хочу прогресс-тренинг',
       contactTitle: 'Свяжитесь с нами',
 
