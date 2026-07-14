@@ -1,24 +1,26 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import ScrollToTop from '@/components/ScrollToTop';
 import Seo from '@/components/Seo';
 import { MessageCircle, Send, Instagram } from 'lucide-react';
 import CyprusHero from '@/components/cyprus/CyprusHero';
-import LearningJourney from '@/components/cyprus/LearningJourney';
 import CyprusTrustBar from '@/components/cyprus/CyprusTrustBar';
-import CyprusAboutLessons from '@/components/cyprus/CyprusAboutLessons';
-import CyprusLifestyle from '@/components/cyprus/CyprusLifestyle';
-import CyprusAdvantages from '@/components/cyprus/CyprusAdvantages';
-import CyprusFAQ from '@/components/cyprus/CyprusFAQ';
-import CyprusTestimonials from '@/components/cyprus/CyprusTestimonials';
-import CyprusTeam from '@/components/cyprus/CyprusTeam';
-import CyprusFilmingTools from '@/components/cyprus/CyprusFilmingTools';
-import CyprusSessionPhotos from '@/components/cyprus/CyprusSessionPhotos';
-import CyprusPricingTiers from '@/components/cyprus/CyprusPricingTiers';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { trackContactClick, type ContactChannel } from '@/utils/metaTracking';
-import LazyYouTube from '@/components/LazyYouTube';
+
+// Defer everything below the fold — dramatically reduces initial JS for mobile.
+const LearningJourney = lazy(() => import('@/components/cyprus/LearningJourney'));
+const CyprusAboutLessons = lazy(() => import('@/components/cyprus/CyprusAboutLessons'));
+const CyprusLifestyle = lazy(() => import('@/components/cyprus/CyprusLifestyle'));
+const CyprusAdvantages = lazy(() => import('@/components/cyprus/CyprusAdvantages'));
+const CyprusFAQ = lazy(() => import('@/components/cyprus/CyprusFAQ'));
+const CyprusTestimonials = lazy(() => import('@/components/cyprus/CyprusTestimonials'));
+const CyprusTeam = lazy(() => import('@/components/cyprus/CyprusTeam'));
+const CyprusFilmingTools = lazy(() => import('@/components/cyprus/CyprusFilmingTools'));
+const CyprusSessionPhotos = lazy(() => import('@/components/cyprus/CyprusSessionPhotos'));
+const CyprusPricingTiers = lazy(() => import('@/components/cyprus/CyprusPricingTiers'));
+const Footer = lazy(() => import('@/components/Footer'));
+const ScrollToTop = lazy(() => import('@/components/ScrollToTop'));
+const LazyYouTube = lazy(() => import('@/components/LazyYouTube'));
 
 const cyprusJsonLd = [
   {
@@ -119,101 +121,103 @@ const Cyprus: React.FC = () => {
         jsonLd={cyprusJsonLd}
       />
       <Navbar />
-      <ScrollToTop />
+      <Suspense fallback={null}><ScrollToTop /></Suspense>
       <main>
-      <CyprusHero />
-      <CyprusTrustBar />
-      <LearningJourney />
-      <CyprusAboutLessons />
+        <CyprusHero />
+        <CyprusTrustBar />
+        <Suspense fallback={<div className="min-h-[400px]" />}>
+          <LearningJourney />
+          <CyprusAboutLessons />
 
-      {/* YouTube Shorts Video */}
-      <section className="py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-sm mx-auto" style={{ aspectRatio: '9/16' }}>
-            <LazyYouTube
-              videoId="ZEg4JkGOVWg"
-              title="OGO Kite Academy — Kitesurfing in Limassol, Cyprus"
-              className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl"
-            />
-          </div>
-        </div>
-      </section>
-
-      <CyprusLifestyle />
-      <CyprusTestimonials />
-      <CyprusTeam />
-      <CyprusFilmingTools />
-      <CyprusSessionPhotos />
-      <CyprusAdvantages />
-
-      {/* Video */}
-      <section className="py-16 md:py-24 bg-muted/30">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-8 md:mb-10">
-              <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
-                {t('cyprus.videoTitle')}
-              </h2>
-              <p className="text-muted-foreground text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed">
-                {t('cyprus.videoDescription')}
-              </p>
+          {/* YouTube Shorts Video */}
+          <section className="py-12 md:py-16 bg-background">
+            <div className="container mx-auto px-4">
+              <div className="max-w-sm mx-auto" style={{ aspectRatio: '9/16' }}>
+                <LazyYouTube
+                  videoId="ZEg4JkGOVWg"
+                  title="OGO Kite Academy — Kitesurfing in Limassol, Cyprus"
+                  className="relative w-full h-full rounded-2xl overflow-hidden shadow-xl"
+                />
+              </div>
             </div>
-            <LazyYouTube
-              videoId="jn9oejNBv2A"
-              title={t('cyprus.videoTitle')}
-              className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
-            />
-          </div>
-        </div>
-      </section>
+          </section>
 
-      <CyprusPricingTiers />
+          <CyprusLifestyle />
+          <CyprusTestimonials />
+          <CyprusTeam />
+          <CyprusFilmingTools />
+          <CyprusSessionPhotos />
+          <CyprusAdvantages />
 
-      {/* Contact Cards */}
-      <section id="cyprus-contact" className="py-12 md:py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-2">
-            {t('cyprus.contactTitle')}
-          </h2>
-          <p className="text-center text-muted-foreground mb-8">
-            {t('cyprus.contactSubtitle')}
-          </p>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
-            {contactMethods.map((method, index) => (
-              <a
-                key={index}
-                href={method.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => trackContactClick(method.channel, 'cyprus_contact_card')}
-                className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
-              >
-                <div className="flex-shrink-0 md:flex md:justify-center md:mb-5">
-                  <div className={`${method.color} ${method.hoverColor} w-11 h-11 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
-                    <method.icon className="w-5 h-5 md:w-8 md:h-8 text-white" />
-                  </div>
-                </div>
-                <div className="min-w-0">
-                  <h3 className="text-base md:text-xl font-semibold text-foreground uppercase tracking-wide">
-                    {method.title}
-                  </h3>
-                  <p className="text-muted-foreground text-xs md:text-sm">
-                    {method.description}
+          {/* Video */}
+          <section className="py-16 md:py-24 bg-muted/30">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-8 md:mb-10">
+                  <h2 className="heading-display text-3xl md:text-4xl lg:text-5xl text-foreground mb-4">
+                    {t('cyprus.videoTitle')}
+                  </h2>
+                  <p className="text-muted-foreground text-sm md:text-base font-light max-w-2xl mx-auto leading-relaxed">
+                    {t('cyprus.videoDescription')}
                   </p>
                 </div>
-                <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
-              </a>
-            ))}
-          </div>
-          <p className="text-center text-muted-foreground text-sm mt-6">
-            {t('contact.responseNote')}
-          </p>
-        </div>
-      </section>
+                <LazyYouTube
+                  videoId="jn9oejNBv2A"
+                  title={t('cyprus.videoTitle')}
+                  className="relative aspect-video rounded-xl overflow-hidden shadow-2xl"
+                />
+              </div>
+            </div>
+          </section>
 
-      <CyprusFAQ />
+          <CyprusPricingTiers />
+
+          {/* Contact Cards */}
+          <section id="cyprus-contact" className="py-12 md:py-16 bg-background">
+            <div className="container mx-auto px-4">
+              <h2 className="text-3xl md:text-4xl font-display font-bold text-center mb-2">
+                {t('cyprus.contactTitle')}
+              </h2>
+              <p className="text-center text-muted-foreground mb-8">
+                {t('cyprus.contactSubtitle')}
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 max-w-5xl mx-auto">
+                {contactMethods.map((method, index) => (
+                  <a
+                    key={index}
+                    href={method.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => trackContactClick(method.channel, 'cyprus_contact_card')}
+                    className="group relative bg-card rounded-xl md:rounded-2xl p-4 md:p-8 flex items-center gap-4 md:flex-col md:text-center transition-all duration-300 hover:-translate-y-1 md:hover:-translate-y-2 hover:shadow-xl border border-border overflow-hidden"
+                  >
+                    <div className="flex-shrink-0 md:flex md:justify-center md:mb-5">
+                      <div className={`${method.color} ${method.hoverColor} w-11 h-11 md:w-16 md:h-16 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-lg`}>
+                        <method.icon className="w-5 h-5 md:w-8 md:h-8 text-white" />
+                      </div>
+                    </div>
+                    <div className="min-w-0">
+                      <h3 className="text-base md:text-xl font-semibold text-foreground uppercase tracking-wide">
+                        {method.title}
+                      </h3>
+                      <p className="text-muted-foreground text-xs md:text-sm">
+                        {method.description}
+                      </p>
+                    </div>
+                    <div className="absolute bottom-0 left-0 right-0 h-1 bg-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300" />
+                  </a>
+                ))}
+              </div>
+              <p className="text-center text-muted-foreground text-sm mt-6">
+                {t('contact.responseNote')}
+              </p>
+            </div>
+          </section>
+
+          <CyprusFAQ />
+          <Footer />
+        </Suspense>
       </main>
-      <Footer />
     </div>
   );
 };
