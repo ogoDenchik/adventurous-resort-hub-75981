@@ -26,9 +26,8 @@ const generateEventId = (): string =>
 export const trackContactClick = (
   channel: ContactChannel,
   source: string,
-  force = false
+  force = true
 ): void => {
-  if (!force && !isCyprusPage()) return;
 
   const eventId = generateEventId();
   const eventName = 'ContactClick';
