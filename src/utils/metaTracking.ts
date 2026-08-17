@@ -14,11 +14,6 @@ export type ContactChannel = 'whatsapp' | 'telegram' | 'instagram';
 const generateEventId = (): string =>
   `${Date.now()}-${Math.random().toString(36).slice(2, 10)}`;
 
-const isCyprusPage = (): boolean => {
-  if (typeof window === 'undefined') return false;
-  const p = window.location.pathname;
-  return p === '/' || p.startsWith('/cyprus');
-};
 
 /**
  * Track a contact click via Meta Pixel (browser) + Conversions API (server)
